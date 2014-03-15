@@ -1,0 +1,14 @@
+body {
+    padding-top: 50px;
+    background-color: #F7F7F6;
+}
+.starter-template {
+    padding: 40px 15px;
+}
+
+.login{padding-top: 65px;}
+.center{float: none; margin-left: auto; margin-right: auto;}
+
+li.build {
+    padding: 15px 0 0 0;
+}

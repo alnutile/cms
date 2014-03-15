@@ -1,0 +1,1 @@
+/Users/alfrednutile/Laravel/lblog/app/views/pages/show.blade.php
