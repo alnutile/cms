@@ -1,5 +1,5 @@
 @javascript
-Feature: Testing User Edit
+Feature: Testing User Create
 
   Background: Login to the site
     Given I am on "/logout"
@@ -13,17 +13,15 @@ Feature: Testing User Edit
   Scenario: I should see the user table
     Given I am on "/admin"
     Then I should see "Admin Users"
-    Then I follow "user-id-2"
-    Then I fill in "email" with ""
+    Then I follow "Add new user"
+    Then I fill in "email" with "test@gmail.com"
+    Then I fill in "password" with "test@gmail.com"
+    Then I fill in "password_confirmation" with "test@gmail.com"
     Then I press "Submit"
     Then I wait
-    And I should see "The email field is required."
-    And I fill in "email" with "alfrednutile@gmail.com"
+    And I should see "The email has already been taken."
+    And I fill in "email" with "test10@gmail.com"
     And I press "Submit"
     And I wait
-    Then I should see "User has been updated..."
-    And I uncheck "user-active"
-    And I press "Submit"
-    And I wait
-    Given I am on "/admin/users/2/edit"
-    Then the "user-active" checkbox should not be checked
+    And I am on "/admin"
+    Then I should see "test10@gmail.com"
