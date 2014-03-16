@@ -17,6 +17,15 @@
 			"app/tests/TestCase.php"
 		]
 	},
+    "require-dev": {
+        "behat/mink-zombie-driver": "*",
+        "behat/mink": "*",
+        "behat/mink-goutte-driver": "*",
+        "behat/mink-selenium-driver": "*",
+        "behat/mink-selenium2-driver": "*",
+        "behat/mink-extension": "*",
+        "behat/mink-sahi-driver": "*"
+    },
 	"scripts": {
 		"post-install-cmd": [
 			"php artisan clear-compiled",

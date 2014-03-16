@@ -20,10 +20,16 @@ class UsersController extends BaseController {
         return View::make('sessions.login');
     }
 
-    public function edit()
+    public function show($id)
     {
-        $user = Auth::user();
-        return View::make('user.edit', compact('user'));
+        $user = $this->users->find($id);
+        return $user;
+    }
+
+    public function edit($params)
+    {
+        $user = $this->users->find($params['uid']);
+        return $user;
     }
 
     public function getLogout() {
@@ -31,17 +37,56 @@ class UsersController extends BaseController {
         return Redirect::to('login')->with('message', 'Your are now logged out!');
     }
 
-    public function update()
+
+    public function updatePassword()
     {
+
         $validator = Validator::make(Input::all(), array('password' => 'required|confirmed', 'email' => 'required', 'password_confirmation' => 'required'));
 
         if($validator->passes()) {
             $user = User::find(Auth::user()->id);
             $user->password = Hash::make(Input::get('password'));
             $user->save();
-            return Redirect::to('users/edit')->with('message', 'Your info has been updated')->withInput();
+            return $user;
+        }
+    }
+
+    public function update()
+    {
+        $validator = Validator::make(Input::all(), array('email' => 'required'));
+
+        if($validator->passes()) {
+            $user = User::find(Auth::user()->id);
+            $user->email = Input::get('email');
+            $user->firstname = Input::get('firstname');
+            $user->lastname = Input::get('lastname');
+            $user->admin = Input::get('admin');
+            $user->active = Input::get('active');
+            $user->save();
+            return array('error' => 0, 'data' => $user);
         } else {
-            return Redirect::to('users/edit')->with('message', 'There was an error')->withInput()->withErrors($validator);
+            $errors = $validator->errors();
+            return $errors;
+        }
+    }
+
+    public function create()
+    {
+        $validator = Validator::make(Input::all(), array('password' => 'required|confirmed', 'email' => 'required', 'password_confirmation' => 'required'));
+
+        if($validator->passes()) {
+            $user = new User();
+            $user->email        = Input::get('email');
+            $user->firstname    = Input::get('firstname');
+            $user->lastname     = Input::get('lastname');
+            $user->admin        = Input::get('admin');
+            $user->active       = Input::get('active');
+            $user->password     = Hash::make(Input::get('password'));
+            $user->save();
+            return array('error' => 0, 'data' => $user);
+        } else {
+            $errors = $validator->errors();
+            return $errors;
         }
     }
 
