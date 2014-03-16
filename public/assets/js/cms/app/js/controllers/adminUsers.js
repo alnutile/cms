@@ -53,11 +53,11 @@ angular.module('cms.admin_users', []).
                 }
                 UsersServices.create({}, params, function(data, status, headers, config){
                     console.log(status);
-                    console.log(headers);
-                    console.log(config);
-                    console.log(data);
-                    //$location.path('/admin');
                     alertDisplay(data, $scope, "User has been saved...");
+                    if ( data.error == 0 ) {
+                        $location.path('/admin');
+                        alertDisplay(data, $scope, "User has been saved...");
+                    }
                 });
             }
 

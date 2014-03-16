@@ -23,10 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="adminUsers.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="adminUsers.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/js/controllers/adminUsers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="48" selection-start="2269" selection-end="2269" vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="1035">
+            <state line="58" column="77" selection-start="2771" selection-end="2771" vertical-scroll-proportion="0.84162897" vertical-offset="312" max-vertical-offset="1035">
               <folding />
             </state>
           </provider>
@@ -35,7 +35,7 @@
       <file leaf-file-name="alertServices.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/js/services/alertServices.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+            <state line="16" column="40" selection-start="569" selection-end="593" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
               <folding />
             </state>
           </provider>
@@ -50,10 +50,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UsersController.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="UsersController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/UsersController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="35" selection-start="2080" selection-end="2080" vertical-scroll-proportion="0.535445" vertical-offset="515" max-vertical-offset="1710">
+            <state line="69" column="35" selection-start="2080" selection-end="2080" vertical-scroll-proportion="0.0" vertical-offset="1047" max-vertical-offset="1710">
               <folding>
                 <element signature="n#updatePassword#0;n#UsersController#0;n#!!top" expanded="false" />
               </folding>
@@ -512,21 +512,8 @@
       <file leaf-file-name="users_edit.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/partials/users_edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="63" selection-start="441" selection-end="451" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="855">
+            <state line="15" column="63" selection-start="441" selection-end="451" vertical-scroll-proportion="0.0" vertical-offset="192" max-vertical-offset="855">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="users_create.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/partials/users_create.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="42" selection-start="426" selection-end="426" vertical-scroll-proportion="0.0" vertical-offset="177" max-vertical-offset="945">
-              <folding>
-                <marker date="1395007974000" expanded="true" signature="382:1997" placeholder="..." />
-                <marker date="1395007974000" expanded="true" signature="454:1982" placeholder="..." />
-                <marker date="1395007974000" expanded="true" signature="2035:2982" placeholder="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -573,8 +560,8 @@
         <option value="$PROJECT_DIR$/public/assets/js/cms/app/js/services/users_services.js" />
         <option value="$PROJECT_DIR$/app/models/User.php" />
         <option value="$PROJECT_DIR$/public/assets/js/cms/app/partials/users_create.html" />
-        <option value="$PROJECT_DIR$/public/assets/js/cms/app/js/controllers/adminUsers.js" />
         <option value="$PROJECT_DIR$/app/controllers/UsersController.php" />
+        <option value="$PROJECT_DIR$/public/assets/js/cms/app/js/controllers/adminUsers.js" />
       </list>
     </option>
   </component>
@@ -1660,34 +1647,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/partials/users_create.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="42" selection-start="426" selection-end="426" vertical-scroll-proportion="0.0" vertical-offset="177" max-vertical-offset="945">
-          <folding>
-            <marker date="1395007974000" expanded="true" signature="382:1997" placeholder="..." />
-            <marker date="1395007974000" expanded="true" signature="454:1982" placeholder="..." />
-            <marker date="1395007974000" expanded="true" signature="2035:2982" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/js/services/alertServices.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="676">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/js/controllers/adminUsers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="48" selection-start="2269" selection-end="2269" vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="1035">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="5" selection-start="141" selection-end="141" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/partials/users_create.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="42" selection-start="426" selection-end="426" vertical-scroll-proportion="0.07239819" vertical-offset="177" max-vertical-offset="945">
           <folding />
         </state>
       </provider>
@@ -1699,12 +1668,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/js/services/alertServices.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="40" selection-start="569" selection-end="593" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/UsersController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="35" selection-start="2080" selection-end="2080" vertical-scroll-proportion="0.535445" vertical-offset="515" max-vertical-offset="1710">
+        <state line="69" column="35" selection-start="2080" selection-end="2080" vertical-scroll-proportion="0.0" vertical-offset="1047" max-vertical-offset="1710">
           <folding>
             <element signature="n#updatePassword#0;n#UsersController#0;n#!!top" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/js/controllers/adminUsers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="77" selection-start="2771" selection-end="2771" vertical-scroll-proportion="0.84162897" vertical-offset="312" max-vertical-offset="1035">
+          <folding />
         </state>
       </provider>
     </entry>
