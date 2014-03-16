@@ -5,6 +5,13 @@ Route::get('/', function()
     return View::make('layouts.angular');
 });
 
+Route::group(array('before' => 'auth'), function() {
+    Route::get('/testpage', function(){
+        $admin = Auth::user()->get(['email']);
+        return "You are logged in and your admin status us $admin";
+    });
+});
+
 #done
 Route::get('/login', 'UsersController@login');
 #done

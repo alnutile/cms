@@ -15,7 +15,7 @@
             </thead>
             <tr ng-repeat="user in users">
                 <td>{{ user.firstname}} {{ user.lastname}} </td>
-                <td>{{ user.email }}</td>
+                <td><a ng-href="/admin/users/{{ user.id }}/edit">{{ user.email }}</a></td>
                 <td><a id="user-id-{{ user.id }}" ng-href="/admin/users/{{ user.id }}/edit">edit</a></td>
             </tr>
         </table>
