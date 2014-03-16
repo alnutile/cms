@@ -76,11 +76,26 @@ Route::filter('guest', function()
 | session does not match the one given in this request, we'll bail.
 |
 */
+//
+//Route::filter('csrf', function()
+//{
+//	if (Session::token() != Input::get('_token'))
+//	{
+//		throw new Illuminate\Session\TokenMismatchException;
+//	}
+//});
 
-Route::filter('csrf', function()
+Route::filter('csrf', function($route, $request)
 {
-	if (Session::token() != Input::get('_token'))
-	{
-		throw new Illuminate\Session\TokenMismatchException;
-	}
+    if (strtoupper($request->getMethod()) === 'GET')
+    {
+        return; // get requests are not CSRF protected
+    }
+
+    $token = $request->ajax() ? $request->header('X-CSRF-Token') : Input::get('_token');
+
+    if (Session::token() != $token)
+    {
+        throw new Illuminate\Session\TokenMismatchException;
+    }
 });

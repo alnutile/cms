@@ -1,0 +1,52 @@
+<div class="row clearfix">
+    <div class="col-md-12 column">
+        <span ng-include="alerts_partial.url"></span>
+    </div>
+</div>
+<div class="row clearfix">
+    <div class="col-md-12 column">
+        <div ng-include="bc.url"></div>
+    </div>
+</div>
+<div class="container">
+
+    <div class="row clearfix">
+        <h3>Administer a user</h3>
+        <div class="col-md-6 column well">
+            <form role="form" name="user" ng-submit="updateUser()">
+                <div class="form-group">
+                    <label for="email">Email address</label><input ng-model="user.email" value="{{ user.email }}" type="email" class="form-control" id="email" />
+                </div>
+                <div class="form-group">
+                    <label for="firstname">First Name</label><input ng-model="user.firstname" value="{{ user.firstname }}" type="text" class="form-control" id="firstname" />
+                </div>
+                <div class="form-group">
+                    <label for="lastname">Last Name</label><input ng-model="user.lastname" value="{{ user.lastname }}" type="text" class="form-control" id="lastname" />
+                </div>
+                <div class="checkbox">
+                    <label><input id="user-admin" type="checkbox" ng-model="user.admin" ng-true-value="1"/> Admim</label>
+                </div>
+                <div class="checkbox">
+                    <label><input id="user-active" type="checkbox" ng-model="user.active" ng-true-value="1"/> Active</label>
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </div>
+        <div class="col-md-6 column">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Integrated Help
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <p>At vero eos et accusam et justo duo dolores et ea rebum. Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+                </div>
+                <div class="panel-footer">
+                    more help click here
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

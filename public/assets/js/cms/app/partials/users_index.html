@@ -1,5 +1,9 @@
+<div class="row clearfix">
+    <div class="col-md-12 column">
+        <div ng-include="bc.url"></div>
+    </div>
+</div>
 <h1>Admin Users</h1>
-
 
         <table class="table table-bordered table-hover table-striped">
             <thead>
@@ -12,7 +16,7 @@
             <tr ng-repeat="user in users">
                 <td>{{ user.firstname}} {{ user.lastname}} </td>
                 <td>{{ user.email }}</td>
-                <td><a ng-href="/admin/users/{{ user.id }}/edit">edit</a></td>
+                <td><a id="user-id-{{ user.id }}" ng-href="/admin/users/{{ user.id }}/edit">edit</a></td>
             </tr>
         </table>
-        <a ng-href="/admin/users/new">Add new user</a>
+        <a class="btn btn-success" ng-href="/admin/users/new">Add new user</a>

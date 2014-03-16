@@ -11,7 +11,7 @@
     <title>Starter Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    {{ HTML::style('assets/css/bootstrap.min.css') }}
+    {{ HTML::style('assets/css/bootstrap.css') }}
     {{ HTML::style('assets/css/main.css') }}
     {{ HTML::style('assets/css/prettify.css') }}
 
@@ -20,6 +20,9 @@
     {{ HTML::script('assets/js/html5shiv.js') }}
     {{ HTML::script('assets/js/respond.min.js') }}
     <![endif]-->
+
+
+
 </head>
 
 <body>
@@ -45,19 +48,22 @@
 <!-- Placed at the end of the document so the pages load faster -->
 
 {{ HTML::script('/assets/js/jquery-1.11.0.min.js') }}
-{{ HTML::script('/assets/js/bootstrap/bootstrap.min.js') }}
 {{ HTML::script('/assets/js/cms/app/lib/angular/angular.js') }}
+{{ HTML::script('/assets/js/cms/app/js/app.js') }}
 {{ HTML::script('/assets/js/cms/app/lib/angular/angular-resource.js') }}
 {{ HTML::script('/assets/js/cms/app/lib/angular/angular-route.js') }}
 {{ HTML::script('/assets/js/cms/app/lib/angular/angular-sanitize.js') }}
 {{ HTML::script('/assets/js/cms/app/lib/angular/angular-loader.js') }}
-{{ HTML::script('/assets/js/angular-ui/ui-bootstrap-tpls-0.1.0.js') }}
-{{ HTML::script('/assets/js/cms/app/js/app.js') }}
+{{ HTML::script('/assets/js/angular-ui/ui-bootstrap-tpls-0.10.0.js') }}
 {{ HTML::script('/assets/js/cms/app/js/controllers/adminPages.js') }}
 {{ HTML::script('/assets/js/cms/app/js/controllers/adminUsers.js') }}
 {{ HTML::script('/assets/js/cms/app/js/services/users_services.js') }}
+{{ HTML::script('/assets/js/cms/app/js/services/alertServices.js') }}
 {{ HTML::script('/assets/js/cms/app/js/directives/directives.js') }}
 {{ HTML::script('/assets/js/cms/app/js/filters/filters.js') }}
+<script>
+    angular.module("cms").constant("CSRF_TOKEN", '{{ csrf_token() }}');
+</script>
 
 </body>
 </html>

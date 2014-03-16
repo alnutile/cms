@@ -1,0 +1,21 @@
+default:
+  paths:
+    features:  /Users/alfrednutile/Laravel/lblog/app/tests/behat/features
+    bootstrap: /Users/alfrednutile/Laravel/lblog/app/tests/behat/features/bootstrap
+  formatter:
+    name: pretty
+  extensions:
+    Behat\MinkExtension\Extension:
+      default_session: selenium2
+      goutte: null
+      selenium2: null
+      base_url: 'http://localhost:8000/'
+      browser_name: safari
+
+annotations:
+  paths:
+    features: features/annotations
+
+closures:
+  paths:
+    features: features/closures
