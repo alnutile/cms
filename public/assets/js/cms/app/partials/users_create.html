@@ -13,27 +13,27 @@
     <div class="row clearfix">
         <h3>Create a user</h3>
         <div class="col-md-6 column well">
-            <form role="form" name="user" ng-submit="updateUser()">
+            <form role="form" name="user" ng-submit="updateUser(user)">
                 <div class="form-group">
-                    <label for="email">Email address</label><input ng-model="user.email" value="{{ user.email }}" type="email" class="form-control" id="email" />
+                    <label for="email">Email address</label><input ng-model="user.email" type="email" class="form-control" id="email" required/>
                 </div>
                 <div class="form-group">
-                    <label for="firstname">First Name</label><input ng-model="user.firstname" value="{{ user.firstname }}" type="text" class="form-control" id="firstname" />
+                    <label for="firstname">First Name</label><input ng-model="user.firstname"  type="text" class="form-control" id="firstname" />
                 </div>
                 <div class="form-group">
-                    <label for="lastname">Last Name</label><input ng-model="user.lastname" value="{{ user.lastname }}" type="text" class="form-control" id="lastname" />
+                    <label for="lastname">Last Name</label><input ng-model="user.lastname" type="text" class="form-control" id="lastname" />
                 </div>
                 <div class="form-group">
-                    <label for="password">Password</label><input ng-model="user.password" value="{{ user.password }}" type="password" class="form-control" id="password" />
+                    <label for="password">Password</label><input ng-model="user.password" type="password" class="form-control" id="password" required/>
                 </div>
                 <div class="form-group">
-                    <label for="password">Password Confirmation</label><input ng-model="user.password_confirmation" value="{{ user.password_confirmation }}" type="password" class="form-control" id="password_confirmation" />
+                    <label for="password">Password Confirmation</label><input ng-model="user.password_confirmation" type="password" class="form-control" id="password_confirmation" required/>
                 </div>
                 <div class="checkbox">
-                    <label><input id="user-admin" type="checkbox" ng-model="user.admin" ng-true-value="1"/> Admim</label>
+                    <label><input id="user-admin" type="checkbox" ng-model="user.admin"/> Admim</label>
                 </div>
                 <div class="checkbox">
-                    <label><input id="user-active" type="checkbox" ng-model="user.active" ng-true-value="1"/> Active</label>
+                    <label><input id="user-active" type="checkbox" ng-model="user.active"/> Active</label>
                 </div>
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>

@@ -3,6 +3,7 @@
 class UsersController extends BaseController {
 
     public $users;
+
     public function __construct(User $users = null) {
         $this->users    = ($users) ? $users : new User();
         $this->beforeFilter('csrf', array('on'=>'post'));
@@ -53,15 +54,20 @@ class UsersController extends BaseController {
 
     public function update()
     {
-        $validator = Validator::make(Input::all(), array('email' => 'required'));
-
+        $validator = Validator::make(Input::all(), array('email' => 'required|email'));
+        $user_update = Input::all();
         if($validator->passes()) {
-            $user = User::find(Auth::user()->id);
-            $user->email = Input::get('email');
-            $user->firstname = Input::get('firstname');
-            $user->lastname = Input::get('lastname');
-            $user->admin = Input::get('admin');
-            $user->active = Input::get('active');
+            $user = User::find($user_update['id']);
+            if($user_update['email'] != $user->email) {
+                if(User::where("email", 'LIKE', $user_update['email'])) {
+                    return ['email' => ["Email is already in the system"]];
+                }
+            }
+            $user->email = $user_update['email'];
+            $user->firstname = (isset($user_post['firstname'])) ? $user_post['firstname'] : '';
+            $user->lastname = (isset($user_post['lastname'])) ? $user_post['lastname'] : '';
+            $user->admin = (isset($user_post['admin'])) ? $user_post['admin'] : 0;
+            $user->active = (isset($user_post['active'])) ? $user_post['active'] : 0;
             $user->save();
             return array('error' => 0, 'data' => $user);
         } else {
@@ -69,19 +75,28 @@ class UsersController extends BaseController {
             return $errors;
         }
     }
+
 
     public function create()
     {
-        $validator = Validator::make(Input::all(), array('password' => 'required|confirmed', 'email' => 'required', 'password_confirmation' => 'required'));
+        $user = new User;
+        return $user->getFillable();
+    }
+
+    public function store()
+    {
+
+        $user_post = Input::get('user');
+        $validator = Validator::make($user_post, array('password' => 'required|confirmed', 'email' => 'required|email|unique:users', 'password_confirmation' => 'required'));
 
         if($validator->passes()) {
             $user = new User();
-            $user->email        = Input::get('email');
-            $user->firstname    = Input::get('firstname');
-            $user->lastname     = Input::get('lastname');
-            $user->admin        = Input::get('admin');
-            $user->active       = Input::get('active');
-            $user->password     = Hash::make(Input::get('password'));
+            $user->email        = $user_post['email'];
+            $user->firstname    = (isset($user_post['firstname'])) ? $user_post['firstname'] : '';
+            $user->lastname     = (isset($user_post['lastname'])) ? $user_post['lastname'] : '';
+            $user->admin        = (isset($user_post['admin'])) ? 1 : 0;
+            $user->active       = (isset($user_post['active'])) ? 1 : 0;
+            $user->password     = $user_post['password'];
             $user->save();
             return array('error' => 0, 'data' => $user);
         } else {
@@ -89,6 +104,7 @@ class UsersController extends BaseController {
             return $errors;
         }
     }
+
 
     public function authenticate()
     {

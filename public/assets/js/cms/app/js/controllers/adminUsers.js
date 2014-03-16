@@ -43,19 +43,21 @@ angular.module('cms.admin_users', []).
             $scope.alerts = [];
             $scope.alerts_partial = { name: 'alerts', url: '/assets/js/cms/app/partials/alerts.html'}
             $scope.bc = { name: 'bc', url: '/assets/js/cms/app/partials/bc.html'}
-            $scope.user = {};
             $scope.breadcrumbs = [];
 
-            $scope.user = new UsersServices()
-            $scope.updateUser = function() {
-                console.log($scope.user);
+
+            $scope.updateUser = function(user) {
                 var params = {
-                    "user": $scope.user,
-                    "csrf_token": CSRF_TOKEN
+                    "user": user,
+                    "_token": CSRF_TOKEN
                 }
-                UsersServices.create({}, params, function(data){
+                UsersServices.create({}, params, function(data, status, headers, config){
+                    console.log(status);
+                    console.log(headers);
+                    console.log(config);
                     console.log(data);
-                    //alertDisplay(data, $scope, "User has been updated...");
+                    //$location.path('/admin');
+                    alertDisplay(data, $scope, "User has been saved...");
                 });
             }
 
