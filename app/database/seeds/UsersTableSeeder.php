@@ -31,10 +31,10 @@ class UsersTableSeeder extends Seeder {
             array(
                 'firstname'  => 'Test',
                 'lastname'  => 'Three',
-                'admin'     => 1,
-                'active'     => 0,
+                'admin'     => 0,
+                'active'     => 1,
                 'email'      => 'test3@gmail.com',
-                'password'   => Hash::make('admin'),
+                'password'   => Hash::make('password'),
                 'created_at' => $dateTime,
                 'updated_at' => $dateTime,
             ),

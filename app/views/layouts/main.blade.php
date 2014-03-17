@@ -49,6 +49,7 @@
 
 {{ HTML::script('/assets/js/jquery-1.11.0.min.js') }}
 {{ HTML::script('/assets/js/cms/app/lib/angular/angular.js') }}
+{{ HTML::script('/assets/js/cms/app/lib/angular/angular-sanitize.js') }}
 {{ HTML::script('/assets/js/cms/app/js/app.js') }}
 {{ HTML::script('/assets/js/cms/app/lib/angular/angular-resource.js') }}
 {{ HTML::script('/assets/js/cms/app/lib/angular/angular-route.js') }}

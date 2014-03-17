@@ -12,6 +12,10 @@ default:
       base_url: 'http://localhost:8000/'
       browser_name: safari
 
+saucelabs:
+
+
+
 annotations:
   paths:
     features: features/annotations

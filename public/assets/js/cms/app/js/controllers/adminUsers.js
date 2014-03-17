@@ -6,13 +6,15 @@ angular.module('cms.admin_users', []).
   controller('AdminUsers', ['$scope', '$http', '$location', '$route', '$routeParams', 'UsersServices',
         function($scope, $http, $location, $route, $routeParams, UsersServices) {
             $scope.bc = { name: 'bc', url: '/assets/js/cms/app/partials/bc.html'}
+            $scope.admin_dash = { name: 'admin_dash', url: '/assets/js/cms/app/partials/admin_dash.html'}
 
-            $scope.users = UsersServices.query();
+            $scope.users = UsersServices.query(function(data){
+                console.log(data);
+            });
         }]).
   controller('AdminEditUser', ['$scope', '$http', '$location', '$route', '$routeParams', 'UsersServices', 'addAlert', 'alertDisplay',
         function($scope, $http, $location, $route, $routeParams, UsersServices, addAlert, alertDisplay) {
             $scope.alerts = [];
-            $scope.alerts_partial = { name: 'alerts', url: '/assets/js/cms/app/partials/alerts.html'}
             $scope.bc = { name: 'bc', url: '/assets/js/cms/app/partials/bc.html'}
             $scope.user = {};
             UsersServices.get({uid: $routeParams.uid}, function(data){
@@ -28,6 +30,7 @@ angular.module('cms.admin_users', []).
                     }
 
                 ];
+                $scope.alerts_partial = { name: 'alerts', url: '/assets/js/cms/app/partials/alerts.html'}
             });
             $scope.updateUser = function() {
                 $scope.userCopy = angular.copy($scope.user);

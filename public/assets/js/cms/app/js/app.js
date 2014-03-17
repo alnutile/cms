@@ -4,6 +4,7 @@
 // Declare app level module which depends on filters, and services
 angular.module('cms', [
   'ngRoute',
+  'ngSanitize',
   'cms.alertServices',
   'cms.usersServices',
   'cms.admin_users',

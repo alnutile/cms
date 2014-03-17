@@ -13,7 +13,7 @@ class UsersController extends BaseController {
     public function index()
     {
         $user = $this->users->all();
-        return $user;
+        return ")]}',\n" . $user;
     }
 
     public function login()
@@ -24,13 +24,13 @@ class UsersController extends BaseController {
     public function show($id)
     {
         $user = $this->users->find($id);
-        return $user;
+        return ")]}',\n" . $user;
     }
 
     public function edit($params)
     {
         $user = $this->users->find($params['uid']);
-        return $user;
+        return ")]}',\n" . $user;
     }
 
     public function getLogout() {
