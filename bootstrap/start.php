@@ -26,6 +26,7 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment(array(
     'local' => array('Alfreds-MacBook-Pro-3.local'),
+    'staging' => array('jenkins.stagingarea.us')
 ));
 
 /*
