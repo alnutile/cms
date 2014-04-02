@@ -7,9 +7,8 @@ angular.module('cms.admin_users', []).
         function($scope, $http, $location, $route, $routeParams, UsersServices) {
             $scope.bc = { name: 'bc', url: '/assets/js/cms/app/partials/bc.html'}
             $scope.admin_dash = { name: 'admin_dash', url: '/assets/js/cms/app/partials/admin_dash.html'}
-
-            $scope.users = UsersServices.query(function(data){
-                console.log(data);
+            UsersServices.query(function(data){
+                $scope.users = data;
             });
         }]).
   controller('AdminEditUser', ['$scope', '$http', '$location', '$route', '$routeParams', 'UsersServices', 'addAlert', 'alertDisplay',

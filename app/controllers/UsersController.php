@@ -12,8 +12,12 @@ class UsersController extends BaseController {
 
     public function index()
     {
-        $user = $this->users->all();
-        return ")]}',\n" . $user;
+        if(Auth::guest()) {
+            return Response::json(null, 403);
+        } else {
+            $user = $this->users->all();
+            return Response::json($user, 200);
+        }
     }
 
     public function login()

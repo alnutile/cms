@@ -58,6 +58,7 @@
 {{ HTML::script('/assets/js/angular-ui/ui-bootstrap-tpls-0.10.0.js') }}
 {{ HTML::script('/assets/js/cms/app/js/controllers/adminPages.js') }}
 {{ HTML::script('/assets/js/cms/app/js/controllers/adminUsers.js') }}
+{{ HTML::script('/assets/js/cms/app/js/services/auth_interceptor.js') }}
 {{ HTML::script('/assets/js/cms/app/js/services/users_services.js') }}
 {{ HTML::script('/assets/js/cms/app/js/services/alertServices.js') }}
 {{ HTML::script('/assets/js/cms/app/js/directives/directives.js') }}

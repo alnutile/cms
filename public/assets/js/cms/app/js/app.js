@@ -8,9 +8,13 @@ angular.module('cms', [
   'cms.alertServices',
   'cms.usersServices',
   'cms.admin_users',
+  'cms.auth_interceptor',
   'cms.admin_pages',
 ]).
-config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+config(['$routeProvider', '$locationProvider', '$httpProvider', '$provide', function($routeProvider, $locationProvider, $httpProvider, $provide) {
+
+  $httpProvider.interceptors.push('authInterceptor');
+
   $locationProvider.html5Mode(true);
   $routeProvider.when('/admin', {templateUrl: '/assets/js/cms/app/partials/users_index.html', controller: 'AdminUsers'});
   $routeProvider.when('/admin/users', {templateUrl: '/assets/js/cms/app/partials/users_index.html', controller: 'AdminUsers'});
