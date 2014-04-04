@@ -12,4 +12,8 @@ Feature: Testing the Dash
 
   Scenario: I should see the user table
     Given I am on "/admin"
-    Then I should not see "test3@gmail.com"
+    Then I should not see "Admin Users"
+    And I should see "Admin Pages"
+    And I should see "Admin Banners"
+    And I should see "Your Profile"
+

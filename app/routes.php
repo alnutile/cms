@@ -1,15 +1,16 @@
 <?php
 
-Route::get('/', function()
-{
-    return View::make('layouts.angular');
-});
+Route::get('/', 'PagesController@show');
 
 Route::group(array('before' => 'auth'), function() {
     Route::get('/testpage', function(){
         $admin = Auth::user()->get(['email']);
         return "You are logged in and your admin status us $admin";
     });
+});
+
+Route::get('/auth/token', function(){
+    return csrf_token();
 });
 
 #done
@@ -33,6 +34,10 @@ Route::group(array('before' => 'admin'), function()
     Route::resource('api/v1/site/admin/users',           'UsersController');
     Route::get('api/v1/site/admin/pages',           'PagesController@index');
     Route::get('api/v1/site/admin',                 'AdminController@index');
+});
+
+Route::get('api/v1/current_user', function(){
+    return Response::json(Auth::user(), 200);
 });
 
 App::missing(function($exception)

@@ -68,10 +68,10 @@ class UsersController extends BaseController {
                 }
             }
             $user->email = $user_update['email'];
-            $user->firstname = (isset($user_post['firstname'])) ? $user_post['firstname'] : '';
-            $user->lastname = (isset($user_post['lastname'])) ? $user_post['lastname'] : '';
-            $user->admin = (isset($user_post['admin'])) ? $user_post['admin'] : 0;
-            $user->active = (isset($user_post['active'])) ? $user_post['active'] : 0;
+            $user->firstname = (isset($user_update['firstname'])) ? $user_update['firstname'] : '';
+            $user->lastname = (isset($user_update['lastname'])) ? $user_update['lastname'] : '';
+            $user->admin = (isset($user_update['admin'])) ? $user_update['admin'] : 0;
+            $user->active = (isset($user_update['active'])) ? $user_update['active'] : 0;
             $user->save();
             return array('error' => 0, 'data' => $user);
         } else {

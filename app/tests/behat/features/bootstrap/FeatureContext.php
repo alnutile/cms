@@ -73,7 +73,7 @@ class FeatureContext extends MinkContext
      */
     public function iWait()
     {
-        sleep(3);
+        sleep(2);
     }
 
 
@@ -118,5 +118,12 @@ class FeatureContext extends MinkContext
         } else {
             throw new Exception('Element not found');
         }
+    }
+
+    /**
+     * @Given /^I reset the session$/
+     */
+    public function iResetTheSession() {
+        $this->getSession()->reset();
     }
 }

@@ -45,9 +45,24 @@ class PagesController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($id = null)
 	{
-		//
+        if($id == null) {
+            $page = Page::first();
+        } else {
+            $page = Page::find($id);
+        }
+		if(Request::format() == 'html') {
+            if(!$page) {
+               return View::make('404');
+            }
+            return View::make('pages.show', compact('page'));
+        } else {
+            if(!$page) {
+                return Response::json(null, 404);
+            }
+            return Response::json($page, 200);
+        }
 	}
 
 	/**

@@ -1,5 +1,5 @@
-@javascript
-Feature: Testing the Dash
+  @javascript
+  Feature: Testing the Dash
 
   Background: Login to the site
     Given I am on "/logout"
@@ -12,9 +12,5 @@ Feature: Testing the Dash
 
   Scenario: I should see the user table
     Given I am on "/admin"
-    And I follow "user-id-2"
-    Then I should see "Administer a user"
-    Then I fill in "email" with ""
-    And I press "Submit"
-    And I wait
-    Then I should see ""
+    Then I should see "Dashboard"
+    And I should see "Admin Pages"

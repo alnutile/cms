@@ -29,11 +29,11 @@
                 <div class="form-group">
                     <label for="password">Password Confirmation</label><input ng-model="user.password_confirmation" type="password" class="form-control" id="password_confirmation" required/>
                 </div>
-                <div class="checkbox">
+                <div class="checkbox" ng-if="current_user.admin">
                     <label><input id="user-admin" type="checkbox" ng-model="user.admin"/> Admim</label>
                 </div>
                 <div class="checkbox">
-                    <label><input id="user-active" type="checkbox" ng-model="user.active"/> Active</label>
+                    <label><input id="user-active" type="checkbox" ng-model="user.active" ng-init="user.active=true"/> Active</label>
                 </div>
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>

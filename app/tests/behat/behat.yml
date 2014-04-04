@@ -1,7 +1,7 @@
 default:
   paths:
-    features:  /Users/alfrednutile/Laravel/lblog/app/tests/behat/features
-    bootstrap: /Users/alfrednutile/Laravel/lblog/app/tests/behat/features/bootstrap
+    features:  /Users/alfrednutile/Laravel/cms/app/tests/behat/features
+    bootstrap: /Users/alfrednutile/Laravel/cms/app/tests/behat/features/bootstrap
   formatter:
     name: pretty
   extensions:
@@ -11,10 +11,6 @@ default:
       selenium2: null
       base_url: 'http://localhost:8000/'
       browser_name: safari
-
-saucelabs:
-
-
 
 annotations:
   paths:

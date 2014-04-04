@@ -7,23 +7,19 @@ class PagesTableSeeder extends Seeder {
 
     public function run()
     {
+        DB::table('pages')->truncate();
+
         $faker = Faker::create();
 
         foreach(range(1, 10) as $index)
         {
             Page::create(
                 [
-                     'title' => "Example 1",
-                     'body'  => "Some text here",
+                     'title' => $faker->word(2),
+                     'body'  => $faker->paragraph(3),
                      'published' => 1
-                ],
-                [
-                    'title' => "Example 2",
-                    'body'  => "Some text here",
-                    'published' => 1
                 ]
             );
         }
     }
-
 }
