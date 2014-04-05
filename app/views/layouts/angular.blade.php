@@ -27,12 +27,10 @@
 <div class="container">
 
     <div class="row clearfix">
-
-
-        @if (Session::has('message'))
-        <div class="alert alert-{{ Session::get('type') }}">{{ Session::get('message') }}</div>
-        @endif
         <div class="row clearfix content">
+            @if (Session::has('message'))
+            <div class="alert alert-{{ Session::get('type') }}">{{ Session::get('message') }}</div>
+            @endif
             <ng-view></ng-view>
         </div>
     </div>

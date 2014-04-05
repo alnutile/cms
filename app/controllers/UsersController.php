@@ -102,10 +102,10 @@ class UsersController extends BaseController {
             $user->active       = (isset($user_post['active'])) ? 1 : 0;
             $user->password     = $user_post['password'];
             $user->save();
-            return array('error' => 0, 'data' => $user);
+            return $this->json_response('success', "User Saved", $user->toArray(), 200);
         } else {
-            $errors = $validator->errors();
-            return $errors;
+            $errors = $validator->errors()->toArray();
+            return $this->json_response('error', "User Could not be saved", $errors, 422);
         }
     }
 

@@ -23,7 +23,16 @@ angular.module('cms.alertServices', [])
                         }
                     })
                 } else {
-                    addAlert('success', successMsg, scope);
+                    var type = data || 'success';
+                    addAlert(type, successMsg, scope);
                 }
             }
-    }]);
+    }]).factory('alertDisplayJsonResponse', ['$rootScope', 'addAlert',
+        function($rootScope, addAlert){
+            return function(data, scope) {
+                angular.forEach(data, function(v,i){
+                    console.log(data[i][0]);
+                    addAlert('danger', data[i][0], scope);
+                })
+            }
+        }]);

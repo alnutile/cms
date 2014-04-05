@@ -13,10 +13,12 @@ class PagesTableSeeder extends Seeder {
 
         foreach(range(1, 10) as $index)
         {
+            $title = $faker->word(2);
+            $body = $faker->paragraph(3);
             Page::create(
                 [
-                     'title' => $faker->word(2),
-                     'body'  => $faker->paragraph(3),
+                     'title' => "$title",
+                     'body'  => "$body",
                      'published' => 1
                 ]
             );

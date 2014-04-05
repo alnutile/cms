@@ -15,4 +15,7 @@ class BaseController extends Controller {
 		}
 	}
 
+    public function json_response($status, $message, $data, $code) {
+        return Response::json(['status' => $status, 'message' => $message, 'data' => $data], $code);
+    }
 }

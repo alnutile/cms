@@ -29,5 +29,6 @@ Feature: Testing User Create
     And I fill in "email" with "test10@gmail.com"
     And I press "Submit"
     And I wait
+    And I should see "User has been saved"
     And I am on "/admin/users"
     Then I should see "test10@gmail.com"

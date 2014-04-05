@@ -2,7 +2,7 @@ angular.module('cms.auth_interceptor', []).
     factory('authInterceptor', ['$rootScope', '$q', '$window', '$location',
         function ($rootScope, $q, $window, $location) {
             return {
-            request: function (config) {
+                request: function (config) {
                     if ($window.sessionStorage.token) {
                         config.headers.Authorization = 'Bearer ' + $window.sessionStorage.token;
                     }
@@ -12,8 +12,10 @@ angular.module('cms.auth_interceptor', []).
                     return response || $q.when(response);
                 },
                 responseError: function(rejection) {
-                    $window.location.href = '/login';
-                    return;
+                    if(rejection == 401 || rejection == 400) {
+                        $window.location.href = '/login';
+                    }
+                    return rejection;
                 }
             };
         }]);

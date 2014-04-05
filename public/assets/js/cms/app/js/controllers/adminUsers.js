@@ -50,30 +50,41 @@ angular.module('cms.admin_users', []).
             }
 
         }]).
-    controller('AdminUserNew', ['$scope', '$http', '$location', '$route', '$routeParams', 'UsersServices', 'addAlert', 'alertDisplay', 'CSRF_TOKEN', 'current_user',
-        function($scope, $http, $location, $route, $routeParams, UsersServices, addAlert, alertDisplay, CSRF_TOKEN, current_user) {
+  controller('AdminUserNew', ['$scope', '$http', '$location', '$route', '$routeParams', 'UsersServices', 'addAlert', 'alertDisplay', 'CSRF_TOKEN', 'current_user', 'alertDisplayJsonResponse',
+        function($scope, $http, $location, $route, $routeParams, UsersServices, addAlert, alertDisplay, CSRF_TOKEN, current_user, alertDisplayJsonResponse) {
             $scope.current_user = current_user;
+
+            if($scope.current_user.data.admin != 1) {
+                //console.log('You are not admin');
+            }
 
             $scope.token = CSRF_TOKEN;
             $scope.alerts = [];
-            $scope.alerts_partial = { name: 'alerts', url: '/assets/js/cms/app/partials/alerts.html'}
             $scope.bc = { name: 'bc', url: '/assets/js/cms/app/partials/bc.html'}
             $scope.breadcrumbs = [];
+            $scope.user = {};
+            $scope.admin_menu_links = { name: 'admin_menu', url: '/assets/js/cms/app/partials/shared/nav_top.html'}
+            $scope.main_links = { name: 'main_links', url: '/assets/js/cms/app/partials/shared/main_links.html'}
+            $scope.alerts_partial = { name: 'alerts', url: '/assets/js/cms/app/partials/alerts.html'}
 
-
-            $scope.updateUser = function(user) {
+            $scope.createUser = function(user) {
                 var params = {
                     "user": user,
                     "_token": CSRF_TOKEN
                 }
-                UsersServices.create({}, params, function(data, status, headers, config){
-                    console.log(status);
-                    alertDisplay(data, $scope, "User has been saved...");
-                    if ( data.error == 0 ) {
-                        $location.path('/admin');
-                        alertDisplay(data, $scope, "User has been saved...");
-                    }
-                });
+                var create = UsersServices.create({}, params,
+                    function(response, header){
+                        if(response.status == 'error') {
+                          addAlert('danger', "Error Creating user", $scope);
+                          alertDisplayJsonResponse(response.data, $scope);
+                        } else {
+                          addAlert('success', "User Saved", $scope);
+                          var id = response.data.id;
+                          var click_here = "<a href='/admin/users/" + id + "/edit'>Click Here</a>";
+                          addAlert("success", "User has been saved. " + click_here + " to edit them or add another", $scope);
+                          $scope.user = {};
+                        }
+                    });
             }
 
         }]);
