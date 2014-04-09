@@ -3,8 +3,12 @@
 /* Filters */
 
 angular.module('cms.filters', []).
-  filter('interpolate', ['version', function(version) {
-    return function(text) {
-      return String(text).replace(/\%VERSION\%/mg, version);
-    }
-  }]);
+    filter('published', function(){
+        return function(status) {
+            if(status = 1) {
+                return 'yes';
+            } else {
+                return 'no';
+            }
+        }
+    });

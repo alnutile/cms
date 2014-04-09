@@ -1,16 +1,7 @@
 <?php
 
-Route::get('/', 'PagesController@show');
-
-Route::group(array('before' => 'auth'), function() {
-    Route::get('/testpage', function(){
-        $admin = Auth::user()->get(['email']);
-        return "You are logged in and your admin status us $admin";
-    });
-});
-
-Route::get('/auth/token', function(){
-    return csrf_token();
+Route::get('/admin', function(){
+    return View::make('layouts.angular');
 });
 
 #done
@@ -24,15 +15,46 @@ Route::get('/users/edit', array('before' => 'auth', 'uses' => 'UsersController@e
 #done
 Route::put('/users/update', array('before' => 'auth', 'uses' => 'UsersController@updatePassword'));
 
-//Route::get('api/v1/site/page/:pid',         'PageController@show'); //home, about, contact
+
+Route::group(array('before' => 'auth'), function() {
+    Route::get('/testpage', function(){
+        $admin = Auth::user()->get(['email']);
+        return "You are logged in and your admin status us $admin";
+    });
+});
+
+Route::get('/{id?}', function($id = null){
+    $page = new PagesController();
+    return $page->show($id);
+});
+
+
+Route::get('/auth/token', function(){
+    return csrf_token();
+});
+
+
+
+//Route::get('api/v1/site/admin/pages/:pid', function($pid) {
+//    $page = new PagesController();
+//    return $page->show($pid);
+//});
+
+
 //Route::get('api/v1/site/blog',              'BlogController@index');
-//Route::get('api/v1/site/blog/{:bid}',       'BlogController@show');
-//Route::get('api/v1/site/portfolio/{:pid}',  'PortfolioController@show');
+//Route::get('api/v1/site/blog/{bid}',       'BlogController@show');
+//Route::get('api/v1/site/portfolio/{pid}',  'PortfolioController@show');
 
 Route::group(array('before' => 'admin'), function()
 {
     Route::resource('api/v1/site/admin/users',           'UsersController');
-    Route::get('api/v1/site/admin/pages',           'PagesController@index');
+    Route::get('api/v1/site/admin/pages', 'PagesController@index');
+    Route::get('api/v1/site/admin/pages/{pid?}', function($pid = null){
+        $page = new PagesController();
+        return $page->show($pid);
+    });
+    Route::put('api/v1/site/admin/pages/{pid}', 'PagesController@update');
+
     Route::get('api/v1/site/admin',                 'AdminController@index');
 });
 

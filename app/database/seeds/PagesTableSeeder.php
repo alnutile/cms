@@ -9,19 +9,32 @@ class PagesTableSeeder extends Seeder {
     {
         DB::table('pages')->truncate();
 
-        $faker = Faker::create();
+        Page::create(
+            [
+                'title' => "Home Page",
+                'body'  => 'This will be your home page',
+                'published' => 1,
+                'slug' => '/home'
+            ]
+        );
 
-        foreach(range(1, 10) as $index)
-        {
-            $title = $faker->word(2);
-            $body = $faker->paragraph(3);
-            Page::create(
-                [
-                     'title' => "$title",
-                     'body'  => "$body",
-                     'published' => 1
-                ]
-            );
-        }
+        Page::create(
+            [
+                'title' => "About Page",
+                'body'  => 'This will be your about page',
+                'published' => 1,
+                'slug' => '/about'
+            ]
+        );
+
+        Page::create(
+            [
+                'title' => "Contact Page",
+                'body'  => 'This will be your Contact page',
+                'published' => 1,
+                'slug' => '/contact'
+            ]
+        );
+
     }
 }
