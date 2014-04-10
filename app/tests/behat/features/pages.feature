@@ -13,4 +13,20 @@ Feature: Testing Pages workflow
   Scenario: Admin should see all pages
     Given I am on "/admin/pages"
     And I wait
-    Then I should see "Manage your Main Pages here"
+    Then I should see "This will be your home page"
+
+  Scenario: Admin can edit a page
+    Given I am on "/admin/pages"
+    And I wait
+    And I follow "page-id-3"
+    And I wait
+    Then I should see "Edit Page: Contact Page"
+    And I fill in "title" with "New Contact Title"
+    And I press "Update"
+    And I wait
+    Then I should see "Page Updated New Contact Title"
+    Given I am on "/admin/pages"
+    Then I should see "New Contact Title"
+
+  #Scenario: Admin can see SLUG but non admin can not
+  #Scenario: Admin can add page but non admin can not
