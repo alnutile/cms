@@ -26,7 +26,26 @@ Feature: Testing Pages workflow
     And I wait
     Then I should see "Page Updated New Contact Title"
     Given I am on "/admin/pages"
+    And I wait
     Then I should see "New Contact Title"
 
-  #Scenario: Admin can see SLUG but non admin can not
+  Scenario: Admin can see SLUG
+    Given I am on "/admin/pages"
+    And I wait
+    And I follow "page-id-3"
+    And I wait
+    Then I should see "Must start with"
+
+  Scenario: Non admin can not see a SLUG
+    Given I am on "/logout"
+    Given I am on "/login"
+    And I fill in "email" with "test3@gmail.com"
+    And I fill in "password" with "password"
+    And I press "Login"
+    And I wait
+    Given I am on "/admin/pages"
+    And I wait
+    And I follow "page-id-3"
+    And I wait
+    Then I should not see "Must start with"
   #Scenario: Admin can add page but non admin can not

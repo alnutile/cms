@@ -12,6 +12,7 @@ angular.module('cms', [
         'cms.admin_pages',
         'cms.current_user',
         'cms.pagesService',
+        'cms.helpers',
         'cms.filters',
         'cms.admin_menu'
     ]).

@@ -45,16 +45,18 @@ Route::get('/auth/token', function(){
 //Route::get('api/v1/site/blog/{bid}',       'BlogController@show');
 //Route::get('api/v1/site/portfolio/{pid}',  'PortfolioController@show');
 
-Route::group(array('before' => 'admin'), function()
-{
-    Route::resource('api/v1/site/admin/users',           'UsersController');
+Route::group(array('before' => 'auth'), function() {
     Route::get('api/v1/site/admin/pages', 'PagesController@index');
     Route::get('api/v1/site/admin/pages/{pid?}', function($pid = null){
         $page = new PagesController();
         return $page->show($pid);
     });
     Route::put('api/v1/site/admin/pages/{pid}', 'PagesController@update');
+});
 
+Route::group(array('before' => 'admin'), function()
+{
+    Route::resource('api/v1/site/admin/users',           'UsersController');
     Route::get('api/v1/site/admin',                 'AdminController@index');
 });
 

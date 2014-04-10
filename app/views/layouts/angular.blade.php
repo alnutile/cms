@@ -56,6 +56,7 @@
 {{ HTML::script('/assets/js/cms/app/js/services/currentUser.js') }}
 {{ HTML::script('/assets/js/cms/app/js/services/users_services.js') }}
 {{ HTML::script('/assets/js/cms/app/js/services/pages_services.js') }}
+{{ HTML::script('/assets/js/cms/app/js/services/helpers.js') }}
 {{ HTML::script('/assets/js/cms/app/js/services/alertServices.js') }}
 {{ HTML::script('/assets/js/cms/app/js/directives/directives.js') }}
 {{ HTML::script('/assets/js/cms/app/js/filters/filters.js') }}
