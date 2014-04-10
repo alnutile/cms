@@ -6,6 +6,5 @@ class Page extends \Eloquent {
     public function getAll()
     {
         $pages = Page::where("published", '=', '1')->get();
-        dd($pages);
     }
 }

@@ -1,0 +1,33 @@
+<ng-include src="admin_menu_links.url"></ng-include>
+
+<ng-include src="'/assets/js/cms/app/partials/shared/top_banner.html'"></ng-include>
+
+<div class="row clearfix content">
+
+    <div class="col-md-4 column sidebar">
+        <ng-include src="help_page.url"></ng-include>
+
+        <ng-include src="main_links.url"></ng-include>
+    </div>
+
+    <div class="col-md-8 column content">
+        <div class="row clearfix">
+            <span ng-include="alerts_partial.url"></span>
+        </div>
+
+        <h1>Edit Page: {{ page.title }}</h1>
+        <form name="pageForm" ng-submit="updatePage()">
+            <div class="form-group">
+                <input name="title" type="text" ng-model="page.title" required="required" class="form-control">
+            </div>
+            <div class="form-group">
+                <textarea ng-model="page.body" class="form-control"></textarea>
+            </div>
+            <div class="form-actions">
+                <input type="submit" value="Update" class="btn btn-success">
+            </div>
+        </form>
+    </div>
+</div>
+
+<ng-include src="'/assets/js/cms/app/partials/shared/footer.html'"></ng-include>

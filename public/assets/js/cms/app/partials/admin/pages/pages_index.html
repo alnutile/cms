@@ -1,1 +1,41 @@
-<h1>Pages Index</h1>
+<ng-include src="admin_menu_links.url"></ng-include>
+
+<ng-include src="'/assets/js/cms/app/partials/shared/top_banner.html'"></ng-include>
+
+<div class="row clearfix content">
+
+    <div class="col-md-4 column sidebar">
+        <ng-include src="help_page.url"></ng-include>
+
+        <ng-include src="main_links.url"></ng-include>
+    </div>
+
+    <div class="col-md-8 column content">
+        <h1>Admin Pages</h1>
+        <div class="form-group col-md-4">
+            <input ng-model="query" type="text" class="form-control" placeholder="Search Pages">
+        </div>
+        <table class="table table-bordered table-hover table-striped">
+            <thead>
+            <tr>
+                <th>Title</th>
+                <th>Preview</th>
+                <th>URL</th>
+                <th>Active</th>
+                <th>Edit</th>
+            </tr>
+            </thead>
+            <tr ng-repeat="page in pages | filter:query">
+                <td>
+                    <a target="_blank" id="page-title-id-{{ page.id }}" ng-href="{{ page.slug }}">{{page.title}} <i class="glyphicon glyphicon-new-window"></i> </a>
+                </td>
+                <td> {{ page.body | limitTo:50 }} </td>
+                <td> {{ page.slug }} </td>
+                <td> {{ page.published | published }} </td>
+                <td><a id="page-id-{{ page.id }}" ng-href="/admin/pages/{{ page.id }}/edit">edit</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<ng-include src="'/assets/js/cms/app/partials/shared/footer.html'"></ng-include>
