@@ -34,6 +34,11 @@ angular.module('cms.admin_pages', []).
                 $scope.page = data.data;
                 $scope.original = angular.copy($scope.page);
             });
+            $scope.page = $scope.page || {};
+            $scope.page.content = 'test';
+            $scope.updateWysiwyg = function() {
+                console.log(updated);
+            };
             $scope.help = {};
             $scope.help.message = "Edit and Save the page"
             $scope.alerts = [];

@@ -47,42 +47,41 @@ Route::get('/api/v1/images', function(){
 
 Route::post('/api/v1/images', function(){
 
-    $dir = public_path() . '/assets/img/wysiwyg';
+    $rel = '/assets/img/wysiwyg';
+    $dir = public_path() . $rel;
     $_FILES['file']['type'] = strtolower($_FILES['file']['type']);
     if ($_FILES['file']['type'] == 'image/png'
         || $_FILES['file']['type'] == 'image/jpg'
         || $_FILES['file']['type'] == 'image/gif'
         || $_FILES['file']['type'] == 'image/jpeg')
     {
-        // setting file's mysterious name
-        $file = $dir.md5(date('YmdHis')).'.jpg';
-
-        // copying
         $tmp = $_FILES['file']['tmp_name'];
-        //$tmp = $dir . '/test.jpg';
         $dest = $dir . '/' . $_FILES['file']['name'];
         $file = new Symfony\Component\Filesystem\Filesystem();
-        $file->copy($tmp, $dest);
-
-        // displaying file
+        $file->copy($tmp, $dest, $override = TRUE);
         $array = array(
             'filelink' => '/assets/img/wysiwyg/'.$_FILES['file']['name']
         );
-        //echo stripslashes(json_encode($array));
     }
     return Response::json($array);
 });
 
-
 Route::get('/api/v1/gallery', function(){
-    $array = [array(
-        'thumb' => '/assets/img/wysiwyg/test.jpg',
-        'image' => '/assets/img/wysiwyg/test.jpg',
-        'title' => 'test',
-        'folder' => 'Folder 1',
-    )];
-    return Response::json($array);
+    $rel = '/assets/img/wysiwyg';
+    $finder = new Symfony\Component\Finder\Finder();
+    $dir = public_path() . '/assets/img/wysiwyg';
+    $iterator = $finder->in($dir)->name('*.png')->name('*.jpg');
+    $files = [];
+    $count = 0;
+    foreach($iterator as $file) {
+        $files[$count]['thumb'] = $rel . '/' . $file->getFilename();
+        $files[$count]['image'] = $rel . '/' . $file->getFilename();
+        $files[$count]['title'] = $file->getFilename();
+        $count ++;
+    }
+    return Response::json($files);
 });
+
 //Route::get('api/v1/site/blog',              'BlogController@index');
 //Route::get('api/v1/site/blog/{bid}',       'BlogController@show');
 //Route::get('api/v1/site/portfolio/{pid}',  'PortfolioController@show');

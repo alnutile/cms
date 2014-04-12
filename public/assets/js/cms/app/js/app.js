@@ -5,9 +5,7 @@
 angular.module('cms', [
         'ngRoute',
         'ngSanitize',
-        'wysiwyg.module',
         'angular-redactor',
-        'ui.tinymce',
         'cms.alertServices',
         'cms.usersServices',
         'cms.admin_users',
@@ -20,7 +18,6 @@ angular.module('cms', [
         'cms.admin_menu'
     ]).
     config(['$routeProvider', '$locationProvider', '$httpProvider', function($routeProvider, $locationProvider, $httpProvider) {
-
 
         $httpProvider.interceptors.push('authInterceptor');
 

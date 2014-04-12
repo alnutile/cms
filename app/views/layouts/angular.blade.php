@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
+    <link rel="shortcut icon" href="./favicon.png">
 
     <title>CMS</title>
 
@@ -14,9 +14,7 @@
     {{ HTML::style('assets/css/bootstrap.css') }}
     {{ HTML::style('assets/css/main.css') }}
     {{ HTML::style('assets/css/prettify.css') }}
-    {{ HTML::style('assets/js/cms/app/lib/font-awesome/css/font-awesome.min.css') }}
     {{ HTML::style('assets/js/cms/app/lib/angular-redactor/redactor.css') }}
-    {{ HTML::style('assets/js/cms/app/lib/angular-bootstrap-colorpicker/css/colorpicker.css') }}
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -45,6 +43,7 @@
 <!-- Placed at the end of the document so the pages load faster -->
 
 {{ HTML::script('/assets/js/jquery-1.11.0.min.js') }}
+{{ HTML::script('/assets/js/cms/app/lib/jquery-migrate-1.2.1.js') }}
 {{ HTML::script('/assets/js/cms/app/lib/angular/angular.js') }}
 {{ HTML::script('/assets/js/cms/app/lib/angular/angular-sanitize.js') }}
 {{ HTML::script('/assets/js/cms/app/lib/angular/angular-resource.js') }}
@@ -53,10 +52,6 @@
 {{ HTML::script('/assets/js/cms/app/lib/angular/angular-loader.js') }}
 {{ HTML::script('/assets/js/cms/app/lib/angular-redactor/redactor.js') }}
 {{ HTML::script('/assets/js/cms/app/lib/angular-redactor/angular-redactor.js') }}
-{{ HTML::script('/assets/js/cms/app/lib/angular-bootstrap-colorpicker/js/bootstrap-colorpicker-module.js') }}
-{{ HTML::script('/assets/js/cms/app/lib/angular-wysiwyg/angular-wysiwyg.js') }}
-{{ HTML::script('/assets/js/cms/app/lib/tinymce/tinymce.min.js') }}
-{{ HTML::script('/assets/js/cms/app/lib/tinymce/angular-ui/tinymce.js') }}
 {{ HTML::script('/assets/js/angular-ui/ui-bootstrap-tpls-0.10.0.js') }}
 {{ HTML::script('/assets/js/cms/app/js/controllers/adminPages.js') }}
 {{ HTML::script('/assets/js/cms/app/js/controllers/adminUsers.js') }}
