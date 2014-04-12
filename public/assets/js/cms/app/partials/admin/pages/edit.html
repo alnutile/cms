@@ -20,7 +20,7 @@
                 <input name="title" type="text" ng-model="page.title" required="required" class="form-control">
             </div>
             <div class="form-group">
-                <textarea ng-model="page.body" class="form-control"></textarea>
+                <textarea ng-model="page.body" redactor="redactorOptions"  class="form-control"></textarea>
             </div>
             <div class="form-group" ng-if="current_user.data.admin">
                 <input name="slug" type="text" ng-model="page.slug" required="required" class="form-control">
@@ -30,6 +30,7 @@
                 <input type="submit" value="Update" class="btn btn-success" ng-disabled="pageForm.$invalid || isUnchanged(page)">
             </div>
         </form>
+        {{page.body}}
     </div>
 </div>
 

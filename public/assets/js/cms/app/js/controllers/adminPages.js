@@ -23,6 +23,8 @@ angular.module('cms.admin_pages', []).
             if(!current_user.data.created_at) {
                 $window.location.href = '/login';
             }
+            $scope.redactorOptions = {imageUpload: '/api/v1/images', imageGetJson: '/api/v1/gallery'};
+
             $scope.menu = {};
             $scope.bc = { name: 'bc', url: '/assets/js/cms/app/partials/bc.html'}
             $scope.admin_menu_links = { name: 'admin_menu', url: '/assets/js/cms/app/partials/shared/nav_top.html'}

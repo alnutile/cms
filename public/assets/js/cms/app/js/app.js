@@ -5,6 +5,9 @@
 angular.module('cms', [
         'ngRoute',
         'ngSanitize',
+        'wysiwyg.module',
+        'angular-redactor',
+        'ui.tinymce',
         'cms.alertServices',
         'cms.usersServices',
         'cms.admin_users',

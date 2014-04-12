@@ -12,6 +12,11 @@ default:
       base_url: 'http://localhost:8000/'
       browser_name: safari
 
+remote:
+  extensions:
+    Behat\MinkExtension\Extension:
+      base_url: 'http://cms.stagingarea.us'
+
 annotations:
   paths:
     features: features/annotations
