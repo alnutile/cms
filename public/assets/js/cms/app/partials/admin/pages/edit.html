@@ -15,12 +15,15 @@
             <span ng-include="alerts_partial.url"></span>
         </div>
         <h1>Edit Page: {{ page.title }}</h1>
-        <form name="pageForm" ng-submit="updatePage()">
+        <form ng-submit="updatePage()">
             <div class="form-group">
                 <input name="title" type="text" ng-model="page.title" required="required" class="form-control">
             </div>
             <div class="form-group">
-                <textarea ng-model="page.body" class="form-control"></textarea>
+                <textarea cols="30" rows="40"
+                          ng-model="page.body"
+                          name="pageBody"
+                          ckeditor="editorOptions" rows="100"  required="required"></textarea>
             </div>
             <div class="form-group" ng-if="current_user.data.admin">
                 <input name="slug" type="text" ng-model="page.slug" required="required" class="form-control">

@@ -33,24 +33,44 @@ Route::get('/auth/token', function(){
     return csrf_token();
 });
 
-
-
 //Route::get('api/v1/site/admin/pages/:pid', function($pid) {
 //    $page = new PagesController();
 //    return $page->show($pid);
 //});
-
 
 //Route::get('api/v1/site/blog',              'BlogController@index');
 //Route::get('api/v1/site/blog/{bid}',       'BlogController@show');
 //Route::get('api/v1/site/portfolio/{pid}',  'PortfolioController@show');
 
 Route::group(array('before' => 'auth'), function() {
+
+    Route::post('/api/v1/ckeditor/images', function(){
+        $files = new FilesController();
+        return $files->postImage();
+    });
+
+    Route::post('/api/v1/ckeditor/files', function(){
+        $files = new FilesController();
+        return $files->postFile();
+    });
+
+    Route::get('/api/v1/ckeditor/files', function(){
+        $files = new FilesController();
+        return  $files->getFiles();
+    });
+
+    Route::get('/api/v1/ckeditor/gallery', function(){
+        $images = new FilesController();
+        return $images->getImages();
+    });
+
     Route::get('api/v1/site/admin/pages', 'PagesController@index');
+
     Route::get('api/v1/site/admin/pages/{pid?}', function($pid = null){
         $page = new PagesController();
         return $page->show($pid);
     });
+
     Route::put('api/v1/site/admin/pages/{pid}', 'PagesController@update');
 });
 

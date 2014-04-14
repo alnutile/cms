@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
+    <link rel="shortcut icon" href="./favicon.png">
 
     <title>CMS</title>
 
@@ -14,6 +14,8 @@
     {{ HTML::style('assets/css/bootstrap.css') }}
     {{ HTML::style('assets/css/main.css') }}
     {{ HTML::style('assets/css/prettify.css') }}
+    {{ HTML::style('assets/js/cms/app/lib/ng-ckeditor/ng-ckeditor.css') }}
+    {{ HTML::style('assets/js/cms/app/lib/angular-redactor/redactor.css') }}
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -48,6 +50,10 @@
 {{ HTML::script('/assets/js/cms/app/lib/angular/angular-route.js') }}
 {{ HTML::script('/assets/js/cms/app/lib/angular/angular-sanitize.js') }}
 {{ HTML::script('/assets/js/cms/app/lib/angular/angular-loader.js') }}
+{{ HTML::script('/assets/js/cms/app/lib/angular-redactor/redactor.js') }}
+{{ HTML::script('/assets/js/cms/app/lib/angular-redactor/angular-redactor.js') }}
+{{ HTML::script('/assets/js/cms/app/lib/ng-ckeditor/libs/ckeditor/ckeditor.js') }}
+{{ HTML::script('/assets/js/cms/app/lib/ng-ckeditor/ng-ckeditor.js') }}
 {{ HTML::script('/assets/js/angular-ui/ui-bootstrap-tpls-0.10.0.js') }}
 {{ HTML::script('/assets/js/cms/app/js/controllers/adminPages.js') }}
 {{ HTML::script('/assets/js/cms/app/js/controllers/adminUsers.js') }}
