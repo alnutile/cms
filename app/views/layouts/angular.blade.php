@@ -15,7 +15,6 @@
     {{ HTML::style('assets/css/main.css') }}
     {{ HTML::style('assets/css/prettify.css') }}
     {{ HTML::style('assets/js/cms/app/lib/ng-ckeditor/ng-ckeditor.css') }}
-    {{ HTML::style('assets/js/cms/app/lib/angular-redactor/redactor.css') }}
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -50,8 +49,6 @@
 {{ HTML::script('/assets/js/cms/app/lib/angular/angular-route.js') }}
 {{ HTML::script('/assets/js/cms/app/lib/angular/angular-sanitize.js') }}
 {{ HTML::script('/assets/js/cms/app/lib/angular/angular-loader.js') }}
-{{ HTML::script('/assets/js/cms/app/lib/angular-redactor/redactor.js') }}
-{{ HTML::script('/assets/js/cms/app/lib/angular-redactor/angular-redactor.js') }}
 {{ HTML::script('/assets/js/cms/app/lib/ng-ckeditor/libs/ckeditor/ckeditor.js') }}
 {{ HTML::script('/assets/js/cms/app/lib/ng-ckeditor/ng-ckeditor.js') }}
 {{ HTML::script('/assets/js/angular-ui/ui-bootstrap-tpls-0.10.0.js') }}

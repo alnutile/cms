@@ -63,9 +63,8 @@ class FilesController extends BaseController {
     public function getImages()
     {
         $rel = '/assets/img/wysiwyg';
-        $finder = new Symfony\Component\Finder\Finder();
         $dir = public_path() . '/assets/img/wysiwyg';
-        $iterator = $finder->in($dir)->name('*.png')->name('*.jpg');
+        $iterator = $this->finder->in($dir)->name('*.png')->name('*.jpg');
         $files = [];
         $count = 0;
         foreach($iterator as $file) {

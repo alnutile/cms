@@ -25,10 +25,19 @@
     <splitter split-orientation="vertical" split-proportion="0.49670812">
       <split-first>
         <leaf>
-          <file leaf-file-name="routes.php" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="routes.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/routes.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="46" column="0" selection-start="1306" selection-end="1306" vertical-scroll-proportion="0.33384615" vertical-offset="473" max-vertical-offset="1425">
+                <state line="43" column="0" selection-start="1251" selection-end="1251" vertical-scroll-proportion="0.0" vertical-offset="473" max-vertical-offset="1425">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/js/app.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="8" column="0" selection-start="170" selection-end="170" vertical-scroll-proportion="0.18461539" vertical-offset="0" max-vertical-offset="1515">
                   <folding />
                 </state>
               </provider>
@@ -37,7 +46,7 @@
           <file leaf-file-name="adminPages.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/js/controllers/adminPages.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="34" column="61" selection-start="2247" selection-end="2247" vertical-scroll-proportion="0.0" vertical-offset="312" max-vertical-offset="1500">
+                <state line="20" column="52" selection-start="1445" selection-end="1445" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1500">
                   <folding />
                 </state>
               </provider>
@@ -50,16 +59,16 @@
           <file leaf-file-name="adminPages.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/js/controllers/adminPages.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="20" column="22" selection-start="1414" selection-end="1415" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1500">
+                <state line="20" column="22" selection-start="1414" selection-end="1415" vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="1500">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="demo2.html" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="demo2.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/lib/ng-ckeditor/examples/demo2.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="22" column="23" selection-start="929" selection-end="929" vertical-scroll-proportion="0.23583461" vertical-offset="176" max-vertical-offset="840">
+                <state line="22" column="23" selection-start="929" selection-end="929" vertical-scroll-proportion="0.0" vertical-offset="176" max-vertical-offset="840">
                   <folding />
                 </state>
               </provider>
@@ -68,27 +77,47 @@
           <file leaf-file-name="index.blade.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/files/index.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="1" column="22" selection-start="79" selection-end="79" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
+                <state line="1" column="22" selection-start="79" selection-end="79" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="555">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="FilesController.php" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/controllers/FilesController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="64" column="0" selection-start="2553" selection-end="3076" vertical-scroll-proportion="0.45941806" vertical-offset="645" max-vertical-offset="1680">
                   <folding>
-                    <marker date="1397502351000" expanded="true" signature="479:629" placeholder="..." />
+                    <marker date="1397506736000" expanded="true" signature="3345:3616" placeholder="..." />
+                    <marker date="1397506736000" expanded="true" signature="3395:3590" placeholder="{...}" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="FilesController.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/controllers/FilesController.php">
+          <file leaf-file-name="README.rst" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/lib/ng-ckeditor/libs/ckeditor/plugins/imagebrowser/README.rst">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="9" column="18" selection-start="200" selection-end="200" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
-                  <folding>
-                    <element signature="e#7#43#0" expanded="true" />
-                    <element signature="n#postImage#0;n#FilesController#0;n#!!top" expanded="false" />
-                    <element signature="n#postFile#0;n#FilesController#0;n#!!top" expanded="false" />
-                    <element signature="n#getImages#0;n#FilesController#0;n#!!top" expanded="false" />
-                    <element signature="n#getFiles#0;n#FilesController#0;n#!!top" expanded="false" />
-                    <marker date="1397503458000" expanded="true" signature="3396:3667" placeholder="..." />
-                    <marker date="1397503458000" expanded="true" signature="3446:3641" placeholder="{...}" />
-                  </folding>
+                <state line="22" column="0" selection-start="1335" selection-end="1335" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1125">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="pages_index.html" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/partials/admin/pages/pages_index.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="24" column="29" selection-start="827" selection-end="827" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="edit.html" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/partials/admin/pages/edit.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="25" column="94" selection-start="796" selection-end="1009" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="660">
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -110,23 +139,23 @@
         <option value="$PROJECT_DIR$/public/assets/js/cms/app/lib/angular-redactor/redactor.css" />
         <option value="$PROJECT_DIR$/public/assets/js/cms/app/lib/angular-wysiwyg/angular-wysiwyg.js" />
         <option value="$PROJECT_DIR$/public/assets/js/cms/app/lib/angular-redactor/angular-redactor.js" />
-        <option value="$PROJECT_DIR$/public/assets/js/cms/app/js/app.js" />
         <option value="$PROJECT_DIR$/public/assets/js/cms/app/partials/admin/pages/edit.html" />
         <option value="$PROJECT_DIR$/public/assets/js/cms/app/js/app_js.js" />
-        <option value="$PROJECT_DIR$/app/views/layouts/angular.blade.php" />
         <option value="$PROJECT_DIR$/public/assets/js/cms/app/partials/admin/pages/pages_index.html" />
         <option value="$PROJECT_DIR$/public/assets/js/cms/app/lib/ng-ckeditor/src/scripts/02-directive.js" />
         <option value="$PROJECT_DIR$/app/views/files/index.php" />
         <option value="$PROJECT_DIR$/app/views/files/index.blade.php" />
         <option value="$PROJECT_DIR$/public/assets/js/cms/app/js/controllers/adminPages.js" />
-        <option value="$PROJECT_DIR$/app/controllers/FilesController.php" />
         <option value="$PROJECT_DIR$/app/routes.php" />
+        <option value="$PROJECT_DIR$/app/views/layouts/angular.blade.php" />
+        <option value="$PROJECT_DIR$/app/controllers/FilesController.php" />
+        <option value="$PROJECT_DIR$/public/assets/js/cms/app/js/app.js" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="700" />
+    <option name="x" value="701" />
     <option name="y" value="22" />
     <option name="width" value="1856" />
     <option name="height" value="1418" />
@@ -157,7 +186,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -638,6 +666,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -646,8 +675,8 @@
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../pse" />
     <property name="FullScreen" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PublishConfig">
     <servers>
@@ -732,7 +761,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="700" y="22" width="1856" height="1418" extended-state="0" />
+    <frame x="701" y="22" width="1856" height="1418" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -774,9 +803,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27037618" sideWeight="0.6704871" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -793,51 +822,19 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/lib/ng-ckeditor/libs/ckeditor/samples/plugins/dialog/dialog.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="2895">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/UsersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="53" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1935">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/pages/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="649">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="649" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/about.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="19" selection-start="406" selection-end="406" vertical-scroll-proportion="0.30660376" vertical-offset="0" max-vertical-offset="636">
-          <folding />
-        </state>
+        <state line="13" column="19" selection-start="406" selection-end="406" vertical-scroll-proportion="0.30660376" vertical-offset="0" max-vertical-offset="636" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/lib/ng-ckeditor/src/scripts/02-directive.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="57" column="22" selection-start="2317" selection-end="2317" vertical-scroll-proportion="0.4622496" vertical-offset="555" max-vertical-offset="2070">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/partials/admin/pages/pages_index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="29" selection-start="827" selection-end="827" vertical-scroll-proportion="0.5538462" vertical-offset="0" max-vertical-offset="690">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="13" selection-start="1731" selection-end="1731" vertical-scroll-proportion="0.7846154" vertical-offset="255" max-vertical-offset="1530">
           <folding />
         </state>
       </provider>
@@ -849,71 +846,87 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/lib/ng-ckeditor/libs/ckeditor/plugins/imagebrowser/README.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.7307692" vertical-offset="475" max-vertical-offset="1125">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/lib/ng-ckeditor/libs/ckeditor/plugins/imagebrowser/browser/browser.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="120" column="0" selection-start="3863" selection-end="3863" vertical-scroll-proportion="0.4923077" vertical-offset="1480" max-vertical-offset="2130">
-          <folding>
-            <marker date="1381203534000" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381203534000" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/lib/ng-ckeditor/libs/ckeditor/plugins/imagebrowser/plugin.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="650">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/js/controllers/adminPages.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="61" selection-start="2247" selection-end="2247" vertical-scroll-proportion="0.0" vertical-offset="312" max-vertical-offset="1500">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/FilesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="18" selection-start="200" selection-end="200" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
-          <folding>
-            <element signature="e#7#43#0" expanded="true" />
-            <element signature="n#postImage#0;n#FilesController#0;n#!!top" expanded="false" />
-            <element signature="n#postFile#0;n#FilesController#0;n#!!top" expanded="false" />
-            <element signature="n#getImages#0;n#FilesController#0;n#!!top" expanded="false" />
-            <element signature="n#getFiles#0;n#FilesController#0;n#!!top" expanded="false" />
-            <marker date="1397503458000" expanded="true" signature="3396:3667" placeholder="..." />
-            <marker date="1397503458000" expanded="true" signature="3446:3641" placeholder="{...}" />
-          </folding>
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="650" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/files/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="22" selection-start="79" selection-end="79" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
-          <folding>
-            <marker date="1397502351000" expanded="true" signature="479:629" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/lib/ng-ckeditor/examples/demo2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="23" selection-start="929" selection-end="929" vertical-scroll-proportion="0.23583461" vertical-offset="176" max-vertical-offset="840">
+        <state line="22" column="23" selection-start="929" selection-end="929" vertical-scroll-proportion="0.0" vertical-offset="176" max-vertical-offset="840">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/angular.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="46" selection-start="2533" selection-end="2533" vertical-scroll-proportion="0.8769231" vertical-offset="330" max-vertical-offset="1155">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="0" selection-start="1306" selection-end="1306" vertical-scroll-proportion="0.33384615" vertical-offset="473" max-vertical-offset="1425">
+        <state line="43" column="0" selection-start="1251" selection-end="1251" vertical-scroll-proportion="0.0" vertical-offset="473" max-vertical-offset="1425">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/lib/ng-ckeditor/libs/ckeditor/plugins/imagebrowser/README.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="0" selection-start="1335" selection-end="1335" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/partials/admin/pages/pages_index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="29" selection-start="827" selection-end="827" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/partials/admin/pages/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="94" selection-start="796" selection-end="1009" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="660">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/FilesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="0" selection-start="2553" selection-end="3076" vertical-scroll-proportion="0.45941806" vertical-offset="645" max-vertical-offset="1680">
+          <folding>
+            <marker date="1397506736000" expanded="true" signature="3345:3616" placeholder="..." />
+            <marker date="1397506736000" expanded="true" signature="3395:3590" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/js/controllers/adminPages.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="52" selection-start="1445" selection-end="1445" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1500">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="170" selection-end="170" vertical-scroll-proportion="0.18461539" vertical-offset="0" max-vertical-offset="1515">
           <folding />
         </state>
       </provider>

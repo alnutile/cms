@@ -6,7 +6,6 @@ angular.module('cms', [
         'ngRoute',
         'ngSanitize',
         'ngCkeditor',
-        'angular-redactor',
         'cms.alertServices',
         'cms.usersServices',
         'cms.admin_users',
