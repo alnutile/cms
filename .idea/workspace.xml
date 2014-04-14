@@ -22,126 +22,80 @@
     <favorites_list name="lblog" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="edit.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/partials/admin/pages/edit.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="0" selection-start="535" selection-end="535" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="675">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="adminPages.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/js/controllers/adminPages.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="0" selection-start="2921" selection-end="2921" vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="1185">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="angular-redactor.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/lib/angular-redactor/angular-redactor.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="40" selection-start="529" selection-end="529" vertical-scroll-proportion="0.22337279" vertical-offset="119" max-vertical-offset="855">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/js/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="0" selection-start="585" selection-end="585" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="1515">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tinymce.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/lib/tinymce/angular-ui/tinymce.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="546" max-vertical-offset="1245">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/routes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="0" selection-start="2457" selection-end="2457" vertical-scroll-proportion="0.0" vertical-offset="600" max-vertical-offset="1740">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Core_c.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/Core_c.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="10" selection-start="447" selection-end="447" vertical-scroll-proportion="0.0" vertical-offset="1407" max-vertical-offset="2070">
-              <folding>
-                <element signature="e#45#144#0" expanded="false" />
-                <element signature="e#165#294#0" expanded="false" />
-                <element signature="e#322#436#0" expanded="false" />
-                <element signature="e#492#754#0" expanded="false" />
-                <element signature="e#793#947#0" expanded="false" />
-                <element signature="e#994#1172#0" expanded="false" />
-                <element signature="e#1209#1395#0" expanded="false" />
-                <element signature="e#1429#1632#0" expanded="false" />
-                <element signature="e#1665#1946#0" expanded="false" />
-                <element signature="e#1981#2181#0" expanded="false" />
-                <element signature="e#2215#2331#0" expanded="false" />
-                <element signature="e#2361#2739#0" expanded="false" />
-                <element signature="e#2788#3045#0" expanded="false" />
-                <element signature="e#3091#3393#0" expanded="false" />
-                <element signature="e#3447#3671#0" expanded="false" />
-                <element signature="e#3717#3822#0" expanded="false" />
-                <element signature="e#3853#4070#0" expanded="false" />
-                <element signature="e#4109#4365#0" expanded="false" />
-                <element signature="e#4415#4530#0" expanded="false" />
-                <element signature="e#4642#4790#0" expanded="false" />
-                <element signature="e#4837#5253#0" expanded="false" />
-                <element signature="e#5349#5546#0" expanded="false" />
-                <element signature="e#5595#5932#0" expanded="false" />
-                <element signature="e#5978#6205#0" expanded="false" />
-                <element signature="e#6251#6475#0" expanded="false" />
-                <element signature="e#6521#6713#0" expanded="false" />
-                <element signature="e#6760#6995#0" expanded="false" />
-                <element signature="e#7045#7258#0" expanded="false" />
-                <element signature="e#7313#7529#0" expanded="false" />
-                <element signature="e#7570#7659#0" expanded="false" />
-                <element signature="e#7733#8350#0" expanded="false" />
-                <element signature="e#8486#8689#0" expanded="false" />
-                <element signature="e#8737#9300#0" expanded="false" />
-                <element signature="e#9328#9581#0" expanded="false" />
-                <element signature="e#9662#10343#0" expanded="false" />
-                <element signature="e#10405#11202#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Filesystem.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/symfony/filesystem/Symfony/Component/Filesystem/Filesystem.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="6" selection-start="525" selection-end="525" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7125">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="standard_4.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_4.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="772" column="9" selection-start="25888" selection-end="25888" vertical-scroll-proportion="0.0" vertical-offset="11187" max-vertical-offset="16320">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="vertical" split-proportion="0.49670812">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="routes.php" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/routes.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="46" column="0" selection-start="1306" selection-end="1306" vertical-scroll-proportion="0.33384615" vertical-offset="473" max-vertical-offset="1425">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="adminPages.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/js/controllers/adminPages.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="34" column="61" selection-start="2247" selection-end="2247" vertical-scroll-proportion="0.0" vertical-offset="312" max-vertical-offset="1500">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="adminPages.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/js/controllers/adminPages.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="20" column="22" selection-start="1414" selection-end="1415" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1500">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="demo2.html" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/lib/ng-ckeditor/examples/demo2.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="22" column="23" selection-start="929" selection-end="929" vertical-scroll-proportion="0.23583461" vertical-offset="176" max-vertical-offset="840">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.blade.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/files/index.blade.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="1" column="22" selection-start="79" selection-end="79" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
+                  <folding>
+                    <marker date="1397502351000" expanded="true" signature="479:629" placeholder="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="FilesController.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/controllers/FilesController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="9" column="18" selection-start="200" selection-end="200" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
+                  <folding>
+                    <element signature="e#7#43#0" expanded="true" />
+                    <element signature="n#postImage#0;n#FilesController#0;n#!!top" expanded="false" />
+                    <element signature="n#postFile#0;n#FilesController#0;n#!!top" expanded="false" />
+                    <element signature="n#getImages#0;n#FilesController#0;n#!!top" expanded="false" />
+                    <element signature="n#getFiles#0;n#FilesController#0;n#!!top" expanded="false" />
+                    <marker date="1397503458000" expanded="true" signature="3396:3667" placeholder="..." />
+                    <marker date="1397503458000" expanded="true" signature="3446:3641" placeholder="{...}" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -151,30 +105,31 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/tests/behat/features/pages.feature" />
-        <option value="$PROJECT_DIR$/behat_run_remote.sh" />
-        <option value="$PROJECT_DIR$/app/tests/behat/behat.yml" />
-        <option value="$PROJECT_DIR$/behat.yml" />
-        <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/public/assets/js/cms/app/lib/tinymc/tinymce.js" />
         <option value="$PROJECT_DIR$/public/assets/js/cms/app/lib/tinymce/tinymce.js" />
         <option value="$PROJECT_DIR$/public/assets/js/cms/app/lib/angular-redactor/redactor.js" />
         <option value="$PROJECT_DIR$/public/assets/js/cms/app/lib/angular-redactor/redactor.css" />
         <option value="$PROJECT_DIR$/public/assets/js/cms/app/lib/angular-wysiwyg/angular-wysiwyg.js" />
-        <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/public/assets/js/cms/app/lib/angular-redactor/angular-redactor.js" />
-        <option value="$PROJECT_DIR$/public/assets/js/cms/app/js/controllers/adminPages.js" />
         <option value="$PROJECT_DIR$/public/assets/js/cms/app/js/app.js" />
-        <option value="$PROJECT_DIR$/app/views/layouts/angular.blade.php" />
         <option value="$PROJECT_DIR$/public/assets/js/cms/app/partials/admin/pages/edit.html" />
+        <option value="$PROJECT_DIR$/public/assets/js/cms/app/js/app_js.js" />
+        <option value="$PROJECT_DIR$/app/views/layouts/angular.blade.php" />
+        <option value="$PROJECT_DIR$/public/assets/js/cms/app/partials/admin/pages/pages_index.html" />
+        <option value="$PROJECT_DIR$/public/assets/js/cms/app/lib/ng-ckeditor/src/scripts/02-directive.js" />
+        <option value="$PROJECT_DIR$/app/views/files/index.php" />
+        <option value="$PROJECT_DIR$/app/views/files/index.blade.php" />
+        <option value="$PROJECT_DIR$/public/assets/js/cms/app/js/controllers/adminPages.js" />
+        <option value="$PROJECT_DIR$/app/controllers/FilesController.php" />
+        <option value="$PROJECT_DIR$/app/routes.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
+    <option name="x" value="700" />
     <option name="y" value="22" />
-    <option name="width" value="1276" />
-    <option name="height" value="778" />
+    <option name="width" value="1856" />
+    <option name="height" value="1418" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -245,6 +200,336 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Johns CMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Johns CMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="partials" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Johns CMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="partials" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Johns CMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="partials" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Johns CMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Johns CMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Johns CMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Johns CMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Johns CMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="files" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wysiwyg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Johns CMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Johns CMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -264,6 +549,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Johns CMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -289,6 +596,46 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Johns CMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="files" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Johns CMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -299,8 +646,8 @@
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../pse" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PublishConfig">
     <servers>
@@ -325,11 +672,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/assets/files/wysiwyg" />
+      <recent name="$PROJECT_DIR$/public/assets/js/cms/app/lib/ng-ckeditor/libs/ckeditor/plugins" />
       <recent name="$PROJECT_DIR$/public/assets/img/wysiwyg" />
       <recent name="$PROJECT_DIR$/public/assets/js/cms/app/lib" />
       <recent name="$PROJECT_DIR$/public/assets/js/cms/app/lib/tinymce" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/public/assets/js/cms/app/partials/admin/pages" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/assets/js/cms/app/lib/tinymce/angular-ui" />
@@ -385,7 +732,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1276" height="778" extended-state="0" />
+    <frame x="700" y="22" width="1856" height="1418" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -394,7 +741,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27037618" sideWeight="0.6704871" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23168103" sideWeight="0.80614483" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295129" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -403,7 +750,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287483" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19385515" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.61898214" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -427,9 +774,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27037618" sideWeight="0.6704871" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -446,276 +793,127 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/lib/tinymce/langs/readme.md">
+    <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/lib/ng-ckeditor/libs/ckeditor/samples/plugins/dialog/dialog.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="748">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="2895">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/lib/angular-redactor/redactor.css">
+    <entry file="file://$PROJECT_DIR$/app/controllers/UsersController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="652" column="52" selection-start="39899" selection-end="39899" vertical-scroll-proportion="0.20060332" vertical-offset="9647" max-vertical-offset="10455">
-          <folding>
-            <element signature="e#7219#15394#2" expanded="false" />
-            <element signature="e#15571#30242#2" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/lib/angular-redactor/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="37" selection-start="462" selection-end="470" vertical-scroll-proportion="0.54298645" vertical-offset="0" max-vertical-offset="750">
+        <state line="0" column="0" selection-start="0" selection-end="53" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1935">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/lib/angular-redactor/demo/views/main.html">
+    <entry file="file://$PROJECT_DIR$/app/views/pages/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="26" selection-start="127" selection-end="127" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="649">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_4.php">
+    <entry file="file://$PROJECT_DIR$/app/views/about.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="772" column="9" selection-start="25888" selection-end="25888" vertical-scroll-proportion="0.0" vertical-offset="11187" max-vertical-offset="16320">
+        <state line="13" column="19" selection-start="406" selection-end="406" vertical-scroll-proportion="0.30660376" vertical-offset="0" max-vertical-offset="636">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/lib/tinymce/angular-ui/tinymce.js">
+    <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/lib/ng-ckeditor/src/scripts/02-directive.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1245">
+        <state line="57" column="22" selection-start="2317" selection-end="2317" vertical-scroll-proportion="0.4622496" vertical-offset="555" max-vertical-offset="2070">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/filesystem/Symfony/Component/Filesystem/Filesystem.php">
+    <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/partials/admin/pages/pages_index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="6" selection-start="525" selection-end="525" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="7125">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/Core_c.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="10" selection-start="447" selection-end="447" vertical-scroll-proportion="0.0" vertical-offset="1407" max-vertical-offset="2070">
-          <folding>
-            <element signature="e#45#144#0" expanded="false" />
-            <element signature="e#165#294#0" expanded="false" />
-            <element signature="e#322#436#0" expanded="false" />
-            <element signature="e#492#754#0" expanded="false" />
-            <element signature="e#793#947#0" expanded="false" />
-            <element signature="e#994#1172#0" expanded="false" />
-            <element signature="e#1209#1395#0" expanded="false" />
-            <element signature="e#1429#1632#0" expanded="false" />
-            <element signature="e#1665#1946#0" expanded="false" />
-            <element signature="e#1981#2181#0" expanded="false" />
-            <element signature="e#2215#2331#0" expanded="false" />
-            <element signature="e#2361#2739#0" expanded="false" />
-            <element signature="e#2788#3045#0" expanded="false" />
-            <element signature="e#3091#3393#0" expanded="false" />
-            <element signature="e#3447#3671#0" expanded="false" />
-            <element signature="e#3717#3822#0" expanded="false" />
-            <element signature="e#3853#4070#0" expanded="false" />
-            <element signature="e#4109#4365#0" expanded="false" />
-            <element signature="e#4415#4530#0" expanded="false" />
-            <element signature="e#4642#4790#0" expanded="false" />
-            <element signature="e#4837#5253#0" expanded="false" />
-            <element signature="e#5349#5546#0" expanded="false" />
-            <element signature="e#5595#5932#0" expanded="false" />
-            <element signature="e#5978#6205#0" expanded="false" />
-            <element signature="e#6251#6475#0" expanded="false" />
-            <element signature="e#6521#6713#0" expanded="false" />
-            <element signature="e#6760#6995#0" expanded="false" />
-            <element signature="e#7045#7258#0" expanded="false" />
-            <element signature="e#7313#7529#0" expanded="false" />
-            <element signature="e#7570#7659#0" expanded="false" />
-            <element signature="e#7733#8350#0" expanded="false" />
-            <element signature="e#8486#8689#0" expanded="false" />
-            <element signature="e#8737#9300#0" expanded="false" />
-            <element signature="e#9328#9581#0" expanded="false" />
-            <element signature="e#9662#10343#0" expanded="false" />
-            <element signature="e#10405#11202#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/finder/Symfony/Component/Finder/Finder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="260" column="34" selection-start="6886" selection-end="6886" vertical-scroll-proportion="0.4263323" vertical-offset="1348" max-vertical-offset="3030">
-          <folding>
-            <element signature="e#545#942#0" expanded="false" />
-            <element signature="e#1872#1903#0" expanded="false" />
-            <element signature="e#2030#2082#0" expanded="false" />
-            <element signature="e#2030#2129#0" expanded="false" />
-            <element signature="e#2030#2177#0" expanded="false" />
-            <element signature="e#2030#2209#0" expanded="false" />
-            <element signature="e#2231#2341#0" expanded="false" />
-            <element signature="e#2346#2418#0" expanded="false" />
-            <element signature="e#2811#2933#0" expanded="false" />
-            <element signature="e#2985#3156#0" expanded="false" />
-            <element signature="e#3161#3284#0" expanded="false" />
-            <element signature="e#3290#3475#0" expanded="false" />
-            <element signature="e#3480#3809#0" expanded="false" />
-            <element signature="e#3528#3672#0" expanded="false" />
-            <element signature="e#3815#3937#0" expanded="false" />
-            <element signature="e#3942#4044#0" expanded="false" />
-            <element signature="e#4050#4184#0" expanded="false" />
-            <element signature="e#4189#4366#0" expanded="false" />
-            <element signature="e#4240#4359#0" expanded="false" />
-            <element signature="e#4253#4358#1" expanded="false" />
-            <element signature="e#4263#4340#1" expanded="false" />
-            <element signature="e#4372#4510#0" expanded="false" />
-            <element signature="e#4515#4652#0" expanded="false" />
-            <element signature="e#4658#4790#0" expanded="false" />
-            <element signature="e#4795#4920#0" expanded="false" />
-            <element signature="e#4926#5479#0" expanded="false" />
-            <element signature="e#5484#5615#0" expanded="false" />
-            <element signature="e#5621#6227#0" expanded="false" />
-            <element signature="e#6232#6357#0" expanded="false" />
-            <element signature="e#6962#7249#0" expanded="false" />
-            <element signature="e#7254#7360#0" expanded="false" />
-            <element signature="e#7366#7770#0" expanded="false" />
-            <element signature="e#7775#7882#0" expanded="false" />
-            <element signature="e#7888#8302#0" expanded="false" />
-            <element signature="e#8307#8420#0" expanded="false" />
-            <element signature="e#8426#8920#0" expanded="false" />
-            <element signature="e#8925#9025#0" expanded="false" />
-            <element signature="e#9031#9535#0" expanded="false" />
-            <element signature="e#9540#9646#0" expanded="false" />
-            <element signature="e#9652#10064#0" expanded="false" />
-            <element signature="e#10069#10196#0" expanded="false" />
-            <element signature="e#10202#10486#0" expanded="false" />
-            <element signature="e#10491#10625#0" expanded="false" />
-            <element signature="e#10631#10958#0" expanded="false" />
-            <element signature="e#10963#11244#0" expanded="false" />
-            <element signature="e#11025#11215#0" expanded="false" />
-            <element signature="e#11128#11215#0" expanded="false" />
-            <element signature="e#11250#11561#0" expanded="false" />
-            <element signature="e#11566#11832#0" expanded="false" />
-            <element signature="e#11618#11803#0" expanded="false" />
-            <element signature="e#11716#11803#0" expanded="false" />
-            <element signature="e#11838#11973#0" expanded="false" />
-            <element signature="e#11978#12192#0" expanded="false" />
-            <element signature="e#12039#12122#0" expanded="false" />
-            <element signature="e#12198#12669#0" expanded="false" />
-            <element signature="e#12674#12780#0" expanded="false" />
-            <element signature="e#12786#13094#0" expanded="false" />
-            <element signature="e#13099#13225#0" expanded="false" />
-            <element signature="e#13231#13580#0" expanded="false" />
-            <element signature="e#13585#13711#0" expanded="false" />
-            <element signature="e#13717#14127#0" expanded="false" />
-            <element signature="e#14132#14275#0" expanded="false" />
-            <element signature="e#14281#14840#0" expanded="false" />
-            <element signature="e#14845#14986#0" expanded="false" />
-            <element signature="e#14992#15406#0" expanded="false" />
-            <element signature="e#15411#15554#0" expanded="false" />
-            <element signature="e#15560#15945#0" expanded="false" />
-            <element signature="e#15950#16063#0" expanded="false" />
-            <element signature="e#16069#16197#0" expanded="false" />
-            <element signature="e#16202#16301#0" expanded="false" />
-            <element signature="e#16307#16565#0" expanded="false" />
-            <element signature="e#16570#16714#0" expanded="false" />
-            <element signature="e#16720#17045#0" expanded="false" />
-            <element signature="e#17050#17598#0" expanded="false" />
-            <element signature="e#17124#17505#0" expanded="false" />
-            <element signature="e#17170#17495#0" expanded="false" />
-            <element signature="e#17244#17368#0" expanded="false" />
-            <element signature="e#17369#17495#0" expanded="false" />
-            <element signature="e#17604#17871#0" expanded="false" />
-            <element signature="e#17876#18540#0" expanded="false" />
-            <element signature="e#17920#18114#0" expanded="false" />
-            <element signature="e#18124#18259#0" expanded="false" />
-            <element signature="e#18312#18416#0" expanded="false" />
-            <element signature="e#18426#18507#0" expanded="false" />
-            <element signature="e#18546#18893#0" expanded="false" />
-            <element signature="e#18898#19607#0" expanded="false" />
-            <element signature="e#18946#19578#0" expanded="false" />
-            <element signature="e#19062#19157#0" expanded="false" />
-            <element signature="e#19158#19464#0" expanded="false" />
-            <element signature="e#19278#19416#0" expanded="false" />
-            <element signature="e#19465#19578#0" expanded="false" />
-            <element signature="e#19613#19708#0" expanded="false" />
-            <element signature="e#19713#19801#0" expanded="false" />
-            <element signature="e#19807#19868#0" expanded="false" />
-            <element signature="e#19873#20191#0" expanded="false" />
-            <element signature="e#19919#20161#0" expanded="false" />
-            <element signature="e#19943#20160#1" expanded="false" />
-            <element signature="e#19987#20088#0" expanded="false" />
-            <element signature="e#20197#20339#0" expanded="false" />
-            <element signature="e#20344#21134#0" expanded="false" />
-            <element signature="e#20399#20565#0" expanded="false" />
-            <element signature="e#20575#20715#0" expanded="false" />
-            <element signature="e#20725#21059#0" expanded="false" />
-            <element signature="e#20777#21049#0" expanded="false" />
-            <element signature="e#20835#21035#0" expanded="false" />
-            <element signature="e#20868#20983#0" expanded="false" />
-            <element signature="e#21140#21230#0" expanded="false" />
-            <element signature="e#21235#21956#0" expanded="false" />
-            <element signature="e#21313#21694#0" expanded="false" />
-            <element signature="e#21313#21731#0" expanded="false" />
-            <element signature="e#21313#21772#0" expanded="false" />
-            <element signature="e#21313#21807#0" expanded="false" />
-            <element signature="e#21313#21843#0" expanded="false" />
-            <element signature="e#21313#21885#0" expanded="false" />
-            <element signature="e#21313#21949#0" expanded="false" />
-            <element signature="e#21962#22004#0" expanded="false" />
-            <element signature="e#22009#22235#0" expanded="false" />
-            <element signature="e#22082#22228#0" expanded="false" />
-            <element signature="e#22092#22210#1" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="0" selection-start="2457" selection-end="2457" vertical-scroll-proportion="0.0" vertical-offset="600" max-vertical-offset="1740">
+        <state line="24" column="29" selection-start="827" selection-end="827" vertical-scroll-proportion="0.5538462" vertical-offset="0" max-vertical-offset="690">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="585" selection-end="585" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="1515">
+        <state line="51" column="13" selection-start="1731" selection-end="1731" vertical-scroll-proportion="0.7846154" vertical-offset="255" max-vertical-offset="1530">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/js/controllers/adminUsers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1425">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/lib/ng-ckeditor/libs/ckeditor/plugins/imagebrowser/README.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.7307692" vertical-offset="475" max-vertical-offset="1125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/lib/ng-ckeditor/libs/ckeditor/plugins/imagebrowser/browser/browser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="120" column="0" selection-start="3863" selection-end="3863" vertical-scroll-proportion="0.4923077" vertical-offset="1480" max-vertical-offset="2130">
+          <folding>
+            <marker date="1381203534000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1381203534000" expanded="false" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/lib/ng-ckeditor/libs/ckeditor/plugins/imagebrowser/plugin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="650">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/js/controllers/adminPages.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="0" selection-start="2921" selection-end="2921" vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="1185">
+        <state line="34" column="61" selection-start="2247" selection-end="2247" vertical-scroll-proportion="0.0" vertical-offset="312" max-vertical-offset="1500">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/angular.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/controllers/FilesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="34" selection-start="813" selection-end="813" vertical-scroll-proportion="0.46597633" vertical-offset="0" max-vertical-offset="1170">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/partials/admin/pages/edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="535" selection-end="535" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="675">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/textAngular-master/demo/demo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="23" selection-start="1088" selection-end="1088" vertical-scroll-proportion="0.16289593" vertical-offset="447" max-vertical-offset="1140">
+        <state line="9" column="18" selection-start="200" selection-end="200" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
           <folding>
-            <marker date="1397085986000" expanded="false" signature="-1:-1" placeholder="..." />
+            <element signature="e#7#43#0" expanded="true" />
+            <element signature="n#postImage#0;n#FilesController#0;n#!!top" expanded="false" />
+            <element signature="n#postFile#0;n#FilesController#0;n#!!top" expanded="false" />
+            <element signature="n#getImages#0;n#FilesController#0;n#!!top" expanded="false" />
+            <element signature="n#getFiles#0;n#FilesController#0;n#!!top" expanded="false" />
+            <marker date="1397503458000" expanded="true" signature="3396:3667" placeholder="..." />
+            <marker date="1397503458000" expanded="true" signature="3446:3641" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/lib/angular-redactor/angular-redactor.js">
+    <entry file="file://$PROJECT_DIR$/app/views/files/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="40" selection-start="529" selection-end="529" vertical-scroll-proportion="0.22337279" vertical-offset="119" max-vertical-offset="855">
+        <state line="1" column="22" selection-start="79" selection-end="79" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
+          <folding>
+            <marker date="1397502351000" expanded="true" signature="479:629" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/cms/app/lib/ng-ckeditor/examples/demo2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="23" selection-start="929" selection-end="929" vertical-scroll-proportion="0.23583461" vertical-offset="176" max-vertical-offset="840">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="0" selection-start="1306" selection-end="1306" vertical-scroll-proportion="0.33384615" vertical-offset="473" max-vertical-offset="1425">
           <folding />
         </state>
       </provider>

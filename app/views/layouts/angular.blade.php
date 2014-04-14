@@ -14,6 +14,7 @@
     {{ HTML::style('assets/css/bootstrap.css') }}
     {{ HTML::style('assets/css/main.css') }}
     {{ HTML::style('assets/css/prettify.css') }}
+    {{ HTML::style('assets/js/cms/app/lib/ng-ckeditor/ng-ckeditor.css') }}
     {{ HTML::style('assets/js/cms/app/lib/angular-redactor/redactor.css') }}
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -43,7 +44,6 @@
 <!-- Placed at the end of the document so the pages load faster -->
 
 {{ HTML::script('/assets/js/jquery-1.11.0.min.js') }}
-{{ HTML::script('/assets/js/cms/app/lib/jquery-migrate-1.2.1.js') }}
 {{ HTML::script('/assets/js/cms/app/lib/angular/angular.js') }}
 {{ HTML::script('/assets/js/cms/app/lib/angular/angular-sanitize.js') }}
 {{ HTML::script('/assets/js/cms/app/lib/angular/angular-resource.js') }}
@@ -52,6 +52,8 @@
 {{ HTML::script('/assets/js/cms/app/lib/angular/angular-loader.js') }}
 {{ HTML::script('/assets/js/cms/app/lib/angular-redactor/redactor.js') }}
 {{ HTML::script('/assets/js/cms/app/lib/angular-redactor/angular-redactor.js') }}
+{{ HTML::script('/assets/js/cms/app/lib/ng-ckeditor/libs/ckeditor/ckeditor.js') }}
+{{ HTML::script('/assets/js/cms/app/lib/ng-ckeditor/ng-ckeditor.js') }}
 {{ HTML::script('/assets/js/angular-ui/ui-bootstrap-tpls-0.10.0.js') }}
 {{ HTML::script('/assets/js/cms/app/js/controllers/adminPages.js') }}
 {{ HTML::script('/assets/js/cms/app/js/controllers/adminUsers.js') }}

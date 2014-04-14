@@ -21,10 +21,9 @@
             </div>
             <div class="form-group">
                 <textarea cols="30" rows="40"
-                          ng-model="page.content"
-                          ng-change="updateWysiwyg()"
+                          ng-model="page.body"
                           name="pageBody"
-                          redactor="redactorOptions" rows="100"  required="required"></textarea>
+                          ckeditor="editorOptions" rows="100"  required="required"></textarea>
             </div>
             <div class="form-group" ng-if="current_user.data.admin">
                 <input name="slug" type="text" ng-model="page.slug" required="required" class="form-control">

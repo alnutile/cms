@@ -25,6 +25,29 @@ angular.module('cms.admin_pages', []).
             }
             $scope.redactorOptions = {imageUpload: '/api/v1/images', imageGetJson: '/api/v1/gallery'};
 
+            $scope.editorOptions = {
+                language: 'en',
+                'skin': 'moono',
+                'extraPlugins': "imagebrowser,mediaembed",
+                imageBrowser_listUrl: '/api/v1/ckeditor/gallery',
+                filebrowserBrowseUrl: '/api/v1/ckeditor/files',
+                filebrowserImageUploadUrl: '/api/v1/ckeditor/images',
+                filebrowserUploadUrl: '/api/v1/ckeditor/files',
+                toolbarLocation: 'bottom',
+                toolbar: 'full',
+                toolbar_full: [
+                    { name: 'basicstyles',
+                        items: [ 'Bold', 'Italic', 'Strike', 'Underline' ] },
+                    { name: 'paragraph', items: [ 'BulletedList', 'NumberedList', 'Blockquote' ] },
+                    { name: 'editing', items: ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock' ] },
+                    { name: 'links', items: [ 'Link', 'Unlink', 'Anchor' ] },
+                    { name: 'tools', items: [ 'SpellChecker', 'Maximize' ] },
+                    { name: 'clipboard', items: [ 'Undo', 'Redo' ] },
+                    { name: 'styles', items: [ 'Format', 'FontSize', 'TextColor', 'PasteText', 'PasteFromWord', 'RemoveFormat' ] },
+                    { name: 'insert', items: [ 'Image', 'Table', 'SpecialChar', 'MediaEmbed' ] },'/',
+                ]
+            };
+
             $scope.menu = {};
             $scope.bc = { name: 'bc', url: '/assets/js/cms/app/partials/bc.html'}
             $scope.admin_menu_links = { name: 'admin_menu', url: '/assets/js/cms/app/partials/shared/nav_top.html'}
@@ -36,9 +59,7 @@ angular.module('cms.admin_pages', []).
             });
             $scope.page = $scope.page || {};
             $scope.page.content = 'test';
-            $scope.updateWysiwyg = function() {
-                console.log(updated);
-            };
+
             $scope.help = {};
             $scope.help.message = "Edit and Save the page"
             $scope.alerts = [];
