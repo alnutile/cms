@@ -1,6 +1,6 @@
-@server(['demo' => 'jenkins@cms.stagingarea.us'])
+@server(['cms' => 'jenkins@cms.stagingarea.us'])
 
-@task('dep', ['on'=>'demo'])
+@task('deploy', ['on'=>'demo'])
   cd /var/www/cms/site/current
   git pull origin development
   php artisan migrate:refresh --seed
