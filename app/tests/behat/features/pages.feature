@@ -13,7 +13,7 @@ Feature: Testing Pages workflow
   Scenario: Admin should see all pages
     Given I am on "/admin/pages"
     And I wait
-    Then I should see "This will be your home page"
+    Then I should see "Home Page"
 
   Scenario: Admin can edit a page
     Given I am on "/admin/pages"

@@ -113,7 +113,7 @@ class UsersController extends BaseController {
     public function authenticate()
     {
         if (Auth::attempt(array('email'=>Input::get('email'), 'password'=>Input::get('password')))) {
-            return Redirect::to('admin')->with('message', 'You are now logged in!');
+            return Redirect::to('/')->with('message', 'You are now logged in!');
         } else {
             Session::set('type', 'danger');
             return Redirect::to('login')

@@ -13,4 +13,4 @@
   Scenario: I should see the user table
     Given I am on "/admin"
     Then I should see "Dashboard"
-    And I should see "Admin Pages"
+    And I should see "Use the links above to manage that site."

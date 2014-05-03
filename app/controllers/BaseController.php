@@ -18,4 +18,19 @@ class BaseController extends Controller {
     public function json_response($status, $message, $data, $code) {
         return Response::json(['status' => $status, 'message' => $message, 'data' => $data], $code);
     }
+
+    public function respond($results, $view, $view_options)
+    {
+        if(Request::format() == 'html') {
+            if(!$results) {
+                return View::make('404');
+            }
+            return View::make($view, $view_options);
+        } else {
+            if(!$results) {
+                return Response::json(null, 404);
+            }
+            return Response::json(array('data' => $results->toArray(), 'status'=>'success', 'message' => "Page found"), 200);
+        }
+    }
 }

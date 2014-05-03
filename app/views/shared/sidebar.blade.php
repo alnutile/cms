@@ -1,14 +1,9 @@
-<div class="list-group">
-    <div class="list-group-item">
-        Link 1
-    </div>
-    <div class="list-group-item">
-        Link 2
-    </div>
-    <div class="list-group-item">
-        Link 3
-    </div>
-    <div class="list-group-item">
-        Link 4
-    </div>
+
+<div class="well sidebar-nav">
+    <ul class="nav nav-list">
+        <li class="nav-header">Portfolios</li>
+        <li class="active"><a href="#">Portfolio #1</a></li>
+        <li><a href="#">Portfolio #2</a></li>
+        <li><a href="#">Portfolio #3</a></li>
+    </ul>
 </div>

@@ -3,9 +3,11 @@
 class PagesController extends \BaseController {
 
     public $pages;
+    protected $banner = FALSE;
 
     public function __construct(Page $pages = null)
     {
+        $this->beforeFilter("admin", array('only' => ['index', 'post', 'delete', 'put']));
         $this->pages = ($pages == null) ? new Page : $pages;
     }
 	/**
@@ -15,12 +17,9 @@ class PagesController extends \BaseController {
 	 */
 	public function index()
 	{
-        if(Auth::guest()) {
-            return Response::json(null, 403);
-        } else {
-            $pages = $this->pages->all();
-            return Response::json($pages, 200);
-        }
+        $pages = $this->pages->all();
+        $banner = $this->banner;
+        return $this->respond($pages, 'pages.index',  compact('pages', 'banner'));
 	}
 
 	/**
@@ -60,18 +59,12 @@ class PagesController extends \BaseController {
                 $page = Page::where("slug", 'LIKE', '/' . $id)->first();
             }
         }
-
-		if(Request::format() == 'html') {
-            if(!$page) {
-               return View::make('404');
-            }
-            return View::make('pages.show', compact('page'));
+        if (isset($page) && $page->slug === '/home') {
+            $banner = TRUE;
         } else {
-            if(!$page) {
-                return Response::json(null, 404);
-            }
-            return Response::json(array('data' => $page->toArray(), 'status'=>'success', 'message' => "Page found"), 200);
+            $banner = FALSE;
         }
+        return $this->respond($page, 'pages.show',  compact('page', 'banner'));
 	}
 
 	/**
@@ -82,7 +75,8 @@ class PagesController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-        //
+        $page = Page::findOrFail($id);
+        return View::make('pages.edit', compact('page'));
 	}
 
 	/**

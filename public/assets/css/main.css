@@ -42,3 +42,9 @@ li.build {
     width:100%;
     max-height: 150px !important;
 }
+
+.blue .btn.btn-danger {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}

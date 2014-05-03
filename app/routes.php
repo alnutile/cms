@@ -1,8 +1,7 @@
 <?php
 
-Route::get('/admin', function(){
-    return View::make('layouts.angular');
-});
+
+Route::resource('pages', 'PagesController');
 
 #done
 Route::get('/login', 'UsersController@login');

@@ -35,7 +35,12 @@ App::after(function($request, $response)
 
 Route::filter('auth', function()
 {
-	if (Auth::guest()) return Redirect::guest('login');
+	if (Auth::guest()) {
+        if(!Request::isJson()) {
+            return Redirect::guest('login');
+        }
+        return Response::json(null, 403);
+    };
 });
 
 Route::filter('admin', function()
