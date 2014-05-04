@@ -12,11 +12,12 @@
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/pages">Admin Pages</a></li>
-                <li><a href="about">Admin Portfolios</a></li>
-                <li><a href="about">Admin Banners</a></li>
-                <li><a href="contact">Admin Menu</a></li>
+                <li class="active"><a href="/users">Admin Users</a></li>
+                <li><a href="#">Admin Portfolios</a></li>
+                <li><a href="#">Admin Banners</a></li>
+                <li><a href="#">Admin Menu</a></li>
                 @if(Auth::check())
-                    <li>{{ HTML::link('users/edit', 'Profile') }}</li>
+                    <li>{{ HTML::link('users/' . Auth::user()->id .  '/edit', 'Profile') }}</li>
                     <li>{{ HTML::link('logout', 'Logout') }}</li>
                 @endif
             </ul>

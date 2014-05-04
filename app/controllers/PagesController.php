@@ -3,11 +3,10 @@
 class PagesController extends \BaseController {
 
     public $pages;
-    protected $banner = FALSE;
 
     public function __construct(Page $pages = null)
     {
-        $this->beforeFilter("admin", array('only' => ['index', 'post', 'delete', 'put']));
+        $this->beforeFilter("auth", array('only' => ['index', 'create', 'delete', 'edit', 'update', 'store']));
         $this->pages = ($pages == null) ? new Page : $pages;
     }
 	/**
@@ -20,7 +19,7 @@ class PagesController extends \BaseController {
         $pages = $this->pages->all();
         $banner = $this->banner;
         return $this->respond($pages, 'pages.index',  compact('pages', 'banner'));
-	}
+    }
 
 	/**
 	 * Show the form for creating a new resource.
@@ -87,18 +86,23 @@ class PagesController extends \BaseController {
 	 */
 	public function update($id)
 	{
-        $validator = Validator::make(Input::all(), array('title' => 'required'));
+        $validator = Validator::make(Input::all(), array('title' => 'required', 'slug' =>'regex:/^\//'));
         $page_update = Input::all();
+        $page = Page::find($id);
+
         if($validator->passes()) {
-            $page = Page::find($page_update['id']);
             $page->title = $page_update['title'];
             $page->body = $page_update['body'];
-            $page->slug = $page_update['slug'];
+            $page->slug = (isset($page_update['slug'])) ?  $page_update['slug'] : $page->slug;
             $page->save();
-            return $this->json_response('success', "Page Updated", $page->toArray(), 200);
+            $banner = $this->bannerSet($page);
+            Session::put('message', 'Success updating page');
+            return $this->respond($page->with('success', "Page Updated"), 'pages.edit',  compact('page', 'banner', 'message'));
         } else {
-            $errors = $validator->errors()->toArray();
-            return $this->json_response('error', "Page Could not be saved", $errors, 422);
+            return Redirect::to('pages/' . $page->id . '/edit')->withErrors($validator)
+                ->withMessage("Error ");
+            Session::put('message', 'Error');
+            return $this->respond(null, 'pages.edit',  compact('page', 'banner'));
         }
 	}
 
@@ -112,5 +116,7 @@ class PagesController extends \BaseController {
 	{
 		//
 	}
+
+
 
 }

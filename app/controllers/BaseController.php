@@ -2,6 +2,9 @@
 
 class BaseController extends Controller {
 
+
+    protected $banner = FALSE;
+
 	/**
 	 * Setup the layout used by the controller.
 	 *
@@ -19,7 +22,7 @@ class BaseController extends Controller {
         return Response::json(['status' => $status, 'message' => $message, 'data' => $data], $code);
     }
 
-    public function respond($results, $view, $view_options)
+    public function respond($results, $view, $view_options, $message = null)
     {
         if(Request::format() == 'html') {
             if(!$results) {
@@ -30,7 +33,17 @@ class BaseController extends Controller {
             if(!$results) {
                 return Response::json(null, 404);
             }
-            return Response::json(array('data' => $results->toArray(), 'status'=>'success', 'message' => "Page found"), 200);
+            return Response::json(array('data' => $results->toArray(), 'status'=>'success', 'message' => "Success"), 200);
         }
+    }
+
+    public function bannerSet($page)
+    {
+        if (isset($page) && $page->slug === '/home') {
+            $banner = TRUE;
+        } else {
+            $banner = FALSE;
+        }
+        return $banner;
     }
 }

@@ -45,8 +45,12 @@ Route::filter('auth', function()
 
 Route::filter('admin', function()
 {
-    if (Auth::guest()) return Response::json(null, 401);
-    if (Auth::user()->admin != 1) return Response::json(null, 401);
+    if (Auth::guest()) {
+        return Redirect::guest('login')->with('message', 'You need to login');
+    }
+    if (Auth::user()->admin != 1) {
+        return Redirect::guest('login')->with('message', 'You need to login');
+    }
 });
 
 

@@ -11,6 +11,6 @@ Feature: Testing the Dash
     Then I should see "You are now logged in!"
 
   Scenario: I should see the user table
-    Given I am on "/admini/users"
+    Given I am on "/users"
     Then I should not see "Alfred Nutile"
     

@@ -2,17 +2,21 @@
 
 
 Route::resource('pages', 'PagesController');
-
+Route::resource('users', 'UsersController');
 #done
 Route::get('/login', 'UsersController@login');
 #done
 Route::put('/login', 'UsersController@authenticate');
 #done
 Route::get('/logout', array('before' => 'auth', 'uses' => 'UsersController@getLogout'));
-#done
-Route::get('/users/edit', array('before' => 'auth', 'uses' => 'UsersController@edit'));
-#done
-Route::put('/users/update', array('before' => 'auth', 'uses' => 'UsersController@updatePassword'));
+
+Route::get('/admin', array('before' => 'auth', 'uses' => 'AdminController@dash'));
+
+//#done
+//Route::get('/users/edit', array('before' => 'auth', 'uses' => 'UsersController@edit'));
+//#done
+//Route::put('/users/update', array('before' => 'auth', 'uses' => 'UsersController@updatePassword'));
+//
 
 
 Route::group(array('before' => 'auth'), function() {
@@ -63,6 +67,7 @@ Route::group(array('before' => 'auth'), function() {
         return $images->getImages();
     });
 
+
     Route::get('api/v1/site/admin/pages', 'PagesController@index');
 
     Route::get('api/v1/site/admin/pages/{pid?}', function($pid = null){
@@ -79,11 +84,12 @@ Route::group(array('before' => 'admin'), function()
     Route::get('api/v1/site/admin',                 'AdminController@index');
 });
 
-Route::get('api/v1/current_user', function(){
-    return Response::json(Auth::user(), 200);
-});
+//Route::get('api/v1/current_user', function(){
+//    return Response::json(Auth::user(), 200);
+//});
 
-App::missing(function($exception)
-{
-    return View::make('layouts.angular');
-});
+//
+//App::missing(function($exception)
+//{
+//    return View::make('layouts.angular');
+//});

@@ -6,18 +6,16 @@ class UsersController extends BaseController {
 
     public function __construct(User $users = null) {
         $this->users    = ($users) ? $users : new User();
+        $this->beforeFilter("auth", ['except' => ['login', 'getLogout', 'authenticate']]);
         $this->beforeFilter('csrf', array('on'=>'post'));
     }
 
 
     public function index()
     {
-        if(Auth::guest()) {
-            return Response::json(null, 403);
-        } else {
-            $user = $this->users->all();
-            return Response::json($user, 200);
-        }
+        $users = $this->users->all();
+        $banner = $this->banner;
+        return $this->respond($users, 'users.index',  compact('users', 'banner'));
     }
 
     public function login()
@@ -31,10 +29,10 @@ class UsersController extends BaseController {
         return ")]}',\n" . $user;
     }
 
-    public function edit($params)
+    public function edit($id)
     {
-        $user = $this->users->find($params['uid']);
-        return ")]}',\n" . $user;
+        $user = $this->users->find($id);
+        return View::make('users.edit', compact('user'));
     }
 
     public function getLogout() {
@@ -56,27 +54,38 @@ class UsersController extends BaseController {
         }
     }
 
-    public function update()
+    public function update($id)
     {
-        $validator = Validator::make(Input::all(), array('email' => 'required|email'));
         $user_update = Input::all();
+        $password = false;
+        if(isset($user_update['reset']) && $user_update['reset'] == 'on') {
+            $validator = Validator::make(Input::all(), array('email' => 'required|email', 'password' => 'confirmed|min:8'));
+            $password  = Hash::make($user_update['password']);
+        } else {
+            $validator = Validator::make(Input::all(), array('email' => 'required|email'));
+        }
+        $banner = $this->banner;
+        $user = User::find($id);
         if($validator->passes()) {
-            $user = User::find($user_update['id']);
             if($user_update['email'] != $user->email) {
                 if(User::where("email", 'LIKE', $user_update['email'])) {
                     return ['email' => ["Email is already in the system"]];
                 }
             }
-            $user->email = $user_update['email'];
-            $user->firstname = (isset($user_update['firstname'])) ? $user_update['firstname'] : '';
-            $user->lastname = (isset($user_update['lastname'])) ? $user_update['lastname'] : '';
-            $user->admin = (isset($user_update['admin'])) ? $user_update['admin'] : 0;
-            $user->active = (isset($user_update['active'])) ? $user_update['active'] : 0;
+            $user->email            = $user_update['email'];
+            $user->firstname        = (isset($user_update['firstname'])) ? $user_update['firstname'] : '';
+            $user->lastname         = (isset($user_update['lastname'])) ? $user_update['lastname'] : '';
+            $user->admin            = (isset($user_update['admin'])) ? $user_update['admin'] : 0;
+            $user->active           = (isset($user_update['active'])) ? $user_update['active'] : 0;
+            $user->password         = (isset($user_update['password'])) ? $password : $user->password;
             $user->save();
-            return array('error' => 0, 'data' => $user);
+            Session::put('message', 'User updated');
+            return $this->respond($user->with('success', "User updated"), 'users.edit',  compact('user', 'banner'));
         } else {
-            $errors = $validator->errors();
-            return $errors;
+
+            return Redirect::to('users/' . $user->id . '/edit')->withErrors($validator)
+                ->withMessage("Error ")
+                ->withInput(Input::except('password'));
         }
     }
 
@@ -113,7 +122,7 @@ class UsersController extends BaseController {
     public function authenticate()
     {
         if (Auth::attempt(array('email'=>Input::get('email'), 'password'=>Input::get('password')))) {
-            return Redirect::to('/')->with('message', 'You are now logged in!');
+            return Redirect::to('/admin')->with('message', 'You are now logged in!');
         } else {
             Session::set('type', 'danger');
             return Redirect::to('login')

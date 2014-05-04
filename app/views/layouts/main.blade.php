@@ -53,16 +53,13 @@ Use the corresponding body tag for your chosen theme
 
 <div class="row"><div class="span12"><hr></div></div>
 <!-- //end header -->
-
-    <div class="row clearfix">
-        <div class="col-lg-2">&nbsp;</div>
-        <div class="col-lg-6">
-            @include('shared.alerts')
-        </div>
-        <div class="col-lg-42">&nbsp;</div>
-    </div>
     <div class="container content">
         <div class="row">
+            <div class="row clearfix">
+                <div class="col-lg-12">
+                    @include('shared.alerts')
+                </div>
+            </div>
             @yield('content')
         </div>
     </div>

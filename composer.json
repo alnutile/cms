@@ -5,8 +5,9 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.1.*",
-		"way/generators": "dev-master"
-	},
+		"way/generators": "dev-master",
+        "doctrine/dbal": "~2.3"
+    },
 	"autoload": {
 		"classmap": [
 			"app/commands",

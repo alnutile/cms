@@ -16,7 +16,7 @@
             @foreach($pages as $page)
                 <tr>
                     <td><a href="/pages/{{$page->id}}">{{$page->title}}</a></td>
-                    <td><a href="/pages/{{$page->id}}/edit">edit</a></td>
+                    <td><a id="page-id-{{$page->id}}" href="/pages/{{$page->id}}/edit">edit</a></td>
                 </tr>
             @endforeach
         </tbody>
