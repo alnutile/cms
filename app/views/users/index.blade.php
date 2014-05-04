@@ -26,5 +26,7 @@
         </tbody>
     </table>
 </div>
-[[add user]]
+@if(Auth::user()->admin == 1 && $user->id != 1)
+    <a href="/users/create" class="btn btn-success">add user</a>
+@endif
 @stop

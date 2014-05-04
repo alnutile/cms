@@ -92,29 +92,29 @@ class UsersController extends BaseController {
 
     public function create()
     {
-        $user = new User;
-        return $user->getFillable();
+        $user = new User();
+        return View::make('users.create', compact('user'))->withMessage("Create User");
     }
 
     public function store()
     {
-
-        $user_post = Input::get('user');
-        $validator = Validator::make($user_post, array('password' => 'required|confirmed', 'email' => 'required|email|unique:users', 'password_confirmation' => 'required'));
-
+        $banner = $this->banner;
+        $validator = Validator::make($data = Input::all(), User::$rules);
+        $user = new User;
         if($validator->passes()) {
-            $user = new User();
-            $user->email        = $user_post['email'];
-            $user->firstname    = (isset($user_post['firstname'])) ? $user_post['firstname'] : '';
-            $user->lastname     = (isset($user_post['lastname'])) ? $user_post['lastname'] : '';
-            $user->admin        = (isset($user_post['admin'])) ? 1 : 0;
-            $user->active       = (isset($user_post['active'])) ? 1 : 0;
-            $user->password     = $user_post['password'];
+            $user->email        = $data['email'];
+            $user->firstname    = (isset($data['firstname'])) ? $data['firstname'] : '';
+            $user->lastname     = (isset($data['lastname'])) ? $data['lastname'] : '';
+            $user->admin        = (isset($data['admin'])) ? 1 : 0;
+            $user->active       = (isset($data['active'])) ? 1 : 0;
+            $user->password     = Hash::make($data['password']);
             $user->save();
-            return $this->json_response('success', "User Saved", $user->toArray(), 200);
+            Session::put('message', 'User created');
+            return Redirect::to("users")->withMessage("User Created");
         } else {
-            $errors = $validator->errors()->toArray();
-            return $this->json_response('error', "User Could not be saved", $errors, 422);
+            return Redirect::to('users/create')->withErrors($validator)
+                ->withMessage("Error creating user")
+                ->withInput(Input::except('password'));
         }
     }
 
