@@ -19,7 +19,6 @@
             <thead>
             <tr>
                 <th>Title</th>
-                <th>Preview</th>
                 <th>URL</th>
                 <th>Active</th>
                 <th>Edit</th>
@@ -29,7 +28,6 @@
                 <td>
                     <a target="_blank" id="page-title-id-{{ page.id }}" ng-href="{{ page.slug }}">{{page.title}} <i class="glyphicon glyphicon-new-window"></i> </a>
                 </td>
-                <td ng-bind-html="page.body | limitTo:50"></td>
                 <td> {{ page.slug }} </td>
                 <td> {{ page.published | published }} </td>
                 <td><a id="page-id-{{ page.id }}" ng-href="/admin/pages/{{ page.id }}/edit">edit</a></td>

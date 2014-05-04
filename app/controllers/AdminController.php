@@ -4,8 +4,8 @@
 class AdminController extends BaseController {
 
 
-    public function index()
+    public function dash()
     {
-        dd("Fun dash soon...");
+        return View::make('admins.dash');
     }
 }

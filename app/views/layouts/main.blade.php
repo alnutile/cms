@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="cms">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +12,8 @@
 
     <!-- Bootstrap core CSS -->
     {{ HTML::style('assets/css/bootstrap.css') }}
-    {{ HTML::style('assets/css/bootstrap-theme.min.css') }}
+    {{ HTML::style('assets/css/colorfrog.css') }}
+    <!-- <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'> -->
     {{ HTML::style('assets/css/main.css') }}
     {{ HTML::style('assets/css/prettify.css') }}
 
@@ -20,24 +21,47 @@
     <!--[if lt IE 9]>
     {{ HTML::script('assets/js/html5shiv.js') }}
     {{ HTML::script('assets/js/respond.min.js') }}
-    {{ HTML::script('assets/js/bootstrap/bootstrap.min.js') }}
     <![endif]-->
 
 </head>
 
 <body>
+<!--
+Use the corresponding body tag for your chosen theme
+<body class="blue">
+<body class="orange">
+<body class="green">
+<body class="bw">
+-->
+
+@if(Auth::user())
+    @include('shared.nav')
+@endif
+<!-- //start container -->
 <div class="container">
+    <header>
+        <a class="current brand" href="/">Brand Name Here and Link</a>
+    </header>
+    @include('shared.top-nav')
+</div>
+<!-- //end container -->
 
-    @include('shared.top_banner')
+<!-- start header -->
+    @if(isset($banner) && $banner == TRUE)
+        @include('shared.header')
+    @endif
 
-    <div class="row clearfix content">
-
-        @if (Session::has('message'))
-            <div class="alert alert-{{ Session::get('type') }}">{{ Session::get('message') }}</div>
-        @endif
-
+<div class="row"><div class="span12"><hr></div></div>
+<!-- //end header -->
+    <div class="container content">
+        <div class="row">
+            <div class="row clearfix">
+                <div class="col-lg-12">
+                    @include('shared.alerts')
+                </div>
+            </div>
             @yield('content')
-
+        </div>
     </div>
 
     @include('shared.footer')
@@ -49,7 +73,11 @@
 <!-- Placed at the end of the document so the pages load faster -->
 
 {{ HTML::script('/assets/js/jquery-1.11.0.min.js') }}
-
+{{ HTML::script('/assets/js/bootstrap/bootstrap.min.js') }}
+{{ HTML::script('/assets/js/jquery.fitvids.js') }}
+{{ HTML::script('/assets/js/colorfrog.js') }}
+{{ HTML::script('/assets/js/lib/ckeditor-full/ckeditor.js') }}
+{{ HTML::script('/assets/js/app.js') }}
 
 </body>
 </html>

@@ -11,9 +11,6 @@ Feature: Testing the Dash
     Then I should see "You are now logged in!"
 
   Scenario: I should see the user table
-    Given I am on "/admin"
-    Then I should not see "Admin Users"
-    And I should see "Admin Pages"
-    And I should see "Admin Banners"
-    And I should see "Your Profile"
-
+    Given I am on "/users"
+    Then I should not see "Alfred Nutile"
+    

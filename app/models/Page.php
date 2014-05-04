@@ -7,4 +7,10 @@ class Page extends \Eloquent {
     {
         $pages = Page::where("published", '=', '1')->get();
     }
+
+    static public function getMenu()
+    {
+        $pages = Page::where("slug", "!=", "")->orderBy("id")->get();
+        return $pages;
+    }
 }

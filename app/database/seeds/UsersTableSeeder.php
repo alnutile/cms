@@ -5,8 +5,11 @@ class UsersTableSeeder extends Seeder {
 	public function run()
 	{
         DB::table('users')->truncate();
+
+
         $dateTime = new DateTime('now');
         $dateTime = $dateTime->format('Y-m-d H:i:s');
+
         $users = array(
             array(
                 'firstname'  => 'Alfred',
@@ -17,7 +20,11 @@ class UsersTableSeeder extends Seeder {
                 'password'   => Hash::make('admin'),
                 'created_at' => $dateTime,
                 'updated_at' => $dateTime,
-            ),
+            )
+        );
+        DB::table('users')->insert( $users );
+
+        $users = array(
             array(
                 'firstname'  => 'Test',
                 'lastname'  => 'Two',
@@ -37,7 +44,7 @@ class UsersTableSeeder extends Seeder {
                 'password'   => Hash::make('password'),
                 'created_at' => $dateTime,
                 'updated_at' => $dateTime,
-            ),
+            )
         );
         DB::table('users')->insert( $users );
 	}
