@@ -14,7 +14,7 @@
     <input type="hidden" name="_token" value="{{{ Session::getToken() }}}">
     <fieldset>
         <div class="form-group">
-            <small>
+
                 <label for="email">Reference Name</label>
                 {{ Form::text('name', null, array('class' => 'form-control', 'tabindex' => 1)) }}
                 @if($errors->first('name'))
@@ -24,7 +24,7 @@
                 @endif
         </div>
         <div class="form-group">
-            <small>
+
                 <label for="email">Upload File</label>
                 {{ Form::file('banner_name', null, array('class' => 'form-control', 'tabindex' => 1)) }}
                 @if($errors->first('banner_name'))
@@ -42,7 +42,7 @@
         </div>
 
         <div class="form-group">
-            <small>
+
                 <label for="email">Sort Order</label>&nbsp;
                 {{ Form::selectRange('order', 1, 10, array('class' => 'form-control', 'tabindex' => 1)) }}
                 @if($errors->first('order'))

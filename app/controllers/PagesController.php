@@ -6,6 +6,7 @@ class PagesController extends \BaseController {
 
     public function __construct(Page $pages = null)
     {
+        parent::__construct();
         $this->beforeFilter("auth", array('only' => ['index', 'create', 'delete', 'edit', 'update', 'store']));
         $this->pages = ($pages == null) ? new Page : $pages;
     }
@@ -63,6 +64,7 @@ class PagesController extends \BaseController {
         } else {
             $banner = FALSE;
         }
+        $settings = $this->settings;
         return $this->respond($page, 'pages.show',  compact('page', 'banner'));
 	}
 

@@ -5,6 +5,7 @@ class UsersController extends BaseController {
     public $users;
 
     public function __construct(User $users = null) {
+        parent::__construct();
         $this->users    = ($users) ? $users : new User();
         $this->beforeFilter("auth", ['except' => ['login', 'getLogout', 'authenticate']]);
         $this->beforeFilter('csrf', array('on'=>'post'));

@@ -15,7 +15,7 @@
                         <input class="form-control" placeholder="{{{ Lang::get('confide::confide.username') }}}" type="text" name="username" id="username" value="{{{ Input::old('username') }}}">
                     </div>
                     <div class="form-group">
-                        <label for="email">{{{ Lang::get('confide::confide.e_mail') }}} <small>{{ Lang::get('confide::confide.signup.confirmation_required') }}</small></label>
+                        <label for="email">{{{ Lang::get('confide::confide.e_mail') }}} {{ Lang::get('confide::confide.signup.confirmation_required') }}</label>
                         <input class="form-control" placeholder="{{{ Lang::get('confide::confide.e_mail') }}}" type="text" name="email" id="email" value="{{{ Input::old('email') }}}">
                     </div>
                     <div class="form-group">

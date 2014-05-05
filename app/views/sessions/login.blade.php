@@ -11,15 +11,15 @@
                 <input type="hidden" name="_token" value="{{{ Session::getToken() }}}">
                 <fieldset>
                     <div class="form-group">
-                        <small>
+
                             <label for="email">Email</label>
                         {{ Form::text('email', null, array('class' => 'form-control', 'tabindex' => 1)) }}
                     </div>
                     <div class="form-group">
                         <label for="password">
-                            <small>
+
                                 <label for="password">Password</label>
-                            </small>
+
                         </label>
                         {{ Form::password('password', array('class' => 'form-control', 'tabindex' => 2)) }}
                     </div>

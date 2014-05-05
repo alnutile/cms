@@ -11,6 +11,7 @@ class BannersController extends \BaseController {
 
     public function __construct(Banner $banner_model = null, Filesystem $filesystem = null)
     {
+        parent::__construct();
         $this->beforeFilter("auth", array('only' => ['index', 'create', 'delete', 'edit', 'update', 'store']));
         $this->banner_model = ($banner_model == null) ? new Banner : $banner_model;
         $this->filesystem = ($filesystem == null) ? new Filesystem : $filesystem;

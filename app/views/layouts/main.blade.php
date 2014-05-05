@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
 
-    <title>CMS</title>
+    <title>{{$settings->name}}</title>
 
     <!-- Bootstrap core CSS -->
     {{ HTML::style('assets/css/bootstrap.css') }}
@@ -25,7 +25,7 @@
 
 </head>
 
-<body>
+<body class="{{$settings->color}}">
 <!--
 Use the corresponding body tag for your chosen theme
 <body class="blue">
