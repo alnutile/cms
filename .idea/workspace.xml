@@ -22,7 +22,17 @@
     <favorites_list name="lblog" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="nav.blade.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/shared/nav.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="65" selection-start="1533" selection-end="1533" vertical-scroll-proportion="0.3253796" vertical-offset="0" max-vertical-offset="922">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -35,31 +45,30 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/database/migrations/2014_05_04_132215_add_remember_token_to_users_table.php" />
         <option value="$PROJECT_DIR$/app/routes.php" />
-        <option value="$PROJECT_DIR$/app/controllers/AdminController.php" />
-        <option value="$PROJECT_DIR$/app/views/admins/dash.blade.php" />
-        <option value="$PROJECT_DIR$/app/tests/behat/features/dash_non_admin.feature" />
-        <option value="$PROJECT_DIR$/app/views/pages/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/controllers/PagesController.php" />
-        <option value="$PROJECT_DIR$/app/tests/behat/features/pages.feature" />
-        <option value="$PROJECT_DIR$/app/views/users/edit.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/pages/edit.blade.php" />
-        <option value="$PROJECT_DIR$/app/tests/behat/features/user_edit.feature" />
-        <option value="$PROJECT_DIR$/Envoy.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/users/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/controllers/UsersController.php" />
-        <option value="$PROJECT_DIR$/app/views/users/create.blade.php" />
-        <option value="$PROJECT_DIR$/app/tests/behat/features/user_create.feature" />
+        <option value="$PROJECT_DIR$/app/tests/behat/features/banners.feature" />
+        <option value="$PROJECT_DIR$/app/controllers/BannersController.php" />
+        <option value="$PROJECT_DIR$/app/views/banners/edit.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/banners/create.blade.php" />
+        <option value="$PROJECT_DIR$/app/models/Banner.php" />
+        <option value="$PROJECT_DIR$/public/assets/js/app.js" />
+        <option value="$PROJECT_DIR$/public/assets/js/jquery-1.11.js" />
+        <option value="$PROJECT_DIR$/app/views/layouts/main.blade.php" />
+        <option value="$PROJECT_DIR$/public/assets/js/colorfrog.js" />
+        <option value="$PROJECT_DIR$/app/views/banners/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/shared/header.blade.php" />
+        <option value="$PROJECT_DIR$/public/assets/css/main.css" />
+        <option value="$PROJECT_DIR$/app/database/seeds/DatabaseSeeder.php" />
+        <option value="$PROJECT_DIR$/app/database/seeds/BannersTableSeeder.php" />
+        <option value="$PROJECT_DIR$/app/views/shared/nav.blade.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="1066" />
-    <option name="y" value="175" />
-    <option name="width" value="1374" />
-    <option name="height" value="1058" />
+    <option name="y" value="22" />
+    <option name="width" value="2076" />
+    <option name="height" value="1001" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -175,6 +184,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -301,6 +311,76 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Johns CMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bootstrap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Johns CMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Johns CMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="bootstrap" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -377,6 +457,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="shared" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Johns CMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="sessions" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -400,6 +502,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Johns CMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="banners" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -505,13 +629,92 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Johns CMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Johns CMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="seeds" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Johns CMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="migrations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Johns CMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -521,8 +724,8 @@
     <property name="options.lastSelected" value="Errors" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../pse" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PublishConfig">
     <servers>
@@ -550,11 +753,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/assets/js/bootstrap" />
+      <recent name="$PROJECT_DIR$/app/tests/behat/features" />
       <recent name="$PROJECT_DIR$/app/views/users" />
       <recent name="$PROJECT_DIR$/app/views/user" />
       <recent name="$PROJECT_DIR$/public/assets/js/lib/ckeditor-full/plugins" />
-      <recent name="$PROJECT_DIR$/public/assets/js/lib/ckeditor-full" />
-      <recent name="$PROJECT_DIR$/public/assets/js/lib/ckeditor-small" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/controllers" />
@@ -610,8 +813,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1066" y="175" width="1374" height="1058" extended-state="0" />
-    <editor active="false" />
+    <frame x="0" y="22" width="2076" height="1001" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -619,7 +822,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19650654" sideWeight="0.650619" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19171484" sideWeight="0.650619" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295129" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -651,10 +854,10 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19674039" sideWeight="0.650619" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31191224" sideWeight="0.650619" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -671,114 +874,84 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/pages/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/tests/behat/features/banners.feature">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="20" selection-start="400" selection-end="400" vertical-scroll-proportion="0.34334764" vertical-offset="0" max-vertical-offset="699">
-          <folding />
-        </state>
+        <state line="3" column="11" selection-start="63" selection-end="63" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
+    <entry file="file://$PROJECT_DIR$/app/views/banners/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="82" selection-start="389" selection-end="389" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1500">
-          <folding />
-        </state>
+        <state line="39" column="73" selection-start="1599" selection-end="1599" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="1005" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admins/dash.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/views/banners/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="5" selection-start="246" selection-end="246" vertical-scroll-proportion="0.25751072" vertical-offset="0" max-vertical-offset="699">
-          <folding />
-        </state>
+        <state line="19" column="43" selection-start="710" selection-end="710" vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="990" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Auth/Reminders/RemindableInterface.php">
+    <entry file="file://$PROJECT_DIR$/app/views/shared/footer.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="212" selection-end="212" vertical-scroll-proportion="0.25751072" vertical-offset="0" max-vertical-offset="699">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/behat.yml">
+    <entry file="file://$PROJECT_DIR$/app/database/seeds/DatabaseSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="0" selection-start="972" selection-end="972" vertical-scroll-proportion="0.38088125" vertical-offset="0" max-vertical-offset="1339">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/behat_sl_run.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="699">
-          <folding />
-        </state>
+        <state line="14" column="39" selection-start="275" selection-end="275" vertical-scroll-proportion="0.23359288" vertical-offset="0" max-vertical-offset="899" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Envoy.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="210" selection-end="210" vertical-scroll-proportion="0.10082151" vertical-offset="0" max-vertical-offset="1339">
-          <folding />
-        </state>
+        <state line="9" column="0" selection-start="210" selection-end="210" vertical-scroll-proportion="0.15016685" vertical-offset="0" max-vertical-offset="899" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/User.php">
+    <entry file="file://$PROJECT_DIR$/app/database/seeds/BannersTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="6" selection-start="100" selection-end="100" vertical-scroll-proportion="0.061287027" vertical-offset="0" max-vertical-offset="1170">
-          <folding />
-        </state>
+        <state line="30" column="25" selection-start="899" selection-end="899" vertical-scroll-proportion="0.5005562" vertical-offset="0" max-vertical-offset="899" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/assets/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="60" selection-start="1007" selection-end="1007" vertical-scroll-proportion="0.44433096" vertical-offset="0" max-vertical-offset="979">
-          <folding />
-        </state>
+        <state line="61" column="1" selection-start="811" selection-end="812" vertical-scroll-proportion="1.0177976" vertical-offset="0" max-vertical-offset="1005" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/edit.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/views/shared/header.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="59" selection-start="4147" selection-end="4194" vertical-scroll-proportion="1.1705822" vertical-offset="219" max-vertical-offset="1545">
-          <folding />
-        </state>
+        <state line="54" column="56" selection-start="1721" selection-end="1721" vertical-scroll-proportion="0.9010011" vertical-offset="0" max-vertical-offset="990" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/sessions/notice.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/views/pages/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="979">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="899" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/UsersController.php">
+    <entry file="file://$PROJECT_DIR$/app/models/Banner.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="0" selection-start="3429" selection-end="3429" vertical-scroll-proportion="0.37180796" vertical-offset="1091" max-vertical-offset="2070">
-          <folding />
-        </state>
+        <state line="11" column="1" selection-start="347" selection-end="347" vertical-scroll-proportion="0.17895879" vertical-offset="0" max-vertical-offset="922" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/PagesController.php">
+    <entry file="file://$PROJECT_DIR$/app/views/banners/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="33" selection-start="167" selection-end="167" vertical-scroll-proportion="0.12257405" vertical-offset="0" max-vertical-offset="1905">
-          <folding />
-        </state>
+        <state line="22" column="33" selection-start="680" selection-end="680" vertical-scroll-proportion="0.35791758" vertical-offset="0" max-vertical-offset="922" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/pages/create.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/main.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="979">
-          <folding />
-        </state>
+        <state line="74" column="39" selection-start="2114" selection-end="2114" vertical-scroll-proportion="0.75247526" vertical-offset="426" max-vertical-offset="1335" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/tests/behat/features/user_create.feature">
+    <entry file="file://$PROJECT_DIR$/public/assets/js/colorfrog.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="19" selection-start="1027" selection-end="1027" vertical-scroll-proportion="0.505618" vertical-offset="0" max-vertical-offset="979">
-          <folding />
-        </state>
+        <state line="98" column="0" selection-start="2100" selection-end="2320" vertical-scroll-proportion="0.41137123" vertical-offset="1101" max-vertical-offset="2145" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/create.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/database/seeds/UsersTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="103" selection-start="3096" selection-end="3096" vertical-scroll-proportion="0.8695652" vertical-offset="150" max-vertical-offset="1290">
+        <state line="26" column="0" selection-start="676" selection-end="1501" vertical-scroll-proportion="0.42299348" vertical-offset="0" max-vertical-offset="922" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/shared/nav.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="65" selection-start="1533" selection-end="1533" vertical-scroll-proportion="0.3253796" vertical-offset="0" max-vertical-offset="922">
           <folding />
         </state>
       </provider>

@@ -48,3 +48,15 @@ li.build {
     background-color: #d9534f;
     border-color: #d43f3a;
 }
+
+img.banner-index {
+    max-height: 40px;
+}
+
+img.banner-show {
+    max-width: 400px;
+}
+
+img.home-banner {
+    max-width: 100%;
+}

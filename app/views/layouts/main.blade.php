@@ -72,7 +72,7 @@ Use the corresponding body tag for your chosen theme
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 
-{{ HTML::script('/assets/js/jquery-1.11.0.min.js') }}
+{{ HTML::script('/assets/js/jquery-1.11.js') }}
 {{ HTML::script('/assets/js/bootstrap/bootstrap.min.js') }}
 {{ HTML::script('/assets/js/jquery.fitvids.js') }}
 {{ HTML::script('/assets/js/colorfrog.js') }}

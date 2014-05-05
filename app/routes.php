@@ -3,6 +3,8 @@
 
 Route::resource('pages', 'PagesController');
 Route::resource('users', 'UsersController');
+Route::resource('banners', 'BannersController');
+
 #done
 Route::get('/login', 'UsersController@login');
 #done

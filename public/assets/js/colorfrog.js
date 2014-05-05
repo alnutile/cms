@@ -96,13 +96,13 @@ $(document).ready(function(){
 	* Add style param to all links
 	* REMOVE WHEN YOU HAVE PICKED YOUR STYLE
 	*/ 	
-	$('a').click(function(){
-		if(!$(this).hasClass('accordion-toggle')){
-			var curHref = $(this).prop('href');
-			var newHref = curHref.split('?')[0]+'?style='+style;
-			$(this).prop('href', newHref);
-		}
-	});
+//	$('a').click(function(){
+//		if(!$(this).hasClass('accordion-toggle')){
+//			var curHref = $(this).prop('href');
+//			var newHref = curHref.split('?')[0]+'?style='+style;
+//			$(this).prop('href', newHref);
+//		}
+//	});
 	// END OF CODE TO REMOVE
 	
 });

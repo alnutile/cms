@@ -1,3 +1,5 @@
 $(document).ready(function(){
-    CKEDITOR.replace( '.ckeditor');
+    if($('body .ckeditor').length) {
+        CKEDITOR.replace( '.ckeditor');
+    }
 });
