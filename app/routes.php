@@ -4,7 +4,7 @@
 Route::resource('pages', 'PagesController');
 Route::resource('users', 'UsersController');
 Route::resource('banners', 'BannersController');
-
+Route::resource('settings', 'SettingsController');
 #done
 Route::get('/login', 'UsersController@login');
 #done

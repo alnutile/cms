@@ -22,7 +22,7 @@ CKEDITOR.editorConfig = function( config ) {
         { name: 'basicstyles',
             items: [ 'Bold', 'Italic', 'Strike', 'Underline' ] },
         { name: 'paragraph', items: [ 'BulletedList', 'NumberedList', 'Blockquote' ] },
-        { name: 'editing', items: ['JustifyLeft', 'JustifyRight'] },
+        { name: 'editing', items: ['JustifyLeft', 'JustifyCenter', 'JustifyRight'] },
         { name: 'links', items: [ 'Link', 'Unlink', 'Anchor' ] },
         { name: 'tools', items: [ 'SpellChecker'] },
         { name: 'clipboard', items: [ 'Undo', 'Redo' ] },

@@ -15,7 +15,6 @@
             <input type="hidden" name="_token" value="{{{ Session::getToken() }}}">
             <fieldset>
                 <div class="form-group">
-                    <small>
                         <label for="email">First Name</label>
                         {{ Form::text('firstname', $user->firstname, array('class' => 'form-control', 'tabindex' => 1)) }}
                         @if($errors->first('email'))
@@ -25,7 +24,7 @@
                         @endif
                 </div>
                 <div class="form-group">
-                    <small>
+
                         <label for="email">Last Name</label>
                         {{ Form::text('lastname', $user->lastname, array('class' => 'form-control', 'tabindex' => 1)) }}
                         @if($errors->first('lastname'))
@@ -35,7 +34,7 @@
                         @endif
                 </div>
                 <div class="form-group">
-                    <small>
+
                         <label for="email">Email</label>
                         {{ Form::text('email', $user->email, array('id' => 'email', 'class' => 'form-control', 'tabindex' => 3)) }}
                         @if($errors->first('email'))
@@ -47,9 +46,9 @@
 
                 <div class="form-group">
                     <label for="password">
-                        <small>
+
                             <label for="password">Password</label>
-                        </small>
+
                     </label>
                     {{ Form::password('password', array('id' => 'password', 'class' => 'form-control', 'tabindex' => 3)) }}
                     @if($errors->first('password'))
@@ -60,9 +59,9 @@
                 </div>
                 <div class="form-group">
                     <label for="password_confirmation">
-                        <small>
+
                             <label for="password_confirmation">Password Confirmation</label>
-                        </small>
+
                     </label>
                     {{ Form::password('password_confirmation', array('id' => 'password_confirmation', 'class' => 'form-control', 'tabindex' => 4)) }}
                     @if($errors->first('password_confirmation'))

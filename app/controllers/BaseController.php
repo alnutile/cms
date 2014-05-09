@@ -2,9 +2,14 @@
 
 class BaseController extends Controller {
 
-
+    public $settings;
     protected $banner = FALSE;
 
+    public function __construct(Setting $settings = null)
+    {
+        $this->settings = ($settings == null) ? Setting::first() : $settings;
+        \View::share('settings', $this->settings);
+    }
 	/**
 	 * Setup the layout used by the controller.
 	 *
