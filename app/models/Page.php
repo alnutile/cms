@@ -10,7 +10,7 @@ class Page extends \Eloquent {
 
     static public function getMenu()
     {
-        $pages = Page::where("slug", "!=", "")->orderBy("id")->get();
+        $pages = Page::where("slug", "!=", "")->orderBy("menu_sort_order")->get();
         return $pages;
     }
 }
