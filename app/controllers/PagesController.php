@@ -98,12 +98,10 @@ class PagesController extends \BaseController {
             $page->slug = (isset($page_update['slug'])) ?  $page_update['slug'] : $page->slug;
             $page->save();
             $banner = $this->bannerSet($page);
-            Session::put('message', 'Success updating page');
             return $this->respond($page->with('success', "Page Updated"), 'pages.edit',  compact('page', 'banner', 'message'));
         } else {
             return Redirect::to('pages/' . $page->id . '/edit')->withErrors($validator)
                 ->withMessage("Error ");
-            Session::put('message', 'Error');
             return $this->respond(null, 'pages.edit',  compact('page', 'banner'));
         }
 	}

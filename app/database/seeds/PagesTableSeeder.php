@@ -14,7 +14,11 @@ class PagesTableSeeder extends Seeder {
                 'title' => "Home Page",
                 'body'  => 'This will be your home page',
                 'published' => 1,
-                'slug' => '/home'
+                'slug' => '/home',
+                'menu_sort_order' => 0,
+                'menu_parent' => 0,
+                'menu_name' => 'top',
+                'redirect_url' => ''
             ]
         );
 
@@ -23,7 +27,11 @@ class PagesTableSeeder extends Seeder {
                 'title' => "About Page",
                 'body'  => 'This will be your about page',
                 'published' => 1,
-                'slug' => '/about'
+                'slug' => '/about',
+                'menu_sort_order' => 0,
+                'menu_parent' => 1,
+                'menu_name' => 'top',
+                'redirect_url' => ''
             ]
         );
 
@@ -32,7 +40,11 @@ class PagesTableSeeder extends Seeder {
                 'title' => "Contact Page",
                 'body'  => 'This will be your Contact page',
                 'published' => 1,
-                'slug' => '/contact'
+                'slug' => '/contact',
+                'menu_sort_order' => 3,
+                'menu_parent' => 0,
+                'menu_name' => 'top',
+                'redirect_url' => ''
             ]
         );
 

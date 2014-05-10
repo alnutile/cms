@@ -5,6 +5,10 @@ Route::resource('pages', 'PagesController');
 Route::resource('users', 'UsersController');
 Route::resource('banners', 'BannersController');
 Route::resource('settings', 'SettingsController');
+
+Route::get('menus', 'MenusController@index');
+Route::post('menus', 'MenusController@store');
+
 #done
 Route::get('/login', 'UsersController@login');
 #done
@@ -37,15 +41,6 @@ Route::get('/{id?}', function($id = null){
 Route::get('/auth/token', function(){
     return csrf_token();
 });
-
-//Route::get('api/v1/site/admin/pages/:pid', function($pid) {
-//    $page = new PagesController();
-//    return $page->show($pid);
-//});
-
-//Route::get('api/v1/site/blog',              'BlogController@index');
-//Route::get('api/v1/site/blog/{bid}',       'BlogController@show');
-//Route::get('api/v1/site/portfolio/{pid}',  'PortfolioController@show');
 
 Route::group(array('before' => 'auth'), function() {
 
