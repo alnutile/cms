@@ -21,12 +21,14 @@ Feature: Testing User Create
     Then I follow "add user"
     And I wait
     Then I fill in "email" with "test@gmail.com"
-    Then I fill in "password" with "test@gmail.com"
-    Then I fill in "password_confirmation" with "test@gmail.com"
+    Then I fill in "password" with "testtest"
+    Then I fill in "password_confirmation" with "testtest"
     Then I press "Create"
     Then I wait
     And I should see "The email has already been taken."
     And I fill in "email" with "test10@gmail.com"
+    Then I fill in "password" with "testtest"
+    Then I fill in "password_confirmation" with "testtest"
     And I press "Create"
     And I wait
     And I should see "User Created"

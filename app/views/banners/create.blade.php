@@ -29,7 +29,7 @@
                 {{ Form::file('banner_name', null, array('class' => 'form-control', 'tabindex' => 1)) }}
                 @if($errors->first('banner_name'))
                 <div class="alert alert-danger">
-                    {{  $errors->first('banner_name'); }}
+                    Banner Image Required
                 </div>
                 @endif
         </div>

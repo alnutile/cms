@@ -22,7 +22,7 @@ Feature: Testing User Edit
     And I fill in "email" with "test@gmail.com"
     And I press "Update"
     And I wait
-    Then I should see "User updated"
+    Then I should see "User Updated"
     Given I am on "/users"
     And I should see "Test Two"
 

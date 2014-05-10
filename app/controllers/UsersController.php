@@ -80,8 +80,7 @@ class UsersController extends BaseController {
             $user->active           = (isset($user_update['active'])) ? $user_update['active'] : 0;
             $user->password         = (isset($user_update['password'])) ? $password : $user->password;
             $user->save();
-            Session::put('message', 'User updated');
-            return $this->respond($user->with('success', "User updated"), 'users.edit',  compact('user', 'banner'));
+            return Redirect::to("users/" . $user->id)->withMessage("User Updated");
         } else {
 
             return Redirect::to('users/' . $user->id . '/edit')->withErrors($validator)
@@ -110,7 +109,6 @@ class UsersController extends BaseController {
             $user->active       = (isset($data['active'])) ? 1 : 0;
             $user->password     = Hash::make($data['password']);
             $user->save();
-            Session::put('message', 'User created');
             return Redirect::to("users")->withMessage("User Created");
         } else {
             return Redirect::to('users/create')->withErrors($validator)

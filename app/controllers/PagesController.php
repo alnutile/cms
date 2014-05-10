@@ -98,7 +98,7 @@ class PagesController extends \BaseController {
             $page->slug = (isset($page_update['slug'])) ?  $page_update['slug'] : $page->slug;
             $page->save();
             $banner = $this->bannerSet($page);
-            return $this->respond($page->with('success', "Page Updated"), 'pages.edit',  compact('page', 'banner', 'message'));
+            return Redirect::to("/pages/" . $page->id)->withMessage("Page Updated");
         } else {
             return Redirect::to('pages/' . $page->id . '/edit')->withErrors($validator)
                 ->withMessage("Error ");

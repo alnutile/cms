@@ -18,7 +18,7 @@ Feature: Testing Pages workflow
     And I fill in "title" with "New Contact Title"
     And I press "Update"
     And I wait
-    Then I should see "Success updating page"
+    Then I should see "Page Updated"
     Given I am on "/pages"
     And I wait
     Then I should see "New Contact Title"
