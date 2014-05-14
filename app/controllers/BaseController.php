@@ -3,11 +3,13 @@
 class BaseController extends Controller {
 
     public $settings;
+    public $portfolio;
     protected $banner = FALSE;
 
-    public function __construct(Setting $settings = null)
+    public function __construct(Setting $settings = null, Portfolio $portfolio = null)
     {
         $this->settings = ($settings == null) ? Setting::first() : $settings;
+        $this->portfolio = ($portfolio == null) ? Portfolio::all() : $portfolio;
         \View::share('settings', $this->settings);
     }
 	/**
@@ -51,4 +53,10 @@ class BaseController extends Controller {
         }
         return $banner;
     }
+
+    public function getPortfolioBlock()
+    {
+        return Portfolio::allActiveSorted();
+    }
+
 }

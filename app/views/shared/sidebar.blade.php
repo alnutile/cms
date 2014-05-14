@@ -1,9 +1,30 @@
+<?php $portfolios = Portfolio::published()->orderByOrder()->get(); ?>
 
+@if(!$portfolios)
+    <!-- no portfolio items -->
+@else
 <div class="well sidebar-nav">
     <ul class="nav nav-list">
-        <li class="nav-header">Portfolios</li>
-        <li class="active"><a href="#">Portfolio #1</a></li>
-        <li><a href="#">Portfolio #2</a></li>
-        <li><a href="#">Portfolio #3</a></li>
-    </ul>
-</div>
+        <?php
+            if(Request::server('PATH_INFO') == '/portfolios') {
+                $icon = '<i class="glyphicon glyphicon-th"></i>';
+            } else {
+                $icon = '';
+            }
+        ?>
+        <li class="nav-header">
+            <h4>{{$icon}}&nbsp;<a href="/portfolios">Portfolio</a></h4>
+        </li>
+        @foreach($portfolios as $portfolio)
+            <?php
+                if(Request::server('PATH_INFO') == '/portfolios/' . $portfolio->id) {
+                     $active = 'active';
+                } else {
+                     $active = 'not-active';
+                }
+            ?>
+            <li class="{{$active}}"><a href="/portfolios/{{$portfolio->id}}">{{$portfolio->title}}</a></li>
+        @endforeach
+        </ul>
+    </div>
+@endif
