@@ -16,7 +16,7 @@ class BannersController extends \BaseController {
         $this->banner_model = ($banner_model == null) ? new Banner : $banner_model;
         $this->filesystem = ($filesystem == null) ? new Filesystem : $filesystem;
         $this->banner_path = "/img/banners";
-        $this->banner_dest = "public/img/banners";
+        $this->banner_dest = public_path() . "/img/banners";
     }
 
     public function getBannerPath()

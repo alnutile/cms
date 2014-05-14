@@ -25,10 +25,10 @@
     <splitter split-orientation="horizontal" split-proportion="0.6694915">
       <split-first>
         <leaf>
-          <file leaf-file-name="header.blade.php" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/views/shared/header.blade.php">
+          <file leaf-file-name="BannersController.php" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/controllers/BannersController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="38" column="18" selection-start="1175" selection-end="1175" vertical-scroll-proportion="0.40860215" vertical-offset="0" max-vertical-offset="1395">
+                <state line="38" column="5" selection-start="1155" selection-end="1155" vertical-scroll-proportion="0.39073807" vertical-offset="30" max-vertical-offset="2625">
                   <folding />
                 </state>
               </provider>
@@ -69,7 +69,6 @@
         <option value="$PROJECT_DIR$/app/views/layouts/template.html" />
         <option value="$PROJECT_DIR$/app/database/seeds/SettingsTableSeeder.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2014_05_05_023402_add_name_to_settings_table.php" />
-        <option value="$PROJECT_DIR$/app/controllers/BannersController.php" />
         <option value="$PROJECT_DIR$/app/views/shared/footer.blade.php" />
         <option value="$PROJECT_DIR$/app/views/settings/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/controllers/SettingsController.php" />
@@ -98,6 +97,7 @@
         <option value="$PROJECT_DIR$/app/tests/behat/features/user_create.feature" />
         <option value="$PROJECT_DIR$/app/models/Banner.php" />
         <option value="$PROJECT_DIR$/app/views/shared/header.blade.php" />
+        <option value="$PROJECT_DIR$/app/controllers/BannersController.php" />
       </list>
     </option>
   </component>
@@ -866,11 +866,6 @@
         <state line="18" column="7" selection-start="541" selection-end="541" vertical-scroll-proportion="0.3576159" vertical-offset="0" max-vertical-offset="755" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/BannersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="30" selection-start="345" selection-end="345" vertical-scroll-proportion="-0.7075472" vertical-offset="720" max-vertical-offset="2625" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/banners/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="31" column="20" selection-start="1167" selection-end="1188" vertical-scroll-proportion="0.30463576" vertical-offset="235" max-vertical-offset="990" />
@@ -888,7 +883,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/BaseController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="52" selection-start="945" selection-end="945" vertical-scroll-proportion="0.5148248" vertical-offset="143" max-vertical-offset="885" />
+        <state line="35" column="52" selection-start="945" selection-end="945" vertical-scroll-proportion="0.5148248" vertical-offset="143" max-vertical-offset="885">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/PagesController.php">
@@ -942,7 +939,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/shared/header.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="18" selection-start="1175" selection-end="1175" vertical-scroll-proportion="0.40860215" vertical-offset="0" max-vertical-offset="1395">
+        <state line="33" column="22" selection-start="955" selection-end="955" vertical-scroll-proportion="0.3548387" vertical-offset="0" max-vertical-offset="1395">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/BannersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="5" selection-start="1155" selection-end="1155" vertical-scroll-proportion="0.39073807" vertical-offset="30" max-vertical-offset="2625">
           <folding />
         </state>
       </provider>
