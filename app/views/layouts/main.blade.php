@@ -13,9 +13,10 @@
     <!-- Bootstrap core CSS -->
     {{ HTML::style('assets/css/bootstrap.css') }}
     {{ HTML::style('assets/css/colorfrog.css') }}
+    {{ HTML::style('assets/css/font-awesome.css') }}
     <!-- <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'> -->
-    {{ HTML::style('assets/css/main.css') }}
     {{ HTML::style('assets/css/prettify.css') }}
+    {{ HTML::style('assets/css/main.css') }}
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -40,7 +41,11 @@ Use the corresponding body tag for your chosen theme
 <!-- //start container -->
 <div class="container">
     <header>
-        <a class="current brand" href="/">Brand Name Here and Link</a>
+        @if($settings->logo)
+            <a href="/">{{ HTML::image("/img/settings/{$settings->logo}", $settings->name)}}</a>
+        @else
+            <h2><a href="/">{{$settings->name}}</a></h2>
+        @endif
     </header>
     @include('shared.top-nav')
 </div>

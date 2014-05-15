@@ -25,18 +25,27 @@
 
         <div class="form-group">
                 <label for="logo">Upload Logo</label>
-                {{ Form::file('logo', null, array('class' => 'form-control', 'tabindex' => 1)) }}
+                {{ Form::file('logo', null, array('class' => 'form-control', 'tabindex' => 2)) }}
                 @if($errors->first('logo'))
                 <div class="alert alert-danger">
                     {{  $errors->first('logo'); }}
                 </div>
                 @endif
-                <img src="{{$path}}/{{$setting->logo}}" class="banner-show">
+                @if($setting->logo) <img src="{{$path}}/{{$setting->logo}}" class="banner-show"> @endif
         </div>
-
+        @if($setting->logo)
+            <div class="form-group">
+                <div class="controls">
+                    <div class="checkbox">
+                        <label class="checkbox">{{ Form::checkbox('remove_logo', null) }} Remove Logo</label>
+                    </div>
+                    <div class="help-block">If you want no logo</div>
+                </div>
+            </div>
+        @endif
         <div class="form-group">
                 <label for="email">Colors</label>&nbsp;
-                {{ Form::select('color', ['bw' => 'black & white', 'orange' => 'orange', 'green' => 'green', 'blue' => 'blue'], $setting->color, array('class' => 'form-control', 'tabindex' => 1)) }}
+                {{ Form::select('color', ['bw' => 'black & white', 'orange' => 'orange', 'green' => 'green', 'blue' => 'blue'], $setting->color, array('class' => 'form-control', 'tabindex' => 4)) }}
                 @if($errors->first('color'))
                 <div class="alert alert-danger">
                     {{  $errors->first('color'); }}
@@ -46,7 +55,7 @@
         
         <div class="form-group">
                 <label for="email">Facebook</label>
-                {{ Form::text('facebook', null, array('class' => 'form-control', 'tabindex' => 1)) }}
+                {{ Form::text('facebook', null, array('class' => 'form-control', 'tabindex' => 6)) }}
                 @if($errors->first('facebook'))
                 <div class="alert alert-danger">
                     {{  $errors->first('facebook'); }}
@@ -56,7 +65,7 @@
 
         <div class="form-group">
                 <label for="email">Linkedin</label>
-                {{ Form::text('linkedin', null, array('class' => 'form-control', 'tabindex' => 1)) }}
+                {{ Form::text('linkedin', null, array('class' => 'form-control', 'tabindex' => 8)) }}
                 @if($errors->first('linkedin'))
                 <div class="alert alert-danger">
                     {{  $errors->first('linkedin'); }}
@@ -66,7 +75,7 @@
 
         <div class="form-group">
                 <label for="email">Twitter</label>
-                {{ Form::text('twitter', null, array('class' => 'form-control', 'tabindex' => 1)) }}
+                {{ Form::text('twitter', null, array('class' => 'form-control', 'tabindex' => 10)) }}
                 @if($errors->first('twitter'))
                 <div class="alert alert-danger">
                     {{  $errors->first('twitter'); }}
@@ -76,14 +85,22 @@
 
         <div class="form-group">
                 <label for="email">Pinterest</label>
-                {{ Form::text('pinterest', null, array('class' => 'form-control', 'tabindex' => 1)) }}
+                {{ Form::text('pinterest', null, array('class' => 'form-control', 'tabindex' => 12)) }}
                 @if($errors->first('pinterest'))
                 <div class="alert alert-danger">
                     {{  $errors->first('pinterest'); }}
                 </div>
                 @endif
         </div>
-
+        <div class="form-group">
+            <label for="email">Google Plus</label>
+            {{ Form::text('gplus', null, array('class' => 'form-control', 'tabindex' => 14)) }}
+            @if($errors->first('gplus'))
+            <div class="alert alert-danger">
+                {{  $errors->first('gplus'); }}
+            </div>
+            @endif
+        </div>
         <div class="form-group">
             <label>Footer</label>
             {{ Form::textarea('footer', $setting->footer, array('rows' => 30, 'class' => 'ckeditor form-control')) }}

@@ -7,3 +7,5 @@
         <li><a href="#">Portfolio #3</a></li>
     </ul>
 </div>
+
+@include('shared._social')

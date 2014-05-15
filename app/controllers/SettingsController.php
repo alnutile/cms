@@ -90,7 +90,9 @@ class SettingsController extends \BaseController {
             return Redirect::back()->withErrors($validator)->withInput();
         }
 
-        if(Input::hasFile('logo')) {
+        if(Input::get('remove_logo') != NULL) {
+            $data['logo'] = '';
+        } elseif(Input::hasFile('logo')) {
             $file = Input::file('logo');
             $filename = $file->getClientOriginalName();
             $destination = $this->settings_path;
@@ -98,7 +100,6 @@ class SettingsController extends \BaseController {
             if(!$this->filesystem->exists($destination)) {
                 $this->filesystem->mkdir($destination);
             }
-
             try {
                 Input::file('logo')->move($destination, $filename);
             } catch(Exception $e) {
@@ -110,6 +111,7 @@ class SettingsController extends \BaseController {
         }
 
         $setting->color             = $data['color'];
+        $setting->logo              = $data['logo'];
         $setting->name              = $data['name'];
         $setting->maintenance_mode  = (isset($data['maintenance_mode'])) ? $data['maintenance_mode'] : 0;
         $this->setRobot($setting->maintenance_mode);
@@ -117,6 +119,7 @@ class SettingsController extends \BaseController {
         $setting->linkedin          = (isset($data['linkedin'])) ? $data['linkedin'] : '';
         $setting->twitter           = (isset($data['twitter'])) ? $data['twitter'] : '';
         $setting->pinterest         = (isset($data['pinterest'])) ? $data['pinterest'] : '';
+        $setting->gplus             = (isset($data['gplus'])) ? $data['gplus'] : '';
         $setting->footer            = (isset($data['footer'])) ? $data['footer'] : '';
         $setting->save();
         return Redirect::to("/settings/" . $setting->id . "/edit")->withMessage("Settings Updated");
