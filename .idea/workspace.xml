@@ -23,10 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="app.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/config/app.php">
+      <file leaf-file-name="SettingsController.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/SettingsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="19" selection-start="474" selection-end="474" vertical-scroll-proportion="0.29801324" vertical-offset="0" max-vertical-offset="2790">
+            <state line="115" column="76" selection-start="2811" selection-end="2811" vertical-scroll-proportion="0.29801324" vertical-offset="1500" max-vertical-offset="2340">
               <folding />
             </state>
           </provider>
@@ -87,12 +87,13 @@
         <option value="$PROJECT_DIR$/app/config/local/app.php" />
         <option value="$PROJECT_DIR$/public/assets/css/main.css" />
         <option value="$PROJECT_DIR$/app/views/shared/_social.blade.php" />
-        <option value="$PROJECT_DIR$/app/controllers/SettingsController.php" />
         <option value="$PROJECT_DIR$/app/views/layouts/main.blade.php" />
         <option value="$PROJECT_DIR$/app/views/settings/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/database/seeds/SettingsTableSeeder.php" />
         <option value="$PROJECT_DIR$/app/filters.php" />
         <option value="$PROJECT_DIR$/app/config/app.php" />
+        <option value="$PROJECT_DIR$/Envoy.blade.php" />
+        <option value="$PROJECT_DIR$/app/controllers/SettingsController.php" />
       </list>
     </option>
   </component>
@@ -449,11 +450,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/config/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="34" selection-start="1768" selection-end="1768" vertical-scroll-proportion="0.397351" vertical-offset="555" max-vertical-offset="1950" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="42" column="3" selection-start="1199" selection-end="1199" vertical-scroll-proportion="0.21008404" vertical-offset="555" max-vertical-offset="1455" />
@@ -721,13 +717,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/SettingsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="31" selection-start="1944" selection-end="1944" vertical-scroll-proportion="0.2781457" vertical-offset="1185" max-vertical-offset="2340">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/main.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="33" column="20" selection-start="1197" selection-end="1197" vertical-scroll-proportion="0.28436658" vertical-offset="284" max-vertical-offset="1440">
@@ -766,6 +755,20 @@
     <entry file="file://$PROJECT_DIR$/app/config/app.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="19" selection-start="474" selection-end="474" vertical-scroll-proportion="0.29801324" vertical-offset="0" max-vertical-offset="2790">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Envoy.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="318" selection-end="318" vertical-scroll-proportion="0.2781457" vertical-offset="0" max-vertical-offset="755">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/SettingsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="115" column="76" selection-start="2811" selection-end="2811" vertical-scroll-proportion="0.29801324" vertical-offset="1500" max-vertical-offset="2340">
           <folding />
         </state>
       </provider>
