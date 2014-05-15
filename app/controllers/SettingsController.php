@@ -5,12 +5,14 @@ use Symfony\Component\Filesystem\Filesystem;
 class SettingsController extends \BaseController {
 
     protected $filesystem;
+    protected $settings_path;
 
     public function __construct(Filesystem $filesystem = null)
     {
         parent::__construct();
         $this->filesystem = ($filesystem == null) ? new Filesystem() : $filesystem;
         $this->beforeFilter("auth", array('only' => ['index', 'create', 'delete', 'edit', 'update', 'store']));
+        $this->settings_path = public_path() . "/img/settings";
     }
 	/**
 	 * Display a listing of the resource.
@@ -91,7 +93,7 @@ class SettingsController extends \BaseController {
         if(Input::hasFile('logo')) {
             $file = Input::file('logo');
             $filename = $file->getClientOriginalName();
-            $destination = 'public/img/settings';
+            $destination = $this->settings_path;
 
             if(!$this->filesystem->exists($destination)) {
                 $this->filesystem->mkdir($destination);

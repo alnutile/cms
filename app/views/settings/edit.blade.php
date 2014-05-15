@@ -8,7 +8,6 @@
 
 <div class="col-md-9 column">
     <legend><i class="glyphicon-cog glyphicon"></i> Update Settings</legend>
-    <hr>
     @include('sessions.notice')
     {{ Form::model($setting, array('method' => 'PUT', 'route' => array('settings.update',
         $setting->id), 'files' => 'true', 'role' => 'form')) }}
