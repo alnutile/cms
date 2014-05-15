@@ -65,6 +65,13 @@ Use the corresponding body tag for your chosen theme
                     @include('shared.alerts')
                 </div>
             </div>
+            @if($settings->maintenance_mode == 1)
+                <div class="alert alert-danger">
+                    Your site is in maintenance mode. Only logged in users can see the site.
+                    <br>
+                    Visit <a href="/settings/1/edit">Settings</a> to change it.
+                </div>
+            @endif
             @yield('content')
         </div>
     </div>

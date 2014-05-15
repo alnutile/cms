@@ -1,28 +1,27 @@
-<?php $s = Setting::find(1); ?>
 <div id="social">
     <ul class="text-center list-inline">
         <li>
-            <a href="{{$s->facebook}}">
+            <a href="{{$settings->facebook}}">
                 <i class="fa fa-facebook"></i>
             </a>
         </li>
         <li>
-            <a href="{{$s->linkedin}}">
+            <a href="{{$settings->linkedin}}">
                 <i class="fa fa-linkedin"></i>
             </a>
         </li>
         <li>
-            <a href="{{$s->twitter}}">
+            <a href="{{$settings->twitter}}">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
         <li>
-            <a href="{{$s->pinterest}}">
+            <a href="{{$settings->pinterest}}">
                 <i class="fa fa-pinterest"></i>
             </a>
         </li>
         <li>
-            <a href="{{$s->glus}}">
+            <a href="{{$settings->glus}}">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
