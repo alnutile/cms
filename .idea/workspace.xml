@@ -21,19 +21,6 @@
   <component name="FavoritesManager">
     <favorites_list name="lblog" />
   </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="edit.blade.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/settings/edit.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="0" selection-start="1373" selection-end="1740" vertical-scroll-proportion="0.35309973" vertical-offset="278" max-vertical-offset="2025">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FindManager">
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="false" />
@@ -83,7 +70,6 @@
         <option value="$PROJECT_DIR$/public/robots.txt" />
         <option value="$PROJECT_DIR$/public/robots.txt.block" />
         <option value="$PROJECT_DIR$/app/database/migrations/2014_05_15_100944_add_gplus_to_settings_table.php" />
-        <option value="$PROJECT_DIR$/app/database/seeds/SettingsTableSeeder.php" />
         <option value="$PROJECT_DIR$/app/views/settings/create.blade.php" />
         <option value="$PROJECT_DIR$/app/views/shared/sidebar.blade.php" />
         <option value="$PROJECT_DIR$/app/config/app.php" />
@@ -93,6 +79,7 @@
         <option value="$PROJECT_DIR$/app/controllers/SettingsController.php" />
         <option value="$PROJECT_DIR$/app/views/layouts/main.blade.php" />
         <option value="$PROJECT_DIR$/app/views/settings/edit.blade.php" />
+        <option value="$PROJECT_DIR$/app/database/seeds/SettingsTableSeeder.php" />
       </list>
     </option>
   </component>
@@ -384,7 +371,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1276" height="778" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -392,7 +379,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.257837" sideWeight="0.6517922" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.257837" sideWeight="0.6517922" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295129" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -660,13 +647,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_15_100944_add_gplus_to_settings_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="47" selection-start="324" selection-end="324" vertical-scroll-proportion="0.29801324" vertical-offset="0" max-vertical-offset="755">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/settings/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="38" selection-start="148" selection-end="148" vertical-scroll-proportion="0.1589404" vertical-offset="0" max-vertical-offset="755">
@@ -737,13 +717,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/seeds/SettingsTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="21" selection-start="307" selection-end="311" vertical-scroll-proportion="0.033613447" vertical-offset="198" max-vertical-offset="555">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Html/HtmlBuilder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="7" selection-start="180" selection-end="180" vertical-scroll-proportion="0.09933775" vertical-offset="15" max-vertical-offset="1440">
@@ -767,7 +740,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/settings/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="0" selection-start="1373" selection-end="1740" vertical-scroll-proportion="0.35309973" vertical-offset="278" max-vertical-offset="2025">
+        <state line="38" column="42" selection-start="1491" selection-end="1491" vertical-scroll-proportion="0.393531" vertical-offset="278" max-vertical-offset="2025">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/seeds/SettingsTableSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="19" selection-start="778" selection-end="778" vertical-scroll-proportion="0.41721854" vertical-offset="0" max-vertical-offset="755">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_15_100944_add_gplus_to_settings_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="47" selection-start="324" selection-end="324" vertical-scroll-proportion="0.29801324" vertical-offset="0" max-vertical-offset="755">
           <folding />
         </state>
       </provider>
