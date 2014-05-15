@@ -13,7 +13,10 @@
 
 App::before(function($request)
 {
-	//
+	$settings = Setting::find(1);
+    if($settings->maintenance_mode && Auth::guest() && Request::path() != 'login') {
+        return View::make('layouts.maintenance', compact('settings'));
+    }
 });
 
 

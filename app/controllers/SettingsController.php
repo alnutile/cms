@@ -1,11 +1,18 @@
 <?php
 
+use Symfony\Component\Filesystem\Filesystem;
+
 class SettingsController extends \BaseController {
 
-    public function __construct()
+    protected $filesystem;
+    protected $settings_path;
+
+    public function __construct(Filesystem $filesystem = null)
     {
         parent::__construct();
+        $this->filesystem = ($filesystem == null) ? new Filesystem() : $filesystem;
         $this->beforeFilter("auth", array('only' => ['index', 'create', 'delete', 'edit', 'update', 'store']));
+        $this->settings_path = public_path() . "/img/settings";
     }
 	/**
 	 * Display a listing of the resource.
@@ -83,15 +90,16 @@ class SettingsController extends \BaseController {
             return Redirect::back()->withErrors($validator)->withInput();
         }
 
-        if(Input::hasFile('logo')) {
+        if(Input::get('remove_logo') != NULL) {
+            $data['logo'] = '';
+        } elseif(Input::hasFile('logo')) {
             $file = Input::file('logo');
             $filename = $file->getClientOriginalName();
-            $destination = 'public/img/settings';
+            $destination = $this->settings_path;
 
             if(!$this->filesystem->exists($destination)) {
                 $this->filesystem->mkdir($destination);
             }
-
             try {
                 Input::file('logo')->move($destination, $filename);
             } catch(Exception $e) {
@@ -103,11 +111,15 @@ class SettingsController extends \BaseController {
         }
 
         $setting->color             = $data['color'];
-        $setting->maintenance_mode  = (isset($data['maintenance_mode'])) ? $data['maintenance_mode'] : 0;
+        $setting->logo              = $data['logo'];
+        $setting->name              = $data['name'];
+        $setting->maintenance_mode  = (isset($data['maintenance_mode'])) ? 1 : 0;
+        $this->setRobot($setting->maintenance_mode);
         $setting->facebook          = (isset($data['facebook'])) ? $data['facebook'] : '';
         $setting->linkedin          = (isset($data['linkedin'])) ? $data['linkedin'] : '';
         $setting->twitter           = (isset($data['twitter'])) ? $data['twitter'] : '';
         $setting->pinterest         = (isset($data['pinterest'])) ? $data['pinterest'] : '';
+        $setting->gplus             = (isset($data['gplus'])) ? $data['gplus'] : '';
         $setting->footer            = (isset($data['footer'])) ? $data['footer'] : '';
         $setting->save();
         return Redirect::to("/settings/" . $setting->id . "/edit")->withMessage("Settings Updated");
@@ -124,5 +136,16 @@ class SettingsController extends \BaseController {
 	{
 		//
 	}
+
+    protected function setRobot($mode)
+    {
+        $path = public_path();
+        if($mode === 'on' || $mode == '1') {
+            $this->filesystem->copy($path . '/robots.txt.block', $path . '/robots.txt', $override = true);
+        }
+        if($mode === 0) {
+            $this->filesystem->copy($path . '/robots.txt.allow', $path . '/robots.txt', $override = true);
+        }
+    }
 
 }

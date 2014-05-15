@@ -19,6 +19,7 @@ class SettingsTableSeeder extends Seeder {
                 'linkedin'          => 'http://linkedin.com/example_person',
                 'twitter'           => 'http://twitter.com/example_person',
                 'pinterest'         => 'http://pinterest.com/example_person',
+                'gplus'               => 'http://gplus/example_person',
                 'footer'            => '<div class="text-center">444-555-1212 | test@test.com</div>',
                 'maintenance_mode'  => 1,
                 'created_at' => $dateTime,

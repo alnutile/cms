@@ -28,3 +28,7 @@
         </ul>
     </div>
 @endif
+    </ul>
+</div>
+
+@include('shared._social')

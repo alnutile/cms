@@ -1,3 +1,6 @@
+.idea/*
+app/database/local.sqlite
+public/robots.txt
 Envoy.php
 behat.yml
 /bootstrap/compiled.php

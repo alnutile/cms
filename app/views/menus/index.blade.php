@@ -5,7 +5,7 @@
     @include('shared.sidebar')
 </div>
 <div class="col-md-9 column content dragging">
-    <h3>Drag and drop to manage your <strong>Top Right Menu</strong></strong></h3>
+    <h3>Drag and drop to manage your <strong>Top Right Menu</strong></h3>
 
             <ol class="top-menu">
             @foreach($menus as $menu)
