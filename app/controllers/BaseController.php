@@ -1,5 +1,6 @@
 <?php
 
+
 class BaseController extends Controller {
 
     public $settings;

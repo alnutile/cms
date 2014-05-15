@@ -99,7 +99,7 @@
         <div class="form-group">
             <div class="controls">
                 <div class="checkbox">
-                    <label class="checkbox">{{ Form::checkbox('maintenance_mode', 0) }} Maintenance Mode</label>
+                    <label class="checkbox">{{ Form::checkbox('maintenance_mode', null) }} Maintenance Mode</label>
                 </div>
                 <div class="help-block">If you want the robot.txt hidden from search engines</div>
             </div>

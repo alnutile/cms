@@ -1,10 +1,15 @@
 <?php
 
+use Symfony\Component\Filesystem\Filesystem;
+
 class SettingsController extends \BaseController {
 
-    public function __construct()
+    protected $filesystem;
+
+    public function __construct(Filesystem $filesystem = null)
     {
         parent::__construct();
+        $this->filesystem = ($filesystem == null) ? new Filesystem() : $filesystem;
         $this->beforeFilter("auth", array('only' => ['index', 'create', 'delete', 'edit', 'update', 'store']));
     }
 	/**
@@ -103,7 +108,9 @@ class SettingsController extends \BaseController {
         }
 
         $setting->color             = $data['color'];
+        $setting->name              = $data['name'];
         $setting->maintenance_mode  = (isset($data['maintenance_mode'])) ? $data['maintenance_mode'] : 0;
+        $this->setRobot($setting->maintenance_mode);
         $setting->facebook          = (isset($data['facebook'])) ? $data['facebook'] : '';
         $setting->linkedin          = (isset($data['linkedin'])) ? $data['linkedin'] : '';
         $setting->twitter           = (isset($data['twitter'])) ? $data['twitter'] : '';
@@ -124,5 +131,16 @@ class SettingsController extends \BaseController {
 	{
 		//
 	}
+
+    protected function setRobot($mode)
+    {
+        $path = public_path();
+        if($mode === 'on') {
+            $this->filesystem->copy($path . '/robots.txt.block', $path . '/robots.txt', $override = true);
+        }
+        if($mode === 0) {
+            $this->filesystem->copy($path . '/robots.txt.allow', $path . '/robots.txt', $override = true);
+        }
+    }
 
 }

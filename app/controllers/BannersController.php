@@ -164,7 +164,7 @@ class BannersController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+
 	}
 
 }
