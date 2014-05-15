@@ -26,7 +26,7 @@
       <file leaf-file-name="SettingsController.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/SettingsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="115" column="76" selection-start="2811" selection-end="2811" vertical-scroll-proportion="0.29801324" vertical-offset="1500" max-vertical-offset="2340">
+            <state line="142" column="41" selection-start="3826" selection-end="3826" vertical-scroll-proportion="0.7218543" vertical-offset="1585" max-vertical-offset="2340">
               <folding />
             </state>
           </provider>
@@ -768,7 +768,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/SettingsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="76" selection-start="2811" selection-end="2811" vertical-scroll-proportion="0.29801324" vertical-offset="1500" max-vertical-offset="2340">
+        <state line="142" column="41" selection-start="3826" selection-end="3826" vertical-scroll-proportion="0.7218543" vertical-offset="1585" max-vertical-offset="2340">
           <folding />
         </state>
       </provider>

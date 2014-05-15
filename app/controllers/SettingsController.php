@@ -140,7 +140,7 @@ class SettingsController extends \BaseController {
     protected function setRobot($mode)
     {
         $path = public_path();
-        if($mode === 'on') {
+        if($mode === 'on' || $mode == '1') {
             $this->filesystem->copy($path . '/robots.txt.block', $path . '/robots.txt', $override = true);
         }
         if($mode === 0) {
