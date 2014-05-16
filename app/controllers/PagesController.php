@@ -32,6 +32,22 @@ class PagesController extends \BaseController {
 		//
 	}
 
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @return Response
+     */
+    public function show($page)
+    {
+        if(is_numeric($page)) {
+            $page = Page::find($page);
+        }
+
+        $seo = $page->seo;
+        $banner = FALSE;
+        return View::make('pages.show', compact('page', ' banner', 'settings', 'seo'));
+    }
+
 	/**
 	 * Store a newly created resource in storage.
 	 *
@@ -42,31 +58,6 @@ class PagesController extends \BaseController {
 		//
 	}
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id = null)
-	{
-        if($id == null) {
-            $page = Page::first();
-        } else {
-            if(is_numeric($id)) {
-                $page = Page::find($id);
-            } else {
-                $page = Page::where("slug", 'LIKE', '/' . $id)->first();
-            }
-        }
-        if (isset($page) && $page->slug === '/home') {
-            $banner = TRUE;
-        } else {
-            $banner = FALSE;
-        }
-        $settings = $this->settings;
-        return $this->respond($page, 'pages.show',  compact('page', 'banner'));
-	}
 
 	/**
 	 * Show the form for editing the specified resource.
@@ -98,7 +89,7 @@ class PagesController extends \BaseController {
             $page->slug = (isset($page_update['slug'])) ?  $page_update['slug'] : $page->slug;
             $page->save();
             $banner = $this->bannerSet($page);
-            return Redirect::to("/pages/" . $page->id)->withMessage("Page Updated");
+            return Redirect::to("/pages/")->withMessage("Page Updated");
         } else {
             return Redirect::to('pages/' . $page->id . '/edit')->withErrors($validator)
                 ->withMessage("Error ");

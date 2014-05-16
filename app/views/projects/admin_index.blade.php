@@ -23,7 +23,7 @@
             @foreach($projects as $project)
                 <tr>
                     <td><a href="/projects/{{$project->id}}/edit">{{$project->title}}</a></td>
-                    <td><a href="/portfolios/{{$project->portfolio->id}}">{{$project->portfolio->title}}</a></td>
+                    <td><a href="{{$project->portfolio->slug}}">{{$project->portfolio->title}}</a></td>
                     <td>{{$project->order}}</td>
                     <td>{{$project->published}}</td>
                     <td>

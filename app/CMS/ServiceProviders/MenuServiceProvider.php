@@ -8,8 +8,9 @@ class MenuServiceProvider extends ServiceProvider {
     {
         $this->app->bind('Menu', function()
         {
-            return new MenuService;
+            return new \CMS\Services\MenuService;
         });
+
     }
 
 }

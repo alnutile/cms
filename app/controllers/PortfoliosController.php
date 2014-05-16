@@ -71,12 +71,16 @@ class PortfoliosController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
-	{
-		$portfolio = Portfolio::findOrFail($id);
+    public function show($portfolio)
+    {
+        if(is_numeric($portfolio)) {
+            $portfolio = Page::find($portfolio);
+        }
 
-		return View::make('portfolios.show', compact('portfolio'));
-	}
+        $seo = $portfolio->seo;
+        $banner = FALSE;
+        return View::make('portfolios.show', compact('portfolio', ' banner', 'settings', 'seo'));
+    }
 
 	/**
 	 * Show the form for editing the specified portfolio.

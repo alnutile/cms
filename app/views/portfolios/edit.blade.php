@@ -23,7 +23,18 @@
         </div>
         @endif
 
-        <div class="form-group">
+    <div class="form-group">
+        <label>Seo Title</label>
+        {{ Form::text('seo', null, array('class' => 'form-control')) }}
+    </div>
+    @if($errors->first('seo'))
+    <div class="alert alert-danger">
+        {{  $errors->first('seo'); }}
+    </div>
+    @endif
+
+
+    <div class="form-group">
             <label>Body</label>
             {{ Form::textarea('body', null, array('rows' => 30, 'class' => 'ckeditor form-control')) }}
         </div>

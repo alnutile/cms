@@ -13,18 +13,28 @@
             }
         ?>
         <li class="nav-header">
-            <h4>{{$icon}}&nbsp;<a href="/portfolios">Portfolio</a></h4>
+            <h4>{{$icon}}&nbsp;Portfolio</h4>
         </li>
         @foreach($portfolios as $portfolio)
             <?php
-                if(Request::server('PATH_INFO') == '/portfolios/' . $portfolio->id) {
+                if(Request::server('PATH_INFO') == $portfolio->slug) {
                      $active = 'active';
                 } else {
                      $active = 'not-active';
                 }
             ?>
-            <li class="{{$active}}"><a href="/portfolios/{{$portfolio->id}}">{{$portfolio->title}}</a></li>
+            <li class="{{$active}}"><a href="{{$portfolio->slug}}">{{$portfolio->title}}</a></li>
         @endforeach
+            <!-- all projects -->
+            <?php
+                $project = Page::find(4);
+                if(Request::server('PATH_INFO') == $project->slug) {
+                    $active = 'active';
+                } else {
+                    $active = 'not-active';
+                }
+            ?>
+            <li class="{{$active}}"><a href="{{$project->slug}}">{{$project->title}}</a></li>
         </ul>
 @endif
 </div>

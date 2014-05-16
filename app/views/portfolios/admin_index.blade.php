@@ -17,7 +17,7 @@
         <tbody>
             @foreach($portfolios as $portfolio)
                 <tr>
-                    <td><a href="/portfolios/{{$portfolio->id}}">{{$portfolio->title}}</a></td>
+                    <td><a href="{{$portfolio->slug}}">{{$portfolio->title}}</a></td>
                     <td>{{$portfolio->order}}</td>
                     <td>{{$portfolio->published}}</td>
                     <td>

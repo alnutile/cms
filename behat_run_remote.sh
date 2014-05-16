@@ -7,5 +7,5 @@ then
 fi
 
 echo Running tests app/tests/behat/features/$TEST
-envoy run reseeed
+envoy run reseed
 vendor/bin/behat --config app/tests/behat/behat.yml --profile remote app/tests/behat/features/$TEST

@@ -5,31 +5,16 @@
     @include('shared.sidebar')
 </div>
 <div class="col-md-9 column content">
-    <table class="table table-hover table-striped table-condensed">
-        <thead>
-        <tr>
-            <th>Title</th>
-            <th>Sort</th>
-            <th>Published</th>
-            <th>Edit</th>
-        </tr>
-        </thead>
-        <tbody>
-            @foreach($portfolios as $portfolio)
-                <tr>
-                    <td><a href="/portfolios/{{$portfolio->id}}">{{$portfolio->title}}</a></td>
-                    <td>{{$portfolio->order}}</td>
-                    <td>{{$portfolio->published}}</td>
-                    <td>
-                        <a id="portfolio-id-{{$portfolio->id}}"
-                           href="/portfolios/{{$portfolio->id}}/edit">
-                            edit
-                        </a>
-                    </td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
-    <a class="btn btn-success" href="/portfolios/create">create portfolio</a>
+    <h4>Projects</h4>
+    <ul class="list-unstyled">
+        @foreach($projects as $project)
+            <li>
+                {{$project->title}}
+                <a id="project-id-{{$project->id}}" href="{{$project->slug}}">
+                    view
+                </a>
+            </li>
+        @endforeach
+    </ul>
 </div>
 @stop
