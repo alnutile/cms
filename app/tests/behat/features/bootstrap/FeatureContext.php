@@ -73,7 +73,7 @@ class FeatureContext extends MinkContext
      */
     public function iWait()
     {
-        sleep(2);
+        sleep(4);
     }
 
 
