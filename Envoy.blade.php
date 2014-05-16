@@ -2,9 +2,9 @@
 
 @task('deploy', ['on'=> 'cms' ])
   cd /var/www/cms/site/current
-  chmod 766 public/img/projects
-  chmod 766 public/img/settings
-  chmod 766 public/img/banners
+  chmod 777 public/img/projects
+  chmod 777 public/img/settings
+  chmod 777 public/img/banners
   git pull origin development
   composer install 
   php artisan migrate:refresh --seed

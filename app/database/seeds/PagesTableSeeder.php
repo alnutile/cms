@@ -56,7 +56,7 @@ class PagesTableSeeder extends Seeder {
                 'title' => "All Projects",
                 'body'  => 'All Projects on the site edit Pages and Projects to add text here',
                 'published' => 1,
-                'slug' => '/projects',
+                'slug' => '/all_projects',
                 'menu_sort_order' => 2,
                 'menu_parent' => 0,
                 'seo'  => 'ALL PROJECTS SEO',
