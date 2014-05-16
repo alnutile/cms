@@ -20,8 +20,10 @@ class ProjectsController extends \BaseController {
 	 */
 	public function index()
 	{
-		return Redirect::to('portfolios', 301);
-	}
+        $page = Page::find(4);
+        return Redirect::to($page->slug, 301);
+
+    }
 
     /**
      * Display a listing of portfolios
@@ -71,17 +73,15 @@ class ProjectsController extends \BaseController {
 	}
 
 
-	/**
-	 * Display the specified project.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
+    public function show($project)
 	{
-        /* we do now show A project */
-        $project = Project::find($id);
-		return Redirect::to('portfolios/' . $project->portfolio_id, 301);
+        if(is_numeric($project)) {
+            $project = Project::find($project);
+        }
+
+        $seo = $project->seo;
+        $banner = FALSE;
+        return View::make('projects.show', compact('project', ' banner', 'settings', 'seo'));
 	}
 
 	/**

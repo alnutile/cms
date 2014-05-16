@@ -1,17 +1,12 @@
 <?php
 
+use CMS\Services\MenuService;
+
 class MenusController extends \BaseController {
 
     public $pages;
     public $menuService;
 
-    public function __construct(Page $pages = null, MenuService $menuService = null)
-    {
-        parent::__construct();
-        $this->beforeFilter("auth", array('only' => ['index', 'store']));
-        $this->pages            = ($pages == null) ? new Page : $pages;
-        $this->menuService      = ($menuService == null) ? new MenuService() : $menuService;
-    }
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -19,7 +14,7 @@ class MenusController extends \BaseController {
 	 */
 	public function index()
 	{
-        $menus = $this->pages->getMenu();
+        $menus = Page::where("slug", "!=", "")->orderBy("menu_sort_order")->get();
         $banner = $this->banner;
         return $this->respond($menus, 'menus.index',  compact('menus', 'banner'));
     }
@@ -27,8 +22,11 @@ class MenusController extends \BaseController {
     public function store()
     {
         $input = Input::all();
-        $this->menuService->updateMenus($input['data']);
+        $menus = new MenuService();
+        $menus->updateMenus($input['data']);
         return $this->json_response("success", "Menu Updates", null, 200);
     }
+
+
 
 }

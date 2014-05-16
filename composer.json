@@ -9,6 +9,9 @@
         "doctrine/dbal": "~2.3"
     },
 	"autoload": {
+        "psr-0": {
+            "CMS\\": "app/"
+        },
 		"classmap": [
 			"app/commands",
 			"app/controllers",

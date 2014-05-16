@@ -17,6 +17,8 @@ class ProjectsTableSeeder extends Seeder {
                 'order' => 1,
                 'image' => 'project1.gif',
                 'portfolio_id' => 1,
+                'seo' => "SEO TITLE FOR PROJECT 1",
+                'slug' => '/project_one',
                 'created_at' => $dateTime,
                 'updated_at' => $dateTime,
             ]
@@ -31,6 +33,8 @@ class ProjectsTableSeeder extends Seeder {
                 'order' => 1,
                 'image' => 'project2.gif',
                 'portfolio_id' => 1,
+                'seo' => "SEO TITLE FOR PROJECT 2",
+                'slug' => '/project_another',
                 'created_at' => $dateTime,
                 'updated_at' => $dateTime,
             ]
@@ -45,6 +49,8 @@ class ProjectsTableSeeder extends Seeder {
                 'order' => 1,
                 'image' => 'project3.jpg',
                 'portfolio_id' => 2,
+                'seo' => "SEO TITLE FOR PROJECT 3",
+                'slug' => '/project_three',
                 'created_at' => $dateTime,
                 'updated_at' => $dateTime,
             ]
@@ -59,6 +65,8 @@ class ProjectsTableSeeder extends Seeder {
                 'order' => 1,
                 'image' => 'project4.jpg',
                 'portfolio_id' => 2,
+                'seo' => "SEO TITLE FOR PROJECT 4",
+                'slug' => '/build_big_something',
                 'created_at' => $dateTime,
                 'updated_at' => $dateTime,
             ]

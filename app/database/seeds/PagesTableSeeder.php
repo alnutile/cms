@@ -15,6 +15,7 @@ class PagesTableSeeder extends Seeder {
                 'body'  => 'This will be your home page',
                 'published' => 1,
                 'slug' => '/home',
+                'seo'  => 'HOME PAGE SEO',
                 'menu_sort_order' => 0,
                 'menu_parent' => 0,
                 'menu_name' => 'top',
@@ -28,6 +29,7 @@ class PagesTableSeeder extends Seeder {
                 'body'  => 'This will be your about page',
                 'published' => 1,
                 'slug' => '/about',
+                'seo'  => 'ABOUT PAGE SEO',
                 'menu_sort_order' => 1,
                 'menu_parent' => 1,
                 'menu_name' => 'top',
@@ -43,6 +45,7 @@ class PagesTableSeeder extends Seeder {
                 'slug' => '/contact',
                 'menu_sort_order' => 3,
                 'menu_parent' => 0,
+                'seo'  => 'CONTACT PAGE SEO',
                 'menu_name' => 'top',
                 'redirect_url' => ''
             ]
@@ -50,13 +53,14 @@ class PagesTableSeeder extends Seeder {
 
         Page::create(
             [
-                'title' => "Portfolio",
-                'body'  => 'Your related Portfolio pages and their projects',
+                'title' => "All Projects",
+                'body'  => 'All Projects on the site edit Pages and Projects to add text here',
                 'published' => 1,
-                'slug' => '/portfolios',
+                'slug' => '/projects',
                 'menu_sort_order' => 2,
                 'menu_parent' => 0,
-                'menu_name' => 'top',
+                'seo'  => 'ALL PROJECTS SEO',
+                'menu_name' => 'left_side',
                 'redirect_url' => ''
             ]
         );

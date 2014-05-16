@@ -7,5 +7,5 @@ then
 fi
 
 echo Running tests app/tests/behat/features/$TEST
-php artisan db:seed
+envoy run reseed
 vendor/bin/behat --config behat.yml --profile saucelabs app/tests/behat/features/$TEST

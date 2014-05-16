@@ -8,7 +8,13 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
 
-    <title>{{$settings->name}}</title>
+    <title>
+        @if(isset($seo))
+         {{$seo}}
+        @else
+         {{$settings->name}}
+        @endif
+    </title>
 
     <!-- Bootstrap core CSS -->
     {{ HTML::style('assets/css/bootstrap.css') }}
