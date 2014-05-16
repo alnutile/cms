@@ -13,7 +13,7 @@ then
 fi
 
 echo Running tests app/tests/behat/features/$TEST
-php artisan db:seed
+php artisan migrate:refresh --seed
 #vendor/bin/behat --config app/tests/behat/behat.yml app/tests/behat/features/$TEST
 vendor/bin/behat $STOP --config behat.yml app/tests/behat/features/$TEST
 

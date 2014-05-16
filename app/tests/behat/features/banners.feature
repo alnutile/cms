@@ -1,5 +1,5 @@
-@javascript @feature1
-Feature: Testing User Create
+@javascript @banners
+Feature: Testing Banners
 
   Scenario: Login to the site
     Given I am on "/logout"

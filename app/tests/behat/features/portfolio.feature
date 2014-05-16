@@ -1,5 +1,5 @@
-@javascript @feature1
-Feature: Testing User Create
+@javascript @portfolio
+Feature: Testing Portfolios
 
   Scenario: Login to the site
     Given I am on "/logout"
@@ -17,10 +17,10 @@ Feature: Testing User Create
     And I follow "create portfolio"
     And I wait
     Then I fill in "title" with "Port 1"
-    Then I fill in "body" with "Port 1"
+    Then I fill in wysiwyg on field "body" with "Project via Test 1"
     Then I fill in "slug" with "/port1"
     And I check "published"
-    Then I press "Create"
+    Then I press "Create Portfolio"
     Then I wait
     And I am on "/admin/portfolios"
     Then I should see "Port 1"

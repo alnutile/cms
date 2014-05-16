@@ -6,6 +6,7 @@ Route::resource('users', 'UsersController');
 Route::resource('banners', 'BannersController');
 Route::resource('settings', 'SettingsController');
 Route::resource('portfolios', 'PortfoliosController');
+Route::resource('projects', 'ProjectsController');
 
 Route::get('menus', 'MenusController@index');
 Route::post('menus', 'MenusController@store');
@@ -21,6 +22,12 @@ Route::get('/admin/portfolios', array(
         'before' => 'auth',
         'as' => 'admin_portfolio',
         'uses' => 'PortfoliosController@adminIndex'
+));
+
+Route::get('/admin/projects', array(
+    'before' => 'auth',
+    'as' => 'admin_projects',
+    'uses' => 'ProjectsController@adminIndex'
 ));
 
 Route::get('/admin', array('before' => 'auth', 'uses' => 'AdminController@dash'));

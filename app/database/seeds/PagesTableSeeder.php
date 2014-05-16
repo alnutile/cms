@@ -53,7 +53,7 @@ class PagesTableSeeder extends Seeder {
                 'title' => "Portfolio",
                 'body'  => 'Your related Portfolio pages and their projects',
                 'published' => 1,
-                'slug' => '/portfolio',
+                'slug' => '/portfolios',
                 'menu_sort_order' => 2,
                 'menu_parent' => 0,
                 'menu_name' => 'top',

@@ -11,6 +11,19 @@ class PortfoliosController extends \BaseController {
         $this->portfolio = ($portfolio == null) ? new Portfolio : $portfolio;
     }
 
+
+	/**
+	 * Display a listing of portfolios
+	 *
+	 * @return Response
+	 */
+	public function index()
+	{
+		$portfolios = Portfolio::Published()->OrderByOrder()->get();
+
+		return View::make('portfolios.index', compact('portfolios'));
+	}
+
     /**
      * Display a listing of portfolios
      *
@@ -22,18 +35,6 @@ class PortfoliosController extends \BaseController {
 
         return View::make('portfolios.admin_index', compact('portfolios'));
     }
-
-	/**
-	 * Display a listing of portfolios
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		$portfolios = Portfolio::all();
-
-		return View::make('portfolios.index', compact('portfolios'));
-	}
 
 	/**
 	 * Show the form for creating a new portfolio
@@ -100,8 +101,11 @@ class PortfoliosController extends \BaseController {
 	{
 		$portfolio = Portfolio::findOrFail($id);
 
+
 		$validator = Validator::make($data = Input::all(), Portfolio::$rules);
-		if ($validator->fails())
+        $data = $this->checkPublished($data);
+
+        if ($validator->fails())
 		{
 			return Redirect::back()->withErrors($validator)->withInput();
 		}

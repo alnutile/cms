@@ -3,6 +3,7 @@
 class Banner extends \Eloquent {
 	protected $fillable = ['name', 'active', 'order', 'banner_name'];
     public static $rules = ['banner_name' => ['required'], 'name' => ['required']];
+    public static $rules_update = ['name' => ['required']];
 
     public static function slideShow()
     {

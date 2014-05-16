@@ -1,22 +1,21 @@
 <?php
 
-use Symfony\Component\Filesystem\Filesystem;
 
 class BannersController extends \BaseController {
 
     protected $banner_model;
-    protected $filesystem;
     protected $banner_path;
     protected $banner_dest;
+    public    $save_to;
 
-    public function __construct(Banner $banner_model = null, Filesystem $filesystem = null)
+    public function __construct(Banner $banner_model = null)
     {
         parent::__construct();
         $this->beforeFilter("auth", array('only' => ['index', 'create', 'delete', 'edit', 'update', 'store']));
         $this->banner_model = ($banner_model == null) ? new Banner : $banner_model;
-        $this->filesystem = ($filesystem == null) ? new Filesystem : $filesystem;
         $this->banner_path = "/img/banners";
         $this->banner_dest = public_path() . "/img/banners";
+        $this->save_to = public_path() . "/img/banners";
     }
 
     public function getBannerPath()
@@ -57,6 +56,7 @@ class BannersController extends \BaseController {
 	 */
 	public function store()
 	{
+
         $validator = Validator::make($data = Input::all(), Banner::$rules);
 
         if ($validator->fails())
@@ -64,26 +64,13 @@ class BannersController extends \BaseController {
             return Redirect::back()->withErrors($validator)->withInput();
         }
 
-        if(Input::hasFile('banner_name')) {
-            $file = Input::file('banner_name');
-            $filename = $file->getClientOriginalName();
-            $destination = $this->banner_dest;
-
-            if(!$this->filesystem->exists($destination)) {
-                $this->filesystem->mkdir($destination);
-            }
-
-            try {
-                Input::file('banner_name')->move($destination, $filename);
-            } catch(Exception $e) {
-                dd("Error uploading file " . $e->getMessage());
-            }
-            $data['banner_name'] = $filename;
+        if(isset($data['banner_name'])) {
+            $data = $this->uploadFile($data, 'banner_name');
         }
-        $data['active'] = (isset($data['active'])) ? $data['active'] : 0;
 
-        $project = Banner::create($data);
-        return Redirect::to("/banners")->withMessage("Banner Created");
+        Banner::create($data);
+
+        return Redirect::to('/banners')->withMessage("Created Banner");
 	}
 
 	/**
@@ -121,37 +108,24 @@ class BannersController extends \BaseController {
 	 */
 	public function update($id)
 	{
-        $validator = Validator::make($data = Input::all(), ['name' => 'required']);
+
         $banner = Banner::findOrFail($id);
+
+        $validator = Validator::make($data = Input::all(), Banner::$rules_update);
+
         if ($validator->fails())
         {
             return Redirect::back()->withErrors($validator)->withInput();
         }
 
-        if(Input::hasFile('banner_name')) {
-            $file = Input::file('banner_name');
-            $filename = $file->getClientOriginalName();
-            $destination = $this->banner_dest;
-
-            if(!$this->filesystem->exists($destination)) {
-                $this->filesystem->mkdir($destination);
-            }
-
-            try {
-                Input::file('banner_name')->move($destination, $filename);
-            } catch(Exception $e) {
-                dd("Error uploading file " . $e->getMessage());
-            }
-            $data['banner_name'] = $filename;
+        if(isset($data['banner_name'])) {
+            $data = $this->uploadFile($data, 'banner_name');
         } else {
             $data['banner_name'] = $banner->banner_name;
         }
 
-        $banner->name           = $data['name'];
-        $banner->active         = (isset($data['active'])) ? $data['active'] : 0;
-        $banner->order          = $data['order'];
-        $banner->banner_name    = $data['banner_name'];
-        $banner->save();
+        $banner->update($data);
+
         return Redirect::to("/banners")->withMessage("Banner Updated");
 	}
 

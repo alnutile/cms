@@ -31,7 +31,7 @@ class CreatePortfoliosTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('portfolios');
+		Schema::dropIfExists('portfolios');
 	}
 
 }

@@ -59,6 +59,8 @@ class UsersController extends BaseController {
     {
         $user_update = Input::all();
         $password = false;
+        $user = User::find($id);
+
         if(isset($user_update['reset']) && $user_update['reset'] == 'on') {
             $validator = Validator::make(Input::all(), array('email' => 'required|email', 'password' => 'confirmed|min:8'));
             $password  = Hash::make($user_update['password']);
@@ -66,11 +68,10 @@ class UsersController extends BaseController {
             $validator = Validator::make(Input::all(), array('email' => 'required|email'));
         }
         $banner = $this->banner;
-        $user = User::find($id);
         if($validator->passes()) {
             if($user_update['email'] != $user->email) {
                 if(User::where("email", 'LIKE', $user_update['email'])) {
-                    return ['email' => ["Email is already in the system"]];
+                    return Redirect::back()->withErrors(['email' => ["Email is already in the system"]])->withInput();
                 }
             }
             $user->email            = $user_update['email'];
@@ -78,14 +79,13 @@ class UsersController extends BaseController {
             $user->lastname         = (isset($user_update['lastname'])) ? $user_update['lastname'] : '';
             $user->admin            = (isset($user_update['admin'])) ? $user_update['admin'] : 0;
             $user->active           = (isset($user_update['active'])) ? $user_update['active'] : 0;
-            $user->password         = (isset($user_update['password'])) ? $password : $user->password;
+            $user = $this->keepUserOneAsAdmin($user);
+            $user->password         = ($password) ? $password : $user->password;
             $user->save();
-            return Redirect::to("users/" . $user->id)->withMessage("User Updated");
+            return Redirect::to("users")->withMessage("User Updated");
         } else {
+            return Redirect::back()->withErrors($validator)->withInput();
 
-            return Redirect::to('users/' . $user->id . '/edit')->withErrors($validator)
-                ->withMessage("Error ")
-                ->withInput(Input::except('password'));
         }
     }
 
@@ -117,6 +117,11 @@ class UsersController extends BaseController {
         }
     }
 
+    protected function keepUserOneAsAdmin($user)
+    {
+        if($user->id == 1) { $user->admin = 1; }
+        return $user;
+    }
 
     public function authenticate()
     {
@@ -127,6 +132,16 @@ class UsersController extends BaseController {
             return Redirect::to('login')
                 ->with('message', 'Your username/password combination was incorrect')
                 ->withInput();
+        }
+    }
+
+    public function destroy($id)
+    {
+        if(Auth::user()->admin && $id > 2) {
+            User::destroy($id);
+            return Redirect::to('users');
+        } else {
+            return Redicect::back()->withMessage("You can not delete an admin user");
         }
     }
 }

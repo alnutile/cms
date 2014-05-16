@@ -26,9 +26,7 @@
             <li class="{{$active}}"><a href="/portfolios/{{$portfolio->id}}">{{$portfolio->title}}</a></li>
         @endforeach
         </ul>
-    </div>
 @endif
-    </ul>
 </div>
 
 @include('shared._social')

@@ -57,7 +57,7 @@
     </div>
 
     <div class="controls">
-        {{ Form::submit('Update Portfolio', array('id' => 'submit', 'class' => 'btn btn-success')) }}
+        {{ Form::submit('Create Portfolio', array('id' => 'submit', 'class' => 'btn btn-success')) }}
         <br>
     </div>
 

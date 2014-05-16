@@ -1,6 +1,6 @@
 <?php
 
-class Portfolio extends \Eloquent {
+class Portfolio extends BaseModel {
 
 	public static $rules = [
 		'title' => 'required',
@@ -10,13 +10,17 @@ class Portfolio extends \Eloquent {
 
 	protected $fillable = ['title', 'published', 'body', 'slug', 'order'];
 
-    public function scopePublished($query)
+    public function projects()
     {
-        return $query->where("published", "=", 1);
+        return $this->hasMany('Project')->Published()->OrderByOrder();
     }
 
-    public function scopeOrderByOrder($query)
-    {
-        return $query->orderBy('order');
+    static public function allPortfoliosSelectOptions() {
+        $ports = self::all();
+        $options = [];
+        foreach($ports as $port) {
+            $options[$port->id] = $port->title;
+        }
+        return $options;
     }
 }

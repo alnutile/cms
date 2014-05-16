@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="col-md-3 ">
-    @include('shared.sidebar')
+    @include('portfolios._related_projects')
 </div>
 
 <div class="col-md-9 column">

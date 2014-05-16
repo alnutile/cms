@@ -12,3 +12,8 @@
     git pull origin development
 @endtask
 
+@task('reseed', ['on'=> 'cms' ])
+    cd /var/www/cms/site/current
+    php artisan migrate:refresh --seed
+@endtask
+

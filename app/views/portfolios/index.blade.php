@@ -5,25 +5,28 @@
     @include('shared.sidebar')
 </div>
 <div class="col-md-9 column content">
-    <h2>Better layout coming soon</h2>
-    <table class="table table-hover table-striped table-condensed">
-        <thead>
-        <tr>
-            <th>Title</th>
-            <th>view</th>
-        </tr>
-        </thead>
-        <tbody>
-            @foreach($portfolios as $portfolio)
-                <tr>
-                    <td><a href="/portfolios/{{$portfolio->id}}">{{$portfolio->title}}</a></td>
-                    <td>
-                        <a id="portfolio-id-{{$portfolio->id}}"
-                           href="/portfolios/{{$portfolio->id}}">view</a>
-                    </td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
+    <h2>Portfolio Page</h2>
+
+    @foreach($portfolios as $p)
+    <?php
+        $project = $p->projects->first();
+        if(empty($project->image)) {
+            $image = 'project3.jpg';
+        } else {
+            $image = $project->image;
+        }
+    ?>
+    <div class="media">
+        <img class="media-object col-lg-4" src="/img/projects/{{$image}}" alt="{{$p->title}}">
+        <div class="media-body">
+            <h4 class="media-heading">{{$p->title}}</h4>
+            <p>{{$p->body}}</p>
+            <br>
+            <a id="portfolio-id-{{$p->id}}"
+               href="/portfolios/{{$p->id}}">view all projects</a>
+        </div>
+    </div>
+    @endforeach
+
 </div>
 @stop

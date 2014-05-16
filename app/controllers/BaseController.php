@@ -1,16 +1,19 @@
 <?php
 
+use Symfony\Component\Filesystem\Filesystem;
 
 class BaseController extends Controller {
 
+    protected $filesystem;
     public $settings;
     public $portfolio;
     protected $banner = FALSE;
 
-    public function __construct(Setting $settings = null, Portfolio $portfolio = null)
+    public function __construct(Setting $settings = null, Portfolio $portfolio = null, Filesystem $filesystem = null)
     {
         $this->settings = ($settings == null) ? Setting::first() : $settings;
         $this->portfolio = ($portfolio == null) ? Portfolio::all() : $portfolio;
+        $this->filesystem = ($filesystem == null) ? new Filesystem : $filesystem;
         \View::share('settings', $this->settings);
     }
 	/**
@@ -58,6 +61,37 @@ class BaseController extends Controller {
     public function getPortfolioBlock()
     {
         return Portfolio::allActiveSorted();
+    }
+
+    public function uploadFile($data, $field_name)
+    {
+        //Only run when an image
+        if($data[$field_name])
+        {
+            $image = $data[$field_name];
+            $filename = $image->getClientOriginalName();
+            $destination = $this->save_to;
+
+            if(!$this->filesystem->exists($destination)) {
+                $this->filesystem->mkdir($destination);
+            }
+            try {
+                $image->move($destination, $filename);
+                $data[$field_name] = $filename;
+            } catch(\Exception $e) {
+                throw new \Exception("Error uploading file $field_name" . $e->getMessage());
+            }
+        }
+        return $data;
+    }
+
+    public function checkPublished($data)
+    {
+        if(!isset($data['published'])) {
+            $data['published'] = 0;
+        }
+
+        return $data;
     }
 
 }

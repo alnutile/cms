@@ -60,11 +60,16 @@ Use the corresponding body tag for your chosen theme
 <!-- //end header -->
     <div class="container content">
         <div class="row">
+            <!--alerts-->
+            @if (Session::has('message'))
             <div class="row clearfix">
                 <div class="col-lg-12">
                     @include('shared.alerts')
                 </div>
             </div>
+            @endif
+
+
             @if($settings->maintenance_mode == 1)
                 <div class="alert alert-danger">
                     Your site is in maintenance mode. Only logged in users can see the site.
