@@ -1,4 +1,4 @@
-@javascript @feature1
+@javascript @user
 Feature: Testing User Auth
 
   Background: Login to the site

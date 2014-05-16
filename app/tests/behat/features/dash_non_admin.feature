@@ -1,4 +1,4 @@
-@javascript
+@javascript @dash
 Feature: Testing the Dash
 
   Background: Login to the site

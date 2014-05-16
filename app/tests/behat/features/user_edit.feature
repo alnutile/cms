@@ -1,4 +1,4 @@
-@javascript
+@javascript @user
 Feature: Testing User Edit
 
   Scenario: User CRUD

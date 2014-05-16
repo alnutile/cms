@@ -126,4 +126,17 @@ class FeatureContext extends MinkContext
     public function iResetTheSession() {
         $this->getSession()->reset();
     }
+
+    /**
+     * @Then /^I fill in wysiwyg on field "([^"]*)" with "([^"]*)"$/
+     */
+    public function iFillInWysiwygOnFieldWith($arg, $arg2)
+    {
+        $js = <<<HEREDOC
+        jQuery("textarea[name='$arg']").css('visibility', 'visible');
+        jQuery("textarea[name='$arg']").show();
+HEREDOC;
+        $this->getSession()->executeScript($js);
+        $this->fillField($arg, $arg2);
+    }
 }

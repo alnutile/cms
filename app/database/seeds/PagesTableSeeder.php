@@ -28,7 +28,7 @@ class PagesTableSeeder extends Seeder {
                 'body'  => 'This will be your about page',
                 'published' => 1,
                 'slug' => '/about',
-                'menu_sort_order' => 0,
+                'menu_sort_order' => 1,
                 'menu_parent' => 1,
                 'menu_name' => 'top',
                 'redirect_url' => ''
@@ -48,5 +48,17 @@ class PagesTableSeeder extends Seeder {
             ]
         );
 
+        Page::create(
+            [
+                'title' => "Portfolio",
+                'body'  => 'Your related Portfolio pages and their projects',
+                'published' => 1,
+                'slug' => '/portfolios',
+                'menu_sort_order' => 2,
+                'menu_parent' => 0,
+                'menu_name' => 'top',
+                'redirect_url' => ''
+            ]
+        );
     }
 }

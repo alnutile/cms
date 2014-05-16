@@ -29,13 +29,7 @@ class AddMenuToPages extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('pages', function(Blueprint $table)
-		{
-			$table->dropColumn('menu_sort_order');
-			$table->dropColumn('menu_parent');
-			$table->dropColumn('redirect_url');
-			$table->dropColumn('menu_name');
-		});
+        Schema::dropIfExists('pages');
 	}
 
 }

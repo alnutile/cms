@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreatePagesTable extends Migration {
+class CreateProjectsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,14 +12,17 @@ class CreatePagesTable extends Migration {
 	 */
 	public function up()
 	{
-        Schema::create('pages', function(Blueprint $table) {
-            $table->increments('id');
+		Schema::create('projects', function(Blueprint $table)
+		{
+			$table->increments('id');
 			$table->string('title');
 			$table->text('body');
-			$table->boolean('published');
-			$table->string('slug');
+			$table->string('image')->nullable();
+			$table->integer('portfolio_id');
+			$table->integer('order')->default(1);
+			$table->boolean('published')->default(0);
 			$table->timestamps();
-        });
+		});
 	}
 
 
@@ -30,7 +33,7 @@ class CreatePagesTable extends Migration {
 	 */
 	public function down()
 	{
-	    Schema::dropIfExists('pages');
+		Schema::dropIfExists('projects');
 	}
 
 }

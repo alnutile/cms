@@ -1,21 +1,44 @@
-## Laravel PHP Framework
+## Overview and Help
 
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/version.png)](https://packagist.org/packages/laravel/framework) [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.png)](https://packagist.org/packages/laravel/framework) [![Build Status](https://travis-ci.org/laravel/framework.png)](https://travis-ci.org/laravel/framework)
+  * Managing Inline Help
+  * Robot Text files
+  * CSS Changes
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, and caching.
+### Managing inline help
 
-Laravel aims to make the development process a pleasing one for the developer without sacrificing application functionality. Happy developers make the best code. To this end, we've attempted to combine the very best of what we have seen in other web frameworks, including frameworks implemented in other languages, such as Ruby on Rails, ASP.NET MVC, and Sinatra.
+Via github you can find a file and edit it and click save.
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+Every file you want to edit is in the app/views folder
+For example if you wanted to edit the Settings form you would look in
 
-## Official Documentation
+~~~
+app/views/settings
+~~~
 
-Documentation for the entire framework can be found on the [Laravel website](http://laravel.com/docs).
+and find the edit file or index file.
 
-### Contributing To Laravel
+In those files will be 1 place that you know are save to edit. That place will be inside this class
 
-**All issues and pull requests should be filed on the [laravel/framework](http://github.com/laravel/framework) repository.**
+~~~
+<div class="help-block">Some text here</div>
+~~~
 
-### License
+So it is save to edit that text.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+Finally make a comment on the form and click save and your code is not part of the code base.
+
+
+
+### Robot Text and Maintenance mode
+
+There is a robot.txt file in the public folder that is made by the system. You can optimize the robot.txt.allow and robot.txt.block file right in the github repo. Those will be saved.
+
+As you edit Settings and put the site in maintenance mode it will copy one of those files over the robots.txt file. 
+
+
+
+### CSS Changes 
+
+Coming soon...
+
+

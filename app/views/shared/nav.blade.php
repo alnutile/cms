@@ -12,10 +12,11 @@
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class=<?php if(Request::path() == 'pages') { echo 'active'; }?>><a href="/pages">Admin Pages</a></li>
+                <li class=<?php if(Request::path() == 'portfolios') { echo 'active'; }?>><a href="/admin/portfolios">Admin Portfolios</a></li>
+                <li class=<?php if(Request::path() == 'portfolios') { echo 'active'; }?>><a href="/admin/projects">Admin Projects</a></li>
                 @if(Auth::user()->admin == 1)
                   <li class=<?php if(Request::path() == 'users') { echo 'active'; }?>><a href="/users">Admin Users</a></li>
                 @endif
-                <li class=<?php if(Request::path() == 'portfolios') { echo 'active'; }?>><a href="#">Admin Portfolios</a></li>
                 <li class=<?php if(Request::path() == 'banners') { echo 'active'; }?>><a href="/banners">Admin Banners</a></li>
                 @if(Auth::user()->admin == 1)
                     <li class=<?php if(Request::path() == 'settings') { echo 'active'; }?>><a href="/settings/1/edit">Admin Settings</a></li>
@@ -23,7 +24,7 @@
                 <li class=<?php if(Request::path() == 'menu') { echo 'active'; }?>><a href="/menus">Admin Menu</a></li>
                 @if(Auth::check())
                     <li class=<?php if(Request::path() == 'users/' . Auth::user()->id .  '/edit') { echo 'active'; }?>>{{ HTML::link('users/' . Auth::user()->id .  '/edit', 'Profile') }}</li>
-                    <li>{{ HTML::link('logout', 'Logout') }}</li>
+                    <li><a href="/logout"><i class="glyphicon glyphicon-log-out"></i></a></li>
                 @endif
             </ul>
         </div><!--/.nav-collapse -->

@@ -1,5 +1,5 @@
-@javascript @feature2
-Feature: Testing Pages workflow
+@javascript @pages
+Feature: Testing Pages
 
   Scenario: Pages CRUD
     Given I am on "/logout"
