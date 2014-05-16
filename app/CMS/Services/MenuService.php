@@ -27,4 +27,30 @@ Class MenuService {
         }
     }
 
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function show($id = null)
+    {
+        if($id == null) {
+            $page = Page::first();
+        } else {
+            if(is_numeric($id)) {
+                $page = Page::find($id);
+            } else {
+                $page = Page::where("slug", 'LIKE', '/' . $id)->first();
+            }
+        }
+        if (isset($page) && $page->slug === '/home') {
+            $banner = TRUE;
+        } else {
+            $banner = FALSE;
+        }
+        $settings = $this->settings;
+        return $this->respond($page, 'pages.show',  compact('page', 'banner'));
+    }
+
 }
