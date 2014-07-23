@@ -18,7 +18,7 @@ class CreatePortfoliosTable extends Migration {
 			$table->string('title');
 			$table->text('body');
 			$table->boolean('published')->default(1);
-			$table->string('slug');
+			$table->string('slug')->unique();
 			$table->timestamps();
 		});
 	}

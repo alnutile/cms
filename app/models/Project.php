@@ -16,7 +16,8 @@ class Project extends BaseModel {
         'image',
         'order',
         'intro',
-        'portfolio_id'
+        'portfolio_id',
+        'seo'
     ];
 
     public function portfolio()

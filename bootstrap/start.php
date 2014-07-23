@@ -24,10 +24,14 @@ $app = new Illuminate\Foundation\Application;
 |
 */
 
-$env = $app->detectEnvironment(array(
-    'local' => array('Alfreds-MacBook-Pro-3.local'),
-    'staging' => array('jenkins.stagingarea.us')
-));
+$env = $app->detectEnvironment(function()
+{
+  if (file_exists(__DIR__ . '/../.env.php')) {
+    return include(__DIR__ . '/../.env.php');
+  } else {
+    return 'production';
+  }
+});
 
 /*
 |--------------------------------------------------------------------------

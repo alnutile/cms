@@ -3,12 +3,12 @@
 class Portfolio extends BaseModel {
 
 	public static $rules = [
-		'title' => 'required',
+		    'title' => 'required',
         'body'  => 'required',
-        'slug'  => 'required'
+        'slug'  => 'required|unique:portfolios'
  	];
 
-	protected $fillable = ['title', 'published', 'body', 'slug', 'order'];
+	protected $fillable = ['title', 'published', 'body', 'slug', 'order', 'seo'];
 
     public function projects()
     {

@@ -53,7 +53,11 @@ class PortfoliosController extends \BaseController {
 	 */
 	public function store()
 	{
-		$validator = Validator::make($data = Input::all(), Portfolio::$rules);
+    $messages = array(
+      'slug.unique' => 'The slug is not unique to the Portfolios table.',
+    );
+
+    $validator = Validator::make($data = Input::all(), Portfolio::$rules, $messages);
 
 		if ($validator->fails())
 		{
@@ -62,7 +66,7 @@ class PortfoliosController extends \BaseController {
 
 		Portfolio::create($data);
 
-		return Redirect::route('portfolios.index');
+		return Redirect::route('admin_portfolio');
 	}
 
 	/**
@@ -74,12 +78,12 @@ class PortfoliosController extends \BaseController {
     public function show($portfolio)
     {
         if(is_numeric($portfolio)) {
-            $portfolio = Page::find($portfolio);
+            $portfolio = Portfolio::find($portfolio);
         }
 
         $seo = $portfolio->seo;
         $banner = FALSE;
-        return View::make('portfolios.show', compact('portfolio', ' banner', 'settings', 'seo'));
+        return View::make('portfolios.show', compact('portfolio', 'banner', 'settings', 'seo'));
     }
 
 	/**
