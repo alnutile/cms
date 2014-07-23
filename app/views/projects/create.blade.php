@@ -10,7 +10,7 @@
 
     <h2>Create Projects:</h2>
 
-    {{ Form::model('project', array('method' => 'POST', 'route' => array('projects.store'), 'role' => 'form')) }}
+    {{ Form::model('project', array('method' => 'POST', 'route' => array('projects.store'), 'files' => 'true', 'role' => 'form')) }}
 
 
     <div class="form-group">

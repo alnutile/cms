@@ -45,7 +45,7 @@ class ProjectsController extends \BaseController {
 	public function create()
 	{
         $portfolios = Portfolio::allPortfoliosSelectOptions();
-		return View::make('projects.create', compact('portfolios'));
+		    return View::make('projects.create', compact('portfolios'));
 	}
 
 
@@ -92,10 +92,10 @@ class ProjectsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$project = Project::find($id);
+		    $project = Project::find($id);
         $portfolios = Portfolio::allPortfoliosSelectOptions();
         $path = $this->project_uri;
-		return View::make('projects.edit', compact('project', 'portfolios', 'path'));
+		    return View::make('projects.edit', compact('project', 'portfolios', 'path'));
 	}
 
 	/**
