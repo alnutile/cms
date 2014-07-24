@@ -53,7 +53,7 @@
     @if($errors->first('slug'))
     <div class="alert alert-danger">
         @if($errors->first('slug'))
-        Please make sure your url starts with / and only contains alpha numeric characters and dashes.
+      {{ $errors->first('slug') }}
         @endif
     </div>
     @endif

@@ -54,14 +54,17 @@ class PortfoliosController extends \BaseController {
 	public function store()
 	{
     $messages = array(
-      'slug.unique' => 'The slug is not unique to the Portfolios table.',
+      'slug.unique' => 'The url is not unique to the Portfolios table.',
+      'slug.regex' => 'The url must start with a slash and contain only letters and numbers, no spaces.'
     );
 
     $validator = Validator::make($data = Input::all(), Portfolio::$rules, $messages);
 
 		if ($validator->fails())
 		{
+      $messages = $validator->messages();
 			return Redirect::back()->withErrors($validator)->withInput();
+
 		}
 
 		Portfolio::create($data);
@@ -109,8 +112,12 @@ class PortfoliosController extends \BaseController {
 	{
 		$portfolio = Portfolio::findOrFail($id);
 
+    $messages = array(
+      'slug.unique' => 'The url is not unique to the Portfolios table.',
+      'slug.regex' => 'The url must start with a slash and contain only letters and numbers, no spaces.'
+    );
 
-		$validator = Validator::make($data = Input::all(), Portfolio::$rules);
+		$validator = Validator::make($data = Input::all(), Portfolio::$rules, $messages);
         $data = $this->checkPublished($data);
 
         if ($validator->fails())

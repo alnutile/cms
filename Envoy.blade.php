@@ -3,7 +3,7 @@
 @task('deploy', ['on'=> 'cms' ])
   cd /var/www/cms/site/current
   chmod 777 public/img/projects
-  chmod 777 public/img/settings
+  chmod 777 public/img/portfolios
   chmod 777 public/img/banners
   git pull origin development
   composer install 
