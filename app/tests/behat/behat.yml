@@ -1,15 +1,16 @@
 default:
   paths:
-    features:  /Users/alfrednutile/Laravel/cms/app/tests/behat/features
-    bootstrap: /Users/alfrednutile/Laravel/cms/app/tests/behat/features/bootstrap
+    features:  behat/features
+    bootstrap: features/bootstrap
   formatter:
     name: pretty
   extensions:
     Behat\MinkExtension\Extension:
       default_session: selenium2
       goutte: null
-      selenium2: null
-      base_url: 'http://localhost:8000/'
+      selenium2:
+        wd_host: "http://192.168.10.1:4444/wd/hub"
+      base_url: 'http://cms.app:8000/'
       browser_name: safari
 
 remote:

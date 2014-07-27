@@ -110,14 +110,24 @@ class PortfoliosController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$portfolio = Portfolio::findOrFail($id);
+    $portfolio = Portfolio::findOrFail($id);
+    $messages = [];
 
-    $messages = array(
-      'slug.unique' => 'The url is not unique to the Portfolios table.',
-      'slug.regex' => 'The url must start with a slash and contain only letters and numbers, no spaces.'
-    );
+    //1. see if the slug is the same as the original
+    //2. if it is then we will not validate against right
+    $all = Input::all();
+    $rules = Portfolio::$rules;
+    if(isset($all['slug']) && $all['slug'] != $portfolio->slug) {
+      $messages = array(
+        'slug.unique' => 'The url is not unique to the Portfolios table.',
+        'slug.regex' => 'The url must start with a slash and contain only letters and numbers, no spaces.'
+      );
+      $validator = Validator::make($data = Input::all(), $rules, $messages);
+    } else {
+      unset($rules['slug']);
+    }
 
-		$validator = Validator::make($data = Input::all(), Portfolio::$rules, $messages);
+		$validator = Validator::make($data = Input::all(), $rules, $messages);
         $data = $this->checkPublished($data);
 
         if ($validator->fails())
