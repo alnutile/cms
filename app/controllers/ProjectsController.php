@@ -56,18 +56,16 @@ class ProjectsController extends \BaseController {
 	 */
 	public function store()
 	{
-		$validator = Validator::make($data = Input::all(), Project::$rules);
+    $all = Input::all();
+    $rules = Project::$rules;
+    $validator = $this->validateSlugOnCreate($all, $rules);
 
-		if ($validator->fails())
-		{
-			return Redirect::back()->withErrors($validator)->withInput();
-		}
+    if ($validator->fails())
+    {
+      return Redirect::back()->withErrors($validator)->withInput();
+    }
 
-        if(isset($data['image'])) {
-            $data = $this->uploadFile($data, 'image');
-        }
-
-		Project::create($data);
+    Project::create($all);
 
 		return Redirect::route('admin_projects')->withMessage("Created Project");
 	}
@@ -106,14 +104,19 @@ class ProjectsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$project = Project::findOrFail($id);
+    $project  = Project::findOrFail($id);
+    $messages = [];
+    //1. see if the slug is the same as the original
+    //2. if it is then we will not validate against right
+    $all = Input::all();
+    $rules = Project::$rules;
 
-		$validator = Validator::make($data = Input::all(), Project::$rules);
-
-		if ($validator->fails())
-		{
-			return Redirect::back()->withErrors($validator)->withInput();
-		}
+    $validator = $this->validateSlugEdit($all, $project, $rules);
+    $data = $this->checkPublished($all);
+    if ($validator->fails())
+    {
+      return Redirect::back()->withErrors($validator)->withInput();
+    }
 
         if(isset($data['image'])) {
             $data = $this->uploadFile($data, 'image');

@@ -55,7 +55,12 @@ class PortfoliosController extends \BaseController {
   {
     $all = Input::all();
     $rules = Portfolio::$rules;
-    $this->validateSlugOnCreate($all, $rules);
+    $validator = $this->validateSlugOnCreate($all, $rules);
+
+    if ($validator->fails())
+    {
+      return Redirect::back()->withErrors($validator)->withInput();
+    }
 
     Portfolio::create($all);
 
@@ -102,7 +107,6 @@ class PortfoliosController extends \BaseController {
   {
     $portfolio = Portfolio::findOrFail($id);
     $messages = [];
-
     //1. see if the slug is the same as the original
     //2. if it is then we will not validate against right
     $all = Input::all();

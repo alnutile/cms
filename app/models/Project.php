@@ -5,7 +5,8 @@ class Project extends BaseModel {
   // Add your validation rules here
   public static $rules = [
     'title' => 'required',
-    'image' => 'mimes:jpeg,bmp,png,gif,jpg'
+    'image' => 'mimes:jpeg,bmp,png,gif,jpg',
+    'slug'  => 'required|unique:portfolios|regex:/^\/[A-Za-z0-9]+$/'
   ];
 
   // Don't forget to fill this array
