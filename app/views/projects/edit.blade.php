@@ -75,6 +75,19 @@
         @endif
     </div>
 
+
+  <div class="form-group">
+    <label>URL</label>
+    {{ Form::text('slug', null, array('class' => 'form-control')) }}
+    <div class="help-block">The url must start with / </div>
+  </div>
+  @if($errors->first('slug'))
+  <div class="alert alert-danger">
+    @if($errors->first('slug'))
+    {{ $errors->first('slug') }}
+    @endif
+  </div>
+  @endif
     <!-- image -->
 
     <div class="form-group">

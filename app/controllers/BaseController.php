@@ -86,6 +86,21 @@ class BaseController extends Controller {
         return $data;
     }
 
+    public function validateSlug($all, $model, $rules)
+    {
+      $messages = [];
+      if(isset($all['slug']) && $all['slug'] != $model->slug) {
+        $messages = array(
+          'slug.unique' => 'The url is not unique to the Portfolios table.',
+          'slug.regex' => 'The url must start with a slash and contain only letters and numbers, no spaces.'
+        );
+      } else {
+        unset($rules['slug']);
+      }
+      $validator = Validator::make($data = Input::all(), $rules, $messages);
+      return $validator;
+    }
+
     public function checkPublished($data)
     {
         if(!isset($data['published'])) {

@@ -44,7 +44,6 @@
     </div>
     @endif
 
-    @if(Auth::user()->admin == 1)
     <div class="form-group">
         <label>URL</label>
         {{ Form::text('slug', null, array('class' => 'form-control')) }}
@@ -56,7 +55,6 @@
       {{ $errors->first('slug') }}
         @endif
     </div>
-    @endif
     @endif
 
     <div class="form-group">
