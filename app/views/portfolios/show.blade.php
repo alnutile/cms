@@ -19,16 +19,8 @@
     <hr>
     <h3>Related Projects</h3>
 
-    @foreach($portfolio->projects as $p)
-        <?php if(empty($p->image)) { $image = 'project3.jpg'; } else { $image = $p->image; } ?>
-        <div class="media">
-            <img class="media-object col-lg-4" src="/img/projects/{{$image}}" alt="{{$p->title}}">
-            <div class="media-body">
-                <h4 class="media-heading">{{$p->title}}</h4>
-                <p>{{$p->body}}</p>
-                <div><a href="{{$p->slug}}">read more...</a></div>
-            </div>
-        </div>
+    @foreach($portfolio->projects as $project)
+      @include('shared.projects_teasers')
     @endforeach
 
 </div>

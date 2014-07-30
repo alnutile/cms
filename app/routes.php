@@ -29,12 +29,16 @@ Route::get('/admin/projects', array(
     'uses' => 'ProjectsController@adminIndex'
 ));
 
+
+
+
 Route::get('/admin', array('before' => 'auth', 'uses' => 'AdminController@dash'));
 
 
 Route::get('/{id?}', function($id = null){
     return Menu::show($id);
 });
+
 
 
 Route::get('/auth/token', function(){

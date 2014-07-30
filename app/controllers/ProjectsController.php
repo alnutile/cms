@@ -37,6 +37,7 @@ class ProjectsController extends \BaseController {
         return View::make('projects.admin_index', compact('projects'));
     }
 
+
 	/**
 	 * Show the form for creating a new project
 	 *
@@ -76,7 +77,6 @@ class ProjectsController extends \BaseController {
         if(is_numeric($project)) {
             $project = Project::find($project);
         }
-
         $seo = $project->seo;
         $banner = FALSE;
         return View::make('projects.show', compact('project', ' banner', 'settings', 'seo'));
