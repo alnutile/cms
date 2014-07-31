@@ -27,7 +27,6 @@
         @endforeach
         </tbody>
     </table>
-<!--  test-->
     <a class="btn btn-success" href="/banners/create">create banner</a>
 </div>
 @stop
