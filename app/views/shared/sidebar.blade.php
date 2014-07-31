@@ -23,7 +23,7 @@
                      $active = 'not-active';
                 }
             ?>
-            <li class="{{$active}}"><a href="{{$portfolio->slug}}">{{$portfolio->title}}</a></li>
+            <li class="{{$active}}"><a href="{{$portfolio->slug}}">{{{$portfolio->title}}}</a></li>
         @endforeach
             <!-- all projects -->
             <?php
@@ -34,7 +34,7 @@
                     $active = 'not-active';
                 }
             ?>
-            <li class="{{$active}}"><a href="{{$project->slug}}">{{$project->title}}</a></li>
+            <li class="{{$active}}"><a href="{{$project->slug}}">{{{$project->title}}}</a></li>
         </ul>
 @endif
 </div>

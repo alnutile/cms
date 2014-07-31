@@ -14,7 +14,7 @@
 </div>
 
 <div class="col-md-9 column">
-  <h1>{{ $page->title }}</h1>
+  <h1>{{{ $page->title }}}</h1>
   <p> {{ $page->body }} </p>
 
   @if($page->id == 4)

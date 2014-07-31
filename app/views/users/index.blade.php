@@ -17,7 +17,7 @@
             @foreach($users as $user)
                 @if(Auth::user()->id == 1 || $user->id == Auth::user()->id)
                     <tr>
-                        <td><a href="/users/{{$user->id}}/edit">{{$user->firstname}} {{$user->lastname}}</a></td>
+                        <td><a href="/users/{{$user->id}}/edit">{{{$user->firstname}}} {{{$user->lastname}}}</a></td>
                         <td><a href="/users/{{$user->id}}/edit">{{$user->email}}</a></td>
                         <td><a href="/users/{{$user->id}}/edit">edit</a></td>
                     </tr>

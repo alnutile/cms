@@ -18,8 +18,8 @@
         <tbody>
         @foreach($banners as $banner)
         <tr>
-            <td><img src="{{$path}}/{{$banner->banner_name}}" class="banner-index"></td>
-            <td><a href="/banners/{{$banner->id}}/edit">{{$banner->name}}</a></td>
+            <td><img src="{{$path}}/{{{$banner->banner_name}}}" class="banner-index"></td>
+            <td><a href="/banners/{{$banner->id}}/edit">{{{$banner->name}}}</a></td>
             <td>{{$banner->active}}</td>
             <td>{{$banner->order}}</td>
             <td><a id="banner-id-{{$banner->id}}" href="/banners/{{$banner->id}}/edit">edit</a></td>

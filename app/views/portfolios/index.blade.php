@@ -19,7 +19,7 @@
     <div class="media">
         <img class="media-object col-lg-4" src="/img/projects/{{$image}}" alt="{{$p->title}}">
         <div class="media-body">
-            <h4 class="media-heading">{{$p->title}}</h4>
+            <h4 class="media-heading">{{{$p->title}}}</h4>
             <p>{{$p->body}}</p>
             <br>
             <a id="portfolio-id-{{$p->id}}"

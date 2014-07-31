@@ -16,7 +16,7 @@
 </div>
 
 <div class="col-md-9 column">
-    <h1>{{ $project->title }}</h1>
+    <h1>{{{ $project->title }}}</h1>
         <div class="row">
             <img class="col-lg-12" src="/img/projects/{{$project->image}}" alt="{{$project->title}}">
         </div>

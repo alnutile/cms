@@ -12,7 +12,7 @@
                 <?php ('/' . Request::path() === $page->slug || Request::path() == '/' && $page->slug == '/home' ) ? $active = 'active' : $active = 'not-active';?>
                 <li class="{{$active}}">
                     <a href="{{$page->slug}}">
-                        {{$page->title}}
+                        {{{$page->title}}}
                     </a>
                 </li>
             @endforeach

@@ -14,7 +14,7 @@
 </div>
 
 <div class="col-md-9 column">
-    <h1>{{ $portfolio->title }}</h1>
+    <h1>{{{ $portfolio->title }}}</h1>
     <p> {{ $portfolio->body }} </p>
     <hr>
     <h3>Related Projects</h3>
