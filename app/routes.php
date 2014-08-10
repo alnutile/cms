@@ -44,18 +44,18 @@ Route::get('/auth/token', function(){
 });
 
 
-Route::get('images/projects', 'ImagesController@uploadProject');
-Route::post('images/projects', 'ImagesController@uploadProject');
-/**
- * Get images for project x
- *
- */
-Route::get('/api/v1/getImageFromImageableItem/{imageable_type}/{imageable_id}', 'ImagesController@getImageFromImageableItem');
-Route::resource('/api/v1/images', 'ImagesController');
-
-
 Route::group(array('before' => 'auth'), function() {
 
+
+    /**
+     * Get images for project x
+     *
+     */
+    Route::get('/api/v1/getImageFromImageableItem/{imageable_type}/{imageable_id}', 'ImagesController@getImageFromImageableItem');
+    Route::resource('/api/v1/images', 'ImagesController');
+
+    Route::get('images/projects', 'ImagesController@uploadProject');
+    Route::post('images/projects', 'ImagesController@uploadProject');
 
     Route::post('/api/v1/ckeditor/images', function(){
         $files = new FilesController();
