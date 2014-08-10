@@ -40,12 +40,14 @@ Route::get('/{id?}', function($id = null){
 });
 
 
-
 Route::get('/auth/token', function(){
     return csrf_token();
 });
 
 Route::group(array('before' => 'auth'), function() {
+
+    Route::get('images/projects', 'ImagesController@uploadProject');
+    Route::post('images/projects', 'ImagesController@uploadProject');
 
     Route::post('/api/v1/ckeditor/images', function(){
         $files = new FilesController();

@@ -104,3 +104,7 @@ ol.top-menu li.placeholder:before {
 #social i {
     font-size: 26px;
 }
+
+a.flow {
+    cursor: pointer;
+}

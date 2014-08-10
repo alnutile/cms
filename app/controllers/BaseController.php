@@ -127,4 +127,15 @@ class BaseController extends Controller {
     return $data;
   }
 
+    protected function addImages($id, $data, $type)
+    {
+
+        if(isset($data['images'])) {
+            foreach($data['images'] as $image)
+            {
+                //@TODO add catch here
+                Images::add_images($image, $id, $type);
+            }
+        }
+    }
 }

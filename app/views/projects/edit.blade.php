@@ -91,7 +91,7 @@
     <!-- image -->
 
     <div class="form-group">
-        <label for="email">Upload File</label>
+        <label for="email">Upload Main Image</label>
         {{ Form::file('image', null, array('class' => 'form-control', 'tabindex' => 1)) }}
         @if($errors->first('image'))
         <div class="alert alert-danger">
@@ -105,8 +105,19 @@
                 </div>
             </div>
         @endif
+        <div class="help-block">This is the image we will use for the default project image</div>
     </div>
 
+    <br>
+    <br>
+
+    <!-- images upload -->
+
+    @include('projects.images_angular')
+
+    <br>
+    <br>
+    <!-- end images upload -->
 
     <div class="controls">
         {{ Form::submit('Update Project', array('id' => 'submit', 'class' => 'btn btn-success')) }}

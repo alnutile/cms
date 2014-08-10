@@ -57,20 +57,21 @@ class ProjectsController extends \BaseController {
 	 */
 	public function store()
 	{
-    $all = Input::all();
-    $rules = Project::$rules;
-    $validator = $this->validateSlugOnCreate($all, $rules);
+        $all = Input::all();
+        $rules = Project::$rules;
+        $validator = $this->validateSlugOnCreate($all, $rules);
 
-    if ($validator->fails())
-    {
-      return Redirect::back()->withErrors($validator)->withInput();
-    }
+        if ($validator->fails())
+        {
+          return Redirect::back()->withErrors($validator)->withInput();
+        }
 
-    Project::create($all);
 
-		return Redirect::route('admin_projects')->withMessage("Created Project");
+
+        $project = Project::create($all);
+        $this->addImages($project->id, $all, 'Project');
+        return Redirect::route('admin_projects')->withMessage("Created Project");
 	}
-
 
     public function show($project)
 	{
@@ -90,10 +91,10 @@ class ProjectsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		    $project = Project::find($id);
+        $project = Project::find($id);
         $portfolios = Portfolio::allPortfoliosSelectOptions();
         $path = $this->project_uri;
-		    return View::make('projects.edit', compact('project', 'portfolios', 'path'));
+        return View::make('projects.edit', compact('project', 'portfolios', 'path'));
 	}
 
 	/**
@@ -123,6 +124,9 @@ class ProjectsController extends \BaseController {
         } else {
             $data['image'] = $project->image;
         }
+
+        $this->addImages($project->id, $data, 'Project');
+
         $data = $this->checkPublished($data);
         $project->update($data);
 

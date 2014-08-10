@@ -102,7 +102,13 @@ Use the corresponding body tag for your chosen theme
 {{ HTML::script('/assets/js/jquery.fitvids.js') }}
 {{ HTML::script('/assets/js/colorfrog.js') }}
 {{ HTML::script('/assets/js/lib/ckeditor-full/ckeditor.js') }}
+{{ HTML::script('/bower_components/angular/angular.js') }}
+{{ HTML::script('/bower_components/lodash/dist/lodash.js') }}
+{{ HTML::script('/bower_components/restangular/dist/restangular.js') }}
+{{ HTML::script('/bower_components/ng-flow/dist/ng-flow-standalone.js') }}
 {{ HTML::script('/assets/js/app.js') }}
+{{ HTML::script('/assets/js/angular_app.js') }}
+{{ HTML::script('/assets/js/projectsImagesCtrl.js') }}
 
 </body>
 </html>
