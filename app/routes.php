@@ -39,15 +39,23 @@ Route::get('/{id?}', function($id = null){
     return Menu::show($id);
 });
 
-
 Route::get('/auth/token', function(){
     return csrf_token();
 });
 
+
+Route::get('images/projects', 'ImagesController@uploadProject');
+Route::post('images/projects', 'ImagesController@uploadProject');
+/**
+ * Get images for project x
+ *
+ */
+Route::get('/api/v1/getImageFromImageableItem/{imageable_type}/{imageable_id}', 'ImagesController@getImageFromImageableItem');
+Route::resource('/api/v1/images', 'ImagesController');
+
+
 Route::group(array('before' => 'auth'), function() {
 
-    Route::get('images/projects', 'ImagesController@uploadProject');
-    Route::post('images/projects', 'ImagesController@uploadProject');
 
     Route::post('/api/v1/ckeditor/images', function(){
         $files = new FilesController();

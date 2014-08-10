@@ -21,6 +21,13 @@ class ImagesController extends BaseController{
     protected $chunkDir;
     protected $config;
 
+
+    public function getImageFromImageableItem($imageable_type, $imageable_id)
+    {
+        $model = $imageable_type::findOrFail($imageable_id);
+        return Response::json(['data' => $model->images()->getResults()->toArray(), 'message' => "Images"], 200);
+    }
+
     public function uploadProject()
     {
         $this->setTemp();
@@ -101,6 +108,19 @@ class ImagesController extends BaseController{
         if(!File::exists($this->getDestinationDir())) {
             File::makeDirectory($this->getDestinationDir(), $mode = 664);
         }
+    }
+
+    /**
+     * Remove the specified project from storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function destroy($id)
+    {
+        Image::destroy($id);
+
+        return Response::json(['data' => [], 'message' => "Image Deleted"], 200);
     }
 
 }

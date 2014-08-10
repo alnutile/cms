@@ -107,7 +107,7 @@
 
     <!-- images upload -->
 
-    @include('projects.images')
+    @include('projects.images_angular')
 
     <br>
     <br>

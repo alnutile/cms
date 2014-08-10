@@ -1,30 +1,43 @@
-(function() {
+var projectsControllers = angular.module('projectControllers', []);
 
-    'use strict';
+projectsControllers.controller('ProjectImagesController', ['$scope', 'Restangular', 'Noty', '$window',
+    function($scope, Restangular, Noty, $window){
+        $scope.test = "Yup";
 
-    function ProjectsServices()
-    {
-        this.get_files = function()
+        $scope.project_id = false;
+
+        $scope.deleteImage = function(id) {
+            Restangular.one('api/v1/images', id).remove();
+            angular.forEach($scope.images, function(v, i){
+                if(v.id == id)
+                {
+                    $scope.images.splice(i, 1)
+                }
+            });
+            Noty('Image deleted', 'success');
+        };
+
+        console.log($window.location.pathname);
+
+        $scope.getProjectId = function()
         {
-            return [1,2,3];
+            var path = $window.location.pathname;
+            path_array = path.split('/');
+            if(path_array.indexOf('edit') !== -1) {
+                $scope.project_id = path_array[2];
+            }
         }
-    }
 
-    angular.module('app').factory('ProjectsServices', ProjectsServices);
+        $scope.getProjectId();
+
+        $scope.getImages = function()
+        {
+            Restangular.one('api/v1/getImageFromImageableItem/Project', $scope.project_id).get().then(function(response){
+                    $scope.images = response.data;
+                }
+            );
+        }
+        $scope.getImages();
 
 
-    function ProjectImagesCtrl(ProjectsServices)
-    {
-        this.test = "You are here";
-
-        this.project_services = ProjectsServices;
-
-        this.example_service = ProjectsServices.get_files();
-
-    }
-
-    angular
-        .module('app')
-        .controller('ProjectImagesCtrl', ProjectImagesCtrl);
-
-})();
+}]);

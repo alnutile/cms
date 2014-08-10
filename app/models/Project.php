@@ -27,4 +27,9 @@ class Project extends BaseModel {
     return $this->belongsTo('Portfolio');
   }
 
+  public function images()
+  {
+      return $this->morphMany('Image', 'imageable');
+  }
+
 }

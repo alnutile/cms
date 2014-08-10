@@ -105,10 +105,13 @@ Use the corresponding body tag for your chosen theme
 {{ HTML::script('/bower_components/angular/angular.js') }}
 {{ HTML::script('/bower_components/lodash/dist/lodash.js') }}
 {{ HTML::script('/bower_components/restangular/dist/restangular.js') }}
-{{ HTML::script('/bower_components/ng-flow/dist/ng-flow-standalone.js') }}
+<!--{{ HTML::script('/bower_components/flow.js/dist/flow.js') }}-->
+ {{ HTML::script('/bower_components/ng-flow/dist/ng-flow-standalone.js') }}
 {{ HTML::script('/assets/js/app.js') }}
+<!--{{ HTML::script('/assets/js/cms_flow.js') }}-->
 {{ HTML::script('/assets/js/angular_app.js') }}
-{{ HTML::script('/assets/js/projectsImagesCtrl.js') }}
+{{ HTML::script('/assets/js/alertServices.js') }}
+ {{ HTML::script('/assets/js/projectsImagesCtrl.js') }}
 
 </body>
 </html>

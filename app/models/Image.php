@@ -12,4 +12,9 @@ class Image extends \Eloquent {
         'imageable_id' => 'required',
         'imageable_type'  => 'required',
     ];
+
+    public function imageable()
+    {
+        return $this->morphTo();
+    }
 }

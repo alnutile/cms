@@ -1,4 +1,7 @@
-<div class="flow-drop" ondragenter="jQuery(this).addClass('flow-dragover');" ondragend="jQuery(this).removeClass('flow-dragover');" ondrop="jQuery(this).removeClass('flow-dragover');">
+<div class="flow-drop"
+     ondragenter="jQuery(this).addClass('flow-dragover');"
+     ondragend="jQuery(this).removeClass('flow-dragover');"
+     ondrop="jQuery(this).removeClass('flow-dragover');">
     Drop files here to upload or
     <a class="flow-browse-folder flow">
         <u>select folder</u>

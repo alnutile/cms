@@ -1,13 +1,12 @@
-(function() {
-
 'use strict';
 
-angular
-    .module('app', [
-        'restangular'
+var app = angular.module('app', [
+        'restangular',
+        'alertServices',
+        'flow',
+        'projectControllers'
     ]).
     config(function($interpolateProvider){
-        $interpolateProvider.startSymbol('[[').endSymbol(']]');
+        $interpolateProvider.startSymbol('[[').endSymbol(']]'); //{{ }}
     });
 
-})();

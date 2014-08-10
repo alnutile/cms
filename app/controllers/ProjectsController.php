@@ -57,6 +57,7 @@ class ProjectsController extends \BaseController {
 	 */
 	public function store()
 	{
+
         $all = Input::all();
         $rules = Project::$rules;
         $validator = $this->validateSlugOnCreate($all, $rules);
@@ -66,10 +67,11 @@ class ProjectsController extends \BaseController {
           return Redirect::back()->withErrors($validator)->withInput();
         }
 
-
-
         $project = Project::create($all);
-        $this->addImages($project->id, $all, 'Project');
+
+        if(isset($all['images'])) {
+            $this->addImages($project->id, $all['images'], 'Project');
+        }
         return Redirect::route('admin_projects')->withMessage("Created Project");
 	}
 
