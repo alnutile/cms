@@ -1,0 +1,13 @@
+{
+  "name": "cms",
+  "version": "0.0.1",
+  "directory": "public/bower_components",
+  "dependencies": {
+      "restangular": "1.4.0",
+      "ng-flow": "~2",
+      "jquery": "~2.1.1",
+      "noty": "~2.2.5",
+      "angular": "1.3.*",
+      "jquery-colorbox":"~1.5"
+  }
+}

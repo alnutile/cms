@@ -5,7 +5,7 @@ class Portfolio extends BaseModel {
   public static $rules = [
     'title' => 'required',
     'body'  => 'required',
-    'slug'  => 'required|unique:portfolios|regex:/^\/[A-Za-z0-9]+$/'
+    'slug'  => 'required|unique:portfolios|regex:/^\/[A-Za-z0-9_]+$/'
   ];
 
 

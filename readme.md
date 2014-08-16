@@ -42,3 +42,9 @@ As you edit Settings and put the site in maintenance mode it will copy one of th
 Coming soon...
 
 
+### Setup
+
+  * bower
+  * gulp
+  * composer
+

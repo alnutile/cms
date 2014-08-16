@@ -1,3 +1,6 @@
+bower_components
+public/assets/img
+public/bower_compnents
 .idea/*
 public/bower_components
 public/assets/img/projects/

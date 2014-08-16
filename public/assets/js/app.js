@@ -3,6 +3,9 @@ $(document).ready(function(){
         CKEDITOR.replace( '.ckeditor');
     };
 
+    //image galleries on projects
+    $('a.gallery').colorbox({rel:'gal', transition: "fade", maxHeight:"700px", maxWidth:"700px" });
+
     $('#top-button').on("click", function(){
         var data = $("body").data('top_menu');
         $.ajax({

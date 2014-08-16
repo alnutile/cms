@@ -102,6 +102,16 @@
 
   <!-- image -->
 
+    <br>
+    <br>
+
+    <!-- images upload -->
+
+    @include('projects.images_angular')
+
+    <br>
+    <br>
+
   <div class="controls">
     {{ Form::submit('Create Project', array('id' => 'submit', 'class' => 'btn btn-success')) }}
     <br>
