@@ -1,5 +1,5 @@
 <?php if(empty($project->image)) { $image = 'project3.jpg'; } else { $image = $project->image; } ?>
-<div class="media">
+<div class="media row">
   <img class="media-object col-lg-4" src="/img/projects/{{$image}}" alt="{{{$project->title}}}">
   <div class="media-body">
     <h4 class="media-heading">{{{$project->title}}}</h4>
