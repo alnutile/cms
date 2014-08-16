@@ -23,12 +23,15 @@
     <!-- <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'> -->
     {{ HTML::style('assets/css/prettify.css') }}
     {{ HTML::style('assets/css/main.css') }}
+  {{ HTML::style('/bower_components/jquery-colorbox/example4/colorbox.css') }}
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     {{ HTML::script('assets/js/html5shiv.js') }}
     {{ HTML::script('assets/js/respond.min.js') }}
-    <![endif]-->
+
+  <![endif]-->
 
 </head>
 

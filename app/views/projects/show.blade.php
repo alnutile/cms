@@ -25,7 +25,7 @@
   </div>
   @foreach ($project->images as $image)
 
-   <img class="col-lg-3 gallery" src="/assets/img/projects/{{$image->file_name}}" alt="{{$image->file_name}}">
+  <a class="gallery" href="/assets/img/projects/{{$image->file_name}}" alt="{{$image->file_name}}"><img class="col-lg-3" src="/assets/img/projects/{{$image->file_name}}" alt="{{$image->file_name}}"></a>
 
   @endforeach
 </div>
