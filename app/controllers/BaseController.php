@@ -131,7 +131,7 @@ class BaseController extends Controller {
     {
         foreach($images as $image)
         {
-            //@TODO add catch here
+          //@TODO add catch here
             Images::add_images($image, $id, $type);
         }
     }

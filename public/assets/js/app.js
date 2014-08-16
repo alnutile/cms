@@ -3,6 +3,8 @@ $(document).ready(function(){
         CKEDITOR.replace( '.ckeditor');
     };
 
+    $('img.gallery').colorbox();
+
     $('#top-button').on("click", function(){
         var data = $("body").data('top_menu');
         $.ajax({

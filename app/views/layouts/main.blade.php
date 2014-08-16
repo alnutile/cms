@@ -105,6 +105,7 @@ Use the corresponding body tag for your chosen theme
 {{ HTML::script('/bower_components/angular/angular.js') }}
 {{ HTML::script('/bower_components/lodash/dist/lodash.js') }}
 {{ HTML::script('/bower_components/restangular/dist/restangular.js') }}
+{{ HTML::script('/bower_components/jquery-colorbox/jquery.colorbox-min.js') }}
 <!--{{ HTML::script('/bower_components/flow.js/dist/flow.js') }}-->
  {{ HTML::script('/bower_components/ng-flow/dist/ng-flow-standalone.js') }}
 {{ HTML::script('/assets/js/app.js') }}

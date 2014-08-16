@@ -17,7 +17,6 @@ projectsControllers.controller('ProjectImagesController', ['$scope', 'Restangula
             Noty('Image deleted', 'success');
         };
 
-        console.log($window.location.pathname);
 
         $scope.getProjectId = function()
         {
@@ -32,12 +31,14 @@ projectsControllers.controller('ProjectImagesController', ['$scope', 'Restangula
 
         $scope.getImages = function()
         {
-            Restangular.one('api/v1/getImageFromImageableItem/Project', $scope.project_id).get().then(function(response){
-                    $scope.images = response.data;
-                }
-            );
+            if($scope.project_id !=false){
+                Restangular.one('api/v1/getImageFromImageableItem/Project', $scope.project_id).get().then(function(response){
+                        $scope.images = response.data;
+                    }
+                );
+            }
         }
         $scope.getImages();
 
 
-}]);
+    }]);
