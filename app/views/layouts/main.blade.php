@@ -23,6 +23,7 @@
     <!-- <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'> -->
     {{ HTML::style('assets/css/prettify.css') }}
     {{ HTML::style('assets/css/main.css') }}
+    {{ HTML::style('assets/css/custom.css') }}
   {{ HTML::style('/bower_components/jquery-colorbox/example4/colorbox.css') }}
 
 

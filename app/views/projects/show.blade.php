@@ -23,11 +23,13 @@
   <div class="row">
     {{$project->body}}
   </div>
-  @foreach ($project->images as $image)
+  <div class = "row gallery_row">
+    @foreach ($project->images as $image)
 
-  <a class="gallery" href="/assets/img/projects/{{$image->file_name}}" alt="{{$image->file_name}}"><img class="col-lg-3" src="/assets/img/projects/{{$image->file_name}}" alt="{{$image->file_name}}"></a>
+      <a class="gallery" href="/assets/img/projects/{{$image->file_name}}" alt="{{$image->file_name}}"><img class="col-lg-3" src="/assets/img/projects/{{$image->file_name}}" alt="{{$image->file_name}}"></a>
 
-  @endforeach
+    @endforeach
+  </div>
 </div>
 
 
