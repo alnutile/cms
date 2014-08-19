@@ -25,7 +25,12 @@
   </div>
   <div class = "row gallery_row">
     @foreach ($project->images as $image)
-      <a class="gallery" href="/assets/img/projects/{{$image->file_name}}" alt="{{$image->file_name}}"><img class="col-lg-3" src="/assets/img/projects/{{$image->file_name}}" alt="{{$image->file_name}}"></a>
+    <div class = "col-lg-3 gallery_item">
+      <a class="gallery" href="/assets/img/projects/{{$image->file_name}}" alt="{{$image->file_name}}" title="{{$image->image_caption}}"><img class="col-lg-12" src="/assets/img/projects/{{$image->file_name}}" alt="{{$image->file_name}}"></a>
+      <br>
+      <span class="caption">{{$image->image_caption}}</span>
+
+    </div>
     @endforeach
   </div>
 </div>

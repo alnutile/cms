@@ -4,7 +4,7 @@ $(document).ready(function(){
     };
 
     //image galleries on projects
-    $('a.gallery').colorbox({rel:'gal', transition: "fade", maxHeight:"700px", maxWidth:"700px" });
+    $('a.gallery').colorbox({rel:'gal', transition: "fade", maxHeight:"800px", maxWidth:"700px", width:"600px" });
 
     $('#top-button').on("click", function(){
         var data = $("body").data('top_menu');

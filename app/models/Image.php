@@ -3,6 +3,7 @@
 class Image extends \Eloquent {
 	protected $fillable = [
         'file_name',
+        'image_caption',
         'imageable_id',
         'imageable_type'
     ];

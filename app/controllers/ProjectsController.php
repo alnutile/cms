@@ -114,18 +114,19 @@ class ProjectsController extends \BaseController {
     //2. if it is then we will not validate against right
     $all = Input::all();
     $rules = Project::$rules;
-
     $validator = $this->validateSlugEdit($all, $project, $rules);
     $data = $this->checkPublished($all);
     if ($validator->fails())
     {
       return Redirect::back()->withErrors($validator)->withInput();
     }
-
     if(isset($data['image'])) {
       $data = $this->uploadFile($data, 'image');
     } else {
       $data['image'] = $project->image;
+    }
+    if(isset($data['image_caption_update'])){
+      $this->updateImagesCaption($data['image_caption_update']);
     }
 
     if(isset($data['images'])) {

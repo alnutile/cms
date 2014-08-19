@@ -2,10 +2,7 @@ var projectsControllers = angular.module('projectControllers', []);
 
 projectsControllers.controller('ProjectImagesController', ['$scope', 'Restangular', 'Noty', '$window',
     function($scope, Restangular, Noty, $window){
-        $scope.test = "Yup";
-
         $scope.project_id = false;
-
         $scope.deleteImage = function(id) {
             Restangular.one('api/v1/images', id).remove();
             angular.forEach($scope.images, function(v, i){
@@ -39,6 +36,7 @@ projectsControllers.controller('ProjectImagesController', ['$scope', 'Restangula
             }
         }
         $scope.getImages();
+
 
 
     }]);
