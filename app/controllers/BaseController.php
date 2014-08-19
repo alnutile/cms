@@ -132,9 +132,26 @@ class BaseController extends Controller {
         foreach($images as $image)
         {
           //@TODO add catch here
-            Images::add_images($image, $id, $type);
+        //  $name = $image['file'];
+          $file_name = $image['file'];
+          $caption = $image['image_caption'];
+            Images::add_images($file_name, $id, $type, $caption);
         }
     }
+
+  protected function updateImagesCaption($image_captions)
+  {
+    foreach($image_captions as $key => $image_caption)
+    {
+      //@TODO add catch here
+      $image_id = intval($key);
+      $caption = $image_caption[0];
+      if($caption != NULL){
+      $new_data = array("image_caption" => $caption);
+      Image::where("id","=",$image_id)->update($new_data);
+      }
+    }
+  }
 
     public function getImages($imageable_id, $type)
     {
