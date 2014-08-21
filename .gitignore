@@ -1,5 +1,13 @@
 
+
+
+bower_components
+public/assets/img
+public/bower_compnents
+
 .idea/*
+public/bower_components
+public/assets/img/projects/
 app/database/local.sqlite
 public/robots.txt
 Envoy.php

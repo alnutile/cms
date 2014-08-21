@@ -23,12 +23,16 @@
     <!-- <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'> -->
     {{ HTML::style('assets/css/prettify.css') }}
     {{ HTML::style('assets/css/main.css') }}
+    {{ HTML::style('assets/css/custom.css') }}
+  {{ HTML::style('/bower_components/jquery-colorbox/example4/colorbox.css') }}
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     {{ HTML::script('assets/js/html5shiv.js') }}
     {{ HTML::script('assets/js/respond.min.js') }}
-    <![endif]-->
+
+  <![endif]-->
 
 </head>
 
@@ -102,7 +106,17 @@ Use the corresponding body tag for your chosen theme
 {{ HTML::script('/assets/js/jquery.fitvids.js') }}
 {{ HTML::script('/assets/js/colorfrog.js') }}
 {{ HTML::script('/assets/js/lib/ckeditor-full/ckeditor.js') }}
+{{ HTML::script('/bower_components/angular/angular.js') }}
+{{ HTML::script('/bower_components/lodash/dist/lodash.js') }}
+{{ HTML::script('/bower_components/restangular/dist/restangular.js') }}
+{{ HTML::script('/bower_components/jquery-colorbox/jquery.colorbox-min.js') }}
+<!--{{ HTML::script('/bower_components/flow.js/dist/flow.js') }}-->
+ {{ HTML::script('/bower_components/ng-flow/dist/ng-flow-standalone.js') }}
 {{ HTML::script('/assets/js/app.js') }}
+<!--{{ HTML::script('/assets/js/cms_flow.js') }}-->
+{{ HTML::script('/assets/js/angular_app.js') }}
+{{ HTML::script('/assets/js/alertServices.js') }}
+ {{ HTML::script('/assets/js/projectsImagesCtrl.js') }}
 
 </body>
 </html>

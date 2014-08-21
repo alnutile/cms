@@ -13,4 +13,6 @@ class Page extends \Eloquent {
         $pages = Page::where("slug", "!=", "")->orderBy("menu_sort_order")->get();
         return $pages;
     }
+
+
 }

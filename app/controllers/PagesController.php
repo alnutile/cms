@@ -80,7 +80,7 @@ class PagesController extends \BaseController {
    */
   public function update($id)
   {
-    $validator = Validator::make(Input::all(), array('title' => 'required', 'slug' =>'regex:/^\//'));
+    $validator = Validator::make(Input::all(), array('title' => 'required', 'slug' =>'regex:/^\/[A-Za-z0-9_]+$/'));
     $page_update = Input::all();
     $page = Page::find($id);
 

@@ -3,6 +3,15 @@ $(document).ready(function(){
         CKEDITOR.replace( '.ckeditor');
     };
 
+    //image galleries on projects
+    $('a.gallery').colorbox({transition: "fade", Maxwidth:"1200px" });
+
+    $('a.gallery').colorbox({onComplete:function(){
+        $("#cboxTitle").hide();
+        $("#cboxLoadedContent").append($("#cboxTitle").html()).css({color: $("#cboxTitle").css("color")});
+        $.fn.colorbox.resize();
+    }})
+
     $('#top-button').on("click", function(){
         var data = $("body").data('top_menu');
         $.ajax({
