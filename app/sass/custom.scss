@@ -1,4 +1,4 @@
-//show
+// projects show
 .row.gallery_row {
   margin-top: 30px;
   margin-bottom: 20px;
@@ -33,6 +33,14 @@
         height: 40px
       }
   }
+}
+
+#main_image {
+  float: left;
+    img{
+      width: 350px;
+
+    }
 }
 
 
