@@ -18,10 +18,12 @@
 <div class="col-md-9 column">
   <h1>{{{ $project->title }}}</h1>
   <div class="row">
-    <img class="col-lg-12" src="/img/projects/{{$project->image}}" alt="{{$project->title}}">
-  </div>
-  <div class="row">
-    {{$project->body}}
+    <div class = "col-lg-5" id="main_image">
+      <img  src="/img/projects/{{$project->image}}" alt="{{$project->title}}">
+    </div>
+    <div class="col-lg-7 body">
+      {{$project->body}}
+    </div>
   </div>
   <div class = "row gallery_row">
     @foreach ($project->images as $image)
