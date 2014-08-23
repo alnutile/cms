@@ -66,7 +66,9 @@ class ProjectsController extends \BaseController {
     {
       return Redirect::back()->withErrors($validator)->withInput();
     }
-
+    if(isset($all['image'])) {
+      $all = $this->uploadFile($all, 'image');
+    }
     $project = Project::create($all);
 
     if(isset($all['images'])) {

@@ -119,14 +119,20 @@
   <br>
   <!-- end images upload -->
 
-  <div class="controls">
-    {{ Form::submit('Update Project', array('id' => 'submit', 'class' => 'btn btn-success')) }}
-    {{ Form::open(array('class' => 'inline', 'method' => 'DELETE', 'route' => array('projects.destroy', $project->id))) }}
-    {{ Form::submit('Delete', array('class' => 'btn btn-danger', 'onclick' => 'return confirm("Are you sure you want to delete this?")')) }}
+  <div class="controls row">
+    <div class="col-lg-2">
+      {{ Form::submit('Update Project', array('id' => 'submit', 'class' => 'btn btn-success')) }}
+      {{ Form::close() }}
+    </div>
+    <div class="col-lg-2">
+      {{ Form::open(array('class' => 'inline', 'method' => 'DELETE', 'route' => array('projects.destroy', $project->id))) }}
+      {{ Form::submit('Delete', array('class' => 'btn btn-danger', 'onclick' => 'return confirm("Are you sure you want to delete this?")')) }}
+      {{ Form::close() }}
+    </div>
+
     <br>
   </div>
 
-  {{ Form::close() }}
 
 
 </div>
