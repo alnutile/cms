@@ -1,17 +1,24 @@
 <?php
 
+use CMS\Services\ProjectsService;
+
 class ProjectsController extends \BaseController {
 
   protected $project_dest;
   protected $project_uri;
   protected $save_to;
+  /**
+   * @var CMS\Services\ProjectsService
+   */
+  private $projectsService;
 
-  public function __construct()
+  public function __construct(ProjectsService $projectsService)
   {
     parent::__construct();
     $this->project_dest = public_path() . "/img/projects";
     $this->project_uri = 'img/projects';
     $this->save_to = public_path() . "/img/projects";
+    $this->projectsService = $projectsService;
   }
   /**
    * Display a listing of projects
@@ -72,7 +79,7 @@ class ProjectsController extends \BaseController {
     $project = Project::create($all);
 
     if(isset($all['images'])) {
-      $this->addImages($project->id, $all['images'], 'Project');
+      $this->projectsService->addImages($project->id, $all['images'], 'Project');
     }
     return Redirect::route('admin_projects')->withMessage("Created Project");
   }

@@ -127,17 +127,7 @@ class BaseController extends Controller {
     return $data;
   }
 
-  protected function addImages($id, $images, $type)
-  {
-    foreach($images as $image)
-    {
-      //@TODO add catch here
-      //  $name = $image['file'];
-      $file_name = $image['file'];
-      $caption = $image['image_caption'];
-      Images::add_images($file_name, $id, $type, $caption);
-    }
-  }
+
 
   protected function updateImagesCaption($image_captions)
   {
@@ -153,8 +143,5 @@ class BaseController extends Controller {
     }
   }
 
-  public function getImages($imageable_id, $type)
-  {
 
-  }
 }
