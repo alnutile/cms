@@ -11,3 +11,6 @@
 |
 */
 
+use CMS\Commands\SetupCommand;
+
+Artisan::add(new SetupCommand());
