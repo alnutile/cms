@@ -143,5 +143,19 @@ class BaseController extends Controller {
     }
   }
 
+  protected function updateImagesOrder($image_order_values)
+  {
+    foreach($image_order_values as $key => $image_order)
+    {
+      //@TODO add catch here
+      $image_id = intval($key);
+      $order = $image_order[0];
+      if($order != NULL){
+        $new_data = array("order" => $order);
+        Image::where("id","=",$image_id)->update($new_data);
+      }
+    }
+  }
+
 
 }

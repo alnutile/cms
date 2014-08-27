@@ -90,8 +90,7 @@ class ProjectsController extends \BaseController {
       $project = Project::find($project);
     }
     $seo = $project->seo;
-    $banner = FALSE;
-
+      $banner = FALSE;
     return View::make('projects.show', compact('project', ' banner', 'settings', 'seo'));
   }
 
@@ -137,9 +136,12 @@ class ProjectsController extends \BaseController {
     if(isset($data['image_caption_update'])){
       $this->updateImagesCaption($data['image_caption_update']);
     }
+    if(isset($data['image_order_update'])){
+      $this->updateImagesOrder($data['image_order_update']);
+    }
 
     if(isset($data['images'])) {
-      $this->addImages($project->id, $data['images'], 'Project');
+      $this->projectsService->addImages($project->id, $data['images'], 'Project');
     }
     $data = $this->checkPublished($data);
     $project->update($data);

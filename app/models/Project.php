@@ -29,7 +29,7 @@ class Project extends BaseModel {
 
   public function images()
   {
-      return $this->morphMany('Image', 'imageable');
+      return $this->morphMany('Image', 'imageable')->orderBy('order', 'asc');
   }
 
 }
