@@ -12,7 +12,7 @@ class ProjectsController extends \BaseController {
    */
   private $projectsService;
 
-  public function __construct(ProjectsService $projectsService)
+  public function __construct(ProjectsService $projectsService = null)
   {
     parent::__construct();
     $this->project_dest = public_path() . "/img/projects";
