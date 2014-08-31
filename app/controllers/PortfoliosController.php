@@ -73,8 +73,9 @@ class PortfoliosController extends \BaseController {
    * @param  int  $id
    * @return Response
    */
-  public function show($portfolio)
+  public function show($portfolio = null)
   {
+    parent::show();
     if(is_numeric($portfolio)) {
       $portfolio = Portfolio::find($portfolio);
     }

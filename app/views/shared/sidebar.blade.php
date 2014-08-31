@@ -1,5 +1,9 @@
 <?php $portfolios = Portfolio::published()->orderByOrder()->get(); ?>
 
+@foreach($foo as $bar)
+  {{$bar}}<br>
+@endforeach
+
 @if(!$portfolios)
     <!-- no portfolio items -->
 @else

@@ -16,6 +16,11 @@ class BaseController extends Controller {
     $this->filesystem = ($filesystem == null) ? new Filesystem : $filesystem;
     \View::share('settings', $this->settings);
   }
+
+  public function show($array = null)
+  {
+    View::share('foo', [1,2,3]);
+  }
   /**
    * Setup the layout used by the controller.
    *
