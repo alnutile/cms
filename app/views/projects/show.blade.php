@@ -18,9 +18,11 @@
 <div class="col-md-9 column">
   <h1>{{{ $project->title }}}</h1>
   <div class="row">
-    <div class = "col-lg-5" id="main_image">
+    <div class = "col-lg-12" id="main_image">
       <img  src="/img/projects/{{$project->image}}" alt="{{$project->title}}">
     </div>
+   </div>
+  <div class="row">
     <div class="col-lg-7 body">
       {{$project->body}}
     </div>
