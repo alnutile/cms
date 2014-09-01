@@ -23,7 +23,7 @@
     </div>
    </div>
   <div class="row">
-    <div class="col-lg-7 body">
+    <div class="col-lg-12 body">
       {{$project->body}}
     </div>
   </div>
