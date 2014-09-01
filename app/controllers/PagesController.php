@@ -17,6 +17,7 @@ class PagesController extends \BaseController {
    */
   public function index()
   {
+    parent::show();
     $pages = $this->pages->all();
     $banner = $this->banner;
     return $this->respond($pages, 'pages.index',  compact('pages', 'banner'));
@@ -37,10 +38,14 @@ class PagesController extends \BaseController {
    *
    * @return Response
    */
-  public function show($page)
+  public function show($page = NULL)
   {
+    parent::show();
     if(is_numeric($page)) {
       $page = Page::find($page);
+    }
+    if($page == NULL){
+      return View::make('404', compact('settings'));
     }
     $projects = Project::orderBy('id','asc')->paginate(2);
     $seo = $page->seo;
@@ -65,8 +70,9 @@ class PagesController extends \BaseController {
    * @param  int  $id
    * @return Response
    */
-  public function edit($id)
+  public function edit($id = NULL)
   {
+    parent::show();
     $page = Page::findOrFail($id);
     return View::make('pages.edit', compact('page'));
   }

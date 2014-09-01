@@ -19,7 +19,18 @@ class BaseController extends Controller {
 
   public function show($array = null)
   {
-    View::share('foo', [1,2,3]);
+    $portfolios = Portfolio::published()->orderByOrder()->get();
+    $portfolio_links = array();
+    if($portfolios) {
+      foreach($portfolios as $key=>$portfolio){
+        $portfolio_links[$portfolio->title] = $portfolio->slug;
+      }
+    }
+    $static_menu_items = array('Home' => 'home_','About Page' => 'about', 'Contact Page' => 'contact');
+    $bottom_menu_items = array('All Projects' => 'all_projects');
+    $shared_links = array_merge($static_menu_items, $portfolio_links, $bottom_menu_items);
+
+    View::share('shared_links', $shared_links);
   }
   /**
    * Setup the layout used by the controller.

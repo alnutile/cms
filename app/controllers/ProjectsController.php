@@ -37,8 +37,9 @@ class ProjectsController extends \BaseController {
    *
    * @return Response
    */
-  public function adminIndex()
+  public function adminIndex($project = NULL)
   {
+    parent::show();
     $projects = Project::all();
 
     return View::make('projects.admin_index', compact('projects'));
@@ -52,6 +53,7 @@ class ProjectsController extends \BaseController {
    */
   public function create()
   {
+    parent::show();
     $portfolios = Portfolio::allPortfoliosSelectOptions();
     return View::make('projects.create', compact('portfolios'));
   }
@@ -84,10 +86,14 @@ class ProjectsController extends \BaseController {
     return Redirect::route('admin_projects')->withMessage("Created Project");
   }
 
-  public function show($project)
+  public function show($project = NULL)
   {
+    parent::show();
     if(is_numeric($project)) {
       $project = Project::find($project);
+    }
+    if($project == NULL){
+      return View::make('404', compact('settings'));
     }
     $seo = $project->seo;
       $banner = FALSE;
@@ -100,8 +106,9 @@ class ProjectsController extends \BaseController {
    * @param  int  $id
    * @return Response
    */
-  public function edit($id)
+  public function edit($id = NULL)
   {
+    parent::show();
     $project = Project::find($id);
     $portfolios = Portfolio::allPortfoliosSelectOptions();
     $path = $this->project_uri;

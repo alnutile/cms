@@ -22,6 +22,7 @@ class SettingsController extends \BaseController {
 	 */
 	public function index()
 	{
+    parent::show();
 		//
 	}
 
@@ -54,8 +55,9 @@ class SettingsController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($id = NULL)
 	{
+    parent::show();
 		//
 	}
 
@@ -66,8 +68,9 @@ class SettingsController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($id = NULL)
 	{
+        parent::show();
         $banner = $this->banner;
         $path   = "/img/settings";
         $setting = Setting::find($id);
