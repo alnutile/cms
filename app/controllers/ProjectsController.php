@@ -96,8 +96,8 @@ class ProjectsController extends \BaseController {
       return View::make('404', compact('settings'));
     }
     $seo = $project->seo;
-      $banner = FALSE;
-    return View::make('projects.show', compact('project', ' banner', 'settings', 'seo'));
+      $banner = TRUE;
+    return View::make('projects.show', compact('project', 'banner', 'settings', 'seo'));
   }
 
   /**

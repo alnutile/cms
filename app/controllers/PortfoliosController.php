@@ -88,7 +88,7 @@ class PortfoliosController extends \BaseController {
 
 
     $seo = $portfolio->seo;
-    $banner = FALSE;
+    $banner = TRUE;
     return View::make('portfolios.show', compact('portfolio', 'banner', 'settings', 'seo'));
   }
 

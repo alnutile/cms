@@ -1,12 +1,13 @@
 @extends('layouts.main')
 
 @section('content')
-
 <div class="col-md-3 ">
     @include('shared.sidebar')
 
     @if(Auth::user())
-    <div class="well">
+
+
+  <div class="well">
         Edit this page <br>
         <a href="/portfolios/{{$portfolio->id}}/edit" class="btn btn-success">Edit</a>
     </div>

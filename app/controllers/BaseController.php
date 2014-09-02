@@ -71,6 +71,7 @@ class BaseController extends Controller {
     } else {
       $banner = FALSE;
     }
+
     return $banner;
   }
 

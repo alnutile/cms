@@ -49,8 +49,8 @@ class PagesController extends \BaseController {
     }
     $projects = Project::orderBy('id','asc')->paginate(2);
     $seo = $page->seo;
-    $banner = FALSE;
-    return View::make('pages.show', compact('page', ' banner', 'settings', 'seo', 'projects'));
+    $banner = TRUE;
+    return View::make('pages.show', compact('page', 'banner', 'settings', 'seo', 'projects'));
   }
 
   /**
