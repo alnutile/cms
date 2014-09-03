@@ -44,7 +44,7 @@ class PagesController extends \BaseController {
     if(is_numeric($page)) {
       $page = Page::find($page);
     }
-    if($page == NULL){
+    if($page == NULL || !is_numeric($page)){
       return View::make('404', compact('settings'));
     }
     $projects = Project::orderBy('id','asc')->paginate(2);
