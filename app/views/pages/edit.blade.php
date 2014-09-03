@@ -16,6 +16,7 @@
         <div class="form-group">
             <label>Title</label>
             {{ Form::text('title', null, array('class' => 'form-control')) }}
+            <div class="help-block">Some help here</div>
         </div>
         @if($errors->first('title'))
         <div class="alert alert-danger">
