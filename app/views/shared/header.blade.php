@@ -1,7 +1,6 @@
 
 <?php
     $banners_active = Banner::slideShow();
-
 ?>
 
 

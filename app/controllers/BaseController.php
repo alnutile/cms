@@ -16,6 +16,22 @@ class BaseController extends Controller {
     $this->filesystem = ($filesystem == null) ? new Filesystem : $filesystem;
     \View::share('settings', $this->settings);
   }
+
+  public function show($array = null)
+  {
+    $portfolios = Portfolio::published()->orderByOrder()->get();
+    $portfolio_links = array();
+    if($portfolios) {
+      foreach($portfolios as $key=>$portfolio){
+        $portfolio_links[$portfolio->title] = $portfolio->slug;
+      }
+    }
+    $static_menu_items = array('Home' => '/home_','About Page' => '/about', 'Contact Page' => '/contact');
+    $bottom_menu_items = array('All Projects' => '/all_projects');
+    $shared_links = array_merge($static_menu_items, $portfolio_links, $bottom_menu_items);
+
+    View::share('shared_links', $shared_links);
+  }
   /**
    * Setup the layout used by the controller.
    *
@@ -55,6 +71,7 @@ class BaseController extends Controller {
     } else {
       $banner = FALSE;
     }
+
     return $banner;
   }
 
@@ -127,17 +144,7 @@ class BaseController extends Controller {
     return $data;
   }
 
-  protected function addImages($id, $images, $type)
-  {
-    foreach($images as $image)
-    {
-      //@TODO add catch here
-      //  $name = $image['file'];
-      $file_name = $image['file'];
-      $caption = $image['image_caption'];
-      Images::add_images($file_name, $id, $type, $caption);
-    }
-  }
+
 
   protected function updateImagesCaption($image_captions)
   {
@@ -153,8 +160,19 @@ class BaseController extends Controller {
     }
   }
 
-  public function getImages($imageable_id, $type)
+  protected function updateImagesOrder($image_order_values)
   {
-
+    foreach($image_order_values as $key => $image_order)
+    {
+      //@TODO add catch here
+      $image_id = intval($key);
+      $order = $image_order[0];
+      if($order != NULL){
+        $new_data = array("order" => $order);
+        Image::where("id","=",$image_id)->update($new_data);
+      }
+    }
   }
+
+
 }

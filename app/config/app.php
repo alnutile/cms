@@ -108,8 +108,8 @@ return array(
         'Illuminate\Workbench\WorkbenchServiceProvider',
         'Way\Generators\GeneratorsServiceProvider',
         'CMS\ServiceProviders\MenuServiceProvider',
-        'CMS\ServiceProviders\ImagesServiceProvider'
-
+        'CMS\ServiceProviders\ImagesServiceProvider',
+        'CMS\ServiceProviders\ProjectsServiceProvider'
     ),
 
     /*

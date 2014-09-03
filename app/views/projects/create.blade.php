@@ -14,7 +14,7 @@
 
 
   <div class="form-group">
-    <label>Title</label>
+    <label>Projects Name</label>
     {{ Form::text('title', null, array('class' => 'form-control')) }}
   </div>
   @if($errors->first('title'))
@@ -31,6 +31,26 @@
   @if($errors->first('seo'))
   <div class="alert alert-danger">
     {{  $errors->first('seo'); }}
+  </div>
+  @endif
+
+  <div class="form-group">
+    <label>City and/or County</label>
+    {{ Form::text('city_county', null, array('class' => 'form-control')) }}
+  </div>
+  @if($errors->first('city_county'))
+    <div class="alert alert-danger">
+      {{  $errors->first('city_county'); }}
+    </div>
+  @endif
+
+  <div class="form-group">
+    <label>State and Country</label>
+    {{ Form::text('state_country', null, array('class' => 'form-control')) }}
+  </div>
+  @if($errors->first('state_country'))
+  <div class="alert alert-danger">
+    {{  $errors->first('state_country'); }}
   </div>
   @endif
 

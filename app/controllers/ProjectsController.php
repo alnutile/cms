@@ -1,17 +1,24 @@
 <?php
 
+use CMS\Services\ProjectsService;
+
 class ProjectsController extends \BaseController {
 
   protected $project_dest;
   protected $project_uri;
   protected $save_to;
+  /**
+   * @var CMS\Services\ProjectsService
+   */
+  private $projectsService;
 
-  public function __construct()
+  public function __construct(ProjectsService $projectsService = null)
   {
     parent::__construct();
     $this->project_dest = public_path() . "/img/projects";
     $this->project_uri = 'img/projects';
     $this->save_to = public_path() . "/img/projects";
+    $this->projectsService = $projectsService;
   }
   /**
    * Display a listing of projects
@@ -30,8 +37,9 @@ class ProjectsController extends \BaseController {
    *
    * @return Response
    */
-  public function adminIndex()
+  public function adminIndex($project = NULL)
   {
+    parent::show();
     $projects = Project::all();
 
     return View::make('projects.admin_index', compact('projects'));
@@ -45,6 +53,7 @@ class ProjectsController extends \BaseController {
    */
   public function create()
   {
+    parent::show();
     $portfolios = Portfolio::allPortfoliosSelectOptions();
     return View::make('projects.create', compact('portfolios'));
   }
@@ -72,20 +81,23 @@ class ProjectsController extends \BaseController {
     $project = Project::create($all);
 
     if(isset($all['images'])) {
-      $this->addImages($project->id, $all['images'], 'Project');
+      $this->projectsService->addImages($project->id, $all['images'], 'Project');
     }
     return Redirect::route('admin_projects')->withMessage("Created Project");
   }
 
-  public function show($project)
+  public function show($project = NULL)
   {
+    parent::show();
     if(is_numeric($project)) {
       $project = Project::find($project);
     }
+    if($project == NULL){
+      return View::make('404', compact('settings'));
+    }
     $seo = $project->seo;
-    $banner = FALSE;
-
-    return View::make('projects.show', compact('project', ' banner', 'settings', 'seo'));
+      $banner = TRUE;
+    return View::make('projects.show', compact('project', 'banner', 'settings', 'seo'));
   }
 
   /**
@@ -94,8 +106,9 @@ class ProjectsController extends \BaseController {
    * @param  int  $id
    * @return Response
    */
-  public function edit($id)
+  public function edit($id = NULL)
   {
+    parent::show();
     $project = Project::find($id);
     $portfolios = Portfolio::allPortfoliosSelectOptions();
     $path = $this->project_uri;
@@ -118,6 +131,7 @@ class ProjectsController extends \BaseController {
     $rules = Project::$rules;
     $validator = $this->validateSlugEdit($all, $project, $rules);
     $data = $this->checkPublished($all);
+
     if ($validator->fails())
     {
       return Redirect::back()->withErrors($validator)->withInput();
@@ -130,9 +144,12 @@ class ProjectsController extends \BaseController {
     if(isset($data['image_caption_update'])){
       $this->updateImagesCaption($data['image_caption_update']);
     }
+    if(isset($data['image_order_update'])){
+      $this->updateImagesOrder($data['image_order_update']);
+    }
 
     if(isset($data['images'])) {
-      $this->addImages($project->id, $data['images'], 'Project');
+      $this->projectsService->addImages($project->id, $data['images'], 'Project');
     }
     $data = $this->checkPublished($data);
     $project->update($data);
