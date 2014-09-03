@@ -127,7 +127,6 @@ class PortfoliosController extends \BaseController {
     {
       return Redirect::back()->withErrors($validator)->withInput();
     }
-
     $portfolio->update($data);
 
     return Redirect::route('admin_portfolio');

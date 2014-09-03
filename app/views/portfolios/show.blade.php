@@ -16,6 +16,7 @@
 
 <div class="col-md-9 column">
     <h1>{{{ $portfolio->title }}}</h1>
+    <p>{{{$portfolio->header}}}</p>
     <p> {{ $portfolio->body }} </p>
     <hr>
     <h3>Related Projects</h3>

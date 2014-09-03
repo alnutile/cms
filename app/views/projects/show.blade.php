@@ -23,6 +23,13 @@
     </div>
    </div>
   <div class="row">
+    <div class="col-lg-12">
+      {{{$project->city_county}}}
+  <br>
+      {{{$project->state_country}}}
+    </div>
+  </div>
+  <div class="row">
     <div class="col-lg-12 body">
       {{$project->body}}
     </div>

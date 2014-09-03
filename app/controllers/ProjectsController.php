@@ -131,6 +131,7 @@ class ProjectsController extends \BaseController {
     $rules = Project::$rules;
     $validator = $this->validateSlugEdit($all, $project, $rules);
     $data = $this->checkPublished($all);
+
     if ($validator->fails())
     {
       return Redirect::back()->withErrors($validator)->withInput();

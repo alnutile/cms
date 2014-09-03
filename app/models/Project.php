@@ -19,7 +19,9 @@ class Project extends BaseModel {
     'intro',
     'portfolio_id',
     'seo',
-    'slug'
+    'slug',
+    'state_country',
+    'city_county'
   ];
 
   public function portfolio()

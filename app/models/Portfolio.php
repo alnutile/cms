@@ -9,7 +9,7 @@ class Portfolio extends BaseModel {
   ];
 
 
-  protected $fillable = ['title', 'published', 'body', 'slug', 'order', 'seo'];
+  protected $fillable = ['title', 'published', 'body', 'slug', 'order', 'seo', 'header'];
 
   public function projects()
   {
