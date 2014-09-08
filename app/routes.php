@@ -78,7 +78,7 @@ Route::group(array('before' => 'auth'), function() {
 
   Route::get('/api/v1/ckeditor/gallery', function(){
     $images = new FilesController();
-    return $images->getImages();
+    return $images->getImageswysiwyg();
   });
 
 });

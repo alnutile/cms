@@ -60,7 +60,7 @@ class FilesController extends BaseController {
         return $script;
     }
 
-    public function getImages()
+    public function getImageswysiwyg()
     {
         $rel = '/assets/img/wysiwyg';
         $dir = public_path() . '/assets/img/wysiwyg';
