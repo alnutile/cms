@@ -8,10 +8,12 @@
     border: 1px solid #6a6a6a;
     padding-top: 10px;
     min-height: 260px;
+    width:49%;
     display: inline-block;
-    &:last-child {
-      margin-right: 0px;
-    }
+    float: left;
+//    &:last-child {
+//      margin-right: 0px;
+//    }
     a {
       display: block;
       position: relative;
