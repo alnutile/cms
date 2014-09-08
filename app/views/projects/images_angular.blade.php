@@ -1,10 +1,13 @@
 <div ng-app="app">
   <div ng-controller="ProjectImagesController">
-    <ul ng-if="images.length > 0" class="edit_images">
-      <li ng-repeat="image in images">
+    <ul ng-if="images.length > 0" class="edit_images sortable">
+      <li ng-repeat="image in images | orderBy:'order'">
         [[image.file_name]]&nbsp;<i class="glyphicon glyphicon-trash" ng-click="deleteImage(image.id)">&nbsp;</i>
         <br>
         <label>Edit image caption:</label> <input class="caption_update" name="image_caption_update[ [[image.id]] ][]" type="text" placeholder="[[image.image_caption]]" >
+        <div class="spacer">
+        <label>Image Position:</label> <input class="order_update" name="image_order_update[ [[image.id]] ][]" type="text" placeholder="[[image.order]]" >
+        </div>
       </li>
     </ul>
     <div class="form-group">

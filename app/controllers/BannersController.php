@@ -31,6 +31,7 @@ class BannersController extends \BaseController {
 	 */
 	public function index()
 	{
+        parent::show();
         $banners = $this->banner_model->all();
         $banner = $this->banner;
         $path = $this->banner_path;
@@ -45,6 +46,7 @@ class BannersController extends \BaseController {
 	 */
 	public function create()
 	{
+    parent::show();
 		return View::make('banners.create');
 	}
 
@@ -80,8 +82,9 @@ class BannersController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($id = NULL)
 	{
+    parent::show();
 		//
 	}
 
@@ -92,8 +95,9 @@ class BannersController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($id = NULL)
 	{
+        parent::show();
         $banner = Banner::find($id);
         $path = $this->banner_path;
         return View::make('banners.edit', compact('banner', 'path'));

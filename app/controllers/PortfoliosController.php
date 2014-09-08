@@ -29,8 +29,9 @@ class PortfoliosController extends \BaseController {
    *
    * @return Response
    */
-  public function adminIndex()
+  public function adminIndex($portfolio = NULL)
   {
+    parent::show();
     $portfolios = Portfolio::OrderByOrder()->get();
 
     return View::make('portfolios.admin_index', compact('portfolios'));
@@ -43,6 +44,7 @@ class PortfoliosController extends \BaseController {
    */
   public function create()
   {
+    parent::show();
     return View::make('portfolios.create');
   }
 
@@ -73,14 +75,21 @@ class PortfoliosController extends \BaseController {
    * @param  int  $id
    * @return Response
    */
-  public function show($portfolio)
+  public function show($portfolio = null)
   {
+    parent::show();
     if(is_numeric($portfolio)) {
       $portfolio = Portfolio::find($portfolio);
     }
 
+
+    if($portfolio == NULL || !is_numeric($portfolio)){
+      return View::make('404', compact('settings'));
+    }
+
+
     $seo = $portfolio->seo;
-    $banner = FALSE;
+    $banner = TRUE;
     return View::make('portfolios.show', compact('portfolio', 'banner', 'settings', 'seo'));
   }
 
@@ -90,8 +99,9 @@ class PortfoliosController extends \BaseController {
    * @param  int  $id
    * @return Response
    */
-  public function edit($id)
+  public function edit($id = NULL)
   {
+    parent::show();
     $portfolio = Portfolio::find($id);
 
     return View::make('portfolios.edit', compact('portfolio'));
@@ -118,7 +128,6 @@ class PortfoliosController extends \BaseController {
     {
       return Redirect::back()->withErrors($validator)->withInput();
     }
-
     $portfolio->update($data);
 
     return Redirect::route('admin_portfolio');

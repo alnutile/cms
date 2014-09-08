@@ -14,6 +14,7 @@ class MenusController extends \BaseController {
 	 */
 	public function index()
 	{
+      parent::show();
         $menus = Page::where("slug", "!=", "")->orderBy("menu_sort_order")->get();
         $banner = $this->banner;
         return $this->respond($menus, 'menus.index',  compact('menus', 'banner'));
