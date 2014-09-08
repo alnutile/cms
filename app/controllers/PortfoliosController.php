@@ -82,8 +82,7 @@ class PortfoliosController extends \BaseController {
       $portfolio = Portfolio::find($portfolio);
     }
 
-
-    if($portfolio == NULL || !is_numeric($portfolio)){
+    if($portfolio == NULL){
       return View::make('404', compact('settings'));
     }
 

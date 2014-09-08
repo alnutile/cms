@@ -92,13 +92,10 @@ class ProjectsController extends \BaseController {
     if(is_numeric($project)) {
       $project = Project::find($project);
     }
-
-    if($project == NULL || !is_numeric($project)){
+    if($project == NULL){
       return View::make('404', compact('settings'));
     }
-    if(isset($project->seo)){
     $seo = $project->seo;
-    }
       $banner = TRUE;
     return View::make('projects.show', compact('project', 'banner', 'settings', 'seo'));
   }
