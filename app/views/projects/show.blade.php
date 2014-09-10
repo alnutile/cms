@@ -18,9 +18,11 @@
 <div class="col-md-9 column">
   <h1>{{{ $project->title }}}</h1>
   <div class="row">
+    @if ($project->image)
     <div class = "col-lg-12" id="main_image">
       <img  src="/img/projects/{{$project->image}}" alt="{{$project->title}}">
     </div>
+    @endif
    </div>
   <div class="row">
     <div class="col-lg-12">
