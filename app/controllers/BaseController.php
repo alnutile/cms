@@ -26,7 +26,7 @@ class BaseController extends Controller {
         $portfolio_links[$portfolio->title] = $portfolio->slug;
       }
     }
-    $static_menu_items = array('Home' => '/home_','About Page' => '/about', 'Contact Page' => '/contact');
+    $static_menu_items = array('Home' => '/home','About Page' => '/about', 'Contact Page' => '/contact');
     $bottom_menu_items = array('All Projects' => '/all_projects');
     $shared_links = array_merge($static_menu_items, $portfolio_links, $bottom_menu_items);
 
