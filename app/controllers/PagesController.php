@@ -93,6 +93,7 @@ class PagesController extends \BaseController {
     if($validator->passes()) {
       $page->title = $page_update['title'];
       $page->body = $page_update['body'];
+      $page->seo = $page_update['seo'];
       $page->slug = (isset($page_update['slug'])) ?  $page_update['slug'] : $page->slug;
       $page->save();
       $banner = $this->bannerSet($page);
