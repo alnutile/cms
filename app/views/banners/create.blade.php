@@ -24,9 +24,9 @@
                 @endif
         </div>
         <div class="form-group">
-
-                <label for="email">Upload File</label>
-                {{ Form::file('banner_name', null, array('class' => 'form-control', 'tabindex' => 1)) }}
+          <label for="email">Upload File</label>
+          <div class="help-block">Banner images must be at least 1600px wide by 196px high.  Aspect ratio should be roughly 8:1.</div>
+          {{ Form::file('banner_name', null, array('class' => 'form-control', 'tabindex' => 1)) }}
                 @if($errors->first('banner_name'))
                 <div class="alert alert-danger">
                     Banner Image Required

@@ -19,7 +19,9 @@ class Project extends BaseModel {
     'intro',
     'portfolio_id',
     'seo',
-    'slug'
+    'slug',
+    'state_country',
+    'city_county'
   ];
 
   public function portfolio()
@@ -29,7 +31,7 @@ class Project extends BaseModel {
 
   public function images()
   {
-      return $this->morphMany('Image', 'imageable');
+      return $this->morphMany('Image', 'imageable')->orderBy('order', 'asc');
   }
 
 }

@@ -21,12 +21,22 @@ class ImagesService {
   public function __construct(Image $image)
   {
     $this->image = $image;
-    $this->image = $image;
   }
 
-  public function add_images($image_name, $imageable_id, $imageable_type, $caption)
-  {
 
+  public function addImages($id, array $images, $type)
+  {
+    foreach($images as $image)
+    {
+      //@TODO add catch here
+      $file_name = $image['file'];
+      $caption = $image['image_caption'];
+      $this->add_image($file_name, $id, $type, $caption);
+    }
+  }
+
+  public function add_image($image_name, $imageable_id, $imageable_type, $caption)
+  {
     $data = [
       'file_name' => $image_name,
       'imageable_id' => $imageable_id,

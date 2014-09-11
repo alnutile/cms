@@ -18,14 +18,26 @@
 <div class="col-md-9 column">
   <h1>{{{ $project->title }}}</h1>
   <div class="row">
-    <div class = "col-lg-5" id="main_image">
+    @if ($project->image)
+    <div class = "col-lg-12" id="main_image">
       <img  src="/img/projects/{{$project->image}}" alt="{{$project->title}}">
     </div>
-    <div class="col-lg-7 body">
+    @endif
+   </div>
+  <div class="row">
+    <div class="col-lg-12">
+      {{{$project->city_county}}}
+  <br>
+      {{{$project->state_country}}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12 body">
       {{$project->body}}
     </div>
   </div>
   <div class = "row gallery_row">
+
     @foreach ($project->images as $image)
     <div class = "col-lg-6 gallery_item">
       <a class="gallery" href="/assets/img/projects/{{$image->file_name}}" alt="{{$image->file_name}}" title="{{$image->image_caption}}"><img class="col-lg-12" src="/assets/img/projects/{{$image->file_name}}" alt="{{$image->file_name}}"></a>

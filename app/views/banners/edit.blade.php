@@ -24,7 +24,8 @@
         </div>
         <div class="form-group">
                 <label for="email">Upload File</label>
-                {{ Form::file('banner_name', null, array('class' => 'form-control', 'tabindex' => 1)) }}
+          <div class="help-block">Banner images must be at least 1600px wide by 196px high.  Aspect ratio should be roughly 8:1.</div>
+          {{ Form::file('banner_name', null, array('class' => 'form-control', 'tabindex' => 1)) }}
                 @if($errors->first('banner_name'))
                 <div class="alert alert-danger">
                     {{  $errors->first('banner_name'); }}
@@ -52,8 +53,14 @@
 
         <div class="form-group">
             {{ Form::submit('Update', array('class' => 'btn btn-success')) }}
+          {{ Form::close() }}
         </div>
+      <div>
+        {{ Form::open(array('class' => 'inline', 'method' => 'DELETE', 'route' => array('banners.destroy', $banner->id))) }}
+        {{ Form::submit('Delete', array('class' => 'btn btn-danger', 'onclick' => 'return confirm("Are you sure you want to delete this?")')) }}
+        {{ Form::close() }}
+      </div>
     </fieldset>
-    {{ Form::close() }}
+
 </div>
 @stop
