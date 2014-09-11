@@ -11,7 +11,7 @@
         {{{$project->state_country}}}
       </div>
     </div>
-    <p>{{$project->body}}</p>
+    <p>{{Str::words($project->body, 50)}}</p>
     <div><a href="{{$project->slug}}">read more...</a></div>
   </div>
 </div>
