@@ -53,8 +53,14 @@
 
         <div class="form-group">
             {{ Form::submit('Update', array('class' => 'btn btn-success')) }}
+          {{ Form::close() }}
         </div>
+      <div>
+        {{ Form::open(array('class' => 'inline', 'method' => 'DELETE', 'route' => array('banners.destroy', $banner->id))) }}
+        {{ Form::submit('Delete', array('class' => 'btn btn-danger', 'onclick' => 'return confirm("Are you sure you want to delete this?")')) }}
+        {{ Form::close() }}
+      </div>
     </fieldset>
-    {{ Form::close() }}
+
 </div>
 @stop

@@ -146,6 +146,8 @@ class BannersController extends \BaseController {
    */
   public function destroy($id)
   {
+    Banner::destroy($id);
+    return Redirect::route('banners.index');
 
   }
 
