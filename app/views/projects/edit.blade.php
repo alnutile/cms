@@ -26,6 +26,7 @@
   <div class="form-group">
     <label>Seo Title</label>
     {{ Form::text('seo', null, array('class' => 'form-control')) }}
+    <div class="help-block">Some help here</div>
   </div>
   @if($errors->first('seo'))
   <div class="alert alert-danger">
