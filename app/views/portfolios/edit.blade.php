@@ -24,7 +24,7 @@
   @endif
 
   <div class="form-group">
-    <label>Seo Title</label>
+    <label>Seo Titles</label>
     {{ Form::text('seo', null, array('class' => 'form-control')) }}
   </div>
   @if($errors->first('seo'))
