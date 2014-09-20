@@ -14,7 +14,7 @@
 
 
   <div class="form-group">
-    <label>Portfolio Name (<a href="http://restorationtrades.com/help#portfolio_name">Help</a>)</label>
+    <label>Portfolio Name <a href="http://restorationtrades.com/help#portfolio_name">Help</a></label>
     {{ Form::text('title', null, array('class' => 'form-control')) }}
   </div>
   @if($errors->first('title'))
