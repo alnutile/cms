@@ -31,6 +31,10 @@ class BaseController extends Controller {
     $shared_links = array_merge($static_menu_items, $portfolio_links, $bottom_menu_items);
 
     View::share('shared_links', $shared_links);
+
+    //links for the top nav
+    $top_menu_items = array('Home' => '/index','About Page' => '/about', 'Contact Page' => '/contact');
+    View::share('top_links', $top_menu_items);
   }
   /**
    * Setup the layout used by the controller.

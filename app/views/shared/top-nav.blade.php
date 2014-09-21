@@ -8,13 +8,15 @@
     <nav class="navbar-collapse collapse">
         <ul class="nav nav-pills">
             <?php $pages = Page::getMenu(); ?>
-            @foreach($pages as $page)
-                <?php ('/' . Request::path() === $page->slug || Request::path() == '/' && $page->slug == '/home' ) ? $active = 'active' : $active = 'not-active';?>
-                <li class="{{$active}}">
-                    <a href="{{$page->slug}}">
-                        {{{$page->title}}}
-                    </a>
-                </li>
-            @endforeach
+          @foreach($top_links as $key => $static_menu_item)
+          <?php
+          if(Request::server('PATH_INFO') ==  $static_menu_item) {
+            $active = 'active';
+          } else {
+            $active = 'not-active';
+          }
+          ?>
+          <li class="{{$active}}"> <a href = {{$static_menu_item}}>{{$key}}</a></li>
+          @endforeach
         </ul>
     </nav>
