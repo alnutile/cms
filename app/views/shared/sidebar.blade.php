@@ -14,7 +14,7 @@
     ?>
 
     <li class="nav-header">
-      <h4>{{$icon}}&nbsp;Portfolio</h4>
+      <h4>{{$icon}}&nbsp;Links</h4>
     </li>
     @foreach($shared_links as $key => $static_menu_item)
       <?php
