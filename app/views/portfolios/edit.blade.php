@@ -14,7 +14,7 @@
 
 
   <div class="form-group">
-    <label>Title</label>
+    <label>Portfolio Name <a href="http://restorationtrades.com/help#portfolio_name">Help</a></label>
     {{ Form::text('title', null, array('class' => 'form-control')) }}
   </div>
   @if($errors->first('title'))
@@ -24,7 +24,7 @@
   @endif
 
   <div class="form-group">
-    <label>Seo Title</label>
+    <label>Seo Titles</label>
     {{ Form::text('seo', null, array('class' => 'form-control')) }}
   </div>
   @if($errors->first('seo'))

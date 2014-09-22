@@ -14,7 +14,7 @@
     <input type="hidden" name="_token" value="{{{ Session::getToken() }}}">
     <fieldset>
         <div class="form-group">
-            <label for="email">Name</label>
+            <label for="email">Company Name</label>
             {{ Form::text('name', null, array('class' => 'form-control', 'tabindex' => 1)) }}
             @if($errors->first('name'))
             <div class="alert alert-danger">
