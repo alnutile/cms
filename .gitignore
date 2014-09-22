@@ -1,7 +1,14 @@
+<<<<<<< HEAD
+
+
+
+=======
 public/img/projects/
+>>>>>>> 20a8b89bad008863a4339cabe14debc1f52ec2ce
 bower_components
 public/assets/img
 public/bower_compnents
+
 .idea/*
 public/bower_components
 public/assets/img/projects/
