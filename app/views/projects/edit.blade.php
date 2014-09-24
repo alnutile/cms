@@ -14,7 +14,7 @@
 
 
   <div class="form-group">
-    <label>Project Name</label>
+    <label>Project Name (<a href="http://www.restorationtrades.com/help.html#project_name">Help</a>)</label>
     {{ Form::text('title', null, array('class' => 'form-control')) }}
     <div class="help-block">Some help here</div>
   </div>
@@ -25,7 +25,7 @@
   @endif
 
   <div class="form-group">
-    <label>Seo Title</label>
+    <label>Project Browser Description (a.k.a. Title Tag) (<a href="http://www.restorationtrades.com/help.html#project_browser_description">Help</a>)</label>
     {{ Form::text('seo', null, array('class' => 'form-control')) }}
     <div class="help-block">Some help here</div>
   </div>
@@ -36,7 +36,7 @@
   @endif
 
   <div class="form-group">
-    <label>City and/or County</label>
+    <label>Project City and/or County (<a href="http://www.restorationtrades.com/help.html#project_city_county">Help</a>)</label>
     {{ Form::text('city_county', null, array('class' => 'form-control')) }}
   </div>
   @if($errors->first('city_county'))
@@ -46,7 +46,7 @@
   @endif
 
   <div class="form-group">
-    <label>State and Country</label>
+    <label>Project State and Country (<a href="http://www.restorationtrades.com/help.html#project_state_country">Help</a>)</label>
     {{ Form::text('state_country', null, array('class' => 'form-control')) }}
   </div>
   @if($errors->first('state_country'))
@@ -56,7 +56,7 @@
   @endif
 
   <div class="form-group">
-    <label>Body</label>
+    <label>Project Main Body (<a href="http://www.restorationtrades.com/help.html#project_main_body">Help</a>)y</label>
     {{ Form::textarea('body', null, array('rows' => 30, 'class' => 'ckeditor form-control')) }}
   </div>
   @if($errors->first('body'))
@@ -69,7 +69,7 @@
   <div class="form-group">
     <div class="controls">
       <div class="checkbox">
-        <label class="checkbox">{{ Form::checkbox('published', 1) }} Published</label>
+        <label class="checkbox">{{ Form::checkbox('published', 1) }} Project Publish Status (<a href="http://www.restorationtrades.com/help.html#project_publish_status">Help</a>)</label>
       </div>
     </div>
   </div>
@@ -98,7 +98,7 @@
 
 
   <div class="form-group">
-    <label>URL</label>
+    <label>Project Web Address (URL) (<a href="http://www.restorationtrades.com/help.html#project_web_address">Help</a>)</label>
     {{ Form::text('slug', null, array('class' => 'form-control')) }}
     <div class="help-block">The url must start with / </div>
   </div>
@@ -112,7 +112,7 @@
   <!-- image -->
 
   <div class="form-group">
-    <label for="email">Upload Main Image</label>
+    <label for="email">Project Default Image Uploader (<a href="http://www.restorationtrades.com/help.html#project_default_image_uploader">Help</a>)</label>
     {{ Form::file('image', null, array('class' => 'form-control', 'tabindex' => 1)) }}
     @if($errors->first('image'))
     <div class="alert alert-danger">
