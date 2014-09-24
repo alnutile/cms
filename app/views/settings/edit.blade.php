@@ -24,7 +24,7 @@
         </div>
 
         <div class="form-group">
-                <label for="logo">Upload Logo (<a href="http://www.restorationtrades.com/help.html#company_logo_image_uploader">Help</a>)</label>
+                <label for="logo">Company Logo Image Uploader (<a href="http://www.restorationtrades.com/help.html#company_logo_image_uploader">Help</a>)</label>
                 {{ Form::file('logo', null, array('class' => 'form-control', 'tabindex' => 2)) }}
                 @if($errors->first('logo'))
                 <div class="alert alert-danger">
