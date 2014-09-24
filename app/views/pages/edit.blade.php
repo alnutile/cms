@@ -14,7 +14,7 @@
 
 
         <div class="form-group">
-            <label>Page Heading </label>
+            <label>Page Heading (<a href="http://www.restorationtrades.com/help.html#page_heading">Help</a>)</label>
             {{ Form::text('title', null, array('class' => 'form-control')) }}
 
             <div class="help-block">Some <a href="https://docs.google.com/document/d/1LUa9peV5wRNoFtN1JwTyocO3-q8KFmVoEVCWVC75sEg/edit#" target="_blank">help</a></div>
@@ -26,7 +26,7 @@
         @endif
 
         <div class="form-group">
-            <label>Seo Title</label>
+            <label>Page Browser Description (a.k.a. Title Tag) (<a href="http://www.restorationtrades.com/help.html#page_browser_description">Help</a>)</label>
             {{ Form::text('seo', null, array('class' => 'form-control')) }}
         </div>
         @if($errors->first('seo'))
