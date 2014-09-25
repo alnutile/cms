@@ -5,7 +5,9 @@ $(document).ready(function(){
 
     //image galleries on projects
     $('a.gallery').colorbox({transition: "fade", Maxwidth:"1200px" });
-
+    $('#colorbox').on("click", function(){
+        $.colorbox.close();
+    });
     $('a.gallery').colorbox({onComplete:function(){
         $("#cboxTitle").hide();
         $("#cboxLoadedContent").append($("#cboxTitle").html()).css({color: $("#cboxTitle").css("color")});
