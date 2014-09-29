@@ -63,7 +63,10 @@
   //background: none repeat scroll 0 0 rgba(0, 0, 0, 0.75);
   margin-bottom: 23px;
 }
-
+/**
+*this is to restrict the size of the photo in the popup.  eventually will most likely be replaced
+*with imagecache or similar
+*/
 .cboxPhoto {
   width: auto!important;
   height: auto!important;
