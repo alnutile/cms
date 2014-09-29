@@ -4,7 +4,7 @@ $(document).ready(function(){
     };
 
     //image galleries on projects
-    $('a.gallery').colorbox({transition: "fade", Maxwidth:"1200px" });
+    $('a.gallery').colorbox({transition: "fade", maxWidth:"1200px", maxHeight:"1200px" });
     $('#colorbox').on("click", function(){
         $.colorbox.close();
     });
