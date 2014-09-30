@@ -21,7 +21,7 @@
           New Image Uploaded [[file.name]]
           <input type="hidden" name="images['[[$index]]'][file]" value="[[file.name]]">
           <br>
-          <label>Add image caption:</label>  <input class="caption" name="images['[[$index]]'][image_caption]" type="text" placeholder="Image Caption" >
+          <label>Add image caption (<a href="http://www.restorationtrades.com/help.html#edit_project_image">Help</a>):</label>  <input class="caption" name="images['[[$index]]'][image_caption]" type="text" placeholder="Image Caption" >
 
 
 
