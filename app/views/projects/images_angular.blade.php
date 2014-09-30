@@ -4,9 +4,9 @@
       <li ng-repeat="image in images | orderBy:'order'">
         [[image.file_name]]&nbsp;<i class="glyphicon glyphicon-trash" ng-click="deleteImage(image.id)">&nbsp;</i>
         <br>
-        <label>Edit image caption:</label> <input class="caption_update" name="image_caption_update[ [[image.id]] ][]" type="text" placeholder="[[image.image_caption]]" >
+        <label>Edit image caption (<a href="http://www.restorationtrades.com/help.html#edit_project_image">Help</a>):</label> <input class="caption_update" name="image_caption_update[ [[image.id]] ][]" type="text" placeholder="[[image.image_caption]]" >
         <div class="spacer">
-        <label>Image Position:</label> <input class="order_update" name="image_order_update[ [[image.id]] ][]" type="text" placeholder="[[image.order]]" >
+        <label>Image Position (<a href="http://www.restorationtrades.com/help.html#edit_project_image">Help</a>):</label> <input class="order_update" name="image_order_update[ [[image.id]] ][]" type="text" placeholder="[[image.order]]" >
         </div>
       </li>
     </ul>
