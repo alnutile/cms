@@ -56,7 +56,7 @@
   @endif
 
   <div class="form-group">
-    <label>Project Main Body (<a href="http://www.restorationtrades.com/help.html#project_main_body">Help</a>)y</label>
+    <label>Project Main Body (<a href="http://www.restorationtrades.com/help.html#project_main_body">Help</a>)</label>
     {{ Form::textarea('body', null, array('rows' => 30, 'class' => 'ckeditor form-control')) }}
   </div>
   @if($errors->first('body'))
