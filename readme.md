@@ -4,6 +4,8 @@
   * Robot Text files
   * CSS Changes
 
+---
+
 ### Managing inline help
 
 Via github you can find a file and edit it and click save.
