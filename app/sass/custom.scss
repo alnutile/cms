@@ -21,6 +21,7 @@
     }
     img {
       max-height: 180px;
+      max-width: 398px;
       width: auto;
       margin: 0 auto;
       display: block;
@@ -64,6 +65,7 @@
 }
 
 
+
 //edit
 ul.edit_images {
   padding-left: 0;
@@ -85,6 +87,9 @@ ul.edit_images {
     .spacer {
       margin-bottom: 10px;
       margin-top: 10px;
+    }
+    .img-thumbnail {
+      max-width: 125px;
     }
   }
 }

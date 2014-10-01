@@ -22,6 +22,7 @@ class UsersController extends BaseController {
 
   public function login()
   {
+    parent::show();
     return View::make('sessions.login');
   }
 

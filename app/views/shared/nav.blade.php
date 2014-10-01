@@ -18,7 +18,7 @@
                   <li class=<?php if(Request::path() == 'users') { echo 'active'; }?>><a href="/users">Admin Users</a></li>
                 @endif
                 <li class=<?php if(Request::path() == 'banners') { echo 'active'; }?>><a href="/banners">Admin Banners</a></li>
-                @if(Auth::user()->admin == 1)
+                @if(Auth::user()->admin == 1 || Auth::user()->admin == 0)
                     <li class=<?php if(Request::path() == 'settings') { echo 'active'; }?>><a href="/settings/1/edit">Admin Settings</a></li>
                 @endif
                 <li class=<?php if(Request::path() == 'menu') { echo 'active'; }?>><a href="/menus">Admin Menu</a></li>
