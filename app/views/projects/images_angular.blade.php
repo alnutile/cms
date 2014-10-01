@@ -2,7 +2,7 @@
   <div ng-controller="ProjectImagesController">
     <ul ng-if="images.length > 0" class="edit_images sortable">
       <li ng-repeat="image in images | orderBy:'order'">
-        [[image.file_name]]&nbsp;<i class="glyphicon glyphicon-trash" ng-click="deleteImage(image.id)">&nbsp;</i>
+        <img class ="img-thumbnail" src="/assets/img/projects/[[image.file_name]]">&nbsp;[[image.file_name]]&nbsp;<i class="glyphicon glyphicon-trash" ng-click="deleteImage(image.id)">&nbsp;</i>
         <br>
         <label>Edit image caption:</label> <input class="caption_update" name="image_caption_update[ [[image.id]] ][]" type="text" placeholder="[[image.image_caption]]" >
         <div class="spacer">
