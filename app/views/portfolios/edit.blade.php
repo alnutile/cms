@@ -92,12 +92,9 @@
   </div>
 
   {{ Form::close() }}
-
-  @if($portfolio->id >= 5)
   {{ Form::open(['method' => 'DELETE', 'action' => ['PortfoliosController@destroy', $portfolio->id]]) }}
   <button type="submit" class="btn btn-danger">Delete</button>
   {{ Form::close() }}
-  @endif
 </div>
 
 
