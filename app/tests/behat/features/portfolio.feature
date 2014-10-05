@@ -4,7 +4,7 @@ Feature: Testing Portfolios
   Scenario: Login to the site
     Given I am on "/logout"
     Given I am on "/login"
-    And I fill in "email" with "alfrednutile@gmail.com"
+    And I fill in "email" with "admin@example.com"
     And I fill in "password" with "admin"
     And I press "Login"
     And I wait

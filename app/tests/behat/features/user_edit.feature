@@ -5,7 +5,7 @@ Feature: Testing User Edit
     Given I am on "/logout"
     Given I reset the session
     Given I am on "/login"
-    And I fill in "email" with "alfrednutile@gmail.com"
+    And I fill in "email" with "admin@example.com"
     And I fill in "password" with "admin"
     And I press "Login"
     And I wait
