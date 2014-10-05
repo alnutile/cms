@@ -8,6 +8,7 @@
 
 ### Managing inline help
 
+
 Via github you can find a file and edit it and click save.
 
 Every file you want to edit is in the app/views folder
