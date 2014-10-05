@@ -23,7 +23,14 @@
             @foreach($projects as $project)
                 <tr>
                     <td><a href="/projects/{{$project->id}}">{{{$project->title}}}</a></td>
-                    <td><a href="{{$project->portfolio->slug}}">{{{$project->portfolio->title}}}</a></td>
+                    <td>
+
+                    @if($project->portfolio)
+                    <a href="{{$project->portfolio->slug}}">{{{$project->portfolio->title}}}</a>
+                    @else
+                    No Related Portfolio
+                    @endif
+                    </td>
                     <td>{{$project->order}}</td>
                     <td>{{$project->published}}</td>
                     <td>
