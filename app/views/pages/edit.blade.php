@@ -17,8 +17,6 @@
             <label>Page Heading (<a href="http://www.restorationtrades.com/help.html#page_heading">Help</a>)</label>
             {{ Form::text('title', null, array('class' => 'form-control')) }}
 
-            <div class="help-block">Some <a href="https://docs.google.com/document/d/1LUa9peV5wRNoFtN1JwTyocO3-q8KFmVoEVCWVC75sEg/edit#" target="_blank">help</a></div>
-        </div>
         @if($errors->first('title'))
         <div class="alert alert-danger">
             {{  $errors->first('title'); }}
