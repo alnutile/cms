@@ -14,7 +14,7 @@
 
 
         <div class="form-group">
-            <label>Page Heading (<a href="http://www.restorationtrades.com/help.html#page_heading">Help</a>)</label>
+            <label>Page Heading (<a href="http://www.restorationtrades.com/help.html#page_heading" target="_blank">Help</a>)</label>
             {{ Form::text('title', null, array('class' => 'form-control')) }}
 
         @if($errors->first('title'))
@@ -24,7 +24,7 @@
         @endif
 
         <div class="form-group">
-            <label>Page Browser Description (a.k.a. Title Tag) (<a href="http://www.restorationtrades.com/help.html#page_browser_description">Help</a>)</label>
+            <label>Page Browser Description (a.k.a. Title Tag) (<a href="http://www.restorationtrades.com/help.html#page_browser_description" target="_blank">Help</a>)</label>
             {{ Form::text('seo', null, array('class' => 'form-control')) }}
         </div>
         @if($errors->first('seo'))
@@ -34,7 +34,7 @@
         @endif
 
         <div class="form-group">
-            <label>Page Main Body (<a href="http://www.restorationtrades.com/help.html#page_main_body">Help</a>)</label>
+            <label>Page Main Body (<a href="http://www.restorationtrades.com/help.html#page_main_body" target="_blank">Help</a>)</label>
             {{ Form::textarea('body', null, array('rows' => 30, 'class' => 'ckeditor form-control')) }}
         </div>
         @if($errors->first('body'))
@@ -46,7 +46,7 @@
 
         @if(Auth::user()->admin == 1)
             <div class="form-group">
-                <label>Page Web Address (URL) (<a href="http://www.restorationtrades.com/help.html#page_web_address">Help</a>)"</label>
+                <label>Page Web Address (URL) (<a href="http://www.restorationtrades.com/help.html#page_web_address" target="_blank">Help</a>)"</label>
                 {{ Form::text('slug', null, array('class' => 'form-control')) }}
                 <div class="help-block">The url must start with / </div>
             </div>
