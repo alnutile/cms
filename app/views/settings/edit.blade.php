@@ -14,7 +14,7 @@
     <input type="hidden" name="_token" value="{{{ Session::getToken() }}}">
     <fieldset>
         <div class="form-group">
-            <label for="email">Company Name (<a href="http://www.restorationtrades.com/help.html#company_name"_blank">Help</a>)</label>
+            <label for="email">Company Name (<a href="http://www.restorationtrades.com/help.html#company_name" target="_blank">Help</a>)</label>
             {{ Form::text('name', null, array('class' => 'form-control', 'tabindex' => 1)) }}
             @if($errors->first('name'))
             <div class="alert alert-danger">
