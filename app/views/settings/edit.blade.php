@@ -117,7 +117,7 @@
                 <div class="checkbox">
                     <label class="checkbox">{{ Form::checkbox('maintenance_mode', null) }} Maintenance Mode (<a href="http://www.restorationtrades.com/help.html#maintenance_mode" target="_blank">Help</a>)</label>
                 </div>
-                <div class="help-block">If you want the website hidden from the Visitor AND the search engines, until you are ready to publish (<a href="http://www.restorationtrades.com/help.html#maintenance_mode" target="_blank">Help</a>).</div>
+                <div class="help-block">If you want the website hidden from the Visitor AND the search engines, until you are ready to publish.</div>
             </div>
         </div>
 
