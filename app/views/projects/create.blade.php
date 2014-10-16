@@ -126,7 +126,7 @@
     <br>
 
     <!-- images upload -->
-
+<label>Project Blowup Images Uploader (<a href="http://www.restorationtrades.com/help.html#project_blowup_image_uploader" target="_blank">Help</a>)</label>
     @include('projects.images_angular')
 
     <br>
