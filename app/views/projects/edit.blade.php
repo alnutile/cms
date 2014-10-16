@@ -110,7 +110,7 @@
   <!-- image -->
 
   <div class="form-group">
-    <label for="email">Project Default Image Uploader (<a href="http://www.restorationtrades.com/help.html#project_default_image_uploader">Help</a>)</label>
+    <label for="email">Project Default Image Uploader (<a href="http://www.restorationtrades.com/help.html#project_default_image_uploader" target="_blank">Help</a>)</label>
     {{ Form::file('image', null, array('class' => 'form-control', 'tabindex' => 1)) }}
     @if($errors->first('image'))
     <div class="alert alert-danger">
@@ -131,7 +131,7 @@
   <br>
 
   <!-- images upload -->
-
+<label>Project Blowup Images Uploader (<a href="http://www.restorationtrades.com/help.html#project_blowup_image_uploader" target="_blank">Help</a>)</label>
   @include('projects.images_angular')
 
   <br>
