@@ -34,7 +34,7 @@
                 </div>
                 @if(Auth::user()->admin == 1 || $user->id == Auth::user()->id)
                 <div class="form-group">
-                        <label for="email">Email (<a href="http://www.restorationtrades.com/help.html#profile_email">Help</a>)</label>
+                        <label for="email">Email (<a href="http://www.restorationtrades.com/help.html#profile_email" target="_blank">Help</a>)</label>
                         {{ Form::text('email', $user->email, array('id' => 'email', 'class' => 'form-control', 'tabindex' => 3)) }}
                         @if($errors->first('email'))
                         <div class="alert alert-danger">
@@ -54,7 +54,7 @@
                 </div>
                 <div class="form-group">
                     <label for="password">
-                            <label for="password">Password (<a href="http://www.restorationtrades.com/help.html#profile_password">Help</a>)</label>
+                            <label for="password">Password (<a href="http://www.restorationtrades.com/help.html#profile_password" target="_blank">Help</a>)</label>
                     </label>
                     {{ Form::password('password', array('class' => 'form-control', 'tabindex' => 3)) }}
                     @if($errors->first('password'))
@@ -65,7 +65,7 @@
                 </div>
                 <div class="form-group">
                     <label for="password_confirmation">
-                            <label for="password_confirmation">Password Confirmation (<a href="http://www.restorationtrades.com/help.html#profile_password_confirmation">Help</a>)</label>
+                            <label for="password_confirmation">Password Confirmation (<a href="http://www.restorationtrades.com/help.html#profile_password_confirmation" target="_blank">Help</a>)</label>
                     </label>
                     {{ Form::password('password_confirmation', array('class' => 'form-control', 'tabindex' => 4)) }}
                     @if($errors->first('password_confirmation'))
