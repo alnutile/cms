@@ -1,0 +1,51 @@
+body {
+  background-color: #282828;
+  font: 17px/25px 'Whitney SSm A', Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  font: 30px/37px 'adobe-caslon-pro', 'Times New Roman', Times, serif;
+}
+
+.well, hr {
+  background-color: transparent;
+  border: none;
+}
+
+header {
+  background-color: rgba(0, 0, 0, 0.690196);
+  padding: 10px;
+  width: 250px;
+  position: relative;
+}
+  header:after {
+    position: absolute;
+    right: 100%;
+    top: 0;
+    content: '';
+    height: 73px;
+    width: 2000px;
+    background-color: rgba(0, 0, 0, 0.690196);
+    widows: 240px;
+}
+
+
+.home-banner-wrapper {
+  display: none;
+}
+
+.content {
+  background-color: transparent;
+  color: #fff;
+}
+
+.nav-list {
+  .nav-header {
+    display: none;
+  }
+  a {
+    color: #fff;
+    text-align: right;
+    padding: 5px 5px!important;
+  }
+}

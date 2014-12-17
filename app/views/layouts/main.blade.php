@@ -18,16 +18,18 @@
 
     <!-- Bootstrap core CSS -->
     {{ HTML::style('assets/css/bootstrap.css') }}
-    {{ HTML::style('assets/css/colorfrog.css') }}
+
     {{ HTML::style('assets/css/font-awesome.css') }}
     <!-- <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'> -->
     {{ HTML::style('assets/css/prettify.css') }}
     {{ HTML::style('assets/css/main.css') }}
     {{ HTML::style('assets/css/custom.css') }}
   {{ HTML::style('/bower_components/jquery-colorbox/example4/colorbox.css') }}
+    {{ HTML::style('assets/css/dark.css') }}
 
 
-  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     {{ HTML::script('assets/js/html5shiv.js') }}
     {{ HTML::script('assets/js/respond.min.js') }}
@@ -119,6 +121,8 @@ Use the corresponding body tag for your chosen theme
 {{ HTML::script('/assets/js/angular_app.js') }}
 {{ HTML::script('/assets/js/alertServices.js') }}
  {{ HTML::script('/assets/js/projectsImagesCtrl.js') }}
+ {{ HTML::script('/assets/js/backstretch.js') }}
+ {{ HTML::script('http://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js') }}
 
 </body>
 </html>
