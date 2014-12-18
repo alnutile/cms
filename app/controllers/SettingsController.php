@@ -117,6 +117,7 @@ class SettingsController extends \BaseController {
         $setting->logo              = $data['logo'];
         $setting->name              = $data['name'];
         $setting->maintenance_mode  = (isset($data['maintenance_mode'])) ? 1 : 0;
+        $setting->theme  = (isset($data['theme'])) ? true : false;
         $this->setRobot($setting->maintenance_mode);
         $setting->facebook          = (isset($data['facebook'])) ? $data['facebook'] : '';
         $setting->linkedin          = (isset($data['linkedin'])) ? $data['linkedin'] : '';

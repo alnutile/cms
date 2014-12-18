@@ -122,6 +122,15 @@
         </div>
 
         <div class="form-group">
+            <div class="controls">
+                <div class="checkbox">
+                    <label class="checkbox">{{ Form::checkbox('theme', null) }} Check to use the dark theme </label>
+                </div>
+                <div class="help-block">Use this turn set your site to use an alternate theme.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
             {{ Form::submit('Update', array('class' => 'btn btn-success')) }}
         </div>
     </fieldset>

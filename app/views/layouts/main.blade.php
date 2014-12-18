@@ -24,8 +24,10 @@
     {{ HTML::style('assets/css/prettify.css') }}
     {{ HTML::style('assets/css/main.css') }}
     {{ HTML::style('assets/css/custom.css') }}
-  {{ HTML::style('/bower_components/jquery-colorbox/example4/colorbox.css') }}
+     {{ HTML::style('/bower_components/jquery-colorbox/example4/colorbox.css') }}
+   @if($settings->theme == true)
     {{ HTML::style('assets/css/dark.css') }}
+   @endif
 
 
 
@@ -121,8 +123,10 @@ Use the corresponding body tag for your chosen theme
 {{ HTML::script('/assets/js/angular_app.js') }}
 {{ HTML::script('/assets/js/alertServices.js') }}
  {{ HTML::script('/assets/js/projectsImagesCtrl.js') }}
+@if($settings->theme == true)
  {{ HTML::script('/assets/js/backstretch.js') }}
  {{ HTML::script('http://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js') }}
+@endif
 
 </body>
 </html>
