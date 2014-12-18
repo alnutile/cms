@@ -1,6 +1,6 @@
 <?php
 
-class Project extends BaseModel {
+class Post extends BaseModel {
 
     // Add your validation rules here
     public static $rules = [
@@ -15,19 +15,8 @@ class Project extends BaseModel {
         'published',
         'body',
         'image',
-        'order',
-        'intro',
-        'portfolio_id',
-        'seo',
-        'slug',
-        'state_country',
-        'city_county'
+        'slug'
     ];
-
-    public function portfolio()
-    {
-        return $this->belongsTo('Portfolio');
-    }
 
     public function images()
     {

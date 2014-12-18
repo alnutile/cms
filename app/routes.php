@@ -8,6 +8,8 @@ Route::resource('portfolios', 'PortfoliosController');
 Route::resource('projects', 'ProjectsController');
 
 Route::get('menus', 'MenusController@index');
+Route::get('/projects/{id}/tags', 'TagsController@index');
+Route::get('/tags/{id}/projects', 'TagsController@projects');
 Route::post('menus', 'MenusController@store');
 
 #done

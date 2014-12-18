@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateProjectsTable extends Migration {
+class CreatePostsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,15 +12,15 @@ class CreateProjectsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('projects', function(Blueprint $table)
+		Schema::create('posts', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->string('title');
 			$table->text('body');
 			$table->string('image')->nullable();
-            $table->integer('portfolio_id');
-            $table->integer('order')->default(1);
-            $table->boolean('published')->default(0);
+            $table->string('seo')->nullable();
+            $table->string('slug')->nullable();
+			$table->boolean('published')->default(0);
 			$table->timestamps();
 		});
 	}
@@ -33,7 +33,7 @@ class CreateProjectsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('projects');
+		Schema::dropIfExists('posts');
 	}
 
 }

@@ -26,7 +26,8 @@
         "behat/mink": "1.5.0",
         "behat/mink-goutte-driver": "*",
         "behat/mink-selenium2-driver": "*",
-        "behat/mink-extension": "1.3.3"
+        "behat/mink-extension": "1.3.3",
+        "fzaninotto/faker": "1.3.*@dev"
     },
 	"scripts": {
 		"post-install-cmd": [

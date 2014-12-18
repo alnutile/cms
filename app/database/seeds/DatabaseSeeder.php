@@ -16,6 +16,10 @@ class DatabaseSeeder extends Seeder {
         $this->call('PagesTableSeeder');
         $this->call('PortfoliosTableSeeder');
         $this->call('ProjectsTableSeeder');
+        $this->call('TagsTableSeeder');
+        $this->call('PostsTableSeeder');
+        $this->call('ProjectsTagsTableSeeder');
+        $this->call('PostsTagsTableSeeder');
     }
 
 }
