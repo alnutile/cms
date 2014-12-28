@@ -3,10 +3,13 @@ $(document).ready(function(){
         CKEDITOR.replace( '.ckeditor');
     };
 
-    $.backstretch(cms.slides, {
-        fade: 750,
-        duration: 2000
-    });
+
+    if(cms.home === 'home'){
+        $.backstretch(cms.slides, {
+            fade: 750,
+            duration: 2000
+        });
+    }
 
     //image galleries on projects
     $('a.gallery').colorbox({transition: "fade", maxWidth:"1200px", maxHeight:"1200px" });

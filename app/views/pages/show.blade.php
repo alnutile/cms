@@ -13,6 +13,7 @@
   @endif
 </div>
 
+@if($page->id != 1 || $settings->theme == false)
 <div class="col-md-9 column">
   <h1>{{{ $page->title }}}</h1>
   <p> {{ $page->body }} </p>
@@ -24,6 +25,6 @@
   {{ $projects->links() }}
   @endif
 </div>
-
+@endif
 
 @stop

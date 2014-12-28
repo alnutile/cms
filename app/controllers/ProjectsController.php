@@ -29,7 +29,6 @@ class ProjectsController extends \BaseController {
   {
     $page = Page::find(4);
     return Redirect::to($page->slug, 301);
-
   }
 
   /**

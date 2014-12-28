@@ -53,6 +53,7 @@ class PagesController extends \BaseController {
         $projects = Project::orderBy('id','asc')->paginate(2);
         $seo = $page->seo;
         $banner = TRUE;
+        $page->id == 1 ? JavaScript::put(['home'=>'home']) : JavaScript::put(['home'=>'notHome']);
         return View::make('pages.show', compact('page', 'banner', 'settings', 'seo', 'projects'));
     }
 

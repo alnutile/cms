@@ -6,6 +6,7 @@ Route::resource('banners', 'BannersController');
 Route::resource('settings', 'SettingsController');
 Route::resource('portfolios', 'PortfoliosController');
 Route::resource('projects', 'ProjectsController');
+Route::resource('posts', 'PostsController');
 
 Route::get('menus', 'MenusController@index');
 Route::get('/projects/{id}/tags', 'TagsController@index');
