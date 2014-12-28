@@ -7,7 +7,8 @@
 		"laravel/framework": "4.1.*",
 		"way/generators": "2.6.1",
         "doctrine/dbal": "~2.3",
-        "flowjs/flow-php-server": "0.2.1"
+        "flowjs/flow-php-server": "0.2.1",
+        "laracasts/utilities": "~1.0"
     },
 	"autoload": {
         "psr-0": {

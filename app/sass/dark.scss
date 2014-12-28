@@ -17,6 +17,7 @@ header {
   padding: 10px;
   width: 250px;
   position: relative;
+
 }
   header:after {
     position: absolute;
@@ -26,13 +27,14 @@ header {
     height: 73px;
     width: 2000px;
     background-color: rgba(0, 0, 0, 0.690196);
-    widows: 240px;
 }
 
-
-.home-banner-wrapper {
-  display: none;
+.navbar {
+  .container {
+    width: 100%;
+  }
 }
+
 
 .content {
   background-color: transparent;
@@ -40,12 +42,13 @@ header {
 }
 
 .nav-list {
-  .nav-header {
-    display: none;
-  }
   a {
     color: #fff;
     text-align: right;
     padding: 5px 5px!important;
+  }
+  > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.690196);
   }
 }

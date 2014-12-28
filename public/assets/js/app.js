@@ -3,13 +3,9 @@ $(document).ready(function(){
         CKEDITOR.replace( '.ckeditor');
     };
 
-    $.backstretch([
-        "../assets/img/backstretch_images/pot-holder.jpg",
-        "../assets/img/backstretch_images/coffee.jpg",
-        "../assets/img/backstretch_images/dome.jpg"
-    ], {
+    $.backstretch(cms.slides, {
         fade: 750,
-        duration: 4000
+        duration: 2000
     });
 
     //image galleries on projects

@@ -147,7 +147,18 @@ class BaseController extends Controller {
     return $data;
   }
 
+public function getSlides()
+{
 
+    $slides = [];
+    $directory = public_path() . "/slideshow/";
+    $files = File::allFiles($directory);
+    foreach ($files as $key => $file)
+    {
+        $slides[$key] = "/slideshow/" . $file->getRelativePathname();
+    }
+    JavaScript::put(compact('slides'));
+}
 
   protected function updateImagesCaption($image_captions)
   {

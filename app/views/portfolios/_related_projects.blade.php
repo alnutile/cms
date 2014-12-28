@@ -1,10 +1,12 @@
 <div class="well sidebar-nav">
 
     <ul class="nav nav-list">
+        @if($settings->theme == false)
         <li class="nav-header">
             <i class="glyphicon glyphicon-th"></i>
             &nbsp; Related Projects
         </li>
+        @endif
         @foreach($portfolio->projects as $p)
             <li>
                 <a href="/projects/{{$p->id}}/edit">{{$p->title}}</a>

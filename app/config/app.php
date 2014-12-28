@@ -109,7 +109,8 @@ return array(
         'Way\Generators\GeneratorsServiceProvider',
         'CMS\ServiceProviders\MenuServiceProvider',
         'CMS\ServiceProviders\ImagesServiceProvider',
-        'CMS\ServiceProviders\ProjectsServiceProvider'
+        'CMS\ServiceProviders\ProjectsServiceProvider',
+        'Laracasts\Utilities\UtilitiesServiceProvider'
     ),
 
     /*
