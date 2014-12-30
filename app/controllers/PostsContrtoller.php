@@ -1,6 +1,7 @@
 <?php
 
 use CMS\Services\ImagesService;
+use Intervention\Image\Facades\Image;
 
 class PostsController extends \BaseController {
 
@@ -61,6 +62,7 @@ class PostsController extends \BaseController {
         }
         if(isset($all['image'])) {
             $all = $this->uploadFile($all, 'image');
+            $image = Image::make($input['image']->getRealPath());
         }
         $post = Post::create($all);
 
@@ -129,6 +131,14 @@ class PostsController extends \BaseController {
             return Redirect::back()->withErrors($validator)->withInput();
         }
         if(isset($data['image'])) {
+            $image = \Intervention\Image\Facades\Image::make($all['image']->getRealPath());
+            $filename = ($all['image']->getClientOriginalName());
+            $image->save($this->save_to . $filename)
+                  ->resize(1000, null,  function ($constraint) {
+                    $constraint->aspectRatio();
+                    $constraint->upsize();})
+                  ->crop(270, 340)
+                  ->save($this->save_to . '/thumb/' . $filename);
             $data = $this->uploadFile($data, 'image');
         } else {
             $data['image'] = $post->image;

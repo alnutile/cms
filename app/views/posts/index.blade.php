@@ -11,7 +11,7 @@
         <div class="col-md-4">
             <a href="/posts/{{$p->id}}" class="">
                 @if ($p->image)
-                <img  src="/img/posts/{{$p->image}}" alt="{{$p->title}}" class="img-responsive">
+                <img  src="/img/posts/thumb/{{$p->image}}" alt="{{$p->title}}" class="img-responsive">
                 @else
                 <img  src="/img/default/photo_default_0.png" alt="{{$p->title}}" class="img-responsive">
                 @endif

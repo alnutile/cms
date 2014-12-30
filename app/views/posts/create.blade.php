@@ -8,13 +8,13 @@
 
 <div class="col-md-9 column">
 
-  <h2>Create Portfolio:</h2>
+  <h2>Create Blog Post:</h2>
 
-  {{ Form::model('portfolio', array('method' => 'POST', 'route' => array('portfolios.store'), 'role' => 'form')) }}
+  {{ Form::model('post', array('method' => 'POST', 'route' => array('posts.store'), 'role' => 'form')) }}
 
 
   <div class="form-group">
-    <label>Portfolio Name (<a href="http://www.restorationtrades.com/help.html#portolio_name" target="_blank">Help</a>)</label>
+    <label>Blog Post Name (<a href="http://www.restorationtrades.com/help.html#portolio_name" target="_blank">Help</a>)</label>
     {{ Form::text('title', null, array('class' => 'form-control')) }}
   </div>
   @if($errors->first('title'))
@@ -24,28 +24,7 @@
   @endif
 
   <div class="form-group">
-    <label>Portfolio Browser Description (a.k.a. Title Tag) (<a href="http://www.restorationtrades.com/help.html#portfolio_browser_description" target="_blank">Help</a>)</label>
-    {{ Form::text('seo', null, array('class' => 'form-control')) }}
-  </div>
-  @if($errors->first('seo'))
-    <div class="alert alert-danger">
-      {{  $errors->first('seo'); }}
-    </div>
-  @endif
-
-  <div class="form-group">
-    <label>Portfolio Heading (<a href="http://www.restorationtrades.com/help.html#portfolio_heading" target="_blank">Help</a>)</label>
-    {{ Form::text('header', null, array('class' => 'form-control')) }}
-  </div>
-  @if($errors->first('header'))
-  <div class="alert alert-danger">
-    {{  $errors->first('header'); }}
-  </div>
-  @endif
-
-
-  <div class="form-group">
-    <label>Portfolio Main Body (<a href="http://www.restorationtrades.com/help.html#portfolio_page_description" target="_blank">Help</a>)</label>
+    <label>Blog Post Main Body (<a href="http://www.restorationtrades.com/help.html#portfolio_page_description" target="_blank">Help</a>)</label>
     {{ Form::textarea('body', null, array('rows' => 30, 'class' => 'ckeditor form-control')) }}
   </div>
   @if($errors->first('body'))
@@ -54,8 +33,19 @@
   </div>
   @endif
 
+
+    <div class="form-group">
+        <label>Tags (<a href="http://www.restorationtrades.com/help.html#tags" target="_blank">Help</a>)</label>
+        {{ Form::text('tags', null, array('class' => 'form-control')) }}
+    </div>
+    @if($errors->first('tags'))
+    <div class="alert alert-danger">
+        {{  $errors->first('tags'); }}
+    </div>
+    @endif
+
   <div class="form-group">
-    <label>Portfolio Web Address (URL) (<a href="http://www.restorationtrades.com/help.html#portfolio_web_address" target="_blank">Help</a>)</label>
+    <label>Blog Post Web Address (URL) (<a href="http://www.restorationtrades.com/help.html#portfolio_web_address" target="_blank">Help</a>)</label>
     {{ Form::text('slug', null, array('class' => 'form-control')) }}
     <div class="help-block">The url must start with / </div>
   </div>
@@ -75,8 +65,34 @@
     </div>
   </div>
 
+    <!--    images-->
+
+    <div class="form-group">
+        <label for="email">Project Default Image Uploader (<a href="http://www.restorationtrades.com/help.html#project_default_image_uploader" target="_blank">Help</a>)</label>
+        {{ Form::file('image', null, array('class' => 'form-control', 'tabindex' => 1)) }}
+        @if($errors->first('image'))
+        <div class="alert alert-danger">
+            {{  $errors->first('image'); }}
+        </div>
+        @endif
+
+
+        <div class="help-block">This is the image we will use for the default project image</div>
+    </div>
+
+    <br>
+    <br>
+
+    <!-- images upload -->
+    <label>Project Blowup Images Uploader (<a href="http://www.restorationtrades.com/help.html#project_blowup_image_uploader" target="_blank">Help</a>)</label>
+    @include('posts.images_angular')
+
+    <br>
+    <br>
+    <!-- end images upload -->
+
   <div class="controls">
-    {{ Form::submit('Create Portfolio', array('id' => 'submit', 'class' => 'btn btn-success')) }}
+    {{ Form::submit('Create Blog Post', array('id' => 'submit', 'class' => 'btn btn-success')) }}
     <br>
   </div>
 

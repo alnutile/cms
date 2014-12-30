@@ -110,7 +110,8 @@ return array(
         'CMS\ServiceProviders\MenuServiceProvider',
         'CMS\ServiceProviders\ImagesServiceProvider',
         'CMS\ServiceProviders\ProjectsServiceProvider',
-        'Laracasts\Utilities\UtilitiesServiceProvider'
+        'Laracasts\Utilities\UtilitiesServiceProvider',
+        'Intervention\Image\ImageServiceProvider'
     ),
 
     /*
@@ -177,7 +178,8 @@ return array(
         'Validator'       => 'Illuminate\Support\Facades\Validator',
         'View'            => 'Illuminate\Support\Facades\View',
         'Menu'            => 'CMS\Facades\MenuFacade',
-        'Images'          => 'CMS\Facades\ImagesFacade'
+        'Images'          => 'CMS\Facades\ImagesFacade',
+        'IntImage'           => 'Intervention\Image\Facades\Image'
     ),
 
 );
