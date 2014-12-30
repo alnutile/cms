@@ -88,11 +88,9 @@ class BaseController extends Controller {
         //Only run when an image
         if($data[$field_name])
         {
-
             $image = $data[$field_name];
             $filename = $image->getClientOriginalName();
             $destination = $this->save_to;
-
             if(!$this->filesystem->exists($destination)) {
                 $this->filesystem->mkdir($destination);
             }

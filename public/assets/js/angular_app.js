@@ -4,7 +4,8 @@ var app = angular.module('app', [
         'restangular',
         'alertServices',
         'flow',
-        'projectControllers'
+        'projectControllers',
+        'postsControllers'
     ]).
     config(function($interpolateProvider){
         $interpolateProvider.startSymbol('[[').endSymbol(']]'); //{{ }}

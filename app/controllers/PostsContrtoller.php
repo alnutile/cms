@@ -4,6 +4,10 @@ use CMS\Services\ImagesService;
 
 class PostsController extends \BaseController {
 
+    protected $post_dest;
+    protected $post_uri;
+    protected $save_to;
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -14,6 +18,9 @@ class PostsController extends \BaseController {
     {
         parent::__construct();
         $this->imagesService = $imagesService;
+        $this->post_dest = public_path() . "/img/posts";
+        $this->post_uri = 'img/posts';
+        $this->save_to = public_path() . "/img/posts";
     }
 
 	public function index()
@@ -45,7 +52,7 @@ class PostsController extends \BaseController {
 	public function store()
 	{
         $all = Input::all();
-        $rules = Project::$rules;
+        $rules = Post::$rules;
         $validator = $this->validateSlugOnCreate($all, $rules);
 
         if ($validator->fails())
@@ -95,8 +102,8 @@ class PostsController extends \BaseController {
 	{
         parent::show();
         $post = Post::find($id);
-
-        return View::make('posts.edit', compact('post'));
+        $path = $this->post_uri;
+        return View::make('posts.edit', compact('post', 'path'));
 	}
 
 
@@ -108,7 +115,37 @@ class PostsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+        $post  = Post::findOrFail($id);
+
+        //1. see if the slug is the same as the original
+        //2. if it is then we will not validate against right
+        $all = Input::all();
+        $rules = Post::$rules;
+        $validator = $this->validateSlugEdit($all, $post, $rules);
+        $data = $this->checkPublished($all);
+
+        if ($validator->fails())
+        {
+            return Redirect::back()->withErrors($validator)->withInput();
+        }
+        if(isset($data['image'])) {
+            $data = $this->uploadFile($data, 'image');
+        } else {
+            $data['image'] = $post->image;
+        }
+        if(isset($data['image_caption_update'])){
+            $this->updateImagesCaption($data['image_caption_update']);
+        }
+        if(isset($data['image_order_update'])){
+            $this->updateImagesOrder($data['image_order_update']);
+        }
+
+        if(isset($data['images'])) {
+            $this->imagesService->addImages($post->id, $data['images'], 'Post');
+        }
+        $data = $this->checkPublished($data);
+        $post->update($data);
+        return Redirect::route('posts.index')->withMessage("Updated Post!");
 	}
 
 

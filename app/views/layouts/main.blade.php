@@ -123,6 +123,7 @@ Use the corresponding body tag for your chosen theme
 {{ HTML::script('/assets/js/angular_app.js') }}
 {{ HTML::script('/assets/js/alertServices.js') }}
  {{ HTML::script('/assets/js/projectsImagesCtrl.js') }}
+ {{ HTML::script('/assets/js/postsImagesCtrl.js') }}
 @if($settings->theme == true)
  {{ HTML::script('/assets/js/backstretch.js') }}
  {{ HTML::script('http://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js') }}

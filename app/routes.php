@@ -59,6 +59,7 @@ Route::group(array('before' => 'auth'), function() {
     return Image::create(Input::all());
   });
 
+
   Route::resource('/api/v1/images', 'ImagesController');
 
   Route::get('images/projects', 'ImagesController@uploadProject');

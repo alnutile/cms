@@ -20,7 +20,7 @@ class Post extends BaseModel {
 
     public function images()
     {
-        return $this->morphMany('Image', 'imageable')->orderBy('order', 'asc');
+        return $this->morphMany('Image', 'imageable')->orderBy('asc');
     }
 
     public function tags()
