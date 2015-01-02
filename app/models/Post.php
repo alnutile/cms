@@ -13,6 +13,7 @@ class Post extends BaseModel {
     protected $fillable = [
         'title',
         'published',
+        'intro',
         'body',
         'image',
         'slug'

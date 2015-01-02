@@ -4,20 +4,24 @@
 <div class="col-md-3">
     @include('shared.sidebar')
 </div>
-<div class="col-md-9 column content">
-    <h2>Blog Posts</h2>
-    <div class = "row">
+<div class="col-md-9 column content blog_index">
+    <div class = "">
         @foreach($posts as $p)
-        <div class="col-md-4">
-            <a href="/posts/{{$p->id}}" class="">
-                @if ($p->image)
-                <img  src="/img/posts/thumb/{{$p->image}}" alt="{{$p->title}}" class="img-responsive">
-                @else
-                <img  src="/img/default/photo_default_0.png" alt="{{$p->title}}" class="img-responsive">
-                @endif
-                <h4 class="media-heading">{{{$p->title}}}</h4>
+        <div class="row blog_row">
+            <a href="/posts/{{$p->id}}">
+                <h2 class="media-heading">{{{$p->title}}}</h2>
+                <div class="post_intro col-md-9"> {{ $p->intro }} </div>
+
+                <div class="post_img col-md-3">
+                    @if ($p->image)
+                    <img  src="/img/posts/thumb/{{$p->image}}" alt="{{$p->title}}" class="img-responsive">
+                    @else
+                    <img  src="/img/default/photo_default_0.png" alt="{{$p->title}}" class="img-responsive">
+                    @endif
+                </div>
             </a>
         </div>
+        <hr>
         @endforeach
     </div>
 </div>

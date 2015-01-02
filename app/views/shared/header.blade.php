@@ -1,4 +1,4 @@
-
+<!-- shared.header -->
 <?php
 $banners_active = Banner::slideShow();
 ?>

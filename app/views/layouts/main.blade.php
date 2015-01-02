@@ -61,7 +61,10 @@ Use the corresponding body tag for your chosen theme
             <h2><a href="/">{{$settings->name}}</a></h2>
         @endif
     </header>
-    @include('shared.top-nav')
+    @if($settings->theme == false)
+        @include('shared.top-nav')
+    @endif
+
 </div>
 <!-- //end container -->
 

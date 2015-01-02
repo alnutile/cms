@@ -1,4 +1,4 @@
-
+<!-- shared.top-nav -->
     <button class="btn navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>

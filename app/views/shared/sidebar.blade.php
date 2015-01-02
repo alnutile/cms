@@ -2,8 +2,8 @@
 
 
 
-
-<div class="well sidebar-nav">
+<!-- shared.sidebar -->
+<div class="sidebar-nav">
     <ul class="nav nav-list">
         <?php
         if(Request::server('PATH_INFO') == '/portfolios') {
@@ -30,4 +30,6 @@
     </ul>
 </div>
 
-@include('shared._social')
+@if($settings->theme == false)
+    @include('shared._social')
+@endif

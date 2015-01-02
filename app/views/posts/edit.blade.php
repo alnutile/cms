@@ -2,7 +2,7 @@
 
 @section('content')
 
-
+<!-- posts.edit -->
 <div class="col-md-9 column">
 
   <h2>Edit Blog Post: {{$post->title}}</h2>
@@ -20,6 +20,15 @@
   </div>
   @endif
 
+    <div class="form-group">
+        <label>Intro Paragraph (<a href="http://www.restorationtrades.com/help.html#Blog Post_page_description" target="_blank">Help</a>)</label>
+        {{ Form::textarea('intro', null, array('rows' => 30, 'class' => 'ckeditor form-control')) }}
+    </div>
+    @if($errors->first('intro'))
+    <div class="alert alert-danger">
+        {{  $errors->first('intro'); }}
+    </div>
+    @endif
 
   <div class="form-group">
     <label>Blog Post Main Body (<a href="http://www.restorationtrades.com/help.html#Blog Post_page_description" target="_blank">Help</a>)</label>

@@ -9,6 +9,7 @@ $(document).ready(function(){
             fade: 750,
             duration: 2000
         });
+        $('body').addClass('home');
     }
 
     //image galleries on projects
