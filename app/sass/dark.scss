@@ -13,18 +13,18 @@ h1, h2, h3, h4, h5 {
 }
 
 a {
-    color: #fff;
+  color: #fff;
   text-decoration: none;
 
 }
-  a:focus {
-    color: #b3b3b6;
-    text-decoration: none;
-  }
-  a:hover {
-    color: #b3b3b6;
-    text-decoration: none;
-  }
+a:focus {
+  color: #b3b3b6;
+  text-decoration: none;
+}
+a:hover {
+  color: #b3b3b6;
+  text-decoration: none;
+}
 
 
 header {
@@ -84,15 +84,17 @@ footer {
 
 .blog_index {
   .row {
-    margin-left: 0px;
-    margin-right: 0px;
+    padding: 20px 0;
+    border-top: dotted 1px;
+    .post_intro {
+      padding: 0px;
+    }
+    .post_img {
+      padding: 0px;
+    }
   }
 
   h2 {
     font: 27px/33px 'adobe-caslon-pro', 'Times New Roman', Times, serif;
-  }
-  hr {
-    background-color: #e6e6e6;
-    height: 1px;
   }
 }
