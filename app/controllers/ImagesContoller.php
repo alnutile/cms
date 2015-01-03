@@ -28,11 +28,11 @@ class ImagesController extends BaseController{
     return Response::json(['data' => $model->images()->getResults()->toArray(), 'message' => "Images"], 200);
   }
 
-  public function uploadProject()
+  public function uploadImage($model)
   {
     $this->setTemp();
 
-    $this->setDestinationDir(public_path() . '/assets/img/projects');
+    $this->setDestinationDir(public_path() . '/assets/img/' . $model);
     $this->checkDestination();
     $this->request = new Request();
     \File::makeDirectory($this->chunkDir, 0777, true, true);
@@ -45,6 +45,7 @@ class ImagesController extends BaseController{
       return Response::json([], 404);
     }
   }
+
 
   protected function setTemp()
   {

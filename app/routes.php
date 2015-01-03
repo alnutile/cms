@@ -62,8 +62,8 @@ Route::group(array('before' => 'auth'), function() {
 
   Route::resource('/api/v1/images', 'ImagesController');
 
-  Route::get('images/projects', 'ImagesController@uploadProject');
-  Route::post('images/projects', 'ImagesController@uploadProject');
+  Route::get('images/upload/{model}', 'ImagesController@uploadProject');
+  Route::post('images/upload/{model}', 'ImagesController@uploadProject');
 
   Route::post('/api/v1/ckeditor/images', function(){
     $files = new FilesController();

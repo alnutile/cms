@@ -11,8 +11,7 @@
       </li>
     </ul>
     <div class="form-group">
-
-      <div flow-init="{target: '/images/projects', singleFile: false}"
+      <div flow-init="{target: '/images/upload/{{$type}}', singleFile: false}"
            flow-files-submitted="$flow.upload()"
            flow-file-success="$file.msg = $message">
         <div ng-repeat="file in $flow.files"
