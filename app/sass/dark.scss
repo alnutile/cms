@@ -1,3 +1,7 @@
+$grey_dark: #717073;
+$grey_light: #b3b3b6;
+$white: #fff;
+
 body {
   background-color: #282828;
   font: 17px/25px 'Whitney SSm A', Arial, Helvetica, sans-serif;
@@ -13,19 +17,22 @@ h1, h2, h3, h4, h5 {
 }
 
 a {
-  color: #fff;
+  color: $grey_light;
   text-decoration: none;
 
 }
 a:focus {
-  color: #b3b3b6;
+  color: $white;
   text-decoration: none;
 }
 a:hover {
-  color: #b3b3b6;
+  color: $white;
   text-decoration: none;
 }
 
+.home a {
+  color: $white;
+}
 
 //header {
 //  background-color: rgba(0, 0, 0, 0.690196);
@@ -53,7 +60,7 @@ a:hover {
 
 .content {
   background-color: transparent;
-  color: #fff;
+  color: $white;
   margin-bottom: 50px;
 }
 
@@ -63,7 +70,6 @@ a:hover {
   padding-right: 17px;
   width: 100%;  
   a {
-    color: #fff;
     text-align: right;
     padding: 5px 5px!important;
     text-shadow: 1px 1px 0px #000;
@@ -90,7 +96,7 @@ footer {
 .blog_index {
   .row {
     padding: 20px 0;
-    border-top: dotted 1px;
+    border-top: 1px dotted $grey_dark;
     .post_intro {
       padding: 0px;
     }
