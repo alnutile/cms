@@ -55,9 +55,9 @@ Use the corresponding body tag for your chosen theme
 <!-- //start container -->
 <div class="container">
     <header>
-        @if($settings->logo)
+        @if($settings->logo && $settings->theme == false)
             <a href="/">{{ HTML::image("/img/settings/{$settings->logo}", $settings->name)}}</a>
-        @else
+        @elseif ($settings->theme == false)
             <h2><a href="/">{{$settings->name}}</a></h2>
         @endif
     </header>

@@ -4,6 +4,9 @@
 
 <!-- shared.sidebar -->
 <div class="sidebar-nav">
+    @if($settings->logo && $settings->theme == true)
+    <a class = "side_logo" href="/">{{ HTML::image("/img/settings/{$settings->logo}", $settings->name)}}</a>
+    @endif
     <ul class="nav nav-list">
         <?php
         if(Request::server('PATH_INFO') == '/portfolios') {
