@@ -57,8 +57,11 @@ header:after {
   margin-bottom: 50px;
 }
 
+.sidebar-nav{
+  position: fixed;
 .nav-list {
   padding-right: 17px;
+  width: 100%;  
   a {
     color: #fff;
     text-align: right;
@@ -69,6 +72,8 @@ header:after {
     text-decoration: none;
     background-color: rgba(0, 0, 0, 0.690196);
   }
+}
+
 }
 
 footer {
