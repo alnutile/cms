@@ -1,5 +1,5 @@
-<div ng-app="app">
-  <div ng-controller="ProjectImagesController">
+<div>
+  <div ng-controller="UploadImagesController">
     <ul ng-if="images.length > 0" class="edit_images sortable">
       <li ng-repeat="image in images | orderBy:'order'">
         <img class ="img-thumbnail" src="/assets/img/projects/[[image.file_name]]">&nbsp;[[image.file_name]]&nbsp;<i class="glyphicon glyphicon-trash" ng-click="deleteImage(image.id)">&nbsp;</i>
@@ -11,7 +11,7 @@
       </li>
     </ul>
     <div class="form-group">
-      <div flow-init="{target: '/images/upload/{{$type}}', singleFile: false}"
+      <div flow-init="{target: '/images/upload/{{$model}}', singleFile: false}"
            flow-files-submitted="$flow.upload()"
            flow-file-success="$file.msg = $message">
         <div ng-repeat="file in $flow.files"
@@ -21,9 +21,6 @@
           <input type="hidden" name="images['[[$index]]'][file]" value="[[file.name]]">
           <br>
           <label>Add image caption (<a href="http://www.restorationtrades.com/help.html#edit_project_image">Help</a>):</label>  <input class="caption" name="images['[[$index]]'][image_caption]" type="text" placeholder="Image Caption" >
-
-
-
         </div>
 
         <input type="file" flow-btn/>

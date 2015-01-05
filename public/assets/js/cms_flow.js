@@ -5,7 +5,7 @@
      * @type {window.Flow}
      */
     var r = new Flow({
-        target: '/images/projects',
+        target: '/images/upload',
         chunkSize: 1024*1024,
         testChunks: false
     });
@@ -14,7 +14,6 @@
         $('.flow-error').show();
         return ;
     }
-
     $('.flow-drop').show();
     r.assignDrop($('.flow-drop')[0]);
     r.assignBrowse($('.flow-browse')[0]);

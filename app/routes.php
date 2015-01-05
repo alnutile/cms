@@ -9,8 +9,6 @@ Route::resource('projects', 'ProjectsController');
 Route::resource('posts', 'PostsController');
 
 Route::get('menus', 'MenusController@index');
-Route::get('/projects/{id}/tags', 'TagsController@index');
-Route::get('/tags/{id}/projects', 'TagsController@projects');
 Route::post('menus', 'MenusController@store');
 
 #done
@@ -59,11 +57,19 @@ Route::group(array('before' => 'auth'), function() {
     return Image::create(Input::all());
   });
 
+    //get all the tags that have been used on any content type for the autocomplete list
+  Route::get('/api/v1/tags/{model}', 'TagsController@all_tags');
+    //get all the tags for the current resource
+  Route::get('/api/v1/tags/{model}/{id}', 'TagsController@get_tags');
+    //post new tags for a new resource
+  Route::post('/api/v1/tags/{model}/{id}', 'TagsController@new');
+    //update the tags on an existing resource
+  Route::put('/api/v1/tags/{model}/{id}', 'TagsController@update');
 
   Route::resource('/api/v1/images', 'ImagesController');
 
-  Route::get('images/upload/{model}', 'ImagesController@uploadProject');
-  Route::post('images/upload/{model}', 'ImagesController@uploadProject');
+  Route::get('images/upload/{model}', 'ImagesController@uploadImage');
+  Route::post('images/upload/{model}', 'ImagesController@uploadImage');
 
   Route::post('/api/v1/ckeditor/images', function(){
     $files = new FilesController();

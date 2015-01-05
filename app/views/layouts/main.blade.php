@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,6 +24,8 @@
     {{ HTML::style('assets/css/prettify.css') }}
     {{ HTML::style('assets/css/main.css') }}
     {{ HTML::style('assets/css/custom.css') }}
+    {{ HTML::style('/bower_components/ng-tags-input/ng-tags-input.bootstrap.min.css') }}
+    {{ HTML::style('/bower_components/ng-tags-input/ng-tags-input.min.css') }}
      {{ HTML::style('/bower_components/jquery-colorbox/example4/colorbox.css') }}
    @if($settings->theme == true)
     {{ HTML::style('assets/css/dark.css') }}
@@ -125,8 +127,8 @@ Use the corresponding body tag for your chosen theme
 <!--{{ HTML::script('/assets/js/cms_flow.js') }}-->
 {{ HTML::script('/assets/js/angular_app.js') }}
 {{ HTML::script('/assets/js/alertServices.js') }}
- {{ HTML::script('/assets/js/projectsImagesCtrl.js') }}
- {{ HTML::script('/assets/js/postsImagesCtrl.js') }}
+ {{ HTML::script('/assets/js/uploadImagesCtrl.js') }}
+ {{ HTML::script('/assets/js/tagsCtrl.js') }}
 @if($settings->theme == true)
  {{ HTML::script('/assets/js/backstretch.js') }}
  {{ HTML::script('http://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js') }}

@@ -9,7 +9,7 @@ class TagsController extends \BaseController {
 	 */
 	public function index($id)
 	{
-		$tags = Project::find($id)->tags;
+		$tags = Post::find($id)->tags;
         return $tags;
 	}
 
@@ -18,11 +18,15 @@ class TagsController extends \BaseController {
      *
      * @return Response
      */
-    public function projects($id)
-    {
-        $tags = Tag::find($id)->projects;
-        return $tags;
-    }
+    public function all_tags($tagable_type)
+  {
+    $data =  Tag::where('tagable_type', '=', $tagable_type)->get();
+    return Response::json([
+    'data' => $this->transformCollection($data->toArray()),
+    'message' => "Images"],
+    200);
+  }
+
 
 
 
@@ -31,10 +35,12 @@ class TagsController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function create()
-	{
-		//
-	}
+	public function get_tags($type, $id)
+    {
+        $model = $type::findOrFail($id);
+        return Response::json([
+            'data' => $this->transformCollection($model->tags()->getResults()->toArray()), 'message' => "tags"], 200);
+    }
 
 
 	/**
@@ -47,53 +53,30 @@ class TagsController extends \BaseController {
 		//
 	}
 
-
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-//	public function show($id)
+//    private function transformCollection($tags)
 //    {
-//        //
-//	}
+//
+//        return array_map([$this, 'transform'], $tags);
+//    }
+
+    private function transformCollection($tags)
+    {
+        $tags_array = [];
+        foreach($tags as $key => $tag)
+        {
+            $tags_array[$key] = $tag['name'];
+        }
+        return $tags_array;
+    }
 
 
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
+    private function transform($tags)
+    {
+            return [
+                'name' => $tags['name']
+            ];
+    }
 
-
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
-
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
-	}
 
 
 }

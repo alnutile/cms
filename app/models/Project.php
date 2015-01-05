@@ -36,7 +36,7 @@ class Project extends BaseModel {
 
     public function tags()
     {
-        return $this->belongsToMany('Tag');
+        return $this->morphMany('Tag', 'tagable');
     }
 
 }

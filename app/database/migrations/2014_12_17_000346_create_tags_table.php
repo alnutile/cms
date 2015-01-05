@@ -16,6 +16,8 @@ class CreateTagsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('name');
+            $table->integer('tagable_id');
+            $table->string('tagable_type');
 			$table->timestamps();
 		});
 	}

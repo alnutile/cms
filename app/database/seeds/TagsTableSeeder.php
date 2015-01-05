@@ -11,9 +11,13 @@ class TagsTableSeeder extends Seeder {
 
 		foreach(range(1, 10) as $index)
 		{
+            $type = ['Project', 'Post'];
+            $rand_type = array_rand($type, 1);
 			Tag::create([
 
-                'name' => $faker->word
+                'name' => $faker->word,
+                'tagable_id' => $faker->randomDigit,
+                'tagable_type' => $type[$rand_type],
 
 			]);
 		}

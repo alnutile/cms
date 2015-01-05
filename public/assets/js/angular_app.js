@@ -4,8 +4,9 @@ var app = angular.module('app', [
         'restangular',
         'alertServices',
         'flow',
-        'projectControllers',
-        'postsControllers'
+        'uploadControllers',
+        'ngTagsInput',
+        'tagsCtrl'
     ]).
     config(function($interpolateProvider){
         $interpolateProvider.startSymbol('[[').endSymbol(']]'); //{{ }}

@@ -40,15 +40,8 @@
   </div>
   @endif
 
-    <div class="form-group">
-        <label>Tags (<a href="http://www.restorationtrades.com/help.html#tags" target="_blank">Help</a>)</label>
-        {{ Form::text('tags', null, array('class' => 'form-control')) }}
-    </div>
-    @if($errors->first('tags'))
-    <div class="alert alert-danger">
-        {{  $errors->first('tags'); }}
-    </div>
-    @endif
+
+    @include('shared.tags', array('model' => 'projects'))
 
   @if(Auth::user()->admin == 1)
   <div class="form-group">

@@ -1,6 +1,6 @@
-var projectsControllers = angular.module('projectControllers', []);
+var uploadControllers = angular.module('uploadControllers', []);
 
-projectsControllers.controller('ProjectImagesController', ['$scope', 'Restangular', 'Noty', '$window',
+uploadControllers.controller('UploadImagesController', ['$scope', 'Restangular', 'Noty', '$window',
     function($scope, Restangular, Noty, $window){
         $scope.project_id = false;
 
@@ -31,7 +31,7 @@ projectsControllers.controller('ProjectImagesController', ['$scope', 'Restangula
         {
             if($scope.project_id !=false){
                 Restangular.one('api/v1/getImageFromImageableItem/Project', $scope.project_id).get().then(function(response){
-                        $scope.images = response.data;
+                        $scope.images = reponse.data;
                     }
                 );
             }
