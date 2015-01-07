@@ -3,7 +3,7 @@
 
 
 <!-- shared.sidebar -->
-<div class="sidebar-nav">
+
     @if($settings->logo && $settings->theme == true)
     <a class = "side_logo" href="/">{{ HTML::image("/img/settings/{$settings->logo}", $settings->name)}}</a>
     @endif
@@ -31,7 +31,6 @@
         <li class="{{$active}}"> <a href = {{$static_menu_item}}>{{$key}}</a></li>
         @endforeach
     </ul>
-</div>
 
 @if($settings->theme == false)
     @include('shared._social')

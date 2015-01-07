@@ -15,7 +15,7 @@ class TagsTableSeeder extends Seeder {
             $rand_type = array_rand($type, 1);
 			Tag::create([
 
-                'name' => $faker->word,
+                'name' => $faker->unique()->word,
                 'tagable_id' => $faker->randomDigit,
                 'tagable_type' => $type[$rand_type],
 

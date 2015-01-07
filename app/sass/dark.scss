@@ -12,6 +12,18 @@ h1, h2, h3, h4, h5 {
   font: 30px/37px 'adobe-caslon-pro', 'Times New Roman', Times, serif;
 }
 
+.text_right {
+  text-align: right;
+}
+
+
+tags-input .tags {
+
+  .input, .tag-item {
+    color: $grey_dark;
+  }
+}
+
 .well, hr {
   background-color: transparent;
   border: none;
@@ -67,19 +79,19 @@ a:hover {
 
 .sidebar-nav{
   position: fixed;
-.nav-list {
-  padding-right: 17px;
-  width: 100%;  
-  a {
-    text-align: right;
-    padding: 5px 5px!important;
-    text-shadow: 1px 1px 0px #000;
+  .nav-list {
+    padding-right: 17px;
+    width: 100%;
+    a {
+      text-align: right;
+      padding: 5px 5px!important;
+      text-shadow: 1px 1px 0px #000;
+    }
+    > li > a:hover, .nav > li > a:focus {
+      text-decoration: none;
+      background-color: $dark_alpha;
+    }
   }
-  > li > a:hover, .nav > li > a:focus {
-    text-decoration: none;
-    background-color: $dark_alpha;
-  }
-}
 
 }
 

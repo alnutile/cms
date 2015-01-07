@@ -62,9 +62,9 @@ Route::group(array('before' => 'auth'), function() {
     //get all the tags for the current resource
   Route::get('/api/v1/tags/{model}/{id}', 'TagsController@get_tags');
     //post new tags for a new resource
-  Route::post('/api/v1/tags/{model}/{id}', 'TagsController@new');
-    //update the tags on an existing resource
-  Route::put('/api/v1/tags/{model}/{id}', 'TagsController@update');
+  Route::post('/api/v1/tags', 'TagsController@store');
+    //delete a tags by name on an existing resource
+  Route::delete('/api/v1/tags', 'TagsController@delete_tag_by_name');
 
   Route::resource('/api/v1/images', 'ImagesController');
 

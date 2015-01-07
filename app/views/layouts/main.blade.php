@@ -10,9 +10,9 @@
 
     <title>
         @if(isset($seo))
-         {{$seo}}
+        {{$seo}}
         @else
-         {{$settings->name}}
+        {{$settings->name}}
         @endif
     </title>
 
@@ -26,10 +26,10 @@
     {{ HTML::style('assets/css/custom.css') }}
     {{ HTML::style('/bower_components/ng-tags-input/ng-tags-input.bootstrap.min.css') }}
     {{ HTML::style('/bower_components/ng-tags-input/ng-tags-input.min.css') }}
-     {{ HTML::style('/bower_components/jquery-colorbox/example4/colorbox.css') }}
-   @if($settings->theme == true)
+    {{ HTML::style('/bower_components/jquery-colorbox/example4/colorbox.css') }}
+    @if($settings->theme == true)
     {{ HTML::style('assets/css/dark.css') }}
-   @endif
+    @endif
 
 
 
@@ -38,7 +38,7 @@
     {{ HTML::script('assets/js/html5shiv.js') }}
     {{ HTML::script('assets/js/respond.min.js') }}
 
-  <![endif]-->
+    <![endif]-->
 
 </head>
 
@@ -52,55 +52,55 @@ Use the corresponding body tag for your chosen theme
 -->
 
 @if(Auth::user())
-    @include('shared.nav')
+@include('shared.nav')
 @endif
 <!-- //start container -->
 <div class="container">
     <header>
         @if($settings->logo && $settings->theme == false)
-            <a href="/">{{ HTML::image("/img/settings/{$settings->logo}", $settings->name)}}</a>
+        <a href="/">{{ HTML::image("/img/settings/{$settings->logo}", $settings->name)}}</a>
         @elseif ($settings->theme == false)
-            <h2><a href="/">{{$settings->name}}</a></h2>
+        <h2><a href="/">{{$settings->name}}</a></h2>
         @endif
     </header>
     @if($settings->theme == false)
-        @include('shared.top-nav')
+    @include('shared.top-nav')
     @endif
 
 </div>
 <!-- //end container -->
 
 <!-- start header -->
-    @if(isset($banner) && $banner == TRUE)
-        @include('shared.header')
-    @endif
+@if(isset($banner) && $banner == TRUE)
+@include('shared.header')
+@endif
 
 <div class="row"><div class="span12"><hr></div></div>
 <!-- //end header -->
-    <div class="container content">
-        <div class="row">
-            <!--alerts-->
-            @if (Session::has('message'))
-            <div class="row clearfix">
-                <div class="col-lg-12">
-                    @include('shared.alerts')
-                </div>
+<div class="container content">
+    <div class="row">
+        <!--alerts-->
+        @if (Session::has('message'))
+        <div class="row clearfix">
+            <div class="col-lg-12">
+                @include('shared.alerts')
             </div>
-            @endif
-
-
-            @if($settings->maintenance_mode == 1)
-                <div class="alert alert-danger">
-                    Your site is in maintenance mode. Only logged in users can see the site.
-                    <br>
-                    Visit <a href="/settings/1/edit">Settings</a> to change it.
-                </div>
-            @endif
-            @yield('content')
         </div>
-    </div>
+        @endif
 
-    @include('shared.footer')
+
+        @if($settings->maintenance_mode == 1)
+        <div class="alert alert-danger">
+            Your site is in maintenance mode. Only logged in users can see the site.
+            <br>
+            Visit <a href="/settings/1/edit">Settings</a> to change it.
+        </div>
+        @endif
+        @yield('content')
+    </div>
+</div>
+
+@include('shared.footer')
 
 </div><!-- /.container -->
 
@@ -122,16 +122,17 @@ Use the corresponding body tag for your chosen theme
 <!--{{ HTML::script('/bower_components/jquery-ui/jquery-ui.min.js') }}-->
 <!--{{ HTML::script('/bower_components/jquery-ui/ui/minified/sortable.min.js') }}-->
 <!--{{ HTML::script('/bower_components/flow.js/dist/flow.js') }}-->
- {{ HTML::script('/bower_components/ng-flow/dist/ng-flow-standalone.js') }}
+{{ HTML::script('/bower_components/ng-flow/dist/ng-flow-standalone.js') }}
 {{ HTML::script('/assets/js/app.js') }}
 <!--{{ HTML::script('/assets/js/cms_flow.js') }}-->
 {{ HTML::script('/assets/js/angular_app.js') }}
 {{ HTML::script('/assets/js/alertServices.js') }}
- {{ HTML::script('/assets/js/uploadImagesCtrl.js') }}
- {{ HTML::script('/assets/js/tagsCtrl.js') }}
+{{ HTML::script('/assets/js/uploadImagesCtrl.js') }}
+{{ HTML::script('/assets/js/tagsCtrl.js') }}
+{{ HTML::script('/bower_components/ng-tags-input/ng-tags-input.min.js') }}
 @if($settings->theme == true)
- {{ HTML::script('/assets/js/backstretch.js') }}
- {{ HTML::script('http://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js') }}
+{{ HTML::script('http://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js') }}
+
 @endif
 
 </body>

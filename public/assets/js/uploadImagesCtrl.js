@@ -31,7 +31,7 @@ uploadControllers.controller('UploadImagesController', ['$scope', 'Restangular',
         {
             if($scope.project_id !=false){
                 Restangular.one('api/v1/getImageFromImageableItem/Project', $scope.project_id).get().then(function(response){
-                        $scope.images = reponse.data;
+                        $scope.images = response.data;
                     }
                 );
             }

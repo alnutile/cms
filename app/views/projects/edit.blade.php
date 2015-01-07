@@ -94,8 +94,10 @@
     @endif
   </div>
 
+    @include('shared.tags', array('model' => 'projects'))
+    <br>
 
-  <div class="form-group">
+    <div class="form-group">
     <label>Project Web Address (URL) (<a href="http://www.restorationtrades.com/help.html#project_web_address" target="_blank">Help</a>)</label>
     {{ Form::text('slug', null, array('class' => 'form-control')) }}
     <div class="help-block">The url must start with / </div>
@@ -128,8 +130,7 @@
   </div>
 
   <br>
-  <br>
-    @include('shared.tags', array('model' => 'projects'))
+
   <!-- images upload -->
 <label>Project Blowup Images Uploader (<a href="http://www.restorationtrades.com/help.html#project_blowup_image_uploader" target="_blank">Help</a>)</label>
   @include('shared.images_angular', array('model' => 'projects'))

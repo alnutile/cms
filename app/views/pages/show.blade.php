@@ -3,14 +3,16 @@
 @section('content')
 <!-- pages.show -->
 <div class="col-md-3 col-xs-5">
-    @include('shared.sidebar')
+    <div class="sidebar-nav">
+        @include('shared.sidebar', array('model' => 'page'))
 
-    @if(Auth::user())
-    <div class="well">
-        Edit this page <br>
-        <a href="/pages/{{$page->id}}/edit" class="btn btn-success">Edit</a>
+        @if(Auth::user())
+        <div class="well text_right">
+            Edit this page <br>
+            <a href="/pages/{{$page->id}}/edit" class="btn btn-success">Edit</a>
+        </div>
+        @endif
     </div>
-    @endif
 </div>
 
 <div class="col-md-9 col-xs-7 column">
@@ -26,7 +28,7 @@
     {{ $projects->links() }}
     @endif
 
-@endif
+    @endif
 </div>
 
 
