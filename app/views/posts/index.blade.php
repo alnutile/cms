@@ -11,7 +11,7 @@
             <a href="/posts/{{$p->id}}">
 
                 <div class="post_intro col-md-9">
-                    <h2 class="media-heading">{{{$p->title}}}</h2>
+                    <h2 class="media-heading">{{{$p->title}}}</h2>{{$p->id}}
                     {{ $p->intro }}
                 </div>
 

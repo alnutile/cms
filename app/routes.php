@@ -10,6 +10,9 @@ Route::resource('posts', 'PostsController');
 
 Route::get('menus', 'MenusController@index');
 Route::post('menus', 'MenusController@store');
+Route::post('menus', 'MenusController@store');
+
+Route::get('/{type}/tags/{tag}', 'PostsController@index_by_tag');
 
 #done
 Route::get('/login', 'UsersController@login');

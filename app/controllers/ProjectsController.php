@@ -59,7 +59,6 @@ class ProjectsController extends \BaseController {
         return View::make('projects.create', compact('portfolios'));
     }
 
-
     /**
      * Store a newly created project in storage.
      *

@@ -1,16 +1,18 @@
 <?php
 
+use CMS\Services\TagsService;
 use Laracasts\Utilities\JavaScript\Facades\JavaScript;
 
 class PagesController extends \BaseController {
 
     public $pages;
 
-    public function __construct(Page $pages = null)
+    public function __construct(Page $pages = null, TagsService $tagsService = null)
     {
         parent::__construct();
         $this->beforeFilter("auth", array('only' => ['index', 'create', 'delete', 'edit', 'update', 'store']));
         $this->pages = ($pages == null) ? new Page : $pages;
+        $this->tags = $tagsService;
     }
     /**
      * Display a listing of the resource.
@@ -53,9 +55,24 @@ class PagesController extends \BaseController {
         $projects = Project::orderBy('id','asc')->paginate(2);
         $seo = $page->seo;
         $banner = TRUE;
+        $page->id == 4 ? $tags = $this->getTags() : $tags = null;
         $page->id == 1 ? JavaScript::put(['home'=>'home']) : JavaScript::put(['home'=>'notHome']);
-        return View::make('pages.show', compact('page', 'banner', 'settings', 'seo', 'projects'));
+        return View::make('pages.show', compact('page', 'banner', 'settings', 'seo', 'projects', 'tags'));
     }
+
+    public function getTags() {
+        if($this->tags == null){
+           $this->tags =  $this->setTags();
+        }
+        $tags = $this->tags->get_tags_for_type('Project');
+        return  $tags;
+    }
+
+    private function setTags()
+    {
+        return New CMS\Services\TagsService;
+    }
+
 
     /**
      * Store a newly created resource in storage.

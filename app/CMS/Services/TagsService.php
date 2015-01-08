@@ -9,17 +9,20 @@
 namespace CMS\Services;
 
 
+use Illuminate\Support\Facades\DB;
+use Request;
 use Tag;
 
 class TagsService {
 
 
     protected $rules;
+    protected $tagable_id;
     private $tag;
 
-    public function __construct(Tag $tag)
+    public function __construct()
   {
-    $this->tag = $tag;
+
   }
 
     public function addTags($id, array $tags, $type)
@@ -45,7 +48,7 @@ class TagsService {
         {
             throw new \Exception($validator);
         }
-        return $this->tag->create($data);
+        return Tag::create($data);
     }
 
 
@@ -72,6 +75,84 @@ class TagsService {
         $this->rules = $rules;
         return $this;
     }
+
+    public function get_tags_for_type($tagable_type)
+    {
+        $tagsData =  Tag::where('tagable_type', '=', $tagable_type)->get();
+        $tags = $this->transformTags($tagsData->toArray());
+        return $tags;
+    }
+
+
+    public function transformCollection($tags)
+    {
+        $tags_array = [];
+        foreach($tags as $key => $tag)
+        {
+            $tags_array[$key]['text'] = $tag['name'];
+        }
+        return $tags_array;
+    }
+
+    public function getInput()
+    {
+        try {
+            $request = Request::instance();
+            $content = $request->json();
+            $payload = $content->get('data');
+            $data = [];
+            $data['tagName'] = $payload['tag'];
+            $data['tagable_type'] = $this->getType($payload['type']);
+            $data['tagable_id'] = $payload['pageId'];
+            return $data;
+
+        } catch(\Exception $e)
+        {
+            return \Response::json(['data' => $e->getMessage(), 'message' => "tags"],  422);
+        }
+    }
+
+    public function getType($tagable_type)
+    {
+        if($tagable_type == 'posts')
+        {
+            $tagable_type = 'Post';
+            return $tagable_type;
+        }
+        elseif($tagable_type == 'projects') {
+            $tagable_type = 'Project';
+            return $tagable_type;
+        }
+
+    }
+
+    public function getPathForType($tagable_type)
+    {
+        if($tagable_type == 'Post')
+        {
+            $tagable_type = 'posts';
+            return $tagable_type;
+        }
+        elseif($tagable_type == 'Project') {
+            $tagable_type = 'projects';
+            return $tagable_type;
+        }
+
+    }
+
+    public function transformTags($tagsData)
+    {
+        $tags_array = [];
+        foreach($tagsData as $key => $tag)
+        {
+            $tags_array[$key]['tag'] = $tag['name'];
+            $tags_array[$key]['tagable_type'] = $this->getPathForType($tag['tagable_type']);
+            $tags_array[$key]['tagable_id'] = $tag['tagable_id'];
+            $tags_array[$key]['tag_id'] = $tag['id'];
+        }
+        return $tags_array;
+    }
+
 
 
 

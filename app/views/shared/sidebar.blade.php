@@ -4,34 +4,43 @@
 
 <!-- shared.sidebar -->
 
-    @if($settings->logo && $settings->theme == true)
-    <a class = "side_logo" href="/">{{ HTML::image("/img/settings/{$settings->logo}", $settings->name)}}</a>
+@if($settings->logo && $settings->theme == true)
+<a class = "side_logo" href="/">{{ HTML::image("/img/settings/{$settings->logo}", $settings->name)}}</a>
+@endif
+<ul class="nav nav-list">
+    <?php
+    if(Request::server('PATH_INFO') == '/portfolios') {
+        $icon = '<i class="glyphicon glyphicon-th"></i>';
+    } else {
+        $icon = '';
+    }
+    ?>
+    @if($settings->theme == false)
+    <li class="nav-header">
+        <h4>{{$icon}}&nbsp;Links</h4>
+    </li>
     @endif
-    <ul class="nav nav-list">
-        <?php
-        if(Request::server('PATH_INFO') == '/portfolios') {
-            $icon = '<i class="glyphicon glyphicon-th"></i>';
-        } else {
-            $icon = '';
-        }
-        ?>
-        @if($settings->theme == false)
-        <li class="nav-header">
-            <h4>{{$icon}}&nbsp;Links</h4>
-        </li>
-        @endif
-        @foreach($shared_links as $key => $static_menu_item)
-        <?php
-        if(Request::server('PATH_INFO') ==  $static_menu_item) {
-            $active = 'active';
-        } else {
-            $active = 'not-active';
-        }
-        ?>
-        <li class="{{$active}}"> <a href = {{$static_menu_item}}>{{$key}}</a></li>
-        @endforeach
-    </ul>
+    @foreach($shared_links as $key => $static_menu_item)
+    <?php
+    if(Request::server('PATH_INFO') ==  $static_menu_item) {
+        $active = 'active';
+    } else {
+        $active = 'not-active';
+    }
+    ?>
+    <li class="{{$active}}"> <a href = {{$static_menu_item}}>{{$key}}</a></li>
+    @endforeach
+</ul>
+
+@if(isset($tags))
+<div class="border"></div>
+<ul class="nav nav-list tags_nav">
+    @foreach($tags as $tag)
+    <li><a href="/{{$tag['tagable_type']}}/tags/{{$tag['tag']}}">{{$tag['tag']}}</a></li>
+    @endforeach
+</ul>
+@endif
 
 @if($settings->theme == false)
-    @include('shared._social')
+@include('shared._social')
 @endif

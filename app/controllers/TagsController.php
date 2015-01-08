@@ -1,9 +1,17 @@
 <?php
 
+use CMS\Services\TagsService;
+
 class TagsController extends \BaseController {
     protected $tagable_id;
     protected $tagable_type;
     protected $tagName;
+    protected $type;
+
+    Public function __construct(TagsService $tagsService)
+    {
+        $this->tags = $tagsService;
+    }
 
     /**
      * Display a listing of the resource.
@@ -23,31 +31,41 @@ class TagsController extends \BaseController {
      */
     public function all_tags($tagable_type)
     {
-        $data =  Tag::where('tagable_type', '=', $tagable_type)->get();
+        $type = $this->tags->getType($tagable_type);
+        $data =  $this->tags->get_tags_for_type($type);
         return Response::json([
-                'data' => $this->transformCollection($data->toArray()),
-                'message' => "Images"],
+                'data' => $data,
+                'message' => "Tags"],
             200);
     }
+
 
     /**
      * Show the form for creating a new resource.
      *
      * @return Response
      */
-    public function get_tags($type, $id)
+    public function get_tags($tagable_type, $id)
     {
+        $type = $this->tags->getType($tagable_type);
         $model = $type::findOrFail($id);
         return Response::json([
-            'data' => $this->transformCollection($model->tags()->getResults()->toArray()), 'message' => "tags"], 200);
+            'data' => $this->tags->transformCollection($model->tags()->getResults()->toArray()), 'message' => "tags"], 200);
     }
 
+    /**
+     * Delete a resource from storage.
+     *
+     * @return Response
+     */
     public function delete_tag_by_name()
     {
-        $this->getInput();
-        DB::table('tags')->where('tagable_id', '=', $this->tagable_id)->where('tagable_type','=',$this->tagable_type)->where('name','=',$this->tagName)->delete();
-
+        $tags = $this->tags->getInput();
+        DB::table('tags')->where('tagable_id', '=', $tags['tagable_id'])->where('tagable_type','=',$tags['tagable_type'])->where('name','=',$tags['tagName'])->delete();
+        return Response::json([
+            'data' => $tags['tagName'], 'message' => "deleted"], 200);
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -56,42 +74,18 @@ class TagsController extends \BaseController {
      */
     public function store()
     {
-        $this->getInput();
+        $tags = $this->tags->getInput();
         $data = [
-            'name' => $this->tagName,
-            'tagable_id' => $this->tagable_id,
-            'tagable_type' => $this->tagable_type
+            'name' => $tags['tagName'],
+            'tagable_id' => $tags['tagable_id'],
+            'tagable_type' => $tags['tagable_type']
         ];
         return Tag::create($data);
     }
 
 
-    private function transformCollection($tags)
-    {
-        $tags_array = [];
-        foreach($tags as $key => $tag)
-        {
-            $tags_array[$key]['text'] = $tag['name'];
-        }
-        return $tags_array;
-    }
-
-    public function getInput()
-    {
-        try {
-            $request = Request::instance();
-            $content = $request->json();
-            $data = $content->get('data');
-            $this->tagName = $data['tag'];
-            $this->tagable_type = $data['type'];
-            $this->tagable_id = $data['pageId'];
 
 
-        } catch(\Exception $e)
-        {
-            return \Response::json(['data' => $e->getMessage(), 'message' => "tags"],  422);
-        }
-    }
 
 
 

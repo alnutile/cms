@@ -1,6 +1,7 @@
 <?php
 
 use CMS\Services\ImagesService;
+use CMS\Services\TagsService;
 use Intervention\Image\Facades\Image;
 
 class PostsController extends \BaseController {
@@ -15,21 +16,23 @@ class PostsController extends \BaseController {
 	 * @return Response
 	 */
 
-    public function __construct(ImagesService $imagesService)
+    public function __construct(ImagesService $imagesService, TagsService $tagsService)
     {
         parent::__construct();
         $this->imagesService = $imagesService;
         $this->post_dest = public_path() . "/img/posts";
         $this->post_uri = 'img/posts';
         $this->save_to = public_path() . "/img/posts";
+        $this->tags = $tagsService;
     }
 
 	public function index()
 	{
         parent::show();
 		$posts = Post::all();
+        $tags = $this->tags->get_tags_for_type('Post');
 
-        return View::make('posts.index', compact('posts'));
+        return View::make('posts.index', compact('posts', 'tags'));
 	}
 
 
@@ -84,11 +87,12 @@ class PostsController extends \BaseController {
         parent::show();
         if(is_numeric($id)) {
             $post = Post::find($id);
+            $seo = $post->seo;
         }
         if($id == NULL){
             return View::make('404', compact('settings'));
         }
-        $seo = $post->seo;
+
         $banner = TRUE;
         return View::make('posts.show', compact('post', 'banner', 'settings', 'seo'));
 	}
@@ -169,6 +173,24 @@ class PostsController extends \BaseController {
 	{
 		//
 	}
+
+    /**
+     * Display a listing of the resource by tag.
+     *
+     * @return Response
+     */
+    public function index_by_tag($type, $tag)
+    {
+        parent::show();
+
+        $posts = DB::table('posts')
+            ->leftJoin('tags', 'tags.tagable_id', '=', 'posts.id')
+            ->where('tags.name', '=', $tag)
+            ->get();
+
+        //$tags = $this->tags->get_tags_for_type('Post');
+        return View::make('posts.index', compact('posts'));
+    }
 
 
 }

@@ -3,6 +3,7 @@ $grey_light: #b3b3b6;
 $white: #fff;
 $dark_alpha: rgba(0, 0, 0, 0.690196);
 
+
 body {
   background-color: #282828;
   font: 17px/25px 'Whitney SSm A', Arial, Helvetica, sans-serif;
@@ -16,9 +17,7 @@ h1, h2, h3, h4, h5 {
   text-align: right;
 }
 
-
 tags-input .tags {
-
   .input, .tag-item {
     color: $grey_dark;
   }
@@ -77,23 +76,27 @@ a:hover {
   margin-bottom: 50px;
 }
 
-.sidebar-nav{
+.sidebar-nav {
   position: fixed;
+}
   .nav-list {
-    padding-right: 17px;
+    padding: 20px 55px 20px 0;
     width: 100%;
     a {
       text-align: right;
-      padding: 5px 5px!important;
+      padding: 0px 5px!important;
       text-shadow: 1px 1px 0px #000;
+      font: 17px/25px 'Whitney SSm A', Arial, Helvetica, sans-serif;
+    }
+    li {
+      padding: 0;
+      margin: 0 0 3px;
     }
     > li > a:hover, .nav > li > a:focus {
       text-decoration: none;
       background-color: $dark_alpha;
     }
   }
-
-}
 
 footer {
   width: 100%;;
@@ -109,7 +112,7 @@ footer {
 .blog_index {
   .row {
     padding: 20px 0;
-    border-top: 1px dotted $grey_dark;
+    border-bottom: 1px dotted $grey_dark;
     .post_intro {
       padding: 0px;
     }
@@ -120,5 +123,16 @@ footer {
 
   h2 {
     font: 27px/33px 'adobe-caslon-pro', 'Times New Roman', Times, serif;
+  }
+}
+
+.border {
+  border-top: 1px dotted $grey_dark;
+  margin-right: 55px;
+}
+.tags_nav {
+
+  li {
+
   }
 }
