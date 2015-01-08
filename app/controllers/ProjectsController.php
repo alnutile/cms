@@ -175,4 +175,21 @@ class ProjectsController extends \BaseController {
         return Redirect::route('projects.index');
     }
 
+    /**
+     * Display a listing of the resource by tag.
+     *
+     * @return Response
+     */
+    public function index_by_tag($tag)
+    {
+        parent::show();
+
+        $projects = DB::table('projects')
+            ->leftJoin('tags', 'tags.tagable_id', '=', 'projects.id')
+            ->where('tags.name', '=', $tag)
+            ->get();
+
+        return View::make('projects.indexByTag', compact('projects', 'settings'));
+    }
+
 }

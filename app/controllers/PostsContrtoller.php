@@ -32,7 +32,7 @@ class PostsController extends \BaseController {
 		$posts = Post::all();
         $tags = $this->tags->get_tags_for_type('Post');
 
-        return View::make('posts.index', compact('posts', 'tags'));
+        return View::make('posts.index', compact('posts', 'tags', 'settings'));
 	}
 
 
@@ -179,7 +179,7 @@ class PostsController extends \BaseController {
      *
      * @return Response
      */
-    public function index_by_tag($type, $tag)
+    public function index_by_tag($tag)
     {
         parent::show();
 
@@ -188,9 +188,7 @@ class PostsController extends \BaseController {
             ->where('tags.name', '=', $tag)
             ->get();
 
-        //$tags = $this->tags->get_tags_for_type('Post');
-        return View::make('posts.index', compact('posts'));
+        return View::make('posts.index', compact('posts', 'settings'));
     }
-
 
 }

@@ -78,9 +78,16 @@ class TagsService {
 
     public function get_tags_for_type($tagable_type)
     {
-        $tagsData =  Tag::where('tagable_type', '=', $tagable_type)->get();
-        $tags = $this->transformTags($tagsData->toArray());
-        return $tags;
+        $tagsData =  Tag::where('tagable_type', '=', $tagable_type)->groupBy('name')->get();
+
+        return $tagsData;
+    }
+
+    public function get_tags_autocomplete($tagable_type, $query)
+    {
+        $tagsData =  Tag::where('tagable_type', '=', $tagable_type)->where('name', 'like', '%' . $query . '%')->groupBy('name')->get();
+
+        return $tagsData;
     }
 
 

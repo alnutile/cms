@@ -63,12 +63,9 @@ tagsCtrl.controller('tagsCtrl', ['$scope', 'Restangular', '$window',
         }
         $scope.getCurrentTags();
 
-        $scope.getAllTags = function ()
+        $scope.getAllTags = function(query)
         {
-                Restangular.one('api/v1/tags', $scope.model).get().then(function(response){
-                        $scope.allTags = response.data;
-                    }
-                );
+                return Restangular.one('api/v1/tags/'+ $scope.model + '/autocomplete').one(query).get();
 
         }
 

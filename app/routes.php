@@ -11,8 +11,9 @@ Route::resource('posts', 'PostsController');
 Route::get('menus', 'MenusController@index');
 Route::post('menus', 'MenusController@store');
 Route::post('menus', 'MenusController@store');
-
-Route::get('/{type}/tags/{tag}', 'PostsController@index_by_tag');
+//for tagged items
+Route::get('/posts/tags/{tag}', 'PostsController@index_by_tag');
+Route::get('/projects/tags/{tag}', 'ProjectsController@index_by_tag');
 
 #done
 Route::get('/login', 'UsersController@login');
@@ -62,6 +63,8 @@ Route::group(array('before' => 'auth'), function() {
 
     //get all the tags that have been used on any content type for the autocomplete list
   Route::get('/api/v1/tags/{model}', 'TagsController@all_tags');
+    //get list of tags for autocomplete
+  Route::get('/api/v1/tags/{model}/autocomplete/{query}', 'TagsController@autocomplete_tags');
     //get all the tags for the current resource
   Route::get('/api/v1/tags/{model}/{id}', 'TagsController@get_tags');
     //post new tags for a new resource

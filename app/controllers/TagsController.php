@@ -33,8 +33,9 @@ class TagsController extends \BaseController {
     {
         $type = $this->tags->getType($tagable_type);
         $data =  $this->tags->get_tags_for_type($type);
+        $tags = $this->tags->transformTags($data->toArray());
         return Response::json([
-                'data' => $data,
+                'data' => $tags,
                 'message' => "Tags"],
             200);
     }
@@ -81,6 +82,18 @@ class TagsController extends \BaseController {
             'tagable_type' => $tags['tagable_type']
         ];
         return Tag::create($data);
+    }
+
+
+    public function autocomplete_tags($type, $query)
+    {
+        $type = $this->tags->getType($type);
+        $data =  $this->tags->get_tags_autocomplete($type, $query);
+        $tags = $this->tags->transformCollection($data);
+        return Response::json([
+                'data' => $tags,
+                'message' => "Tags"],
+            200);
     }
 
 
