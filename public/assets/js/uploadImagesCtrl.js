@@ -2,7 +2,7 @@ var uploadControllers = angular.module('uploadControllers', []);
 
 uploadControllers.controller('UploadImagesController', ['$scope', 'Restangular', 'Noty', '$window',
     function($scope, Restangular, Noty, $window){
-        $scope.project_id = false;
+        $scope.pageId = false;
 
         $scope.deleteImage = function(id) {
             Restangular.one('api/v1/images', id).remove();

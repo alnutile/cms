@@ -48,6 +48,7 @@ Route::get('/auth/token', function(){
   return csrf_token();
 });
 
+Route::get('/api/v1/getImageFromImageableItem/{imageable_type}/{imageable_id}', 'ImagesController@getImageFromImageableItem');
 
 Route::group(array('before' => 'auth'), function() {
 
@@ -56,7 +57,6 @@ Route::group(array('before' => 'auth'), function() {
    * Get images for project x
    *
    */
-  Route::get('/api/v1/getImageFromImageableItem/{imageable_type}/{imageable_id}', 'ImagesController@getImageFromImageableItem');
   Route::post('/api/v1/getImageFromImageableItem/{imageable_type}/{imageable_id}', function() {
     return Image::create(Input::all());
   });
