@@ -17,6 +17,12 @@
 <div class="col-md-9 column">
     <h1>{{{ $post->title }}}</h1>
     <p> {{ $post->intro }} </p>
+    @if(isset($post->images[0]))
+    <br>
+    <div class="slideshow">
+        @include('shared.slideshow_angular', array('model' => 'posts'))
+    </div>
+    @endif
     <p> {{ $post->body }} </p>
 
 </div>

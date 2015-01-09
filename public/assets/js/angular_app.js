@@ -6,7 +6,8 @@ var app = angular.module('app', [
         'flow',
         'uploadControllers',
         'ngTagsInput',
-        'tagsCtrl'
+        'tagsCtrl',
+        'angular-flexslider'
     ]).
     config(function($interpolateProvider){
         $interpolateProvider.startSymbol('[[').endSymbol(']]'); //{{ }}

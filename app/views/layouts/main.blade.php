@@ -29,6 +29,8 @@
     {{ HTML::style('/bower_components/jquery-colorbox/example4/colorbox.css') }}
     @if($settings->theme == true)
     {{ HTML::style('assets/css/dark.css') }}
+    {{ HTML::style('/bower_components/flexslider/flexslider.css') }}
+
     @endif
 
 
@@ -132,6 +134,8 @@ Use the corresponding body tag for your chosen theme
 {{ HTML::script('/bower_components/ng-tags-input/ng-tags-input.min.js') }}
 @if($settings->theme == true)
 {{ HTML::script('http://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js') }}
+{{ HTML::script('/bower_components/flexslider/jquery.flexslider.js') }}
+{{ HTML::script('/bower_components/angular-flexslider/angular-flexslider.js') }}
 
 @endif
 

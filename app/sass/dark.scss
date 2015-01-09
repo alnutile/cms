@@ -79,24 +79,24 @@ a:hover {
 .sidebar-nav {
   position: fixed;
 }
-  .nav-list {
-    padding: 20px 55px 20px 0;
-    width: 100%;
-    a {
-      text-align: right;
-      padding: 0px 5px!important;
-      text-shadow: 1px 1px 0px #000;
-      font: 17px/25px 'Whitney SSm A', Arial, Helvetica, sans-serif;
-    }
-    li {
-      padding: 0;
-      margin: 0 0 3px;
-    }
-    > li > a:hover, .nav > li > a:focus {
-      text-decoration: none;
-      background-color: $dark_alpha;
-    }
+.nav-list {
+  padding: 20px 55px 20px 0;
+  width: 100%;
+  a {
+    text-align: right;
+    padding: 0px 5px!important;
+    text-shadow: 1px 1px 0px #000;
+    font: 17px/25px 'Whitney SSm A', Arial, Helvetica, sans-serif;
   }
+  li {
+    padding: 0;
+    margin: 0 0 3px;
+  }
+  > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    background-color: $dark_alpha;
+  }
+}
 
 footer {
   width: 100%;;
@@ -135,4 +135,16 @@ footer {
   li {
 
   }
+}
+
+.flex-control-paging li a {
+  background: $grey_dark!important;
+  &.flex-active {
+    background: $white!important;
+  }
+}
+
+.flexslider-container {
+  max-width: 800px!important;
+  margin: 0 auto;
 }

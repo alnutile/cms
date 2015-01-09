@@ -144,7 +144,6 @@ class TagsService {
             $tagable_type = 'projects';
             return $tagable_type;
         }
-
     }
 
     public function transformTags($tagsData)

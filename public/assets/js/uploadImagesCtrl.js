@@ -16,21 +16,21 @@ uploadControllers.controller('UploadImagesController', ['$scope', 'Restangular',
         };
 
 
-        $scope.getProjectId = function()
+        $scope.getPageInfo = function()
         {
             var path = $window.location.pathname;
             path_array = path.split('/');
-            if(path_array.indexOf('edit') !== -1) {
-                $scope.project_id = path_array[2];
-            }
+            $scope.pageId   = path_array[2];
+            var model   = path_array[1];
+            $scope.model = model;
         }
 
-        $scope.getProjectId();
+        $scope.getPageInfo();
 
         $scope.getImages = function()
         {
-            if($scope.project_id !=false){
-                Restangular.one('api/v1/getImageFromImageableItem/Project', $scope.project_id).get().then(function(response){
+            if($scope.pageId !=false){
+                Restangular.one('api/v1/getImageFromImageableItem', $scope.model).one($scope.pageId).get().then(function(response){
                         $scope.images = response.data;
                     }
                 );
