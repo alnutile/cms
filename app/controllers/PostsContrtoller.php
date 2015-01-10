@@ -30,7 +30,7 @@ class PostsController extends \BaseController {
 	{
         parent::show();
 		$posts = Post::all();
-        $tags = $this->tags->get_tags_for_type('Project');
+        $tags = $this->tags->get_tags_for_type('Post');
         return View::make('posts.index', compact('posts', 'tags', 'settings'));
 	}
 
