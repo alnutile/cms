@@ -6,13 +6,15 @@ Class MenuService {
   public $settings;
   public $project;
   public $portfolio;
+  public $post;
 
-  public function __construct(Page $pageModel = null, Setting $settings = null, Portfolio $portfolio = null, Project $project = null)
+  public function __construct(Page $pageModel = null, Setting $settings = null, Portfolio $portfolio = null, Project $project = null, Post $post = null)
   {
     $this->pageModel = ($pageModel == null) ? new \Page : $pageModel;
     $this->settings = ($settings == null) ? new \Setting : $settings;
     $this->project = ($project == null) ? new \Project : $project;
     $this->portfolio = ($portfolio == null) ? new \Portfolio : $portfolio;
+    $this->post = ($post == null) ? new \Post : $post;
   }
 
   public function updateMenus($updates)
@@ -73,6 +75,13 @@ Class MenuService {
       $portfolioCtrl = new \PortfoliosController();
       return $portfolioCtrl->show($portfolio);
     }
+
+      //Try Post
+      $post = $this->post->where("slug", 'LIKE', '/' . $id)->first();
+      if ($this->checkIfPublishedAndUserState($post)) {
+          $postCtrl = new \PostsController();
+          return $postCtrl->show($post->id);
+      }
 
     //Else 404
     return \View::make('404', compact('settings'));

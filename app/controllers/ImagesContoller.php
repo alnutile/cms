@@ -29,6 +29,28 @@ class ImagesController extends BaseController{
         return Response::json(['data' => $model->images()->getResults()->toArray(), 'message' => "Images"], 200);
     }
 
+    public function getImageForSlug($slug)
+    {
+        $images = DB::table('images')
+            ->Join('posts', 'posts.id', '=', 'images.imageable_id')
+            ->leftJoin('projects', 'projects.id', '=', 'images.imageable_id')
+            ->where('posts.slug', '=', '/' . $slug)
+            ->orWhere('projects.slug', '=', '/' . $slug)
+            ->get();
+        return Response::json(['data' => $this->transformImages($images), 'message' => "Images"], 200);
+    }
+
+    public function transformImages($images)
+    {
+        $img_array = [];
+        foreach($images as $key => $image)
+        {
+            $img_array[$key]['file_name'] = $image->file_name;
+
+        }
+        return $img_array;
+    }
+
     public function uploadImage($model)
     {
         $this->setTemp();

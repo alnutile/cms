@@ -21,12 +21,17 @@ class BaseController extends Controller {
     {
         $portfolios = Portfolio::published()->orderByOrder()->get();
         $portfolio_links = array();
-        if($portfolios) {
-            foreach($portfolios as $key=>$portfolio){
-                $portfolio_links[$portfolio->title] = $portfolio->slug;
+        if($this->settings->theme == false){
+            if($portfolios) {
+                foreach($portfolios as $key=>$portfolio){
+                    $portfolio_links[$portfolio->title] = $portfolio->slug;
+                }
             }
+            $static_menu_items = array('About Page' => '/about', 'Contact Page' => '/contact','Blog' => '/posts', 'All Projects' => '/all_projects', 'Home' => '/index',);
+
+        }else {
+            $static_menu_items = array('Our Company' => '/about', 'Portfolio' => '/portfolio', 'News & Awards' => '/news_awards', 'Builder’s Notebook' => '/posts', 'Contact Us' => '/contact');
         }
-        $static_menu_items = array('About Page' => '/about', 'Contact Page' => '/contact','Blog' => '/posts', 'All Projects' => '/all_projects', 'Home' => '/index',);
         $shared_links = array_merge($portfolio_links,$static_menu_items);
 
         View::share('shared_links', $shared_links);

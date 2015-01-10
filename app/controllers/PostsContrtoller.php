@@ -16,7 +16,7 @@ class PostsController extends \BaseController {
 	 * @return Response
 	 */
 
-    public function __construct(ImagesService $imagesService, TagsService $tagsService)
+    public function __construct(ImagesService $imagesService = null, TagsService $tagsService = null)
     {
         parent::__construct();
         $this->imagesService = $imagesService;
@@ -30,7 +30,7 @@ class PostsController extends \BaseController {
 	{
         parent::show();
 		$posts = Post::all();
-        $tags = $this->tags->get_tags_for_type('Post');
+        $tags = $this->tags->get_tags_for_type('Project');
         return View::make('posts.index', compact('posts', 'tags', 'settings'));
 	}
 
@@ -63,8 +63,15 @@ class PostsController extends \BaseController {
             return Redirect::back()->withErrors($validator)->withInput();
         }
         if(isset($all['image'])) {
-            $all = $this->uploadFile($all, 'image');
-            $image = Image::make($input['image']->getRealPath());
+            $image = \Intervention\Image\Facades\Image::make($all['image']->getRealPath());
+            $filename = ($all['image']->getClientOriginalName());
+            $image->save($this->save_to . $filename)
+                ->resize(1000, null,  function ($constraint) {
+                    $constraint->aspectRatio();
+                    $constraint->upsize();})
+                ->crop(280, 340)
+                ->save($this->save_to . '/thumb/' . $filename);
+            $all = $this->uploadFile($data, 'image');;
         }
         $post = Post::create($all);
 
@@ -140,7 +147,7 @@ class PostsController extends \BaseController {
                   ->resize(1000, null,  function ($constraint) {
                     $constraint->aspectRatio();
                     $constraint->upsize();})
-                  ->crop(270, 340)
+                  ->crop(280, 340)
                   ->save($this->save_to . '/thumb/' . $filename);
             $data = $this->uploadFile($data, 'image');
         } else {

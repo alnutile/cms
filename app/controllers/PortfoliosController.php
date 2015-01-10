@@ -1,14 +1,17 @@
 <?php
 
+use CMS\Services\TagsService;
+
 class PortfoliosController extends \BaseController {
 
     public $portfolio;
 
-    public function __construct(Portfolio $portfolio = null)
+    public function __construct(Portfolio $portfolio = null, TagsService $tagsService = null)
     {
         parent::__construct();
         $this->beforeFilter("auth", array('only' => ['adminIndex', 'create', 'delete', 'edit', 'update', 'store']));
         $this->portfolio = ($portfolio == null) ? new Portfolio : $portfolio;
+        $this->tags = $tagsService;
     }
 
 
@@ -23,6 +26,19 @@ class PortfoliosController extends \BaseController {
         $portfolios = Portfolio::Published()->OrderByOrder()->get();
 
         return View::make('portfolios.index', compact('portfolios'));
+    }
+
+    /**
+     * Display a listing of projects optionally grouped by tag
+     *
+     * @return Response
+     */
+    public function projectsIndex()
+    {
+        parent::show();
+        $projects = Project::all();
+        $tags = $this->tags->get_tags_for_type('Project');
+        return View::make('portfolios.projectsIndex', compact('projects', 'tags'));
     }
 
     /**

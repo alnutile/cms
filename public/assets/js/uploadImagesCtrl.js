@@ -38,6 +38,17 @@ uploadControllers.controller('UploadImagesController', ['$scope', 'Restangular',
         }
         $scope.getImages();
 
+        $scope.getImagesForSlug = function()
+        {
+            if($scope.pageId !=false){
+                Restangular.one('api/v1/getImageForSlug', $scope.model).get().then(function(response){
+                        $scope.images = response.data;
+                    }
+                );
+            }
+        }
+        $scope.getImagesForSlug();
+
 
 
     }]);
