@@ -17,13 +17,15 @@
 <div class="col-md-9 column">
     <h1>{{{ $post->title }}}</h1>
     <p> {{ $post->intro }} </p>
+    <p> {{ $post->body }} </p>
     @if(isset($post->images[0]))
     <br>
-    <div class="slideshow">
-        @include('shared.slideshow_angular', array('model' => 'posts'))
-    </div>
+    <ul class="post_gallery">
+        @foreach($post->images as $image)
+        <li><img src="/assets/img/posts/{{$image->file_name}}"></li>
+        @endforeach
+    </ul>
     @endif
-    <p> {{ $post->body }} </p>
 
 </div>
 

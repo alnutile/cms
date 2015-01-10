@@ -152,3 +152,18 @@ footer {
 .project_block {
   min-height: 335px;
 }
+
+.post_gallery {
+    padding: 0px;
+    list-style: none;
+    list-style-type: none;
+  li {
+    list-style: none;
+    list-style-type: none;
+    max-width: 850px;
+    margin-bottom: 10px;
+      img {
+        max-width: 850px;
+      }
+  }
+}
