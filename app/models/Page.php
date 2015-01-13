@@ -1,7 +1,17 @@
 <?php
 
 class Page extends \Eloquent {
-    protected $fillable = [];
+    protected $fillable = [
+        'title',
+        'body',
+        'published',
+        'slug',
+        'seo',
+        'menu_sort_order',
+        'menu_parent',
+        'menu_name',
+        'redirect_url'
+    ];
 
     public function getAll()
     {
