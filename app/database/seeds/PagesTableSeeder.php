@@ -25,11 +25,11 @@ class PagesTableSeeder extends Seeder {
 
         Page::create(
             [
-                'title' => "About Page",
+                'title' => "Our Company",
                 'body'  => 'This will be your about page',
                 'published' => 1,
                 'slug' => '/about',
-                'seo'  => 'ABOUT PAGE SEO',
+                'seo'  => 'Our Company',
                 'menu_sort_order' => 1,
                 'menu_parent' => 1,
                 'menu_name' => 'top',
@@ -61,6 +61,34 @@ class PagesTableSeeder extends Seeder {
                 'menu_parent' => 0,
                 'seo'  => 'ALL PROJECTS SEO',
                 'menu_name' => 'left_side',
+                'redirect_url' => ''
+            ]
+        );
+
+        Page::create(
+            [
+                'title' => "Our Process",
+                'body'  => 'Content goes here',
+                'published' => 1,
+                'slug' => '/our_Process',
+                'menu_sort_order' => 2,
+                'menu_parent' => 0,
+                'seo'  => 'Our Process',
+                'menu_name' => 'sub_nav',
+                'redirect_url' => ''
+            ]
+        );
+
+        Page::create(
+            [
+                'title' => "Testimonials",
+                'body'  => 'Content goes here',
+                'published' => 1,
+                'slug' => '/testimonials',
+                'menu_sort_order' => 2,
+                'menu_parent' => 0,
+                'seo'  => 'Testimonials',
+                'menu_name' => 'sub_nav',
                 'redirect_url' => ''
             ]
         );

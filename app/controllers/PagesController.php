@@ -56,6 +56,8 @@ class PagesController extends \BaseController {
         $seo = $page->seo;
         $banner = TRUE;
         $page->id == 4 ? $tags = $this->getTags() : $tags = null;
+        $this->settings->pageId = $page->id;
+        $this->settings->menu_name = $page->menu_name;
         $page->id == 1 ? JavaScript::put(['home'=>'home']) : JavaScript::put(['home'=>'notHome']);
         return View::make('pages.show', compact('page', 'banner', 'settings', 'seo', 'projects', 'tags'));
     }

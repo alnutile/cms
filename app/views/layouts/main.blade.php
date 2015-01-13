@@ -134,10 +134,11 @@ Use the corresponding body tag for your chosen theme
 {{ HTML::script('/bower_components/ng-tags-input/ng-tags-input.min.js') }}
 @if($settings->theme == true)
 {{ HTML::script('http://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js') }}
+@endif
+
 {{ HTML::script('/bower_components/flexslider/jquery.flexslider.js') }}
 {{ HTML::script('/bower_components/angular-flexslider/angular-flexslider.js') }}
 
-@endif
 
 </body>
 </html>

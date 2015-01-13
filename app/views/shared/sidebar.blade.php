@@ -41,6 +41,14 @@
     @endforeach
 </ul>
 @endif
+@if($settings->theme == true && $settings->pageId == 2 || $settings->menu_name == 'sub_nav')
+<div class="border"></div>
+<ul class="nav nav-list tags_nav">
+    <li><a href = "/about">Our Company</a></li>
+    <li><a href = "/our_process">Our Process</a></li>
+    <li><a href = "/testimonials">Testimonials</a></li>
+</ul>
+@endif
 
 @if($settings->theme == false)
 @include('shared._social')
