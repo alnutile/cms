@@ -163,6 +163,14 @@ class BaseController extends Controller {
         JavaScript::put(compact('slides'));
     }
 
+    public function checkForSlideshow($id)
+    {
+        $slideshow = false;
+        $slide_ids = [2,5];
+        $id == in_array($id, $slide_ids) ? $slideshow = true : $tags = false;
+        \View::share('slideshow', $slideshow);
+    }
+
     protected function updateImagesCaption($image_captions)
     {
         foreach($image_captions as $key => $image_caption)

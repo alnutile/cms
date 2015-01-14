@@ -34,8 +34,10 @@ class ImagesController extends BaseController{
         $images = DB::table('images')
             ->Join('posts', 'posts.id', '=', 'images.imageable_id')
             ->leftJoin('projects', 'projects.id', '=', 'images.imageable_id')
+            ->leftJoin('pages', 'pages.id', '=', 'images.imageable_id')
             ->where('posts.slug', '=', '/' . $slug)
             ->orWhere('projects.slug', '=', '/' . $slug)
+            ->orWhere('pages.slug', '=', '/' . $slug)
             ->get();
         return Response::json(['data' => $this->transformImages($images), 'message' => "Images"], 200);
     }
@@ -152,6 +154,11 @@ class ImagesController extends BaseController{
         if($type == 'posts')
         {
             $type = 'Post';
+            return $type;
+        }
+        if($type == 'projects')
+        {
+            $type = 'Project';
             return $type;
         }
         elseif($type == 'projects') {

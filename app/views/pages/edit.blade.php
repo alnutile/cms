@@ -10,7 +10,7 @@
 
     <h2>Edit Page: {{$page->title}}</h2>
 
-        {{ Form::model($page, array('method' => 'PUT', 'route' => array('pages.update', $page->id), 'role' => 'form')) }}
+        {{ Form::model($page, array('method' => 'PUT', 'route' => array('pages.update', $page->id), 'files' => 'true', 'role' => 'form')) }}
 
 
         <div class="form-group">
@@ -43,6 +43,14 @@
         </div>
         @endif
 
+            @if($slideshow == true && $settings->theme = true)
+            <!-- images upload -->
+            <label>Project Blowup Images Uploader (<a href="http://www.restorationtrades.com/help.html#project_blowup_image_uploader" target="_blank">Help</a>)</label>
+            @include('shared.images_angular', array('model' => 'pages'))
+            <br>
+            <br>
+            <!-- end images upload -->
+            @endif
 
         @if(Auth::user()->admin == 1)
             <div class="form-group">

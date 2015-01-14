@@ -24,5 +24,9 @@ class Page extends \Eloquent {
         return $pages;
     }
 
+    public function images()
+    {
+        return $this->morphMany('Image', 'imageable')->orderBy('asc');
+    }
 
 }

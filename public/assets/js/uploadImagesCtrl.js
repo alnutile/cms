@@ -36,7 +36,7 @@ uploadControllers.controller('UploadImagesController', ['$scope', 'Restangular',
                 );
             }
         }
-        $scope.getImages();
+      //  $scope.getImages();
 
         $scope.getImagesForSlug = function()
         {

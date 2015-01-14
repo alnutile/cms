@@ -159,7 +159,6 @@ class PostsController extends \BaseController {
         if(isset($data['image_order_update'])){
             $this->updateImagesOrder($data['image_order_update']);
         }
-
         if(isset($data['images'])) {
             $this->imagesService->addImages($post->id, $data['images'], 'Post');
         }

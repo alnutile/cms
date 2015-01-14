@@ -1,4 +1,4 @@
-<div>
+<div class = "{{$model}}_slideshow slideshow">
     <div ng-controller="UploadImagesController">
         <flex-slider slide="image in images track by $index">
             <li>

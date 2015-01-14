@@ -144,19 +144,19 @@ footer {
   }
 }
 
-.flexslider-container {
-  max-width: 600px!important;
-  margin: 0 auto;
-}
 
 .project_block {
   min-height: 335px;
 }
 
-.post_gallery {
+.slideshow {
     padding: 0px;
     list-style: none;
     list-style-type: none;
+  .flexslider-container {
+    max-width: 850px!important;
+    margin: 0 auto;
+  }
   li {
     list-style: none;
     list-style-type: none;

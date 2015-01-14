@@ -92,5 +92,19 @@ class PagesTableSeeder extends Seeder {
                 'redirect_url' => ''
             ]
         );
+
+        Page::create(
+            [
+                'title' => "News & Awards",
+                'body'  => 'Content goes here',
+                'published' => 1,
+                'slug' => '/news_awards',
+                'menu_sort_order' => 2,
+                'menu_parent' => 0,
+                'seo'  => 'News & Awards',
+                'menu_name' => 'sub_nav',
+                'redirect_url' => ''
+            ]
+        );
     }
 }

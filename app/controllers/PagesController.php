@@ -1,5 +1,6 @@
 <?php
 
+use CMS\Services\ImagesService;
 use CMS\Services\TagsService;
 use Laracasts\Utilities\JavaScript\Facades\JavaScript;
 
@@ -7,12 +8,13 @@ class PagesController extends \BaseController {
 
     public $pages;
 
-    public function __construct(Page $pages = null, TagsService $tagsService = null)
+    public function __construct(Page $pages = null, TagsService $tagsService = null, ImagesService $imagesService = null)
     {
         parent::__construct();
         $this->beforeFilter("auth", array('only' => ['index', 'create', 'delete', 'edit', 'update', 'store']));
         $this->pages = ($pages == null) ? new Page : $pages;
         $this->tags = $tagsService;
+        $this->imagesService = $imagesService;
     }
     /**
      * Display a listing of the resource.
@@ -97,7 +99,8 @@ class PagesController extends \BaseController {
     {
         parent::show();
         $page = Page::findOrFail($id);
-        return View::make('pages.edit', compact('page'));
+        parent::checkForSlideshow($page->id);
+        return View::make('pages.edit', compact('page', 'settings', 'slideshow'));
     }
 
 
@@ -118,13 +121,16 @@ class PagesController extends \BaseController {
             $page->body = $page_update['body'];
             $page->seo = $page_update['seo'];
             $page->slug = (isset($page_update['slug'])) ?  $page_update['slug'] : $page->slug;
+            if(isset($page_update['images'])) {
+                $this->imagesService->addImages($page->id, $page_update['images'], 'Page');
+            }
             $page->save();
             $banner = $this->bannerSet($page);
             return Redirect::to("/pages/")->withMessage("Page Updated");
         } else {
             return Redirect::to('pages/' . $page->id . '/edit')->withErrors($validator)
                 ->withMessage("Error ");
-            return $this->respond(null, 'pages.edit',  compact('page', 'banner'));
+//            return $this->respond(null, 'pages.edit',  compact('page', 'banner'));
         }
     }
 
