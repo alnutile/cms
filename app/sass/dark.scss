@@ -153,6 +153,12 @@ footer {
 
 .project_block {
   min-height: 335px;
+   .proj_img {
+     img {
+       width: 275px;
+       height: 335px;
+     }
+   }
 }
 
 .slideshow {
