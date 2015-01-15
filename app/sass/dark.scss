@@ -137,6 +137,12 @@ footer {
   }
 }
 
+.flexslider {
+  margin: 0px!important;
+  border: 0px!important;
+  height: 360px;
+  width: 850px;
+}
 .flex-control-paging li a {
   background: $grey_dark!important;
   &.flex-active {
@@ -166,4 +172,8 @@ footer {
         max-width: 850px;
       }
   }
+}
+
+.gallery_item_dark {
+  padding: 10px 0;
 }

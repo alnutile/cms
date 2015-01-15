@@ -2,19 +2,21 @@
 
 @section('content')
 <div class="col-md-3">
-    @include('shared.sidebar')
+    <div class = "sidebar-nav">
+        @include('shared.sidebar')
+    </div>
 </div>
 <div class="col-md-9 column content">
     <h2>Portfolio Page</h2>
 
     @foreach($portfolios as $p)
     <?php
-        $project = $p->projects->first();
-        if(empty($project->image)) {
-            $image = 'project3.jpg';
-        } else {
-            $image = $project->image;
-        }
+    $project = $p->projects->first();
+    if(empty($project->image)) {
+        $image = 'project3.jpg';
+    } else {
+        $image = $project->image;
+    }
     ?>
     <div class="media">
         <img class="media-object col-lg-4" src="/img/projects/{{$image}}" alt="{{$p->title}}">

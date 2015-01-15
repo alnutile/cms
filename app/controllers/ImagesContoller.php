@@ -2,6 +2,7 @@
 
 
 use Carbon\Carbon;
+use CMS\Services\ImagesService;
 use Flow\Config;
 use Flow\Request;
 
@@ -20,6 +21,11 @@ class ImagesController extends BaseController{
     protected $rand;
     protected $chunkDir;
     protected $config;
+
+    public function __construct(ImagesService $imagesService = null)
+    {
+        $this->imageservice = $imagesService;
+    }
 
 
     public function getImageFromImageableItem($imageable_type, $imageable_id)
@@ -62,11 +68,23 @@ class ImagesController extends BaseController{
         $this->request = new Request();
         \File::makeDirectory($this->chunkDir, 0777, true, true);
         $this->filename = isset($_FILES['file']) ? $_FILES['file']['name'] : $_GET['flowFilename'];
+
         if(\Flow\Basic::save($this->getDestinationDir(). '/' . $this->request->getFileName(), $this->config, $this->request)) {
             $storage = $this->getDestinationDir();
+            if($model == 'projects')
+            {
+                $this->imageservice->cropAndSaveForPages($this->request->getFileName(), $storage);
+            }
+
+            if($model == 'pages')
+            {
+                $this->imageservice->cropAndSaveForPagesTopSlides($this->request->getFileName(), $storage);
+            }
+
             return Response::json(['data' => $this->filename, 'message' => "File Uploaded $storage/$this->filename"], 200);
         } else {
             //Not sure why it needs a 404
+            Log::info('died');
             return Response::json([], 404);
         }
     }

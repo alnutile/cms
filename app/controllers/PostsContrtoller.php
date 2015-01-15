@@ -63,14 +63,7 @@ class PostsController extends \BaseController {
             return Redirect::back()->withErrors($validator)->withInput();
         }
         if(isset($all['image'])) {
-            $image = \Intervention\Image\Facades\Image::make($all['image']->getRealPath());
-            $filename = ($all['image']->getClientOriginalName());
-            $image->save($this->save_to . $filename)
-                ->resize(1000, null,  function ($constraint) {
-                    $constraint->aspectRatio();
-                    $constraint->upsize();})
-                ->crop(280, 340)
-                ->save($this->save_to . '/thumb/' . $filename);
+            $this->imagesService->cropAndSaveForPost($all['image'], $this->save_to);
             $all = $this->uploadFile($data, 'image');;
         }
         $post = Post::create($all);
@@ -141,14 +134,7 @@ class PostsController extends \BaseController {
             return Redirect::back()->withErrors($validator)->withInput();
         }
         if(isset($data['image'])) {
-            $image = \Intervention\Image\Facades\Image::make($all['image']->getRealPath());
-            $filename = ($all['image']->getClientOriginalName());
-            $image->save($this->save_to . $filename)
-                  ->resize(1000, null,  function ($constraint) {
-                    $constraint->aspectRatio();
-                    $constraint->upsize();})
-                  ->crop(280, 340)
-                  ->save($this->save_to . '/thumb/' . $filename);
+            $this->imagesService->cropAndSaveForPost($all['image'], $this->save_to);
             $data = $this->uploadFile($data, 'image');
         } else {
             $data['image'] = $post->image;

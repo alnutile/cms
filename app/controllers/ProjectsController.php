@@ -1,5 +1,6 @@
 <?php
 
+use CMS\Services\ImagesService;
 use CMS\Services\ProjectsService;
 use CMS\Services\TagsService;
 
@@ -14,10 +15,11 @@ class ProjectsController extends \BaseController {
     private $projectsService;
     private $tagsService;
 
-    public function __construct(ProjectsService $projectsService = null, TagsService $tagsService = null)
+    public function __construct(ProjectsService $projectsService = null, TagsService $tagsService = null, ImagesService $imagesService = null)
     {
         parent::__construct();
         $this->project_dest = public_path() . "/img/projects";
+        $this->imagesService = $imagesService;
         $this->project_uri = 'img/projects';
         $this->save_to = public_path() . "/img/projects";
         $this->projectsService = $projectsService;
@@ -82,6 +84,7 @@ class ProjectsController extends \BaseController {
 
         if(isset($all['images'])) {
             $this->projectsService->addImages($project->id, $all['images'], 'Project');
+            $this->imagesService->cropAndSaveForPages($all['image'], $this->save_to);
         }
         return Redirect::route('admin_projects')->withMessage("Created Project");
     }
@@ -131,7 +134,6 @@ class ProjectsController extends \BaseController {
         $rules = Project::$rules;
         $validator = $this->validateSlugEdit($all, $project, $rules);
         $data = $this->checkPublished($all);
-
         if ($validator->fails())
         {
             return Redirect::back()->withErrors($validator)->withInput();
@@ -149,6 +151,7 @@ class ProjectsController extends \BaseController {
         }
 
         if(isset($data['images'])) {
+//            $this->imagesService->cropAndSaveForPages($all['images'], $this->save_to);
             $this->projectsService->addImages($project->id, $data['images'], 'Project');
         }
 

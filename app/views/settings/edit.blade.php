@@ -43,6 +43,8 @@
                 </div>
             </div>
         @endif
+
+        @if($settings->theme != true)
         <div class="form-group">
                 <label for="email">Colors (<a href="http://www.restorationtrades.com/help.html#colors" target="_blank">Help</a>)</label>&nbsp;
                 {{ Form::select('color', ['bw' => 'black & white', 'orange' => 'orange', 'green' => 'green', 'blue' => 'blue'], $setting->color, array('class' => 'form-control', 'tabindex' => 4)) }}
@@ -52,6 +54,7 @@
                 </div>
                 @endif
         </div>
+        @endif
         
         <div class="form-group">
                 <label for="email">Facebook (<a href="http://www.restorationtrades.com/help.html#social_media_links" target="_blank">Help</a>)</label>

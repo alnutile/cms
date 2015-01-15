@@ -3,7 +3,7 @@
 @section('content')
 <!-- pages.show -->
 <div class="col-md-3 col-xs-5">
-
+    <div class = "sidebar-nav">
         @include('shared.sidebar', array('model' => 'page'))
 
         @if(Auth::user())
@@ -13,6 +13,7 @@
         </div>
         @endif
     </div>
+</div>
 
 <div class="col-md-9 col-xs-7 column">
     @if($page->id != 1 || $settings->theme == false)

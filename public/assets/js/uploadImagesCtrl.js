@@ -36,7 +36,11 @@ uploadControllers.controller('UploadImagesController', ['$scope', 'Restangular',
                 );
             }
         }
-      //  $scope.getImages();
+
+        if(!isNaN($scope.pageId))
+        {
+            $scope.getImages();
+        }
 
         $scope.getImagesForSlug = function()
         {
@@ -47,8 +51,10 @@ uploadControllers.controller('UploadImagesController', ['$scope', 'Restangular',
                 );
             }
         }
+        if(isNaN($scope.pageId))
+        {
         $scope.getImagesForSlug();
-
+        }
 
 
     }]);

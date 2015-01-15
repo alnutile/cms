@@ -2,7 +2,9 @@
 
 @section('content')
 <div class="col-md-3">
-    @include('shared.sidebar')
+    <div class = "sidebar-nav">
+        @include('shared.sidebar')
+    </div>
 </div>
 <div class="col-md-9 column content blog_index">
     <div class = "">
