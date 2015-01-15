@@ -179,6 +179,11 @@ class ImagesController extends BaseController{
             $type = 'Project';
             return $type;
         }
+        if($type == 'pages')
+        {
+            $type = 'Page';
+            return $type;
+        }
         elseif($type == 'projects') {
             $type = 'Project';
             return $type;
