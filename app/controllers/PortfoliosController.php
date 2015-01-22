@@ -5,6 +5,7 @@ use CMS\Services\TagsService;
 class PortfoliosController extends \BaseController {
 
     public $portfolio;
+    private $tags;
 
     public function __construct(Portfolio $portfolio = null, TagsService $tagsService = null)
     {

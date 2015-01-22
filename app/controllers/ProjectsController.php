@@ -99,8 +99,9 @@ class ProjectsController extends \BaseController {
             return View::make('404', compact('settings'));
         }
         $seo = $project->seo;
+        $tags = $this->tagsService->get_tags_for_type('Project');
         $banner = TRUE;
-        return View::make('projects.show', compact('project', 'banner', 'settings', 'seo'));
+        return View::make('projects.show', compact('project', 'banner', 'settings', 'seo', 'tags'));
     }
 
     /**
