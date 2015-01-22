@@ -38,9 +38,11 @@
         </div>
     </div>
     @if($project->images)
+    @if($settings->theme != true)
     <div class="help-block">
         Click on images below to enlarge.
     </div>
+    @endif
     @endif
     <div class = "row gallery_row">
 
