@@ -8,7 +8,7 @@
     <div class = "">
         @foreach($projects as $p)
         <div class="row projects_row">
-            <a href="/projects/{{$p->id}}">
+            <a href="/projects/{{$p->tagable_id}}">
 
                 <div class="project_img col-md-3">
                     @if ($p->image)
