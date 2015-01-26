@@ -37,14 +37,10 @@ class ImagesController extends BaseController{
 
     public function getImageForSlug($slug)
     {
-        $images = DB::table('images')
-            ->Join('posts', 'posts.id', '=', 'images.imageable_id')
-            ->leftJoin('projects', 'projects.id', '=', 'images.imageable_id')
-            ->leftJoin('pages', 'pages.id', '=', 'images.imageable_id')
-            ->where('posts.slug', '=', '/' . $slug)
-            ->orWhere('projects.slug', '=', '/' . $slug)
-            ->orWhere('pages.slug', '=', '/' . $slug)
-            ->get();
+
+        $info = $this->getInfoFromSlug($slug);
+        $images = DB::table('images')->where('images.imageable_type', '=', $info['type'])->where('images.imageable_id', '=', $info['id'])->get();
+
         return Response::json(['data' => $this->transformImages($images), 'message' => "Images"], 200);
     }
 
@@ -87,6 +83,36 @@ class ImagesController extends BaseController{
             Log::info('died');
             return Response::json([], 404);
         }
+    }
+
+    private function getInfoFromSlug($slug)
+    {
+
+        $project = DB::table('projects')->where('projects.slug', '=', '/' . $slug);
+
+        $page = DB::table('pages')->where('pages.slug', '=', '/' . $slug);
+
+        $post = DB::table('posts')->where('posts.slug', '=', '/' . $slug);
+
+        $info = [];
+
+        if($project->count() > 0)
+        {
+            $info['type'] = 'Project';
+            $info['id'] = $project->get()[0]->id;
+        }
+        if($post->count() > 0)
+        {
+            $info['type'] = 'Post';
+            $info['id'] = $post->get()[0]->id;
+        }
+        if($page->count() > 0)
+        {
+            $info['type'] = 'Page';
+            $info['id'] = $page->get()[0]->id;
+        }
+
+        return $info;
     }
 
 
