@@ -91,9 +91,9 @@ class PostsController extends \BaseController {
         if($id == NULL){
             return View::make('404', compact('settings'));
         }
-
+        $tags = $this->tags->get_tags_for_type('Post');
         $banner = TRUE;
-        return View::make('posts.show', compact('post', 'banner', 'settings', 'seo'));
+        return View::make('posts.show', compact('post', 'banner', 'settings', 'seo', 'tags'));
 	}
 
 
