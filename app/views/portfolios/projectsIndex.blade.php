@@ -20,6 +20,7 @@
                     @endif
                 </div>
             </a>
+            <div class="project_grid_title">{{$p->title}}</div>
         </div>
         @endforeach
     </div>

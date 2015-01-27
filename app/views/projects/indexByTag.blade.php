@@ -1,5 +1,5 @@
 @extends('layouts.main')
-
+<!--    index by blade-->
 @section('content')
 <div class="col-md-3">
     @include('shared.sidebar')
