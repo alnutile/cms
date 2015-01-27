@@ -199,7 +199,11 @@ footer {
     position: relative;
     .nav-list a {
       text-align: center;
-    }  }
+    }
+  }
+  .post_img img {
+    width: 100%;
+  }
 }
 
 /* Extra Small Devices, Phones */
@@ -210,6 +214,9 @@ footer {
       text-align: center;
     }
   }
+  .post_img img {
+    width: 100%;
+  }
 }
 
 /* Small Devices, Tablets */
@@ -219,6 +226,10 @@ footer {
     .nav-list a {
       text-align: center;
     }
+  }
+
+  .post_img img {
+    width: 100%;
   }
 }
 
