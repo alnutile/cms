@@ -176,7 +176,7 @@ class ProjectsController extends \BaseController {
     public function destroy($id)
     {
         Project::destroy($id);
-        return Redirect::route('projects.index');
+        return Redirect::route('admin_projects');
     }
 
     /**
