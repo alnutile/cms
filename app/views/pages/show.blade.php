@@ -7,10 +7,12 @@
         @include('shared.sidebar', array('model' => 'page'))
 
         @if(Auth::user())
+        @if(($settings->theme == true && $page->id != 1) || $settings->theme == false)
         <div class="well text_right">
             Edit this page <br>
             <a href="/pages/{{$page->id}}/edit" class="btn btn-success">Edit</a>
         </div>
+        @endif
         @endif
     </div>
 </div>
