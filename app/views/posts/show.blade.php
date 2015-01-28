@@ -16,6 +16,13 @@
 <div class="col-md-9 column">
     <h1>{{{ $post->title }}}</h1>
     <p> {{ $post->intro }} </p>
+    <div class="row">
+        @if ($post->image)
+        <div class = "col-lg-12" id="main_image">
+            <img  src="/img/posts/{{$post->image}}" alt="{{$post->title}}">
+        </div>
+        @endif
+    </div>
     <p> {{ $post->body }} </p>
 
 </div>
