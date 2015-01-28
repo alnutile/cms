@@ -69,7 +69,7 @@
     <!--    images-->
 
     <div class="form-group">
-        <label for="email">Project Default Image Uploader (<a href="http://www.restorationtrades.com/help.html#project_default_image_uploader" target="_blank">Help</a>)</label>
+        <label for="email">Default Image Uploader (<a href="http://www.restorationtrades.com/help.html#blog_default_image_uploader" target="_blank">Help</a>)</label>
         {{ Form::file('image', null, array('class' => 'form-control', 'tabindex' => 1)) }}
         @if($errors->first('image'))
         <div class="alert alert-danger">
@@ -83,7 +83,7 @@
             </div>
         </div>
         @endif
-        <div class="help-block">This is the image we will use for the default project image</div>
+        <div class="help-block">This is the image we will use for the default Blog image</div>
     </div>
 
     <br>
