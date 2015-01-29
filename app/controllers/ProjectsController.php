@@ -192,6 +192,7 @@ class ProjectsController extends \BaseController {
             ->leftJoin('tags', 'tags.tagable_id', '=', 'projects.id')
             ->where('tags.name', '=', $tag)
             ->groupBy('projects.id')
+            ->orderBy('projects.order')
             ->get();
         $tags = $this->tagsService->get_tags_for_type('Project');
         return View::make('projects.indexByTag', compact('projects', 'settings', 'tags'));

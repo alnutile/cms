@@ -85,7 +85,7 @@
     @endif
 
     <!--sort order-->
-    @if($settings->theme != true)
+
     <div class="form-group">
         <label for="email">Sort Order</label>&nbsp;
         {{ Form::selectRange('order', 1, 10, array('class' => 'form-control', 'tabindex' => 1)) }}
@@ -95,7 +95,7 @@
         </div>
         @endif
     </div>
-    @endif
+
     @include('shared.tags', array('model' => 'projects'))
     <br>
 
