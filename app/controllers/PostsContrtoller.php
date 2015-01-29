@@ -183,6 +183,7 @@ class PostsController extends \BaseController {
         $posts = DB::table('posts')
             ->leftJoin('tags', 'tags.tagable_id', '=', 'posts.id')
             ->where('tags.name', '=', $tag)
+            ->groupBy('posts.id')
             ->get();
 
         return View::make('posts.index', compact('posts', 'settings'));
