@@ -10,7 +10,7 @@
     <div class = "">
         @foreach($posts as $p)
         <div class="row blog_row">
-            <a href="/posts/{{$p->id}}">
+            <a href="/posts/{{$p->tagable_id}}">
 
                 <div class="post_intro col-md-9">
                     <h2 class="media-heading">{{{$p->title}}}</h2>
