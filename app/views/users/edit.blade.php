@@ -8,7 +8,7 @@
 
 <div class="col-md-9 column">
             <legend><i class="glyphicon-cog glyphicon"></i> Edit Profile</legend>
-            <strong>Update your info below eg password, email etc</strong>
+            <strong>Update your info below (e.g., password, email, etc.)</strong>
             <hr>
                 @include('sessions.notice')
             {{ Form::model($user, array('method' => 'PUT', 'route' => array('users.update', $user->id), 'role' => 'form')) }}
