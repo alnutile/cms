@@ -186,7 +186,7 @@ class PostsController extends \BaseController {
             ->groupBy('posts.id')
             ->get();
         $tags = $this->tags->get_tags_for_type('Post');
-        return View::make('posts.index', compact('posts', 'settings', 'tags'));
+        return View::make('posts.indexByTag', compact('posts', 'settings', 'tags'));
     }
 
 }
