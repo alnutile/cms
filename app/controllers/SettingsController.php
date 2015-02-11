@@ -14,83 +14,88 @@ class SettingsController extends \BaseController {
         $this->beforeFilter("auth", array('only' => ['index', 'create', 'delete', 'edit', 'update', 'store']));
         $this->settings_path = public_path() . "/img/settings";
     }
-	/**
-	 * Display a listing of the resource.
-	 * GET /settings
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-    parent::show();
-		//
-	}
+    /**
+     * Display a listing of the resource.
+     * GET /settings
+     *
+     * @return Response
+     */
+    public function index()
+    {
+        parent::show();
+        //
+    }
 
-	/**
-	 * Show the form for creating a new resource.
-	 * GET /settings/create
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
-	}
+    /**
+     * Show the form for creating a new resource.
+     * GET /settings/create
+     *
+     * @return Response
+     */
+    public function create()
+    {
+        //
+    }
 
-	/**
-	 * Store a newly created resource in storage.
-	 * POST /settings
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
+    /**
+     * Store a newly created resource in storage.
+     * POST /settings
+     *
+     * @return Response
+     */
+    public function store()
+    {
+        //
+    }
 
-	/**
-	 * Display the specified resource.
-	 * GET /settings/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id = NULL)
-	{
-    parent::show();
-		//
-	}
+    /**
+     * Display the specified resource.
+     * GET /settings/{id}
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function show($id = NULL)
+    {
+        parent::show();
+        //
+    }
 
-	/**
-	 * Show the form for editing the specified resource.
-	 * GET /settings/{id}/edit
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id = NULL)
-	{
+    /**
+     * Show the form for editing the specified resource.
+     * GET /settings/{id}/edit
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function edit($id = NULL)
+    {
         parent::show();
         $banner = $this->banner;
         $path   = "/img/settings";
         $setting = Setting::find($id);
-		return View::make('settings.edit', compact('setting', 'path', 'banner'));
-	}
+        return View::make('settings.edit', compact('setting', 'path', 'banner'));
+    }
 
-	/**
-	 * Update the specified resource in storage.
-	 * PUT /settings/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-        $validator = Validator::make($data = Input::all(), ['color' => 'required']);
+    /**
+     * Update the specified resource in storage.
+     * PUT /settings/{id}
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function update($id)
+    {
+        $data = Input::all();
         $setting = Setting::findOrFail($id);
-        if ($validator->fails())
+
+        if($data['theme'] == false)
         {
-            return Redirect::back()->withErrors($validator)->withInput();
+            $validator = Validator::make($data, ['color' => 'required']);
+            if ($validator->fails())
+            {
+                return Redirect::back()->withErrors($validator)->withInput();
+            }
         }
 
         if(Input::get('remove_logo') != NULL) {
@@ -112,8 +117,10 @@ class SettingsController extends \BaseController {
         } else {
             $data['logo'] = $setting->logo;
         }
-
-        $setting->color             = $data['color'];
+        if($data['theme'] == false)
+        {
+            $setting->color             = $data['color'];
+        }
         $setting->logo              = $data['logo'];
         $setting->name              = $data['name'];
         $setting->maintenance_mode  = (isset($data['maintenance_mode'])) ? 1 : 0;
@@ -125,21 +132,24 @@ class SettingsController extends \BaseController {
         $setting->pinterest         = (isset($data['pinterest'])) ? $data['pinterest'] : '';
         $setting->gplus             = (isset($data['gplus'])) ? $data['gplus'] : '';
         $setting->footer            = (isset($data['footer'])) ? $data['footer'] : '';
-        $setting->save();
-        return Redirect::to("/settings/" . $setting->id . "/edit")->withMessage("Settings Updated");
-	}
 
-	/**
-	 * Remove the specified resource from storage.
-	 * DELETE /settings/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
-	}
+
+        $setting->save();
+
+        return Redirect::to("/settings/" . $setting->id . "/edit")->withMessage("Settings Updated");
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     * DELETE /settings/{id}
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
 
     protected function setRobot($mode)
     {
