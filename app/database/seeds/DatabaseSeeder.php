@@ -14,10 +14,10 @@ class DatabaseSeeder extends Seeder {
         $this->call('BannersTableSeeder');
         $this->call('SettingsTableSeeder');
         $this->call('PagesTableSeeder');
-        $this->call('PortfoliosTableSeeder');
-        $this->call('ProjectsTableSeeder');
-        $this->call('TagsTableSeeder');
-        $this->call('PostsTableSeeder');
+//        $this->call('PortfoliosTableSeeder');
+//        $this->call('ProjectsTableSeeder');
+//        $this->call('TagsTableSeeder');
+//        $this->call('PostsTableSeeder');
     }
 
 }
