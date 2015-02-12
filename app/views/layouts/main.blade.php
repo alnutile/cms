@@ -79,7 +79,7 @@ Use the corresponding body tag for your chosen theme
 
 <div class="row"><div class="span12"><hr></div></div>
 <!-- //end header -->
-<div class="container content">
+<div class="container content main_content">
     <div class="row">
         <!--alerts-->
         @if (Session::has('message'))
