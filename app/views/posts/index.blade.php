@@ -4,6 +4,12 @@
 <div class="col-md-3">
     <div class = "sidebar-nav">
         @include('shared.sidebar')
+        @if(Auth::user())
+        <div class="well">
+            Create New Post <br>
+            <a href="/posts/create" class="btn btn-success">Create</a>
+        </div>
+        @endif
     </div>
 </div>
 <div class="col-md-9 column content blog_index">
