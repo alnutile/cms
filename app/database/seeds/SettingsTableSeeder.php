@@ -21,7 +21,7 @@ class SettingsTableSeeder extends Seeder {
                 'pinterest'         => 'http://pinterest.com/example_person',
                 'gplus'               => 'http://gplus/example_person',
                 'footer'            => '<div class="text-center">444-555-1212 | test@test.com</div>',
-                'maintenance_mode'  => 0,
+                'maintenance_mode'  => 1,
                 'theme'  => 0,
                 'created_at' => $dateTime,
                 'updated_at' => $dateTime,
