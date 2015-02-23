@@ -43,7 +43,7 @@
 
     @include('shared.tags', array('model' => 'projects'))
 
-    @if(Auth::user()->admin == 1)
+    @if(Auth::user() && Auth::user()->admin == 1)
     <div class="form-group">
         <label>Blog Post Web Address (URL) (<a href="http://www.restorationtrades.com/help.html#Blog Post_web_address" target="_blank">Help</a>)</label>
         {{ Form::text('slug', null, array('class' => 'form-control')) }}

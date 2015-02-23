@@ -54,7 +54,7 @@
         <!-- end images upload -->
         @endif
 
-        @if(Auth::user()->admin == 1)
+        @if(Auth::user() && Auth::user()->admin == 1)
         <div class="form-group">
             <label>Page Web Address (URL) (<a href="http://www.restorationtrades.com/help.html#page_web_address" target="_blank">Help</a>)"</label>
             {{ Form::text('slug', null, array('class' => 'form-control')) }}
