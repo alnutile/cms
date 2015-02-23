@@ -89,15 +89,17 @@
     <br>
 
 
-    <div class="controls">
-        {{ Form::submit('Update Blog Post', array('id' => 'submit', 'class' => 'btn btn-success')) }}
-        <br>
+    <div class="controls row">
+        <div class="col-lg-2">
+            {{ Form::submit('Update Blog Post', array('id' => 'submit', 'class' => 'btn btn-success')) }}
+            {{ Form::close() }}
+        </div>
+        <div class="col-lg-2">
+            {{ Form::open(['method' => 'DELETE', 'action' => ['PostsController@destroy', $post->id]]) }}
+            {{ Form::submit('Delete', array('class' => 'btn btn-danger', 'onclick' => 'return confirm("Are you sure you want to delete this?")')) }}
+            {{ Form::close() }}
+        </div>
     </div>
-
-    {{ Form::close() }}
-    {{ Form::open(['method' => 'DELETE', 'action' => ['PostsController@destroy', $post->id]]) }}
-    {{ Form::submit('Delete', array('class' => 'btn btn-danger', 'onclick' => 'return confirm("Are you sure you want to delete this?")')) }}
-    {{ Form::close() }}
 </div>
 
 
