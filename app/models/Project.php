@@ -15,6 +15,7 @@ class Project extends BaseModel {
         'published',
         'body',
         'image',
+        'tile_image',
         'order',
         'intro',
         'portfolio_id',

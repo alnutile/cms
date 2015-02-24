@@ -118,7 +118,7 @@
         {{ Form::file('image', null, array('class' => 'form-control', 'tabindex' => 1)) }}
         @if($errors->first('image'))
         <div class="alert alert-danger">
-            {{  $errors->first('image'); }}
+            {{  $errors->first('image') }}
         </div>
         @endif
         @if($project->image)
@@ -129,6 +129,24 @@
         </div>
         @endif
         <div class="help-block">This is the image we will use for the default project image</div>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Project Portfolio ‘Tile’ Image Uploader (<a href="http://www.restorationtrades.com/help.html#project_default_image_uploader" target="_blank">Help</a>)</label>
+        {{ Form::file('tile_image', null, array('class' => 'form-control', 'tabindex' => 1)) }}
+        @if($errors->first('tile_image'))
+        <div class="alert alert-danger">
+            {{  $errors->first('tile_image') }}
+        </div>
+        @endif
+        @if($project->tile_image)
+        <div class="row">
+            <div>
+                <img  class="col-lg-4" src="/{{$path}}/{{$project->tile_image}}" class="banner-show">
+            </div>
+        </div>
+        @endif
+        <div class="help-block">This is the image we will use for the image tile in the portfolio grid page</div>
     </div>
 
     <br>

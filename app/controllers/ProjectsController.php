@@ -145,6 +145,13 @@ class ProjectsController extends \BaseController {
         } else {
             $data['image'] = $project->image;
         }
+        if(isset($data['tile_image'])) {
+            $data = $this->uploadFile($data, 'tile_image');
+        } else {
+            $data['tile_image'] = $project->image;
+        }
+
+
         if(isset($data['image_caption_update'])){
             $this->updateImagesCaption($data['image_caption_update']);
         }

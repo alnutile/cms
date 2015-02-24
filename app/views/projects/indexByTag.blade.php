@@ -18,7 +18,7 @@
 
                 <div class="project_img col-md-3">
                     @if ($p->image)
-                    <img  src="/img/projects/{{$p->image}}" alt="{{$p->title}}" class="img-responsive">
+                    <img  src="/img/projects/{{$p->tile_image}}" alt="{{$p->title}}" class="img-responsive">
                     @else
                     <img  src="/img/default/photo_default_0.png" alt="{{$p->title}}" class="img-responsive">
                     @endif
