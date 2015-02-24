@@ -46,7 +46,7 @@
         <div class="col-lg-4 body">
             <h1>{{{$project->title}}}</h1>
 
-            Project City and State {{{$project->city_county}}}
+            {{{$project->city_county}}}
             <br>
             Architect: {{{$project->architect}}}
         </div>
