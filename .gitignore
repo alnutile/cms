@@ -1,5 +1,6 @@
 public/img/projects/
 node_modules/*
+npm-debug.log
 public/img/*
 bower_components
 public/assets/img
