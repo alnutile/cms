@@ -17,7 +17,6 @@
 </div>
 
 <div class="col-md-9 column">
-    <h1>{{{ $project->title }}}</h1>
     <div class="row">
         @if ($project->image)
         <div class = "col-lg-12" id="main_image">
@@ -33,7 +32,12 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-12 body">
+        <div class="col-lg-4 body">
+            <h1>{{$project->title}}</h1>
+            {{{$project->city_county}}}
+            Architect: {{{$project->state_country}}}
+        </div>
+        <div class="col-lg-8 body">
             {{$project->body}}
         </div>
     </div>
