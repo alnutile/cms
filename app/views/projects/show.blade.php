@@ -51,7 +51,7 @@
             Architect: {{{$project->architect}}}
         </div>
         <div class="col-lg-8 projectBody">
-            {{$project->body}}
+           <article> {{$project->body}}</article>
         </div>
     </div>
     @endif

@@ -3,6 +3,11 @@ $(document).ready(function(){
         CKEDITOR.replace( '.ckeditor');
     };
 
+    $('article').readmore({
+        speed: 75,
+        lessLink: '<a href="#">Read less</a>',
+        collapsedHeight: 208
+    });
 
     if(cms.home === 'home'){
         $.backstretch(cms.slides, {
