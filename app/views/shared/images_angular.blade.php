@@ -13,7 +13,7 @@
             </li>
         </ul>
         <div class="form-group">
-            <div flow-init="{target: '/images/upload/{{$model}}', singleFile: false}"
+            <div flow-init="{target: '/images/upload/{{$model}}', singleFile: false, testChunks:false}"
                  flow-files-submitted="$flow.upload()"
                  flow-file-success="$file.msg = $message">
                 <div ng-repeat="file in $flow.files"
