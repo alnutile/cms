@@ -67,6 +67,7 @@ class ImagesController extends BaseController{
 
         if(\Flow\Basic::save($this->getDestinationDir(). '/' . $this->request->getFileName(), $this->config, $this->request)) {
             $storage = $this->getDestinationDir();
+            Log::debug($storage);
             if($model == 'projects')
             {
                 $this->imageservice->cropAndSaveForPages($this->request->getFileName(), $storage);
