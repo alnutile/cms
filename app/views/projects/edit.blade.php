@@ -128,7 +128,6 @@
             </div>
         </div>
         @endif
-        <div class="help-block">This is the image we will use for the default project image</div>
     </div>
 
     <div class="form-group">
@@ -146,7 +145,6 @@
             </div>
         </div>
         @endif
-        <div class="help-block">This is the image we will use for the image tile in the portfolio grid page</div>
     </div>
 
     <br>

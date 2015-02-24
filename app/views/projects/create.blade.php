@@ -111,7 +111,7 @@
 
 
   <div class="form-group">
-    <label for="email">Project Default Image Uploader (<a href="http://www.restorationtrades.com/help.html#project_default_image_uploader" target="_blank">Help</a>)</label>
+    <label for="email">Project Top Image Uploader (<a href="http://www.restorationtrades.com/help.html#project_default_image_uploader" target="_blank">Help</a>)</label>
     {{ Form::file('image', null, array('class' => 'form-control', 'tabindex' => 1)) }}
     @if($errors->first('image'))
     <div class="alert alert-danger">
@@ -119,6 +119,17 @@
     </div>
     @endif
   </div>
+
+
+    <div class="form-group">
+        <label for="email">Project Portfolio ‘Tile’ Image Uploader (<a href="http://www.restorationtrades.com/help.html#project_default_image_uploader" target="_blank">Help</a>)</label>
+        {{ Form::file('tile_image', null, array('class' => 'form-control', 'tabindex' => 1)) }}
+        @if($errors->first('tile_image'))
+        <div class="alert alert-danger">
+            {{  $errors->first('tile_image'); }}
+        </div>
+        @endif
+    </div>
 
   <!-- image -->
 
