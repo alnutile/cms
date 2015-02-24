@@ -80,7 +80,7 @@ class ImagesController extends BaseController{
             return Response::json(['data' => $this->filename, 'message' => "File Uploaded $storage/$this->filename"], 200);
         } else {
             //Not sure why it needs a 404
-            Log::info('died');
+            Log::info($storage);
             return Response::json([], 404);
         }
     }
