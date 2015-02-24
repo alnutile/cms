@@ -34,7 +34,7 @@
     @endif
 
     <div class="form-group">
-        <label>Project City and/or County (<a href="http://www.restorationtrades.com/help.html#project_city_county" target="_blank">Help</a>)</label>
+        <label>Project City and State (<a href="http://www.restorationtrades.com/help.html#project_city_county" target="_blank">Help</a>)</label>
         {{ Form::text('city_county', null, array('class' => 'form-control')) }}
     </div>
     @if($errors->first('city_county'))
@@ -44,7 +44,7 @@
     @endif
 
     <div class="form-group">
-        <label>Project State and Country (<a href="http://www.restorationtrades.com/help.html#project_state_country" target="_blank">Help</a>)</label>
+        <label>Project Architect (<a href="http://www.restorationtrades.com/help.html#project_state_country" target="_blank">Help</a>)</label>
         {{ Form::text('state_country', null, array('class' => 'form-control')) }}
     </div>
     @if($errors->first('state_country'))
