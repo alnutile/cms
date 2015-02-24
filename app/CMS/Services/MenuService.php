@@ -1,5 +1,5 @@
 <?php namespace CMS\Services;
-
+use CMS\Services\TagsService as TagsService;
 Class MenuService {
 
   protected $pageModel;
@@ -15,6 +15,9 @@ Class MenuService {
     $this->project = ($project == null) ? new \Project : $project;
     $this->portfolio = ($portfolio == null) ? new \Portfolio : $portfolio;
     $this->post = ($post == null) ? new \Post : $post;
+      $this->tags = new \CMS\Services\TagsService;
+      $this->images = new \CMS\Services\ImagesService(new \Image());
+      $this->projects = new \CMS\Services\ProjectsService($this->images);
   }
 
   public function updateMenus($updates)
@@ -61,11 +64,11 @@ Class MenuService {
       $pageCtrl = new \PagesController();
       return $pageCtrl->show($page);
     }
-
     //Try Project
     $project = $this->project->where("slug", 'LIKE', '/' . $id)->first();
     if ($this->checkIfPublishedAndUserState($project)) {
-      $projCtrl = new \ProjectsController();
+
+      $projCtrl = new \ProjectsController($this->projects, $this->tags, $this->images);
       return $projCtrl->show($project);
     }
 
@@ -79,7 +82,7 @@ Class MenuService {
       //Try Post
       $post = $this->post->where("slug", 'LIKE', '/' . $id)->first();
       if ($this->checkIfPublishedAndUserState($post)) {
-          $postCtrl = new \PostsController();
+          $postCtrl = new \PostsController($this->images, $this->tags);
           return $postCtrl->show($post->id);
       }
 

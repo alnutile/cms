@@ -16,7 +16,7 @@
     <div class = "">
         @foreach($projects as $p)
         <div class="col-md-4 project_block">
-            <a href="/projects/{{$p->id}}">
+            <a href="{{$p->slug}}">
 
                 <div class="proj_img">
                     @if ($p->image)

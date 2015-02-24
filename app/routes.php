@@ -1,4 +1,6 @@
 <?php
+use CMS\Facades\MenuFacade as Menu;
+
 $settings =  Setting::first();
 
 Route::resource('pages', 'PagesController');
