@@ -17,6 +17,7 @@
 </div>
 
 <div class="col-md-9 column">
+    @if($settings->theme != true)  <h1>{{{ $project->title }}}</h1>@endif
     <div class="row">
         @if ($project->image)
         <div class = "col-lg-12" id="main_image">
@@ -24,6 +25,7 @@
         </div>
         @endif
     </div>
+    @if($settings->theme != true)
     <div class="row">
         <div class="col-lg-12">
             {{{$project->city_county}}}
@@ -31,16 +33,29 @@
             {{{$project->state_country}}}
         </div>
     </div>
+
     <div class="row">
-        <div class="col-lg-4 body">
-            <h1>{{$project->title}}</h1>
-            {{{$project->city_county}}}
-            Architect: {{{$project->state_country}}}
-        </div>
-        <div class="col-lg-8 body">
+        <div class="col-lg-12 body">
             {{$project->body}}
         </div>
     </div>
+    @endif
+
+    @if($settings->theme == true)
+    <div class="row">
+        <div class="col-lg-4 body">
+            <h1>{{{$project->title}}}</h1>
+
+            Project City and State {{{$project->city_county}}}
+            <br>
+            Architect: {{{$project->architect}}}
+        </div>
+        <div class="col-lg-8 projectBody">
+            {{$project->body}}
+        </div>
+    </div>
+    @endif
+
     @if($project->images)
     @if($settings->theme != true)
     <div class="help-block">

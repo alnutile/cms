@@ -33,6 +33,29 @@
     </div>
     @endif
 
+    @if($settings->theme != true)
+    <div class="form-group">
+        <label>Project City and/or County (<a href="http://www.restorationtrades.com/help.html#project_city_county" target="_blank">Help</a>)</label>
+        {{ Form::text('city_county', null, array('class' => 'form-control')) }}
+    </div>
+    @if($errors->first('city_county'))
+    <div class="alert alert-danger">
+        {{  $errors->first('city_county'); }}
+    </div>
+    @endif
+
+    <div class="form-group">
+        <label>Project State and Country (<a href="http://www.restorationtrades.com/help.html#project_state_country" target="_blank">Help</a>)</label>
+        {{ Form::text('state_country', null, array('class' => 'form-control')) }}
+    </div>
+    @if($errors->first('state_country'))
+    <div class="alert alert-danger">
+        {{  $errors->first('state_country'); }}
+    </div>
+    @endif
+    @endif
+
+    @if($settings->theme == true)
     <div class="form-group">
         <label>Project City and State (<a href="http://www.restorationtrades.com/help.html#project_city_county" target="_blank">Help</a>)</label>
         {{ Form::text('city_county', null, array('class' => 'form-control')) }}
@@ -45,12 +68,13 @@
 
     <div class="form-group">
         <label>Project Architect (<a href="http://www.restorationtrades.com/help.html#project_state_country" target="_blank">Help</a>)</label>
-        {{ Form::text('state_country', null, array('class' => 'form-control')) }}
+        {{ Form::text('architect', null, array('class' => 'form-control')) }}
     </div>
-    @if($errors->first('state_country'))
+    @if($errors->first('architect'))
     <div class="alert alert-danger">
-        {{  $errors->first('state_country'); }}
+        {{  $errors->first('architect'); }}
     </div>
+    @endif
     @endif
 
     <div class="form-group">
