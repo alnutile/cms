@@ -148,7 +148,7 @@ class ProjectsController extends \BaseController {
         if(isset($data['tile_image'])) {
             $data = $this->uploadFile($data, 'tile_image');
         } else {
-            $data['tile_image'] = $project->image;
+            $data['tile_image'] = $project->tile_image;
         }
 
 
