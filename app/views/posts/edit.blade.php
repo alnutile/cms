@@ -76,8 +76,7 @@
         </div>
     </div>
 
-    <!--    images-->
-
+    <!--   default images-->
     <div class="form-group">
         <label for="email">Default Image Uploader (<a href="http://www.restorationtrades.com/help.html#blog_default_image_uploader" target="_blank">Help</a>)</label>
         {{ Form::file('image', null, array('class' => 'form-control', 'tabindex' => 1)) }}
@@ -95,6 +94,7 @@
         @endif
         <div class="help-block">This is the image we will use for the default Blog image</div>
     </div>
+<!--end default images-->
 
     <br>
     <br>

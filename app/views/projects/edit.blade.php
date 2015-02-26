@@ -135,25 +135,8 @@
         @endif
     </div>
     @endif
-    <!-- image -->
 
-    <div class="form-group">
-        <label for="email">Project Default Image Uploader (<a href="http://www.restorationtrades.com/help.html#project_default_image_uploader" target="_blank">Help</a>)</label>
-        {{ Form::file('image', null, array('class' => 'form-control', 'tabindex' => 1)) }}
-        @if($errors->first('image'))
-        <div class="alert alert-danger">
-            {{  $errors->first('image') }}
-        </div>
-        @endif
-        @if($project->image)
-        <div class="row">
-            <div>
-                <img  class="col-lg-4" src="/{{$path}}/{{$project->image}}" class="banner-show">
-            </div>
-        </div>
-        @endif
-    </div>
-
+    <!--tile image    -->
     <div class="form-group">
         <label for="email">Project Portfolio ‘Tile’ Image Uploader (<a href="http://www.restorationtrades.com/help.html#project_default_image_uploader" target="_blank">Help</a>)</label>
         {{ Form::file('tile_image', null, array('class' => 'form-control', 'tabindex' => 1)) }}
@@ -170,6 +153,25 @@
         </div>
         @endif
     </div>
+    <!--end tile image-->
+    <!-- top image -->
+    <div class="form-group">
+        <label for="email">Project Top Image Uploader (<a href="http://www.restorationtrades.com/help.html#project_default_image_uploader" target="_blank">Help</a>)</label>
+        {{ Form::file('image', null, array('class' => 'form-control', 'tabindex' => 1)) }}
+        @if($errors->first('image'))
+        <div class="alert alert-danger">
+            {{  $errors->first('image') }}
+        </div>
+        @endif
+        @if($project->image)
+        <div class="row">
+            <div>
+                <img  class="col-md-6 img-thumbnail" src="/{{$path}}/{{$project->image}}" class="banner-show">
+            </div>
+        </div>
+        @endif
+    </div>
+<!-- end top image-->
 
     <br>
 
