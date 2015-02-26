@@ -97,6 +97,14 @@
     </div>
 
     <br>
+    <br>
+    <!-- images upload -->
+    <label>Project Blowup Images Uploader (<a href="http://www.restorationtrades.com/help.html#project_blowup_image_uploader" target="_blank">Help</a>)</label>
+    @include('shared.images_angular', array('model' => 'posts'))
+
+    <br>
+    <br>
+    <!-- end images upload -->
 
 
     <div class="controls row">
