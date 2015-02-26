@@ -37,7 +37,7 @@ class PortfoliosController extends \BaseController {
     public function projectsIndex()
     {
         parent::show();
-        $projects = Project::orderBy('order')->get();
+        $projects = Project::where('published', '=', 1)->orderBy('order')->get();
         $tags = $this->tags->get_tags_for_type('Project');
         return View::make('portfolios.projectsIndex', compact('projects', 'tags'));
     }

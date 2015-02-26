@@ -101,12 +101,13 @@ class ProjectsController extends \BaseController {
         if(is_numeric($project)) {
             $project = Project::find($project);
         }
-        if($project == NULL){
+        if($project == NULL || $project->published == 0){
             return View::make('404', compact('settings'));
         }
         $seo = $project->seo;
         $tags = $this->tagsService->get_tags_for_type('Project');
         $banner = TRUE;
+
         return View::make('projects.show', compact('project', 'banner', 'settings', 'seo', 'tags'));
     }
 
@@ -174,7 +175,6 @@ class ProjectsController extends \BaseController {
         }
 
 
-        $data = $this->checkPublished($data);
         $project->update($data);
 
         return Redirect::route('admin_projects')->withMessage("Updated Project!");
@@ -204,6 +204,7 @@ class ProjectsController extends \BaseController {
         $projects = DB::table('projects')
             ->leftJoin('tags', 'tags.tagable_id', '=', 'projects.id')
             ->where('tags.name', '=', $tag)
+            ->where('projects.published', '=', 1)
             ->groupBy('projects.id')
             ->orderBy('projects.order')
             ->get();
