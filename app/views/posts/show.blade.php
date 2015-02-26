@@ -41,8 +41,8 @@
             @else
         </div>
 
-        <div class = "col-lg-12 gallery_item_dark">
-            <img class="col-lg-12" src="/assets/img/posts/{{$image->file_name}}" alt="{{$image->file_name}}">
+        <div class = "col-lg-6 gallery_item_dark">
+            <img class="col-lg-6" src="/assets/img/posts/{{$image->file_name}}" alt="{{$image->file_name}}">
             @endif
             <br>
             <span class="caption">{{$image->image_caption}}</span>
