@@ -21,6 +21,16 @@
     @endif
 
     <div class="form-group">
+        <label>Post Browser Description (a.k.a. Title Tag) (<a href="http://www.restorationtrades.com/help.html#project_browser_description" target="_blank">Help</a>)</label>
+        {{ Form::text('seo', null, array('class' => 'form-control')) }}
+    </div>
+    @if($errors->first('seo'))
+    <div class="alert alert-danger">
+        {{  $errors->first('seo'); }}
+    </div>
+    @endif
+
+    <div class="form-group">
         <label>Intro Paragraph (<a href="http://www.restorationtrades.com/help.html#Blog Post_page_description" target="_blank">Help</a>)</label>
         {{ Form::textarea('intro', null, array('rows' => 30, 'class' => 'ckeditor form-control')) }}
     </div>

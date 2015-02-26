@@ -10,7 +10,7 @@
 
   <h2>Create Blog Post:</h2>
 
-  {{ Form::model('post', array('method' => 'POST', 'route' => array('posts.store'), 'role' => 'form')) }}
+  {{ Form::model('post', array('method' => 'POST', 'route' => array('posts.store'), 'files' => 'true', 'role' => 'form')) }}
 
 
   <div class="form-group">
@@ -22,6 +22,16 @@
       {{  $errors->first('title'); }}
     </div>
   @endif
+
+    <div class="form-group">
+        <label>Post Browser Description (a.k.a. Title Tag) (<a href="http://www.restorationtrades.com/help.html#project_browser_description" target="_blank">Help</a>)</label>
+        {{ Form::text('seo', null, array('class' => 'form-control')) }}
+    </div>
+    @if($errors->first('seo'))
+    <div class="alert alert-danger">
+        {{  $errors->first('seo'); }}
+    </div>
+    @endif
 
     <div class="form-group">
         <label>Intro Paragraph (<a href="http://www.restorationtrades.com/help.html#Blog Post_page_description" target="_blank">Help</a>)</label>
@@ -78,7 +88,7 @@
     <!--    images-->
 
     <div class="form-group">
-        <label for="email">Project Default Image Uploader (<a href="http://www.restorationtrades.com/help.html#project_default_image_uploader" target="_blank">Help</a>)</label>
+        <label for="image">Project Default Image Uploader (<a href="http://www.restorationtrades.com/help.html#project_default_image_uploader" target="_blank">Help</a>)</label>
         {{ Form::file('image', null, array('class' => 'form-control', 'tabindex' => 1)) }}
         @if($errors->first('image'))
         <div class="alert alert-danger">

@@ -32,7 +32,8 @@ class PostsController extends \BaseController {
         parent::show();
         $posts = Post::all();
         $tags = $this->tags->get_tags_for_type('Post');
-        return View::make('posts.index', compact('posts', 'tags', 'settings'));
+        $seo = 'Builders Notebook';
+        return View::make('posts.index', compact('posts', 'tags', 'settings', 'seo'));
     }
 
 
@@ -65,14 +66,14 @@ class PostsController extends \BaseController {
         }
         if(isset($all['image'])) {
             $this->imagesService->cropAndSaveForPost($all['image'], $this->save_to);
-            $all = $this->uploadFile($data, 'image');;
+            $all = $this->uploadFile($all, 'image');;
         }
         $post = Post::create($all);
 
         if(isset($all['images'])) {
             $this->imagesService->addImages($post->id, $all['images'], 'Post');
         }
-        return Redirect::route('posts')->withMessage("Created Post");
+        return Redirect::route('posts.index')->withMessage("Created Post");
     }
 
 
@@ -187,7 +188,8 @@ class PostsController extends \BaseController {
             ->groupBy('posts.id')
             ->get();
         $tags = $this->tags->get_tags_for_type('Post');
-        return View::make('posts.indexByTag', compact('posts', 'settings', 'tags'));
+        $seo = $tag;
+        return View::make('posts.indexByTag', compact('posts', 'settings', 'tags', 'seo' ));
     }
 
 }

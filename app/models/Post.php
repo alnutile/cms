@@ -5,7 +5,7 @@ class Post extends BaseModel {
     // Add your validation rules here
     public static $rules = [
         'title' => 'required',
-        'image' => 'mimes:jpeg,bmp,png,gif,jpg',
+        'image' => 'mimes:jpg,jpeg,bmp,png,gif',
         'slug'  => 'required|unique:portfolios|regex:/^\/[A-Za-z0-9_]+$/'
     ];
 
@@ -16,7 +16,8 @@ class Post extends BaseModel {
         'intro',
         'body',
         'image',
-        'slug'
+        'slug',
+        'seo'
     ];
 
     public function images()
