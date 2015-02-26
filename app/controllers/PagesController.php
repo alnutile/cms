@@ -26,25 +26,32 @@ class PagesController extends \BaseController {
         parent::show();
         $pages = $this->pages->all();
         $banner = $this->banner;
-        return $this->respond($pages, 'pages.index',  compact('pages', 'banner'));
-    }
+        if($this->settings != false)
+            {
+                return $this->respond($pages, 'pages.index_dark',  compact('pages', 'banner'));
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function create()
+            }else
+            {
+                return $this->respond($pages, 'pages.index',  compact('pages', 'banner'));
+            }
+        }
+
+        /**
+         * Show the form for creating a new resource.
+         *
+         * @return Response
+         */
+        public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @return Response
-     */
-    public function show($page = NULL)
+        /**
+         * Store a newly created resource in storage.
+         *
+         * @return Response
+         */
+        public function show($page = NULL)
     {
         parent::show();
         parent::getSlides();
@@ -64,38 +71,38 @@ class PagesController extends \BaseController {
         return View::make('pages.show', compact('page', 'banner', 'settings', 'seo', 'projects', 'tags'));
     }
 
-    public function getTags() {
+        public function getTags() {
         if($this->tags == null){
-           $this->tags =  $this->setTags();
+            $this->tags =  $this->setTags();
         }
         $tags = $this->tags->get_tags_for_type('Project');
         return  $tags;
     }
 
-    private function setTags()
+        private function setTags()
     {
         return New CMS\Services\TagsService;
     }
 
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @return Response
-     */
-    public function store()
+        /**
+         * Store a newly created resource in storage.
+         *
+         * @return Response
+         */
+        public function store()
     {
         //
     }
 
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function edit($id = NULL)
+        /**
+         * Show the form for editing the specified resource.
+         *
+         * @param  int  $id
+         * @return Response
+         */
+        public function edit($id = NULL)
     {
         parent::show();
         $page = Page::findOrFail($id);
@@ -104,13 +111,13 @@ class PagesController extends \BaseController {
     }
 
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function update($id)
+        /**
+         * Update the specified resource in storage.
+         *
+         * @param  int  $id
+         * @return Response
+         */
+        public function update($id)
     {
         $validator = Validator::make(Input::all(), array('title' => 'required', 'slug' =>'regex:/^\/[A-Za-z0-9_]+$/'));
         $page_update = Input::all();
@@ -134,17 +141,17 @@ class PagesController extends \BaseController {
         }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function destroy($id)
+        /**
+         * Remove the specified resource from storage.
+         *
+         * @param  int  $id
+         * @return Response
+         */
+        public function destroy($id)
     {
         //
     }
 
 
 
-}
+    }

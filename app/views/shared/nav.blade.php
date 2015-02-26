@@ -17,9 +17,7 @@
                 <li class=<?php if(Request::path() == 'portfolios') { echo 'active'; }?>><a href="/admin/portfolios">Admin Portfolios</a></li>
                 @endif
 
-                @if($settings->theme != true)
                 <li class=<?php if(Request::path() == 'portfolios') { echo 'active'; }?>><a href="/admin/projects">Admin Projects</a></li>
-                @endif
 
                 @if(Auth::user()->admin == 1)
                 <li class=<?php if(Request::path() == 'users') { echo 'active'; }?>><a href="/users">Admin Users</a></li>
