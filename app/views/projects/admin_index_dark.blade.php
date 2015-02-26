@@ -9,7 +9,7 @@
 <div class="col-md-9 column content">
     <h3>Manage Projects</h3>
     <hr>
-    <table class="table table-hover table-striped table-condensed">
+    <table class="table table-hover table-striped table-condensed dark-table">
         <thead>
         <tr>
             <th>Title</th>
