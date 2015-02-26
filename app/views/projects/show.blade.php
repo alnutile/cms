@@ -74,7 +74,7 @@
                 <img class="col-lg-12" src="/assets/img/projects/gallery/{{$image->file_name}}" alt="{{$image->file_name}}">
                 @endif
                 <br>
-                <span class="caption">{{$image->image_caption}}</span>
+                <div class="project-caption caption">{{$image->image_caption}}</div>
             </div>
             @endforeach
         </div>
