@@ -132,7 +132,9 @@
       </div>
     @endif
 
-    <!--tile image-->
+    <br>
+    <br>
+<!--tile image-->
     <div class="form-group">
         <label for="email">Project Portfolio ‘Tile’ Image Uploader (<a href="http://www.restorationtrades.com/help.html#project_default_image_uploader" target="_blank">Help</a>)</label>
         {{ Form::file('tile_image', null, array('class' => 'form-control', 'tabindex' => 1)) }}
@@ -142,7 +144,9 @@
         </div>
         @endif
     </div>
-    <!-- end tile image -->
+<!-- end tile image -->
+    <br>
+    <br>
 <!--    top image-->
   <div class="form-group">
     <label for="email">Project Top Image Uploader (<a href="http://www.restorationtrades.com/help.html#project_default_image_uploader" target="_blank">Help</a>)</label>
@@ -154,10 +158,9 @@
     @endif
   </div>
 <!--end top image-->
-
     <br>
     <br>
-    <!-- images upload -->
+<!-- images upload -->
 <label>Project Subsequent Images Uploader (<a href="http://www.restorationtrades.com/help.html#project_blowup_image_uploader" target="_blank">Help</a>)</label>
     @include('shared.images_angular', array('model' => 'projects'))
     <br>

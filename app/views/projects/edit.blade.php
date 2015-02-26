@@ -154,6 +154,8 @@
         @endif
     </div>
     <!--end tile image-->
+    <br>
+    <br>
     <!-- top image -->
     <div class="form-group">
         <label for="email">Project Top Image Uploader (<a href="http://www.restorationtrades.com/help.html#project_default_image_uploader" target="_blank">Help</a>)</label>
@@ -172,16 +174,14 @@
         @endif
     </div>
 <!-- end top image-->
-
     <br>
-
-    <!-- images upload -->
+    <br>
+<!-- images upload -->
     <label>Project Subsequent Images Uploader (<a href="http://www.restorationtrades.com/help.html#project_blowup_image_uploader" target="_blank">Help</a>)</label>
     @include('shared.images_angular', array('model' => 'projects'))
-
     <br>
     <br>
-    <!-- end images upload -->
+<!-- end images upload -->
 
     <div class="controls row">
         <div class="col-lg-2">
