@@ -46,7 +46,12 @@ class ProjectsController extends \BaseController {
     {
         parent::show();
         $projects = Project::all();
-        return View::make('projects.admin_index', compact('projects'));
+        if($this->settings != false){
+            return View::make('projects.admin_index_dark', compact('projects'));
+        }  else {
+            return View::make('projects.admin_index', compact('projects'));
+
+        }
     }
 
 
