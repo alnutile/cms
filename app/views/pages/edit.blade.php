@@ -15,11 +15,11 @@
     @if(($settings->theme == true && $page->id != 1) || $settings->theme == false)
     <div class="form-group">
         <label>Page Heading (@if($settings->theme == true)
-<a href="http://www.restorationtrades.com/help/admin_pages_dark.html" target="_blank">Help</a>
+(<a href="http://www.restorationtrades.com/help/admin_pages_dark.html" target="_blank">Help</a>)
 @endif
 
 @if($settings->theme == false)
-<a href="http://www.restorationtrades.com/help/admin_pages_light.html" target="_blank">Help</a>
+(<a href="http://www.restorationtrades.com/help/admin_pages_light.html" target="_blank">Help</a>)
 @endif)</label>
         {{ Form::text('title', null, array('class' => 'form-control')) }}
 
