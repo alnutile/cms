@@ -56,7 +56,7 @@
     </div>
     @endif
 
-    @if($project->images)
+    @if($post->images)
     @if($settings->theme != true)
     <div class="help-block">
         Click on images below to enlarge.
@@ -65,10 +65,10 @@
     @endif
     <div class = "row gallery_row">
 
-        @foreach ($project->images as $image)
+        @foreach ($post->images as $image)
         @if($settings->theme == false)
         <div class = "col-lg-6 gallery_item">
-            <a class="gallery" href="/assets/img/projects/{{$image->file_name}}" alt="{{$image->file_name}}" title="{{$image->image_caption}}"><img class="col-lg-12" src="/assets/img/projects/{{$image->file_name}}" alt="{{$image->file_name}}"></a>
+            <a class="gallery" href="/assets/img/projects/{{$image->file_name}}" alt="{{$image->file_name}}" title="{{$image->image_caption}}"><img class="col-lg-12" src="/assets/img/posts/{{$image->file_name}}" alt="{{$image->file_name}}"></a>
             @else
             <div class = "col-lg-12 gallery_item_dark">
                 <img class="col-lg-12" src="/assets/img/projects/gallery/{{$image->file_name}}" alt="{{$image->file_name}}">
