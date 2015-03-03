@@ -40,7 +40,7 @@
         @endif
 
         <div class="form-group">
-            <label>Page Main Body (<a href="ttp://www.restorationtrades.com/help/admin_pages_light.html" target="_blank">Help</a>)</label>
+            <label>Page Main Body (<a href="http://www.restorationtrades.com/help/admin_pages_light.html" target="_blank">Help</a>)</label>
             {{ Form::textarea('body', null, array('rows' => 30, 'class' => 'ckeditor form-control')) }}
         </div>
         @if($errors->first('body'))
@@ -52,7 +52,7 @@
 
         @if(Auth::user()->admin == 1)
             <div class="form-group">
-                <label>Page Web Address (URL) (<a href="ttp://www.restorationtrades.com/help/admin_pages_light.html" target="_blank">Help</a>)</label>
+                <label>Page Web Address (URL) (<a href="http://www.restorationtrades.com/help/admin_pages_light.html" target="_blank">Help</a>)</label>
                 {{ Form::text('slug', null, array('class' => 'form-control')) }}
                 <div class="help-block">The url must start with / </div>
             </div>
