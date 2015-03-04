@@ -86,7 +86,7 @@ class PostsController extends \BaseController {
     public function show($id = NULL)
     {
         parent::show();
-        
+
         if(is_numeric($id)) {
             $post = Post::find($id);
             $seo = $post->seo;

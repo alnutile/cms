@@ -6,7 +6,8 @@ class Post extends BaseModel {
     public static $rules = [
         'title' => 'required',
         'image' => 'mimes:jpg,jpeg,bmp,png,gif',
-        'slug'  => 'required|unique:portfolios|regex:/^\/[A-Za-z0-9_]+$/'
+        'slug'  => 'required|unique:portfolios|regex:/^\/[A-Za-z0-9_]+$/',
+        'seo'   => 'required'
     ];
 
     // Don't forget to fill this array
