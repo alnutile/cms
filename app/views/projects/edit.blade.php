@@ -247,7 +247,7 @@
 
             @if($settings->theme == false)
             (<a href="http://www.restorationtrades.com/help/admin_projects_light.html" target="_blank">Help</a>)
-            @endif</label>t
+            @endif</label>
     @include('shared.images_angular', array('model' => 'projects'))
     <br>
     <br>
