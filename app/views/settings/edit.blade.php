@@ -14,7 +14,14 @@
     <input type="hidden" name="_token" value="{{{ Session::getToken() }}}">
     <fieldset>
         <div class="form-group">
-            <label for="email">Company Name (<a href="http://www.restorationtrades.com/help.html#company_name" target="_blank">Help</a>)</label>
+            <label for="email">Company Name
+           @if($settings->theme == true)
+            (<a href="http://www.restorationtrades.com/help/admin_settings_dark.html" target="_blank">Help</a>)
+            @endif
+
+            @if($settings->theme == false)
+            (<a href="http://www.restorationtrades.com/help/admin_settings_light.html" target="_blank">Help</a>)
+            @endif</label>
             {{ Form::text('name', null, array('class' => 'form-control', 'tabindex' => 1)) }}
             @if($errors->first('name'))
             <div class="alert alert-danger">
@@ -24,7 +31,14 @@
         </div>
 
         <div class="form-group">
-                <label for="logo">Company Logo Image Uploader (<a href="http://www.restorationtrades.com/help.html#company_logo_image_uploader" target="_blank">Help</a>)</label>
+                <label for="logo">Company Logo Image Uploader 
+                @if($settings->theme == true)
+            (<a href="http://www.restorationtrades.com/help/admin_settings_dark.html" target="_blank">Help</a>)
+            @endif
+
+            @if($settings->theme == false)
+            (<a href="http://www.restorationtrades.com/help/admin_settings_light.html" target="_blank">Help</a>)
+            @endif</label>
                 {{ Form::file('logo', null, array('class' => 'form-control', 'tabindex' => 2)) }}
                 @if($errors->first('logo'))
                 <div class="alert alert-danger">
@@ -57,7 +71,14 @@
         @endif
         
         <div class="form-group">
-                <label for="email">Facebook (<a href="http://www.restorationtrades.com/help.html#social_media_links" target="_blank">Help</a>)</label>
+                <label for="email">Facebook
+                @if($settings->theme == true)
+            (<a href="http://www.restorationtrades.com/help/admin_settings_dark.html" target="_blank">Help</a>)
+            @endif
+
+            @if($settings->theme == false)
+            (<a href="http://www.restorationtrades.com/help/admin_settings_light.html" target="_blank">Help</a>)
+            @endif</label>
                 {{ Form::text('facebook', null, array('class' => 'form-control', 'tabindex' => 6)) }}
                 @if($errors->first('facebook'))
                 <div class="alert alert-danger">
@@ -67,7 +88,14 @@
         </div>
 
         <div class="form-group">
-                <label for="email">Linkedin (<a href="http://www.restorationtrades.com/help.html#social_media_links" target="_blank">Help</a>)</label>
+                <label for="email">Linkedin
+                @if($settings->theme == true)
+            (<a href="http://www.restorationtrades.com/help/admin_settings_dark.html" target="_blank">Help</a>)
+            @endif
+
+            @if($settings->theme == false)
+            (<a href="http://www.restorationtrades.com/help/admin_settings_light.html" target="_blank">Help</a>)
+            @endif</label>
                 {{ Form::text('linkedin', null, array('class' => 'form-control', 'tabindex' => 8)) }}
                 @if($errors->first('linkedin'))
                 <div class="alert alert-danger">
@@ -77,7 +105,14 @@
         </div>
 
         <div class="form-group">
-                <label for="email">Twitter (<a href="http://www.restorationtrades.com/help.html#social_media_links" target="_blank">Help</a>)</label>
+                <label for="email">Twitter
+                @if($settings->theme == true)
+            (<a href="http://www.restorationtrades.com/help/admin_settings_dark.html" target="_blank">Help</a>)
+            @endif
+
+            @if($settings->theme == false)
+            (<a href="http://www.restorationtrades.com/help/admin_settings_light.html" target="_blank">Help</a>)
+            @endif</label>
                 {{ Form::text('twitter', null, array('class' => 'form-control', 'tabindex' => 10)) }}
                 @if($errors->first('twitter'))
                 <div class="alert alert-danger">
@@ -87,7 +122,14 @@
         </div>
 
         <div class="form-group">
-                <label for="email">Pinterest (<a href="http://www.restorationtrades.com/help.html#social_media_links" target="_blank">Help</a>)</label>
+                <label for="email">Pinterest
+                @if($settings->theme == true)
+            (<a href="http://www.restorationtrades.com/help/admin_settings_dark.html" target="_blank">Help</a>)
+            @endif
+
+            @if($settings->theme == false)
+            (<a href="http://www.restorationtrades.com/help/admin_settings_light.html" target="_blank">Help</a>)
+            @endif</label>
                 {{ Form::text('pinterest', null, array('class' => 'form-control', 'tabindex' => 12)) }}
                 @if($errors->first('pinterest'))
                 <div class="alert alert-danger">
@@ -96,7 +138,14 @@
                 @endif
         </div>
         <div class="form-group">
-            <label for="email">Google Plus (<a href="http://www.restorationtrades.com/help.html#social_media_links" target="_blank">Help</a>)</label>
+            <label for="email">Google Plus
+            @if($settings->theme == true)
+            (<a href="http://www.restorationtrades.com/help/admin_settings_dark.html" target="_blank">Help</a>)
+            @endif
+
+            @if($settings->theme == false)
+            (<a href="http://www.restorationtrades.com/help/admin_settings_light.html" target="_blank">Help</a>)
+            @endif</label>
             {{ Form::text('gplus', null, array('class' => 'form-control', 'tabindex' => 14)) }}
             @if($errors->first('gplus'))
             <div class="alert alert-danger">
@@ -105,7 +154,14 @@
             @endif
         </div>
         <div class="form-group">
-            <label>Page Footer (<a href="http://www.restorationtrades.com/help.html#page_footer" target="_blank">Help</a>)</label>
+            <label>Page Footer
+            @if($settings->theme == true)
+            (<a href="http://www.restorationtrades.com/help/admin_settings_dark.html" target="_blank">Help</a>)
+            @endif
+
+            @if($settings->theme == false)
+            (<a href="http://www.restorationtrades.com/help/admin_settings_light.html" target="_blank">Help</a>)
+            @endif</label>
             {{ Form::textarea('footer', $setting->footer, array('rows' => 30, 'class' => 'ckeditor form-control')) }}
             <div class="help-block">Add your contact, copyright and other info needed.</div>
         </div>
@@ -118,7 +174,14 @@
         <div class="form-group">
             <div class="controls">
                 <div class="checkbox">
-                    <label class="checkbox">{{ Form::checkbox('maintenance_mode', null) }} Maintenance Mode (<a href="http://www.restorationtrades.com/help.html#maintenance_mode" target="_blank">Help</a>)</label>
+                    <label class="checkbox">{{ Form::checkbox('maintenance_mode', null) }} Maintenance Mode
+                    @if($settings->theme == true)
+            (<a href="http://www.restorationtrades.com/help/admin_settings_dark.html" target="_blank">Help</a>)
+            @endif
+
+            @if($settings->theme == false)
+            (<a href="http://www.restorationtrades.com/help/admin_settings_light.html" target="_blank">Help</a>)
+            @endif</label>
                 </div>
                 <div class="help-block">If you want the website hidden from the Visitor AND the search engines, until you are ready to publish.</div>
             </div>
