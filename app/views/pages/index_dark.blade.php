@@ -26,6 +26,10 @@
             <td><a id="page-id-6" href="/pages/6/edit">edit</a></td>
         </tr>
         <tr>
+            <td><a href="/posts">Portfolio</a></td>
+            <td><a id="page-id-7" href="/admin/projects">edit</a></td>
+        </tr>
+        <tr>
             <td><a href="/news_awards">News &amp; Awards</a></td>
             <td><a id="page-id-7" href="/pages/7/edit">edit</a></td>
         </tr>
