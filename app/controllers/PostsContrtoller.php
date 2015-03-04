@@ -24,7 +24,7 @@ class PostsController extends \BaseController {
         $this->post_uri = 'img/posts';
         $this->save_to = public_path() . "/img/posts";
         $this->tags = $tagsService;
-        $this->beforeFilter("auth", array('only' => ['index', 'create', 'delete', 'edit', 'update', 'store']));
+        $this->beforeFilter("auth", array('only' => ['create', 'delete', 'edit', 'update', 'store']));
     }
 
     public function index()
