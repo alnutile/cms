@@ -30,7 +30,7 @@ class PostsController extends \BaseController {
     public function index()
     {
         parent::show();
-        $posts = Post::all();
+        $posts = Post::where('published', '=', 1)->get();
         $tags = $this->tags->get_tags_for_type('Post');
         $seo = 'Builders Notebook';
         return View::make('posts.index', compact('posts', 'tags', 'settings', 'seo'));
@@ -86,11 +86,12 @@ class PostsController extends \BaseController {
     public function show($id = NULL)
     {
         parent::show();
+        
         if(is_numeric($id)) {
             $post = Post::find($id);
             $seo = $post->seo;
         }
-        if($id == NULL){
+        if($id == NULL || $post->published == 0){
             return View::make('404', compact('settings'));
         }
         $tags = $this->tags->get_tags_for_type('Post');
