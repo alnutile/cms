@@ -18,7 +18,7 @@ class CreateProjectsTable extends Migration {
 			$table->string('title');
 			$table->text('body');
 			$table->string('image')->nullable();
-            $table->integer('portfolio_id');
+            $table->integer('portfolio_id')->nullable();
             $table->integer('order')->default(1);
             $table->boolean('published')->default(0);
 			$table->timestamps();
