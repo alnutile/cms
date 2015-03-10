@@ -93,6 +93,13 @@ class ProjectsController extends \BaseController {
 //            $this->imagesService->cropAndSaveForPages($all['image'], $this->save_to);
         }
 
+        if(isset($data['image_caption_update'])){
+            $this->updateImagesCaption($data['image_caption_update']);
+        }
+        if(isset($data['image_order_update'])){
+            $this->updateImagesOrder($data['image_order_update']);
+        }
+
         if(isset($all['tags'])) {
             $this->tagsService->addtags($project->id, $all['tags'], 'Project');
         }
