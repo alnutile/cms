@@ -95,7 +95,7 @@
       </div>
     </div>
   </div>
-
+    @if($settings->theme != true)
   <div class="form-group">
     <label for="email">Related Portfolios</label>&nbsp;
     {{ Form::select('portfolio_id', $portfolios, array('class' => 'form-control', 'tabindex' => 1)) }}
@@ -105,7 +105,7 @@
     </div>
     @endif
   </div>
-
+@endif
   <!--sort order-->
 
   <div class="form-group">
@@ -117,7 +117,8 @@
     </div>
     @endif
   </div>
-
+    @include('shared.tags', array('model' => 'projects'))
+    <br>
 
     <div class="form-group">
       <label>Project Web Address (URL) (<a href="http://www.restorationtrades.com/help.html#project_web_address" target="_blank">Help</a>)</label>
