@@ -14,7 +14,14 @@
 
 
     <div class="form-group">
-        <label>Project Name (<a href="http://www.restorationtrades.com/help.html#project_name" target="_blank">Help</a>)</label>
+        <label>Project Name
+        @if($settings->theme == true)
+            (<a href="http://www.restorationtrades.com/help/admin_projects_dark.html" target="_blank">Help</a>)
+            @endif
+
+            @if($settings->theme == false)
+            (<a href="http://www.restorationtrades.com/help/admin_projects_light.html" target="_blank">Help</a>)
+            @endif</label>
         {{ Form::text('title', null, array('class' => 'form-control')) }}
     </div>
     @if($errors->first('title'))
@@ -24,7 +31,14 @@
     @endif
 
     <div class="form-group">
-        <label>Project Browser Description (a.k.a. Title Tag) (<a href="http://www.restorationtrades.com/help.html#project_browser_description" target="_blank">Help</a>)</label>
+        <label>Project Browser Description (a.k.a. Title Tag)
+        @if($settings->theme == true)
+            (<a href="http://www.restorationtrades.com/help/admin_projects_dark.html" target="_blank">Help</a>)
+            @endif
+
+            @if($settings->theme == false)
+            (<a href="http://www.restorationtrades.com/help/admin_projects_light.html" target="_blank">Help</a>)
+            @endif</label>
         {{ Form::text('seo', null, array('class' => 'form-control')) }}
     </div>
     @if($errors->first('seo'))
@@ -57,7 +71,14 @@
 
     @if($settings->theme == true)
     <div class="form-group">
-        <label>Project City and State (<a href="http://www.restorationtrades.com/help.html#project_city_county" target="_blank">Help</a>)</label>
+        <label>Project City and State
+        @if($settings->theme == true)
+            (<a href="http://www.restorationtrades.com/help/admin_projects_dark.html" target="_blank">Help</a>)
+            @endif
+
+            @if($settings->theme == false)
+            (<a href="http://www.restorationtrades.com/help/admin_projects_light.html" target="_blank">Help</a>)
+            @endif</label>
         {{ Form::text('city_county', null, array('class' => 'form-control')) }}
     </div>
     @if($errors->first('city_county'))
@@ -67,7 +88,14 @@
     @endif
 
     <div class="form-group">
-        <label>Project Architect (<a href="http://www.restorationtrades.com/help.html#project_state_country" target="_blank">Help</a>)</label>
+        <label>Project Architect
+        @if($settings->theme == true)
+            (<a href="http://www.restorationtrades.com/help/admin_projects_dark.html" target="_blank">Help</a>)
+            @endif
+
+            @if($settings->theme == false)
+            (<a href="http://www.restorationtrades.com/help/admin_projects_light.html" target="_blank">Help</a>)
+            @endif</label>
         {{ Form::text('architect', null, array('class' => 'form-control')) }}
     </div>
     @if($errors->first('architect'))
@@ -78,7 +106,14 @@
     @endif
 
     <div class="form-group">
-        <label>Project Main Body (<a href="http://www.restorationtrades.com/help.html#project_main_body" target="_blank">Help</a>)</label>
+        <label>Project Main Body
+        @if($settings->theme == true)
+            (<a href="http://www.restorationtrades.com/help/admin_projects_dark.html" target="_blank">Help</a>)
+            @endif
+
+            @if($settings->theme == false)
+            (<a href="http://www.restorationtrades.com/help/admin_projects_light.html" target="_blank">Help</a>)
+            @endif</label>
         {{ Form::textarea('body', null, array('rows' => 30, 'class' => 'ckeditor form-control')) }}
     </div>
     @if($errors->first('body'))
@@ -91,7 +126,14 @@
     <div class="form-group">
         <div class="controls">
             <div class="checkbox">
-                <label class="checkbox">{{ Form::checkbox('published', 1) }} Project Publish Status (<a href="http://www.restorationtrades.com/help.html#project_publish_status" target="_blank">Help</a>)</label>
+                <label class="checkbox">{{ Form::checkbox('published', 1) }} Project Publish Status
+                @if($settings->theme == true)
+            (<a href="http://www.restorationtrades.com/help/admin_projects_dark.html" target="_blank">Help</a>)
+            @endif
+
+            @if($settings->theme == false)
+            (<a href="http://www.restorationtrades.com/help/admin_projects_light.html" target="_blank">Help</a>)
+            @endif</label>
             </div>
         </div>
     </div>
@@ -124,7 +166,14 @@
     <br>
 
     <div class="form-group">
-        <label>Project Web Address (URL) (<a href="http://www.restorationtrades.com/help.html#project_web_address" target="_blank">Help</a>)</label>
+        <label>Project Web Address (URL)
+        @if($settings->theme == true)
+            (<a href="http://www.restorationtrades.com/help/admin_projects_dark.html" target="_blank">Help</a>)
+            @endif
+
+            @if($settings->theme == false)
+            (<a href="http://www.restorationtrades.com/help/admin_projects_light.html" target="_blank">Help</a>)
+            @endif</label>
         {{ Form::text('slug', null, array('class' => 'form-control')) }}
         <div class="help-block">The url must start with / </div>
     </div>
@@ -138,7 +187,14 @@
 
     <!--tile image    -->
     <div class="form-group">
-        <label for="email">Project Portfolio ‘Tile’ Image Uploader (<a href="http://www.restorationtrades.com/help.html#project_default_image_uploader" target="_blank">Help</a>)</label>
+        <label for="email">Project Portfolio ‘Tile’ Image Uploader
+        @if($settings->theme == true)
+            (<a href="http://www.restorationtrades.com/help/admin_projects_dark.html" target="_blank">Help</a>)
+            @endif
+
+            @if($settings->theme == false)
+            (<a href="http://www.restorationtrades.com/help/admin_projects_light.html" target="_blank">Help</a>)
+            @endif</label>
         {{ Form::file('tile_image', null, array('class' => 'form-control', 'tabindex' => 1)) }}
         @if($errors->first('tile_image'))
         <div class="alert alert-danger">
@@ -158,7 +214,14 @@
     <br>
     <!-- top image -->
     <div class="form-group">
-        <label for="email">Project Top Image Uploader (<a href="http://www.restorationtrades.com/help.html#project_default_image_uploader" target="_blank">Help</a>)</label>
+        <label for="email">Project Top Image Uploader
+        @if($settings->theme == true)
+            (<a href="http://www.restorationtrades.com/help/admin_projects_dark.html" target="_blank">Help</a>)
+            @endif
+
+            @if($settings->theme == false)
+            (<a href="http://www.restorationtrades.com/help/admin_projects_light.html" target="_blank">Help</a>)
+            @endif</label>
         {{ Form::file('image', null, array('class' => 'form-control', 'tabindex' => 1)) }}
         @if($errors->first('image'))
         <div class="alert alert-danger">
@@ -177,7 +240,14 @@
     <br>
     <br>
 <!-- images upload -->
-    <label>Project Subsequent Images Uploader (<a href="http://www.restorationtrades.com/help.html#project_blowup_image_uploader" target="_blank">Help</a>)</label>
+    <label>Project Subsequent Images Uploader
+    @if($settings->theme == true)
+            (<a href="http://www.restorationtrades.com/help/admin_projects_dark.html" target="_blank">Help</a>)
+            @endif
+
+            @if($settings->theme == false)
+            (<a href="http://www.restorationtrades.com/help/admin_projects_light.html" target="_blank">Help</a>)
+            @endif</label>
     @include('shared.images_angular', array('model' => 'projects'))
     <br>
     <br>
