@@ -94,10 +94,10 @@ class ProjectsController extends \BaseController {
         }
 
         if(isset($all['image_caption_update'])){
-            $this->updateImagesCaption($data['image_caption_update']);
+            $this->updateImagesCaption($all['image_caption_update']);
         }
         if(isset($all['image_order_update'])){
-            $this->updateImagesOrder($data['image_order_update']);
+            $this->updateImagesOrder($all['image_order_update']);
         }
 
         if(isset($all['tags'])) {
