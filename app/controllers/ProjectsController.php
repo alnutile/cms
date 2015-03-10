@@ -90,7 +90,7 @@ class ProjectsController extends \BaseController {
 
         if(isset($all['images'])) {
             $this->projectsService->addImages($project->id, $all['images'], 'Project');
-            $this->imagesService->cropAndSaveForPages($all['image'], $this->save_to);
+//            $this->imagesService->cropAndSaveForPages($all['image'], $this->save_to);
         }
 
         if(isset($all['tags'])) {
