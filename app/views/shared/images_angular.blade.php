@@ -24,7 +24,7 @@
                     <br>
                     <label>Add image caption (<a href="http://www.restorationtrades.com/help.html#edit_project_image">Help</a>):</label>  <input class="caption" name="images['[[$index]]'][image_caption]" type="text" placeholder="Image Caption" >
                     <div class="spacer">
-                        <label>Image Position (<a href="http://www.restorationtrades.com/help.html#edit_project_image">Help</a>):</label> <input class="order_update" name="image_order_update[ [[image.id]] ][]" type="text" placeholder="[[image.order]]" >
+                        <label>Image Position (<a href="http://www.restorationtrades.com/help.html#edit_project_image">Help</a>):</label> <input class="order_update" name="images['[[$index]]'][order]" type="text" placeholder="" >
                     </div>
                 </div>
 

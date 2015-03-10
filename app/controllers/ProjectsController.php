@@ -78,7 +78,6 @@ class ProjectsController extends \BaseController {
         $all = Input::all();
         $rules = Project::$rules;
         $validator = $this->validateSlugOnCreate($all, $rules);
-
         if ($validator->fails())
         {
             return Redirect::back()->withErrors($validator)->withInput();
@@ -91,13 +90,6 @@ class ProjectsController extends \BaseController {
         if(isset($all['images'])) {
             $this->projectsService->addImages($project->id, $all['images'], 'Project');
 //            $this->imagesService->cropAndSaveForPages($all['image'], $this->save_to);
-        }
-
-        if(isset($all['image_caption_update'])){
-            $this->updateImagesCaption($all['image_caption_update']);
-        }
-        if(isset($all['image_order_update'])){
-            $this->updateImagesOrder($all['image_order_update']);
         }
 
         if(isset($all['tags'])) {
@@ -151,6 +143,8 @@ class ProjectsController extends \BaseController {
         //1. see if the slug is the same as the original
         //2. if it is then we will not validate against right
         $all = Input::all();
+
+
         $rules = Project::$rules;
         $validator = $this->validateSlugEdit($all, $project, $rules);
         $data = $this->checkPublished($all);

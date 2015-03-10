@@ -32,17 +32,19 @@ class ImagesService {
             //@TODO add catch here
             $file_name = $image['file'];
             $caption = $image['image_caption'];
-            $this->add_image($file_name, $id, $type, $caption);
+            $order = $image['order'];
+            $this->add_image($file_name, $id, $type, $caption, $order);
         }
     }
 
-    public function add_image($image_name, $imageable_id, $imageable_type, $caption)
+    public function add_image($image_name, $imageable_id, $imageable_type, $caption, $order)
     {
         $data = [
             'file_name' => $image_name,
             'imageable_id' => $imageable_id,
             'imageable_type' => $imageable_type,
-            'image_caption' => $caption
+            'image_caption' => $caption,
+            'order' => $order
         ];
 
         $validator = \Validator::make($data, $this->getRules());
