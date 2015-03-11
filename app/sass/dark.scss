@@ -303,6 +303,7 @@ select[name='order'] option
 @media only screen and (min-width : 1200px) {
   .sidebar-nav {
     position: fixed;
+    width:218px;
     .nav-list a {
       text-align: right;
     }
