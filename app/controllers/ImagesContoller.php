@@ -90,7 +90,7 @@ class ImagesController extends BaseController{
 
         $project = DB::table('projects')->where('projects.slug', '=', '/' . $slug);
 
-        $page = DB::table('pages')->where('pages.slug', '=', '/' . $slug);
+        $page = DB::table('pages')->where('pages.slug', '%like%', '/' . $slug);
 
         $post = DB::table('posts')->where('posts.slug', '=', '/' . $slug);
 
