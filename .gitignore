@@ -18,3 +18,4 @@ composer.phar
 .DS_Store
 Thumbs.db
 .env*
+public/assets/css/customProject.css
