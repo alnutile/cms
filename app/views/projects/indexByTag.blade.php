@@ -25,7 +25,7 @@
                 </div>
                 <div class="project_img col-md-9">
                     {{$p->title}}
-                    {{$p->body}}
+                    {{str_limit($p->body, $limit = 500)}}
                 </div>
             </a>
         </div>

@@ -7,6 +7,7 @@ $dark_alpha: rgba(0, 0, 0, 0.690196);
 body {
   background-color: #282828;
   font: 17px/25px 'Whitney SSm A', Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5 {
