@@ -18,7 +18,7 @@
             <td><a id="page-id-2" href="/pages/2/edit">edit</a></td>
         </tr>
         <tr>
-            <td><a href="/our_Process">Our Process</a></td>
+            <td><a href="/our_process">Our Process</a></td>
             <td><a id="page-id-5" href="/pages/5/edit">edit</a></td>
         </tr>
         <tr>
