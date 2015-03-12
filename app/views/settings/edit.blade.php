@@ -186,7 +186,7 @@
                 <div class="help-block">If you want the website hidden from the Visitor AND the search engines, until you are ready to publish.</div>
             </div>
         </div>
-
+        @if(Auth::user() && Auth::user()->admin == 1)
         <div class="form-group">
             <div class="controls">
                 <div class="checkbox">
@@ -195,6 +195,7 @@
                 <div class="help-block">Use this turn set your site to use an alternate theme.</div>
             </div>
         </div>
+        @endif
 
         <div class="form-group">
             {{ Form::submit('Update', array('class' => 'btn btn-success')) }}
