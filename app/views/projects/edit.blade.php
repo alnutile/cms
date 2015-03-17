@@ -124,7 +124,7 @@
       </div>
     </div>
     @endif
-    <div class="help-block">This is the image we will use for the default project image</div>
+    <div class="help-block">This is the image we will use for the default project image. Landscape orientation is recommended for all project images.</div>
   </div>
 
   <br>
