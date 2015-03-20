@@ -15,6 +15,7 @@ behat.yml
 composer.phar
 .env.local.php
 .env.php
+.env
 .DS_Store
 Thumbs.db
 .env*
