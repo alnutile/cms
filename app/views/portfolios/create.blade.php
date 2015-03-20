@@ -75,6 +75,16 @@
     </div>
   </div>
 
+    <div class="form-group">
+        <label for="order">Sort Order</label>&nbsp;
+        {{ Form::selectRange('order', 1, 20, array('class' => 'form-control', 'tabindex' => 1)) }}
+        @if($errors->first('order'))
+        <div class="alert alert-danger">
+            {{  $errors->first('order'); }}
+        </div>
+        @endif
+    </div>
+
   <div class="controls">
     {{ Form::submit('Create Portfolio', array('id' => 'submit', 'class' => 'btn btn-success')) }}
     <br>
