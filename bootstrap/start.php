@@ -29,7 +29,7 @@ $env = $app->detectEnvironment(function()
   if (file_exists(__DIR__ . '/../.env.php')) {
     return include(__DIR__ . '/../.env.php');
   } else {
-    return 'local';
+    return 'production';
   }
 });
 
