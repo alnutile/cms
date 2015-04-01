@@ -87,9 +87,10 @@ class SettingsController extends \BaseController {
     public function update($id)
     {
         $data = Input::all();
+
         $setting = Setting::findOrFail($id);
 
-        if($data['theme'] == false)
+        if($setting->theme == false)
         {
             $validator = Validator::make($data, ['color' => 'required']);
             if ($validator->fails())
@@ -117,7 +118,7 @@ class SettingsController extends \BaseController {
         } else {
             $data['logo'] = $setting->logo;
         }
-        if($data['theme'] == false)
+        if($setting->theme == false)
         {
             $setting->color             = $data['color'];
         }
@@ -132,7 +133,6 @@ class SettingsController extends \BaseController {
         $setting->pinterest         = (isset($data['pinterest'])) ? $data['pinterest'] : '';
         $setting->gplus             = (isset($data['gplus'])) ? $data['gplus'] : '';
         $setting->footer            = (isset($data['footer'])) ? $data['footer'] : '';
-
 
         $setting->save();
 
