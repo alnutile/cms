@@ -27,6 +27,10 @@
     {{ HTML::style('/bower_components/ng-tags-input/ng-tags-input.bootstrap.min.css') }}
     {{ HTML::style('/bower_components/ng-tags-input/ng-tags-input.min.css') }}
     {{ HTML::style('/bower_components/jquery-colorbox/example4/colorbox.css') }}
+
+    @if($settings->theme == false)
+    {{ HTML::style('assets/css/colorfrog.css') }}
+    @endif
     @if($settings->theme == true)
     {{ HTML::style('assets/css/dark.css') }}
     {{ HTML::style('/bower_components/flexslider/flexslider.css') }}

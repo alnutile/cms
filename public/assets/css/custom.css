@@ -1,6 +1,8 @@
+/* line 2, /Users/andrewcavanagh/zigbop/cms/app/sass/custom.scss */
 .row.gallery_row {
   margin-top: 30px;
   margin-bottom: 20px; }
+  /* line 6, /Users/andrewcavanagh/zigbop/cms/app/sass/custom.scss */
   .row.gallery_row .gallery_item {
     background-color: #eee;
     border: 1px solid #6a6a6a;
@@ -9,10 +11,12 @@
     width: 49%;
     display: inline-block;
     float: left; }
+    /* line 17, /Users/andrewcavanagh/zigbop/cms/app/sass/custom.scss */
     .row.gallery_row .gallery_item a {
       display: block;
       position: relative;
       overflow: hidden; }
+    /* line 22, /Users/andrewcavanagh/zigbop/cms/app/sass/custom.scss */
     .row.gallery_row .gallery_item img {
       max-height: 180px;
       max-width: 398px;
@@ -20,6 +24,7 @@
       margin: 0 auto;
       display: block;
       float: none; }
+    /* line 30, /Users/andrewcavanagh/zigbop/cms/app/sass/custom.scss */
     .row.gallery_row .gallery_item .caption {
       padding: 0px 15px;
       display: block;
@@ -28,9 +33,11 @@
       overflow: hidden;
       height: 40px; }
 
+/* line 42, /Users/andrewcavanagh/zigbop/cms/app/sass/custom.scss */
 #main_image img {
   width: 100%; }
 
+/* line 50, /Users/andrewcavanagh/zigbop/cms/app/sass/custom.scss */
 #cboxTitle {
   position: absolute;
   font-weight: bold;
@@ -41,28 +48,33 @@
   text-align: left;
   width: 100%;
   padding: 5px;
-  font-size: 0.9em;
+  font-size: .9em;
   margin-left: -5px;
   margin-bottom: 23px; }
 
+/* line 70, /Users/andrewcavanagh/zigbop/cms/app/sass/custom.scss */
 ul.edit_images {
   padding-left: 0; }
+  /* line 72, /Users/andrewcavanagh/zigbop/cms/app/sass/custom.scss */
   ul.edit_images li {
     margin-bottom: 20px;
     padding-bottom: 20px;
     border-bottom: 1px dotted #eee;
     list-style: none; }
+    /* line 77, /Users/andrewcavanagh/zigbop/cms/app/sass/custom.scss */
     ul.edit_images li:last-child {
       border-bottom: none; }
+    /* line 80, /Users/andrewcavanagh/zigbop/cms/app/sass/custom.scss */
     ul.edit_images li input.caption_update {
       width: 84%; }
+    /* line 83, /Users/andrewcavanagh/zigbop/cms/app/sass/custom.scss */
     ul.edit_images li input.order_update {
       max-width: 50px;
       width: auto; }
+    /* line 87, /Users/andrewcavanagh/zigbop/cms/app/sass/custom.scss */
     ul.edit_images li .spacer {
       margin-bottom: 10px;
       margin-top: 10px; }
+    /* line 91, /Users/andrewcavanagh/zigbop/cms/app/sass/custom.scss */
     ul.edit_images li .img-thumbnail {
       max-width: 125px; }
-
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiIiwic291cmNlcyI6WyIuLi9jbXMvYXBwL3Nhc3MvY3VzdG9tLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsSUFBSTtFQUVGLFlBQVk7RUFDWixlQUFlO0VBQWpCLElBQUksYUFBYTtJQUdiLGtCQUFrQjtJQUNsQixRQUFRO0lBQ1IsYUFBYTtJQUNiLFlBQVk7SUFDWixPQUFNO0lBQ04sU0FBUztJQUNULE9BQU87SUFBWCxJQUFJLGFBQWEsY0FBYztNQUt6QixTQUFTO01BQ1QsVUFBVTtNQUNWLFVBQVU7SUFDaEIsSUFBSSxhQUFhLGNBQWM7TUFFekIsWUFBWTtNQUNaLFdBQVc7TUFDWCxPQUFPO01BQ1AsUUFBUTtNQUNSLFNBQVM7TUFDVCxPQUFPO0lBQ2IsSUFBSSxhQUFhLGNBQWM7TUFFekIsU0FBUztNQUNULFNBQVM7TUFDVCxPQUFPO01BQ1AsWUFBWTtNQUNaLFVBQVU7TUFDVixRQUFROztBQUtkLFlBQVk7RUFFUixPQUFPOztBQU1YO0VBRUUsVUFBUztFQUNULGFBQVk7RUFDWixPQUFNO0VBQ04sUUFBTztFQUNQLE1BQUs7RUFDTCxPQUFPO0VBRVAsWUFBVztFQUNYLE9BQU07RUFDTixTQUFTO0VBQ1QsV0FBVztFQUNYLGFBQWE7RUFFYixlQUFlOztBQUtqQixFQUFFO0VBRUEsY0FBYztFQUFoQixFQUFFLGFBQWE7SUFFWCxlQUFlO0lBQ2YsZ0JBQWdCO0lBQ2hCLGVBQWU7SUFDZixZQUFZO0lBQWhCLEVBQUUsYUFBYSxFQUFFO01BRVgsZUFBZTtJQUNyQixFQUFFLGFBQWEsR0FBRyxLQUFLO01BRWpCLE9BQU87SUFDYixFQUFFLGFBQWEsR0FBRyxLQUFLO01BRWpCLFdBQVc7TUFDWCxPQUFPO0lBQ2IsRUFBRSxhQUFhLEdBQUc7TUFFWixlQUFlO01BQ2YsWUFBWTtJQUNsQixFQUFFLGFBQWEsR0FBRztNQUVaLFdBQVciLCJzb3VyY2VzQ29udGVudCI6WyIvLyBwcm9qZWN0cyBzaG93XG4ucm93LmdhbGxlcnlfcm93IHtcbiAgbWFyZ2luLXRvcDogMzBweDtcbiAgbWFyZ2luLWJvdHRvbTogMjBweDtcblxuICAuZ2FsbGVyeV9pdGVtIHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZWVlO1xuICAgIGJvcmRlcjogMXB4IHNvbGlkICM2YTZhNmE7XG4gICAgcGFkZGluZy10b3A6IDEwcHg7XG4gICAgbWluLWhlaWdodDogMjYwcHg7XG4gICAgd2lkdGg6NDklO1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgICBmbG9hdDogbGVmdDtcbi8vICAgICY6bGFzdC1jaGlsZCB7XG4vLyAgICAgIG1hcmdpbi1yaWdodDogMHB4O1xuLy8gICAgfVxuICAgIGEge1xuICAgICAgZGlzcGxheTogYmxvY2s7XG4gICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICBvdmVyZmxvdzogaGlkZGVuO1xuICAgIH1cbiAgICBpbWcge1xuICAgICAgbWF4LWhlaWdodDogMTgwcHg7XG4gICAgICBtYXgtd2lkdGg6IDM5OHB4O1xuICAgICAgd2lkdGg6IGF1dG87XG4gICAgICBtYXJnaW46IDAgYXV0bztcbiAgICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgICAgZmxvYXQ6IG5vbmU7XG4gICAgfVxuICAgIC5jYXB0aW9uIHtcbiAgICAgIHBhZGRpbmc6IDBweCAxNXB4O1xuICAgICAgZGlzcGxheTogYmxvY2s7XG4gICAgICBjbGVhcjogYm90aDtcbiAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICAgIG92ZXJmbG93OiBoaWRkZW47XG4gICAgICBoZWlnaHQ6IDQwcHhcbiAgICB9XG4gIH1cbn1cblxuI21haW5faW1hZ2Uge1xuICBpbWd7XG4gICAgd2lkdGg6IDEwMCU7XG5cbiAgfVxufVxuXG5cbi8vI2Nib3hcbiNjYm94VGl0bGV7XG4gIHBvc2l0aW9uOmFic29sdXRlO1xuICBmb250LXdlaWdodDpib2xkO1xuICBjb2xvcjojN0M3QzdDO1xuICBtYXJnaW46MDtcbiAgbGVmdDowO1xuICByaWdodDogMDtcbiAgLy9ib3R0b206LTI1cHg7XG4gIHRleHQtYWxpZ246bGVmdDtcbiAgd2lkdGg6MTAwJTtcbiAgcGFkZGluZzogNXB4O1xuICBmb250LXNpemU6IC45ZW07XG4gIG1hcmdpbi1sZWZ0OiAtNXB4O1xuICAvL2JhY2tncm91bmQ6IG5vbmUgcmVwZWF0IHNjcm9sbCAwIDAgcmdiYSgwLCAwLCAwLCAwLjc1KTtcbiAgbWFyZ2luLWJvdHRvbTogMjNweDtcbn1cblxuXG5cbi8vZWRpdFxudWwuZWRpdF9pbWFnZXMge1xuICBwYWRkaW5nLWxlZnQ6IDA7XG4gIGxpIHtcbiAgICBtYXJnaW4tYm90dG9tOiAyMHB4O1xuICAgIHBhZGRpbmctYm90dG9tOiAyMHB4O1xuICAgIGJvcmRlci1ib3R0b206IDFweCBkb3R0ZWQgI2VlZTtcbiAgICBsaXN0LXN0eWxlOiBub25lO1xuICAgICY6bGFzdC1jaGlsZCB7XG4gICAgICBib3JkZXItYm90dG9tOiBub25lO1xuICAgIH1cbiAgICBpbnB1dC5jYXB0aW9uX3VwZGF0ZSB7XG4gICAgICB3aWR0aDogODQlO1xuICAgIH1cbiAgICBpbnB1dC5vcmRlcl91cGRhdGUge1xuICAgICAgbWF4LXdpZHRoOiA1MHB4O1xuICAgICAgd2lkdGg6IGF1dG87XG4gICAgfVxuICAgIC5zcGFjZXIge1xuICAgICAgbWFyZ2luLWJvdHRvbTogMTBweDtcbiAgICAgIG1hcmdpbi10b3A6IDEwcHg7XG4gICAgfVxuICAgIC5pbWctdGh1bWJuYWlsIHtcbiAgICAgIG1heC13aWR0aDogMTI1cHg7XG4gICAgfVxuICB9XG59Il19*/

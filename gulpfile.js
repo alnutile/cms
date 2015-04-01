@@ -1,6 +1,4 @@
 var gulp = require('gulp');
-var imagemin = require('gulp-imagemin');
-var pngcrush = require('imagemin-pngcrush');
 var minifycss = require('gulp-minify-css');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
