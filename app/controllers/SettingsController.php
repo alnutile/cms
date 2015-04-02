@@ -133,6 +133,7 @@ class SettingsController extends \BaseController {
         $setting->pinterest         = (isset($data['pinterest'])) ? $data['pinterest'] : '';
         $setting->gplus             = (isset($data['gplus'])) ? $data['gplus'] : '';
         $setting->footer            = (isset($data['footer'])) ? $data['footer'] : '';
+        $setting->google_analytics            = (isset($data['google_analytics'])) ? $data['google_analytics'] : '';
 
         $setting->save();
 

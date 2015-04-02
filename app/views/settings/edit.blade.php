@@ -195,6 +195,19 @@
                 <div class="help-block">Use this turn set your site to use an alternate theme.</div>
             </div>
         </div>
+
+        <div class="form-group">
+            <label for="google_analytics">Google Analytics Code
+            {{ Form::text('google_analytics', null, array('class' => 'form-control', 'tabindex' => 1)) }}
+            @if($errors->first('google_analytics'))
+                <div class="help-block">Enter your google analytics UA number here in the format UA-XXXXX-X</div>
+            <div class="alert alert-danger">
+                {{  $errors->first('google_analytics'); }}
+            </div>
+            @endif
+        </div>
+
+
         @endif
 
         <div class="form-group">
