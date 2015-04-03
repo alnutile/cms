@@ -26,7 +26,7 @@ class PagesController extends \BaseController {
         parent::show();
         $pages = $this->pages->all();
         $banner = $this->banner;
-        if($this->settings != false)
+        if($this->settings->theme == true)
             {
                 return $this->respond($pages, 'pages.index_dark',  compact('pages', 'banner'));
 
