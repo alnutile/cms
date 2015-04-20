@@ -14,7 +14,7 @@ class AddCaptionToImageTable extends Migration {
 	{
     Schema::table('images', function(Blueprint $table)
     {
-      $table->string('image_caption', 120)->nullable();
+      $table->text('image_caption')->nullable();
     });
 	}
 
