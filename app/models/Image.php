@@ -13,6 +13,7 @@ class Image extends \Eloquent {
     'file_name' => 'required',
     'imageable_id' => 'required',
     'imageable_type'  => 'required',
+    'image_caption' =>   'max:400'
   ];
 
   public function imageable()

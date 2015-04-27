@@ -31,7 +31,7 @@
       clear: both;
       text-align: center;
       overflow: hidden;
-      height: 40px; }
+      max-height: 200px; }
 
 /* line 42, /Users/andrewcavanagh/zigbop/cms/app/sass/custom.scss */
 #main_image img {

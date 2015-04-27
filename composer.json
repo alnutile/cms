@@ -9,7 +9,8 @@
         "doctrine/dbal": "~2.3",
         "flowjs/flow-php-server": "0.2.1",
         "laracasts/utilities": "~1.0",
-		"intervention/image": "~2.0"
+		"intervention/image": "~2.0",
+		"vlucas/phpdotenv": "~1.1"
     },
 	"autoload": {
         "psr-0": {

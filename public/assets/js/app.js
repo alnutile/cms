@@ -1,7 +1,57 @@
 $(document).ready(function(){
+
+
+    //equal heights
+
+    /* Thanks to CSS Tricks for pointing out this bit of jQuery
+     http://css-tricks.com/equal-height-blocks-in-rows/
+     It's been modified into a function called at page load and then each time the page is resized. One large modification was to remove the set height before each new calculation. */
+
+    equalheight = function(container){
+
+        var currentTallest = 0,
+            currentRowStart = 0,
+            rowDivs = new Array(),
+            $el,
+            topPosition = 0;
+        $(container).each(function() {
+
+            $el = $(this);
+            $($el).height('auto')
+            topPostion = $el.position().top;
+
+            if (currentRowStart != topPostion) {
+                for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+                    rowDivs[currentDiv].height(currentTallest);
+                }
+                rowDivs.length = 0; // empty the array
+                currentRowStart = topPostion;
+                currentTallest = $el.height();
+                console.log(currentTallest);
+                rowDivs.push($el);
+            } else {
+                rowDivs.push($el);
+                currentTallest = (currentTallest < $el.height()) ? ($el.height()) : (currentTallest);
+            }
+            for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+                rowDivs[currentDiv].height(currentTallest);
+            }
+        });
+    }
+
+    $(window).load(function() {
+        equalheight('.row.gallery_row .gallery_item .caption');
+    });
+
+
+    $(window).resize(function(){
+        equalheight('.row.gallery_row .gallery_item .caption');
+    });
+
+
     if($('body .ckeditor').length) {
         CKEDITOR.replace( '.ckeditor');
-    };
+    }
 
     $('article').readmore({
         speed: 75,
@@ -9,7 +59,7 @@ $(document).ready(function(){
         collapsedHeight: 208
     });
 
-    if(cms.home === 'home'){
+    if(typeof(cms) !== 'undefined' && cms.home === 'home'){
         $.backstretch(cms.slides, {
             fade: 750,
             duration: 2000
@@ -77,4 +127,6 @@ $(document).ready(function(){
 
         }
     );
+
+
 });

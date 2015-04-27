@@ -1,7 +1,16 @@
 <?php
 use CMS\Facades\MenuFacade as Menu;
 
-$settings =  Setting::first();
+try {
+    $settings = Setting::first();
+    if ($settings->theme == TRUE) {
+        Route::get('portfolio', 'PortfoliosController@projectsIndex');
+    }
+}
+catch (\Exception $e) {
+    throw new \Exception(sprintf('Setting don\'t exist yet: %s', $e->getMessage()));
+}
+
 
 Route::resource('pages', 'PagesController');
 Route::resource('users', 'UsersController');
@@ -10,9 +19,7 @@ Route::resource('settings', 'SettingsController');
 Route::resource('portfolios', 'PortfoliosController');
 Route::resource('projects', 'ProjectsController');
 Route::resource('posts', 'PostsController');
-if($settings->theme == true){
-    Route::get('portfolio', 'PortfoliosController@projectsIndex');
-}
+
 
 Route::get('menus', 'MenusController@index');
 Route::post('menus', 'MenusController@store');
@@ -30,41 +37,39 @@ Route::get('/logout', array('before' => 'auth', 'uses' => 'UsersController@getLo
 
 Route::get('/admin/portfolios', array(
     'before' => 'auth',
-    'as' => 'admin_portfolio',
-    'uses' => 'PortfoliosController@adminIndex'
+    'as'     => 'admin_portfolio',
+    'uses'   => 'PortfoliosController@adminIndex'
 ));
 
 Route::get('/admin/projects', array(
     'before' => 'auth',
-    'as' => 'admin_projects',
-    'uses' => 'ProjectsController@adminIndex'
+    'as'     => 'admin_projects',
+    'uses'   => 'ProjectsController@adminIndex'
 ));
-
-
 
 
 Route::get('/admin', array('before' => 'auth', 'uses' => 'AdminController@dash'));
 
 
-Route::get('/{id?}', function($id = null){
+Route::get('/{id?}', function ($id = NULL) {
     return Menu::show($id);
 });
 
-Route::get('/auth/token', function(){
+Route::get('/auth/token', function () {
     return csrf_token();
 });
 
 Route::get('/api/v1/getImageFromImageableItem/{imageable_type}/{imageable_id}', 'ImagesController@getImageFromImageableItem');
 Route::get('/api/v1/getImageForSlug/{slug}', 'ImagesController@getImageForSlug');
 
-Route::group(array('before' => 'auth'), function() {
+Route::group(array('before' => 'auth'), function () {
 
 
     /**
      * Get images for project x
      *
      */
-    Route::post('/api/v1/getImageFromImageableItem/{imageable_type}/{imageable_id}', function() {
+    Route::post('/api/v1/getImageFromImageableItem/{imageable_type}/{imageable_id}', function () {
         return Image::create(Input::all());
     });
 
@@ -84,23 +89,27 @@ Route::group(array('before' => 'auth'), function() {
     Route::get('images/upload/{model}', 'ImagesController@uploadImage');
     Route::post('images/upload/{model}', 'ImagesController@uploadImage');
 
-    Route::post('/api/v1/ckeditor/images', function(){
+    Route::post('/api/v1/ckeditor/images', function () {
         $files = new FilesController();
+
         return $files->postImage();
     });
 
-    Route::post('/api/v1/ckeditor/files', function(){
+    Route::post('/api/v1/ckeditor/files', function () {
         $files = new FilesController();
+
         return $files->postFile();
     });
 
-    Route::get('/api/v1/ckeditor/files', function(){
+    Route::get('/api/v1/ckeditor/files', function () {
         $files = new FilesController();
-        return  $files->getFiles();
+
+        return $files->getFiles();
     });
 
-    Route::get('/api/v1/ckeditor/gallery', function(){
+    Route::get('/api/v1/ckeditor/gallery', function () {
         $images = new FilesController();
+
         return $images->getImageswysiwyg();
     });
 
