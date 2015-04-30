@@ -95,6 +95,7 @@ Use the corresponding body tag for your chosen theme
 <!-- //end container -->
 
 <!-- start header -->
+
 @if(isset($banner) && $banner == TRUE)
 @include('shared.header')
 @endif

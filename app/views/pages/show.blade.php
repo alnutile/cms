@@ -20,7 +20,9 @@
 <div class="col-md-9 col-xs-7 column">
     @if($page->id != 1 || $settings->theme == false)
 
-    @if($page->images && $settings->theme == true)
+
+
+    @if(isset($page->images) && $settings->theme == true)
     @include('shared.slideshow_angular', array('model' => 'pages'))
     <br>
     @endif

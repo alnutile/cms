@@ -2,7 +2,6 @@
 <?php
 $banners_active = Banner::slideShow();
 ?>
-
 @if($settings->theme == false)
 
 @if(count($banners_active) == 0)
@@ -28,7 +27,8 @@ $banners_active = Banner::slideShow();
 
     <div class="carousel-inner">
         @foreach($banners_active as $key => $banner_active)
-        @if($key && $key == 0)
+
+        @if($key == 0)
         <div class="item active"> <!--active on div needed on the one-->
             <img alt="" src="/img/banners/{{$banner_active->banner_name}}"/>
         </div>
