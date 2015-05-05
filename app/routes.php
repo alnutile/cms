@@ -9,8 +9,8 @@ try {
 }
 catch (\Exception $e) {
     throw new \Exception(sprintf('Setting don\'t exist yet: %s', $e->getMessage()));
-}
 
+}
 
 Route::resource('pages', 'PagesController');
 Route::resource('users', 'UsersController');

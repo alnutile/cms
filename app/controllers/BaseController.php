@@ -169,6 +169,7 @@ class BaseController extends Controller {
         $slideshow = false;
         $slide_ids = [2,5];
         $id == in_array($id, $slide_ids) ? $slideshow = true : $tags = false;
+        if($this->settings->theme == false){$slideshow = false;}
         \View::share('slideshow', $slideshow);
     }
 
