@@ -184,7 +184,9 @@
 
     <br>
     <br>
+
 <!--tile image-->
+        @if($settings->theme == true)
     <div class="form-group">
         <label for="email">Project Portfolio ‘Tile’ Image Uploader
         @if($settings->theme == true)
@@ -201,7 +203,9 @@
         </div>
         @endif
     </div>
+    @endif
 <!-- end tile image -->
+
     <br>
     <br>
 <!--    top image-->

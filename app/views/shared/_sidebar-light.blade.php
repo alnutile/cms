@@ -8,7 +8,7 @@
 
         <?php
         if(Request::server('PATH_INFO') == '/portfolios') {
-            $icon = '<i class="glyphicon glyphicon-th"></i>';
+            $icon = '<i class="glyphicon glyphicon-th">&nbsp;</i>';
         } else {
             $icon = '';
         }
@@ -31,7 +31,7 @@
         <div class="panel-heading" role="tab" id="headingOne">
             <a href="#">
                 <h4 class="panel-title nav-header" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    <big><a href="#">{{$icon}}&nbsp;Portfolios</a></big>
+                    <big>{{$icon}}<a href="#">Portfolios</a></big>
                 </h4>
             </a>
         </div>
