@@ -2,7 +2,7 @@
 
 @section('content')
 <!-- pages.show -->
-<div class="col-md-3 col-xs-5">
+<div class="col-md-3">
     <div class = "sidebar-nav">
         @include('shared.sidebar', array('model' => 'page'))
 

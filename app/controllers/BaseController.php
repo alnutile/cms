@@ -176,7 +176,7 @@ class BaseController extends Controller {
         foreach ($image_captions as $key => $image_caption) {
             //@TODO add catch here
             $image_id = intval($key);
-            $caption = null;
+            $caption  = NULL;
             if (isset($image_caption)) {
                 $caption = $image_caption[0];
             }
