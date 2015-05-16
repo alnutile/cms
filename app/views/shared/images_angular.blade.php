@@ -1,7 +1,7 @@
 <div>
     <div ng-controller="UploadImagesController">
         <ul ng-if="images.length > 0" class="edit_images sortable">
-            <li ng-repeat="image in images | orderBy: natural('image.order')">
+            <li ng-repeat="image in images">
                 <img class ="img-thumbnail" src="/assets/img/{{$model}}/[[image.file_name]]">&nbsp;[[image.file_name]]&nbsp;<i class="glyphicon glyphicon-trash" ng-click="deleteImage(image.id)">&nbsp;</i>
                 <br>
                 @if($model != 'pages')
