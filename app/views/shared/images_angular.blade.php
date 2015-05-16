@@ -16,6 +16,9 @@
             <div flow-init="{target: '/images/upload/{{$model}}', singleFile: false, testChunks:false}"
                  flow-files-submitted="$flow.upload()"
                  flow-file-success="$file.msg = $message">
+
+
+
                 <div ng-repeat="file in $flow.files | orderBy: 'file.position'"
                      ng-init="listing.image = file.name"
                      class="alert alert-info">
