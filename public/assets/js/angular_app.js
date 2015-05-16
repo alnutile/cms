@@ -7,7 +7,9 @@ var app = angular.module('app', [
         'uploadControllers',
         'ngTagsInput',
         'tagsCtrl',
-        'angular-flexslider'
+        'angular-flexslider',
+        'naturalSort'
+
     ]).
     config(function($interpolateProvider){
         $interpolateProvider.startSymbol('[[').endSymbol(']]'); //{{ }}

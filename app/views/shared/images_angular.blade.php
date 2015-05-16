@@ -19,7 +19,7 @@
 
 
 
-                <div ng-repeat="file in $flow.files | orderBy: 'file.position'"
+                <div ng-repeat="file in $flow.files | orderBy: natural('file.position')"
                      ng-init="listing.image = file.name"
                      class="alert alert-info">
                     New Image Uploaded [[file.name]]
