@@ -1,7 +1,7 @@
 <div>
     <div ng-controller="UploadImagesController">
         <ul ng-if="images.length > 0" class="edit_images sortable">
-            <li ng-repeat="image in images | orderBy:'order'">
+            <li ng-repeat="image in images | orderBy: natural('image.order')">
                 <img class ="img-thumbnail" src="/assets/img/{{$model}}/[[image.file_name]]">&nbsp;[[image.file_name]]&nbsp;<i class="glyphicon glyphicon-trash" ng-click="deleteImage(image.id)">&nbsp;</i>
                 <br>
                 @if($model != 'pages')
@@ -19,7 +19,7 @@
 
 
 
-                <div ng-repeat="file in $flow.files | orderBy: natural('file.position')"
+                <div ng-repeat="file in $flow.files"
                      ng-init="listing.image = file.name"
                      class="alert alert-info">
                     New Image Uploaded [[file.name]]
