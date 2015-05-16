@@ -33,7 +33,7 @@ uploadControllers.controller('UploadImagesController', ['$scope', 'Restangular',
                 Restangular.one('api/v1/getImageFromImageableItem', $scope.model).one($scope.pageId).get().then(function(response){
                         $scope.images = response.data;
                         angular.forEach($scope.images, function(v,i){
-                            v.position = parseFloat(v.position);
+                            v.order = parseFloat(v.order);
                         })
                         console.log($scope.images);
                     }
