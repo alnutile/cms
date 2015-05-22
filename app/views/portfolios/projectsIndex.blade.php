@@ -19,7 +19,7 @@
             <a href="{{$p->slug}}">
 
                 <div class="proj_img">
-                    @if ($p->image)
+                    @if ($p->tile_image)
                     <img  src="/img/projects/{{$p->tile_image}}" alt="{{$p->title}}" class="img-responsive">
                     @else
                     <img  src="/img/default/photo_default_0.png" alt="{{$p->title}}" class="img-responsive">
