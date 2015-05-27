@@ -53,7 +53,7 @@ tagsCtrl.controller('tagsCtrl', ['$scope', 'Restangular', '$window',
 
         $scope.getCurrentTags = function()
         {
-            if($scope.pageId !=false){
+            if($scope.pageId !=false && $scope.pageId != 'create'){
                 Restangular.one('api/v1/tags', $scope.model).one($scope.pageId).get().then(function(response){
                         $scope.currentTags = response.data;
 

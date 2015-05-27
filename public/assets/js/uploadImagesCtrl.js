@@ -55,8 +55,9 @@ uploadControllers.controller('UploadImagesController', ['$scope', 'Restangular',
                 );
             }
         }
-        if(isNaN($scope.pageId))
+        if(isNaN($scope.pageId && $scope.pageId != 'create'))
         {
+            console.log($scope);
         $scope.getImagesForSlug();
         }
 
