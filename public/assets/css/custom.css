@@ -66,15 +66,16 @@ ul.edit_images {
       border-bottom: none; }
     /* line 80, /Users/andrewcavanagh/zigbop/cms/app/sass/custom.scss */
     ul.edit_images li input.caption_update {
-      width: 84%; }
-    /* line 83, /Users/andrewcavanagh/zigbop/cms/app/sass/custom.scss */
+      width: 84%;
+      color: #555; }
+    /* line 84, /Users/andrewcavanagh/zigbop/cms/app/sass/custom.scss */
     ul.edit_images li input.order_update {
       max-width: 50px;
       width: auto; }
-    /* line 87, /Users/andrewcavanagh/zigbop/cms/app/sass/custom.scss */
+    /* line 88, /Users/andrewcavanagh/zigbop/cms/app/sass/custom.scss */
     ul.edit_images li .spacer {
       margin-bottom: 10px;
       margin-top: 10px; }
-    /* line 91, /Users/andrewcavanagh/zigbop/cms/app/sass/custom.scss */
+    /* line 92, /Users/andrewcavanagh/zigbop/cms/app/sass/custom.scss */
     ul.edit_images li .img-thumbnail {
       max-width: 125px; }

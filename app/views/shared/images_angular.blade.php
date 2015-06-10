@@ -8,6 +8,7 @@
                 <label>Edit image caption (<a href="http://www.restorationtrades.com/help/admin_projects_dark.html"target="_blank">Help</a>):</label>
                     <input class="caption_update" name="image_caption_update[ [[image.id]] ][]" type="text" value="[[image.image_caption]]" >
                 <div class="spacer">
+
                     <label>Image Position (<a href="http://www.restorationtrades.com/help/admin_projects_dark.html"target="_blank">Help</a>):</label> <input class="order_update" name="image_order_update[ [[image.id]] ][]" type="text" placeholder="[[image.order]]" >
                 </div>
                 @endif
