@@ -2,8 +2,9 @@
 <?php if(empty($project->image)) { $image = 'project3.jpg'; } else { $image = $project->image; } ?>
 
 <div class="media row">
+    <a href="{{$project->slug}}" alt="{{$project->title}}">
   <img class="media-object col-lg-4" src="/img/projects/{{$image}}" alt="{{{$project->title}}}">
-
+    </a>
   <br>
 
   <div class="media-body">
