@@ -14,6 +14,10 @@
         </thead>
         <tbody>
         <tr>
+            <td><a href="/home">Home</a></td>
+            <td><a id="page-id-2" href="/pages/1/edit">edit</a></td>
+        </tr>
+        <tr>
             <td><a href="/about">Our Company</a></td>
             <td><a id="page-id-2" href="/pages/2/edit">edit</a></td>
         </tr>

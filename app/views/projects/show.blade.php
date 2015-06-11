@@ -56,12 +56,11 @@
     </div>
     @endif
 
-    @if($project->images)
+    @if(isset($project->images[0]))
     @if($settings->theme != true)
     <div class="help-block">
         Click on images below to enlarge.
     </div>
-    @endif
     @endif
     <div class = "row gallery_row">
 
@@ -79,6 +78,8 @@
             @endforeach
         </div>
     </div>
+        @endif
+
 
 
 </div>
