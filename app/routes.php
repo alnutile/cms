@@ -8,8 +8,8 @@ try {
     }
 }
 catch (\Exception $e) {
-    throw new \Exception(sprintf('Setting don\'t exist yet: %s', $e->getMessage()));
-
+//   do nothing, it just means there's no settings table yet because migrations need to be run
+//
 }
 
 Route::resource('pages', 'PagesController');
