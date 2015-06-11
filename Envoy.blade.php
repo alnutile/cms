@@ -15,7 +15,7 @@ date
 cd /home/forge/cms.zigbop.io
 git reset --hard HEAD
 git pull origin blog
-composer config -g github-oauth.github.com 3723ffba870537486bac02195feecaa85b6e7c3d
+composer config -g github-oauth.github.com
 composer install
 composer dump-autoload
 php artisan dump-autoload
