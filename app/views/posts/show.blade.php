@@ -25,12 +25,11 @@
     </div>
     <p> {{ $post->body }} </p>
 
-    @if($post->images)
+    @if(isset($post->images[0]))
     @if($settings->theme != true)
     <div class="help-block">
         Click on images below to enlarge.
     </div>
-    @endif
     @endif
     <div class = "gallery_row">
 
@@ -48,6 +47,8 @@
         </div>
         @endforeach
     </div>
+    @endif
+
 
 
 </div>
