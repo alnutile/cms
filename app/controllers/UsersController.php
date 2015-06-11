@@ -146,7 +146,7 @@ class UsersController extends BaseController {
       User::destroy($id);
       return Redirect::to('users');
     } else {
-      return Redirect::back()->withMessage("You can not delete an admin user");
+      return Redirect::back()->withMessage("You can not delete an admin user"); 
     }
   }
 }
