@@ -21,6 +21,7 @@ class CreateSettingsTable extends Migration {
 			$table->string('linkedin')->nullable();
 			$table->string('twitter')->nullable();
 			$table->string('pinterest')->nullable();
+      $table->string('houzz')->nullable();
 			$table->text('footer')->nullable();
 			$table->boolean('maintenance_mode')->default(0);
 			$table->timestamps();

@@ -35,5 +35,12 @@
             </a>
         </li>
         @endif
+        @if($settings->houzz)
+            <li>
+                <a href="{{$settings->houzz}}">
+                    <i class="fa fa-houzz"></i>
+                </a>
+            </li>
+        @endif
     </ul>
 </div>
