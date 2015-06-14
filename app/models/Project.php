@@ -1,6 +1,10 @@
 <?php
 
-class Project extends BaseModel {
+use Codesleeve\Stapler\ORM\StaplerableInterface;
+use Codesleeve\Stapler\ORM\EloquentTrait;
+
+class Project extends BaseModel implements StaplerableInterface {
+    use EloquentTrait;
 
     // Add your validation rules here
     public static $rules = [
@@ -23,8 +27,19 @@ class Project extends BaseModel {
         'seo',
         'slug',
         'state_country',
-        'city_county'
-    ];
+        'city_county',
+        'thumbs'
+   ];
+
+    public function __construct(array $attributes = array()) {
+        $this->hasAttachedFile('thumbs', [
+            'styles' => [
+                'project_top' => '850x'
+            ]
+        ]);
+
+        parent::__construct($attributes);
+    }
 
     public function portfolio()
     {
@@ -40,5 +55,7 @@ class Project extends BaseModel {
     {
         return $this->morphMany('Tag', 'tagable');
     }
+
+
 
 }
