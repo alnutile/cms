@@ -82,7 +82,7 @@ class ProjectsController extends \BaseController {
         {
             return Redirect::back()->withErrors($validator)->withInput();
         }
-        
+
         $project = Project::create($all);
 
         if(isset($all['images'])) {

@@ -1,12 +1,7 @@
 <?php
 
-use Codesleeve\Stapler\ORM\StaplerableInterface;
-use Codesleeve\Stapler\ORM\EloquentTrait;
-
-class Image extends \Eloquent implements StaplerableInterface {
-    use EloquentTrait;
-
-    protected $fillable = [
+class Image extends \Eloquent {
+  protected $fillable = [
     'file_name',
     'image_caption',
     'order',
@@ -20,18 +15,6 @@ class Image extends \Eloquent implements StaplerableInterface {
     'imageable_type'  => 'required',
     'image_caption' =>   'max:400'
   ];
-
-
-    public function __construct(array $attributes = array()) {
-        $this->hasAttachedFile('image', [
-            'styles' => [
-                'medium' => '300x300',
-                'thumb' => '100x100'
-            ]
-        ]);
-
-        parent::__construct($attributes);
-    }
 
   public function imageable()
   {
