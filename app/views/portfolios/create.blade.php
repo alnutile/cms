@@ -25,7 +25,7 @@
   @endif
 
   <div class="form-group">
-    <label>Portfolio Browser Description (a.k.a. Title Tag) (<a href="http://www.restorationtrades.com/help.html#portfolio_browser_description" target="_blank">Help</a>)</label>
+    <label>Portfolio Browser Description (a.k.a. Title Tag) (<a href="http://restorationtrades.com/help/admin_portfolios.html" target="_blank">Help</a>)</label>
     {{ Form::text('seo', null, array('class' => 'form-control')) }}
   </div>
   @if($errors->first('seo'))
@@ -35,7 +35,7 @@
   @endif
 
   <div class="form-group">
-    <label>Portfolio Heading (<a href="http://www.restorationtrades.com/help.html#portfolio_heading" target="_blank">Help</a>)</label>
+    <label>Portfolio Heading (<a href="http://restorationtrades.com/help/admin_portfolios.html" target="_blank">Help</a>)</label>
     {{ Form::text('header', null, array('class' => 'form-control')) }}
   </div>
   @if($errors->first('header'))
@@ -46,7 +46,7 @@
 
 
   <div class="form-group">
-    <label>Portfolio Main Body (<a href="http://www.restorationtrades.com/help.html#portfolio_page_description" target="_blank">Help</a>)</label>
+    <label>Portfolio Main Body (<a href="http://restorationtrades.com/help/admin_portfolios.html" target="_blank">Help</a>)</label>
     {{ Form::textarea('body', null, array('rows' => 30, 'class' => 'ckeditor form-control')) }}
   </div>
   @if($errors->first('body'))
@@ -56,7 +56,7 @@
   @endif
 
   <div class="form-group">
-    <label>Portfolio Web Address (URL) (<a href="http://www.restorationtrades.com/help.html#portfolio_web_address" target="_blank">Help</a>)</label>
+    <label>Portfolio Web Address (URL) (<a href="http://restorationtrades.com/help/admin_portfolios.html" target="_blank">Help</a>)</label>
     {{ Form::text('slug', null, array('class' => 'form-control')) }}
     <div class="help-block">The url must start with / </div>
   </div>
