@@ -14,13 +14,7 @@
 
 
   <div class="form-group">
-    <label>Portfolio Name @if($settings->theme == true)
-            (<a href="http://restorationtrades.com/help/admin_portfolios.html" target="_blank">Help</a>)
-            @endif
-
-            @if($settings->theme == false)
-            (<a href="http://restorationtrades.com/help/admin_portfolios.html" target="_blank">Help</a>)
-            @endif</label>
+    <label>Portfolio Name (<a href="http://restorationtrades.com/help/admin_portfolios.html" target="_blank">Help</a>)
 </label>
     {{ Form::text('title', null, array('class' => 'form-control')) }}
   </div>
