@@ -38,7 +38,7 @@
         @if($settings->houzz)
             <li>
                 <a href="{{$settings->houzz}}">
-                    <i class="fa fa-houzz"></i>
+                    <i class="icon-houzz"></i>
                 </a>
             </li>
         @endif

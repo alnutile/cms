@@ -1,0 +1,41 @@
+/*
+  Icon Font: houzz
+*/
+
+@font-face {
+  font-family: "houzz";
+  src: url("./houzz.eot");
+  src: url("./houzz.eot?#iefix") format("embedded-opentype"),
+       url(data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAAUcAA0AAAAAB3AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAAFAAAAABoAAAAcbVI5Kk9TLzIAAAGgAAAASgAAAGBBN15mY21hcAAAAfwAAAA+AAABQgAP9KtjdnQgAAACPAAAAAQAAAAEABEBRGdhc3AAAAT4AAAACAAAAAj//wADZ2x5ZgAAAkwAAAEgAAABULN+mxhoZWFkAAABMAAAAC8AAAA2AdfW2WhoZWEAAAFgAAAAHQAAACQDgwHHaG10eAAAAewAAAAQAAAAEAYAAHpsb2NhAAACQAAAAAoAAAAKANIAVG1heHAAAAGAAAAAHwAAACAASQCGbmFtZQAAA2wAAAFnAAACqXlYf3Nwb3N0AAAE1AAAACQAAAAyn2JNwnjaY2BkYGAA4taj8zfH89t8ZeBmYgCBC13eunBa8P8hxsmMB4BcDgawNAA/AgsgAHjaY2BkYGA88P8Qgx4TAwgwTmZgZEAFLABbowNNAAAAeNpjYGRgYGBhCGVgZgABJiBmZACJOTDogQQADB0A0AB42mNgYWJg/MLAysDA6MOYxsDA4A6lvzJIMrQwMDAxsHEywIEAgskQkOaawnDgI8NHBsYD/w8w6DEeYLADCjMiKVFgYAQANVkMMwAAAgAAEQAAAAACAAAAAgAAaXjaY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChED+R4b//yEkPzNUJQMjGwOMycDIBCSYGFABI8OwBwA8VAasAAAAEQFEAAAAKgAqACoAqAAAeNotjj1Ow1AQhHfejze2n2O/xI6FlEARSLqExFYioYSGghIJxTVdJE7AFWgRFWdwFbc0iCtAyRWoaBFgAxppZ/TtarQkyBLRAwqSxDTZgaarihW9z3eOfltVUtSRdrLBusEVO/hcVWh4ZjM7zuzQ3t5styi+SousbpN0/f2MezxRj05oQ9RdzOYDsNMoxBrLxfK0Huky7YtfyG3R2DD/383y8WhaR87naa9Rdvzn7aaljRAfLnp7HB65sWmFw0SmQckA6rqRmwSQaYJ+X/DFVdKKo8krDjquNQmUDHzAj81acSwcPOpiYwLV6mqfi412O540fK7K7Gwcob5OtWGIwOBuEEVQU5n72vf2Xy6tpz32Zf02wIYPhTJQRD9oyy7FeNqNUTtOw0AQfZsfIkIRRQ6wHaHIZu2kSplIoYIyJZITrxNLwY7sjaJcgBJxAHo67sENEIdAtHQ8OwsICQEeeebNm7czszaAFh4gsH/OcOuwQBMvDlfQEAcOV3EiLh2uoSnuHK7jWDw63CD/SqWoHTK7KU8VWKCNJ4crOMKbw1VciJbDNbTFtcN1SHHvcIP8M8bIYBDA0oeQmGFHPyIbICGT0kuqUjIhNSuaxBYxTyyJJqXCljHDggoJHwqasUOFpa0xRI8WOW30qVXImSmyhvwpMM5MYE0oZzs5yoIkTBM5TrPQrFZyG9ulnKSJnaTZwkhfadlZWrse9noR2ahgVR6pxFg2+pg1x4YzLLMrktTNN7lNic/LC8csF4kJ4w3jb7cZ8v2p677ioY8uvUfvU+9hwHbfth3Kr/lMvH7X87q+9gb/2HbKVTKWYvdDdDlClbFYDlOT5TG/ltae0lrLv3u+AyZAe1oAeNpjYGIAg/8HGCSBFCMDOmABizIxMrGX5mW6GRoYAABX5gQQAAAAAf//AAJ42mNgYGBkAIIztovOg+gLXd66MBoAR6EGIAAA),
+       url("./houzz.woff") format("woff"),
+       url("./houzz.ttf") format("truetype"),
+       url("./houzz.svg#houzz") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "houzz";
+    src: url("./houzz.svg#houzz") format("svg");
+  }
+}
+
+[data-icon]:before { content: attr(data-icon); }
+
+[data-icon]:before,
+.icon-houzz:before {
+  display: inline-block;
+  font-family: "houzz";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.icon-houzz:before { content: "\f100"; }

@@ -154,7 +154,7 @@
             @endif
         </div>
         <div class="form-group">
-            <label for="email">Houzz
+            <label for="houzz">Houzz
                 @if($settings->theme == true)
                     (<a href="http://www.restorationtrades.com/help/admin_settings_dark.html" target="_blank">Help</a>)
                 @endif
