@@ -26,6 +26,7 @@
     {{ HTML::style('assets/css/custom.css') }}
     {{ HTML::style('assets/css/customProject.css') }}
     {{ HTML::style('assets/css/houzz/css/houzz-icon-font.css') }}
+
     {{ HTML::style('/bower_components/ng-tags-input/ng-tags-input.bootstrap.min.css') }}
     {{ HTML::style('/bower_components/ng-tags-input/ng-tags-input.min.css') }}
     {{ HTML::style('/bower_components/jquery-colorbox/example4/colorbox.css') }}
@@ -39,6 +40,8 @@
     {{ HTML::style('/bower_components/flexslider/flexslider.css') }}
 
     @endif
+    {{ HTML::style('assets/css/customProject.css') }}
+
 
 
 
