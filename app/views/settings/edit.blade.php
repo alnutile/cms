@@ -154,6 +154,22 @@
             @endif
         </div>
         <div class="form-group">
+            <label for="houzz">Houzz
+                @if($settings->theme == true)
+                    (<a href="http://www.restorationtrades.com/help/admin_settings_dark.html" target="_blank">Help</a>)
+                @endif
+
+                @if($settings->theme == false)
+                    (<a href="http://www.restorationtrades.com/help/admin_settings_light.html" target="_blank">Help</a>)
+                @endif</label>
+            {{ Form::text('houzz', null, array('class' => 'form-control', 'tabindex' => 16)) }}
+            @if($errors->first('gplus'))
+                <div class="alert alert-danger">
+                    {{  $errors->first('houzz'); }}
+                </div>
+            @endif
+        </div>
+        <div class="form-group">
             <label>Page Footer
             @if($settings->theme == true)
             (<a href="http://www.restorationtrades.com/help/admin_settings_dark.html" target="_blank">Help</a>)
