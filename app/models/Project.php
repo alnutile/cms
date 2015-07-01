@@ -1,7 +1,8 @@
 <?php
 
-use Codesleeve\Stapler\ORM\StaplerableInterface;
+
 use Codesleeve\Stapler\ORM\EloquentTrait;
+use Codesleeve\Stapler\ORM\StaplerableInterface;
 
 class Project extends BaseModel implements StaplerableInterface {
     use EloquentTrait;
