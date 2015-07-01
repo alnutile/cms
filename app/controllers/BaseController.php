@@ -40,9 +40,9 @@ class BaseController extends Controller {
         //links for the top nav
         $top_menu_items = array(
           'Home' => '/',
+          'Portfolios' => '/about#',
           'About Page' => '/about',
           'Contact Page' => '/contact',
-          'Portfolios' => '/about#',
         );
         View::share('top_links', $top_menu_items);
     }
