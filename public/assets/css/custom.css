@@ -1,8 +1,8 @@
-/* line 2, /Users/andrewcavanagh/zigbop/cms/app/sass/custom.scss */
+/* line 2, stdin */
 .row.gallery_row {
   margin-top: 30px;
   margin-bottom: 20px; }
-  /* line 6, /Users/andrewcavanagh/zigbop/cms/app/sass/custom.scss */
+  /* line 6, stdin */
   .row.gallery_row .gallery_item {
     background-color: #eee;
     border: 1px solid #6a6a6a;
@@ -11,12 +11,12 @@
     width: 49%;
     display: inline-block;
     float: left; }
-    /* line 17, /Users/andrewcavanagh/zigbop/cms/app/sass/custom.scss */
+    /* line 17, stdin */
     .row.gallery_row .gallery_item a {
       display: block;
       position: relative;
       overflow: hidden; }
-    /* line 22, /Users/andrewcavanagh/zigbop/cms/app/sass/custom.scss */
+    /* line 22, stdin */
     .row.gallery_row .gallery_item img {
       max-height: 180px;
       max-width: 398px;
@@ -24,7 +24,7 @@
       margin: 0 auto;
       display: block;
       float: none; }
-    /* line 30, /Users/andrewcavanagh/zigbop/cms/app/sass/custom.scss */
+    /* line 30, stdin */
     .row.gallery_row .gallery_item .caption {
       padding: 0px 15px;
       display: block;
@@ -33,11 +33,11 @@
       overflow: hidden;
       max-height: 200px; }
 
-/* line 42, /Users/andrewcavanagh/zigbop/cms/app/sass/custom.scss */
+/* line 42, stdin */
 #main_image img {
   width: 100%; }
 
-/* line 50, /Users/andrewcavanagh/zigbop/cms/app/sass/custom.scss */
+/* line 50, stdin */
 #cboxTitle {
   position: absolute;
   font-weight: bold;
@@ -52,30 +52,30 @@
   margin-left: -5px;
   margin-bottom: 23px; }
 
-/* line 70, /Users/andrewcavanagh/zigbop/cms/app/sass/custom.scss */
+/* line 70, stdin */
 ul.edit_images {
   padding-left: 0; }
-  /* line 72, /Users/andrewcavanagh/zigbop/cms/app/sass/custom.scss */
+  /* line 72, stdin */
   ul.edit_images li {
     margin-bottom: 20px;
     padding-bottom: 20px;
     border-bottom: 1px dotted #eee;
     list-style: none; }
-    /* line 77, /Users/andrewcavanagh/zigbop/cms/app/sass/custom.scss */
+    /* line 77, stdin */
     ul.edit_images li:last-child {
       border-bottom: none; }
-    /* line 80, /Users/andrewcavanagh/zigbop/cms/app/sass/custom.scss */
+    /* line 80, stdin */
     ul.edit_images li input.caption_update {
       width: 84%;
       color: #555; }
-    /* line 84, /Users/andrewcavanagh/zigbop/cms/app/sass/custom.scss */
+    /* line 84, stdin */
     ul.edit_images li input.order_update {
       max-width: 50px;
       width: auto; }
-    /* line 88, /Users/andrewcavanagh/zigbop/cms/app/sass/custom.scss */
+    /* line 88, stdin */
     ul.edit_images li .spacer {
       margin-bottom: 10px;
       margin-top: 10px; }
-    /* line 92, /Users/andrewcavanagh/zigbop/cms/app/sass/custom.scss */
+    /* line 92, stdin */
     ul.edit_images li .img-thumbnail {
       max-width: 125px; }
