@@ -41,15 +41,12 @@ $banners_active = Banner::slideShow();
     </div>
 
     @foreach($banners_active as $key => $banner_active)
-    @if($key && $key == 0)
     <a class="left carousel-control" href="#banner-header" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left"></span>
     </a>
-    @else
     <a class="right carousel-control" href="#banner-header" data-slide="next">
         <span class="glyphicon glyphicon-chevron-right"></span>
     </a>
-    @endif
     @endforeach
 </div>
 @endif

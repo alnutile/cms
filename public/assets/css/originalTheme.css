@@ -1,13 +1,18 @@
-/* line 1, stdin */
+/* line 1, /Users/andrewcavanagh/zigbop/cms/app/sass/originalTheme.scss */
 body {
   padding-top: 50px;
   overflow-x: hidden; }
 
-/* line 5, stdin */
+/* line 5, /Users/andrewcavanagh/zigbop/cms/app/sass/originalTheme.scss */
 .col-xs-7 {
   width: 100%; }
 
 @media (min-width: 768px) {
-  /* line 9, stdin */
+  /* line 9, /Users/andrewcavanagh/zigbop/cms/app/sass/originalTheme.scss */
   .col-md-9 {
     width: 75%; } }
+
+/* line 14, /Users/andrewcavanagh/zigbop/cms/app/sass/originalTheme.scss */
+#banner-header {
+  max-width: 1170px;
+  margin: 0 auto; }
