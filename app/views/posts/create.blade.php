@@ -16,12 +16,7 @@
   <div class="form-group">
     <label>Blog Post Name 
     @if($settings->theme == true)
-            (<a href="http://www.restorationtrades.com/help/blog.html" target="_blank">Help</a>)
-            @endif
-
-            @if($settings->theme == false)
-            (<a href="http://www.restorationtrades.com/help/blog.html" target="_blank">Help</a>)
-            @endif</label>
+            (<a href="http://www.restorationtrades.com/help/blog.html" target="_blank">Help</a>)</label>
     {{ Form::text('title', null, array('class' => 'form-control')) }}
   </div>
   @if($errors->first('title'))
