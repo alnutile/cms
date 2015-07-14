@@ -84,7 +84,14 @@
 
         @if(Auth::user() && Auth::user()->admin == 1)
         <div class="form-group">
-            <label>Page Web Address (URL) (<a href="http://www.restorationtrades.com/help.html#page_web_address" target="_blank">Help</a>)"</label>
+            <label>Page Web Address (URL) 
+        @if($settings->theme == true)
+            (<a href="http://www.restorationtrades.com/help/admin_pages_dark.html" target="_blank">Help</a>)
+            @endif
+
+            @if($settings->theme == false)
+            (<a href="http://www.restorationtrades.com/help/admin_pages_light.html" target="_blank">Help</a>)
+            @endif</label>
             {{ Form::text('slug', null, array('class' => 'form-control')) }}
             <div class="help-block">The url must start with / </div>
         </div>
