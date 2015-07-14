@@ -21,7 +21,7 @@
     @endif
 
     <div class="form-group">
-        <label>Post Browser Description (a.k.a. Title Tag) (<a href="http://www.restorationtrades.com/help.html#project_browser_description" target="_blank">Help</a>)</label>
+        <label>Post Browser Description (a.k.a. Title Tag) (<a href="http://www.restorationtrades.com/help/blog.html" target="_blank">Help</a>)</label>
         {{ Form::text('seo', null, array('class' => 'form-control')) }}
     </div>
     @if($errors->first('seo'))
@@ -31,7 +31,7 @@
     @endif
 
     <div class="form-group">
-        <label>Intro Paragraph (<a href="http://www.restorationtrades.com/help.html#Blog Post_page_description" target="_blank">Help</a>)</label>
+        <label>Intro Paragraph (<a href="http://www.restorationtrades.com/help/blog.html" target="_blank">Help</a>)</label>
         {{ Form::textarea('intro', null, array('rows' => 30, 'class' => 'ckeditor form-control')) }}
     </div>
     @if($errors->first('intro'))
@@ -41,7 +41,7 @@
     @endif
 
     <div class="form-group">
-        <label>Blog Post Main Body (<a href="http://www.restorationtrades.com/help.html#Blog Post_page_description" target="_blank">Help</a>)</label>
+        <label>Blog Post Main Body (<a href="http://www.restorationtrades.com/help/blog.html" target="_blank">Help</a>)</label>
         {{ Form::textarea('body', null, array('rows' => 30, 'class' => 'ckeditor form-control')) }}
     </div>
     @if($errors->first('body'))
@@ -55,7 +55,7 @@
 
     @if(Auth::user() && Auth::user()->admin == 1)
     <div class="form-group">
-        <label>Blog Post Web Address (URL) (<a href="http://www.restorationtrades.com/help.html#Blog Post_web_address" target="_blank">Help</a>)</label>
+        <label>Blog Post Web Address (URL) (<a href="http://www.restorationtrades.com/help/blog.html" target="_blank">Help</a>)</label>
         {{ Form::text('slug', null, array('class' => 'form-control')) }}
         <div class="help-block">The url must start with / </div>
     </div>
@@ -78,7 +78,7 @@
 
     <!--   default images-->
     <div class="form-group">
-        <label for="email">Default Image Uploader (<a href="http://www.restorationtrades.com/help.html#blog_default_image_uploader" target="_blank">Help</a>)</label>
+        <label for="email">Default Image Uploader (<a href="http://www.restorationtrades.com/help/blog.html" target="_blank">Help</a>)</label>
         {{ Form::file('image', null, array('class' => 'form-control', 'tabindex' => 1)) }}
         @if($errors->first('image'))
         <div class="alert alert-danger">
@@ -99,7 +99,7 @@
     <br>
     <br>
     <!-- images upload -->
-    <label>Project Blowup Images Uploader (<a href="http://www.restorationtrades.com/help.html#project_blowup_image_uploader" target="_blank">Help</a>)</label>
+    <label>Project Blowup Images Uploader (<a href="http://www.restorationtrades.com/help/blog.html" target="_blank">Help</a>)</label>
     @include('shared.images_angular', array('model' => 'posts'))
 
     <br>
