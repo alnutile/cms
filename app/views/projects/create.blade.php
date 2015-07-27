@@ -209,22 +209,23 @@
     <br>
     <br>
 <!--    top image-->
-  <div class="form-group">
-    <label for="email">Project Top Image Uploader
-    @if($settings->theme == true)
-            (<a href="http://www.restorationtrades.com/help/admin_projects_dark.html" target="_blank">Help</a>)
-            @endif
+            <div class="form-group">
+                <label for="thumbs">Project Top Image Uploader
+                    @if($settings->theme == TRUE)
+                        (<a href="http://www.restorationtrades.com/help/admin_projects_dark.html" target="_blank">Help</a>)
+                    @endif
 
-            @if($settings->theme == false)
-            (<a href="http://www.restorationtrades.com/help/admin_projects_light.html" target="_blank">Help</a>)
-            @endif</label>
-    {{ Form::file('image', null, array('class' => 'form-control', 'tabindex' => 1)) }}
-    @if($errors->first('image'))
-    <div class="alert alert-danger">
-      {{  $errors->first('image'); }}
-    </div>
-    @endif
-  </div>
+                    @if($settings->theme == FALSE)
+                        (<a href="http://www.restorationtrades.com/help/admin_projects_light.html" target="_blank">Help</a>)
+                    @endif</label>
+                {{ Form::file('thumbs', NULL, array('class' => 'form-control', 'tabindex' => 1)) }}
+                @if($errors->first('thumbs'))
+                    <div class="alert alert-danger">
+                        {{  $errors->first('thumbs') }}
+                    </div>
+                @endif
+
+            </div>
 <!--end top image-->
     <br>
     <br>

@@ -10,7 +10,8 @@
         "flowjs/flow-php-server": "0.2.1",
         "laracasts/utilities": "~1.0",
 		"intervention/image": "~2.0",
-		"vlucas/phpdotenv": "~1.1"
+		"vlucas/phpdotenv": "~1.1",
+        "codesleeve/laravel-stapler": "1.0.02"
     },
 	"autoload": {
         "psr-0": {

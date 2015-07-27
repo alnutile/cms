@@ -218,7 +218,7 @@
                 <br>
                 <!-- top image -->
                 <div class="form-group">
-                    <label for="email">Project Top Image Uploader
+                    <label for="thumbs">Project Top Image Uploader
                         @if($settings->theme == TRUE)
                             (<a href="http://www.restorationtrades.com/help/admin_projects_dark.html" target="_blank">Help</a>)
                         @endif
@@ -226,12 +226,21 @@
                         @if($settings->theme == FALSE)
                             (<a href="http://www.restorationtrades.com/help/admin_projects_light.html" target="_blank">Help</a>)
                         @endif</label>
-                    {{ Form::file('image', NULL, array('class' => 'form-control', 'tabindex' => 1)) }}
-                    @if($errors->first('image'))
+                    {{ Form::file('thumbs', NULL, array('class' => 'form-control', 'tabindex' => 1)) }}
+                    @if($errors->first('thumbs'))
                         <div class="alert alert-danger">
-                            {{  $errors->first('image') }}
+                            {{  $errors->first('thumbs') }}
                         </div>
                     @endif
+                    {{--new way--}}
+                    @if($project->thumbs->url())
+                        <div class="row">
+                            <div>
+                                <img class="col-md-6 img-thumbnail" src="<?= $project->thumbs->url('thumb')?> class="banner-show">
+                            </div>
+                        </div>
+                    @endif
+                    {{--for old way with no image resizing--}}
                     @if($project->image)
                         <div class="row">
                             <div>
