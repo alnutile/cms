@@ -1,23 +1,25 @@
 
 <?php if(empty($project->image)) {
     $image = 'project3.jpg';
-} else
-{ $image = $project->image; }
+}
 ?>
 
 {{--new way--}}
-@if($project->thumbs->url())
-            <?php $image = $project->thumbs->url('grid')?>
+@if($project->thumbs->url('grid') != '/thumbs/grid/missing.png')
+            <?php $image = $project->thumbs->url('grid');?>
 {{--for old way with no image resizing--}}
 @elseif($project->image)
             <?php $image = '/' . $path . '/' . $project->image; ?>
+@else   <?php $image = null; ?>
 @endif
 
 <div class="media row">
+    @if($image)
     <a href="{{$project->slug}}" alt="{{$project->title}}">
   <img class="media-object col-md-4 col-xs-12" src="{{$image}}" alt="{{{$project->title}}}">
     </a>
-    <div class="clearfix-sm foo"></div>
+    <div class="clearfix-sm"></div>
+    @endif
   <br>
 
   <div class="media-body padding-lr">
