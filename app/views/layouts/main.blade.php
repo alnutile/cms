@@ -86,7 +86,7 @@ Use the corresponding body tag for your chosen theme
 <div class="container">
     <header>
         @if($settings->logo && $settings->theme == false)
-        <a href="/">{{ HTML::image("/img/settings/{$settings->logo}", $settings->name)}}</a>
+        <a href="/" id="logo">{{ HTML::image("/img/settings/{$settings->logo}", $settings->name)}}</a>
         @elseif ($settings->theme == false)
         <h2><a href="/">{{$settings->name}}</a></h2>
         @endif

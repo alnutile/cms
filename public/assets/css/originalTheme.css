@@ -16,13 +16,17 @@ body {
 .padding-lr {
   padding: 0 10px; }
 
+/* line 18, /Users/andrewcavanagh/zigbop/cms/app/sass/originalTheme.scss */
+#logo {
+  max-width: 100%; }
+
 @media (max-width: 991px) {
-  /* line 19, /Users/andrewcavanagh/zigbop/cms/app/sass/originalTheme.scss */
+  /* line 23, /Users/andrewcavanagh/zigbop/cms/app/sass/originalTheme.scss */
   .clearfix-sm:before, .clearfix-sm:after {
     display: table;
     content: " "; } }
 
 @media (min-width: 768px) {
-  /* line 26, /Users/andrewcavanagh/zigbop/cms/app/sass/originalTheme.scss */
+  /* line 30, /Users/andrewcavanagh/zigbop/cms/app/sass/originalTheme.scss */
   .col-md-9 {
     width: 75%; } }
