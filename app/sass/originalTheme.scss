@@ -5,13 +5,25 @@ body {
 .col-xs-7 {
   width: 100%;
 }
-@media (min-width: 768px) {
-  .col-md-9 {
-    width: 75%;
-  }
-}
 
 #banner-header {
   max-width: 1170px;
   margin: 0 auto;
+}
+
+.padding-lr {
+  padding: 0 10px;
+}
+
+@media (max-width: 991px) {
+  .clearfix-sm:before, .clearfix-sm:after {
+    display: table;
+    content: " ";
+  }
+}
+
+@media (min-width: 768px) {
+  .col-md-9 {
+    width: 75%;
+  }
 }

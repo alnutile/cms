@@ -236,7 +236,7 @@
                     @if($project->thumbs->url())
                         <div class="row">
                             <div>
-                                <img class="col-md-6 img-thumbnail" src="<?= $project->thumbs->url('thumb')?> class="banner-show">
+                                <img class="col-md-6 img-thumbnail" src="<?= $project->thumbs->url('project_top')?>" class="banner-show">
                             </div>
                         </div>
                     @endif

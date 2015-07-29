@@ -35,7 +35,8 @@ class Project extends BaseModel implements StaplerableInterface {
     public function __construct(array $attributes = array()) {
         $this->hasAttachedFile('thumbs', [
             'styles' => [
-                'project_top' => '850x'
+                'project_top' => '850x',
+                'grid' => '292x'
             ]
         ]);
 
