@@ -1,15 +1,11 @@
 
-<?php if(empty($project->image)) {
-    $image = 'project3.jpg';
-}
-?>
 
 {{--new way--}}
 @if($project->thumbs->url('grid') != '/thumbs/grid/missing.png')
             <?php $image = $project->thumbs->url('grid');?>
 {{--for old way with no image resizing--}}
 @elseif($project->image)
-            <?php $image = '/' . $path . '/' . $project->image; ?>
+            <?php $image = '/img/projects/' . $project->image; ?>
 @else   <?php $image = null; ?>
 @endif
 
