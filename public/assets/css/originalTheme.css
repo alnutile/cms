@@ -17,7 +17,7 @@ body {
   padding: 0 10px; }
 
 /* line 18, /Users/andrewcavanagh/zigbop/cms/app/sass/originalTheme.scss */
-#logo {
+#logo img {
   max-width: 100%; }
 
 @media (max-width: 991px) {
