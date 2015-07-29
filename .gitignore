@@ -7,6 +7,7 @@ public/img/*
 bower_components
 public/assets/img
 public/bower_compnents
+public/system/*
 .idea/*
 public/bower_components
 public/assets/img/projects/
