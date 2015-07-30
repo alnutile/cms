@@ -167,43 +167,47 @@ footer {
   .flex-control-paging li a.flex-active {
     background: #fff !important; }
 
-/* line 206, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
+/* line 205, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
+.published {
+  color: #b3b3b6; }
+
+/* line 208, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
 .project_block {
   height: 375px;
   margin-bottom: 20px; }
-  /* line 210, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
+  /* line 212, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
   .project_block .proj_img img {
     width: 275px;
     height: 335px; }
 
-/* line 217, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
+/* line 219, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
 .slideshow {
   padding: 0px;
   list-style: none;
   list-style-type: none; }
-  /* line 221, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
+  /* line 223, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
   .slideshow .flexslider-container {
     max-width: 850px !important;
     margin: 0 auto; }
-  /* line 225, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
+  /* line 227, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
   .slideshow li {
     list-style: none;
     list-style-type: none;
     max-width: 850px;
     margin-bottom: 10px; }
-    /* line 230, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
+    /* line 232, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
     .slideshow li img {
       max-width: 850px; }
 
-/* line 236, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
+/* line 238, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
 select[name='order'] option {
   color: #000000 !important; }
 
-/* line 241, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
+/* line 243, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
 .main_content {
   min-height: 600px; }
 
-/* line 245, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
+/* line 247, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
 .project_grid_title {
   padding-top: 5px;
   color: #d6d6d6;
@@ -211,62 +215,62 @@ select[name='order'] option {
   line-height: 18px;
   font-family: 'Whitney SSm A', Arial, Helvetica, sans-serif; }
 
-/* line 254, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
+/* line 256, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
 .gallery_item_dark {
   padding: 10px 0; }
 
 /* Custom, iPhone Retina */
 @media only screen and (min-width: 320px) {
-  /* line 260, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
+  /* line 262, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
   .sidebar-nav {
     position: relative; }
-    /* line 262, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
+    /* line 264, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
     .sidebar-nav .nav-list a {
       text-align: center; }
-  /* line 266, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
+  /* line 268, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
   .post_img img {
     width: 100%; } }
 
 /* Extra Small Devices, Phones */
 @media only screen and (min-width: 480px) {
-  /* line 273, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
+  /* line 275, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
   .sidebar-nav {
     position: relative; }
-    /* line 275, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
+    /* line 277, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
     .sidebar-nav .nav-list a {
       text-align: center; }
-  /* line 279, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
+  /* line 281, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
   .post_img img {
     width: 100%; } }
 
 /* Small Devices, Tablets */
 @media only screen and (min-width: 768px) {
-  /* line 286, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
+  /* line 288, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
   .sidebar-nav {
     position: relative; }
-    /* line 288, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
+    /* line 290, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
     .sidebar-nav .nav-list a {
       text-align: center; }
-  /* line 293, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
+  /* line 295, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
   .post_img img {
     width: 100%; } }
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 992px) {
-  /* line 300, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
+  /* line 302, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
   .sidebar-nav {
     position: fixed;
     width: 218px; }
-    /* line 304, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
+    /* line 306, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
     .sidebar-nav .nav-list a {
       text-align: right; } }
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width: 1200px) {
-  /* line 312, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
+  /* line 314, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
   .sidebar-nav {
     position: fixed;
     width: 218px; }
-    /* line 315, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
+    /* line 317, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
     .sidebar-nav .nav-list a {
       text-align: right; } }

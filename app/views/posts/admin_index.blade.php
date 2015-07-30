@@ -9,20 +9,24 @@
         <thead>
         <tr>
             <th>Title</th>
-            <th>Sort</th>
             <th>Published</th>
             <th>Edit</th>
         </tr>
         </thead>
         <tbody>
-            @foreach($post as $portfolio)
+            @foreach($posts as $post)
                 <tr>
-                    <td><a href="{{$portfolio->slug}}">{{{$portfolio->title}}}</a></td>
-                    <td>{{$portfolio->order}}</td>
-                    <td>{{$portfolio->published}}</td>
+                    <td><a href="{{$post->slug}}">{{{$post->title}}}</a></td>
+                    <td class="published">
+                        @if($post->published)
+                        Published
+                        @else
+                        Unpublished
+                        @endif
+                    </td>
                     <td>
-                        <a id="portfolio-id-{{$portfolio->id}}"
-                           href="/portfolios/{{$portfolio->id}}/edit">
+                        <a id="post-id-{{$post->id}}"
+                           href="/posts/{{$post->id}}/edit">
                             edit
                         </a>
                     </td>
@@ -30,6 +34,6 @@
             @endforeach
         </tbody>
     </table>
-    <a class="btn btn-success" href="/portfolios/create">create portfolio</a>
+    <a class="btn btn-success" href="/posts/create">create post</a>
 </div>
 @stop

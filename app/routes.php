@@ -47,6 +47,12 @@ Route::get('/admin/projects', array(
     'uses'   => 'ProjectsController@adminIndex'
 ));
 
+Route::get('/admin/posts', array(
+  'before' => 'auth',
+  'as'     => 'admin_projects',
+  'uses'   => 'PostsController@adminIndex'
+));
+
 
 Route::get('/admin', array('before' => 'auth', 'uses' => 'AdminController@dash'));
 

@@ -36,7 +36,9 @@
         @foreach ($post->images as $image)
         @if($settings->theme == false)
         <div class = "col-lg-6 gallery_item">
-            <a class="gallery" href="/assets/img/posts/{{$image->file_name}}" alt="{{$image->file_name}}" title="{{$image->image_caption}}"><img class="col-lg-12" src="/assets/img/posts/{{$image->file_name}}" alt="{{$image->file_name}}"></a>
+            <a class="gallery" href="/assets/img/posts/{{$image->file_name}}" alt="{{$image->file_name}}" title="{{$image->image_caption}}">
+                <img class="col-lg-12" src="/assets/img/posts/{{$image->file_name}}" alt="{{$image->file_name}}">
+            </a>
         </div>
         @else
         <div class = "col-lg-12 gallery_item_dark">

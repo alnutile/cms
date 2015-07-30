@@ -36,6 +36,13 @@ class PostsController extends \BaseController {
         return View::make('posts.index', compact('posts', 'tags', 'settings', 'seo'));
     }
 
+  public function adminIndex()
+  {
+    parent::show();
+    $posts = Post::all();
+    return View::make('posts.admin_index', compact('posts', 'settings'));
+  }
+
 
     /**
      * Show the form for creating a new resource.
