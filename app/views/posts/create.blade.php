@@ -54,11 +54,8 @@
   </div>
   @endif
 
+    @include('shared.tags', array('model' => 'posts'))
 
-    <div class="form-group">
-        <label>Tags (<a href="http://www.restorationtrades.com/help/blog.html" target="_blank">Help</a>)</label>
-        {{ Form::text('tags', null, array('class' => 'form-control')) }}
-    </div>
     @if($errors->first('tags'))
     <div class="alert alert-danger">
         {{  $errors->first('tags'); }}

@@ -35,6 +35,15 @@ class TagsService {
         }
     }
 
+  public function attachNewTags($id, array $tags, $type)
+  {
+    foreach($tags as $tag)
+    {
+      //@TODO add catch here
+      $this->add_tag($tag, $id, $type);
+    }
+  }
+
     public function add_tag($tag_name, $tagable_id, $tagable_type)
     {
         $data = [

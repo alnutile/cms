@@ -89,9 +89,9 @@ class ProjectsController extends \BaseController {
             $this->projectsService->addImages($project->id, $all['images'], 'Project');
 //            $this->imagesService->cropAndSaveForPages($all['image'], $this->save_to);
         }
-
         if(isset($all['tags'])) {
-            $this->tagsService->addtags($project->id, $all['tags'], 'Project');
+            $tags = explode(',', $all['tags']);
+            $this->tagsService->attachNewTags($project->id, $tags, 'Project');
         }
 
         return Redirect::route('admin_projects')->withMessage("Created Project");

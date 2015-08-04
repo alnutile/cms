@@ -51,7 +51,7 @@
     @endif
 
 
-    @include('shared.tags', array('model' => 'projects'))
+    @include('shared.tags', array('model' => 'posts'))
 
     @if(Auth::user() && Auth::user()->admin == 1)
     <div class="form-group">

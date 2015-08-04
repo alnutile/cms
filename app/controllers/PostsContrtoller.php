@@ -77,6 +77,11 @@ class PostsController extends \BaseController {
         }
         $post = Post::create($all);
 
+      if(isset($all['tags'])) {
+        $tags = explode(',', $all['tags']);
+        $this->tags->attachNewTags($post->id, $tags, 'Post');
+      }
+
         if(isset($all['images'])) {
             $this->imagesService->addImages($post->id, $all['images'], 'Post');
         }

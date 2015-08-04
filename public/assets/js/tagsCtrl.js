@@ -3,7 +3,7 @@ var tagsCtrl = angular.module('tagsCtrl', []);
 tagsCtrl.controller('tagsCtrl', ['$scope', 'Restangular', '$window',
     function($scope, Restangular, $window) {
         $scope.pageId   = false;
-
+        $scope.tags = [];
         $scope.getPageInfo = function()
         {
             var path = $window.location.pathname;
@@ -12,9 +12,11 @@ tagsCtrl.controller('tagsCtrl', ['$scope', 'Restangular', '$window',
                 var model   = path_array[1];
                     $scope.model = model;
         }
-
         $scope.addTag = function(tag)
         {
+            $scope.tags.push(tag.text);
+            $('#tagsForItem').val([$scope.tags]);
+
             var rest =  Restangular.all('api/v1/tags');
             rest.data = {};
             rest.data.tag = tag.text;
