@@ -7,5 +7,6 @@
                     replace-spaces-with-dashes="false">
                     <auto-complete source="getAllTags($query)"></auto-complete>
         </tags-input>
+        {{ Form::hidden('tags', null, array('class' => 'form-control', 'id' => 'tagsForItem')) }}
     </div>
 </div>

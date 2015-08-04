@@ -159,7 +159,7 @@
     </div>
     @endif
   </div>
-    @include('shared.tags', array('model' => 'projects'))
+    @include('shared.tags_create', array('model' => 'projects'))
     <br>
 
     <div class="form-group">

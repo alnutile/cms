@@ -54,7 +54,7 @@
   </div>
   @endif
 
-    @include('shared.tags', array('model' => 'posts'))
+    @include('shared.tags_create', array('model' => 'posts'))
 
     @if($errors->first('tags'))
     <div class="alert alert-danger">

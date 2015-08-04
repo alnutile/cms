@@ -49,7 +49,7 @@ Route::get('/admin/projects', array(
 
 Route::get('/admin/posts', array(
   'before' => 'auth',
-  'as'     => 'admin_projects',
+  'as'     => 'admin_posts',
   'uses'   => 'PostsController@adminIndex'
 ));
 
