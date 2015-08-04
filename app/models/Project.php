@@ -11,7 +11,7 @@ class Project extends BaseModel implements StaplerableInterface {
     public static $rules = [
         'title' => 'required',
         'image' => 'mimes:jpeg,bmp,png,gif,jpg',
-        'slug'  => 'required|unique:portfolios|regex:/^\/[A-Za-z0-9_]+$/'
+        'slug'  => 'required|unique:projects|regex:/^\/[A-Za-z0-9_]+$/'
     ];
 
     // Don't forget to fill this array
