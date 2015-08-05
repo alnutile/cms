@@ -19,13 +19,14 @@
     <div class="col-md-9 column">
         @if($settings->theme != TRUE)  <h1>{{{ $project->title }}}</h1>@endif
         <div class="row">
-            @if ($project->image)
-                <div class="col-lg-12" id="main_image">
-                    <img  src="/img/projects/{{$project->image}}" alt="{{$project->title}}">
-                </div>
-            @elseif ($project->thumbs->url('project_top') != '/thumbs/project_top/missing.png')
+
+            @if ($project->thumbs->url('project_top') != '/thumbs/project_top/missing.png')
                 <div class="col-lg-12 thumb" id="main_image">
                     <img src="<?= $project->thumbs->url('project_top') ?>">
+                </div>
+            @elseif ($project->image)
+                <div class="col-lg-12" id="main_image">
+                    <img src="/img/projects/{{$project->image}}" alt="{{$project->title}}">
                 </div>
             @endif
         </div>

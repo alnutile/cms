@@ -146,6 +146,7 @@ class ProjectsController extends \BaseController {
         $rules = Project::$rules;
         $validator = $this->validateSlugEdit($all, $project, $rules);
         $data = $this->checkPublished($all);
+
         if ($validator->fails())
         {
             return Redirect::back()->withErrors($validator)->withInput();
@@ -153,10 +154,11 @@ class ProjectsController extends \BaseController {
         if(isset($data['image'])) {
             $data = $this->uploadFile($data, 'image');
         } else {
-            $data['image'] = $project->image;
+          $data['image'] = $project->image;
+
         }
         if(isset($data['tile_image'])) {
-            $data = $this->uploadFile($data, 'tile_image');
+          $data = $this->uploadFile($data, 'tile_image');
         } else {
             $data['tile_image'] = $project->tile_image;
         }
