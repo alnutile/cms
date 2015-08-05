@@ -239,9 +239,8 @@
                                 <img class="col-md-6 img-thumbnail" src="<?= $project->thumbs->url('project_top')?>" class="banner-show">
                             </div>
                         </div>
-                    @endif
                     {{--for old way with no image resizing--}}
-                    @if($project->image)
+                    @elseif($project->image)
                         <div class="row">
                             <div>
                                 <img class="col-md-6 img-thumbnail" src="/{{$path}}/{{$project->image}}" class="banner-show">
