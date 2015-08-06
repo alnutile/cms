@@ -30,3 +30,7 @@ body {
   /* line 30, /Users/andrewcavanagh/zigbop/cms/app/sass/originalTheme.scss */
   .col-md-9 {
     width: 75%; } }
+
+/* line 35, /Users/andrewcavanagh/zigbop/cms/app/sass/originalTheme.scss */
+img {
+  max-width: 100%; }

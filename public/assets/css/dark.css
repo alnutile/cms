@@ -274,3 +274,7 @@ select[name='order'] option {
     /* line 317, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
     .sidebar-nav .nav-list a {
       text-align: right; } }
+
+/* line 323, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
+img {
+  max-width: 100%; }
