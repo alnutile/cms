@@ -87,7 +87,10 @@ class TagsService {
 
     public function get_tags_for_type($tagable_type)
     {
-        $data =  Tag::where('tagable_type', '=', $tagable_type)->groupBy('name')->get();
+        $data =  Tag::where('tagable_type', '=', $tagable_type)
+            ->where('tagable_id', '!=', 0)
+            ->groupBy('name')
+            ->get();
         $tagsData = $this->transformTags($data);
         return $tagsData;
     }
