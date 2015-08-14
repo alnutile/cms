@@ -31,7 +31,7 @@
 <ul class="nav nav-list tags_nav">
     @foreach($tags as $tag)
 
-    <li><a href="/{{$tag['tagable_type']}}/tags/{{$tag['tag']}}">{{$tag['tag']}}</a></li>
+    <li><a href="/{{$tag['tagable_type']}}/tags/<?php echo (urlencode($tag['tag'])) ?>">{{$tag['tag']}}</a></li>
     @endforeach
 </ul>
 @endif

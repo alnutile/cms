@@ -83,6 +83,7 @@ class TagsService {
             ->where('tagable_id', '!=', 0)
             ->groupBy('name')
             ->get();
+
         $tags = [];
         if ($tagable_type == 'Post') {
             foreach ($data as $tag) {

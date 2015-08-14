@@ -209,6 +209,7 @@ class ProjectsController extends \BaseController {
 
         $projects = DB::table('projects')
             ->leftJoin('tags', 'tags.tagable_id', '=', 'projects.id')
+            ->where('tags.tagable_type', '=', 'Project')
             ->where('tags.name', '=', $tag)
             ->where('projects.published', '=', 1)
             ->groupBy('projects.id')
