@@ -152,7 +152,7 @@
 
   <div class="form-group">
     <label for="email">Sort Order</label>&nbsp;
-    {{ Form::selectRange('order', 1, 10, array('class' => 'form-control', 'tabindex' => 1)) }}
+    {{ Form::selectRange('order', 1, 50, array('class' => 'form-control', 'tabindex' => 1)) }}
     @if($errors->first('order'))
     <div class="alert alert-danger">
       {{  $errors->first('order'); }}

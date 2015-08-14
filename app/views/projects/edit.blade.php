@@ -154,7 +154,7 @@
 
             <div class="form-group">
                 <label for="order">Sort Order</label>&nbsp;
-                {{ Form::selectRange('order', 1, 10, $project->order, array('class' => 'sortOrder', 'tabindex' => 1)) }}
+                {{ Form::selectRange('order', 1, 50, $project->order, array('class' => 'sortOrder', 'tabindex' => 1)) }}
                 @if($errors->first('order'))
                     <div class="alert alert-danger">
                         {{  $errors->first('order'); }}

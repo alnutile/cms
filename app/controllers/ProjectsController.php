@@ -206,7 +206,6 @@ class ProjectsController extends \BaseController {
     public function index_by_tag($tag)
     {
         parent::show();
-
         $projects = DB::table('projects')
             ->leftJoin('tags', 'tags.tagable_id', '=', 'projects.id')
             ->where('tags.tagable_type', '=', 'Project')
