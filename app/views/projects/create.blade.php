@@ -50,7 +50,14 @@
 
     @if($settings->theme != true)
   <div class="form-group">
-    <label>Project City and/or County (<a href="http://www.restorationtrades.com/help.html#project_city_county" target="_blank">Help</a>)</label>
+    <label>Project City and/or County 
+    @if($settings->theme == true)
+            (<a href="http://www.restorationtrades.com/help/admin_projects_dark.html" target="_blank">Help</a>)
+            @endif
+
+            @if($settings->theme == false)
+            (<a href="http://www.restorationtrades.com/help/admin_projects_light.html" target="_blank">Help</a>)
+            @endif</label>
     {{ Form::text('city_county', null, array('class' => 'form-control')) }}
   </div>
   @if($errors->first('city_county'))
@@ -60,7 +67,14 @@
   @endif
 
   <div class="form-group">
-    <label>Project State and Country (<a href="http://www.restorationtrades.com/help.html#project_state_country" target="_blank">Help</a>)</label>
+    <label>Project State and Country 
+    @if($settings->theme == true)
+            (<a href="http://www.restorationtrades.com/help/admin_projects_dark.html" target="_blank">Help</a>)
+            @endif
+
+            @if($settings->theme == false)
+            (<a href="http://www.restorationtrades.com/help/admin_projects_light.html" target="_blank">Help</a>)
+            @endif</label>
     {{ Form::text('state_country', null, array('class' => 'form-control')) }}
   </div>
   @if($errors->first('state_country'))
