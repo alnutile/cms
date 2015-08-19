@@ -24,7 +24,7 @@
                 @endif
         </div>
         <div class="form-group">
-          <label for="email">Banner Image Uploader (<a href="hhttp://restorationtrades.com/help/admin_banners.html" target="_blank">Help</a>)</label>
+          <label for="email">Banner Image Uploader (<a href="http://restorationtrades.com/help/admin_banners.html" target="_blank">Help</a>)</label>
           <div class="help-block">The default banner images are 1600 x 379 pixels, in dimension. Other sizes will upload and display.</div>
           {{ Form::file('banner_name', null, array('class' => 'form-control', 'tabindex' => 1)) }}
                 @if($errors->first('banner_name'))
