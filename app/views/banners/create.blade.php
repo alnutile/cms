@@ -15,7 +15,7 @@
     <fieldset>
         <div class="form-group">
 
-                <label for="email">Banner Name (<a href="http://restorationtrades.com/help/admin_banners.html" target="_blank">Help</a>)</label>
+                <label>Banner Name (<a href="http://restorationtrades.com/help/admin_banners.html" target="_blank">Help</a>)</label>
                 {{ Form::text('name', null, array('class' => 'form-control', 'tabindex' => 1)) }}
                 @if($errors->first('name'))
                 <div class="alert alert-danger">
