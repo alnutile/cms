@@ -60,7 +60,13 @@
 
         @if($settings->theme != true)
         <div class="form-group">
-                <label for="email">Colors (<a href="http://www.restorationtrades.com/help.html#colors" target="_blank">Help</a>)</label>&nbsp;
+                <label for="email">Colors @if($settings->theme == true)
+            (<a href="http://www.restorationtrades.com/help/admin_settings_dark.html" target="_blank">Help</a>)
+            @endif
+
+            @if($settings->theme == false)
+            (<a href="http://www.restorationtrades.com/help/admin_settings_light.html" target="_blank">Help</a>)
+            @endif</label>&nbsp;
                 {{ Form::select('color', ['bw' => 'black & white', 'orange' => 'orange', 'green' => 'green', 'blue' => 'blue'], $setting->color, array('class' => 'form-control', 'tabindex' => 4)) }}
                 @if($errors->first('color'))
                 <div class="alert alert-danger">
