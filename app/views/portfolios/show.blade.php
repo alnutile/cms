@@ -18,7 +18,9 @@
     <h1>{{{ $portfolio->header }}}</h1>
     <p> {{ $portfolio->body }} </p>
     <hr>
+    @if($portfolio->projects->count())
     <h3>Related Projects</h3>
+    @endif
 
     @foreach($portfolio->projects as $project)
       @include('shared.projects_teasers')
