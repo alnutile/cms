@@ -142,7 +142,6 @@ class ProjectsController extends \BaseController {
         //2. if it is then we will not validate against right
         $all = Input::all();
 
-
         $rules = Project::$rules;
         $validator = $this->validateSlugEdit($all, $project, $rules);
         $data = $this->checkPublished($all);
