@@ -17,12 +17,10 @@
             <a href="{{$p->slug}}">
 
                 <div class="project_img col-md-3">
-                    @if ($p->thumbs->url('index') != '/thumbs/index/missing.png')
-                        <div class="col-lg-12 thumb" id="main_image">
-                            <img src="<?= $p->thumbs->url('index') ?>">
-                        </div>
-                    @elseif ($p->image)
+                    @if ($p->image)
                     <img  src="/img/projects/{{$p->tile_image}}" alt="{{$p->title}}" class="img-responsive">
+                    @else
+                    <img  src="/img/default/photo_default_0.png" alt="{{$p->title}}" class="img-responsive">
                     @endif
                 </div>
                 <div class="project_img col-md-9">
