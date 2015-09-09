@@ -17,9 +17,9 @@
             <a href="{{$p->slug}}">
 
                 <div class="project_img col-md-3">
-                    @if ($project->thumbs->url('index') != '/thumbs/index/missing.png')
+                    @if ($p->thumbs->url('index') != '/thumbs/index/missing.png')
                         <div class="col-lg-12 thumb" id="main_image">
-                            <img src="<?= $project->thumbs->url('index') ?>">
+                            <img src="<?= $p->thumbs->url('index') ?>">
                         </div>
                     @elseif ($p->image)
                     <img  src="/img/projects/{{$p->tile_image}}" alt="{{$p->title}}" class="img-responsive">
