@@ -9,6 +9,7 @@ class ProjectsController extends \BaseController {
     protected $project_dest;
     protected $project_uri;
     protected $save_to;
+    protected $tag;
     /**
      * @var CMS\Services\ProjectsService
      */
@@ -205,13 +206,24 @@ class ProjectsController extends \BaseController {
     public function index_by_tag($tag)
     {
         parent::show();
-        $projects = DB::table('projects')
-            ->leftJoin('tags', 'tags.tagable_id', '=', 'projects.id')
-            ->where('tags.tagable_type', '=', 'Project')
-            ->where('tags.name', '=', $tag)
-            ->where('projects.published', '=', 1)
-            ->groupBy('projects.id')
-            ->orderBy('projects.order')
+//        $projects = DB::table('projects')
+//            ->leftJoin('tags', 'tags.tagable_id', '=', 'projects.id')
+//            ->where('tags.tagable_type', '=', 'Project')
+//            ->where('tags.name', '=', $tag)
+//            ->where('projects.published', '=', 1)
+//            ->groupBy('projects.id')
+//            ->orderBy('projects.order')
+//            ->get();
+        $this->tag = $tag;
+        $projects = Project::whereHas('tags', function($q)
+        {
+            $q->where('name', '=', $this->tag)
+            ->where('tagable_type', '=', 'Project');
+        })
+
+            ->where('published', '=', 1)
+            ->groupBy('id')
+            ->orderBy('order')
             ->get();
         $tags = $this->tagsService->get_tags_for_type('Project');
         return View::make('projects.indexByTag', compact('projects', 'settings', 'tags'));
