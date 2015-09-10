@@ -21,11 +21,11 @@
         <div class="row">
 
             @if ($project->thumbs->url('project_top') != '/thumbs/project_top/missing.png')
-                <div class="col-lg-12 thumb" id="main_image">
+                <div class="col-lg-12 thumb" id="main_image" class="project-top-image">
                     <img src="<?= $project->thumbs->url('project_top') ?>">
                 </div>
             @elseif ($project->image)
-                <div class="col-lg-12" id="main_image">
+                <div class="col-lg-12" id="main_image" class="project-top-image>
                     <img src="/img/projects/{{$project->image}}" alt="{{$project->title}}">
                 </div>
             @endif

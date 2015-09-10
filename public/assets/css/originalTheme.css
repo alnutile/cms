@@ -34,3 +34,7 @@ body {
 /* line 35, /Users/andrewcavanagh/zigbop/cms/app/sass/originalTheme.scss */
 img {
   max-width: 100%; }
+
+/* line 39, /Users/andrewcavanagh/zigbop/cms/app/sass/originalTheme.scss */
+.project-top-image img {
+  width: 100%; }

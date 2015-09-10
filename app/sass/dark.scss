@@ -256,6 +256,9 @@ select[name='order'] option
 
 .gallery_item_dark {
   padding: 10px 0;
+    img {
+      max-width: 850px;
+    }
 }
 
 /* Custom, iPhone Retina */
@@ -323,4 +326,8 @@ select[name='order'] option
 
 img {
   max-width: 100%;
+}
+
+.project-top-image img {
+  width: 100%;
 }
