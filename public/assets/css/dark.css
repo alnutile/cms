@@ -284,5 +284,5 @@ img {
   max-width: 100%; }
 
 /* line 331, /Users/andrewcavanagh/zigbop/cms/app/sass/dark.scss */
-#main_image #project-top-image img {
+#main_image #project-top-image {
   width: 100%; }
