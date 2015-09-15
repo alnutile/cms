@@ -120,7 +120,7 @@ class PagesController extends \BaseController {
         public function update($id)
     {
         $page_update = Input::all();
-
+//        dd($page_update);
         if($this->settings->theme != true) {
             $validator = Validator::make($page_update, array('title' => 'required', 'slug' => 'regex:/^\/[A-Za-z0-9_]+$/'));
             $page = Page::find($id);
@@ -145,6 +145,8 @@ class PagesController extends \BaseController {
             $page = Page::find($id);
             if($validator->passes()) {
                 $page->seo = $page_update['seo'];
+                $page->title = $page_update['title'];
+                $page->body = $page_update['body'];
                 $page->slug = (isset($page_update['slug'])) ?  $page_update['slug'] : $page->slug;
                 $page->save();
                 $banner = $this->bannerSet($page);
