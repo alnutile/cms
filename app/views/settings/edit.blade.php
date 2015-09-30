@@ -218,6 +218,7 @@
             </div>
         </div>
 
+
         <div class="form-group">
             <label for="google_analytics">Google Analytics Code
             {{ Form::text('google_analytics', null, array('class' => 'form-control', 'tabindex' => 1)) }}
@@ -228,7 +229,8 @@
             </div>
             @endif
         </div>
-
+        @else
+            {{ Form::hidden('theme', null) }}
 
         @endif
 
