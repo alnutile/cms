@@ -42,7 +42,7 @@
         </div>
         @else
         <div class = "col-lg-12 gallery_item_dark">
-            <img class="" src="/assets/img/posts/{{$image->file_name}}" alt="{{$image->file_name}}">
+            <img src="/assets/img/posts/{{$image->file_name}}" alt="{{$image->file_name}}">
             @endif
             <br>
             <span class="caption">{{$image->image_caption}}</span>

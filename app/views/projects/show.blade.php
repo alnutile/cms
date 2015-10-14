@@ -79,7 +79,7 @@
                             </a>
                             @else
                                 <div class="col-lg-12 gallery_item_dark">
-                                    <img class="col-lg-12" src="/assets/img/projects/gallery/{{$image->file_name}}" alt="{{$image->file_name}}">
+                                    <img src="/assets/img/projects/gallery/{{$image->file_name}}" alt="{{$image->file_name}}">
                                     @endif
                                     <br>
 
