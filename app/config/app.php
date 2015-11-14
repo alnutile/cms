@@ -112,8 +112,7 @@ return array(
         'CMS\ServiceProviders\ProjectsServiceProvider',
         'Laracasts\Utilities\UtilitiesServiceProvider',
         'Intervention\Image\ImageServiceProvider',
-        'Codesleeve\LaravelStapler\Providers\L4ServiceProvider'
-
+        'Codesleeve\LaravelStapler\LaravelStaplerServiceProvider'
     ),
 
     /*

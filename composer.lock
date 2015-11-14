@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "eab6cd84f9df14bc0524198b4416a7c3",
-    "content-hash": "1946ff37597f525ddb05b2acc31cebd1",
+    "hash": "74b6fe9909ff856788b24f253904c031",
+    "content-hash": "ca70e20445e47b1c24d0d2e3a8aa9fcd",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -56,16 +56,16 @@
         },
         {
             "name": "codesleeve/laravel-stapler",
-            "version": "v1.0.05",
+            "version": "v1.0.02",
             "source": {
                 "type": "git",
                 "url": "https://github.com/CodeSleeve/laravel-stapler.git",
-                "reference": "79d644b495754c955f652fee8a6ca799f923bec6"
+                "reference": "07829c711fe34e306893b2a7c7697d59766dafe0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CodeSleeve/laravel-stapler/zipball/79d644b495754c955f652fee8a6ca799f923bec6",
-                "reference": "79d644b495754c955f652fee8a6ca799f923bec6",
+                "url": "https://api.github.com/repos/CodeSleeve/laravel-stapler/zipball/07829c711fe34e306893b2a7c7697d59766dafe0",
+                "reference": "07829c711fe34e306893b2a7c7697d59766dafe0",
                 "shasum": ""
             },
             "require": {
@@ -102,32 +102,32 @@
                 "stapler",
                 "upload"
             ],
-            "time": "2015-09-21 00:06:39"
+            "time": "2014-09-28 02:28:55"
         },
         {
             "name": "codesleeve/stapler",
-            "version": "v1.0.06",
+            "version": "v1.0.02",
             "source": {
                 "type": "git",
                 "url": "https://github.com/CodeSleeve/stapler.git",
-                "reference": "76d6fa48d263b70437ba92b7c2c053b79dbb5cc6"
+                "reference": "6d60a8cc6ceaf20935b0ece191e2812890a3a8c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CodeSleeve/stapler/zipball/76d6fa48d263b70437ba92b7c2c053b79dbb5cc6",
-                "reference": "76d6fa48d263b70437ba92b7c2c053b79dbb5cc6",
+                "url": "https://api.github.com/repos/CodeSleeve/stapler/zipball/6d60a8cc6ceaf20935b0ece191e2812890a3a8c0",
+                "reference": "6d60a8cc6ceaf20935b0ece191e2812890a3a8c0",
                 "shasum": ""
             },
             "require": {
-                "doctrine/inflector": "~1",
-                "imagine/imagine": "~0.6.2",
+                "doctrine/inflector": "v1.0",
+                "imagine/imagine": "~0.5.0",
                 "php": ">=5.4",
                 "symfony/http-foundation": "~2.3"
             },
             "require-dev": {
                 "aws/aws-sdk-php": "2.4.*@dev",
-                "illuminate/config": "4.*|5.*",
-                "illuminate/database": "4.*|5.*",
+                "illuminate/config": "~4",
+                "illuminate/database": "~4",
                 "mockery/mockery": "0.8.0"
             },
             "type": "library",
@@ -155,7 +155,7 @@
                 "s3",
                 "upload"
             ],
-            "time": "2015-09-19 01:27:59"
+            "time": "2014-09-27 19:15:58"
         },
         {
             "name": "d11wtq/boris",
@@ -543,30 +543,22 @@
         },
         {
             "name": "doctrine/inflector",
-            "version": "v1.1.0",
+            "version": "v1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/inflector.git",
-                "reference": "90b2128806bfde671b6952ab8bea493942c1fdae"
+                "reference": "54b8333d2a5682afdc690060c1cf384ba9f47f08"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/inflector/zipball/90b2128806bfde671b6952ab8bea493942c1fdae",
-                "reference": "90b2128806bfde671b6952ab8bea493942c1fdae",
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/54b8333d2a5682afdc690060c1cf384ba9f47f08",
+                "reference": "54b8333d2a5682afdc690060c1cf384ba9f47f08",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
             },
-            "require-dev": {
-                "phpunit/phpunit": "4.*"
-            },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.1.x-dev"
-                }
-            },
             "autoload": {
                 "psr-0": {
                     "Doctrine\\Common\\Inflector\\": "lib/"
@@ -578,6 +570,17 @@
             ],
             "authors": [
                 {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com",
+                    "homepage": "http://www.jwage.com/",
+                    "role": "Creator"
+                },
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com",
+                    "homepage": "http://www.instaclick.com"
+                },
+                {
                     "name": "Roman Borschel",
                     "email": "roman@code-factory.org"
                 },
@@ -586,27 +589,21 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com"
-                },
-                {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com"
-                },
-                {
                     "name": "Johannes Schmitt",
-                    "email": "schmittjoh@gmail.com"
+                    "email": "schmittjoh@gmail.com",
+                    "homepage": "https://github.com/schmittjoh",
+                    "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
             "description": "Common String Manipulations with regard to casing and singular/plural rules.",
             "homepage": "http://www.doctrine-project.org",
             "keywords": [
                 "inflection",
-                "pluralize",
-                "singularize",
+                "pluarlize",
+                "singuarlize",
                 "string"
             ],
-            "time": "2015-11-06 14:35:42"
+            "time": "2013-01-10 21:49:15"
         },
         {
             "name": "doctrine/lexer",
@@ -820,16 +817,16 @@
         },
         {
             "name": "imagine/imagine",
-            "version": "v0.6.3",
+            "version": "v0.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/avalanche123/Imagine.git",
-                "reference": "149041d2a1b517107bfe270ca2b1a17aa341715d"
+                "reference": "f64ec666baaa800edcbf237db41121a569230709"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/avalanche123/Imagine/zipball/149041d2a1b517107bfe270ca2b1a17aa341715d",
-                "reference": "149041d2a1b517107bfe270ca2b1a17aa341715d",
+                "url": "https://api.github.com/repos/avalanche123/Imagine/zipball/f64ec666baaa800edcbf237db41121a569230709",
+                "reference": "f64ec666baaa800edcbf237db41121a569230709",
                 "shasum": ""
             },
             "require": {
@@ -844,11 +841,6 @@
                 "ext-imagick": "to use the Imagick implementation"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-develop": "0.7-dev"
-                }
-            },
             "autoload": {
                 "psr-0": {
                     "Imagine": "lib/"
@@ -873,7 +865,7 @@
                 "image manipulation",
                 "image processing"
             ],
-            "time": "2015-09-19 16:54:05"
+            "time": "2013-07-10 17:25:36"
         },
         {
             "name": "intervention/image",
