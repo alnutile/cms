@@ -11,7 +11,7 @@
         "laracasts/utilities": "~1.0",
 		"intervention/image": "~2.0",
 		"vlucas/phpdotenv": "~1.1",
-        "codesleeve/laravel-stapler": "1.0.02"
+        "codesleeve/laravel-stapler": "1.0.*"
     },
 	"autoload": {
         "psr-0": {
