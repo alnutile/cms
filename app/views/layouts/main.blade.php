@@ -166,6 +166,13 @@ Use the corresponding body tag for your chosen theme
 {{ HTML::script('/bower_components/angular-flexslider/angular-flexslider.js') }}
 {{ HTML::script('/assets/js/naturalSortVersionDates.min.js') }}
 
+<script type="text/javascript">
+	jQuery(function($) {
+		if($('.navbar.navbar-fixed-top').length){
+			$('body').css('padding-top', '30px');
+		}
+	});
+</script>
 
 </body>
 </html>
