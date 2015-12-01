@@ -25,8 +25,7 @@
                     <img  src="/img/default/photo_default_0.png" alt="{{$p->title}}" class="img-responsive">
                     @endif
                 </div>
-            </a>
-            <div class="project_grid_title">{{$p->title}}</div>
+            <div class="project_grid_title">{{$p->title}}</div></a>
         </div>
         @endforeach
     </div>
