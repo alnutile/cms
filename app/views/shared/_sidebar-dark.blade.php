@@ -16,7 +16,8 @@
     @endif
     @foreach($shared_links as $key => $static_menu_item)
     <?php
-    if(Request::server('PATH_INFO') ==  $static_menu_item) {
+    //if(Request::server('PATH_INFO') ==  $static_menu_item) {
+    if($_SERVER['REQUEST_URI'] ==  $static_menu_item) {
         $active = 'active';
     } else {
         $active = 'not-active';
@@ -30,8 +31,10 @@
 <div class="border"></div>
 <ul class="nav nav-list tags_nav">
     @foreach($tags as $tag)
-
+    <?php
+    if (!empty($tag['tag'])) { ?>
     <li><a href="/{{$tag['tagable_type']}}/tags/<?php echo (($tag['tag'])) ?>">{{$tag['tag']}}</a></li>
+    <?php } ?>
     @endforeach
 </ul>
 @endif
