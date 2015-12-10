@@ -156,6 +156,7 @@ class BaseController extends Controller {
         return $data;
     }
 
+    // put in sort to have images come in order assigned by file name br -2015/11/16
     public function getSlides() {
 
         $slides    = [];
@@ -164,6 +165,7 @@ class BaseController extends Controller {
         foreach ($files as $key => $file) {
             $slides[$key] = "/slideshow/" . $file->getRelativePathname();
         }
+		krsort($slides) ;  // br 2015/11/16
         JavaScript::put(compact('slides'));
     }
 
