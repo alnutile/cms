@@ -165,7 +165,7 @@ class BaseController extends Controller {
         foreach ($files as $key => $file) {
             $slides[$key] = "/slideshow/" . $file->getRelativePathname();
         }
-		krsort($slides) ;  // br 2015/11/16
+	//	krsort($slides) ;  // br 2015/11/16
         JavaScript::put(compact('slides'));
     }
 
