@@ -165,11 +165,12 @@ class BaseController extends Controller {
         foreach ($files as $key => $file) {
             $slides[$key] = "/slideshow/" . $file->getRelativePathname();
         }
-	//	krsort($slides) ;  // br 2015/11/16
+	    sort($slides) ;  // br 2016/01/21
         JavaScript::put(compact('slides'));
     }
 
-    public function checkForSlideshow($id) {
+    // Put in sort to enable images appear in order by file name br 2016-01/21
+        public function checkForSlideshow($id) {
         $slideshow = FALSE;
         $slide_ids = [2, 5];
         $id == in_array($id, $slide_ids) ? $slideshow = TRUE : $tags = FALSE;

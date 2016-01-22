@@ -59,10 +59,11 @@ $(document).ready(function(){
         collapsedHeight: 208
     });
 
+    // changed by br 2016/01/22 to slow down changing image frames on silde display
     if(typeof(cms) !== 'undefined' && cms.home === 'home'){
         $.backstretch(cms.slides, {
             fade: 750,
-            duration: 2000
+            duration: 5000     // br extend time from 2000 to 5000 ms
         });
         $('body').addClass('home');
     }
