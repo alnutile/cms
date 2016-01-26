@@ -103,7 +103,7 @@ class PostsController extends \BaseController {
             $post = Post::find($id);
             $seo = $post->seo;
         }
-        if($id == NULL || $post->published == 0){
+        if($id == NULL){
             return View::make('404', compact('settings'));
         }
         $tags = $this->tags->get_tags_for_type('Post');

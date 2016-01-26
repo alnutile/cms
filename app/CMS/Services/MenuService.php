@@ -81,10 +81,9 @@ Class MenuService {
 
       //Try Post
       $post = $this->post->where("slug", 'LIKE', '/' . $id)->first();
-      if ($this->checkIfPublishedAndUserState($post)) {
-          $postCtrl = new \PostsController($this->images, $this->tags);
-          return $postCtrl->show($post->id);
-      }
+      $postCtrl = new \PostsController($this->images, $this->tags);
+      return $postCtrl->show($post->id);
+
 
     //Else 404
     return \View::make('404', compact('settings'));
