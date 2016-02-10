@@ -63,9 +63,6 @@ class PagesController extends \BaseController {
         // and the create.blade.php file (create) in the pages folder
  
         return View::make('pages.create');
-                 print_r("am in create FTER show");
-       die("in create after parent:show") ;
-      
 		}
 
         /**
@@ -119,7 +116,6 @@ class PagesController extends \BaseController {
       //  die($input);
         $rules = Page::$rules;
         // print_r($rules);
-        $validator = $this->validateSlugOnCreate($input, $rules);
                    
 		$validator = Validator::make($input, array('slug' => 'regex:/^\/[A-Za-z0-9_]+$/')); 
                                                  
@@ -131,9 +127,9 @@ class PagesController extends \BaseController {
 						$page = Page::create($input);
 						$banner = $this->bannerSet($page);
                      //  return Redirect::to('pages.admin_index'->withMessage("Created Page");
-						return Redirect::to("pages.index")->withMessage("Created Page");
+                        return Redirect::to('pages/' . $page->id)->withMessage("Page Created ");
 					} else {
-						return Redirect::to('pages/' . $page->id . '/edit')->withErrors($validator)->withMessage("Error ");
+                        return Redirect::back()->withErrors($validator)->withInput();
 					}
     	}
 	
