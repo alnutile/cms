@@ -16,25 +16,35 @@ class PagesController extends \BaseController {
         $this->tags = $tagsService;
         $this->imagesService = $imagesService;
     }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return Response
-     */
-    public function index()
+		/**
+		 * Display a listing of the resource.
+		 *
+		 * @return Response
+		 */
+		public function index()
     {
-        parent::show();
-        $pages = $this->pages->all();
-        $banner = $this->banner;
-        if($this->settings->theme == true)
-            {
-                return $this->respond($pages, 'pages.index_dark',  compact('pages', 'banner'));
+		parent::show();
+		$pages = $this->pages->all();
+		$banner = $this->banner;
+		if($this->settings->theme == true)
+		{
+			return $this->respond($pages, 'pages.index_dark',  compact('pages', 'banner'));
 
-            }else
-            {
-                return $this->respond($pages, 'pages.index',  compact('pages', 'banner'));
-            }
-        }
+		} else
+		{
+			return $this->respond($pages, 'pages.index',  compact('pages', 'banner'));
+		}
+	}
+
+		public function adminIndex()
+	{
+		parent::show();
+		$pages = $this->pages->all();
+		// print_r($pages);
+		// dd($pages);
+		$banner = $this->banner;
+		return View::make('pages.admin_index', compact('pages', 'settings'));
+    }
 
         /**
          * Show the form for creating a new resource.
@@ -42,9 +52,21 @@ class PagesController extends \BaseController {
          * @return Response
          */
         public function create()
-    {
-        //
-    }
+		{
+            print_r("am in create");
+             
+    	// Added from Andy's code example
+        parent::show(); 
+            
+        // this is a way of creating a view
+        // the 'pages.create' parameter references the pages folder (app/views/pages)
+        // and the create.blade.php file (create) in the pages folder
+ 
+        return View::make('pages.create');
+                 print_r("am in create FTER show");
+       die("in create after parent:show") ;
+      
+		}
 
         /**
          * Store a newly created resource in storage.
@@ -90,12 +112,31 @@ class PagesController extends \BaseController {
          *
          * @return Response
          */
-        public function store()
-    {
-        //
-    }
-
-
+        public function store() {
+        
+    	// Added from Andy's code example
+        $input = Input::all();
+      //  die($input);
+        $rules = Page::$rules;
+        // print_r($rules);
+        $validator = $this->validateSlugOnCreate($input, $rules);
+                   
+		$validator = Validator::make($input, array('slug' => 'regex:/^\/[A-Za-z0-9_]+$/')); 
+                                                 
+					if($validator->passes()) {
+                     
+                     // print_r(array_values($input));
+                     // die("in validator test") ;
+                      
+						$page = Page::create($input);
+						$banner = $this->bannerSet($page);
+                     //  return Redirect::to('pages.admin_index'->withMessage("Created Page");
+						return Redirect::to("pages.index")->withMessage("Created Page");
+					} else {
+						return Redirect::to('pages/' . $page->id . '/edit')->withErrors($validator)->withMessage("Error ");
+					}
+    	}
+	
         /**
          * Show the form for editing the specified resource.
          *

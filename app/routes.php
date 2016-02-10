@@ -35,6 +35,12 @@ Route::put('/login', 'UsersController@authenticate');
 #done
 Route::get('/logout', array('before' => 'auth', 'uses' => 'UsersController@getLogout'));
 
+Route::get('/admin/pages', array(
+  'before' => 'auth',
+  'as'     => 'admin_pages',
+  'uses'   => 'PagesController@adminIndex'
+));
+
 Route::get('/admin/portfolios', array(
     'before' => 'auth',
     'as'     => 'admin_portfolio',
@@ -52,7 +58,6 @@ Route::get('/admin/posts', array(
   'as'     => 'admin_posts',
   'uses'   => 'PostsController@adminIndex'
 ));
-
 
 Route::get('/admin', array('before' => 'auth', 'uses' => 'AdminController@dash'));
 

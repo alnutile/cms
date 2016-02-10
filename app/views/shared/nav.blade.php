@@ -12,7 +12,7 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class=<?php if(Request::path() == 'pages') { echo 'active'; }?>><a href="/pages">Admin Pages</a></li>
+                <li class=<?php if(Request::path() == 'pages') { echo 'active'; }?>><a href="/admin/pages">Admin Pages</a></li>
                 @if($settings->theme != true)
                 <li class=<?php if(Request::path() == 'portfolios') { echo 'active'; }?>><a href="/admin/portfolios">Admin Portfolios</a></li>
                 @endif

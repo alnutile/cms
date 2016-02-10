@@ -27,7 +27,6 @@ class BaseController extends Controller {
                 }
             }
             $static_menu_items = array('About Page' => '/about', 'Contact Page' => '/contact', 'Blog' => '/posts', 'All Projects' => '/all_projects', 'Home' => '/index',);
-
         }
         else {
             $static_menu_items = array('Our Company' => '/about', 'Portfolio' => '/portfolio', 'News & Awards' => '/news_awards', 'Builder’s Notebook' => '/posts', 'Contact Us' => '/contact');

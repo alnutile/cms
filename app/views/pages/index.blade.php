@@ -2,7 +2,15 @@
 
 @section('content')
 <div class="col-md-3">
-    @include('shared.sidebar')
+	<div class = "sidebar-nav">
+		@include('shared.sidebar')
+		@if(Auth::user())
+		<div class="well">
+			Create New Page <br>
+			<a class="btn btn-success" href="/pages/create">Create</a>
+		</div>
+		@endif
+    </div>
 </div>
 <div class="col-md-9 column content">
     <table class="table table-hover table-striped table-condensed">

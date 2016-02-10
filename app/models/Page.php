@@ -1,12 +1,21 @@
 <?php
 
 class Page extends \Eloquent {
-    protected $fillable = [
+   
+	// Added by John B 2-5-2016 - missing rules array
+    public static $rules = array(
+        'title' => 'required',
+        'seo'   => 'required',
+        //'image' => 'mimes:jpg,jpeg,bmp,png,gif',
+        'slug'  => 'required'
+    );
+    // Moved this section down to match Posts model
+     protected $fillable = [
         'title',
-        'body',
-        'published',
-        'slug',
         'seo',
+        'body',
+        'slug',
+        'published',
         'menu_sort_order',
         'menu_parent',
         'menu_name',
