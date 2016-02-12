@@ -206,7 +206,8 @@ class PagesController extends \BaseController {
          */
         public function destroy($id)
     {
-        //
+        Page::destroy($id);
+        return Redirect::route('pages.index');
     }
 
 
