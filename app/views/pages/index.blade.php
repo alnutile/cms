@@ -3,13 +3,7 @@
 @section('content')
 <div class="col-md-3">
 	<div class = "sidebar-nav">
-		@include('shared.sidebar')
-		@if(Auth::user())
-		<div class="well">
-			Create New Page <br>
-			<a class="btn btn-success" href="/pages/create">Create</a>
-		</div>
-		@endif
+       @include('shared.sidebar')
     </div>
 </div>
 <div class="col-md-9 column content">

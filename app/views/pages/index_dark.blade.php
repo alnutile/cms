@@ -13,37 +13,12 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td><a href="/home">Home</a></td>
-            <td><a id="page-id-2" href="/pages/1/edit">edit</a></td>
-        </tr>
-        <tr>
-            <td><a href="/about">Our Company</a></td>
-            <td><a id="page-id-2" href="/pages/2/edit">edit</a></td>
-        </tr>
-        <tr>
-            <td><a href="/our_process">Our Process</a></td>
-            <td><a id="page-id-5" href="/pages/5/edit">edit</a></td>
-        </tr>
-        <tr>
-            <td><a href="/testimonials">Testimonials</a></td>
-            <td><a id="page-id-6" href="/pages/6/edit">edit</a></td>
-        </tr>
-        <tr>
-            <td><a href="/posts">Portfolio</a></td>
-            <td><a id="page-id-7" href="/admin/projects">edit</a></td>
-        </tr>
-        <tr>
-            <td><a href="/news_awards">News &amp; Awards</a></td>
-            <td><a id="page-id-7" href="/pages/7/edit">edit</a></td>
-        </tr>
-        <tr>
-            <td><a href="/posts">Builder's Notebook</a></td>
-        </tr>
-        <tr>
-            <td><a href="/contact">Contact Page</a></td>
-            <td><a id="page-id-3" href="/pages/3/edit">edit</a></td>
-        </tr>
+              @foreach($pages as $page)
+                <tr>
+                    <td><a href="{{$page->slug}}">{{{$page->title}}}</a></td>
+                    <td><a id="page-id-{{$page->id}}" href="/pages/{{$page->id}}/edit">edit</a></td>
+                </tr>
+            @endforeach
 
         </tbody>
     </table>
