@@ -66,7 +66,7 @@
         @endif
         @endif
 
-        @if($slideshow == true && $settings->theme = true)
+        @if($settings->theme = true) {{-- Removed $slideshow == true &&  --}}
         <!-- images upload -->
         <label>Project Blowup Images Uploader
         @if($settings->theme == true)

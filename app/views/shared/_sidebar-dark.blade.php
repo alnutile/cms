@@ -4,6 +4,7 @@
 <ul class="nav nav-list">
     <?php
     if(Request::server('PATH_INFO') == '/portfolios') {
+    //if($_SERVER['REQUEST_URI'] == '/portfolios') {
         $icon = '<i class="glyphicon glyphicon-th"></i>';
     } else {
         $icon = '';
@@ -17,7 +18,7 @@
     @foreach($shared_links as $key => $static_menu_item)
     <?php
     //if(Request::server('PATH_INFO') ==  $static_menu_item) {
-    if($_SERVER['REQUEST_URI'] ==  $static_menu_item) {
+    if($_SERVER['REQUEST_URI'] == $static_menu_item) {
         $active = 'active';
     } else {
         $active = 'not-active';
@@ -26,7 +27,7 @@
     <li class="{{$active}}"> <a href = {{$static_menu_item}}>{{$key}}</a></li>
     @endforeach
 </ul>
-
+ 
 @if(isset($tags))
 <div class="border"></div>
 <ul class="nav nav-list tags_nav">
