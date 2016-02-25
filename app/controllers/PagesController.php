@@ -26,12 +26,10 @@ class PagesController extends \BaseController {
 		parent::show();
 		$pages = $this->pages->all();
 		$banner = $this->banner;
-		if($this->settings->theme == true)
-		{
+		if($this->settings->theme == true) {
 			return $this->respond($pages, 'pages.index_dark',  compact('pages', 'banner'));
 
-		} else
-		{
+		} else {
 			return $this->respond($pages, 'pages.index',  compact('pages', 'banner'));
 		}
 	}
@@ -66,7 +64,7 @@ class PagesController extends \BaseController {
 		}
 
         /**
-         * Store a newly created resource in storage.
+         * Display the specified resource.
          *
          * @return Response
          */
@@ -87,7 +85,11 @@ class PagesController extends \BaseController {
         $this->settings->pageId = $page->id;
         $this->settings->menu_name = $page->menu_name;
         $page->id == 1 ? JavaScript::put(['home'=>'home']) : JavaScript::put(['home'=>'notHome']);
-        return View::make('pages.show', compact('page', 'banner', 'settings', 'seo', 'projects', 'tags'));
+        if($this->settings->theme == true) {
+			return View::make('pages.show_dark', compact('page', 'banner', 'settings', 'seo', 'projects', 'tags'));
+		} else {
+			return View::make('pages.show', compact('page', 'banner', 'settings', 'seo', 'projects', 'tags'));
+		}
     }
 
         public function getTags() {

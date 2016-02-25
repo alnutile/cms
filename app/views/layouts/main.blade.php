@@ -167,10 +167,33 @@ Use the corresponding body tag for your chosen theme
 {{ HTML::script('/assets/js/naturalSortVersionDates.min.js') }}
 
 <script type="text/javascript">
+	// Add padding to top of body tag if logged into admin on both themes
 	jQuery(function($) {
-		if($('.navbar.navbar-fixed-top').length){
+		if($('.navbar.navbar-fixed-top').length) {
 			$('body').css('padding-top', '30px');
 		}
+	});
+	// Functionality for mobile menu on dark theme.
+	jQuery(function($) {
+		window_size = $(document).width() <= 767 ? true : false;
+		if (window_size) {
+			$('ul.nav-list').addClass('hide-menu');
+			$('.border').addClass('hide-line');
+			$('.mobile-menu a').click(function () {
+				$('ul.nav-list').slideToggle();
+				$('.border').toggleClass('hide-line');
+				$('.mobile-menu a').toggleClass('active');
+			});
+		}
+		// resizes gray background image on dark theme
+		if ($('.navbar.navbar-fixed-top').length && (window_size)) {
+				$('body').css('background-size', 'auto 149px');
+		}
+		// hides mobile menu on homepage for dark theme
+		if($('body.home').length) {
+ 			$('ul.nav-list').css('display','block');
+ 			$('.mobile-menu').css('display','none');
+ 		}
 	});
 </script>
 
