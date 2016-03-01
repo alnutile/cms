@@ -33,7 +33,11 @@ class PostsController extends \BaseController {
         $posts = Post::where('published', '=', 1)->get();
         $tags = $this->tags->get_tags_for_type('Post');
         $seo = 'Builders Notebook';
-        return View::make('posts.index', compact('posts', 'tags', 'settings', 'seo'));
+        if($this->settings->theme == true) {
+			return View::make('posts.index_dark', compact('posts', 'tags', 'settings', 'seo'));
+		} else {
+			return View::make('posts.index', compact('posts', 'tags', 'settings', 'seo'));
+		}
     }
 
   public function adminIndex()
@@ -203,7 +207,11 @@ class PostsController extends \BaseController {
             ->get();
         $tags = $this->tags->get_tags_for_type('Post');
         $seo = $tag;
-        return View::make('posts.indexByTag', compact('posts', 'settings', 'tags', 'seo' ));
+        if($this->settings->theme == true) {
+			return View::make('posts.indexByTag_dark', compact('posts', 'settings', 'tags', 'seo' ));
+		} else {
+			return View::make('posts.indexByTag', compact('posts', 'settings', 'tags', 'seo' ));
+		}  
     }
 
 }
