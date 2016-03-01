@@ -17,11 +17,8 @@
         @endif
     </div>
 </div>
-
 <div class="col-xs-12 col-sm-7 col-md-8 col-lg-9 column">
     @if($page->id != 1 || $settings->theme == false)
-
-
 
     @if(isset($page->images) && $settings->theme == true)
     @include('shared.slideshow_angular', array('model' => 'pages'))
