@@ -32,14 +32,15 @@
 <div class="border"></div>
 <ul class="nav nav-list tags_nav">
     @foreach($tags as $tag)
-    <?php
-    if (!empty($tag['tag'])) { ?>
-    <li><a href="/{{$tag['tagable_type']}}/tags/<?php echo (($tag['tag'])) ?>">{{$tag['tag']}}</a></li>
-    <?php } ?>
+	<?php
+	if (!empty($tag['tag'])) { ?>
+    	<li><a href="/{{$tag['tagable_type']}}/tags/<?php echo (($tag['tag'])) ?>">{{$tag['tag']}}</a></li>
+    <?php } ?>	
     @endforeach
 </ul>
 @endif
-@if($settings->theme == true && $settings->pageId == 2 || $settings->menu_name == 'sub_nav')
+<!-- Removed from end of parenthesis: || $settings->menu_name == 'sub_nav' -->
+@if($settings->theme == true && $settings->pageId == 2)
 <div class="border"></div>
 <ul class="nav nav-list tags_nav">
     <li><a href = "/about">Our Company</a></li>
