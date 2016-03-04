@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
+<!-- pages.edit -->
 
 <div class="col-md-3 ">
     @include('shared.sidebar')
@@ -12,7 +13,7 @@
 
     {{ Form::model($page, array('method' => 'PUT', 'route' => array('pages.update', $page->id), 'files' => 'true', 'role' => 'form')) }}
 
-    @if(($settings->theme == true && $page->id != 1) || $settings->theme == false)
+    {{-- @if(($settings->theme == true && $page->id != 1) || $settings->theme == false) --}}
     <div class="form-group">
         <label>Page Heading
             @if($settings->theme == true)
@@ -24,12 +25,12 @@
             @endif</label>
         {{ Form::text('title', null, array('class' => 'form-control')) }}
 
-        @if($errors->first('title'))
-        <div class="alert alert-danger">
-            {{  $errors->first('title'); }}
-        </div>
-        @endif
-        @endif
+			@if($errors->first('title'))
+			<div class="alert alert-danger">
+				{{  $errors->first('title'); }}
+			</div>
+			@endif
+        {{-- @endif --}}
 
         <div class="form-group">
             <label>Page Browser Description (a.k.a. Title Tag) 
@@ -47,7 +48,7 @@
             {{  $errors->first('seo'); }}
         </div>
         @endif
-        @if(($settings->theme == true && $page->id != 1) || $settings->theme == false)
+       {{-- @if(($settings->theme == true && $page->id != 1) || $settings->theme == false) --}}
         <div class="form-group">
             <label>Page Main Body 
             @if($settings->theme == true)
@@ -64,13 +65,14 @@
             {{  $errors->first('body'); }}
         </div>
         @endif
-        @endif
-
-        @if($settings->theme = true) {{-- Removed $slideshow == true &&  --}}
+        {{--@endif --}}
+        
+		{{--
+        @if($settings->theme = true)  // Removed $slideshow variable - $slideshow == true && 
         <!-- images upload -->
         <label>Project Blowup Images Uploader
-        @if($settings->theme == true)
-            (<a href="http://www.restorationtrades.com/help/admin_pages_dark.html" target="_blank">Help</a>)
+			@if($settings->theme == true)
+				(<a href="http://www.restorationtrades.com/help/admin_pages_dark.html" target="_blank">Help</a>)
             @endif
 
             @if($settings->theme == false)
@@ -81,34 +83,41 @@
         <br>
         <!-- end images upload -->
         @endif
-
-        @if(Auth::user() && Auth::user()->admin == 1)
+		--}}
+        {{-- @if(Auth::user()) --}}
         <div class="form-group">
             <label>Page Web Address (URL) 
-        @if($settings->theme == true)
-            (<a href="http://www.restorationtrades.com/help/admin_pages_dark.html" target="_blank">Help</a>)
+			@if($settings->theme == true)
+				(<a href="http://www.restorationtrades.com/help/admin_pages_dark.html" target="_blank">Help</a>)
             @endif
 
             @if($settings->theme == false)
-            (<a href="http://www.restorationtrades.com/help/admin_pages_light.html" target="_blank">Help</a>)
+				(<a href="http://www.restorationtrades.com/help/admin_pages_light.html" target="_blank">Help</a>)
             @endif</label>
-            {{ Form::text('slug', null, array('class' => 'form-control')) }}
+				{{ Form::text('slug', null, array('class' => 'form-control')) }}
             <div class="help-block">The url must start with / </div>
-        </div>
-        @if($errors->first('slug'))
-        <div class="alert alert-danger">
-            @if($errors->first('slug'))
-            {{ $errors->first('slug') }}
-            @endif
-        </div>
-        @endif
-        @endif
+		</div>
+			@if($errors->first('slug'))
+				<div class="alert alert-danger">
+					@if($errors->first('slug'))
+					{{ $errors->first('slug') }}
+					@endif
+				</div>
+		<div class="form-group">
+			@endif
+        {{-- @endif --}}
+        {{-- Added checkbox for publish -JB 3-4-2016 --}}
+			<div class="controls">
+			  <div class="checkbox">
+				<label class="checkbox">{{ Form::checkbox('published', 1) }} Published</label>
+			  </div>
+			</div>
 
-        <div class="controls">
-            {{ Form::submit('Update Page', array('id' => 'submit', 'class' => 'btn btn-success')) }}
-            <br>
-        </div>
-
+			<div class="controls">
+				{{ Form::submit('Update Page', array('id' => 'submit', 'class' => 'btn btn-success')) }}
+				<br>
+			</div>
+		</div>
         {{ Form::close() }}
 
         @if($page->id >= 5)
@@ -117,6 +126,4 @@
         {{ Form::close() }}
         @endif
     </div>
-
-
     @stop
