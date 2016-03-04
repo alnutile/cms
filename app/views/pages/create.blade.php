@@ -103,7 +103,7 @@
 				{{ $errors->first('slug') }}
 				@endif
 			</div>
-			<div class="form-group">
+		<div class="form-group">
 			@endif
        {{--  @endif  --}}
         {{-- Added checkbox for publish -JB 2-6-2016 --}}
@@ -117,7 +117,7 @@
             {{ Form::submit('Update Page', array('id' => 'submit', 'class' => 'btn btn-success')) }}
             <br>
         </div>
-
+        </div>
         {{ Form::close() }}
 		{{--
         @if($pages->id >= 5)
@@ -127,6 +127,4 @@
         @endif
         --}}
     </div>
-
-
     @stop
