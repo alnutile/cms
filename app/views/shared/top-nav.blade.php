@@ -1,16 +1,17 @@
 <!-- shared.top-nav -->
-<button class="btn navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+<button class="btn navbar-toggle" data-toggle="collapse" data-target="#nav-collapse-top">
     <span class="icon-bar"></span>
     <span class="icon-bar"></span>
     <span class="icon-bar"></span>
 </button>
 
-<nav class="navbar-collapse collapse">
+<nav class="navbar-collapse collapse" id="nav-collapse-top">
     <ul class="nav nav-pills">
         <?php $pages = Page::getMenu(); ?>
         @foreach($top_links as $key => $static_menu_item)
             <?php
-            if (Request::server('PATH_INFO') == $static_menu_item) {
+            //if (Request::server('PATH_INFO') == $static_menu_item) {
+            if ($_SERVER['REQUEST_URI'] == $static_menu_item) {
                 $active = 'active';
             }
             else {
