@@ -88,11 +88,11 @@ Use the corresponding body tag for your chosen theme
         @if($settings->logo && $settings->theme == false)
         <a href="/" id="logo">{{ HTML::image("/img/settings/{$settings->logo}", $settings->name)}}</a>
         @endif
-    </header>
-    @if($settings->theme == false)
-    @include('shared.top-nav')
-    @endif
-
+    
+		@if($settings->theme == false)
+		@include('shared.top-nav')
+		@endif
+	</header>
 </div>
 <!-- //end container -->
 
@@ -169,12 +169,13 @@ Use the corresponding body tag for your chosen theme
 <script type="text/javascript">
 	// Add padding to top of body tag if logged into admin on both themes
 	jQuery(function($) {
-		if($('.navbar.navbar-fixed-top').length) {
-			$('body').css('padding-top', '30px');
+		if ($('.navbar-fixed-top').length) {
+			$('body').css('padding-top','30px');
 		}
-	});
+		if ($('.container.login').length) {
+			$('.main_content').css('padding-top','initial');
+		}
 	// Functionality for mobile menu on dark theme.
-	jQuery(function($) {
 		window_size = $(document).width() <= 767 ? true : false;
 		if (window_size) {
 			$('ul.nav-list').addClass('hide-menu');
@@ -188,6 +189,7 @@ Use the corresponding body tag for your chosen theme
 		// resizes gray background image on dark theme
 		if ($('.navbar.navbar-fixed-top').length && (window_size)) {
 				$('body').css('background-size', 'auto 149px');
+				$('#social, .col-md-3').css('display','none');
 		}
 		// hides mobile menu on homepage for dark theme
 		if($('body.home').length) {

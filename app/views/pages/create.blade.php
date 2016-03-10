@@ -84,11 +84,11 @@
         @endif
 		--}}
 		
-        @if(Auth::user() && Auth::user()->admin == 1)
+        {{-- @if(Auth::user() && Auth::user()->admin == 1) --}}
         <div class="form-group">
             <label>Page Web Address (URL) 
-        @if($settings->theme == true)
-            (<a href="http://www.restorationtrades.com/help/admin_pages_dark.html" target="_blank">Help</a>)
+			@if($settings->theme == true)
+				(<a href="http://www.restorationtrades.com/help/admin_pages_dark.html" target="_blank">Help</a>)
             @endif
 
             @if($settings->theme == false)
@@ -97,15 +97,15 @@
             {{ Form::text('slug', null, array('class' => 'form-control')) }}
             <div class="help-block">The url must start with / </div>
         </div>
-        @if($errors->first('slug'))
-        <div class="alert alert-danger">
-            @if($errors->first('slug'))
-            {{ $errors->first('slug') }}
-            @endif
-        </div>
-        <div class="form-group">
-        @endif
-        @endif
+			@if($errors->first('slug'))
+			<div class="alert alert-danger">
+				@if($errors->first('slug'))
+				{{ $errors->first('slug') }}
+				@endif
+			</div>
+		<div class="form-group">
+			@endif
+       {{--  @endif  --}}
         {{-- Added checkbox for publish -JB 2-6-2016 --}}
 		<div class="controls">
 		  <div class="checkbox">
@@ -117,7 +117,7 @@
             {{ Form::submit('Update Page', array('id' => 'submit', 'class' => 'btn btn-success')) }}
             <br>
         </div>
-
+        </div>
         {{ Form::close() }}
 		{{--
         @if($pages->id >= 5)
@@ -127,6 +127,4 @@
         @endif
         --}}
     </div>
-
-
     @stop

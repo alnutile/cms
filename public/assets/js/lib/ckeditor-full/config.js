@@ -29,7 +29,7 @@ CKEDITOR.editorConfig = function( config ) {
         { name: 'styles', items: [ 'Format', 'FontSize', 'TextColor', 'PasteFromWord', 'RemoveFormat' ] },
         { name: 'insert', items: [ 'Image', 'Table', 'SpecialChar', 'MediaEmbed', 'SourceDialog'] },'/',
     ];
-
+	
     // Remove some buttons, provided by the standard plugins, which we don't
     // need to have in the Standard(s) toolbar.
     //config.removeButtons = 'Image';
@@ -38,8 +38,8 @@ CKEDITOR.editorConfig = function( config ) {
     // Se the most common block elements.
     config.format_tags = 'p;h1;h2;h3;pre';
 
-    //for paypal buttons
-    config.extraAllowedContent = 'form(*){*}[*]; input(*){*}[*]';
+    //for paypal buttons - made classes allowed in admin editor
+    config.extraAllowedContent = 'form(*){*}[*]; input(*){*}[*]; *(*)';
 
 
     // Make dialogs simpler.
