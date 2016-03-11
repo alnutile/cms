@@ -17,7 +17,7 @@ class CreatePagesTable extends Migration {
 			$table->string('title');
 			$table->string('seo')->nullable(); // Added seo 2-6-2016 - JB
 			$table->text('body');
-			$table->string('slug');->nullable();
+			$table->string('slug')->nullable();
 			$table->boolean('published')->default(0);
 			$table->timestamps();
         });
