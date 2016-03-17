@@ -1,7 +1,23 @@
 body {
-  padding-top: 50px;
+  padding-top: 0;
   overflow-x: hidden;
 }
+
+header {
+    width: 1170px;
+    margin: 0 auto;
+    padding: 14px 0 0;
+    float: none;
+}
+
+#logo img {
+  max-width: 100%;
+}
+
+.navbar-collapse {
+    margin-top: 0;
+}
+
 .col-xs-7 {
   width: 100%;
 }
@@ -14,22 +30,44 @@ body {
 .padding-lr {
   padding: 0 10px;
 }
-
-#logo img {
-  max-width: 100%;
+    
+h4.panel-title.nav-header {
+	margin-bottom: 0;
 }
 
-@media (max-width: 991px) {
-  .clearfix-sm:before, .clearfix-sm:after {
-    display: table;
-    content: " ";
-  }
+@media (min-width: 1200px) {
+	.col-md-9 {
+		width: 75%;
+	}
 }
 
 @media (min-width: 768px) {
-  .col-md-9 {
-    width: 75%;
-  }
+	.navbar > .container .navbar-brand {
+		padding-top: 8px;
+		padding-bottom: 8px;
+	}
+	.navbar {
+		min-height: 30px;
+	}
+	.navbar-nav > li > a {
+		padding-top: 8px;
+		padding-bottom: 8px;
+	}
+}
+@media (max-width: 1199px) {
+	.col-md-9 {
+		width: 90%;
+		margin: 0 auto;
+		float: none;
+		clear: both;
+	}
+}
+
+@media (max-width: 991px) {
+	.clearfix-sm:before, .clearfix-sm:after {
+		display: table;
+		content: " ";
+	}
 }
 
 img {
