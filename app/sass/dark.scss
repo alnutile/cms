@@ -8,6 +8,7 @@ body {
   background-color: #282828;
   font: 17px/25px 'Whitney SSm A', Arial, Helvetica, sans-serif;
   overflow-x: hidden;
+  padding-top: 0;
 }
 
 h1, h2, h3, h4, h5 {
@@ -290,6 +291,17 @@ select[name='order'] option
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px) {
+	.navbar > .container .navbar-brand {
+		padding-top: 8px;
+		padding-bottom: 8px;
+	}
+	.navbar {
+		min-height: 30px;
+	}
+	.navbar-nav > li > a {
+		padding-top: 8px;
+		padding-bottom: 8px;
+	}
   .sidebar-nav {
     position: relative;
     .nav-list a {
@@ -323,6 +335,16 @@ select[name='order'] option
       text-align: right;
     }
   }
+}
+
+@media (max-width: 991px)
+.col-sm-5 {
+    width: 41.166667%;
+}
+
+@media (max-width: 767px)
+.col-sm-5 {
+    width: 100%;
 }
 
 img {
