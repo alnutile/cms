@@ -1,40 +1,76 @@
-/* line 1, /Users/andrewcavanagh/zigbop/cms/app/sass/originalTheme.scss */
+/* line 1, stdin */
 body {
-  padding-top: 50px;
+  padding-top: 0;
   overflow-x: hidden; }
 
-/* line 5, /Users/andrewcavanagh/zigbop/cms/app/sass/originalTheme.scss */
+/* line 6, stdin */
+header {
+  width: 1170px;
+  margin: 0 auto;
+  padding: 14px 0 0;
+  float: none; }
+
+/* line 13, stdin */
+#logo img {
+  max-width: 100%; }
+
+/* line 17, stdin */
+.navbar-collapse {
+  margin-top: 0; }
+
+/* line 21, stdin */
 .col-xs-7 {
   width: 100%; }
 
-/* line 9, /Users/andrewcavanagh/zigbop/cms/app/sass/originalTheme.scss */
+/* line 25, stdin */
 #banner-header {
   max-width: 1170px;
   margin: 0 auto; }
 
-/* line 14, /Users/andrewcavanagh/zigbop/cms/app/sass/originalTheme.scss */
+/* line 30, stdin */
 .padding-lr {
   padding: 0 10px; }
 
-/* line 18, /Users/andrewcavanagh/zigbop/cms/app/sass/originalTheme.scss */
-#logo img {
-  max-width: 100%; }
+/* line 34, stdin */
+h4.panel-title.nav-header {
+  margin-bottom: 0; }
+
+@media (min-width: 1200px) {
+  /* line 39, stdin */
+  .col-md-9 {
+    width: 75%; } }
+
+@media (min-width: 768px) {
+  /* line 45, stdin */
+  .navbar > .container .navbar-brand {
+    padding-top: 8px;
+    padding-bottom: 8px; }
+  /* line 49, stdin */
+  .navbar {
+    min-height: 30px; }
+  /* line 52, stdin */
+  .navbar-nav > li > a {
+    padding-top: 8px;
+    padding-bottom: 8px; } }
+
+@media (max-width: 1199px) {
+  /* line 58, stdin */
+  .col-md-9 {
+    width: 90%;
+    margin: 0 auto;
+    float: none;
+    clear: both; } }
 
 @media (max-width: 991px) {
-  /* line 23, /Users/andrewcavanagh/zigbop/cms/app/sass/originalTheme.scss */
+  /* line 67, stdin */
   .clearfix-sm:before, .clearfix-sm:after {
     display: table;
     content: " "; } }
 
-@media (min-width: 768px) {
-  /* line 30, /Users/andrewcavanagh/zigbop/cms/app/sass/originalTheme.scss */
-  .col-md-9 {
-    width: 75%; } }
-
-/* line 35, /Users/andrewcavanagh/zigbop/cms/app/sass/originalTheme.scss */
+/* line 73, stdin */
 img {
   max-width: 100%; }
 
-/* line 39, /Users/andrewcavanagh/zigbop/cms/app/sass/originalTheme.scss */
+/* line 77, stdin */
 .project-top-image img {
   width: 100%; }

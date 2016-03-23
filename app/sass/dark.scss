@@ -337,14 +337,15 @@ select[name='order'] option
   }
 }
 
-@media (max-width: 991px)
-.col-sm-5 {
-    width: 41.166667%;
+@media (max-width: 991px) {
+	.col-sm-5 {
+		width: 41.166667%;
+	}
 }
-
-@media (max-width: 767px)
-.col-sm-5 {
-    width: 100%;
+@media (max-width: 767px) {
+	.col-sm-5 {
+		width: 100%;
+	}
 }
 
 img {
