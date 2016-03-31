@@ -59,18 +59,16 @@ $(document).ready(function(){
         collapsedHeight: 208
     });
 
-    // changed by br 2016/01/22 to slow down changing image frames on silde display
-    // Edited to move $('body').addClass('home'); up and put if statement around backstretch code. 3/25/2016 JB
+	// changed by br 2016/01/22 to slow down changing image frames on silde display
+    // Edited to put if statement around backstretch code. 3/25/2016 JB
     if(typeof(cms) !== 'undefined' && cms.home === 'home'){
-    	$('body').addClass('home');
-    	if($('.backstretch').length) {
+    		$('body').addClass('home');
 			$.backstretch(cms.slides, {
 				fade: 750,
 				duration: 5000     // br extend time from 2000 to 5000 ms
 			});
-        }
     }
-
+    
     //image galleries on projects
     $('a.gallery').colorbox({transition: "fade", maxWidth:"1200px", maxHeight:"1200px" });
     $('#colorbox').on("click", function(){
@@ -94,39 +92,43 @@ $(document).ready(function(){
         });
     });
 
-    var group = $("ol.top-menu").sortable({
-		group: 'top-menu',
-		onDrop: function  (item, targetContainer, _super) {
-			var clonedItem = $('<li/>').css({height: 0})
-			item.before(clonedItem)
-			clonedItem.animate({'height': item.height()})
+    var group = $("ol.top-menu").sortable(
+        {
+            group: 'top-menu',
+            onDrop: function  (item, targetContainer, _super) {
+                var clonedItem = $('<li/>').css({height: 0})
+                item.before(clonedItem)
+                clonedItem.animate({'height': item.height()})
 
-			item.animate(clonedItem.position(), function  () {
-				clonedItem.detach()
-				_super(item)
-			});
-			var data = group.sortable("serialize").get();
+                item.animate(clonedItem.position(), function  () {
+                    clonedItem.detach()
+                    _super(item)
+                });
+                var data = group.sortable("serialize").get();
 
-			$("body").data('top_menu', data);
+                $("body").data('top_menu', data);
 
-		},
-		onDragStart: function ($item, container, _super) {
-			var offset = $item.offset(),
-				pointer = container.rootGroup.pointer
+            },
+            onDragStart: function ($item, container, _super) {
+                var offset = $item.offset(),
+                    pointer = container.rootGroup.pointer
 
-			adjustment = {
-				left: pointer.left - offset.left,
-				top: pointer.top - offset.top
-			}
+                adjustment = {
+                    left: pointer.left - offset.left,
+                    top: pointer.top - offset.top
+                }
 
-			_super($item, container)
-		},
-		onDrag: function ($item, position) {
-			$item.css({
-				left: position.left - adjustment.left,
-				top: position.top - adjustment.top
-			})
-		}
+                _super($item, container)
+            },
+            onDrag: function ($item, position) {
+                $item.css({
+                    left: position.left - adjustment.left,
+                    top: position.top - adjustment.top
+                })
+            }
 
-	});
+        }
+    );
+
+
 });
