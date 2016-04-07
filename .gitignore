@@ -27,3 +27,4 @@ Thumbs.db
 public/assets/css/customProject.css
 composer.lock
 *.phprj
+app/config/database.php
