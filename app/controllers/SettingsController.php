@@ -135,7 +135,7 @@ class SettingsController extends \BaseController {
         $setting->houzz             = (isset($data['houzz'])) ? $data['houzz'] : '';
         $setting->footer            = (isset($data['footer'])) ? $data['footer'] : '';
         $setting->google_analytics            = (isset($data['google_analytics'])) ? $data['google_analytics'] : '';
-
+        $setting->portfolio_menu_postion = $data['portfolio_position'];
         $setting->save();
 
         return Redirect::to("/settings/" . $setting->id . "/edit")->withMessage("Settings Updated");
