@@ -25,17 +25,27 @@ class Page extends \Eloquent {
     public function getAll()
     {
         $pages = Page::where("published", '=', '1')->get();
+        return $pages; 
     }
 
     static public function getMenu()
     {
-        $pages = Page::where("slug", "!=", "")->orderBy("menu_sort_order")->get();
-        return $pages;
+      return Page::where("slug", "!=", "")->orderBy("menu_sort_order")->get();
     }
 
     public function images()
     {
         return $this->morphMany('Image', 'imageable')->orderBy('asc');
+    }
+    
+    static public function getAllSubNavParents()
+    {
+      return Page::where("published", '1')->whereIn('menu_name', array('top','left_side','top,left_side'))->get();    
+    }    
+    
+    static public function getSubNavSorted($parent_page_id)
+    {
+      return Page::where("published", '1')->where('menu_name', 'sub_nav')->where('parent_menu', $parent_page_id)->orderBy('id', 'DESC')->get();    
     }
 
 }

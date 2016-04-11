@@ -113,6 +113,43 @@
 			  </div>
 			</div>
 
+        <div class="row">
+          <div class="form-group col-md-12">
+            <div class="checkbox">
+              <label class="checkbox">
+                {{ Form::checkbox('enable_menu', '1', true); }} Enable Menu Item
+              </label>
+            </div>
+          </div>
+          
+          <div id='menu-section'>
+            <div class="form-group col-md-2">
+              <label for="menu_sort_order">Sort Order</label>
+              {{Form::select('menu_sort_order', range(0,10), $page->menu_sort_order, array('class'=>'form-control'));}}
+              </select>
+            </div>          
+            <div class="form-group col-md-4">
+              <label for="menu_name">Menu Name</label>
+              <select id="menu_name" name="menu_name" class="form-control">
+                <option value="top,left_side">Top & Left Side</option>
+                <option value="sub_nav">Sub Nav</option>
+              </select>
+            </div>            
+            <div class="form-group col-md-6 hide" id='menu-parent-wrapper'>
+              <label for="menu_parent">Parent Menu Item</label>
+              <select id="menu_parent" name="menu_parent" class="form-control">
+                @if(!empty($subnavparents))
+                @foreach ($subnavparents as $i)
+                <option value="{{$i['id']}}">{{$i['title']}}</option>
+                @endforeach
+                @endif
+              </select>
+            </div>
+          </div>
+     
+          
+        </div>
+<br><br>
 			<div class="controls">
 				{{ Form::submit('Update Page', array('id' => 'submit', 'class' => 'btn btn-success')) }}
 				<br>

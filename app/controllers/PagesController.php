@@ -50,17 +50,15 @@ class PagesController extends \BaseController {
          * @return Response
          */
         public function create()
-		{
-            print_r("am in create");
-             
+		{             
     	// Added from Andy's code example
         parent::show(); 
             
         // this is a way of creating a view
         // the 'pages.create' parameter references the pages folder (app/views/pages)
         // and the create.blade.php file (create) in the pages folder
- 
-        return View::make('pages.create');
+        $subnavparents = Page::getAllSubNavParents()->toArray();
+        return View::make('pages.create' , compact('subnavparents'));
 		}
 
         /**
@@ -119,13 +117,25 @@ class PagesController extends \BaseController {
         $rules = Page::$rules;
         // print_r($rules);
                    
-		$validator = Validator::make($input, array('slug' => 'regex:/^\/[A-Za-z0-9_]+$/')); 
+		$validator = Validator::make($input, array('slug' => 'regex:/^\/[A-Za-z0-9_\-]+$/')); 
                                                  
 					if($validator->passes()) {
                      
                      // print_r(array_values($input));
                      // die("in validator test") ;
-                      
+            if(!Input::get('enable_menu'))
+            {
+              $input['menu_sort_order'] = 0;
+              $input['menu_name'] = '';
+              $input['menu_parent'] = 0;
+            } else
+            {
+              if ($input['menu_name'] == 'top,left_side')
+              {
+                $input['menu_parent'] = 0;
+              }
+            }
+            
 						$page = Page::create($input);
 						$banner = $this->bannerSet($page);
                      //  return Redirect::to('pages.admin_index'->withMessage("Created Page");
@@ -146,7 +156,8 @@ class PagesController extends \BaseController {
         parent::show();
         $page = Page::findOrFail($id);
         parent::checkForSlideshow($page->id);
-        return View::make('pages.edit', compact('page', 'settings', 'slideshow'));
+        $subnavparents = Page::getAllSubNavParents()->toArray();
+        return View::make('pages.edit', compact('page', 'settings', 'slideshow', 'subnavparents'));
     }
 
 
@@ -161,7 +172,7 @@ class PagesController extends \BaseController {
         $page_update = Input::all();
 //        dd($page_update);
         if($this->settings->theme != true) {
-            $validator = Validator::make($page_update, array('title' => 'required', 'slug' => 'regex:/^\/[A-Za-z0-9_]+$/'));
+            $validator = Validator::make($page_update, array('title' => 'required', 'slug' => 'regex:/^\/[A-Za-z0-9_\-]+$/'));
             $page = Page::find($id);
             if($validator->passes()) {
                 $page->title = $page_update['title'];
@@ -180,7 +191,7 @@ class PagesController extends \BaseController {
             }
 
         } else{
-            $validator = Validator::make($page_update, array('slug' => 'regex:/^\/[A-Za-z0-9_]+$/'));
+            $validator = Validator::make($page_update, array('slug' => 'regex:/^\/[A-Za-z0-9_\-]+$/'));
             $page = Page::find($id);
             if($validator->passes()) {
                 $page->seo = $page_update['seo'];

@@ -103,8 +103,9 @@
 				{{ $errors->first('slug') }}
 				@endif
 			</div>
-		<div class="form-group">
 			@endif
+
+		<div class="form-group">
        {{--  @endif  --}}
         {{-- Added checkbox for publish -JB 2-6-2016 --}}
 		<div class="controls">
@@ -112,19 +113,81 @@
 			<label class="checkbox">{{ Form::checkbox('published', 1) }} Published</label>
 		  </div>
 		</div>
-
+        </div>
+        <div class="row">
+          <div class="form-group col-md-12">
+            <div class="checkbox">
+              <label class="checkbox">
+                <input type="checkbox" id='enable_menu' name='enable_menu' checked> Enable Menu Item
+              </label>
+            </div>
+          </div>
+          
+          <div id='menu-section'>
+            <div class="form-group col-md-2">
+              <label for="menu_sort_order">Sort Order</label>
+              <select id="menu_sort_order" name="menu_sort_order" class="form-control">
+                @foreach (range(0,9) as $n)
+                <option value="{{$n}}">{{$n}}</option>
+                @endforeach
+              </select>
+            </div>          
+            <div class="form-group col-md-4">
+              <label for="menu_name">Menu Name</label>
+              <select id="menu_name" name="menu_name" class="form-control">
+                <option value="top,left_side">Top & Left Side</option>
+                <option value="sub_nav">Sub Nav</option>
+              </select>
+            </div>            
+            <div class="form-group col-md-6 hide" id='menu-parent-wrapper'>
+              <label for="menu_parent">Parent Menu Item</label>
+              <select id="menu_parent" name="menu_parent" class="form-control">
+                @if(!empty($subnavparents))
+                @foreach ($subnavparents as $i)
+                <option value="{{$i['id']}}">{{$i['title']}}</option>
+                @endforeach
+                @endif
+              </select>
+            </div>
+          </div>
+     
+          
+        </div>
         <div class="controls">
+            <br>
+            <br>
             {{ Form::submit('Update Page', array('id' => 'submit', 'class' => 'btn btn-success')) }}
             <br>
-        </div>
-        </div>
+        </div>      
         {{ Form::close() }}
 		{{--
         @if($pages->id >= 5)
         {{ Form::open(['method' => 'DELETE', 'action' => ['PagesController@destroy', $pages->id]]) }}
         <button type="submit" class="btn btn-danger">Delete</button>
         {{ Form::close() }}
-        @endif
+          @endif
         --}}
     </div>
     @stop
+
+@section('js')
+<script type="text/javascript">
+
+  $(document).on('change','#enable_menu',function(){
+    if(this.checked) {
+      $('#menu-section').show();
+    } else {
+      $('#menu-section').hide();
+    }
+  });  
+  
+  $(document).on('change','#menu_name',function(){
+    if(this.value == 'sub_nav') {
+      $('#menu-parent-wrapper').removeClass('hide');
+    } else {
+      $('#menu-parent-wrapper').addClass('hide');
+    }
+  });
+
+</script>
+@stop
