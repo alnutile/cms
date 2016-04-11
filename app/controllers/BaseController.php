@@ -8,13 +8,36 @@ class BaseController extends Controller {
     protected $filesystem;
     public $settings;
     public $portfolio;
+    public $top_left_nav; 
+    public $sub_nav;
     protected $banner = FALSE;
 
-    public function __construct(Setting $settings = NULL, Portfolio $portfolio = NULL, Filesystem $filesystem = NULL) {
+    public function __construct(Setting $settings = NULL, Portfolio $portfolio = NULL, Filesystem $filesystem = NULL ,
+                                Page $top_left_nav = NULL, Page $sub_nav = NULL) {
         $this->settings   = ($settings == NULL) ? Setting::first() : $settings;
         $this->portfolio  = ($portfolio == NULL) ? Portfolio::all() : $portfolio;
         $this->filesystem = ($filesystem == NULL) ? new Filesystem : $filesystem;
+        
+      
+        /* Calculating nav*/
+        if(Request::method('get'))
+        {
+          $this->top_left_nav = ($top_left_nav == NULL) ? Page::where("menu_name", '=', 'top,left_side')->orderBy('menu_sort_order','asc')->get() : $top_left_nav;
+        
+          $slug = "/".Request::path();
+
+          $parent = Page::where("menu_name",'=','top,left_side')->where('slug','=',$slug)->first();
+          if(isset($parent))
+          {
+          $this->sub_nav = Page::where('menu_name','=','sub_nav')->where('menu_parent','=',$parent->id)->get();
+          }
+        }
+
+        /* End of Calculating nav*/
+      
         \View::share('settings', $this->settings);
+        \View::share('top_left_nav', $this->top_left_nav);
+        \View::share('sub_nav', $this->sub_nav);
     }
 
     public function show($array = NULL) {

@@ -182,6 +182,23 @@ class PagesController extends \BaseController {
                 if(isset($page_update['images'])) {
                     $this->imagesService->addImages($page->id, $page_update['images'], 'Page');
                 }
+                if(!Input::get('enable_menu'))
+                {
+                  $page->menu_sort_order = 0;
+                  $page->menu_name = '';
+                  $page->menu_parent = 0;
+                } else
+                {
+                  $page->menu_sort_order = $page_update['menu_sort_order'];
+                  $page->menu_name = $page_update['menu_name'];
+                  $page->menu_parent = $page_update['menu_parent'];
+                  
+                  
+                  if ($page_update['menu_name'] == 'top,left_side')
+                  {
+                    $page->menu_parent = 0;
+                  }
+                }
                 $page->save();
                 $banner = $this->bannerSet($page);
                 return Redirect::to("/pages/")->withMessage("Page Updated");

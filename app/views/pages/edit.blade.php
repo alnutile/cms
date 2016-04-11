@@ -117,12 +117,12 @@
           <div class="form-group col-md-12">
             <div class="checkbox">
               <label class="checkbox">
-                {{ Form::checkbox('enable_menu', '1', true); }} Enable Menu Item
+                {{ Form::checkbox('enable_menu', '1', $page->menu_name , array('id' => 'enable_menu')); }} Enable Menu Item
               </label>
             </div>
           </div>
           
-          <div id='menu-section'>
+          <div id='menu-section' class=" @if ($page->menu_name == "") {{ 'hide'}} @endif">
             <div class="form-group col-md-2">
               <label for="menu_sort_order">Sort Order</label>
               {{Form::select('menu_sort_order', range(0,10), $page->menu_sort_order, array('class'=>'form-control'));}}
@@ -131,16 +131,16 @@
             <div class="form-group col-md-4">
               <label for="menu_name">Menu Name</label>
               <select id="menu_name" name="menu_name" class="form-control">
-                <option value="top,left_side">Top & Left Side</option>
-                <option value="sub_nav">Sub Nav</option>
+                <option value="top,left_side" @if($page->menu_name == 'top,left_side') selected @endif>Top & Left Side</option>
+                <option value="sub_nav" @if($page->menu_name == 'sub_nav') selected @endif>Sub Nav</option>
               </select>
             </div>            
-            <div class="form-group col-md-6 hide" id='menu-parent-wrapper'>
+            <div class="form-group col-md-6 @if($page->menu_name != 'sub_nav') {{ 'hide' }} @endif" id='menu-parent-wrapper'>
               <label for="menu_parent">Parent Menu Item</label>
               <select id="menu_parent" name="menu_parent" class="form-control">
                 @if(!empty($subnavparents))
                 @foreach ($subnavparents as $i)
-                <option value="{{$i['id']}}">{{$i['title']}}</option>
+                <option value="{{$i['id']}}" @if($page->menu_parent == $i['id']) {{ $i['title'] }} selected @endif>{{$i['title']}}</option>
                 @endforeach
                 @endif
               </select>
@@ -164,3 +164,26 @@
         @endif
     </div>
     @stop
+  @section('js')
+<script type="text/javascript">
+
+  $(document).on('change','#enable_menu',function(){
+    if(this.checked) {
+      $('#menu-section').removeClass('hide');
+      
+    } else {
+      $('#menu-section').addClass('hide');
+     
+    }
+  });  
+  
+  $(document).on('change','#menu_name',function(){
+    if(this.value == 'sub_nav') {
+      $('#menu-parent-wrapper').removeClass('hide');
+    } else {
+      $('#menu-parent-wrapper').addClass('hide');
+    }
+  });
+
+</script>
+@stop
