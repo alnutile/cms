@@ -26,10 +26,17 @@ class BaseController extends Controller {
         
           $slug = "/".Request::path();
 
-          $parent = Page::where("menu_name",'=','top,left_side')->where('slug','=',$slug)->first();
-          if(isset($parent))
+          $node = Page::where('slug','=',$slug)->first();
+          // If slug points to a sub_nav's parent
+          if(isset($node) && $node->menu_name == 'top,left_side')
           {
-          $this->sub_nav = Page::where('menu_name','=','sub_nav')->where('menu_parent','=',$parent->id)->get();
+            $this->sub_nav = Page::where('menu_name','=','sub_nav')->where('menu_parent','=',$node->id)->get();
+          }          
+          
+          // If slug points to a sub_nav
+          if(isset($node) && $node->menu_name == 'sub_nav')
+          {
+            $this->sub_nav = Page::where('menu_name','=','sub_nav')->where('menu_parent','=',$node->menu_parent)->get();
           }
         }
 
