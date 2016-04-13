@@ -117,7 +117,7 @@
           <div class="form-group col-md-12">
             <div class="checkbox">
               <label class="checkbox">
-                {{ Form::checkbox('enable_menu', '1', $page->menu_name , array('id' => 'enable_menu')); }} Enable Menu Item
+                {{ Form::checkbox('enable_menu', '1', $page->menu_name , array('id' => 'enable_menu')); }} Make this page a menu item
               </label>
             </div>
           </div>
@@ -129,14 +129,14 @@
               </select>
             </div>          
             <div class="form-group col-md-4">
-              <label for="menu_name">Menu Name</label>
+              <label for="menu_name">Type of menu item</label>
               <select id="menu_name" name="menu_name" class="form-control">
-                <option value="top,left_side" @if($page->menu_name == 'top,left_side') selected @endif>Top & Left Side</option>
-                <option value="sub_nav" @if($page->menu_name == 'sub_nav') selected @endif>Sub Nav</option>
+                <option value="top,left_side" @if($page->menu_name == 'top,left_side') selected @endif>Top & Left Menu</option>
+                <option value="sub_nav" @if($page->menu_name == 'sub_nav') selected @endif>Sub-menu</option>
               </select>
             </div>            
             <div class="form-group col-md-6 @if($page->menu_name != 'sub_nav') {{ 'hide' }} @endif" id='menu-parent-wrapper'>
-              <label for="menu_parent">Parent Menu Item</label>
+              <label for="menu_parent">Parent menu item</label>
               <select id="menu_parent" name="menu_parent" class="form-control">
                 @if(!empty($subnavparents))
                 @foreach ($subnavparents as $i)

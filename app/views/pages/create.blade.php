@@ -118,7 +118,7 @@
           <div class="form-group col-md-12">
             <div class="checkbox">
               <label class="checkbox">
-                <input type="checkbox" id='enable_menu' name='enable_menu' checked> Enable Menu Item
+                <input type="checkbox" id='enable_menu' name='enable_menu' checked> Make this page a menu item
               </label>
             </div>
           </div>
@@ -133,14 +133,14 @@
               </select>
             </div>          
             <div class="form-group col-md-4">
-              <label for="menu_name">Menu Name</label>
+              <label for="menu_name">Type of menu item</label>
               <select id="menu_name" name="menu_name" class="form-control">
-                <option value="top,left_side">Top & Left Side</option>
-                <option value="sub_nav">Sub Nav</option>
+                <option value="top,left_side">Top & Left Menu</option>
+                <option value="sub_nav">Sub-menu</option>
               </select>
             </div>            
             <div class="form-group col-md-6 hide" id='menu-parent-wrapper'>
-              <label for="menu_parent">Parent Menu Item</label>
+              <label for="menu_parent">Parent menu item</label>
               <select id="menu_parent" name="menu_parent" class="form-control">
                 @if(!empty($subnavparents))
                 @foreach ($subnavparents as $i)
