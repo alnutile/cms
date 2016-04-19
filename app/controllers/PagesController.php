@@ -123,6 +123,11 @@ class PagesController extends \BaseController {
                      
                      // print_r(array_values($input));
                      // die("in validator test") ;
+             if(!Input::get('published'))
+            {
+              $input['published'] = 0;
+            }
+            
             if(!Input::get('enable_menu'))
             {
               $input['menu_sort_order'] = 0;
