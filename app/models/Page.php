@@ -45,7 +45,14 @@ class Page extends \Eloquent {
     
     static public function getSubNavSorted($parent_page_id)
     {
-      return Page::where("published", '1')->where('menu_name', 'sub_nav')->where('parent_menu', $parent_page_id)->orderBy('id', 'DESC')->get();    
+      
+      $pages = Page::where("published", '1')->where('menu_name','=', 'sub_nav')->where('menu_parent','=', $parent_page_id)->orderBy('id', 'DESC')->get();    
+       $parent = Page::find($parent_page_id);
+      if($parent)
+      {
+        $pages->prepend($parent);
+      }
+      return $pages;
     }
 
 }

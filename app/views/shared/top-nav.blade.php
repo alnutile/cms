@@ -22,9 +22,25 @@
           </ul>
         </li>
         @else
+       <?php $sub_light = Page::getSubNavSorted($top->id);?>
+            
+              @if( $sub_light->count() > 1)
+      <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{$top->title}}</a>
+         <ul class="dropdown-menu">
+          @foreach($sub_light as $sub)
+                <li>
+                  <a href="{{URL::to($sub->slug)}}">{{$sub->title}}</a>
+                </li>
+          @endforeach
+         </ul>
+        </li>
+       
+      @else
         <li class="@if(Request::server('PATH_INFO') ==  $top->slug) {{'active'}} @else {{'not-active'}} @endif">
           <a href="{{URL::to($top->slug)}}">{{$top->title}}</a>
-        </li>          
+        </li>
+      @endif
         @endif
       
 
