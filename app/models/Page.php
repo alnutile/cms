@@ -40,19 +40,30 @@ class Page extends \Eloquent {
     
     static public function getAllSubNavParents()
     {
-      return Page::where("published", '1')->whereIn('menu_name', array('top','left_side','top,left_side'))->get();    
+      $settings = Setting::first();
+      $pages =  Page::where("published", '1')->where('menu_name', 'top,left_side')->orderBy('menu_sort_order', 'ASC')->get()->toArray(); 
+      
+      if(is_numeric($settings->portfolio_menu_position))
+      {
+          // Array position starts from 0 so decrement the value
+          $pos = $settings->portfolio_menu_position - 1;
+          $portfolio = ['title' => 'Portfolio', 'slug'=>'/portfolio', 'is_portfolio'=>1];
+          Helpers\ArrayHelper::insertAt($pages, $pos, $portfolio);         
+      }
+      
+      return $pages;    
     }    
     
     static public function getSubNavSorted($parent_page_id)
     {
       
-      $pages = Page::where("published", '1')->where('menu_name','=', 'sub_nav')->where('menu_parent','=', $parent_page_id)->orderBy('id', 'DESC')->get();    
+      $pages = Page::where("published", '1')->where('menu_name', 'sub_nav')->where('menu_parent','=', $parent_page_id)->orderBy('menu_sort_order', 'ASC')->get();    
        $parent = Page::find($parent_page_id);
       if($parent)
       {
         $pages->prepend($parent);
       }
-      return $pages;
+      return $pages->toArray();
     }
 
 }

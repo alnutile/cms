@@ -22,7 +22,7 @@ class BaseController extends Controller {
         /* Calculating nav*/
         if(Request::method('get'))
         {
-          $this->top_left_nav = ($top_left_nav == NULL) ? Page::where("menu_name", '=', 'top,left_side')->orderBy('menu_sort_order','asc')->get() : $top_left_nav;
+          $this->top_left_nav = ($top_left_nav == NULL) ? Page::getAllSubNavParents() : $top_left_nav;
         
           $slug = "/".Request::path();
 
@@ -30,13 +30,13 @@ class BaseController extends Controller {
           // If slug points to a sub_nav's parent
           if(isset($node) && $node->menu_name == 'top,left_side')
           {
-            $this->sub_nav = Page::where('menu_name','=','sub_nav')->where('menu_parent','=',$node->id)->get();
+            $this->sub_nav = Page::getSubNavSorted($node->id);
           }          
           
           // If slug points to a sub_nav
           if(isset($node) && $node->menu_name == 'sub_nav')
           {
-            $this->sub_nav = Page::where('menu_name','=','sub_nav')->where('menu_parent','=',$node->menu_parent)->get();
+            $this->sub_nav = Page::getSubNavSorted($node->menu_parent);
           }
         }
 
