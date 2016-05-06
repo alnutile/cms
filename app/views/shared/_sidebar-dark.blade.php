@@ -4,7 +4,7 @@
 <ul class="nav nav-list">
 @if(isset($top_left_nav))
   @foreach($top_left_nav as $item)
-    <li class="@if(Request::server('PATH_INFO') ==  $item['slug']) {{'active'}} @else {{'not-active'}} @endif">
+    <li class="{{Request::url() ==  URL::to($item['slug']) ? 'active':'not-active'}}">
       <a href="{{URL::to($item['slug'])}}">{{$item['title']}}</a>
     </li>      
   @endforeach
@@ -26,7 +26,7 @@
 <div class="border"></div>
 <ul class="nav nav-list tags_nav">
     @foreach($sub_nav as $sub_nav_item)
-    <li class="@if(Request::server('PATH_INFO') ==  $sub_nav_item['slug']) {{'active'}} @else {{'not-active'}} @endif">
+    <li class="{{ Request::url() ==  URL::to($sub_nav_item['slug']) ? 'active' :'not-active'}}">
       <a href="{{URL::to($sub_nav_item['slug'])}}">{{$sub_nav_item['title']}}</a>
     </li>
     @endforeach
