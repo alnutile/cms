@@ -7,38 +7,40 @@
 
 <nav class="navbar-collapse collapse" id="nav-collapse-top">
     <ul class="nav nav-pills">
-        <?php $pages = Page::getMenu(); ?>
-        @foreach($top_links as $key => $static_menu_item)
-            <?php
-            //if (Request::server('PATH_INFO') == $static_menu_item) {
-            if ($_SERVER['REQUEST_URI'] == $static_menu_item) {
-                $active = 'active';
-            }
-            else {
-                $active = 'not-active';
-            }
-            ?>
-            @if($key == 'Portfolios' && !empty($portfolio_links))
-                <li class="{{$active}} dropdown">
-                    <a class="dropdown-toggle"
-                        data-toggle="dropdown"
-                        href="#">
-                        Portfolios
-                    </a>
-
-                    <ul class="dropdown-menu">
-                        @foreach($portfolio_links as $key => $portfolio)
-                            <li class="{{$active}}">
-                                <a href= {{$portfolio}}>{{$key}}</a>
-                            </li>
-                        @endforeach
-                    </ul>
-                </li>
-            @elseif($key != 'Portfolios')
-                <li class="{{$active}}">
-                    <a href= {{$static_menu_item}}>{{$key}}</a>
-                </li>
-            @endif
-        @endforeach
+      @foreach($top_left_nav as $top)
+        @if(isset($top['is_portfolio']))
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Portfolios</a>
+          <ul class="dropdown-menu">
+            @foreach($portfolio_links as $key => $portfolio)
+            <li class="{{Request::url() ==  URL::to($portfolio) ? 'active' : 'not-active' }}">
+              <a href= {{$portfolio}}>{{$key}}</a>
+            </li>
+            @endforeach
+          </ul>
+        </li>
+        @else
+        
+          <?php $sub_light = Page::getSubNavSorted($top['id']);?>            
+          @if( count($sub_light) > 1)
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{$top['title']}}</a>
+            <ul class="dropdown-menu">
+              @foreach($sub_light as $sub)
+              <li  class="{{Request::url() ==  URL::to($sub['slug']) ? 'active' : 'not-active'}}">
+                <a href="{{URL::to($sub['slug'])}}">{{$sub['title']}}</a>
+              </li>
+              @endforeach
+            </ul>
+          </li>
+          @else
+          <li class="{{ Request::url() ==  URL::to($top['slug']) ? 'active' : 'not-active'}}">
+            <a href="{{URL::to($top['slug'])}}">{{$top['title']}}</a>
+          </li>
+          @endif
+        @endif
+      @endforeach       
     </ul>
 </nav>
+
+

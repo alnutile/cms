@@ -2,6 +2,7 @@
 
 @section('content')
 <!-- pages.show -->
+@if($settings->enable_left_nav)
 <div class="col-md-3">
     <div class = "sidebar-nav">
         @include('shared.sidebar', array('model' => 'page'))
@@ -16,8 +17,15 @@
         @endif
     </div>
 </div>
+@endif
 
+@if($settings->enable_left_nav)
 <div class="col-md-9 col-xs-7 column">
+@else
+<div class="col-md-12 col-xs-7 column">
+@endif
+
+
     @if($page->id != 1 || $settings->theme == false)
 
 

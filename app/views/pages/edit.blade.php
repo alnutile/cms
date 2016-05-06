@@ -113,6 +113,45 @@
 			  </div>
 			</div>
 
+        <div class="row">
+          <div class="form-group col-md-12">
+            <div class="checkbox">
+              <label class="checkbox">
+                {{ Form::checkbox('enable_menu', '1', $page->menu_name , array('id' => 'enable_menu')); }} Make this page a menu item
+              </label>
+            </div>
+          </div>
+          
+          <div id='menu-section' class=" @if ($page->menu_name == "") {{ 'hide'}} @endif">
+            <div class="form-group col-md-2">
+              <label for="menu_sort_order">Sort Order</label>
+              {{Form::select('menu_sort_order', range(0,10), $page->menu_sort_order, array('class'=>'form-control'));}}
+              </select>
+            </div>          
+            <div class="form-group col-md-4">
+              <label for="menu_name">Type of menu item</label>
+              <select id="menu_name" name="menu_name" class="form-control">
+                <option value="top,left_side" @if($page->menu_name == 'top,left_side') selected @endif>Top & Left Menu</option>
+                <option value="sub_nav" @if($page->menu_name == 'sub_nav') selected @endif>Sub-menu</option>
+              </select>
+            </div>            
+            <div class="form-group col-md-6 @if($page->menu_name != 'sub_nav') {{ 'hide' }} @endif" id='menu-parent-wrapper'>
+              <label for="menu_parent">Parent menu item</label>
+              <select id="menu_parent" name="menu_parent" class="form-control">
+                @if(!empty($subnavparents))
+                  @foreach ($subnavparents as $i)
+                    @if(isset($i['id']))
+                    <option value="{{$i['id']}}" @if($page->menu_parent == $i['id']) {{ $i['title'] }} selected @endif>{{$i['title']}}</option>
+                    @endif                
+                  @endforeach
+                @endif
+              </select>
+            </div>
+          </div>
+     
+          
+        </div>
+<br><br>
 			<div class="controls">
 				{{ Form::submit('Update Page', array('id' => 'submit', 'class' => 'btn btn-success')) }}
 				<br>
@@ -127,3 +166,26 @@
         @endif
     </div>
     @stop
+  @section('js')
+<script type="text/javascript">
+
+  $(document).on('change','#enable_menu',function(){
+    if(this.checked) {
+      $('#menu-section').removeClass('hide');
+      
+    } else {
+      $('#menu-section').addClass('hide');
+     
+    }
+  });  
+  
+  $(document).on('change','#menu_name',function(){
+    if(this.value == 'sub_nav') {
+      $('#menu-parent-wrapper').removeClass('hide');
+    } else {
+      $('#menu-parent-wrapper').addClass('hide');
+    }
+  });
+
+</script>
+@stop

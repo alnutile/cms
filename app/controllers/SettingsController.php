@@ -87,7 +87,7 @@ class SettingsController extends \BaseController {
     public function update($id)
     {
         $data = Input::all();
-//        dd($data);
+        
         $setting = Setting::findOrFail($id);
 
         if($setting->theme == false)
@@ -135,7 +135,8 @@ class SettingsController extends \BaseController {
         $setting->houzz             = (isset($data['houzz'])) ? $data['houzz'] : '';
         $setting->footer            = (isset($data['footer'])) ? $data['footer'] : '';
         $setting->google_analytics            = (isset($data['google_analytics'])) ? $data['google_analytics'] : '';
-
+        $setting->portfolio_menu_position = $data['portfolio_position'];
+        $setting->enable_left_nav = (isset($data['enable_left_nav'])) ? 1 : 0;
         $setting->save();
 
         return Redirect::to("/settings/" . $setting->id . "/edit")->withMessage("Settings Updated");

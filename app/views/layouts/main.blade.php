@@ -198,6 +198,6 @@ Use the corresponding body tag for your chosen theme
  		}
 	});
 </script>
-
+@yield('js')
 </body>
 </html>

@@ -12,6 +12,10 @@ class MenusController extends \BaseController {
 	 *
 	 * @return Response
 	 */
+  public function __construct()
+  {
+    parent::__construct();
+  }
 	public function index()
 	{
       parent::show();

@@ -2,52 +2,38 @@
 <a class = "side_logo" href="/">{{ HTML::image("/img/settings/{$settings->logo}", $settings->name)}}</a>
 @endif
 <ul class="nav nav-list">
-    <?php
-    if(Request::server('PATH_INFO') == '/portfolios') {
-    //if($_SERVER['REQUEST_URI'] == '/portfolios') {
-        $icon = '<i class="glyphicon glyphicon-th"></i>';
-    } else {
-        $icon = '';
-    }
-    ?>
-    @if($settings->theme == false)
-    <li class="nav-header">
-        <h4>{{$icon}}&nbsp;Links</h4>
-    </li>
-    @endif
-    @foreach($shared_links as $key => $static_menu_item)
-    <?php
-    //if(Request::server('PATH_INFO') ==  $static_menu_item) {
-    if($_SERVER['REQUEST_URI'] == $static_menu_item) {
-        $active = 'active';
-    } else {
-        $active = 'not-active';
-    }
-    ?>
-    <li class="{{$active}}"> <a href = {{$static_menu_item}}>{{$key}}</a></li>
-    @endforeach
+@if(isset($top_left_nav))
+  @foreach($top_left_nav as $item)
+    <li class="{{Request::url() ==  URL::to($item['slug']) ? 'active':'not-active'}}">
+      <a href="{{URL::to($item['slug'])}}">{{$item['title']}}</a>
+    </li>      
+  @endforeach
+@endif
 </ul>
- 
 @if(isset($tags))
 <div class="border"></div>
 <ul class="nav nav-list tags_nav">
     @foreach($tags as $tag)
-	<?php
-	if (!empty($tag['tag'])) { ?>
-    	<li><a href="/{{$tag['tagable_type']}}/tags/<?php echo (($tag['tag'])) ?>">{{$tag['tag']}}</a></li>
-    <?php } ?>	
+      @if(!empty($tag['tag']))
+    	<li><a href="/{{$tag['tagable_type']}}/tags/{{$tag['tag']}}">{{$tag['tag']}}</a></li>
+      @endif
     @endforeach
 </ul>
 @endif
 <!-- Removed from end of parenthesis: || $settings->menu_name == 'sub_nav' -->
-@if($settings->theme == true && $settings->pageId == 2)
+
+@if(isset($sub_nav))
 <div class="border"></div>
 <ul class="nav nav-list tags_nav">
-    <li><a href = "/about">Our Company</a></li>
-    <li><a href = "/our_process">Our Process</a></li>
-    <li><a href = "/testimonials">Testimonials</a></li>
+    @foreach($sub_nav as $sub_nav_item)
+    <li class="{{ Request::url() ==  URL::to($sub_nav_item['slug']) ? 'active' :'not-active'}}">
+      <a href="{{URL::to($sub_nav_item['slug'])}}">{{$sub_nav_item['title']}}</a>
+    </li>
+    @endforeach
 </ul>
 @endif
+
+
 
 @if($settings->theme == false)
 @include('shared._social')
