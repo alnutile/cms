@@ -29,7 +29,7 @@
                   <div class="panel-body">
                     <ul class="nav nav-list">
                           @foreach($portfolio_links as $key => $portfolio)
-                          <li class='@if(Request::server("PATH_INFO") ==  $portfolio) {{"active"}} @else {{"not-active"}} @endif'>
+                          <li class='{{Request::url() ==  URL::to($portfolio) ? "active" : "not-active" }}'>
                             <a href = {{$portfolio}}>{{$key}}</a>
                           </li>
                           @endforeach
@@ -54,16 +54,17 @@
                       <div class="panel-body">
                         <ul class="nav nav-list">
                           @foreach($sub_light as $sub)
-                          <li><a href="{{URL::to($sub['slug'])}}">{{$sub['title']}}</a></li>
+                          <li  class='{{ Request::url() ==  URL::to($sub["slug"]) ?  "active" : "not-active" }}'>
+                            <a href="{{URL::to($sub['slug'])}}">{{$sub['title']}}</a>
+                          </li>
                           @endforeach
                         </ul>
                       </div>
                     </div>
                     
                 @else <!-- parent without subnav-->
-                    
                     <div class="panel-heading" role="tab">
-                      <h4 class="panel-title nav-header" >    
+                      <h4 class='panel-title nav-header {{ Request::url() ==  URL::to($top["slug"]) ? "active" : "not-active"}}'>    
                           <big> <a href="{{URL::to($top['slug'])}}">{{$top['title']}}</a></big>
                       </h4>
                     </div>

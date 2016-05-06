@@ -13,7 +13,7 @@
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Portfolios</a>
           <ul class="dropdown-menu">
             @foreach($portfolio_links as $key => $portfolio)
-            <li class="@if(Request::server('PATH_INFO') ==  $portfolio) {{'active'}} @else {{'not-active'}} @endif">
+            <li class="{{Request::url() ==  URL::to($portfolio) ? 'active' : 'not-active' }}">
               <a href= {{$portfolio}}>{{$key}}</a>
             </li>
             @endforeach
@@ -27,14 +27,14 @@
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{$top['title']}}</a>
             <ul class="dropdown-menu">
               @foreach($sub_light as $sub)
-              <li>
+              <li  class="{{Request::url() ==  URL::to($sub['slug']) ? 'active' : 'not-active'}}">
                 <a href="{{URL::to($sub['slug'])}}">{{$sub['title']}}</a>
               </li>
               @endforeach
             </ul>
           </li>
           @else
-          <li class="@if(Request::server('PATH_INFO') ==  $top['slug']) {{'active'}} @else {{'not-active'}} @endif">
+          <li class="{{ Request::url() ==  URL::to($top['slug']) ? 'active' : 'not-active'}}">
             <a href="{{URL::to($top['slug'])}}">{{$top['title']}}</a>
           </li>
           @endif
