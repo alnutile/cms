@@ -139,9 +139,11 @@
               <label for="menu_parent">Parent menu item</label>
               <select id="menu_parent" name="menu_parent" class="form-control">
                 @if(!empty($subnavparents))
-                @foreach ($subnavparents as $i)
-                <option value="{{$i['id']}}" @if($page->menu_parent == $i['id']) {{ $i['title'] }} selected @endif>{{$i['title']}}</option>
-                @endforeach
+                  @foreach ($subnavparents as $i)
+                    @if(isset($i['id']))
+                    <option value="{{$i['id']}}" @if($page->menu_parent == $i['id']) {{ $i['title'] }} selected @endif>{{$i['title']}}</option>
+                    @endif                
+                  @endforeach
                 @endif
               </select>
             </div>
