@@ -57,7 +57,7 @@ class PagesController extends \BaseController {
         // this is a way of creating a view
         // the 'pages.create' parameter references the pages folder (app/views/pages)
         // and the create.blade.php file (create) in the pages folder
-        $subnavparents = Page::getAllSubNavParents()->toArray();
+        $subnavparents = Page::getAllSubNavParents();
         return View::make('pages.create' , compact('subnavparents'));
 		}
 
@@ -161,7 +161,7 @@ class PagesController extends \BaseController {
         parent::show();
         $page = Page::findOrFail($id);
         parent::checkForSlideshow($page->id);
-        $subnavparents = Page::getAllSubNavParents()->toArray();
+        $subnavparents = Page::getAllSubNavParents();
         return View::make('pages.edit', compact('page', 'settings', 'slideshow', 'subnavparents'));
     }
 

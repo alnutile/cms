@@ -58,8 +58,10 @@ class Page extends \Eloquent {
     {
       
       $pages = Page::where("published", '1')->where('menu_name', 'sub_nav')->where('menu_parent','=', $parent_page_id)->orderBy('menu_sort_order', 'ASC')->get();    
-       $parent = Page::find($parent_page_id);
-      if($parent)
+      $parent = Page::find($parent_page_id);
+      
+      $setting = Setting::first();
+      if($parent && !$setting->theme)
       {
         $pages->prepend($parent);
       }
