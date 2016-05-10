@@ -25,7 +25,8 @@
         }
         else
         {
-            throw new \OutOfBoundsException;
+            // Invalid positon, push to end of the array.
+            array_push($array, $value);
         }
 
     }

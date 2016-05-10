@@ -48,6 +48,9 @@ class Page extends \Eloquent {
           // Array position starts from 0 so decrement the value
           $pos = $settings->portfolio_menu_position - 1;
           $portfolio = ['title' => 'Portfolio', 'slug'=>'/portfolio', 'is_portfolio'=>1];
+          
+          // Put portfolio at a given position in the menu array.
+          // In case of invalid position , portfolio will be pushed at the end of the menu.
           Helpers\ArrayHelper::insertAt($pages, $pos, $portfolio);         
       }
       
