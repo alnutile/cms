@@ -220,6 +220,24 @@ class PagesController extends \BaseController {
                 $page->title = $page_update['title'];
                 $page->body = $page_update['body'];
                 $page->slug = (isset($page_update['slug'])) ?  $page_update['slug'] : $page->slug;
+                
+                if(!Input::get('enable_menu'))
+                {
+                  $page->menu_sort_order = 0;
+                  $page->menu_name = '';
+                  $page->menu_parent = 0;
+                } else
+                {
+                  $page->menu_sort_order = $page_update['menu_sort_order'];
+                  $page->menu_name = $page_update['menu_name'];
+                  $page->menu_parent = $page_update['menu_parent'];
+                  
+                  
+                  if ($page_update['menu_name'] == 'top,left_side')
+                  {
+                    $page->menu_parent = 0;
+                  }
+                }                
                 $page->save();
                 $banner = $this->bannerSet($page);
                 return Redirect::to("/pages/")->withMessage("Page Updated");
