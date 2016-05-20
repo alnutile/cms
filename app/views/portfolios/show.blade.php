@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
+@if($settings->enable_left_nav)
 <div class="col-md-3 ">
     @include('shared.sidebar')
 
@@ -13,8 +14,13 @@
     </div>
     @endif
 </div>
+@endif
 
+@if($settings->enable_left_nav)
 <div class="col-md-9 column">
+@else
+<div class="col-md-12 column">
+@endif
     <h1>{{{ $portfolio->header }}}</h1>
     <p> {{ $portfolio->body }} </p>
     <hr>

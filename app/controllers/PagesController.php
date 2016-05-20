@@ -57,7 +57,7 @@ class PagesController extends \BaseController {
         // this is a way of creating a view
         // the 'pages.create' parameter references the pages folder (app/views/pages)
         // and the create.blade.php file (create) in the pages folder
-        $subnavparents = Page::getAllSubNavParents()->toArray();
+        $subnavparents = Page::getAllSubNavParents();
         return View::make('pages.create' , compact('subnavparents'));
 		}
 
@@ -123,6 +123,11 @@ class PagesController extends \BaseController {
                      
                      // print_r(array_values($input));
                      // die("in validator test") ;
+             if(!Input::get('published'))
+            {
+              $input['published'] = 0;
+            }
+            
             if(!Input::get('enable_menu'))
             {
               $input['menu_sort_order'] = 0;
@@ -156,7 +161,7 @@ class PagesController extends \BaseController {
         parent::show();
         $page = Page::findOrFail($id);
         parent::checkForSlideshow($page->id);
-        $subnavparents = Page::getAllSubNavParents()->toArray();
+        $subnavparents = Page::getAllSubNavParents();
         return View::make('pages.edit', compact('page', 'settings', 'slideshow', 'subnavparents'));
     }
 
@@ -215,6 +220,24 @@ class PagesController extends \BaseController {
                 $page->title = $page_update['title'];
                 $page->body = $page_update['body'];
                 $page->slug = (isset($page_update['slug'])) ?  $page_update['slug'] : $page->slug;
+                
+                if(!Input::get('enable_menu'))
+                {
+                  $page->menu_sort_order = 0;
+                  $page->menu_name = '';
+                  $page->menu_parent = 0;
+                } else
+                {
+                  $page->menu_sort_order = $page_update['menu_sort_order'];
+                  $page->menu_name = $page_update['menu_name'];
+                  $page->menu_parent = $page_update['menu_parent'];
+                  
+                  
+                  if ($page_update['menu_name'] == 'top,left_side')
+                  {
+                    $page->menu_parent = 0;
+                  }
+                }                
                 $page->save();
                 $banner = $this->bannerSet($page);
                 return Redirect::to("/pages/")->withMessage("Page Updated");

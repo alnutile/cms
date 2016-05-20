@@ -78,17 +78,16 @@
         <div class="form-group">
           <label for="">Portfolio Menu Position</label>
           <select name="portfolio_position" class="form-control">
-            <option value="0"@if ($setting->portfolio_menu_postion == 0) selected @endif>0</option>
-            <option value="1" @if ($setting->portfolio_menu_postion == 1) selected @endif>1</option>
-            <option value="1" @if ($setting->portfolio_menu_postion == 2) selected @endif>2</option>
-            <option value="3" @if ($setting->portfolio_menu_postion == 3) selected @endif>3</option>
-            <option value="4" @if ($setting->portfolio_menu_postion == 4) selected @endif>4</option>
-            <option value="5" @if ($setting->portfolio_menu_postion == 5) selected @endif>5</option>
-            <option value="6" @if ($setting->portfolio_menu_postion == 6) selected @endif>6</option>
-            <option value="7" @if ($setting->portfolio_menu_postion == 7) selected @endif>7</option>
-            <option value="8" @if ($setting->portfolio_menu_postion == 8) selected @endif>8</option>
-            <option value="9" @if ($setting->portfolio_menu_postion == 9) selected @endif>9</option>
-            <option value="10" @if ($setting->portfolio_menu_postion == 10) selected @endif>10</option>
+            <option value="1" @if ($setting->portfolio_menu_position == 1) selected @endif>1</option>
+            <option value="2" @if ($setting->portfolio_menu_position == 2) selected @endif>2</option>
+            <option value="3" @if ($setting->portfolio_menu_position == 3) selected @endif>3</option>
+            <option value="4" @if ($setting->portfolio_menu_position == 4) selected @endif>4</option>
+            <option value="5" @if ($setting->portfolio_menu_position == 5) selected @endif>5</option>
+            <option value="6" @if ($setting->portfolio_menu_position == 6) selected @endif>6</option>
+            <option value="7" @if ($setting->portfolio_menu_position == 7) selected @endif>7</option>
+            <option value="8" @if ($setting->portfolio_menu_position == 8) selected @endif>8</option>
+            <option value="9" @if ($setting->portfolio_menu_position == 9) selected @endif>9</option>
+            <option value="10" @if ($setting->portfolio_menu_position == 10) selected @endif>10</option>
           </select>
           
         </div>
@@ -224,6 +223,16 @@
                 <div class="help-block">If you want the website hidden from the Visitor AND the search engines, until you are ready to publish.</div>
             </div>
         </div>
+
+        <div class="form-group">
+            <div class="controls">
+                <div class="checkbox">
+                    <label class="checkbox">{{ Form::checkbox('enable_left_nav', (int)$settings->enable_left_nav) }} Check to enable left navigation </label>
+                </div>
+                <div class="help-block">Use this to enable or disable left navigation.</div>
+            </div>
+        </div>        
+        
         @if(Auth::user() && Auth::user()->admin == 1)
         <div class="form-group">
             <div class="controls">
