@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-
+    @if($settings->enable_left_nav)
     <div class="col-md-3 ">
         <div class="sidebar-nav">
             @include('shared.sidebar')
@@ -15,8 +15,12 @@
         </div>
 
     </div>
-
+    @endif
+    @if($settings->enable_left_nav)
     <div class="col-md-9 column">
+    @else
+    <div class="col-md-12 column">
+    @endif
         @if
             ($settings->theme != TRUE)  <h1>{{{ $project->title }}}</h1>
         @endif

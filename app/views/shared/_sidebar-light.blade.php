@@ -39,7 +39,7 @@
             @else
                    
                 <?php 
-                if(!isset($top['id'])) { dd($top); };
+                // if(!isset($top['id'])) { dd($top); };
                 
                 $sub_light = Page::getSubNavSorted($top['id']); ?>
                           
