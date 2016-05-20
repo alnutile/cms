@@ -1,6 +1,8 @@
 @extends('layouts.main')
 
 @section('content')
+
+@if($settings->enable_left_nav)
 <div class="col-md-3">
     <div class = "sidebar-nav">
         @include('shared.sidebar')
@@ -12,8 +14,13 @@
         @endif
     </div>
 </div>
+@ndif
 
+@if($settings->enable_left_nav)
 <div class="col-md-9 column">
+@else
+<div class="col-md-12 column">
+@else
     <h1>{{{ $post->title }}}</h1>
     <p> {{ $post->intro }} </p>
     <div class="row">
