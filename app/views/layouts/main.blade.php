@@ -165,6 +165,7 @@ Use the corresponding body tag for your chosen theme
 {{ HTML::script('/bower_components/flexslider/jquery.flexslider.js') }}
 {{ HTML::script('/bower_components/angular-flexslider/angular-flexslider.js') }}
 {{ HTML::script('/assets/js/naturalSortVersionDates.min.js') }}
+{{ HTML::script('/assets/js/custom.js') }}
 
 <script type="text/javascript">
 	// Add padding to top of body tag if logged into admin on both themes
