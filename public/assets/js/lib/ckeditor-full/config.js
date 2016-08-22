@@ -36,7 +36,7 @@ CKEDITOR.editorConfig = function( config ) {
     config.removeButtons = 'Flash,Iframe,Smiley';
 
     // Se the most common block elements.
-    config.format_tags = 'p;h1;h2;h3;pre';
+    config.format_tags = 'p;h1;h2;h3;h4;h5;pre';
 
     //for paypal buttons - made classes allowed in admin editor
     config.extraAllowedContent = 'form(*){*}[*]; input(*){*}[*]; *(*)';
@@ -44,4 +44,16 @@ CKEDITOR.editorConfig = function( config ) {
 
     // Make dialogs simpler.
     config.removeDialogTabs = 'image:advanced;link:advanced';
+    
+    // Allow Script tags and classes.
+	config.allowedContent = {
+        script: true,
+        $1: {
+            // This will set the default set of elements
+            elements: CKEDITOR.dtd,
+            attributes: true,
+            styles: true,
+            classes: true
+        }
+    };
 };
