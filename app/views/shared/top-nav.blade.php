@@ -7,7 +7,7 @@
 
 <nav class="navbar-collapse collapse" id="nav-collapse-top">
     <ul class="nav nav-pills">
-      @foreach($top_left_nav as $top)
+	@foreach($top_left_nav as $top)
         @if(isset($top['is_portfolio']))
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Portfolios</a>
@@ -19,9 +19,8 @@
             @endforeach
           </ul>
         </li>
-        @else
-        
-          <?php $sub_light = Page::getSubNavSorted($top['id']);?>            
+		@else
+		<?php $sub_light = Page::getSubNavSorted($top['id']);?>            
           @if( count($sub_light) > 1)
           <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{$top['title']}}</a>

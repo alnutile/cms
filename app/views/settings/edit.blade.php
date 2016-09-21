@@ -242,19 +242,36 @@
                 <div class="help-block">Use this turn set your site to use an alternate theme.</div>
             </div>
         </div>
-
-
+		<div class="form-group">
+            <div class="controls">
+                <div class="checkbox">
+                    <label class="checkbox">{{ Form::checkbox('enable_blog', null) }} Check to enable blog </label>
+                </div>
+                <div class="help-block">Use this turn set your site to blog.</div>
+            </div>
+        </div>
+		
+		<div class="form-group">
+            <label for="blog_title">Blog Name</label>
+                {{ Form::text('blog_title', null, array('class' => 'form-control', 'tabindex' => 1,'placeholder' => "Builder's Notebook")) }}
+                @if($errors->first('blog_title'))
+                <div class="alert alert-danger">
+                    {{  $errors->first('blog_title'); }}
+                </div>
+                @endif
+			<div class="help-block">Enter your blog name here e.g. Builder's Notebook</div>
+        </div>
         <div class="form-group">
             <label for="google_analytics">Google Analytics Code
             {{ Form::text('google_analytics', null, array('class' => 'form-control', 'tabindex' => 1)) }}
             @if($errors->first('google_analytics'))
-                <div class="help-block">Enter your google analytics UA number here in the format UA-XXXXX-X</div>
+			<div class="help-block">Enter your google analytics UA number here in the format UA-XXXXX-X</div>
             <div class="alert alert-danger">
                 {{  $errors->first('google_analytics'); }}
             </div>
             @endif
         </div>
-        @else
+		@else
             {{ Form::hidden('theme', null) }}
 
         @endif

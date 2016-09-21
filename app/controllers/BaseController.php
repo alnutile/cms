@@ -50,16 +50,26 @@ class BaseController extends Controller {
     public function show($array = NULL) {
         $portfolios      = Portfolio::published()->orderByOrder()->get();
         $portfolio_links = array();
-        if ($this->settings->theme == FALSE) {
+		if ($this->settings->theme == FALSE) {
             if ($portfolios) {
                 foreach ($portfolios as $key => $portfolio) {
                     $portfolio_links[$portfolio->title] = $portfolio->slug;
                 }
             }
-            $static_menu_items = array('About Page' => '/about', 'Contact Page' => '/contact', 'Blog' => '/posts', 'All Projects' => '/all_projects', 'Home' => '/index',);
+			if($this->settings->enable_blog == true){
+				$static_menu_items = array('About Page' => '/about', 'Contact Page' => '/contact', $this->settings->blog_title => '/posts', 'All Projects' => '/all_projects', 'Home' => '/index');
+			}
+			else{
+				$static_menu_items = array('About Page' => '/about', 'Contact Page' => '/contact', 'All Projects' => '/all_projects', 'Home' => '/index');
+			}
         }
         else {
-            $static_menu_items = array('Our Company' => '/about', 'Portfolio' => '/portfolio', 'News & Awards' => '/news_awards', 'Builder’s Notebook' => '/posts', 'Contact Us' => '/contact');
+			if($this->settings->enable_blog == true){
+				$static_menu_items = array('Our Company' => '/about', 'Portfolio' => '/portfolio', 'News & Awards' => '/news_awards', $this->settings->blog_title  => '/posts', 'Contact Us' => '/contact');
+			}
+			else{
+				$static_menu_items = array('Our Company' => '/about', 'Portfolio' => '/portfolio', 'News & Awards' => '/news_awards','Contact Us' => '/contact');
+			}
         }
         $shared_links = array_merge($portfolio_links, $static_menu_items);
 

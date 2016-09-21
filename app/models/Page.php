@@ -40,21 +40,29 @@ class Page extends \Eloquent {
     
     static public function getAllSubNavParents()
     {
-      $settings = Setting::first();
-      $pages =  Page::where("published", '1')->where('menu_name', 'top,left_side')->orderBy('menu_sort_order', 'ASC')->get()->toArray(); 
-      
-      if(is_numeric($settings->portfolio_menu_position))
-      {
-          // Array position starts from 0 so decrement the value
-          $pos = $settings->portfolio_menu_position - 1;
-          $portfolio = ['title' => 'Portfolio', 'slug'=>'/portfolio', 'is_portfolio'=>1];
-          
-          // Put portfolio at a given position in the menu array.
-          // In case of invalid position , portfolio will be pushed at the end of the menu.
-          Helpers\ArrayHelper::insertAt($pages, $pos, $portfolio);         
-      }
-      
-      return $pages;    
+		$settings = Setting::first();
+		$pages =  Page::where("published", '1')->whereIn('menu_name', array('top','left_side'))->orderBy('menu_sort_order', 'ASC')->get()->toArray(); 
+		
+		if($settings && is_numeric($settings->portfolio_menu_position))
+		{
+			// Array position starts from 0 so decrement the value
+			$pos = $settings->portfolio_menu_position - 1;
+			$portfolio = ['title' => 'Portfolio', 'slug'=>'/portfolio', 'is_portfolio'=>1];
+
+			// Put portfolio at a given position in the menu array.
+			// In case of invalid position , portfolio will be pushed at the end of the menu.
+			Helpers\ArrayHelper::insertAt($pages, $pos, $portfolio);         
+		}
+		if($settings && $settings->enable_blog)
+		{
+			$pos = $settings->portfolio_menu_position;
+			$blog = ['id'=> -1,'title' => $settings->blog_title, 'slug'=>'/posts', 'is_blog' =>1];
+
+			// Put blog after portfolio in the menu array.
+			// In case of invalid position , blog will be pushed at the end of the menu.
+			Helpers\ArrayHelper::insertAt($pages, $pos, $blog);    
+		} 
+		return $pages;    
     }    
     
     static public function getSubNavSorted($parent_page_id)
