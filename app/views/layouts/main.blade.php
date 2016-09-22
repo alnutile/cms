@@ -197,7 +197,12 @@ Use the corresponding body tag for your chosen theme
  			$('ul.nav-list').css('display','block');
  			$('.mobile-menu').css('display','none');
  		}
-		// Functionality for mobile menu on light theme.
+		
+	});
+</script>
+<script type="text/javascript">
+	// Functionality for mobile menu on light theme.
+	$(window).load(function(){
 		var window_light_size = $(window).width() <= 767 ? true : false;
 		if (window_light_size) {
 			$('.mobile-menu.light-theme').show();

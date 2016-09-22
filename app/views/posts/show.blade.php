@@ -50,7 +50,7 @@
         @else
         <div class = "col-lg-12 gallery_item_dark">
             <img src="/assets/img/posts/{{$image->file_name}}" alt="{{$image->file_name}}">
-            @endif
+		@endif
             <br>
             <span class="caption">{{$image->image_caption}}</span>
         </div>
