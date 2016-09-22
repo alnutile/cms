@@ -197,6 +197,20 @@ Use the corresponding body tag for your chosen theme
  			$('ul.nav-list').css('display','block');
  			$('.mobile-menu').css('display','none');
  		}
+		// Functionality for mobile menu on light theme.
+		var window_light_size = $(window).width() <= 767 ? true : false;
+		if (window_light_size) {
+			$('.mobile-menu.light-theme').show();
+			$('#accordion').hide();
+			$('.mobile-menu.light-theme a').click(function(){
+				$('#accordion').slideToggle();
+				$('.border').toggleClass('hide-line');
+				$('.mobile-menu.light-theme a').toggleClass('active');
+			});
+		}
+		else{
+			$('.mobile-menu.light-theme').hide();
+		}
 	});
 </script>
 @yield('js')
