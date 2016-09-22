@@ -14,13 +14,13 @@
         @endif
     </div>
 </div>
-@ndif
+@endif
 
 @if($settings->enable_left_nav)
 <div class="col-md-9 column">
 @else
 <div class="col-md-12 column">
-@else
+@endif
     <h1>{{{ $post->title }}}</h1>
     <p> {{ $post->intro }} </p>
     <div class="row">

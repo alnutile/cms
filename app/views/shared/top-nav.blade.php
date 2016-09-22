@@ -19,6 +19,17 @@
             @endforeach
           </ul>
         </li>
+		@elseif(isset($top['is_blog']) && isset($tags))
+		<li class="dropdown">
+			<a class="dropdown-toggle" data-toggle="dropdown" href="#">{{$top['title']}}</a>
+				<ul class="dropdown-menu">
+					@foreach($tags as $tag)
+					<li class="{{Request::url() ==  URL::to($portfolio) ? 'active' : 'not-active' }}">
+						<a href="/{{$tag['tagable_type']}}/tags/{{$tag['tag']}}">{{$tag['tag']}}</a>
+					</li>
+					@endforeach
+				</ul>
+        </li>
 		@else
 		<?php $sub_light = Page::getSubNavSorted($top['id']);?>            
           @if( count($sub_light) > 1)
