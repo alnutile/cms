@@ -41,7 +41,7 @@ class Page extends \Eloquent {
     static public function getAllSubNavParents()
     {
 		$settings = Setting::first();
-		$pages =  Page::where("published", '1')->whereIn('menu_name', array('top','left_side'))->orderBy('menu_sort_order', 'ASC')->get()->toArray(); 
+		$pages =  Page::where("published", '1')->whereIn('menu_name', array('top','left_side','top,left_side'))->orderBy('menu_sort_order', 'ASC')->get()->toArray(); 
 		
 		if($settings && is_numeric($settings->portfolio_menu_position))
 		{
