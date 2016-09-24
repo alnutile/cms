@@ -32,6 +32,7 @@ class PostsController extends \BaseController {
         parent::show();
         $posts = Post::where('published', '=', 1)->get();
         $tags = $this->tags->get_tags_for_type('Post');
+		
         $seo = 'Builders Notebook';
         if($this->settings->theme == true) {
 			return View::make('posts.index_dark', compact('posts', 'tags', 'settings', 'seo'));

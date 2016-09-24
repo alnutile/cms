@@ -2,6 +2,7 @@
 
 use Laracasts\Utilities\JavaScript\Facades\JavaScript;
 use Symfony\Component\Filesystem\Filesystem;
+use CMS\Services\TagsService;
 
 class BaseController extends Controller {
 
@@ -17,8 +18,6 @@ class BaseController extends Controller {
         $this->settings   = ($settings == NULL) ? Setting::first() : $settings;
         $this->portfolio  = ($portfolio == NULL) ? Portfolio::all() : $portfolio;
         $this->filesystem = ($filesystem == NULL) ? new Filesystem : $filesystem;
-        
-      
         /* Calculating nav*/
         if(Request::method('get'))
         {
@@ -39,15 +38,14 @@ class BaseController extends Controller {
             $this->sub_nav = Page::getSubNavSorted($node->menu_parent);
           }
         }
-
-        /* End of Calculating nav*/
+		/* End of Calculating nav*/
       
         \View::share('settings', $this->settings);
         \View::share('top_left_nav', $this->top_left_nav);
         \View::share('sub_nav', $this->sub_nav);
+		
     }
-
-    public function show($array = NULL) {
+	public function show($array = NULL) {
         $portfolios      = Portfolio::published()->orderByOrder()->get();
         $portfolio_links = array();
 		if ($this->settings->theme == FALSE) {
@@ -57,25 +55,43 @@ class BaseController extends Controller {
                 }
             }
 			if($this->settings->enable_blog == true){
-				$static_menu_items = array('About Page' => '/about', 'Contact Page' => '/contact', $this->settings->blog_title => '/posts', 'All Projects' => '/all_projects', 'Home' => '/index');
+				$default_menu_items = array();
+				foreach($this->top_left_nav as $nav)
+				{
+					$default_menu_items[$nav['title']] = $nav['slug'];
+				}
+				$default_menu_items[$this->settings->blog_title] = '/posts';
 			}
 			else{
-				$static_menu_items = array('About Page' => '/about', 'Contact Page' => '/contact', 'All Projects' => '/all_projects', 'Home' => '/index');
+				$default_menu_items = array();
+				foreach($this->top_left_nav as $nav)
+				{
+					$default_menu_items[$nav['title']] = $nav['slug'];
+				}
 			}
         }
         else {
 			if($this->settings->enable_blog == true){
-				$static_menu_items = array('Our Company' => '/about', 'Portfolio' => '/portfolio', 'News & Awards' => '/news_awards', $this->settings->blog_title  => '/posts', 'Contact Us' => '/contact');
+				$default_menu_items = array();
+				foreach($this->top_left_nav as $nav)
+				{
+					$default_menu_items[$nav['title']] = $nav['slug'];
+				}
+				$default_menu_items[$this->settings->blog_title] = '/posts';
 			}
 			else{
-				$static_menu_items = array('Our Company' => '/about', 'Portfolio' => '/portfolio', 'News & Awards' => '/news_awards','Contact Us' => '/contact');
+				$default_menu_items = array();
+				foreach($this->top_left_nav as $nav)
+				{
+					$default_menu_items[$nav['title']] = $nav['slug'];
+				}
 			}
         }
-        $shared_links = array_merge($portfolio_links, $static_menu_items);
+		$shared_links = array_merge($portfolio_links, $default_menu_items);
 
         View::share('shared_links', $shared_links);
         View::share('portfolio_links', $portfolio_links);
-
+		
         //links for the top nav
         $top_menu_items = array(
           'Home' => '/',
@@ -84,6 +100,13 @@ class BaseController extends Controller {
           'Contact Page' => '/contact',
         );
         View::share('top_links', $top_menu_items);
+		/* Share post tags for light theme */
+		if($this->settings->theme == FALSE)
+		{
+			$tags = new TagsService;
+			$tags = $tags->get_tags_for_type('Post');
+			\View::share('post_tags', $tags);
+		}
     }
 
     /**
