@@ -55,7 +55,7 @@ class Page extends \Eloquent {
 		}
 		if($settings && $settings->enable_blog)
 		{
-			$pos = $settings->portfolio_menu_position;
+			$pos = $settings->blog_menu_position - 1;
 			$blog = ['id'=> -1,'title' => $settings->blog_title, 'slug'=>'/posts', 'is_blog' =>1];
 
 			// Put blog after portfolio in the menu array.

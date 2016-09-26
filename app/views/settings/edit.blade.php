@@ -89,9 +89,8 @@
             <option value="9" @if ($setting->portfolio_menu_position == 9) selected @endif>9</option>
             <option value="10" @if ($setting->portfolio_menu_position == 10) selected @endif>10</option>
           </select>
-          
         </div>
-        <div class="form-group">
+		<div class="form-group">
                 <label for="email">Facebook
                 @if($settings->theme == true)
             (<a href="http://www.restorationtrades.com/help/admin_settings_dark.html" target="_blank">Help</a>)
@@ -260,6 +259,21 @@
                 </div>
                 @endif
 			<div class="help-block">Enter your blog name here e.g. Builder's Notebook</div>
+        </div>
+		<div class="form-group">
+          <label for="">{{$setting->blog_title}} Menu Position</label>
+          <select name="blog_menu_position" class="form-control">
+            <option value="1" @if ($setting->blog_menu_position == 1) selected @endif>1</option>
+            <option value="2" @if ($setting->blog_menu_position == 2) selected @endif>2</option>
+            <option value="3" @if ($setting->blog_menu_position == 3) selected @endif>3</option>
+            <option value="4" @if ($setting->blog_menu_position == 4) selected @endif>4</option>
+            <option value="5" @if ($setting->blog_menu_position == 5) selected @endif>5</option>
+            <option value="6" @if ($setting->blog_menu_position == 6) selected @endif>6</option>
+            <option value="7" @if ($setting->blog_menu_position == 7) selected @endif>7</option>
+            <option value="8" @if ($setting->blog_menu_position == 8) selected @endif>8</option>
+            <option value="9" @if ($setting->blog_menu_position == 9) selected @endif>9</option>
+            <option value="10" @if ($setting->blog_menu_position == 10) selected @endif>10</option>
+          </select>
         </div>
         <div class="form-group">
             <label for="google_analytics">Google Analytics Code
