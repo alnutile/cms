@@ -17,7 +17,7 @@
                 <li class=<?php if(Request::path() == 'portfolios') { echo 'active'; }?>><a href="/admin/portfolios">Admin Portfolios</a></li>
                 @endif
 
-                @if($settings->theme == true)
+                @if($settings->enable_blog == true)
                     <li class=<?php if(Request::path() == 'posts') { echo 'active'; }?>><a href="/admin/posts">Admin Posts</a></li>
                 @endif
 

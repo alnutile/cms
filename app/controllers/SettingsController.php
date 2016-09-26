@@ -137,6 +137,9 @@ class SettingsController extends \BaseController {
         $setting->google_analytics            = (isset($data['google_analytics'])) ? $data['google_analytics'] : '';
         $setting->portfolio_menu_position = $data['portfolio_position'];
         $setting->enable_left_nav = (isset($data['enable_left_nav'])) ? 1 : 0;
+		$setting->blog_title = (isset($data['blog_title'])) ? $data['blog_title'] : '';
+		$setting->enable_blog = (isset($data['enable_blog'])) ? true : false;
+		$setting->blog_menu_position = $data['blog_menu_position'];
         $setting->save();
 
         return Redirect::to("/settings/" . $setting->id . "/edit")->withMessage("Settings Updated");

@@ -36,7 +36,26 @@
                     </ul>
                   </div>
                 </div>
-            @else
+			@elseif(isset($top['is_blog']) && isset($post_tags))
+				<div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title nav-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <big>
+						<a href="#">{{$top['title']}}</a>
+					</big>
+                  </h4>
+                </div>
+				<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne" style="height: 0px;">
+				  <div class="panel-body">
+					<ul class="nav nav-list">
+						<li><a href="{{URL::to($top['slug'])}}">{{$top['title']}}</a></li>
+						@foreach($post_tags as $tag)
+							<li><a href="/{{$tag['tagable_type']}}/tags/{{$tag['tag']}}">{{$tag['tag']}}</a></li>
+						@endforeach
+					</ul>
+				  </div>
+				</div>
+				
+			@else
                    
                 <?php 
                 // if(!isset($top['id'])) { dd($top); };

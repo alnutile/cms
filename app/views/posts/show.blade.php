@@ -5,6 +5,7 @@
 @if($settings->enable_left_nav)
 <div class="col-md-3">
     <div class = "sidebar-nav">
+		<div class="mobile-menu light-theme"><a href="#"><i class="fa fa-bars"></i></a></div>
         @include('shared.sidebar')
         @if(Auth::user())
         <div class="well">
@@ -14,13 +15,13 @@
         @endif
     </div>
 </div>
-@ndif
+@endif
 
 @if($settings->enable_left_nav)
 <div class="col-md-9 column">
 @else
 <div class="col-md-12 column">
-@else
+@endif
     <h1>{{{ $post->title }}}</h1>
     <p> {{ $post->intro }} </p>
     <div class="row">
@@ -50,7 +51,7 @@
         @else
         <div class = "col-lg-12 gallery_item_dark">
             <img src="/assets/img/posts/{{$image->file_name}}" alt="{{$image->file_name}}">
-            @endif
+		@endif
             <br>
             <span class="caption">{{$image->image_caption}}</span>
         </div>
