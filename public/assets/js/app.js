@@ -129,6 +129,4 @@ $(document).ready(function(){
 
         }
     );
-
-
 });

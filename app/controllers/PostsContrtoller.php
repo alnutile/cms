@@ -30,7 +30,7 @@ class PostsController extends \BaseController {
     public function index()
     {
         parent::show();
-        $posts = Post::where('published', '=', 1)->get();
+        $posts = Post::where('published', '=', 1)->orderBy('created_at','desc')->get();
         $tags = $this->tags->get_tags_for_type('Post');
 		
         $seo = 'Builders Notebook';
@@ -44,7 +44,7 @@ class PostsController extends \BaseController {
   public function adminIndex()
   {
     parent::show();
-    $posts = Post::all();
+	$posts = Post::orderBy('created_at','desc')->get();
     return View::make('posts.admin_index', compact('posts', 'settings'));
   }
 
@@ -204,6 +204,7 @@ class PostsController extends \BaseController {
             ->leftJoin('tags', 'tags.tagable_id', '=', 'posts.id')
             ->where('tags.tagable_type', '=', 'Post')
             ->where('tags.name', '=', $tag)
+			->orderBy('posts.created_at', 'desc')
             ->groupBy('posts.id')
             ->get();
         $tags = $this->tags->get_tags_for_type('Post');
@@ -214,5 +215,4 @@ class PostsController extends \BaseController {
 			return View::make('posts.indexByTag', compact('posts', 'settings', 'tags', 'seo' ));
 		}  
     }
-
 }
