@@ -44,7 +44,7 @@ class PostsController extends \BaseController {
   public function adminIndex()
   {
     parent::show();
-	$posts = Post::orderBy('order')->get();
+	$posts = Post::orderBy('created_at','desc')->get();
     return View::make('posts.admin_index', compact('posts', 'settings'));
   }
 

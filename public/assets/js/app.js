@@ -129,42 +129,4 @@ $(document).ready(function(){
 
         }
     );
-	var table_sortable = $(".table-sortable").sortable({
-		containerSelector: 'table',
-		itemPath: '> tbody',
-		itemSelector: 'tr',
-		placeholder: '<tr class="placeholder"/>',
-		table_sortable: 'table-sortable tbody',
-		onDrop: function  (item, targetContainer, _super) {
-			 var data = table_sortable.sortable("serialize").get();
-			 var sorted_data = [];
-			 var count = 1;
-			 $.each(data,function(i,v){
-				 $.each(v,function(index, value){
-					 sorted_data.push({postId:value.postId,order:count});
-					 count++;
-				 });
-			 });
-			 $("body").data('sorted_post', sorted_data);
-		},
-		onDragStart: function ($item, container, _super) {
-			console.log('drop_start');
-		},
-		onDrag: function ($item, container, _super) {
-			console.log('drop');
-		},
-	});
-	$('#sort-button').on("click", function(){
-        var data = $("body").data('sorted_post');
-		console.log(data);
-        $.ajax({
-            url: '/admin/sort-posts',
-            type: 'POST',
-            data: { 'data': data },
-            dataType: 'json'
-        }).done(function(msg) {
-            var n = noty({text: 'Your post order has been updated', type: 'success'});
-        });
-    });
-
 });

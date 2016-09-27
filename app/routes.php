@@ -125,4 +125,3 @@ Route::group(array('before' => 'auth'), function () {
     });
 
 });
-Route::post('/admin/sort-posts', 'PostsController@sort_posts');
