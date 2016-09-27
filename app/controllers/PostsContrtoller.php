@@ -204,6 +204,7 @@ class PostsController extends \BaseController {
             ->leftJoin('tags', 'tags.tagable_id', '=', 'posts.id')
             ->where('tags.tagable_type', '=', 'Post')
             ->where('tags.name', '=', $tag)
+			->orderBy('posts.created_at', 'desc')
             ->groupBy('posts.id')
             ->get();
         $tags = $this->tags->get_tags_for_type('Post');
@@ -214,20 +215,4 @@ class PostsController extends \BaseController {
 			return View::make('posts.indexByTag', compact('posts', 'settings', 'tags', 'seo' ));
 		}  
     }
-	/**
-	* sort post items as per draggable.
-	*
-	* @return Response
-	*/
-	public function sort_posts()
-	{
-		$sorted_posts = Input::get('data');
-		foreach($sorted_posts as $sort_post)
-		{
-			Post::where('id',$sort_post['postId'])->update(array('order' => $sort_post['order']));
-		}
-		return $this->json_response("success", "Posts Updates", null, 200);
-		
-	}
-
 }
