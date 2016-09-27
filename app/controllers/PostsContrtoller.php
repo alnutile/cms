@@ -30,7 +30,7 @@ class PostsController extends \BaseController {
     public function index()
     {
         parent::show();
-        $posts = Post::where('published', '=', 1)->get();
+        $posts = Post::where('published', '=', 1)->orderBy('created_at','desc')->get();
         $tags = $this->tags->get_tags_for_type('Post');
 		
         $seo = 'Builders Notebook';
@@ -44,7 +44,7 @@ class PostsController extends \BaseController {
   public function adminIndex()
   {
     parent::show();
-    $posts = Post::all();
+	$posts = Post::orderBy('order')->get();
     return View::make('posts.admin_index', compact('posts', 'settings'));
   }
 
@@ -214,5 +214,20 @@ class PostsController extends \BaseController {
 			return View::make('posts.indexByTag', compact('posts', 'settings', 'tags', 'seo' ));
 		}  
     }
+	/**
+	* sort post items as per draggable.
+	*
+	* @return Response
+	*/
+	public function sort_posts()
+	{
+		$sorted_posts = Input::get('data');
+		foreach($sorted_posts as $sort_post)
+		{
+			Post::where('id',$sort_post['postId'])->update(array('order' => $sort_post['order']));
+		}
+		return $this->json_response("success", "Posts Updates", null, 200);
+		
+	}
 
 }
