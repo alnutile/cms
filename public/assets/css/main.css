@@ -108,3 +108,6 @@ ol.top-menu li.placeholder:before {
 a.flow {
     cursor: pointer;
 }
+.aligncenter {
+    text-align: center;
+}
