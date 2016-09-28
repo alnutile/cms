@@ -134,7 +134,7 @@ Use the corresponding body tag for your chosen theme
 					<h2 class="title aligncenter">{{$settings->name}}</h2>
 				</div>
 				<div class="modal-body aligncenter">
-					<p>Are you sure, do you want to delete this?</p>
+					<p>Are you sure you want to delete this?</p>
 				</div>
 				<div class="modal-footer aligncenter">
 					<p><button type="button" class="btn btn-info" data-dismiss="modal" id="delete">OK</button></p>
