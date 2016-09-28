@@ -161,7 +161,7 @@
 
         @if($page->id >= 5)
         {{ Form::open(['method' => 'DELETE', 'action' => ['PagesController@destroy', $page->id]]) }}
-        <button type="submit" class="btn btn-danger">Delete</button>
+        <button type="submit" class="btn btn-danger delete">Delete</button>
         {{ Form::close() }}
         @endif
     </div>

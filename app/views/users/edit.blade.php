@@ -84,7 +84,7 @@
 
             @if(Auth::user()->admin == 1 && $user->id != 1)
                 {{ Form::open(['method' => 'DELETE', 'action' => ['UsersController@destroy', $user->id]]) }}
-                <button type="submit" class="btn btn-danger">Delete</button>
+                <button type="submit" class="btn btn-danger delete">Delete</button>
                 {{ Form::close() }}
             @endif
 </div>
