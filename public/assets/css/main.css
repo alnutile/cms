@@ -111,3 +111,10 @@ a.flow {
 .aligncenter {
     text-align: center;
 }
+.modal-content,
+.modal-content a{
+	color:#333;
+}
+.modal-content a:hover{
+	color:#b3b3b6;
+}

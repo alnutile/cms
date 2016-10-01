@@ -11,7 +11,7 @@ class PagesTableSeeder extends Seeder {
 
         Page::create(
             [
-                'title' => "Home Page",
+                'title' => "Home",
                 'body'  => 'This will be your home page',
                 'published' => 1,
                 'slug' => '/home',
@@ -19,7 +19,8 @@ class PagesTableSeeder extends Seeder {
                 'menu_sort_order' => 0,
                 'menu_parent' => 0,
                 'menu_name' => 'top',
-                'redirect_url' => ''
+                'redirect_url' => '',
+				'hide_title' => 0
             ]
         );
 
@@ -33,7 +34,8 @@ class PagesTableSeeder extends Seeder {
                 'menu_sort_order' => 1,
                 'menu_parent' => 1,
                 'menu_name' => 'top',
-                'redirect_url' => ''
+                'redirect_url' => '',
+				'hide_title' => 0
             ]
         );
 
@@ -47,7 +49,8 @@ class PagesTableSeeder extends Seeder {
                 'menu_parent' => 0,
                 'seo'  => 'CONTACT PAGE SEO',
                 'menu_name' => 'top',
-                'redirect_url' => ''
+                'redirect_url' => '',
+				'hide_title' => 0
             ]
         );
 
@@ -61,7 +64,8 @@ class PagesTableSeeder extends Seeder {
                 'menu_parent' => 0,
                 'seo'  => 'ALL PROJECTS SEO',
                 'menu_name' => 'left_side',
-                'redirect_url' => ''
+                'redirect_url' => '',
+				'hide_title' => 0
             ]
         );
 
@@ -75,7 +79,8 @@ class PagesTableSeeder extends Seeder {
                 'menu_parent' => 0,
                 'seo'  => 'Our Process',
                 'menu_name' => 'sub_nav',
-                'redirect_url' => ''
+                'redirect_url' => '',
+				'hide_title' => 0
             ]
         );
 
@@ -89,7 +94,8 @@ class PagesTableSeeder extends Seeder {
                 'menu_parent' => 0,
                 'seo'  => 'Testimonials',
                 'menu_name' => 'sub_nav',
-                'redirect_url' => ''
+                'redirect_url' => '',
+				'hide_title' => 0
             ]
         );
 
@@ -103,7 +109,8 @@ class PagesTableSeeder extends Seeder {
                 'menu_parent' => 0,
                 'seo'  => 'News & Awards',
                 'menu_name' => 'sub_nav',
-                'redirect_url' => ''
+                'redirect_url' => '',
+				'hide_title' => 0
             ]
         );
     }
