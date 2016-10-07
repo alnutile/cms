@@ -125,6 +125,25 @@ Use the corresponding body tag for your chosen theme
         @endif
         @yield('content')
     </div>
+	<!-- Delete confirm modal starts here -->
+	<div id="delete_confirmation"  class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h2 class="title aligncenter">{{$settings->name}}</h2>
+				</div>
+				<div class="modal-body aligncenter">
+					<p>Are you sure you want to delete this?</p>
+				</div>
+				<div class="modal-footer aligncenter">
+					<p><button type="button" class="btn btn-info" data-dismiss="modal" id="delete">OK</button></p>
+					<p><a class="btn-cancel" href="javascript:void(0)" data-dismiss="modal">Cancel</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- modal ends here -->
 </div>
 
 @include('shared.footer')
@@ -166,7 +185,6 @@ Use the corresponding body tag for your chosen theme
 {{ HTML::script('/bower_components/angular-flexslider/angular-flexslider.js') }}
 {{ HTML::script('/assets/js/naturalSortVersionDates.min.js') }}
 {{ HTML::script('/assets/js/custom.js') }}
-
 <script type="text/javascript">
 	// Add padding to top of body tag if logged into admin on both themes
 	jQuery(function($) {
@@ -216,6 +234,16 @@ Use the corresponding body tag for your chosen theme
 		else{
 			$('.mobile-menu.light-theme').hide();
 		}
+	});
+	
+
+	$(document).on("click", ".delete", function(event){
+		event.preventDefault();
+		var $form=$(this).closest('form');
+		$('#delete_confirmation').modal({ backdrop: 'static', keyboard: false })
+			.one('click', '#delete', function() {
+				$form.trigger('submit'); // submit the form
+		});
 	});
 </script>
 @yield('js')

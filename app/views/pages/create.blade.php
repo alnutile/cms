@@ -113,6 +113,11 @@
 			<label class="checkbox">{{ Form::checkbox('published', 1) }} Published</label>
 		  </div>
 		</div>
+		<div class="controls">
+			  <div class="checkbox">
+				<label class="checkbox">{{ Form::checkbox('hide_title', '1','' , array('id' => 'hide_title')); }} Hide title from page</label>
+			  </div>
+		</div>
         </div>
         <div class="row">
           <div class="form-group col-md-12">
@@ -158,7 +163,7 @@
         <div class="controls">
             <br>
             <br>
-            {{ Form::submit('Update Page', array('id' => 'submit', 'class' => 'btn btn-success')) }}
+            {{ Form::submit('Create Page', array('id' => 'submit', 'class' => 'btn btn-success')) }}
             <br>
         </div>      
         {{ Form::close() }}

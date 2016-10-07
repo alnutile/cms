@@ -32,8 +32,9 @@
     @include('shared.slideshow_angular', array('model' => 'pages'))
     <br>
     @endif
-
-    <h1>{{{ $page->title }}}</h1>
+	@if(!$page->hide_title)
+		<h1>{{{ $page->title }}}</h1>
+	@endif
     <p> {{ $page->body }} </p>
 
     @if($page->id == 4)

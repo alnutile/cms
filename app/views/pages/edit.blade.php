@@ -112,6 +112,11 @@
 				<label class="checkbox">{{ Form::checkbox('published', 1) }} Published</label>
 			  </div>
 			</div>
+			<div class="controls">
+			  <div class="checkbox">
+				<label class="checkbox">{{ Form::checkbox('hide_title', '1', $page->hide_title , array('id' => 'hide_title')); }} Hide title from page</label>
+			  </div>
+			</div>
 
         <div class="row">
           <div class="form-group col-md-12">
@@ -161,7 +166,7 @@
 
         @if($page->id >= 5)
         {{ Form::open(['method' => 'DELETE', 'action' => ['PagesController@destroy', $page->id]]) }}
-        <button type="submit" class="btn btn-danger">Delete</button>
+        <button type="submit" class="btn btn-danger delete">Delete</button>
         {{ Form::close() }}
         @endif
     </div>

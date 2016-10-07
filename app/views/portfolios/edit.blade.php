@@ -93,7 +93,7 @@
 
   {{ Form::close() }}
   {{ Form::open(['method' => 'DELETE', 'action' => ['PortfoliosController@destroy', $portfolio->id]]) }}
-  <button type="submit" class="btn btn-danger">Delete</button>
+  <button type="submit" class="btn btn-danger delete">Delete</button>
   {{ Form::close() }}
 </div>
 
