@@ -25,7 +25,12 @@
                     <a href="#"><big></big></a><big><a href="#">Portfolios</a></big>
                   </h4>
                 </div>
-                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne" style="height: 0px;">
+				<?php $search = '/'.Request::path();?>
+				@if(in_array_r($search,$portfolio_links,true))
+					<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne" style="height: auto;">
+				@else
+					 <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne" style="height: 0px;">
+				@endif
                   <div class="panel-body">
                     <ul class="nav nav-list">
                           @foreach($portfolio_links as $key => $portfolio)
@@ -44,24 +49,26 @@
 					</big>
                   </h4>
                 </div>
+				@if(Request::url() ==  URL::to($top['slug']) || strpos(Request::url(), $top['slug']) !== false)
+				<div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne" style="height: auto;">
+				@else
 				<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne" style="height: 0px;">
+				@endif
 				  <div class="panel-body">
 					<ul class="nav nav-list">
-						<li><a href="{{URL::to($top['slug'])}}">{{$top['title']}}</a></li>
+						<li @if(Request::url() ==  URL::to($top['slug'])) class="active" @endif><a href="{{URL::to($top['slug'])}}">{{$top['title']}}</a></li>
 						@foreach($post_tags as $tag)
-							<li><a href="/{{$tag['tagable_type']}}/tags/{{$tag['tag']}}">{{$tag['tag']}}</a></li>
+							<?php $current_url = $tag['tagable_type'].'/tags/'.$tag['tag'];?>
+							<li @if(urldecode(Request::url()) ==  URL::to($current_url)) class="active" @endif><a href="/{{$tag['tagable_type']}}/tags/{{$tag['tag']}}">{{$tag['tag']}}</a></li>
 						@endforeach
 					</ul>
 				  </div>
 				</div>
-				
 			@else
-                   
                 <?php 
-                // if(!isset($top['id'])) { dd($top); };
-                
-                $sub_light = Page::getSubNavSorted($top['id']); ?>
-                          
+					$sub_light = Page::getSubNavSorted($top['id']); 
+					$search = '/'.Request::path();
+				?>
                 @if( count($sub_light) > 1) <!-- start parent with subnav-->    
                     <div class="panel-heading" role="tab" id="headingTwo">
                       <a href="#"></a>
@@ -69,7 +76,11 @@
                         <a href="#"><big></big></a><big><a href=" ">{{$top['title']}}</a></big>
                       </h4>
                     </div>
-                    <div id="collapseTwo-{{ $top['id']}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo" style="height: 0px;">
+					@if(in_array_r($search,$sub_light,true))
+						<div id="collapseTwo-{{ $top['id']}}" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo" style="height: auto;">
+					@else
+						<div id="collapseTwo-{{ $top['id']}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo" style="height: 0px;">
+					@endif
                       <div class="panel-body">
                         <ul class="nav nav-list">
                           @foreach($sub_light as $sub)
@@ -97,5 +108,14 @@
       
     </div>
 </div>
-
+<?php 
+function in_array_r($needle, $haystack, $strict = false) {
+    foreach ($haystack as $item) {
+        if (($strict ? $item === $needle : $item == $needle) || (is_array($item) && in_array_r($needle, $item, $strict))) {
+            return true;
+        }
+    }
+    return false;
+}
+?>
 @include('shared._social')
