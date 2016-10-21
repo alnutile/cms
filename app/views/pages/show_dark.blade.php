@@ -26,25 +26,25 @@
 @else
 <div class="col-xs-12 col-sm-7 col-md-8 col-lg-12 column">
 @endif
-    @if($page->id != 1 || $settings->theme == false)
+    {{-- @if($page->id != 1 || $settings->theme == false) --}}
 
-    @if(isset($page->images) && $settings->theme == true)
-    @include('shared.slideshow_angular', array('model' => 'pages'))
-    <br>
-    @endif
-	@if(!$page->hide_title)
-		<h1>{{{ $page->title }}}</h1>
-	@endif
-    <p> {{ $page->body }} </p>
+		@if(isset($page->images) && $settings->theme == true)
+			@include('shared.slideshow_angular', array('model' => 'pages'))
+			<br>
+		@endif
+		@if(!$page->hide_title)
+			<h1>{{{ $page->title }}}</h1>
+		@endif
+		<p> {{ $page->body }} </p>
 
-    @if($page->id == 4)
-    @foreach($projects as $project)
-    @include('shared.projects_teasers')
-    @endforeach
-    {{ $projects->links() }}
-    @endif
+		@if($page->id == 4)
+			@foreach($projects as $project)
+				@include('shared.projects_teasers')
+			@endforeach
+			{{ $projects->links() }}
+		@endif
 
-    @endif
+    {{-- @endif --}}
 </div>
 
 
