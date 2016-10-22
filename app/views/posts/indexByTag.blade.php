@@ -32,6 +32,7 @@
                 </div>
             </a>
         </div>
+		<div><a href="{{$p->slug}}">Read more...</a></div>
         @endforeach
     </div>
 </div>
