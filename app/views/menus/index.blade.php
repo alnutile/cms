@@ -8,24 +8,17 @@
     <h3>Drag and drop to manage your <strong>Top Right Menu</strong></h3>
 
             <ol class="top-menu">
-			@foreach($menus as $menu)
-				<li
+            @foreach($menus as $menu)
+
+                <li
                     data-name="{{$menu['title']}}"
                     data-page-id="{{$menu['id']}}"
                     data-page-menu-parent="{{$menu['menu_parent']}}"
                     data-menu-location="{{$menu['menu_name']}}">
                     <i class="glyphicon glyphicon-move"></i>&nbsp;{{$menu['title']}}
-					@if(array_key_exists('sub_menus', $menu))
+					@if(!empty($menu['children']))
 						<ol>
-							@foreach($menu['sub_menus'] as $sub_menu)
-							 <li
-								 data-name="{{$sub_menu['title']}}"
-								data-page-id="{{$sub_menu['id']}}"
-								data-page-menu-parent="{{$menu['id']}}"
-								data-menu-location="{{$sub_menu['menu_name']}}">
-								<i class="glyphicon glyphicon-move"></i>&nbsp;{{$sub_menu['title']}}
-							</li>
-							@endforeach
+							 <?php sub_menus($menu['children'])?>
 						</ol>
 					@else
 						<ol></ol>
@@ -36,3 +29,19 @@
             <button type="button" class="btn btn-success" id="top-button">save</button>
 </div>
 @stop
+<?php 
+function sub_menus($sub_menu)
+{
+	 foreach($sub_menu as $child)
+	 { ?>
+		<li data-name="{{$child['title']}}" data-page-id="{{$child['id']}}" data-page-menu-parent="{{$child['menu_parent']}}" data-menu-location="{{$child['menu_name']}}"> <i class="glyphicon glyphicon-move"></i><?php echo $child['title'];
+		if(count($child['children'])>0)
+		{
+			echo "<ol>";
+			sub_menus($child['children']);
+			echo "</ol>";
+		}
+		echo '</li>';
+     }
+}
+?>

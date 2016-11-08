@@ -25,11 +25,16 @@ Class MenuService {
     if(count($updates)) {
       $count = 1;
       foreach($updates as $menu) {
-        $id         = $menu['pageId'];
+		$id         = $menu['pageId'];
         $parent     = $menu['pageMenuParent'];
         $menu_name  = $menu['menuLocation'];
         if(array_key_exists('children',$menu))
 		{
+			$page = $this->pageModel->findOrFail($id);
+			$page->menu_parent      = 0;
+			$page->menu_name        = 'top';
+			$page->menu_sort_order  = $count;
+			$page->save();
 			foreach($menu['children'] as $key => $sub_menu)
 			{
 				foreach($sub_menu as $item)
@@ -41,8 +46,8 @@ Class MenuService {
 					$page->menu_sort_order  = $count;
 					$page->save();
 				}
-				
 			}
+			
 		}
 		else
 		{

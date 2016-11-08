@@ -21,7 +21,19 @@ class Page extends \Eloquent {
         'menu_name',
         'redirect_url'
     ];
+	public function parent() 
+	{
+		return $this->hasOne('page', 'id', 'menu_parent');
+	}
 
+    public function children() 
+	{
+		return $this->hasMany('page', 'menu_parent', 'id');
+    }
+	public static function tree() 
+	{
+        return static::with(implode('.', array_fill(0, 100, 'children')))->where('menu_parent', '=', 0)->where("slug", "!=", "")->get()->toArray();
+    }
     public function getAll()
     {
         $pages = Page::where("published", '=', '1')->get();
