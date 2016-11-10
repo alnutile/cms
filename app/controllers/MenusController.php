@@ -19,17 +19,17 @@ class MenusController extends \BaseController {
 	public function index()
 	{
       parent::show();
-        $menus = Page::where("slug", "!=", "")->orderBy("menu_sort_order")->get();
-        $banner = $this->banner;
-        return $this->respond($menus, 'menus.index',  compact('menus', 'banner'));
+        $menus = Page::tree();
+		$banner = $this->banner;
+		return $this->respond($menus, 'menus.index',  compact('menus', 'banner'));
     }
 
     public function store()
     {
         $input = Input::all();
         $menus = new MenuService();
-        $menus->updateMenus($input['data']);
-        return $this->json_response("success", "Menu Updates", null, 200);
+		$menus->updateMenus($input['data']);
+		return $this->json_response("success", "Menu Updates", null, 200);
     }
 
 
