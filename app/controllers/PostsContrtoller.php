@@ -33,7 +33,7 @@ class PostsController extends \BaseController {
         $posts = Post::where('published', '=', 1)->orderBy('created_at','desc')->get();
         $tags = $this->tags->get_tags_for_type('Post');
 		
-        $seo = 'Builders Notebook';
+        $seo = $this->settings->blog_title;
         if($this->settings->theme == true) {
 			return View::make('posts.index_dark', compact('posts', 'tags', 'settings', 'seo'));
 		} else {
