@@ -3,6 +3,9 @@
 @section('content')
 
 <!-- posts.edit -->
+<div class="col-md-3 ">
+  @include('shared.sidebar')
+</div>
 <div class="col-md-9 column">
 
     <h2>Edit Blog Post: {{$post->title}}</h2>

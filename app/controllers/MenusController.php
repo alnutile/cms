@@ -29,6 +29,7 @@ class MenusController extends \BaseController {
         $input = Input::all();
         $menus = new MenuService();
 		$menus->updateMenus($input['data']);
+		$menus->saveMenus();
 		return $this->json_response("success", "Menu Updates", null, 200);
     }
 

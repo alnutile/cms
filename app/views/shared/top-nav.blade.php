@@ -4,7 +4,25 @@
     <span class="icon-bar"></span>
     <span class="icon-bar"></span>
 </button>
+<?php 
+	if($settings->theme == false)
+	{
+			$top_left_nav = Page::tree();
+			if($settings && is_numeric($settings->portfolio_menu_position))
+			{
+				$pos = $settings->portfolio_menu_position - 1;
+				$portfolio = ['title' => 'Portfolio', 'slug'=>'/portfolio', 'is_portfolio'=>1];
 
+				Helpers\ArrayHelper::insertAt($top_left_nav, $pos, $portfolio);         
+			}
+			if($settings && $settings->enable_blog)
+			{
+				$pos = $settings->blog_menu_position - 1;
+				$blog = ['id'=> -1,'title' => $settings->blog_title, 'slug'=>'/posts', 'is_blog' =>1];
+				Helpers\ArrayHelper::insertAt($top_left_nav, $pos, $blog);    
+			}
+	}
+?>
 <nav class="navbar-collapse collapse" id="nav-collapse-top">
     <ul class="nav nav-pills">
 	@foreach($top_left_nav as $top)
@@ -35,27 +53,39 @@
 			</ul>
 		 </li>
 		@else
-		<?php $sub_light = Page::getSubNavSorted($top['id']);?>            
-          @if( count($sub_light) > 1)
-          <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{$top['title']}}</a>
-            <ul class="dropdown-menu">
-              @foreach($sub_light as $sub)
-              <li  class="{{Request::url() ==  URL::to($sub['slug']) ? 'active' : 'not-active'}}">
-                <a href="{{URL::to($sub['slug'])}}">{{$sub['title']}}</a>
-              </li>
-              @endforeach
-            </ul>
+		<li class="dropdown">
+			@if(isset($top['children']) && !empty($top['children']))
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">{{$top['title']}}</a>
+				@if(isset($top['children']) && !empty($top['children']))
+					<ul class="dropdown-menu">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="{{URL::to($top['slug'])}}">{{$top['title']}}</a>
+						 <?php sub_nav_menus($top['children'])?>
+					</ul>
+				@endif
+			@else
+				<a href="{{URL::to($top['slug'])}}">{{$top['title']}}</a>
+			@endif
           </li>
-          @else
-          <li class="{{ Request::url() ==  URL::to($top['slug']) ? 'active' : 'not-active'}}">
-            <a href="{{URL::to($top['slug'])}}">{{$top['title']}}</a>
-          </li>
-          @endif
         @endif
       @endforeach       
     </ul>
 	
 </nav>
 
-
+<?php 
+function sub_nav_menus($sub_menu)
+{
+	 foreach($sub_menu as $child)
+	 { ?>
+		<li class="dropdown-submenu">
+		<a tabindex="-1" href="{{URL::to($child['slug'])}}"/><?php echo $child['title'];?></a><?php
+		if(count($child['children'])>0)
+		{
+			echo "<ul class='dropdown-menu'>";
+			sub_nav_menus($child['children']);
+			echo "</ul>";
+		}
+		echo '</li>';
+     }
+}
+?>

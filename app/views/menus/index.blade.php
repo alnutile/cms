@@ -41,6 +41,10 @@ function sub_menus($sub_menu)
 			sub_menus($child['children']);
 			echo "</ol>";
 		}
+		else
+		{
+			echo "<ol></ol>";
+		}
 		echo '</li>';
      }
 }

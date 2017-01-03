@@ -7,7 +7,7 @@ Class MenuService {
   public $project;
   public $portfolio;
   public $post;
-
+	private $navigations_menu = array();
   public function __construct(Page $pageModel = null, Setting $settings = null, Portfolio $portfolio = null, Project $project = null, Post $post = null)
   {
     $this->pageModel = ($pageModel == null) ? new \Page : $pageModel;
@@ -19,49 +19,71 @@ Class MenuService {
       $this->images = new \CMS\Services\ImagesService(new \Image());
       $this->projects = new \CMS\Services\ProjectsService($this->images);
   }
-
-  public function updateMenus($updates)
-  {
-    if(count($updates)) {
-      $count = 1;
-      foreach($updates as $menu) {
-		$id         = $menu['pageId'];
-        $parent     = $menu['pageMenuParent'];
-        $menu_name  = $menu['menuLocation'];
-        if(array_key_exists('children',$menu))
+	public function saveMenus()
+	{
+		$top = 0;
+		foreach($this->navigations_menu as $nav_menus)
 		{
-			$page = $this->pageModel->findOrFail($id);
-			$page->menu_parent      = 0;
-			$page->menu_name        = 'top';
-			$page->menu_sort_order  = $count;
-			$page->save();
-			foreach($menu['children'] as $key => $sub_menu)
+			$reset_array = array_values($nav_menus);
+			for($i=0; $i<count($reset_array);$i++)
 			{
-				foreach($sub_menu as $item)
+				if(array_key_exists('children',$reset_array[$i]))
 				{
-					$sub_page_id = $item['pageId'];
-					$page = $this->pageModel->findOrFail($sub_page_id);
-					$page->menu_parent      = $id;
-					$page->menu_name        = 'sub_nav';
+					unset($reset_array[$i]['children']);
+				} 
+			}
+			$count = 1;
+			foreach($reset_array as $updated_navs)
+			{
+				if(isset($updated_navs['pageId']))
+				{
+					$page_id         = $updated_navs['pageId'];
+					$page = $this->pageModel->findOrFail($page_id);
+					if($top == 0)
+					{
+						$page->menu_parent      = 0;
+						$page->menu_name        = 'top';
+					}
+					else
+					{
+						$page->menu_parent      = $updated_navs['pageMenuParent'];
+						$page->menu_name        = $updated_navs['menuLocation'];
+					}
 					$page->menu_sort_order  = $count;
 					$page->save();
+					$count++;
 				}
 			}
-			
+			$top++;
 		}
-		else
+	}
+	public function updateMenus($updates, $resursive=false)
+	{
+		$this->navigations_menu [] = $updates;
+		if(count($updates)) 
 		{
-			$page = $this->pageModel->findOrFail($id);
-			$page->menu_parent      = 0;
-			$page->menu_name        = 'top';
-			$page->menu_sort_order  = $count;
-			$page->save();
+			$count = 1;
+			foreach($updates as $menu) 
+			{
+				if(isset($menu['pageId']))
+				{
+					$parent_id         = $menu['pageId'];
+					if(isset($menu['children']))
+					{
+						$sub_menus = $menu['children'][0];
+						for($i = 0; $i<count($sub_menus); $i++)
+						{
+							$sub_menus[$i]['pageMenuParent'] = $parent_id;
+							$sub_menus[$i]['menuLocation'] = 'sub_nav';
+						}
+						$this->updateMenus($sub_menus, $resursive = true);
+						
+					}
+				}
+				
+			}
 		}
-        $count++;
-      }
-    }
-  }
-
+	}
   /**
    * Display the specified resource.
    * @TODO pull out menu into its own model with a many to many relationship to
