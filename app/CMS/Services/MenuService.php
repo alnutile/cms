@@ -84,7 +84,6 @@ Class MenuService {
 			}
 		}
 	}
-
   /**
    * Display the specified resource.
    * @TODO pull out menu into its own model with a many to many relationship to
