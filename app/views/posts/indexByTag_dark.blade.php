@@ -31,7 +31,6 @@
 				@endif
 			</div>
         </div>
-		<div class="row"><a href="{{$p->slug}}">Read more...</a></div>
         @endforeach
     </div>
 </div>
