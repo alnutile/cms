@@ -20,7 +20,7 @@
            <div class="blog_row">
            <div class="post_intro col-md-9">
 				<h2 class="media-heading"><a href="{{$p->slug}}">{{{$p->title}}}</a></h2>
-				{{ $p->intro }} <span><a href="{{$p->slug}}">Read more...</a></span>
+				{{ $p->intro }} <span class="read-more"><a href="{{$p->slug}}">Read more...</a></span>
 			</div>
 
 			<div class="post_img col-md-3">
