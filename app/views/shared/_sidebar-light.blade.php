@@ -15,7 +15,22 @@
         } else {
             $active = 'not-active';
         }
-        ?>
+		$top_left_nav = Page::tree();
+		if($settings && is_numeric($settings->portfolio_menu_position))
+		{
+			$pos = $settings->portfolio_menu_position - 1;
+			$portfolio = ['title' => 'Portfolio', 'slug'=>'/portfolio', 'is_portfolio'=>1];
+
+			Helpers\ArrayHelper::insertAt($top_left_nav, $pos, $portfolio);         
+		}
+		if($settings && $settings->enable_blog)
+		{
+			$pos = $settings->blog_menu_position - 1;
+			$blog = ['id'=> -1,'title' => $settings->blog_title, 'slug'=>'/posts', 'is_blog' =>1];
+			Helpers\ArrayHelper::insertAt($top_left_nav, $pos, $blog);    
+		}
+		
+		?>
           @foreach($top_left_nav as $top)
             <!-- check if item is portfolio-->
             @if(isset($top['is_portfolio']))
@@ -65,31 +80,30 @@
 				  </div>
 				</div>
 			@else
-                <?php 
-					$sub_light = Page::getSubNavSorted($top['id']); 
-					$search = '/'.Request::path();
-				?>
-                @if( count($sub_light) > 1) <!-- start parent with subnav-->    
+              @if(isset($top['children']) && !empty($top['children'])) <!-- start parent with subnav-->    
                     <div class="panel-heading" role="tab" id="headingTwo">
                       <a href="#"></a>
                       <h4 class="panel-title nav-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo-{{$top['id']}}" aria-expanded="true" aria-controls="collapseOne">
                         <a href="#"><big></big></a><big><a href=" ">{{$top['title']}}</a></big>
                       </h4>
                     </div>
-					@if(in_array_r($search,$sub_light,true))
+					
+					@if(in_array_r($search,$top,true))
 						<div id="collapseTwo-{{ $top['id']}}" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo" style="height: auto;">
 					@else
 						<div id="collapseTwo-{{ $top['id']}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo" style="height: 0px;">
 					@endif
+					@if(isset($top['children']) && !empty($top['children']))
                       <div class="panel-body">
                         <ul class="nav nav-list">
-                          @foreach($sub_light as $sub)
-                          <li  class='{{ Request::url() ==  URL::to($sub["slug"]) ?  "active" : "not-active" }}'>
-                            <a href="{{URL::to($sub['slug'])}}">{{$sub['title']}}</a>
-                          </li>
-                          @endforeach
+                          <li  class='{{ Request::url() ==  URL::to($top["slug"]) ?  "active" : "not-active" }}'>
+                            <a href="{{URL::to($top['slug'])}}">{{$top['title']}}</a>
+							<?php sub_nav_menus_light($top['children'])?>
+							</li>
+							
                         </ul>
                       </div>
+					 @endif
                     </div>
                     
                 @else <!-- parent without subnav-->
@@ -116,6 +130,21 @@ function in_array_r($needle, $haystack, $strict = false) {
         }
     }
     return false;
+}
+function sub_nav_menus_light($sub_menu)
+{
+	 foreach($sub_menu as $child)
+	 { ?>
+		<li class="left-dropdown-submenu">
+		<a tabindex="-1" href="{{URL::to($child['slug'])}}" class='{{ Request::url() ==  URL::to($child["slug"]) ?  "active" : "not-active" }}'><?php echo $child['title'];?></a><?php
+		if(count($child['children'])>0)
+		{
+			echo "<ul class='left-dropdown-submenu'>";
+			sub_nav_menus_light($child['children']);
+			echo "</li>";
+		}
+		echo '</ul>';
+     }
 }
 ?>
 @include('shared._social')
