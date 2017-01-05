@@ -21,7 +21,6 @@
 				<h2 class="media-heading"><a href="{{$p->slug}}">{{{$p->title}}}</a></h2>
 				{{ $p->intro }} <span class="read-more"><a href="{{$p->slug}}">Read more...</a></span>
 			</div>
-
 			<div class="post_img col-md-3">
 				@if ($p->image)
 				<img  src="/img/posts/thumb/{{$p->image}}" alt="{{$p->title}}" class="img-responsive">
