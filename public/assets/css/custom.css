@@ -53,6 +53,16 @@
 	float:left;
 	margin-right: 10px;
 }
+.left-dropdown-submenu {
+    list-style-type: unset;
+}
+.left-dropdown-submenu > a {
+    padding: 5px;
+}
+.left-dropdown-submenu .active {
+    background-color: #11c2d9;
+    color: #ffffff !important;
+}
 /* line 2, stdin */
 .row.gallery_row {
   margin-top: 30px;
