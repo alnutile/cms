@@ -17,19 +17,18 @@
     <div class="portfolio-wrap">
         @foreach($posts as $p)
         <div class="row blog_row">
-           	<div class="blog_row">
-				<div class="post_intro col-md-9">
-					<h2 class="media-heading"><a href="{{$p->slug}}">{{{$p->title}}}</a></h2>
-					{{ $p->intro }} <span class="read-more"><a href="{{$p->slug}}">Read more...</a></span>
-				</div>
-				<div class="post_img col-md-3">
-					@if ($p->image)
-					<img  src="/img/posts/thumb/{{$p->image}}" alt="{{$p->title}}" class="img-responsive">
-					@else
-					{{--<img  src="/img/default/photo_default_0.png" alt="{{$p->title}}" class="img-responsive">--}}
-					@endif
-				</div>
+           	<div class="post_intro col-md-9">
+				<h2 class="media-heading"><a href="{{$p->slug}}">{{{$p->title}}}</a></h2>
+				{{ $p->intro }} <span class="read-more"><a href="{{$p->slug}}">Read more...</a></span>
 			</div>
+			<div class="post_img col-md-3">
+				@if ($p->image)
+				<img  src="/img/posts/thumb/{{$p->image}}" alt="{{$p->title}}" class="img-responsive">
+				@else
+				{{--<img  src="/img/default/photo_default_0.png" alt="{{$p->title}}" class="img-responsive">--}}
+				@endif
+			</div>
+			
         </div>
         @endforeach
     </div>
