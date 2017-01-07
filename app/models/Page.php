@@ -32,7 +32,7 @@ class Page extends \Eloquent {
     }
 	public static function tree() 
 	{
-        return static::with(implode('.', array_fill(0, 100, 'children')))->where('menu_parent', '=', 0)->where("slug", "!=", "")->orderBy('menu_sort_order')->get()->toArray();
+        return static::with(implode('.', array_fill(0, 100, 'children')))->where('menu_parent', '=', 0)->where("slug", "!=", "")->where('menu_name','!=', '')->orderBy('menu_sort_order')->get()->toArray();
 
     }
     public function getAll()
