@@ -29,9 +29,9 @@
 			$blog = ['id'=> -1,'title' => $settings->blog_title, 'slug'=>'/posts', 'is_blog' =>1];
 			Helpers\ArrayHelper::insertAt($top_left_nav, $pos, $blog);    
 		}
-		
+		 $search = '/'.Request::path();
 		?>
-          @foreach($top_left_nav as $top)
+		@foreach($top_left_nav as $top)
             <!-- check if item is portfolio-->
             @if(isset($top['is_portfolio']))
                 <div class="panel-heading" role="tab" id="headingOne">
@@ -40,7 +40,6 @@
                     <a href="#"><big></big></a><big><a href="#">Portfolios</a></big>
                   </h4>
                 </div>
-				<?php $search = '/'.Request::path();?>
 				@if(in_array_r($search,$portfolio_links,true))
 					<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne" style="height: auto;">
 				@else
@@ -80,7 +79,7 @@
 				  </div>
 				</div>
 			@else
-              @if(isset($top['children']) && !empty($top['children'])) <!-- start parent with subnav-->    
+				@if(isset($top['children']) && !empty($top['children'])) <!-- start parent with subnav-->    
                     <div class="panel-heading" role="tab" id="headingTwo">
                       <a href="#"></a>
                       <h4 class="panel-title nav-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo-{{$top['id']}}" aria-expanded="true" aria-controls="collapseOne">
@@ -115,9 +114,9 @@
                 @endif <!-- end -->  
                             
                 
-              @endif <!-- end check if item is portfolio-->              
+			@endif <!-- end check if item is portfolio-->              
               
-          @endforeach
+		@endforeach
 
       
     </div>
@@ -133,18 +132,19 @@ function in_array_r($needle, $haystack, $strict = false) {
 }
 function sub_nav_menus_light($sub_menu)
 {
-	 foreach($sub_menu as $child)
-	 { ?>
-		<li class="left-dropdown-submenu">
-		<a tabindex="-1" href="{{URL::to($child['slug'])}}" class='{{ Request::url() ==  URL::to($child["slug"]) ?  "active" : "not-active" }}'><?php echo $child['title'];?></a><?php
-		if(count($child['children'])>0)
-		{
-			echo "<ul class='left-dropdown-submenu'>";
-			sub_nav_menus_light($child['children']);
-			echo "</li>";
+	if(count($sub_menu) > 0){
+		echo "<ul class='left-dropdown-submenu'>";
+		foreach($sub_menu as $child)
+		{ ?>
+			<li class="left-dropdown-submenu-item">
+				<a tabindex="-1" href="{{URL::to($child['slug'])}}" class='{{ Request::url() ==  URL::to($child["slug"]) ?  "active" : "not-active" }}'><?php echo $child['title'];?></a><?php
+				if(count($child['children'])>0){
+					sub_nav_menus_light($child['children']);
+				}
+			echo '</li>';
 		}
-		echo '</ul>';
-     }
+		echo "</ul>";
+	}
 }
 ?>
 @include('shared._social')
