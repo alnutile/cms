@@ -132,18 +132,19 @@ function in_array_r($needle, $haystack, $strict = false) {
 }
 function sub_nav_menus_light($sub_menu)
 {
-	 foreach($sub_menu as $child)
-	 { ?>
-		<li class="left-dropdown-submenu">
-		<a tabindex="-1" href="{{URL::to($child['slug'])}}" class='{{ Request::url() ==  URL::to($child["slug"]) ?  "active" : "not-active" }}'><?php echo $child['title'];?></a><?php
-		if(count($child['children'])>0)
-		{
-			echo "<ul class='left-dropdown-submenu'>";
-			sub_nav_menus_light($child['children']);
-			echo "</li>";
+	if(count($sub_menu) > 0){
+		echo "<ul class='left-dropdown-submenu'>";
+		foreach($sub_menu as $child)
+		{ ?>
+			<li class="left-dropdown-submenu-item">
+				<a tabindex="-1" href="{{URL::to($child['slug'])}}" class='{{ Request::url() ==  URL::to($child["slug"]) ?  "active" : "not-active" }}'><?php echo $child['title'];?></a><?php
+				if(count($child['children'])>0){
+					sub_nav_menus_light($child['children']);
+				}
+			echo '</li>';
 		}
-		echo '</ul>';
-     }
+		echo "</ul>";
+	}
 }
 ?>
 @include('shared._social')
