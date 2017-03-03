@@ -11,6 +11,7 @@ public/system/*
 .idea/*
 public/bower_components
 public/assets/img/projects/
+public/slideshow
 app/database/local.sqlite
 app/database/*.sqlite
 public/robots.txt
@@ -30,3 +31,4 @@ composer.lock
 app/config/database.php
 .vscode/
 assets/js/custom.js
+
