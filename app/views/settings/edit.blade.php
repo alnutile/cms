@@ -261,6 +261,16 @@
 			<div class="help-block">Enter your blog name here e.g. Builder's Notebook</div>
         </div>
 		<div class="form-group">
+            <label for="portfolio_title">Portfolio Name</label>
+                {{ Form::text('portfolio_title', null, array('class' => 'form-control', 'tabindex' => 1,'placeholder' => "Portfolios")) }}
+                @if($errors->first('portfolio_title'))
+                <div class="alert alert-danger">
+                    {{  $errors->first('portfolio_title'); }}
+                </div>
+                @endif
+			<div class="help-block">Enter your blog name here e.g. Builder's Notebook</div>
+        </div>
+		<div class="form-group">
           <label for="">{{$setting->blog_title}} Menu Position</label>
           <select name="blog_menu_position" class="form-control">
             <option value="1" @if ($setting->blog_menu_position == 1) selected @endif>1</option>

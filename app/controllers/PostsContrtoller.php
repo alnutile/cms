@@ -77,7 +77,7 @@ class PostsController extends \BaseController {
             return Redirect::back()->withErrors($validator)->withInput();
         }
         if(isset($all['image'])) {
-            $this->imagesService->cropAndSaveForPost($all['image'], $this->save_to);
+            $this->imagesService->resizeAndSaveForPost($all['image'], $this->save_to);
             $all = $this->uploadFile($all, 'image');;
         }
         $post = Post::create($all);
@@ -154,7 +154,7 @@ class PostsController extends \BaseController {
             return Redirect::back()->withErrors($validator)->withInput();
         }
         if(isset($data['image'])) {
-            $this->imagesService->cropAndSaveForPost($all['image'], $this->save_to);
+            $this->imagesService->resizeAndSaveForPost($all['image'], $this->save_to);
             $data = $this->uploadFile($data, 'image');
         } else {
             $data['image'] = $post->image;

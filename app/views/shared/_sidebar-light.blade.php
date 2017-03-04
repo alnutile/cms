@@ -37,7 +37,7 @@
                 <div class="panel-heading" role="tab" id="headingOne">
                   <a href="#"></a>
                   <h4 class="panel-title nav-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    <a href="#"><big></big></a><big><a href="#">Portfolios</a></big>
+                    <a href="#"><big></big></a><big><a href="#">{{$settings->portfolio_title}}</a></big>
                   </h4>
                 </div>
 				@if(in_array_r($search,$portfolio_links,true))

@@ -91,6 +91,21 @@ class ImagesService {
             ->crop(280, 340)
             ->save($path . '/thumb/' . $file);
     }
+	public function resizeAndSaveForPost($origImage, $path)
+    {
+        $image_thumb = \Intervention\Image\Facades\Image::make($origImage->getRealPath());
+        $file = ($origImage->getClientOriginalName());
+        $image_thumb->resize(280, null,  function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+			})->save($path . '/thumb/' . $file);
+		$image_full = \Intervention\Image\Facades\Image::make($origImage->getRealPath());
+        $image_full->resize(850, null,  function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+			})->save($path . '/full/' . $file);
+		return $data = array('thumb'=>  $path . '/thumb/' . $file, 'full' => $path . '/full/' . $file);
+    }
 
     public function cropAndSaveForPagesTopSlides($origImage, $path)
     {
