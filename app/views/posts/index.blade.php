@@ -23,7 +23,13 @@
 			</div>
 			<div class="post_img col-md-3">
 				@if ($p->image)
-				<img  src="/img/posts/thumb/{{$p->image}}" alt="{{$p->title}}" class="img-responsive">
+					
+					@if(file_exists(public_path().'/img/posts/thumb/'.$p->image))
+						<img  src="/img/posts/thumb/{{$p->image}}" alt="{{$p->title}}" class="img-responsive">
+					@else
+						<img  src="/img/posts/{{$p->image}}" alt="{{$p->title}}" class="img-responsive">
+					@endif
+					
 				@else
 				{{--<img  src="/img/default/photo_default_0.png" alt="{{$p->title}}" class="img-responsive">--}}
 				@endif

@@ -94,17 +94,22 @@ class ImagesService {
 	public function resizeAndSaveForPost($origImage, $path)
     {
         $image_thumb = \Intervention\Image\Facades\Image::make($origImage->getRealPath());
-        $file = ($origImage->getClientOriginalName());
-        $image_thumb->resize(280, null,  function ($constraint) {
-                $constraint->aspectRatio();
-                $constraint->upsize();
-			})->save($path . '/thumb/' . $file);
+		list($width, $height) = getimagesize($origImage->getRealPath());
+		$file = ($origImage->getClientOriginalName());
+		if($width > 280){
+			$image_thumb->resize(280, null,  function ($constraint) {
+					$constraint->aspectRatio();
+					$constraint->upsize();
+				})->save($path . '/thumb/' . $file);
+		}
 		$image_full = \Intervention\Image\Facades\Image::make($origImage->getRealPath());
-        $image_full->resize(850, null,  function ($constraint) {
+		list($width_full, $height_full) = getimagesize($origImage->getRealPath());
+		if($width_full > 850){
+			$image_full->resize(850, null,  function ($constraint) {
                 $constraint->aspectRatio();
                 $constraint->upsize();
 			})->save($path . '/full/' . $file);
-		return $data = array('thumb'=>  $path . '/thumb/' . $file, 'full' => $path . '/full/' . $file);
+		}
     }
 
     public function cropAndSaveForPagesTopSlides($origImage, $path)

@@ -27,7 +27,11 @@
     <div class="row">
         @if ($post->image)
         <div class = "col-lg-12" id="main_image">
-            <img  src="/img/posts/full/{{$post->image}}" alt="{{$post->title}}">
+			@if(file_exists(public_path().'/img/posts/full/'.$post->image))
+				<img  src="/img/posts/full/{{$post->image}}" alt="{{$post->title}}" class="img-responsive">
+			@else
+				<img  src="/img/posts/{{$post->image}}" alt="{{$post->title}}" class="img-responsive">
+			@endif
         </div>
         @endif
     </div>
