@@ -22,8 +22,12 @@
                             <img src="<?= $p->thumbs->url('index') ?>">
                         </div>
                     @elseif ($p->image)
-                    <img  src="/img/projects/{{$p->tile_image}}" alt="{{$p->title}}" class="img-responsive">
-                    @endif
+						@if(file_exists(public_path().'/img/projects/tile/'.$p->tile_image))
+							<img src="/img/projects/tile/{{$p->tile_image}}" alt="{{$p->title}}" class="img-responsive">
+						@else
+							<img src="/img/projects/{{$p->tile_image}}" alt="{{$p->title}}" class="img-responsive">
+						@endif
+					@endif
                 </div>
                 <div class="project_img col-md-9">
                     {{$p->title}}
