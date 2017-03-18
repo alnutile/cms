@@ -138,6 +138,7 @@ class SettingsController extends \BaseController {
         $setting->portfolio_menu_position = $data['portfolio_position'];
         $setting->enable_left_nav = (isset($data['enable_left_nav'])) ? 1 : 0;
 		$setting->blog_title = (isset($data['blog_title'])) ? $data['blog_title'] : '';
+		$setting->portfolio_title = (isset($data['portfolio_title'])) ? $data['portfolio_title'] : '';
 		$setting->enable_blog = (isset($data['enable_blog'])) ? true : false;
 		$setting->blog_menu_position = $data['blog_menu_position'];
         $setting->save();

@@ -79,23 +79,26 @@ class ProjectsController extends \BaseController {
         $all = Input::all();
         $rules = Project::$rules;
         $validator = $this->validateSlugOnCreate($all, $rules);
-        if ($validator->fails())
+		if ($validator->fails())
         {
             return Redirect::back()->withErrors($validator)->withInput();
         }
-
-        $project = Project::create($all);
-
-        if(isset($all['images'])) {
+		if(isset($all['tile_image'])) {
+			$this->imagesService->resizeAndSaveForProjects($all['tile_image'], $this->save_to, 'tile_image');
+			$data = $this->uploadFile($all, 'tile_image');
+			$all = $data;
+		}		
+		if(isset($all['images'])) {
             $this->projectsService->addImages($project->id, $all['images'], 'Project');
 //            $this->imagesService->cropAndSaveForPages($all['image'], $this->save_to);
         }
-        if(isset($all['tags'])) {
-            $tags = explode(',', $all['tags']);
+		if(isset($all['tags']) && !empty($all['tags'])) {
+			$tags = explode(',', $all['tags']);
             $this->tagsService->attachNewTags($project->id, $tags, 'Project');
         }
-
-        return Redirect::route('admin_projects')->withMessage("Created Project");
+		
+		$project = Project::create($all);
+		return Redirect::route('admin_projects')->withMessage("Created Project");
     }
 
     public function show($project = NULL)
@@ -140,6 +143,7 @@ class ProjectsController extends \BaseController {
      */
     public function update($id)
     {
+		
         $project  = Project::findOrFail($id);
 
         //1. see if the slug is the same as the original
@@ -149,19 +153,23 @@ class ProjectsController extends \BaseController {
         $rules = Project::$rules;
         $validator = $this->validateSlugEdit($all, $project, $rules);
         $data = $this->checkPublished($all);
-
+		
         if ($validator->fails())
         {
-            return Redirect::back()->withErrors($validator)->withInput();
+			
+			return Redirect::back()->withErrors($validator)->withInput();
         }
         if(isset($data['image'])) {
-            $data = $this->uploadFile($data, 'image');
+			$this->imagesService->resizeAndSaveForProjects($all['image'], $this->save_to, 'top_image');
+			$data = $this->uploadFile($data, 'image');
         } else {
           $data['image'] = $project->image;
 
         }
         if(isset($data['tile_image'])) {
-          $data = $this->uploadFile($data, 'tile_image');
+			
+			$this->imagesService->resizeAndSaveForProjects($all['tile_image'], $this->save_to, 'tile_image');
+			$data = $this->uploadFile($data, 'tile_image');
         } else {
             $data['tile_image'] = $project->tile_image;
         }

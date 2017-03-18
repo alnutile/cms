@@ -220,7 +220,11 @@
                         @if($project->tile_image)
                             <div class="row">
                                 <div>
-                                    <img class="col-lg-4" src="/{{$path}}/{{$project->tile_image}}" class="banner-show">
+									@if(file_exists(public_path().'/img/projects/tile/'.$project->tile_image))
+										<img class="col-lg-4" src="/{{$path}}/tile/{{$project->tile_image}}" class="banner-show">
+									@else
+										<img class="col-lg-4" src="/{{$path}}/{{$project->tile_image}}" class="banner-show">
+									@endif
                                 </div>
                             </div>
                         @endif

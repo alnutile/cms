@@ -20,8 +20,12 @@
             <a href="{{$p->slug}}">
 
                 <div class="proj_img">
-                    @if ($p->tile_image)
-                    <img  src="/img/projects/{{$p->tile_image}}" alt="{{$p->title}}" class="img-responsive">
+					@if ($p->tile_image)
+						@if(file_exists(public_path().'/img/projects/tile/'.$p->tile_image))
+							<img src="/img/projects/tile/{{$p->tile_image}}" alt="{{$p->title}}" class="img-responsive">
+						@else
+							<img src="/img/projects/{{$p->tile_image}}" alt="{{$p->title}}" class="img-responsive">
+						@endif
                     @else
                     <img  src="/img/default/photo_default_0.png" alt="{{$p->title}}" class="img-responsive">
                     @endif

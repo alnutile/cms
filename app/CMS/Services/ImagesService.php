@@ -91,7 +91,50 @@ class ImagesService {
             ->crop(280, 340)
             ->save($path . '/thumb/' . $file);
     }
-
+	public function resizeAndSaveForPost($origImage, $path)
+    {
+        $image_thumb = \Intervention\Image\Facades\Image::make($origImage->getRealPath());
+		list($width, $height) = getimagesize($origImage->getRealPath());
+		$file = ($origImage->getClientOriginalName());
+		if($width > 280){
+			$image_thumb->resize(280, null,  function ($constraint) {
+					$constraint->aspectRatio();
+					$constraint->upsize();
+				})->save($path . '/thumb/' . $file);
+		}
+		$image_full = \Intervention\Image\Facades\Image::make($origImage->getRealPath());
+		list($width_full, $height_full) = getimagesize($origImage->getRealPath());
+		if($width_full > 850){
+			$image_full->resize(850, null,  function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+			})->save($path . '/full/' . $file);
+		}
+    }
+	public function resizeAndSaveForProjects($origImage, $path, $type)
+    {
+		if($type == "tile_image"){
+			$image_thumb = \Intervention\Image\Facades\Image::make($origImage->getRealPath());
+			list($width, $height) = getimagesize($origImage->getRealPath());
+			$file = ($origImage->getClientOriginalName());
+			if($width > 275){
+				$image_thumb->resize(275, null,  function ($constraint) {
+						$constraint->aspectRatio();
+						$constraint->upsize();
+					})->save($path . '/tile/' . $file);
+			}
+		}
+		if($type == 'top_image'){
+			$image_full = \Intervention\Image\Facades\Image::make($origImage->getRealPath());
+			list($width_full, $height_full) = getimagesize($origImage->getRealPath());
+			if($width_full > 850){
+				$image_full->resize(850, null,  function ($constraint) {
+					$constraint->aspectRatio();
+					$constraint->upsize();
+				})->save($path . '/full/' . $file);
+			}
+		}
+    }
     public function cropAndSaveForPagesTopSlides($origImage, $path)
     {
         Log::info($path);

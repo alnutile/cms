@@ -28,7 +28,7 @@
 	@foreach($top_left_nav as $top)
         @if(isset($top['is_portfolio']))
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Portfolios</a>
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{$settings->portfolio_title}}</a>
           <ul class="dropdown-menu">
             @foreach($portfolio_links as $key => $portfolio)
             <li class="{{Request::url() ==  URL::to($portfolio) ? 'active' : 'not-active' }}">
