@@ -205,6 +205,7 @@ class PagesController extends \BaseController {
                   }
                 }
 				$page->hide_title = (isset($page_update['hide_title'])) ? true : false;
+				$page->published = (isset($page_update['published'])) ? true : false;
                 $page->save();
                 $banner = $this->bannerSet($page);
                 return Redirect::to("/pages/")->withMessage("Page Updated");
@@ -240,6 +241,7 @@ class PagesController extends \BaseController {
                   }
                 }     
 				$page->hide_title = (isset($page_update['hide_title'])) ? true : false;
+				$page->published = (isset($page_update['published'])) ? true : false;
                 $page->save();
                 $banner = $this->bannerSet($page);
                 return Redirect::to("/pages/")->withMessage("Page Updated");
