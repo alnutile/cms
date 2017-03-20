@@ -11,6 +11,7 @@
         <thead>
         <tr>
             <th>Title</th>
+			<th>Published</th>
             <th>Edit</th>
         </tr>
         </thead>
@@ -18,6 +19,13 @@
             @foreach($pages as $page)
                 <tr>
                     <td><a href="{{$page->slug}}">{{{$page->title}}}</a></td>
+					<td>
+						@if($page->published)
+							Published
+                        @else
+							Unpublished
+                        @endif
+					</td>
                     <td><a id="page-id-{{$page->id}}" href="/pages/{{$page->id}}/edit">edit</a></td>
                 </tr>
             @endforeach

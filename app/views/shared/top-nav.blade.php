@@ -59,7 +59,12 @@
 				@if(isset($top['children']) && !empty($top['children']))
 					<ul class="dropdown-menu">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="{{URL::to($top['slug'])}}">{{$top['title']}}</a>
-						 <?php sub_nav_menus($top['children'])?>
+						 <?php 
+							usort($top['children'], function ($item1, $item2) {
+								return $item1['menu_sort_order'] >= $item2['menu_sort_order'];
+							});
+							sub_nav_menus($top['children']);
+						 ?>
 					</ul>
 				@endif
 			@else

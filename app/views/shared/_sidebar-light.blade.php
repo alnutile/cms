@@ -97,7 +97,12 @@
                         <ul class="nav nav-list">
                           <li  class='{{ Request::url() ==  URL::to($top["slug"]) ?  "active" : "not-active" }}'>
                             <a href="{{URL::to($top['slug'])}}">{{$top['title']}}</a>
-							<?php sub_nav_menus_light($top['children'])?>
+							<?php 
+								usort($top['children'], function ($item1, $item2) {
+									return $item1['menu_sort_order'] >= $item2['menu_sort_order'];
+								});
+								sub_nav_menus_light($top['children']);
+							?>
 							</li>
 							
                         </ul>
