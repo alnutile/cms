@@ -153,7 +153,9 @@ Use the corresponding body tag for your chosen theme
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-
+<script>
+window.theme = {{$settings->theme}};
+</script>
 {{ HTML::script('/assets/js/jquery-1.11.js') }}
 {{ HTML::script('/assets/js/noty-2.2.2/js/noty/packaged/jquery.noty.packaged.min.js') }}
 {{ HTML::script('/assets/js/jquery-sortable.js') }}
