@@ -63,14 +63,16 @@ $(document).ready(function(){
     // Edited to put if statement around backstretch code. 3/25/2016 JB
 	if(window.theme){
 		if(typeof(cms) !== 'undefined' && cms.home === 'home'){
-				$('body').addClass('home');
 				$.backstretch(cms.slides, {
 					fade: 750,
 					duration: 5000     // br extend time from 2000 to 5000 ms
 				});
 		}
 	}
-    
+	// Add "home" class to body tag
+	if(typeof(cms) !== 'undefined' && cms.home === 'home'){
+		$('body').addClass('home');    
+	}
     //image galleries on projects
     $('a.gallery').colorbox({transition: "fade", maxWidth:"1200px", maxHeight:"1200px" });
     $('#colorbox').on("click", function(){
