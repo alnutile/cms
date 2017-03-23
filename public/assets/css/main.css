@@ -118,3 +118,48 @@ a.flow {
 .modal-content a:hover{
 	color:#b3b3b6;
 }
+/* Styles for CKEditor Frontend */
+td {
+	padding: 10px;
+}
+.sidebar-nav {
+    position: relative !important;
+}
+.image-left {
+	margin: 0 20px 20px 0;
+	float: left;
+}
+.image-right {
+	margin: 0 0 20px 20px;
+	float: right;
+}
+.image-center {
+	margin: 20px auto !important;
+	text-align: center !important;
+	float: none !important;
+}
+.align-left {
+	text-align: left;
+}
+.align-center {
+	text-align: center;
+}
+.align-right {
+	text-align: right;
+}
+.align-justify {
+	text-align: justify;
+}
+.special-container {
+	background:#eeeeee;
+	border:1px solid #cccccc;
+	padding:5px 10px;
+	margin: 20px auto;
+}
+.borderless-table {
+	border-style: hidden; 
+	background-color: #E6E6FA;
+}
+.square-bulleted-list {
+	list-style-type: square;
+}
