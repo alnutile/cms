@@ -42,5 +42,12 @@
                 </a>
             </li>
         @endif
+		@if($settings->instagram)
+            <li>
+                <a href="{{$settings->instagram}}">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </li>
+        @endif
     </ul>
 </div>
