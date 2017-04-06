@@ -50,7 +50,8 @@ $(document).ready(function(){
 
 
     if($('body .ckeditor').length) {
-        CKEDITOR.replace( '.ckeditor');
+        /*Make use of replaceAll for classes*/
+		CKEDITOR.replaceAll( '.ckeditor');
     }
 
     $('article').readmore({

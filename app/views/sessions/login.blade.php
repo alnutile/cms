@@ -4,6 +4,11 @@
 
 <div class="container login">
     <div class="row">
+		@if($settings->theme == true)
+			<div class="col-md-3 ">
+				@include('shared.sidebar')
+			</div>
+		@endif
         <div class="center col-md-4 well">
             <legend>Please Sign In</legend>
             @include('sessions.notice')
