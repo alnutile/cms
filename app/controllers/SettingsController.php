@@ -89,7 +89,7 @@ class SettingsController extends \BaseController {
         $data = Input::all();
         
         $setting = Setting::findOrFail($id);
-
+		
         if($setting->theme == false)
         {
             $validator = Validator::make($data, ['color' => 'required']);
@@ -98,7 +98,7 @@ class SettingsController extends \BaseController {
                 return Redirect::back()->withErrors($validator)->withInput();
             }
         }
-
+		
         if(Input::get('remove_logo') != NULL) {
             $data['logo'] = '';
         } elseif(Input::hasFile('logo')) {
@@ -118,10 +118,12 @@ class SettingsController extends \BaseController {
         } else {
             $data['logo'] = $setting->logo;
         }
+		
         if($setting->theme == false)
         {
-            $setting->color             = $data['color'];
+            $setting->color = $data['color'];
         }
+		
         $setting->logo              = $data['logo'];
         $setting->name              = $data['name'];
         $setting->maintenance_mode  = (isset($data['maintenance_mode'])) ? 1 : 0;
@@ -143,7 +145,7 @@ class SettingsController extends \BaseController {
 		$setting->enable_blog = (isset($data['enable_blog'])) ? true : false;
 		$setting->blog_menu_position = $data['blog_menu_position'];
         $setting->save();
-
+		
         return Redirect::to("/settings/" . $setting->id . "/edit")->withMessage("Settings Updated");
     }
 
