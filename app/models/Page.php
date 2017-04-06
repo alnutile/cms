@@ -32,7 +32,7 @@ class Page extends \Eloquent {
     }
 	public static function tree() 
 	{
-        return static::with(implode('.', array_fill(0, 100, 'children')))->where('menu_parent', '=', 0)->where("slug", "!=", "")->where('menu_name','!=', '')->orderBy('menu_sort_order')->get()->toArray();
+        return static::with(implode('.', array_fill(0, 100, 'children')))->where('menu_parent', '=', 0)->where("slug", "!=", "")->where('menu_name','!=', '')->where('published', true)->orderBy('menu_sort_order')->get()->toArray();
 
     }
     public function getAll()
@@ -60,7 +60,7 @@ class Page extends \Eloquent {
 		{
 			// Array position starts from 0 so decrement the value
 			$pos = $settings->portfolio_menu_position - 1;
-			$portfolio = ['title' => 'Portfolio', 'slug'=>'/portfolio', 'is_portfolio'=>1];
+			$portfolio = ['title' => $settings->portfolio_title, 'slug'=>'/portfolio', 'is_portfolio'=>1];
 
 			// Put portfolio at a given position in the menu array.
 			// In case of invalid position , portfolio will be pushed at the end of the menu.

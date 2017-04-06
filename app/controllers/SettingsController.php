@@ -133,11 +133,13 @@ class SettingsController extends \BaseController {
         $setting->pinterest         = (isset($data['pinterest'])) ? $data['pinterest'] : '';
         $setting->gplus             = (isset($data['gplus'])) ? $data['gplus'] : '';
         $setting->houzz             = (isset($data['houzz'])) ? $data['houzz'] : '';
+		$setting->instagram         = (isset($data['instagram'])) ? $data['instagram'] : '';
         $setting->footer            = (isset($data['footer'])) ? $data['footer'] : '';
         $setting->google_analytics            = (isset($data['google_analytics'])) ? $data['google_analytics'] : '';
         $setting->portfolio_menu_position = $data['portfolio_position'];
         $setting->enable_left_nav = (isset($data['enable_left_nav'])) ? 1 : 0;
 		$setting->blog_title = (isset($data['blog_title'])) ? $data['blog_title'] : '';
+		$setting->portfolio_title = (isset($data['portfolio_title'])) ? $data['portfolio_title'] : '';
 		$setting->enable_blog = (isset($data['enable_blog'])) ? true : false;
 		$setting->blog_menu_position = $data['blog_menu_position'];
         $setting->save();

@@ -18,7 +18,12 @@
                     <i class="glyphicon glyphicon-move"></i>&nbsp;{{$menu['title']}}
 					@if(!empty($menu['children']))
 						<ol>
-							 <?php sub_menus($menu['children'])?>
+							 <?php
+								usort($menu['children'], function ($item1, $item2) {
+									return $item1['menu_sort_order'] >= $item2['menu_sort_order'];
+								});
+								sub_menus($menu['children']);
+							 ?>
 						</ol>
 					@else
 						<ol></ol>

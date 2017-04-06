@@ -28,7 +28,7 @@
 	@foreach($top_left_nav as $top)
         @if(isset($top['is_portfolio']))
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Portfolios</a>
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{$settings->portfolio_title}}</a>
           <ul class="dropdown-menu">
             @foreach($portfolio_links as $key => $portfolio)
             <li class="{{Request::url() ==  URL::to($portfolio) ? 'active' : 'not-active' }}">
@@ -59,7 +59,12 @@
 				@if(isset($top['children']) && !empty($top['children']))
 					<ul class="dropdown-menu">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="{{URL::to($top['slug'])}}">{{$top['title']}}</a>
-						 <?php sub_nav_menus($top['children'])?>
+						 <?php 
+							usort($top['children'], function ($item1, $item2) {
+								return $item1['menu_sort_order'] >= $item2['menu_sort_order'];
+							});
+							sub_nav_menus($top['children']);
+						 ?>
 					</ul>
 				@endif
 			@else
