@@ -162,7 +162,9 @@
                     </div>
                 @endif
             </div>
-            @endif
+		@else
+			<input type="hidden" name="portfolio_id" value="<?php echo $project->portfolio_id ? $project->portfolio_id : 0 ?>"/>
+		@endif
 
                     <!--sort order-->
 
