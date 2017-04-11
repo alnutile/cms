@@ -161,7 +161,9 @@
                     </div>
                 @endif
             </div>
-            @endif
+		@else
+			<input type="hidden" name="portfolio_id" value="0"/>
+		@endif
                     <!--sort order-->
 
             <div class="form-group">
