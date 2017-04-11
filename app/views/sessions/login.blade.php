@@ -5,11 +5,14 @@
 <div class="container login">
     <div class="row">
 		@if($settings->theme == true)
-			<div class="col-xs-12 col-sm-5 col-md-4 col-lg-3 sidebar-nav">
-				<div class="mobile-menu"><a href="#"><i class="fa fa-bars"></i></a></div>
-				@include('shared.sidebar')
+			<div class="col-xs-12 col-sm-5 col-md-4 col-lg-3">
+				<div class="sidebar-nav">
+					<div class="mobile-menu"><a href="#"><i class="fa fa-bars"></i></a></div>
+					@include('shared.sidebar')
+				</div>
 			</div>
-		@endif
+			
+			@endif
         <div class="col-xs-12 col-sm-7 col-md-7 col-lg-9 well">
             <legend>Please Sign In</legend>
             @include('sessions.notice')
