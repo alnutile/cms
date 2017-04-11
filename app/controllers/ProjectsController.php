@@ -86,8 +86,8 @@ class ProjectsController extends \BaseController {
 		$project = Project::create($all);
 		if(isset($all['tile_image'])) {
 			$this->imagesService->resizeAndSaveForProjects($all['tile_image'], $this->save_to, 'tile_image');
-			$data = $this->uploadFile($all, 'tile_image');
-			$all = $data;
+			//$data = $this->uploadFile($all, 'tile_image');
+			//$all = $data;
 		}		
 		if(isset($all['images'])) {
             $this->projectsService->addImages($project->id, $all['images'], 'Project');
@@ -97,6 +97,9 @@ class ProjectsController extends \BaseController {
 			$tags = explode(',', $all['tags']);
             $this->tagsService->attachNewTags($project->id, $tags, 'Project');
         }
+		$project  = Project::findOrFail($project->id);
+		$project->tile_image = $all['tile_image']->getClientOriginalName();
+		$project->save();
 		return Redirect::route('admin_projects')->withMessage("Created Project");
     }
 
