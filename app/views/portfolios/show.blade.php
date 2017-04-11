@@ -17,7 +17,7 @@
 @endif
 
 @if($settings->enable_left_nav)
-<div class="col-md-9 column">
+<div class="col-xs-12 col-sm-7 col-md-8 col-lg-9 column">
 @else
 <div class="col-md-12 column">
 @endif
