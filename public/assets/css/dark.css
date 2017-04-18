@@ -225,6 +225,14 @@ select[name='order'] option {
     max-width: 850px;
     width: 100%; }
 
+	
+/* 18-04-2016 */
+ 
+.active > a {
+  color: #fff;
+  font-weight: 600;
+}
+
 /* Custom, iPhone Retina */
 @media only screen and (min-width: 320px) {
   /* line 268, stdin */

@@ -15,7 +15,9 @@
 <ul class="nav nav-list tags_nav">
     @foreach($tags as $tag)
       @if(!empty($tag['tag']))
-    	<li><a href="/{{$tag['tagable_type']}}/tags/{{$tag['tag']}}">{{$tag['tag']}}</a></li>
+		<?php $current_url = $tag['tagable_type'].'/tags/'.$tag['tag'];?>
+		<li class="{{urldecode(Request::url()) ==  URL::to($current_url) ? 'active' : 'not-active' }}">
+    	<a href="/{{$tag['tagable_type']}}/tags/{{$tag['tag']}}">{{$tag['tag']}}</a></li>
       @endif
     @endforeach
 </ul>
