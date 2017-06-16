@@ -16,8 +16,6 @@
     <div class = "">
         @foreach($projects as $p)
         <div class="row projects_row">
-            <a href="{{$p->slug}}">
-
                 <div class="project_img col-md-3">
                     @if ($p->thumbs->url('index') != '/thumbs/index/missing.png')
                         <div class="col-lg-12 thumb" id="main_image">
@@ -32,10 +30,10 @@
 					@endif
                 </div>
                 <div class="project_img col-md-9">
-                    {{$p->title}}
+                    <h2 class="project-title">{{$p->title}}</h2>
                     {{str_limit($p->body, $limit = 500)}}
+                    <a class="read-more" href="{{$p->slug}}">Read More...</a>
                 </div>
-            </a>
         </div>
         @endforeach
     </div>
