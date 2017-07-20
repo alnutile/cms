@@ -141,6 +141,7 @@ class SettingsController extends \BaseController {
 		$setting->blog_title = (isset($data['blog_title'])) ? $data['blog_title'] : '';
 		$setting->portfolio_title = (isset($data['portfolio_title']) && !empty($data['portfolio_title'])) ? $data['portfolio_title'] : 'Portfolio';
 		$setting->enable_blog = (isset($data['enable_blog'])) ? true : false;
+		$setting->enable_portfolio = (isset($data['enable_portfolio'])) ? true : false;
 		if(Auth::user() && Auth::user()->admin == 1){
 			$setting->blog_menu_position = $data['blog_menu_position'];
 		}
