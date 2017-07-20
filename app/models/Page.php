@@ -58,21 +58,15 @@ class Page extends \Eloquent {
 		
 		if($settings && is_numeric($settings->portfolio_menu_position))
 		{
+			
 			// Array position starts from 0 so decrement the value
-			if($settings->theme == true && $settings->enable_portfolio){
+			if($settings && $settings->enable_portfolio){
+				
 				$pos = $settings->portfolio_menu_position - 1;
 				$portfolio = ['title' => $settings->portfolio_title, 'slug'=>'/portfolio', 'is_portfolio'=>1];
-			}else if($settings->theme == false){
-				$pos = $settings->portfolio_menu_position - 1;
-				$portfolio = ['title' => $settings->portfolio_title, 'slug'=>'/portfolio', 'is_portfolio'=>1];
-			}else{
-				$pos = $settings->portfolio_menu_position - 1;
-				$portfolio = ['title' => ' ', 'slug'=>'/portfolio', 'is_portfolio'=>1];
-			}
-
-			// Put portfolio at a given position in the menu array.
-			// In case of invalid position , portfolio will be pushed at the end of the menu.
-			Helpers\ArrayHelper::insertAt($pages, $pos, $portfolio);         
+				
+				Helpers\ArrayHelper::insertAt($pages, $pos, $portfolio);    
+			}      
 		}
 		if($settings && $settings->enable_blog)
 		{

@@ -266,16 +266,14 @@
                 <div class="help-block">Use this turn set your site to blog.</div>
             </div>
         </div>
-		@if($settings->theme == true)
-			<div class="form-group">
-				<div class="controls">
-					<div class="checkbox">
-						<label class="checkbox">{{ Form::checkbox('enable_portfolio', null) }} Check to enable portfolio </label>
-					</div>
-					<div class="help-block">Use this turn set your site to portfolio.</div>
+		<div class="form-group">
+			<div class="controls">
+				<div class="checkbox">
+					<label class="checkbox">{{ Form::checkbox('enable_portfolio', null) }} Check to enable portfolio </label>
 				</div>
+				<div class="help-block">Use this turn set your site to portfolio.</div>
 			</div>
-		@endif
+		</div>
 		<div class="form-group">
             <label for="blog_title">Blog Name</label>
                 {{ Form::text('blog_title', null, array('class' => 'form-control', 'tabindex' => 1,'placeholder' => "Builder's Notebook")) }}
