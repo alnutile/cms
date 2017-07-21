@@ -1,10 +1,8 @@
 @extends('layouts.main')
 <!--    index by blade-->
 @section('content')
-<div class="col-xs-12 col-sm-5 col-md-4 col-lg-3">
-	<div class="sidebar-nav">
-		@include('shared.sidebar')
-	</div>
+<div class="col-md-3">
+    @include('shared.sidebar')
     @if(Auth::user())
     <div class="well">
         Create New Project <br>
@@ -12,7 +10,7 @@
     </div>
     @endif
 </div>
-<div class="col-xs-12 col-sm-7 col-md-8 col-lg-9 column content blog_index">
+<div class="col-md-9 column content blog_index">
     <div class = "">
         @foreach($projects as $p)
         <div class="row projects_row">

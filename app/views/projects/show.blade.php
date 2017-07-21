@@ -2,7 +2,7 @@
 
 @section('content')
     @if($settings->enable_left_nav)
-    <div class="col-xs-12 col-sm-5 col-md-4 col-lg-3 ">
+    <div class="col-md-3 ">
         <div class="sidebar-nav">
 			<div class="mobile-menu light-theme"><a href="#"><i class="fa fa-bars"></i></a></div>
             @include('shared.sidebar')
@@ -18,7 +18,7 @@
     </div>
     @endif
     @if($settings->enable_left_nav)
-    <div class="col-xs-12 col-sm-7 col-md-8 col-lg-9 column">
+    <div class="col-md-9 column">
     @else
     <div class="col-md-12 column">
     @endif

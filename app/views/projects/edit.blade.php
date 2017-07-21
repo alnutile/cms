@@ -2,13 +2,11 @@
 
 @section('content')
 
-    <div class="col-xs-12 col-sm-5 col-md-4 col-lg-3">
-		<div class="sidebar-nav">
-			@include('shared.sidebar')
-		</div>
+    <div class="col-md-3 ">
+        @include('shared.sidebar')
     </div>
 
-    <div class="col-xs-12 col-sm-7 col-md-8 col-lg-9 column">
+    <div class="col-md-9 column">
 
         <h2>Update Project: {{$project->title}} </h2>
 
@@ -164,9 +162,7 @@
                     </div>
                 @endif
             </div>
-		@else
-			<input type="hidden" name="portfolio_id" value="<?php echo $project->portfolio_id ? $project->portfolio_id : 0 ?>"/>
-		@endif
+            @endif
 
                     <!--sort order-->
 

@@ -83,12 +83,10 @@ class ProjectsController extends \BaseController {
         {
             return Redirect::back()->withErrors($validator)->withInput();
         }
-		$project = Project::create($all);
 		if(isset($all['tile_image'])) {
 			$this->imagesService->resizeAndSaveForProjects($all['tile_image'], $this->save_to, 'tile_image');
-			$project  = Project::findOrFail($project->id);
-			$project->tile_image = $all['tile_image']->getClientOriginalName();
-			$project->save();
+			$data = $this->uploadFile($all, 'tile_image');
+			$all = $data;
 		}		
 		if(isset($all['images'])) {
             $this->projectsService->addImages($project->id, $all['images'], 'Project');
@@ -98,6 +96,8 @@ class ProjectsController extends \BaseController {
 			$tags = explode(',', $all['tags']);
             $this->tagsService->attachNewTags($project->id, $tags, 'Project');
         }
+		
+		$project = Project::create($all);
 		return Redirect::route('admin_projects')->withMessage("Created Project");
     }
 

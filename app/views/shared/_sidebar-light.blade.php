@@ -18,10 +18,12 @@
 		$top_left_nav = Page::tree();
 		if($settings && is_numeric($settings->portfolio_menu_position))
 		{
-			$pos = $settings->portfolio_menu_position - 1;
-			$portfolio = ['title' => 'Portfolio', 'slug'=>'/portfolio', 'is_portfolio'=>1];
-
-			Helpers\ArrayHelper::insertAt($top_left_nav, $pos, $portfolio);         
+			if($settings && $settings->enable_portfolio){
+				$pos = $settings->portfolio_menu_position - 1;
+				$portfolio = ['title' => 'Portfolio', 'slug'=>'/portfolio', 'is_portfolio'=>1];
+			
+				Helpers\ArrayHelper::insertAt($top_left_nav, $pos, $portfolio);   
+			}
 		}
 		if($settings && $settings->enable_blog)
 		{

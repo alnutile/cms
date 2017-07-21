@@ -5,18 +5,14 @@
 <div class="container login">
     <div class="row">
 		@if($settings->theme == true)
-			<div class="col-xs-12 col-sm-5 col-md-4 col-lg-3">
-				<div class="sidebar-nav">
-					<div class="mobile-menu"><a href="#"><i class="fa fa-bars"></i></a></div>
-					@include('shared.sidebar')
-				</div>
+			<div class="col-md-3 ">
+				@include('shared.sidebar')
 			</div>
-			
-			@endif
-        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-9 well">
+		@endif
+        <div class="center col-md-4 well">
             <legend>Please Sign In</legend>
             @include('sessions.notice')
-            {{ Form::open(array('action' => 'UsersController@authenticate', 'method' => 'put', 'class' => "col-md-7 col-lg-8 col-sm-12 col-xs-12")) }}
+            {{ Form::open(array('action' => 'UsersController@authenticate', 'method' => 'put')) }}
                 <input type="hidden" name="_token" value="{{{ Session::getToken() }}}">
                 <fieldset>
                     <div class="form-group">
