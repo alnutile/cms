@@ -217,7 +217,8 @@ window.theme = {{$settings->theme}};
  			$('ul.nav-list').css('display','block');
  			$('.mobile-menu').css('display','none');
  		}
-		
+		/* Add Additional logo */
+		$('#social').after('<div>Hello</div>');
 	});
 </script>
 <script type="text/javascript">
