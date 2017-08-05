@@ -217,8 +217,10 @@ window.theme = {{$settings->theme}};
  			$('ul.nav-list').css('display','block');
  			$('.mobile-menu').css('display','none');
  		}
-		/* Add Additional logo */
-		$('#social').after('<div>Hello</div>');
+		/* Add Additional logo to footer */
+		$('#social ul').before('<div class="text-center"><a href="http://bostonandbeyond.net/" target="_blank"><img src="{{asset("bab.jpg")}}" alt="Boston & Beyond"/></a></div>');
+		//$('#social ul').before('<div class="text-center"><a href="https://buildingartisansguild.com/" target="_blank"><img src="{{asset("ban.jpg")}}" alt="Boston & Beyond"/></a></div>');
+		//$('#social ul').before('<div class="text-center"><a href="http://newyorkcityandbeyond.com/" target="_blank"><img src="{{asset("nycab.jpg")}}" alt="Boston & Beyond"/></a></div>');
 	});
 </script>
 <script type="text/javascript">
