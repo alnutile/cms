@@ -151,10 +151,13 @@ class ImagesService {
     {
         Log::info($path);
         $image = \Intervention\Image\Facades\Image::make($path . '/' . $origImage);
-        $image->resize(850, null,  function ($constraint) {
-            $constraint->aspectRatio();
-            $constraint->upsize();})
-            ->save($path . '/gallery/' . $origImage);
+		if(! \File::exists($path . '/gallery/')){
+			\File::makeDirectory($path . '/gallery/', 0777, true, true);
+			$image->resize(850, null,  function ($constraint) {
+				$constraint->aspectRatio();
+				$constraint->upsize();
+			})->save($path . '/gallery/' . $origImage);
+		}
     }
 
 
