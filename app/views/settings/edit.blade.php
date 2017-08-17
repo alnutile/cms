@@ -275,6 +275,14 @@
 			</div>
 		</div>
 		<div class="form-group">
+			<div class="controls">
+				<div class="checkbox">
+					<label class="checkbox">{{ Form::checkbox('enable_noindex', null) }} Check to make site not searchable(noindex) </label>
+				</div>
+				<div class="help-block">Use this turn set your site to not searchable.</div>
+			</div>
+		</div>
+		<div class="form-group">
             <label for="blog_title">Blog Name</label>
                 {{ Form::text('blog_title', null, array('class' => 'form-control', 'tabindex' => 1,'placeholder' => "Builder's Notebook")) }}
                 @if($errors->first('blog_title'))
