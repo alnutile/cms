@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
+	@if($settings->enable_noindex)
+		<meta name="robots" content="noindex">
+	@endif
     <link rel="shortcut icon" href="../../assets/ico/favicon2.png">
 
     <title>
@@ -217,7 +220,6 @@ window.theme = {{$settings->theme}};
  			$('ul.nav-list').css('display','block');
  			$('.mobile-menu').css('display','none');
  		}
-		
 	});
 </script>
 <script type="text/javascript">

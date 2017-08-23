@@ -58,7 +58,9 @@ class ImagesController extends BaseController{
     public function uploadImage($model)
     {
         $this->setTemp();
-
+		if(! \File::exists(public_path() . '/assets/img/')){
+			\File::makeDirectory(public_path() . '/assets/img/', 0777, true, true);
+		}
         $this->setDestinationDir(public_path() . '/assets/img/' . $model);
         $this->checkDestination();
         $this->request = new Request();
