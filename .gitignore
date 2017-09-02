@@ -30,5 +30,8 @@ composer.lock
 *.phprj
 app/config/database.php
 .vscode/
-assets/js/custom.js
+public/assets/js/custom.js
+public/bab.jpg
+public/ban.jpg
+public/nycab.jpg
 
