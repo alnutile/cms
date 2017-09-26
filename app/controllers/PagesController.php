@@ -76,7 +76,7 @@ class PagesController extends \BaseController {
         if($page == NULL){
             return View::make('404', compact('settings'));
         }
-        $projects = Project::orderBy('id','asc')->paginate(2);
+        $projects = Project::orderBy('id','asc')->paginate(20);
         $seo = $page->seo;
         $banner = TRUE;
         $page->id == 4 ? $tags = $this->getTags() : $tags = null;
