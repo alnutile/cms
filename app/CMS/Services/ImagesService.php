@@ -10,6 +10,7 @@ namespace CMS\Services;
 
 use Illuminate\Support\Facades\Log;
 use \Image;
+use File;
 
 class ImagesService {
     protected $rules;
@@ -83,6 +84,10 @@ class ImagesService {
     public function cropAndSaveForPost($origImage, $path)
     {
         $image = \Intervention\Image\Facades\Image::make($origImage->getRealPath());
+		
+		if (!file_exists($path.'/thumb/')) {
+			File::makeDirectory($path.'/thumb/', $mode = 0777, true, true);
+		}
         $file = ($origImage->getClientOriginalName());
         $image->save($path . $file)
             ->resize(1000, null,  function ($constraint) {
@@ -94,6 +99,10 @@ class ImagesService {
 	public function resizeAndSaveForPost($origImage, $path)
     {
         $image_thumb = \Intervention\Image\Facades\Image::make($origImage->getRealPath());
+		
+		if (!file_exists($path.'/thumb/')) {
+			File::makeDirectory($path.'/thumb/', $mode = 0777, true, true);
+		}
 		list($width, $height) = getimagesize($origImage->getRealPath());
 		$file = ($origImage->getClientOriginalName());
 		if($width > 280){
@@ -103,6 +112,10 @@ class ImagesService {
 				})->save($path . '/thumb/' . $file);
 		}
 		$image_full = \Intervention\Image\Facades\Image::make($origImage->getRealPath());
+		
+		if (!file_exists($path.'/full/')) {
+			File::makeDirectory($path.'/full/', $mode = 0777, true, true);
+		}
 		list($width_full, $height_full) = getimagesize($origImage->getRealPath());
 		if($width_full > 850){
 			$image_full->resize(850, null,  function ($constraint) {
@@ -115,6 +128,10 @@ class ImagesService {
     {
 		if($type == "tile_image"){
 			$image_thumb = \Intervention\Image\Facades\Image::make($origImage->getRealPath());
+			
+			if (!file_exists($path.'/tile/')) {
+				File::makeDirectory($path.'/tile/', $mode = 0777, true, true);
+			}
 			list($width, $height) = getimagesize($origImage->getRealPath());
 			$file = ($origImage->getClientOriginalName());
 			if($width > 275){
@@ -126,6 +143,10 @@ class ImagesService {
 		}
 		if($type == 'top_image'){
 			$image_full = \Intervention\Image\Facades\Image::make($origImage->getRealPath());
+			
+			if (!file_exists($path.'/full/')) {
+				File::makeDirectory($path.'/full/', $mode = 0777, true, true);
+			}
 			list($width_full, $height_full) = getimagesize($origImage->getRealPath());
 			if($width_full > 850){
 				$image_full->resize(850, null,  function ($constraint) {
@@ -139,6 +160,10 @@ class ImagesService {
     {
         Log::info($path);
         $image = \Intervention\Image\Facades\Image::make($path . '/' . $origImage);
+		
+		if (!file_exists($path.'/slideshow2/')) {
+			File::makeDirectory($path.'/slideshow2/', $mode = 0777, true, true);
+		}
         $image->resize(850, null,  function ($constraint) {
             $constraint->aspectRatio();
             $constraint->upsize();})
@@ -151,13 +176,13 @@ class ImagesService {
     {
         Log::info($path);
         $image = \Intervention\Image\Facades\Image::make($path . '/' . $origImage);
-		if(! \File::exists($path . '/gallery/')){
-			\File::makeDirectory($path . '/gallery/', 0777, true, true);
-			$image->resize(850, null,  function ($constraint) {
-				$constraint->aspectRatio();
-				$constraint->upsize();
-			})->save($path . '/gallery/' . $origImage);
+		if (!file_exists($path.'/gallery/')) {
+			File::makeDirectory($path.'/gallery/', $mode = 0777, true, true);
 		}
+		$image->resize(850, null,  function ($constraint) {
+			$constraint->aspectRatio();
+			$constraint->upsize();
+		})->save($path . '/gallery/' . $origImage);
     }
 
 
