@@ -178,7 +178,7 @@ class ImagesController extends BaseController{
     public function checkDestination()
     {
         if(!File::exists($this->getDestinationDir())) {
-            File::makeDirectory($this->getDestinationDir(), $mode = 664);
+              \File::makeDirectory($this->getDestinationDir(), $mode = 0777, true, true);
         }
     }
 
