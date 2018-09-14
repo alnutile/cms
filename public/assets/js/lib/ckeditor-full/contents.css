@@ -158,3 +158,12 @@ a > img {
 .align-justify {
 	text-align: justify;
 }
+img.cke_slideShow {
+    background-size: 100% !important;
+    width: 72px;
+    height: 72px;
+    display: block;
+    cursor: pointer;
+    margin: 0 auto;
+    border: 1px solid lightgray;
+}
