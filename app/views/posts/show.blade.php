@@ -24,14 +24,7 @@
 @endif
 	
     <h1>{{ $post->title }}</h1>
-    <p> {{ $post->intro }} </p>
-    <div class="row">
-        @if ($post->image)
-        <div class = "col-lg-12" id="main_image">
-			
-        </div>
-        @endif
-    </div>
+    <p> {{ $post->intro }} </p>    
     <p> {{ $post->body }} </p>
 
     @if(isset($post->images[0]))
