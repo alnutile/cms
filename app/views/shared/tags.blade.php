@@ -1,5 +1,5 @@
 <div class="form-group">
-    <label>Tags (<a href="http://www.restorationtrades.com/help/admin_projects_dark.html" target="_blank">Help</a>)</label>
+    <label>Tags (<a href="http://corbettresearchgroupinc.com/admin_projects_dark" target="_blank">Help</a>)</label>
     <div ng-controller = "tagsCtrl">
         <tags-input ng-model="currentTags"
                     on-tag-added="addTag($tag)"
