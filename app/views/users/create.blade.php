@@ -35,7 +35,7 @@
                 </div>
                 <div class="form-group">
 
-                        <label for="email">Email (<a href="http://www.restorationtrades.com/help/profile.html" target="_blank">Help</a>)</label>
+                        <label for="email">Email (<a href="http://corbettresearchgroupinc.com/profile" target="_blank">Help</a>)</label>
                         {{ Form::text('email', $user->email, array('id' => 'email', 'class' => 'form-control', 'tabindex' => 3)) }}
                         @if($errors->first('email'))
                         <div class="alert alert-danger">
@@ -47,7 +47,7 @@
                 <div class="form-group">
                     <label for="password">
 
-                            <label for="password">Password (<a href="http://www.restorationtrades.com/help/profile.html" target="_blank">Help</a>)</label>
+                            <label for="password">Password (<a href="http://corbettresearchgroupinc.com/profile" target="_blank">Help</a>)</label>
 
                     </label>
                     {{ Form::password('password', array('id' => 'password', 'class' => 'form-control', 'tabindex' => 3)) }}
@@ -60,7 +60,7 @@
                 <div class="form-group">
                     <label for="password_confirmation">
 
-                            <label for="password_confirmation">Password Confirmation (<a href="http://www.restorationtrades.com/help/profile.html" target="_blank">Help</a>)</label>
+                            <label for="password_confirmation">Password Confirmation (<a href="http://corbettresearchgroupinc.com/profile" target="_blank">Help</a>)</label>
 
                     </label>
                     {{ Form::password('password_confirmation', array('id' => 'password_confirmation', 'class' => 'form-control', 'tabindex' => 4)) }}
