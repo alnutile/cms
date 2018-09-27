@@ -24,7 +24,16 @@
 @endif
 	
     <h1>{{ $post->title }}</h1>
-    <p> {{ $post->intro }} </p>    
+    <p> {{ $post->intro }} </p>
+    <div class="row">
+        @if ($post->image)
+        <div class = "col-lg-12" id="main_image">
+			@if(file_exists(public_path().'/img/posts/full/'.$post->image))
+				<img  src="/img/posts/full/{{$post->image}}" alt="{{$post->title}}" class="img-responsive">			
+			@endif			
+        </div>
+        @endif
+    </div>
     <p> {{ $post->body }} </p>
 
     @if(isset($post->images[0]))
