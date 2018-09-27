@@ -5,11 +5,11 @@
                 <img class ="img-thumbnail" src="/assets/img/{{$model}}/[[image.file_name]]">&nbsp;[[image.file_name]]&nbsp;<i class="glyphicon glyphicon-trash" ng-click="deleteImage(image.id)">&nbsp;</i>
                 <br>
                 @if($model != 'pages')
-                <label>Edit image caption (<a href="http://www.restorationtrades.com/help/admin_projects_dark.html"target="_blank">Help</a>):</label>
+                <label>Edit image caption (<a href="http://corbettresearchgroupinc.com/admin_projects_dark"target="_blank">Help</a>):</label>
                     <input class="caption_update" name="image_caption_update[ [[image.id]] ][]" type="text" value="[[image.image_caption]]" >
                 <div class="spacer">
 
-                    <label>Image Position (<a href="http://www.restorationtrades.com/help/admin_projects_dark.html"target="_blank">Help</a>):</label> <input class="order_update" name="image_order_update[ [[image.id]] ][]" type="text" placeholder="[[image.order]]" >
+                    <label>Image Position (<a href="http://corbettresearchgroupinc.com/admin_projects_dark"target="_blank">Help</a>):</label> <input class="order_update" name="image_order_update[ [[image.id]] ][]" type="text" placeholder="[[image.order]]" >
                 </div>
                 @endif
             </li>
@@ -27,9 +27,9 @@
                     New Image Uploaded [[file.name]]
                     <input type="hidden" name="images['[[$index]]'][file]" value="[[file.name]]">
                     <br>
-                    <label>Add image caption (<a href="http://www.restorationtrades.com/help/admin_projects_dark.html"target="_blank">Help</a>):</label>  <input class="caption" name="images['[[$index]]'][image_caption]" type="text" placeholder="Image Caption" >
+                    <label>Add image caption (<a href="http://corbettresearchgroupinc.com/admin_projects_dark"target="_blank">Help</a>):</label>  <input class="caption" name="images['[[$index]]'][image_caption]" type="text" placeholder="Image Caption" >
                     <div class="spacer">
-                        <label>Image Position (<a href="http://www.restorationtrades.com/help/admin_projects_dark.html"target="_blank">Help</a>):</label> <input class="order_update" name="images['[[$index]]'][order]" type="text" placeholder="" >
+                        <label>Image Position (<a href="http://corbettresearchgroupinc.com/admin_projects_dark"target="_blank">Help</a>):</label> <input class="order_update" name="images['[[$index]]'][order]" type="text" placeholder="" >
                     </div>
                 </div>
 

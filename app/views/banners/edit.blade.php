@@ -14,7 +14,7 @@
     <input type="hidden" name="_token" value="{{{ Session::getToken() }}}">
     <fieldset>
         <div class="form-group">
-                <label for="email">Banner Name (<a href="http://www.restorationtrades.com/help/admin_banners.html" target="_blank">Help</a>)</label>
+                <label for="email">Banner Name (<a href="http://corbettresearchgroupinc.com/admin_banners" target="_blank">Help</a>)</label>
                 {{ Form::text('name', null, array('class' => 'form-control', 'tabindex' => 1)) }}
                 @if($errors->first('name'))
                 <div class="alert alert-danger">
@@ -23,7 +23,7 @@
                 @endif
         </div>
         <div class="form-group">
-                <label for="email">Banner Image Uploader (<a href="http://www.restorationtrades.com/help/admin_banners.html" target="_blank">Help</a>)</label>
+                <label for="email">Banner Image Uploader (<a href="http://corbettresearchgroupinc.com/admin_banners" target="_blank">Help</a>)</label>
           <div class="help-block">The default logo image is 1600 x 379 pixels, in dimension. Other sizes will upload and display.</div>
           {{ Form::file('banner_name', null, array('class' => 'form-control', 'tabindex' => 1)) }}
                 @if($errors->first('banner_name'))
