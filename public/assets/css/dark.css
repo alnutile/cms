@@ -1,6 +1,7 @@
 /* line 7, stdin */
 body {
-  background-color: #282828;
+  background-color: white;
+  color:black;
   font: 17px/25px 'Whitney SSm A', Arial, Helvetica, sans-serif;
   overflow-x: hidden;
   padding-top: 0; }
@@ -79,7 +80,8 @@ a:hover {
 /* line 108, stdin */
 .content {
   background-color: transparent;
-  color: #fff;
+  /* color: #fff; */
+  color: #616161;
   margin-bottom: 50px; }
 
 /* line 114, stdin */
@@ -96,7 +98,8 @@ a:hover {
   .nav-list a {
     text-align: right;
     padding: 0px 5px !important;
-    text-shadow: 1px 1px 0px #000;
+    /* text-shadow: 1px 1px 0px #000; */
+	color: #000;
     font: 17px/25px 'Whitney SSm A', Arial, Helvetica, sans-serif; }
   /* line 128, stdin */
   .nav-list li {
@@ -229,7 +232,8 @@ select[name='order'] option {
 /* 18-04-2016 */
  
 .active > a {
-  color: #fff;
+  /* color: #fff; */
+  color: black;
   font-weight: 600;
 }
 
