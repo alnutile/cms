@@ -29,7 +29,9 @@ class Project extends BaseModel implements StaplerableInterface {
         'slug',
         'state_country',
         'city_county',
-        'thumbs'
+        'thumbs',
+		'participant1',
+		'participant2'
    ];
 
     public function __construct(array $attributes = array()) {

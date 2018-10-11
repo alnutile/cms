@@ -56,8 +56,17 @@
 
                     {{{$project->city_county}}}
                     <br>
-                    Architect: {{{$project->architect}}}
-                </div>
+					@if($project->architect)
+						Architect: {{{$project->architect}}}
+					@endif
+					<br>
+					@if($project->participant1 || $project->participant2)
+						Project Participants:
+						@if($project->participant1) {{$project->participant1}}@endif
+						<br>
+						@if($project->participant2) {{$project->participant2}}@endif
+					@endif
+				</div>
                 <div class="col-lg-8 projectBody">
                     <article> {{$project->body}}</article>
                 </div>
