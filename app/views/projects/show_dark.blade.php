@@ -54,17 +54,20 @@
                 <div class="col-lg-4 body">
                     <h1>{{{$project->title}}}</h1>
 
-                    {{{$project->city_county}}}
-                    <br>
-					@if($project->architect)
-						Architect: {{{$project->architect}}}
-					@endif
+                    {{{$project->city_county}}}				
 					<br>
-					@if($project->participant1 || $project->participant2)
+					@if($project->participant1 || $project->participant2 || $project->participant3)
 						Project Participants:
-						@if($project->participant1) {{$project->participant1}}@endif
 						<br>
-						@if($project->participant2) {{$project->participant2}}@endif
+						@if($project->participant1) 
+							<p>{{$project->participant1}}</p>
+						@endif
+						
+						@if($project->participant2) 
+							<p>{{$project->participant2}}</p>
+						@endif
+						
+						@if($project->participant3) <p>{{$project->participant3}}</p>@endif
 					@endif
 				</div>
                 <div class="col-lg-8 projectBody">
