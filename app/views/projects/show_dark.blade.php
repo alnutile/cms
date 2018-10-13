@@ -60,14 +60,16 @@
 						Project Participants:
 						<br>
 						@if($project->participant1) 
-							<p>{{$project->participant1}}</p>
+							<h3>{{$project->participant1}}</h3>
 						@endif
 						
 						@if($project->participant2) 
-							<p>{{$project->participant2}}</p>
+							<h3>{{$project->participant2}}</h3>
 						@endif
 						
-						@if($project->participant3) <p>{{$project->participant3}}</p>@endif
+						@if($project->participant3) 
+							<h3>{{$project->participant3}}</h3>
+						@endif
 					@endif
 				</div>
                 <div class="col-lg-8 projectBody">
