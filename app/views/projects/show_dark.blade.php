@@ -53,22 +53,19 @@
             <div class="row">
                 <div class="col-lg-4 body">
                     <h1>{{{$project->title}}}</h1>
-
                     {{{$project->city_county}}}				
 					<br>
 					@if($project->participant1 || $project->participant2 || $project->participant3)
 						Project Participants:
 						<br>
 						@if($project->participant1) 
-							<h3>{{$project->participant1}}</h3>
-						@endif
-						
+							<h3 class="participant">{{$project->participant1}}</h3>
+						@endif						
 						@if($project->participant2) 
-							<h3>{{$project->participant2}}</h3>
-						@endif
-						
+							<h3 class="participant">{{$project->participant2}}</h3>
+						@endif						
 						@if($project->participant3) 
-							<h3>{{$project->participant3}}</h3>
+							<h3 class="participant">{{$project->participant3}}</h3>
 						@endif
 					@endif
 				</div>
