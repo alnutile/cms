@@ -21,7 +21,7 @@ class Project extends BaseModel implements StaplerableInterface {
         'body',
         'image',
         'tile_image',
-        'architect',
+        'participant3',
         'order',
         'intro',
         'portfolio_id',

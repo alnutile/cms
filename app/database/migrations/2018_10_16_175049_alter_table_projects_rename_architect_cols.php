@@ -14,6 +14,7 @@ class AlterTableProjectsRenameArchitectCols extends Migration {
 	{
 		Schema::table('projects', function (Blueprint $table) {
 			$table->renameColumn('architect', 'participant3');
+			$table->string('participant3',255)->nullable()->change();
 		});
 		//
 		//DB::statement("ALTER TABLE `projects` CHANGE `architect` `participant3` VARCHAR(255) DEFAULT NULL");
@@ -26,7 +27,11 @@ class AlterTableProjectsRenameArchitectCols extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::table('projects', function(Blueprint $table)
+		{
+			$table->renameColumn('participant3', 'architect');
+		});
+
 	}
 
 }
