@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class RenameAlterProjectsFieldArchitectToParticipant3 extends Migration {
+class AlterTableProjectsRenameArchitectCols extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -13,12 +13,7 @@ class RenameAlterProjectsFieldArchitectToParticipant3 extends Migration {
 	public function up()
 	{
 		//
-		Schema::table('projects', function(Blueprint $table)
-		{
-			$table->renameColumn('architect', 'participant3');
-		});
 		DB::query("ALTER TABLE `projects` RENAME COLUMN `architect` TO `participant3`;");
-		
 	}
 
 	/**
@@ -29,10 +24,6 @@ class RenameAlterProjectsFieldArchitectToParticipant3 extends Migration {
 	public function down()
 	{
 		//
-		Schema::table('projects', function(Blueprint $table)
-		{
-			$table->dropColumn(array('participant3'));
-		});
 	}
 
 }
