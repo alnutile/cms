@@ -17,7 +17,7 @@ class RenameAlterProjectsFieldArchitectToParticipant3 extends Migration {
 		{
 			$table->renameColumn('architect', 'participant3');
 		});
-		 
+		DB::query("ALTER TABLE `projects` RENAME COLUMN `architect` TO `participant3`;");
 		
 	}
 
