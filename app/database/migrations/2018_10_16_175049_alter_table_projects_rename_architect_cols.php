@@ -13,7 +13,7 @@ class AlterTableProjectsRenameArchitectCols extends Migration {
 	public function up()
 	{
 		//
-		DB::statement("ALTER TABLE `projects` CHANGE `architect` `participant3` VARCHAR( 255 ) DEFAULT NULL");
+		DB::statement("ALTER TABLE `projects` CHANGE `architect` `participant3` VARCHAR(255) DEFAULT NULL");
 	}
 
 	/**
