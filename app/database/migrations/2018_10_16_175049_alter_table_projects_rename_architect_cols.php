@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AlterTableProjectsRenameArchitectCols extends Migration {
+class RenameAlterProjectsFieldArchitectToParticipant3 extends Migration {
 
 	/**
 	 * Run the migrations.
