@@ -102,8 +102,11 @@
                 </div>
             @endif
 
-            <div class="form-group">
-                <label>Project Architect
+            
+            
+			
+			<div class="form-group">
+                <label>Project Participants 
                     @if($settings->theme == TRUE)
                         (<a href="http://corbettresearchgroupinc.com/admin_projects_dark" target="_blank">Help</a>)
                     @endif
@@ -111,13 +114,30 @@
                     @if($settings->theme == FALSE)
                         (<a href="http://corbettresearchgroupinc.com/admin_projects_light" target="_blank">Help</a>)
                     @endif</label>
-                {{ Form::text('architect', NULL, array('class' => 'form-control')) }}
+					{{ Form::text('participant1', NULL, array('class' => 'form-control','placeholder' => 'ex: Project Manager: John Smith', 'maxlength' => 200)) }}
+					@if($errors->first('participant1'))
+						<div class="alert alert-danger">
+							<br />{{  $errors->first('participant1'); }}<br />
+						</div>
+					@endif
+						<br />
+						{{ Form::text('participant2', NULL, array('class' => 'form-control','placeholder' => 'ex: Project Manager: John Smith', 'maxlength' => 200)) }}
+					@if($errors->first('participant2'))
+						<div class="alert alert-danger">
+							<br />{{  $errors->first('participant2'); }}<br />
+						</div>
+					@endif
+					<br />
+						{{ Form::text('participant3', NULL, array('class' => 'form-control','placeholder' => 'ex: Project Manager: John Smith', 'maxlength' => 200)) }}
+					@if($errors->first('participant3'))
+						<div class="alert alert-danger">
+							<br />{{  $errors->first('participant3'); }}<br />
+						</div>
+					@endif
+					
+					
             </div>
-            @if($errors->first('architect'))
-                <div class="alert alert-danger">
-                    {{  $errors->first('architect'); }}
-                </div>
-            @endif
+            
         @endif
 
         <div class="form-group">

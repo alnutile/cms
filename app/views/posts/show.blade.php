@@ -23,9 +23,20 @@
 <div class="col-md-12 col-sm-7 col-md-8 col-lg-12 column">
 @endif
 	
-    <h1>{{ $post->title }}</h1>
-    <p> {{ $post->intro }} </p>    
-    <p> {{ $post->body }} </p>
+    <h1>{{ $post->title }}</h1>	
+    <p> {{ $post->intro }} </p>
+   @if ($post->image && $post->created_at < '2018-09-01 00:00:00')
+	   <div class="row">        
+			<div class = "col-lg-12" id="main_image">
+				@if(file_exists(public_path().'/img/posts/full/'.$post->image))
+					<img  src="/img/posts/full/{{$post->image}}" alt="{{$post->title}}" class="img-responsive">	
+				@else
+					<img  src="/img/posts/{{$post->image}}" alt="{{$post->title}}" class="img-responsive">
+				@endif			
+			</div>        
+		</div>
+   @endif
+   <p> {{ $post->body }} </p>
 
     @if(isset($post->images[0]))
 		@if($settings->theme != true)
