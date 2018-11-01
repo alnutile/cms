@@ -300,7 +300,7 @@
                     {{  $errors->first('portfolio_title'); }}
                 </div>
                 @endif
-			<div class="help-block">Enter your blog name here e.g. Builder's Notebook</div>
+			<div class="help-block">Enter your portfolio name here e.g. Builder's Notebook</div>
         </div>
 		<div class="form-group">
           <label for="">{{$setting->blog_title}} Menu Position</label>
