@@ -87,11 +87,7 @@ class SettingsController extends \BaseController {
     public function update($id)
     {
         $data = Input::all();
-		// echo '<pre>';
-		// print_r($data);
-		// echo '</pre>';die;
-        
-        $setting = Setting::findOrFail($id);
+		$setting = Setting::findOrFail($id);
 
         if($setting->theme == false)
         {

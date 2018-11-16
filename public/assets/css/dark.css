@@ -61,7 +61,12 @@ img.img-responsive:hover {
 .img_section:hover .middle {
   opacity: 1;
 }
-
+.col-lg-4.body h3.pp-title {
+    font-size: 16px;
+    line-height: 20px;
+    font-family: 'Open Sans', Arial, sans-serif !important;
+    font-weight: 600;
+}
 
 /* line 7, stdin */
 body {
