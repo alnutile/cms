@@ -32,11 +32,14 @@
         {{{$project->state_country}}}
       </div>
     </div>
-    <p>
-    <?php $teaser = strip_tags(Str::words($project->body, 50)); ?>
-    {{$teaser}}
-    </p>
-    @if($settings->view_readmore_status == 1)
+    
+    @if($settings->view_readmore_status == 1 && $settings->theme == TRUE)
+		<p>{{$project->body}}</p>
+	@else
+		<p>
+			<?php $teaser = strip_tags(Str::words($project->body, 50)); ?>
+			{{$teaser}}
+		</p>
 		<div><a href="{{$project->slug}}">read more...</a></div>
 	@endif
   </div>

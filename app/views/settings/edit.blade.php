@@ -225,13 +225,16 @@
 		<div class="form-group">
             <div class="controls">
                 <div class="checkbox">
-                    <label class="checkbox">{{ Form::checkbox('view_readmore_status', null) }} Read More Status                        @if($settings->theme == TRUE)
+                    <label class="checkbox">
+						{{ Form::checkbox('view_readmore_status', null) }} Check to disable read more links on projects under dark theme.
+						@if($settings->theme == TRUE)
                             (<a href="http://corbettresearchgroupinc.com/admin_projects_dark" target="_blank">Help</a>)
                         @endif
 
                         @if($settings->theme == FALSE)
                             (<a href="http://corbettresearchgroupinc.com/admin_projects_light" target="_blank">Help</a>)
-                        @endif</label>
+                        @endif
+					</label>
                 </div>
             </div>
         </div>
