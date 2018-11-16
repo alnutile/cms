@@ -36,7 +36,9 @@
     <?php $teaser = strip_tags(Str::words($project->body, 50)); ?>
     {{$teaser}}
     </p>
-    <div><a href="{{$project->slug}}">read more...</a></div>
+    @if($settings->view_readmore_status == 1)
+		<div><a href="{{$project->slug}}">read more...</a></div>
+	@endif
   </div>
 
 </div>

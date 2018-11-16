@@ -222,7 +222,19 @@
                 {{  $errors->first('footer'); }}
             </div>
         @endif
+		<div class="form-group">
+            <div class="controls">
+                <div class="checkbox">
+                    <label class="checkbox">{{ Form::checkbox('view_readmore_status', null) }} Read More Status                        @if($settings->theme == TRUE)
+                            (<a href="http://corbettresearchgroupinc.com/admin_projects_dark" target="_blank">Help</a>)
+                        @endif
 
+                        @if($settings->theme == FALSE)
+                            (<a href="http://corbettresearchgroupinc.com/admin_projects_light" target="_blank">Help</a>)
+                        @endif</label>
+                </div>
+            </div>
+        </div>
         <div class="form-group">
             <div class="controls">
                 <div class="checkbox">
