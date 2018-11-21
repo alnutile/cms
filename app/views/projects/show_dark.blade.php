@@ -68,8 +68,12 @@
 						@endif
 					@endif
 				</div>
-                <div class="col-lg-8 projectBody">
-                    <article> {{$project->body}}</article>
+                <div class="col-lg-8 projectBody">				
+					@if($settings->view_readmore_status == 1 && $settings->theme == TRUE)
+						<p>{{$project->body}}</p>
+					@else
+						<article>{{$project->body}}</article>
+					@endif                    
                 </div>
             </div>
         @endif
