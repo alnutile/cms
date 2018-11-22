@@ -120,9 +120,9 @@ class PostsController extends \BaseController {
 			if(count($post_simple_user) > 0){				
 				return View::make('posts.show', compact('post', 'banner', 'settings', 'seo', 'tags'));
 			}else{				
-				$a=$this->index();
+				// $a=$this->index();
 				// return $a;
-				return View::make('posts.show', compact('pos', 'banner', 'settings', 'seo', 'tags'));
+				return abort(404);
 			}			
 		}
     }
