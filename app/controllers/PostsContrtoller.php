@@ -121,7 +121,8 @@ class PostsController extends \BaseController {
 				return View::make('posts.show', compact('post', 'banner', 'settings', 'seo', 'tags'));
 			}else{				
 				$a=$this->index();
-				return $a;				
+				// return $a;
+				return View::make('posts.show', compact('pos', 'banner', 'settings', 'seo', 'tags'));
 			}			
 		}
     }
