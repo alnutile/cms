@@ -183,7 +183,7 @@ window.theme = {{$settings->theme}};
 {{ HTML::script('/assets/js/tagsCtrl.js') }}
 {{ HTML::script('/bower_components/ng-tags-input/ng-tags-input.min.js') }}
 @if($settings->theme == true)
-{{ HTML::script('http://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js') }}
+{{ HTML::script('//cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js') }}
 @endif
 
 {{ HTML::script('/bower_components/flexslider/jquery.flexslider.js') }}

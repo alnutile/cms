@@ -222,7 +222,22 @@
                 {{  $errors->first('footer'); }}
             </div>
         @endif
+		<div class="form-group">
+            <div class="controls">
+                <div class="checkbox">
+                    <label class="checkbox">
+						{{ Form::checkbox('view_readmore_status', null) }} Check to disable read more links on projects under dark theme.
+						@if($settings->theme == TRUE)
+                            (<a href="http://corbettresearchgroupinc.com/admin_projects_dark" target="_blank">Help</a>)
+                        @endif
 
+                        @if($settings->theme == FALSE)
+                            (<a href="http://corbettresearchgroupinc.com/admin_projects_light" target="_blank">Help</a>)
+                        @endif
+					</label>
+                </div>
+            </div>
+        </div>
         <div class="form-group">
             <div class="controls">
                 <div class="checkbox">
@@ -300,7 +315,7 @@
                     {{  $errors->first('portfolio_title'); }}
                 </div>
                 @endif
-			<div class="help-block">Enter your blog name here e.g. Builder's Notebook</div>
+			<div class="help-block">Enter your portfolio name here e.g. Builder's Notebook</div>
         </div>
 		<div class="form-group">
           <label for="">{{$setting->blog_title}} Menu Position</label>

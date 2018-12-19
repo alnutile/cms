@@ -103,17 +103,28 @@ class PostsController extends \BaseController {
     public function show($id = NULL)
     {
         parent::show();
-
         if(is_numeric($id)) {
-            $post = Post::find($id);
-            $seo = $post->seo;
+            $post = Post::find($id);		
+			$seo = $post->seo;
+			$post_simple_user = Post::where('id',$id)->where('published',1)->get();
         }
         if($id == NULL){
             return View::make('404', compact('settings'));
         }
         $tags = $this->tags->get_tags_for_type('Post');
-        $banner = TRUE;
-        return View::make('posts.show', compact('post', 'banner', 'settings', 'seo', 'tags'));
+        $banner = TRUE;	
+		if( Auth::user() && Auth::user()->admin == 1 )
+		{			
+			return View::make('posts.show', compact('post', 'banner', 'settings', 'seo', 'tags'));
+		}else{			
+			if(count($post_simple_user) > 0){				
+				return View::make('posts.show', compact('post', 'banner', 'settings', 'seo', 'tags'));
+			}else{				
+				// $a=$this->index();
+				// return $a;
+				return abort(404);
+			}			
+		}
     }
 
 
