@@ -144,7 +144,7 @@ ul.edit_images {
     /* line 92, stdin */
     ul.edit_images li .img-thumbnail {
       max-width: 125px; }
-@media (width: 768px){
+@media (max-width: 768px){
 	.nav {
 		padding-left: 0!important;
 		list-style: none!important;
