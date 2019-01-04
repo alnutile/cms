@@ -214,6 +214,7 @@ class PostsController extends \BaseController {
         $posts = DB::table('posts')
             ->leftJoin('tags', 'tags.tagable_id', '=', 'posts.id')
             ->where('tags.tagable_type', '=', 'Post')
+			->where('published', '=', 1)
             ->where('tags.name', '=', $tag)
 			->orderBy('posts.created_at', 'desc')
             ->groupBy('posts.id')
