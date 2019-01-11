@@ -15,7 +15,7 @@
 			<a href="{{$project->slug}}" alt="{{$project->title}}">
 				<div class="proj_img">
 					<img class="img-responsive" src="{{$image}}" alt="{{{$project->title}}}">
-					@if($settings->theme == false)
+					@if($settings->theme == true)
 						<div class="project_grid_title" >{{{$project->title}}} </div>
 					@endif
 				</div>
