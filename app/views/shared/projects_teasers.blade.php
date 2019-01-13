@@ -24,7 +24,7 @@
 		<div class="clearfix-sm"></div>
 		@endif
 	@endif
-  <br>
+	<br>
 
   <div class="media-body padding-lr">
     <a href="{{$project->slug}}"><h4 class="media-heading">{{{$project->title}}}</h4></a>
