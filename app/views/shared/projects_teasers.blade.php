@@ -10,17 +10,20 @@
 @endif
 
 <div class="media row">
-    @if($image && file_exists(public_path($image)))
-		<div class="col-xs-12 col-md-4 project_block">
-			<a href="{{$project->slug}}" alt="{{$project->title}}">
-				<div class="proj_img">
-					<img class="img-responsive" src="{{$image}}" alt="{{{$project->title}}}">
-					<div class="project_grid_title" >{{{$project->title}}} </div>
-				</div>
-			</a>
-		</div>	
-    <div class="clearfix-sm"></div>
-    @endif
+	@if(strpos($image, 'Blank') !== false)
+	@else
+		@if($image && file_exists(public_path($image)))
+			<div class="col-xs-12 col-md-4 project_block d">
+				<a href="{{$project->slug}}" alt="{{$project->title}}">
+					<div class="proj_img">
+						<img class="img-responsive" src="{{$image}}" alt="{{{$project->title}}}">
+						<div class="project_grid_title" >{{{$project->title}}} </div>
+					</div>
+				</a>
+			</div>	
+		<div class="clearfix-sm"></div>
+		@endif
+	@endif
   <br>
 
   <div class="media-body padding-lr">
