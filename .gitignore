@@ -8,6 +8,7 @@
 /public/slideshow
 /public/robots.txt
 /storage/*.key
+/bootstrap/compiled.php
 /vendor
 /.idea
 /.vagrant
@@ -20,6 +21,8 @@ yarn-error.log
 /storage
 *.lock
 *.scssc
+.DS_Store
+Thumbs.db
 /app/database/local.sqlite
 /app/database/*.sqlite
 /public/assets/css/customProject.css
