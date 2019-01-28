@@ -33,3 +33,4 @@ Thumbs.db
 /public/slideshow
 /app/config/database.php
 Envoy.blade.php
+/app/storage
