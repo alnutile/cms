@@ -26,7 +26,7 @@ Thumbs.db
 /app/database/local.sqlite
 /app/database/*.sqlite
 /public/assets/css/customProject.css
-/public/assets/js/custom.js
+public/assets/js/custom.js
 /public/bab.jpg
 /public/ban.jpg
 /public/nycab.jpg
