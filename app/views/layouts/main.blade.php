@@ -249,6 +249,15 @@ window.theme = {{$settings->theme}};
 				$form.trigger('submit'); // submit the form
 		});
 	});
+	$(document).ready(function(){
+		$('.nav li').each(function(){
+			if($(this).find('li').hasClass('active')){
+				$(this).addClass('active');
+			}else if($(this).find('a').hasClass('active')){
+				$(this).addClass('active');
+			}
+		});
+	});
 </script>
 @yield('js')
 </body>
