@@ -70,7 +70,7 @@
 					</ul>
 				@endif
 			@else
-				<a href="{{URL::to($top['slug'])}}">{{$top['title']}}</a>
+				<a href="{{URL::to($top['slug'])}}" class="{{Request::url() ==  URL::to($top['slug']) ? 'active' : 'not-active' }}">{{$top['title']}}</a>
 			@endif
           </li>
         @endif
@@ -84,7 +84,7 @@ function sub_nav_menus($sub_menu)
 {
 	 foreach($sub_menu as $child)
 	 { ?>
-		<li class="dropdown-submenu">
+		<li class="dropdown-submenu {{Request::url() ==  URL::to($child['slug']) ? 'active' : 'not-active' }}">
 		<a tabindex="-1" href="{{URL::to($child['slug'])}}"/><?php echo $child['title'];?></a><?php
 		if(count($child['children'])>0)
 		{
