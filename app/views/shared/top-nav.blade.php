@@ -55,7 +55,7 @@
 			</ul>
 		 </li>
 		@else
-		<li class="dropdown">
+		<li class="dropdown @if(Request::url()==URL::to('/')) @if($top['title']=='Home')active @endif @endif">
 			@if(isset($top['children']) && !empty($top['children']))
 				<a class="dropdown-toggle" data-toggle="dropdown" href="#">{{$top['title']}}</a>
 				@if(isset($top['children']) && !empty($top['children']))
