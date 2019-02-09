@@ -97,8 +97,8 @@
 					@if(isset($top['children']) && !empty($top['children']))
                       <div class="panel-body">
                         <ul class="nav nav-list">
-                          <li  class='{{ Request::url() ==  URL::to($top["slug"]) ?  "active" : "not-active" }}'>
-                            <a href="{{URL::to($top['slug'])}}">{{$top['title']}}</a>
+                          <li  class='@if(Request::url()==URL::to('/'))active @else {{ Request::url() ==  URL::to($top["slug"]) ?  "active" : "not-active" }} @endif '>
+                            <a href="@if($top['slug'] == '/home') / @else {{URL::to($top['slug'])}} @endif">{{$top['title']}}</a>
 							<?php 
 								usort($top['children'], function ($item1, $item2) {
 									return $item1['menu_sort_order'] >= $item2['menu_sort_order'];
