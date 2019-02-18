@@ -18,7 +18,9 @@
     {{ HTML::style('assets/css/prettify.css') }}
     {{ HTML::style('assets/css/main.css') }}
     {{ HTML::style('assets/css/custom.css') }}
+	@if(file_exists(public_path().'/assets/css/customProject.css'))
     {{ HTML::style('assets/css/customProject.css') }}
+	@endif
     {{ HTML::style('assets/css/houzz/css/houzz-icon-font.css') }}
 
     {{ HTML::style('/bower_components/ng-tags-input/ng-tags-input.bootstrap.min.css') }}
@@ -126,7 +128,10 @@
 <!-- Placed at the end of the document so the pages load faster -->
 
 {{ HTML::script('/assets/js/jquery-1.11.js') }}
+@if(file_exists(public_path().'/assets/js/custom.js'))
 {{ HTML::script('/assets/js/custom.js') }}
+@endif
+
 <script type="text/javascript">
 	// Add padding to top of body tag if logged into admin on both themes
 	jQuery(function($) {
