@@ -43,7 +43,9 @@
     {{ HTML::style('/bower_components/flexslider/flexslider.css') }}
 
     @endif
+    @if(file_exists(public_path().'/assets/css/customProject.css'))
     {{ HTML::style('assets/css/customProject.css') }}
+	@endif
 
 
 
@@ -189,7 +191,9 @@ window.theme = {{$settings->theme}};
 {{ HTML::script('/bower_components/flexslider/jquery.flexslider.js') }}
 {{ HTML::script('/bower_components/angular-flexslider/angular-flexslider.js') }}
 {{ HTML::script('/assets/js/naturalSortVersionDates.min.js') }}
+@if(file_exists(public_path().'/assets/js/custom.js'))
 {{ HTML::script('/assets/js/custom.js') }}
+@endif
 <script type="text/javascript">
 	// Add padding to top of body tag if logged into admin on both themes
 	jQuery(function($) {
