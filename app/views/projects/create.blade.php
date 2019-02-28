@@ -181,7 +181,17 @@
                     </div>
                 @endif
             </div>
-            @endif
+		@else
+			<div class="form-group hide">
+                <label for="email">Related Portfolios</label>&nbsp;
+                {{ Form::select('portfolio_id', ['0'=>'0'], array('class' => 'form-control', 'tabindex' => 1)) }}
+                @if($errors->first('order'))
+                    <div class="alert alert-danger">
+                        {{  $errors->first('portfolio_id'); }}
+                    </div>
+                @endif
+            </div>
+        @endif
                     <!--sort order-->
 
             <div class="form-group">
