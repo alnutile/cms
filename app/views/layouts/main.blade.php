@@ -71,7 +71,10 @@
         })();
 
     </script>
-
+	
+	@if( $settings->add_tag_manager_in_header != 0 )
+		<?php echo $settings->tag_manager_content; ?>
+	@endif
 
 </head>
 
@@ -266,5 +269,9 @@ window.theme = {{$settings->theme}};
 	});
 </script>
 @yield('js')
+
+@if( $settings->add_tag_manager_in_header == 0 )
+	<?php echo $settings->tag_manager_content; ?>
+@endif
 </body>
 </html>

@@ -222,6 +222,17 @@
                 {{  $errors->first('footer'); }}
             </div>
         @endif
+		<div class="from-group">
+			<label>Tag Manager Content{{ Form::textarea('tag_manager_content', $setting->tag_manager_content, array('rows' => 10, 'with' => '100%', 'class'=>'form-control tag_manager_content')) }}</label>
+		</div>
+		<div class="form-group">
+            <div class="controls">
+                <div class="checkbox">
+                    <label class="checkbox">{{ Form::checkbox('add_tag_manager_in_header', null,null,array('class' => 'add_tag_manager_in_header','data' => $setting->add_tag_manager_in_header)) }} Check to add tag manager in header </label>
+                </div>
+                <div class="help-block">Use this to enable or disable left navigation.</div>
+            </div>
+        </div>
 		<div class="form-group">
             <div class="controls">
                 <div class="checkbox">
