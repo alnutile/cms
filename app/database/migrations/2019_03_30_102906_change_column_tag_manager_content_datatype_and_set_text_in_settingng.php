@@ -14,7 +14,7 @@ class ChangeColumnTagManagerContentDatatypeAndSetTextInSettingng extends Migrati
 	{
 		Schema::table('settings', function(Blueprint $table)
 		{
-			$table->text('tag_manager_content')->change();
+			$table->text('tag_manager_content')->nullable()->change();
 		});
 	}
 
