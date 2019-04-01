@@ -15,7 +15,7 @@ class AddColumnTagManagerContentAndAddTagManagerInHeaderInSettingsLast extends M
 		Schema::table('settings', function(Blueprint $table)
 		{
 			$table->boolean('add_tag_manager_in_header')->default(0);
-			$table->string('tag_manager_content',5000)->nullable();
+			$table->text('tag_manager_content')->nullable();
 		});
 	}
 
