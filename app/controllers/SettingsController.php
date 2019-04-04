@@ -125,6 +125,8 @@ class SettingsController extends \BaseController {
         $setting->name              = $data['name'];
         $setting->maintenance_mode  = (isset($data['maintenance_mode'])) ? 1 : 0;
         $setting->theme             = (!isset($data['theme']) || $data['theme'] == '0') ? false : true;
+		$setting->add_tag_manager_in_header = (!isset($data['add_tag_manager_in_header']) || $data['add_tag_manager_in_header'] == '0') ? false : true;
+		$setting->tag_manager_content           = (isset($data['tag_manager_content'])) ? $data['tag_manager_content'] : '';
         $this->setRobot($setting->maintenance_mode);
         $setting->facebook          = (isset($data['facebook'])) ? $data['facebook'] : '';
         $setting->linkedin          = (isset($data['linkedin'])) ? $data['linkedin'] : '';
