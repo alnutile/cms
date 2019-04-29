@@ -52,7 +52,7 @@
         <div class="form-group">
             <label>Page Main Body 
             @if($settings->theme == true)
-            (<a href="http://www.restorationtrades.com/help/admin_pages_dark.html" target="_blank">Help</a>)
+            (<a href="http://corbettresearchgroupinc.com/admin_projects_dark" target="_blank">Help</a>)
             @endif
 
             @if($settings->theme == false)
