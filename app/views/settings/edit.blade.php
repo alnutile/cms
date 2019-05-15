@@ -244,7 +244,7 @@
                         @endif
 
                         @if($settings->theme == FALSE)
-                            (<a href="http://corbettresearchgroupinc.com/admin_projects_light" target="_blank">Help</a>)
+                            (<a href="http://corbettresearchgroupinc.com/admin_projects_dark" target="_blank">Help</a>)
                         @endif
 					</label>
                 </div>
