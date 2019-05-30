@@ -29,6 +29,14 @@ class FeatureContext extends MinkContext
     }
 
     /**
+     * @Given /^I reseed the database$/
+     */
+    public function iReseedTheDatabase()
+    {
+        exec("php artisan migrate:refresh --seed");
+    }
+
+    /**
      * @Given /^I am in a directory "([^"]*)"$/
      */
     public function iAmInADirectory($dir)

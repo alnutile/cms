@@ -20,6 +20,7 @@
     {{ HTML::style('assets/css/bootstrap.css') }}
     {{ HTML::style('assets/css/colorfrog.css') }}
     {{ HTML::style('assets/css/font-awesome.css') }}
+     {{ HTML::style('assets/css/customProject.css') }}
     <!-- <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'> -->
     {{ HTML::style('assets/css/prettify.css') }}
     {{ HTML::style('assets/css/main.css') }}

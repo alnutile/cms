@@ -5,7 +5,7 @@
 
 CKEDITOR.editorConfig = function( config ) {
     config.skin = 'moono';
-    config.extraPlugins = "imagebrowser,mediaembed";
+    config.extraPlugins = "imagebrowser,mediaembed,sourcedialog";
     config.imageBrowser_listUrl = '/api/v1/ckeditor/gallery';
     config.filebrowserBrowseUrl = '/api/v1/ckeditor/files';
     config.filebrowserImageUploadUrl = '/api/v1/ckeditor/images';
@@ -24,10 +24,10 @@ CKEDITOR.editorConfig = function( config ) {
         { name: 'paragraph', items: [ 'BulletedList', 'NumberedList', 'Blockquote' ] },
         { name: 'editing', items: ['JustifyLeft', 'JustifyCenter', 'JustifyRight'] },
         { name: 'links', items: [ 'Link', 'Unlink', 'Anchor' ] },
-        { name: 'tools', items: [ 'SpellChecker'] },
-        { name: 'clipboard', items: [ 'Undo', 'Redo' ] },
+        { name: 'tools', items: [ 'SpellChecker', 'Sourcedialog'] },
+        { name: 'clipboard', items: [ 'Undo', 'Redo'] },
         { name: 'styles', items: [ 'Format', 'FontSize', 'TextColor', 'PasteFromWord', 'RemoveFormat' ] },
-        { name: 'insert', items: [ 'Image', 'Table', 'SpecialChar', 'MediaEmbed' ] },'/',
+        { name: 'insert', items: [ 'Image', 'Table', 'SpecialChar', 'MediaEmbed', 'SourceDialog'] },'/',
     ];
 
     // Remove some buttons, provided by the standard plugins, which we don't

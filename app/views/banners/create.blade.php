@@ -15,7 +15,7 @@
     <fieldset>
         <div class="form-group">
 
-                <label for="email">Banner Name (<a href="http://www.restorationtrades.com/help.html#banner_name">Help</a>)</label>
+                <label for="email">Banner Name (<a href="http://restorationtrades.com/help/admin_banners.html" target="_blank">Help</a>)</label>
                 {{ Form::text('name', null, array('class' => 'form-control', 'tabindex' => 1)) }}
                 @if($errors->first('name'))
                 <div class="alert alert-danger">
@@ -24,7 +24,7 @@
                 @endif
         </div>
         <div class="form-group">
-          <label for="email">Banner Image Uploader (<a href="http://www.restorationtrades.com/help.html#banner_image_uploader">Help</a>)</label>
+          <label for="email">Banner Image Uploader (<a href="http://restorationtrades.com/help/admin_banners.html" target="_blank">Help</a>)</label>
           <div class="help-block">The default banner images are 1600 x 379 pixels, in dimension. Other sizes will upload and display.</div>
           {{ Form::file('banner_name', null, array('class' => 'form-control', 'tabindex' => 1)) }}
                 @if($errors->first('banner_name'))

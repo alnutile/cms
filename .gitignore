@@ -6,6 +6,7 @@
 public/img/projects/
 >>>>>>> 20a8b89bad008863a4339cabe14debc1f52ec2ce
 bower_components
+public/img/
 public/assets/img
 public/bower_compnents
 
@@ -22,6 +23,9 @@ behat.yml
 composer.phar
 .env.local.php
 .env.php
+.env
 .DS_Store
 Thumbs.db
 .env*
+public/assets/css/customProject.css
+npm-debug.log

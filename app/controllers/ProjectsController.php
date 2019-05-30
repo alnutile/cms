@@ -78,6 +78,7 @@ class ProjectsController extends \BaseController {
     if(isset($all['image'])) {
       $all = $this->uploadFile($all, 'image');
     }
+
     $project = Project::create($all);
 
     if(isset($all['images'])) {
@@ -152,6 +153,7 @@ class ProjectsController extends \BaseController {
       $this->projectsService->addImages($project->id, $data['images'], 'Project');
     }
     $data = $this->checkPublished($data);
+//      dd($data);
     $project->update($data);
 
     return Redirect::route('admin_projects')->withMessage("Updated Project!");

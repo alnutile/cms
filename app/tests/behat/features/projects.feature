@@ -1,13 +1,16 @@
 @javascript @feature1
 Feature: Testing Projects
 
-  Scenario: Login to the site
+  Background: And I login
     Given I am on "/logout"
     Given I am on "/login"
-    And I fill in "email" with "alfrednutile@gmail.com"
+    And I fill in "email" with "admin@example.com"
     And I fill in "password" with "admin"
     And I press "Login"
     And I wait
+
+  Scenario: Login to the site
+    And I reseed the database
     Then I should see "You are now logged in!"
     Given I am on "/projects"
     Then the url should match "projects"
@@ -34,6 +37,19 @@ Feature: Testing Projects
     Given I am on "/logout"
     Given I am on "/project_one"
     Then I should not see "Project 1"
+
+  @thisone
+  Scenario: Test Delete and View
+    And I reseed the database
+    Given I am on "/admin/portfolios"
+    And I wait
+    And I wait
+    And I follow "portfolio-id-1"
+    And I press "Delete"
+    And I wait
+    And I wait
+    Given I am on "/admin/projects"
+    Then I should see "No Related Portfolio"
     #check unpublished
     #order
     #set unpublished and should no see it on /index
