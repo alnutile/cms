@@ -1,0 +1,20 @@
+/*
+	Plugin	: Bootstrap Grid
+	Author	: Michael Janea (www.michaeljanea.com)
+	Version	: 1.2
+*/
+ 
+[class*=col-] {border:1px dashed rgba(86, 61, 124, .2) !important;}
+.bootstrapGrid_options {position:absolute; cursor:pointer;}
+	.bootstrapGrid_add, .bootstrapGrid_remove, .bootstrapGrid_offset_right, .bootstrapGrid_offset_left, .bootstrapGrid_cog, .bootstrapGrid_sink, .bootstrapGrid_grow {display:block; width:12px; height:12px; background-color:#fff; background-position:center; background-repeat:no-repeat; border:1px solid #000; -webkit-border-radius:10px; border-radius:10px; margin-bottom:.2em;}
+	.bootstrapGrid_add {background-image:url('../icons/add.png');}
+	.bootstrapGrid_remove {background-image:url('../icons/remove.png');}
+	.bootstrapGrid_offset_right {background-image:url('../icons/offset_right.png');}
+	.bootstrapGrid_offset_left {background-image:url('../icons/offset_left.png');}
+	.bootstrapGrid_sink {background-image:url('../icons/sink.png');}
+	.bootstrapGrid_grow {background-image:url('../icons/grow.png');}
+	.bootstrapGrid_cog {background-image:url('../icons/cog.png'); border:none; position:absolute; cursor:pointer;}
+	.bootstrapGrid_menu {padding:0; position:absolute; width:50px; border-top:1px solid #ddd; display:none;}
+	.bootstrapGrid_menu li {list-style:none;}
+	.bootstrapGrid_menu a {display:block; font-size:10px; background:#fff; border:1px solid #ddd; border-top:0; padding:.2em; color:#337ab7;}
+	.bootstrapGrid_menu a:hover {text-decoration:none; background:#f1f1f1;}

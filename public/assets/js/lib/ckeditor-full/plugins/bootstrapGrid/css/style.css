@@ -1,0 +1,11 @@
+/*
+	Plugin	: Bootstrap Grid
+	Author	: Michael Janea (www.michaeljanea.com)
+	Version	: 1.2
+*/
+ 
+.bootstrapGridClass {padding:1em;}
+.bootstrapGridClass .container {width:100% !important;}
+.bootstrapGridClass .row {margin-bottom:1em !important; cursor:pointer !important; border:1px solid transparent;}
+.bootstrapGridClass .row:hover {border:1px solid red;}
+.bootstrapGridClass .row > div {border:1px solid #ddd !important; font-size:10px; text-align:center;}
