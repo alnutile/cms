@@ -6,7 +6,7 @@
 CKEDITOR.editorConfig = function( config ) {
 	// Define changes to default configuration here.
 	config.skin = 'moono';
-    config.extraPlugins = 'imagebrowser,mediaembed,codemirror,tabletools,tabletoolstoolbar,stylescombo,slideshow,colordialog,font,justify,dialogadvtab';
+    config.extraPlugins = 'imagebrowser,mediaembed,codemirror,tabletools,tabletoolstoolbar,stylescombo,slideshow,colordialog,font,justify,dialogadvtab,panelbutton,floatpanel,bootstrapGrid';
     config.imageBrowser_listUrl = '/api/v1/ckeditor/gallery';
     config.filebrowserBrowseUrl = '/api/v1/ckeditor/files';
     config.filebrowserImageUploadUrl = '/api/v1/ckeditor/images';
@@ -15,13 +15,23 @@ CKEDITOR.editorConfig = function( config ) {
     config.language = 'en';
 	// For complete reference see:
 	// http://docs.ckeditor.com/#!/api/CKEDITOR.config
+	
+	//bootstrap grid 
+	//config.extraPlugins = 'panelbutton,floatpanel,bootstrapGrid';
+	config.contentsCss = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css';
+	config.mj_variables_bootstrap_css_path = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css';
+	config.allowedContent = true;
+	config.bootstrapGrid_container_large_desktop = 1170;
+	config.bootstrapGrid_container_desktop = 970;
+	config.bootstrapGrid_container_tablet = 750;
+	config.bootstrapGrid_grid_columns = 12;
 
 	// The toolbar groups arrangement, optimized for two toolbar rows.
 	config.toolbarGroups = [
 		{ name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
 		{ name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
 		{ name: 'links' },
-		{ name: 'insert', 	   groups: [ 'image', 'specialchar', 'mediaembed', 'sourcedialog' ] },
+		//{ name: 'insert', 	   groups: [ 'image', 'specialchar', 'mediaembed', 'sourcedialog' ] },
 		{ name: 'forms' },
 		{ name: 'tools' },
 		{ name: 'document',	   groups: [ 'mode', 'document', 'doctools' ] },
@@ -32,9 +42,12 @@ CKEDITOR.editorConfig = function( config ) {
 		{ name: 'styles' },
 		{ name: 'colors' },
 		{ name: 'about' },
-		{ name: 'tables', groups: [ 'table','tablerow','tablecolumn', 'tablecell','tablecellmergesplit' ] }
+		{ name: 'insert', groups: [ 'BootstrapGrid', 'BootstrapGridAdd', 'BootstrapGridDelete', 'BootstrapGridSettings', 'Source' ] }
+		//{ name: 'tables', groups: [ 'table','tablerow','tablecolumn', 'tablecell','tablecellmergesplit' ] }
 	];
-
+	/*config.toolbar = [
+		{ name: 'insert', items: [ 'BootstrapGrid', 'BootstrapGridAdd', 'BootstrapGridDelete', 'BootstrapGridSettings', 'Source' ] }
+	];*/
 	// Remove some buttons provided by the standard plugins, which are
 	// not needed in the Standard(s) toolbar.
 	config.removeButtons = 'Font,About';

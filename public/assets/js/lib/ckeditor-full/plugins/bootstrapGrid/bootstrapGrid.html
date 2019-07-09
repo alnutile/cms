@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Boostrap Grid</title>
+	<link rel="stylesheet" type="text/css" href="css/style3.css" />
+</head>
+<body>
+
+<div class="bootstrapGrid_layer">
+	<div class="base_size_container">
+		<div class="container">
+			<div class="row">
+				<div class="base_size col-xs-1"></div>
+			</div>
+		</div>
+	</div>
+	<div class="text-center">
+		<div class="debugger"></div>
+		<div class="bootstrapGrid_button bootstrapGrid_desktop" data-size="lg">Large Desktop</div>
+		<div class="bootstrapGrid_button bootstrapGrid_desktop active" data-size="md">Desktop</div>
+		<div class="bootstrapGrid_button bootstrapGrid_tablet" data-size="sm">Tablet</div>
+		<div class="bootstrapGrid_button bootstrapGrid_phone" data-size="xs">Phone</div>
+		<div class="bootstrapGrid_button bootstrapGrid_close">Save</div>
+	</div>
+	<div class="bootstrapGrid_container">
+		<div class="container"></div>
+	</div>
+</div>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/script2.js"></script>
+<script type="text/javascript">
+jQuery.noConflict();
+var bootstrapGrid_bootstrap_css_path, bootstrapGrid_content;
+(function($){
+	$('head').append('<link rel="stylesheet" type="text/css" href="' + bootstrapGrid_bootstrap_css_path + '" />');
+	$('.bootstrapGrid_container')
+		.children()
+		.css({width:bootstrapGrid_CKEDITOR_container_desktop + 'px'})
+		.html(bootstrapGrid_content)
+		.find('[class^=col]')
+		.each(function(){
+			var my_class = $(this).attr('class').split(' ');
+			var data_lg_size = [];
+			var data_md_size = [];
+			var data_sm_size = [];
+			var data_xs_size = [];
+			var other_classes = [];
+			$.each(my_class, function(k, v){
+				if(v.indexOf('col-lg-') >= 0){
+					data_lg_size.push(v);
+				}else if(v.indexOf('col-md-') >= 0){
+					data_md_size.push(v);
+				}else if(v.indexOf('col-sm-') >= 0){
+					data_sm_size.push(v);
+				}else if(v.indexOf('col-xs-') >= 0){
+					data_xs_size.push(v);
+				}else{
+					other_classes.push(v);
+				}
+			});
+			if(data_lg_size.length > 0){
+				$(this)
+					.attr('data-lg-size', data_lg_size.join(' '));
+			}
+			if(data_md_size.length > 0){
+				$(this)
+					.attr('data-md-size', data_md_size.join(' '))
+					.attr('class', (data_md_size.join(' ')).replace(new RegExp('md', 'g'), 'xs'));
+			}
+			if(data_sm_size.length > 0){
+				$(this).attr('data-sm-size', data_sm_size.join(' '));
+			}
+			if(data_xs_size.length > 0){
+				$(this).attr('data-xs-size', data_xs_size.join(' '));
+			}
+			if(other_classes.length > 0){
+				$(this).attr('data-xs-size', other_classes.join(' '));
+			}
+		});
+})(jQuery);
+</script>
+
+</body>
+</html>

@@ -163,3 +163,6 @@ td {
 .square-bulleted-list {
 	list-style-type: square;
 }
+.cke_button__table {
+    display: none !important;
+}
