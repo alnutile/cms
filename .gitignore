@@ -5,7 +5,7 @@
 /public/assets
 /public/bower_compnents
 /public/assets/img/projects
-/public/slideshow/*
+/public/slideshow/img
 /public/robots.txt
 /storage/*.key
 /bootstrap/compiled.php
