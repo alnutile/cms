@@ -1,6 +1,6 @@
 /node_modules
 /public/img/projects
-/public/img
+/public/*
 /public/system
 /public/assets
 /public/bower_compnents
@@ -30,7 +30,7 @@ public/assets/js/custom.js
 /public/bab.jpg
 /public/ban.jpg
 /public/nycab.jpg
-/public/slideshow/img
+/public/slideshow
 /app/config/database.php
 Envoy.blade.php
 /app/storage
