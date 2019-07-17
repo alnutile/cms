@@ -1,1 +1,1 @@
- Silence Really Is Golden xyz
+ Silence Really Is Golden
