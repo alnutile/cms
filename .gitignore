@@ -1,11 +1,11 @@
 /node_modules
 /public/img/projects
-/public/*
+/public/img
 /public/system
 /public/assets
 /public/bower_compnents
 /public/assets/img/projects
-/public/slideshow/img
+/public/slideshow/*
 /public/robots.txt
 /storage/*.key
 /bootstrap/compiled.php
