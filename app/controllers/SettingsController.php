@@ -149,6 +149,7 @@ class SettingsController extends \BaseController {
 		if(Auth::user() && Auth::user()->admin == 1){
 			$setting->blog_menu_position = $data['blog_menu_position'];
 		}
+		$setting->multiple_portfolio	= (isset($data['multiple_portfolio'])) ? 1 : 0;
 		$setting->save();
 
         return Redirect::to("/settings/" . $setting->id . "/edit")->withMessage("Settings Updated");

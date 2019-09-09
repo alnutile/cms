@@ -165,6 +165,7 @@ Use the corresponding body tag for your chosen theme
 window.theme = {{$settings->theme}};
 </script>
 {{ HTML::script('/assets/js/jquery-1.11.js') }}
+{{ HTML::script('/assets/js/jquery-3.4.1.min.js') }}
 {{ HTML::script('/assets/js/noty-2.2.2/js/noty/packaged/jquery.noty.packaged.min.js') }}
 {{ HTML::script('/assets/js/jquery-sortable.js') }}
 {{ HTML::script('/assets/js/bootstrap/bootstrap.min.js') }}

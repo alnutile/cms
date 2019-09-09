@@ -301,6 +301,13 @@
 				<div class="help-block">Use this turn set your site to portfolio.</div>
 			</div>
 		</div>
+		<div class="form-group" id="multiple_portfolio_ckeck">
+			<div class="controls">
+				<div class="checkbox">
+					<label class="checkbox">{{ Form::checkbox('multiple_portfolio', (int)$settings->multiple_portfolio) }} Check this to enable multiple portfolio. </label>
+				</div>
+			</div>
+		</div>
 		<div class="form-group">
 			<div class="controls">
 				<div class="checkbox">
@@ -365,4 +372,15 @@
     </fieldset>
     {{ Form::close() }}
 </div>
+@stop
+
+@section('js')
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+		
+		
+	
+	});
+</script>
 @stop
