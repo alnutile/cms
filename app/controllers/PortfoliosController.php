@@ -166,5 +166,10 @@ class PortfoliosController extends \BaseController {
 
         return Redirect::route('portfolios.index');
     }
+	
+	public function PortfolioCategory()
+	{
+		return View::make('portfolio_categorys.index');
+	}
 
 }

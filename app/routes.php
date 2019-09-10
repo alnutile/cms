@@ -59,6 +59,12 @@ Route::get('/admin/posts', array(
   'uses'   => 'PostsController@adminIndex'
 ));
 
+Route::get('/admin/PortfoliosCategory', array( 
+  'before' => 'auth',
+  'as'     => 'Portfolio_Category',
+  'uses'   => 'PortfoliosController@PortfolioCategory'
+));
+
 Route::get('/admin', array('before' => 'auth', 'uses' => 'AdminController@dash'));
 
 
