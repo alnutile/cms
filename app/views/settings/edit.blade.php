@@ -280,7 +280,7 @@
         <div class="form-group">
             <div class="controls">
                 <div class="checkbox">
-                    <label class="checkbox">{{ Form::checkbox('theme', null) }} Check to use the dark theme </label>
+                    <label class="checkbox">{{ Form::checkbox('theme', null, null, ['id' => 'darktheme','onClick' => 'myCheckbox()']) }} Check to use the dark theme </label>
                 </div>
                 <div class="help-block">Use this turn set your site to use an alternate theme.</div>
             </div>
@@ -296,12 +296,12 @@
 		<div class="form-group">
 			<div class="controls">
 				<div class="checkbox">
-					<label class="checkbox">{{ Form::checkbox('enable_portfolio', null) }} Check to enable portfolio </label>
+					<label class="checkbox">{{ Form::checkbox('enable_portfolio', null, null, ['id' => 'enable_port', 'onClick' => 'myCheckbox()']) }} Check to enable portfolio </label>
 				</div>
 				<div class="help-block">Use this turn set your site to portfolio.</div>
 			</div>
 		</div>
-		<div class="form-group" id="multiple_portfolio_ckeck">
+		<div class="form-group" id="multiple_portfolio_ckeck" style="display:none">
 			<div class="controls">
 				<div class="checkbox">
 					<label class="checkbox">{{ Form::checkbox('multiple_portfolio', (int)$settings->multiple_portfolio) }} Check this to enable multiple portfolio. </label>
@@ -377,10 +377,16 @@
 @section('js')
 <script type="text/javascript">
 	
-	$(document).ready(function(){
-		
-		
+	function myCheckbox() {
+	  var checkBox = document.getElementById("darktheme");
+	  var checkBox1 = document.getElementById("enable_port");
+	  var text = document.getElementById("multiple_portfolio_ckeck");
+	  if (checkBox.checked == true && checkBox1.checked == true){
+		text.style.display = "block";
+	  } else {
+		 text.style.display = "none";
+	  }
+	}
 	
-	});
 </script>
 @stop
