@@ -1,0 +1,122 @@
+<?php
+
+
+class PortfolioCategoryController extends \BaseController {
+
+	/**
+     * Display a listing of Portfolio categories 
+     *
+     * @return Response
+     */
+   
+	public function adminIndex()
+    {
+		
+		$categories = Portfolio_Category::get();
+		return View::make('portfolio_category.admin_index', compact('categories'));
+    }
+
+	/**
+	 * Show the form for creating a new resource.
+	 *
+	 * @return Response
+	 */
+	public function create()
+	{
+		parent::show();
+		return View::make('portfolio_category.create');
+	}
+
+
+	/**
+	 * Store a newly created resource in storage.
+	 *
+	 * @return Response
+	 */
+	public function store()
+	{
+		$all = Input::all();
+        $rules = Portfolio_Category::$rules;
+        $validator = $this->validateSlugOnCreate($all, $rules);
+
+        if ($validator->fails())
+        {
+            return Redirect::back()->withErrors($validator)->withInput();
+        }
+
+        Portfolio_Category::create($all);
+
+        return Redirect::route('portfolio_categories');
+	}
+
+
+	/**
+	 * Display the specified resource.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function show($array = NULL)
+	{
+		//
+	}
+
+
+	/**
+	 * Show the form for editing the specified resource.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	
+	public function edit($id)
+	{
+		parent::show();
+        $categories = Portfolio_Category::find($id);
+
+        return View::make('portfolio_category.edit', compact('categories'));
+	}
+
+
+	/**
+	 * Update the specified resource in storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function update($id)
+	{
+		$Portfolio_Category = Portfolio_Category::findOrFail($id);
+        $messages = [];
+        //1. see if the slug is the same as the original
+        //2. if it is then we will not validate against right
+        $all = Input::all();
+        $rules = Portfolio_Category::$rules;
+
+        $validator = $this->validateSlugEdit($all, $Portfolio_Category, $rules);
+        $data = $this->checkPublished($all);
+        if ($validator->fails())
+        {
+            return Redirect::back()->withErrors($validator)->withInput();
+        }
+        $Portfolio_Category->update($data);
+
+        return Redirect::route('portfolio_categories');
+	}
+
+
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function destroy($id)
+	{
+		Portfolio_Category::destroy($id);
+
+        return Redirect::route('portfolio_categories');
+	}
+
+
+}

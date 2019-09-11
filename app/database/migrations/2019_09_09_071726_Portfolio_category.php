@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class PortfolioCategorys extends Migration {
+class PortfolioCategory extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,7 +12,7 @@ class PortfolioCategorys extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('portfolio_categorys', function($table){
+		Schema::create('portfolio_category', function($table){
             $table->increments('id');
             $table->string('name');
 			$table->tinyInteger('is_active')->default('1');
@@ -27,7 +27,7 @@ class PortfolioCategorys extends Migration {
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('portfolio_categorys');
+		Schema::dropIfExists('portfolio_category');
 	}
 
 }
