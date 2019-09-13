@@ -55,8 +55,9 @@ class PortfoliosController extends \BaseController {
     {
         parent::show();
         $portfolios = Portfolio::OrderByOrder()->get();
-
-        return View::make('portfolios.admin_index', compact('portfolios'));
+		$categories = Portfolio_Category::get();
+		
+        return View::make('portfolios.admin_index', compact('portfolios'), compact('categories'));
     }
 
     /**
@@ -67,7 +68,8 @@ class PortfoliosController extends \BaseController {
     public function create()
     {
         parent::show();
-        return View::make('portfolios.create');
+		$categories = Portfolio_Category::get();
+        return View::make('portfolios.create', compact('categories'));
     }
 
     /**

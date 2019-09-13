@@ -37,7 +37,7 @@ class PortfolioCategoryController extends \BaseController {
 	{
 		$all = Input::all();
         $rules = Portfolio_Category::$rules;
-        $validator = $this->validateSlugOnCreate($all, $rules);
+        $validator = $this->validateSlugOnCreatePortfolioCategory($all, $rules);
 
         if ($validator->fails())
         {
@@ -93,13 +93,13 @@ class PortfolioCategoryController extends \BaseController {
         $all = Input::all();
         $rules = Portfolio_Category::$rules;
 
-        $validator = $this->validateSlugEdit($all, $Portfolio_Category, $rules);
-        $data = $this->checkPublished($all);
+        $validator = $this->validateSlugEditPortfolioCategory($all, $Portfolio_Category, $rules);
         if ($validator->fails())
         {
             return Redirect::back()->withErrors($validator)->withInput();
         }
-        $Portfolio_Category->update($data);
+		$Portfolio_Category->is_active = (isset($all['isactive'])) ? 1 : 0;
+        $Portfolio_Category->update($all);
 
         return Redirect::route('portfolio_categories');
 	}
@@ -117,6 +117,40 @@ class PortfolioCategoryController extends \BaseController {
 
         return Redirect::route('portfolio_categories');
 	}
+	
+	private function validateSlugOnCreatePortfolioCategory($all, $rules) {
+		$rules = [
+			'name' => 'required',
+			'slug'  => 'required|unique:pages|unique:portfolios|unique:portfolio_category|unique:posts|unique:projects|regex:/^\/[A-Za-z0-9_]+$/'
+		];
+        $messages  = array(
+            'slug.unique' => 'The url is not unique .',
+            'slug.regex'  => 'The url must start with a slash and contain only letters and numbers, no spaces.'
+        );
+        $validator = Validator::make($data = Input::all(), $rules, $messages);
 
+        return $validator;
+    }
+	
+	private function validateSlugEditPortfolioCategory($all, $model, $rules) {
+        $messages = [];
+		
+		if (isset($all['slug']) && $all['slug'] != $model->slug) {
+			$rules = [
+				'name' => 'required',
+				'slug'  => 'required|unique:pages|unique:portfolios|unique:portfolio_category|unique:posts|unique:projects|regex:/^\/[A-Za-z0-9_]+$/'
+			];
+            $messages = array(
+                'slug.unique' => 'The url is not unique.',
+                'slug.regex'  => 'The url must start with a slash and contain only letters and numbers, no spaces.'
+            );
+        }
+        else {
+            unset($rules['slug']);
+        }
+        $validator = Validator::make($data = Input::all(), $rules, $messages);
+
+        return $validator;
+    }
 
 }

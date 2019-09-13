@@ -32,7 +32,7 @@
   </div>
 
   <div class="form-group">
-    <label>Portfolio Web Address (URL) (<a href="http://corbettresearchgroupinc.com/admin_portfolios" target="_blank">Help</a>)</label>
+    <label>Slug</label>
     {{ Form::text('slug', null, array('class' => 'form-control')) }}
     <div class="help-block">The url must start with / </div>
   </div>

@@ -20,9 +20,8 @@
   </div>
   @endif
 
-  @if(Auth::user()->admin == 1)
   <div class="form-group">
-    <label>Portfolio Web Address (URL) (<a href="http://corbettresearchgroupinc.com/admin_portfolios" target="_blank">Help</a>)</label>
+    <label>Slug</label>
     {{ Form::text('slug', null, array('class' => 'form-control')) }}
     <div class="help-block">The url must start with / </div>
   </div>
@@ -33,12 +32,11 @@
     @endif
   </div>
   @endif
-  @endif
 
   <div class="form-group">
     <div class="controls">
       <div class="checkbox">
-        <label class="checkbox">{{ Form::checkbox('isactive', 1) }} Is Active</label>
+        <label class="checkbox">{{ Form::checkbox('isactive', 1, ($categories->is_active == 1) ? "checked":"") ) }} Is Active</label>
       </div>
     </div>
   </div>
