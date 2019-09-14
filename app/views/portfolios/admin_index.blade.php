@@ -11,6 +11,9 @@
             <th>Title</th>
             <th>Sort</th>
             <th>Published</th>
+			@if($settings->theme == true)
+			<th>Portfolio category</th>
+			@endif
             <th>Edit</th>
         </tr>
         </thead>
@@ -20,6 +23,9 @@
                     <td><a href="{{$portfolio->slug}}">{{{$portfolio->title}}}</a></td>
                     <td>{{$portfolio->order}}</td>
                     <td>{{$portfolio->published}}</td>
+					@if($settings->theme == true)
+					<td>{{$portfolio->name}}</td>
+					@endif
                     <td>
                         <a id="portfolio-id-{{$portfolio->id}}"
                            href="/portfolios/{{$portfolio->id}}/edit">

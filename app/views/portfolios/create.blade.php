@@ -11,26 +11,28 @@
   <h2>Create Portfolio:</h2>
 
   {{ Form::model('portfolio', array('method' => 'POST', 'route' => array('portfolios.store'), 'role' => 'form')) }}
-
+	
+  @if($settings->theme == true)
 	<div class="form-group">
-    <label>Portfolio Category</label>
-    <select name="categories" class='form-control'>
-		<option value="" selected disabled>Select Category</option>
-		<?php
-		foreach($categories as $category){
-		?>
-			<option value="<?php echo $category->id; ?>"><?php echo $category->name; ?></option>
-		<?php
-		}
-		?>
-	</select>
-  </div>
-  @if($errors->first('category_id'))
-  <div class="alert alert-danger">
-    @if($errors->first('category_id'))
-    {{ $errors->first('category_id') }}
-    @endif
-  </div>
+		<label>Portfolio Category</label>
+		<select name="category_id" class='form-control'>
+			<option value="" selected disabled>Select Category</option>
+			<?php
+			foreach($categories as $category){
+			?>
+				<option value="<?php echo $category->id; ?>"><?php echo $category->name; ?></option>
+			<?php
+			}
+			?>
+		</select>
+	</div>
+	@if($errors->first('category_id'))
+	  <div class="alert alert-danger">
+		@if($errors->first('category_id'))
+		{{ $errors->first('category_id') }}
+		@endif
+	  </div>
+	@endif
   @endif
 
   <div class="form-group">

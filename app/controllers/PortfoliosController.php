@@ -54,10 +54,9 @@ class PortfoliosController extends \BaseController {
     public function adminIndex($portfolio = NULL)
     {
         parent::show();
-        $portfolios = Portfolio::OrderByOrder()->get();
-		$categories = Portfolio_Category::get();
-		
-        return View::make('portfolios.admin_index', compact('portfolios'), compact('categories'));
+		$portfolios = Portfolio::OrderByOrder()->leftJoin('Portfolio_Category','Portfolio_Category.id','=','portfolios.category_id')->select('portfolios.id','title','order','published','name')->get();
+        
+        return View::make('portfolios.admin_index', compact('portfolios'));
     }
 
     /**
@@ -126,8 +125,8 @@ class PortfoliosController extends \BaseController {
     {
         parent::show();
         $portfolio = Portfolio::find($id);
-
-        return View::make('portfolios.edit', compact('portfolio'));
+		$categories = Portfolio_Category::get();
+		return View::make('portfolios.edit', compact('portfolio','categories'));
     }
 
     /**
