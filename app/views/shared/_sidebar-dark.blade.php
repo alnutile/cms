@@ -4,8 +4,24 @@
 <ul class="nav nav-list">
 @if(isset($top_left_nav))
   @foreach($top_left_nav as $item)
-    <li class="{{Request::url() ==  URL::to($item['slug']) ? 'active':'not-active'}}">
-      <a href="{{URL::to($item['slug'])}}">{{$item['title']}}</a>
+    <li class="{{Request::url() ==  URL::to($item['slug']) ? 'active':'not-active'}} dropdown movable">
+		<a href="{{URL::to($item['slug'])}}">{{$item['title']}}</a>
+		
+		<ul class='nav nav-list tags_nav @if(trim($item["title"]) != "Portfolio") hide @endif ' role="menu{{$item['title']}}" style="padding: 20px 0;">
+			@if(isset($portfolio_category)) 
+			  @foreach($portfolio_category as $category)
+				<?php 
+					$link = Request::url();
+					$link_array = explode('/',$link);
+					$page = end($link_array);
+				?>
+				<li class="@if(strtolower($category['name']) ==  $page )active @else not-active @endif {{strtolower($item['title']).'=='.$page}} == {{ strtolower($category['name']) }}">
+				  <a href="{{URL::to('/portfolio_categories'.$category['slug'])}}">{{$category['name']}}</a>
+				</li> 
+			  @endforeach
+			@endif
+		</ul>	
+
     </li>      
   @endforeach
 @endif

@@ -58,7 +58,12 @@ class PortfolioCategoryController extends \BaseController {
 	 */
 	public function show($array = NULL)
 	{
-		//
+		$val = '/'.trim($array);
+		$categories = Portfolio_Category::where('slug',$val)->select('id')->first();
+		$id = $categories->id;
+	
+		$projects = Portfolio::where('category_id',$id)->get(); 
+		return View::make('portfolios.projectsIndex_dark', compact('projects'));
 	}
 
 
