@@ -11,7 +11,9 @@
   <h2>Create Portfolio:</h2>
 
   {{ Form::model('portfolio', array('method' => 'POST', 'route' => array('portfolios.store'), 'role' => 'form')) }}
-	
+	@if($settings->theme == false)
+		<input type="hidden" value="1" name="category_id" />
+	@endif
   @if($settings->theme == true)
 	<div class="form-group">
 		<label>Portfolio Category</label>

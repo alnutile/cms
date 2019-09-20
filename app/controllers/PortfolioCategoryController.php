@@ -1,5 +1,6 @@
 <?php
 
+use CMS\Services\TagsService;
 
 class PortfolioCategoryController extends \BaseController {
 
@@ -8,7 +9,15 @@ class PortfolioCategoryController extends \BaseController {
      *
      * @return Response
      */
-   
+	 
+	public function __construct(Portfolio $portfolio = null, TagsService $tagsService = null)
+    {
+        parent::__construct();
+        $this->beforeFilter("auth", array('only' => ['adminIndex', 'create', 'delete', 'edit', 'update', 'store']));
+        $this->portfolio = ($portfolio == null) ? new Portfolio : $portfolio;
+        $this->tags = $tagsService;
+    }
+
 	public function adminIndex()
     {
 		
@@ -61,9 +70,9 @@ class PortfolioCategoryController extends \BaseController {
 		$val = '/'.trim($array);
 		$categories = Portfolio_Category::where('slug',$val)->select('id')->first();
 		$id = $categories->id;
-	
+		$settings = Setting::select('theme','logo','multiple_portfolio')->first();
 		$projects = Portfolio::where('category_id',$id)->get(); 
-		return View::make('portfolios.projectsIndex_dark', compact('projects'));
+		return View::make('portfolio_category.categoriesIndex_dark', compact('projects','settings'));
 	}
 
 

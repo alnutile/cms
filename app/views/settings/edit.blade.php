@@ -301,7 +301,7 @@
 				<div class="help-block">Use this turn set your site to portfolio.</div>
 			</div>
 		</div>
-		<div class="form-group" id="multiple_portfolio_ckeck" style="display:none">
+		<div class="form-group" id="multiple_portfolio_ckeck" @if($settings->theme == false) style="display:none" @endif>
 			<div class="controls">
 				<div class="checkbox">
 					<label class="checkbox">{{ Form::checkbox('multiple_portfolio', (int)$settings->multiple_portfolio) }} Check this to enable multiple portfolio. </label>
@@ -388,5 +388,17 @@
 	  }
 	}
 	
+	$( document ).ready(function() {
+		
+		var checkBox = document.getElementById("darktheme");
+		var checkBox1 = document.getElementById("enable_port");
+		var text = document.getElementById("multiple_portfolio_ckeck");
+		if (checkBox.checked == true && checkBox1.checked == true){
+			text.style.display = "block";
+		} else {
+			text.style.display = "none";
+		}
+		
+	});
 </script>
 @stop
