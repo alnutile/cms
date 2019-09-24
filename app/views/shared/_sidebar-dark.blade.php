@@ -6,6 +6,32 @@
   @foreach($top_left_nav as $item)
     <li class="{{Request::url() ==  URL::to($item['slug']) ? 'active':'not-active'}} dropdown movable">
 		<a href="{{URL::to($item['slug'])}}">{{$item['title']}}</a>
+		@if($settings->theme == true)
+			@if( isset($item['menu_parent']) && $item['menu_parent'] == 0 )
+				<?php
+					$submenu = [];
+					$submenu = DB::select('select * from pages where menu_parent = ?', array($item['id']));
+					$link_for_submenu = $_SERVER['PHP_SELF'];
+					$link_array_for_submenu = explode('/',$link_for_submenu);
+					$page_for_submenu = strtolower(str_replace('_', ' ',end($link_array_for_submenu)));
+					$i=0;
+					$sub_available_slug = [];
+				?>
+				@if(isset($submenu))
+					@foreach($submenu as $menu1)
+						<?php 
+							$sub_available_slug[] = strtolower(str_replace('/', '',str_replace('_', ' ',$menu1->slug)));
+							
+						?>
+					@endforeach
+					<ul class="nav nav-list tags_nav {{sizeof($sub_available_slug).'=='.$page_for_submenu}} @if( $page_for_submenu != strtolower(str_replace('/', '',str_replace('_', ' ', $item['slug']))) || sizeof($sub_available_slug) == 0 ) @if(!in_array($page_for_submenu, $sub_available_slug)) hide  @endif @endif" style="padding: 20px 0;">
+						@foreach($submenu as $menu)
+							<li class="{{ $page_for_submenu == strtolower(str_replace('/', '',str_replace('_', ' ', $menu->slug))) ? 'active' : 'not-active' }}" ><a href="{{URL::to($menu->slug)}}">{{$menu->title}}</a></li>					
+						@endforeach
+					</ul>
+				@endif			
+			@endif
+		@endif
 		@if($settings->multiple_portfolio == true)
 			@if(isset($item['is_portfolio']) && $item['is_portfolio'])
 				<ul class='nav nav-list tags_nav' role="menu{{$item['title']}}" style="padding: 20px 0;">
