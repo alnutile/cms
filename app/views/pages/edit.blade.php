@@ -152,10 +152,22 @@
                 @endif
               </select>
             </div>
-          </div>
-     
+          </div>     
           
         </div>
+		
+		<div class="row">
+			<div class="form-group col-md-12">				
+				  <label for="portfolio_category">Portfolio Category</label>
+				  <select id="portfolio_category_id" name="portfolio_category_id" class="form-control">
+					<option value="">select</option>
+					@foreach($portfolio_category as $ps)
+					<option value="{{$ps->id}}" @if( $ps->id == $page->portfolio_category_id ) selected @endif>{{$ps->name}}</option>		
+					@endforeach
+				  </select>				
+			</div>                   
+        </div>
+
 <br><br>
 			<div class="controls">
 				{{ Form::submit('Update Page', array('id' => 'submit', 'class' => 'btn btn-success')) }}
