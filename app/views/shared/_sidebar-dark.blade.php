@@ -11,7 +11,17 @@ $sub_available_slug = [];
 @if(isset($top_left_nav))
   @foreach($top_left_nav as $item)
     <li class="{{Request::url() ==  URL::to($item['slug']) ? 'active':'not-active'}} dropdown movable">
-		<a href="{{URL::to($item['slug'])}}" >{{$item['title']}} @if(isset($item['portfolio_category_id']) && $item['portfolio_category_id'] != 0) @if( $page_for_submenu != strtolower(str_replace('/', '',str_replace('_', ' ', $item['slug'])))) <i class="fa fa-caret-down"></i> @else<i class="fa fa-caret-up"></i> @endif @endif </a>
+		<a>
+			<a href="{{URL::to($item['slug'])}}">{{$item['title']}}</a>
+			@if(isset($item['portfolio_category_id']) && $item['portfolio_category_id'] != 0) 
+				<span data-toggle="collapse" data-target=".{{trim(preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']))}}" > 
+					@if( $page_for_submenu != strtolower(str_replace('/', '',str_replace('_', ' ', $item['slug'])))) 
+						<i class="fa fa-caret-down"></i> 
+					@else<i class="fa fa-caret-up"></i> 
+					@endif
+				</span> 
+			@endif 
+		</a>
 		@if($settings->theme == true)
 			@if( isset($item['menu_parent']) && $item['menu_parent'] == 0 )
 				<?php
@@ -22,9 +32,9 @@ $sub_available_slug = [];
 					@foreach($submenu as $menu1)
 						<?php $sub_available_slug[] = strtolower(str_replace('/', '',str_replace('_', ' ',$menu1->slug))); ?>
 					@endforeach
-					<ul class="nav nav-list tags_nav {{sizeof($sub_available_slug).'=='.$page_for_submenu}} @if( $page_for_submenu != strtolower(str_replace('/', '',str_replace('_', ' ', $item['slug']))) || sizeof($sub_available_slug) == 0 ) @if(!in_array($page_for_submenu, $sub_available_slug)) hide  @endif @endif" style="padding: 20px 0;">
+					<ul class="nav nav-list tags_nav {{trim(preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']))}} {{sizeof($sub_available_slug).'=='.$page_for_submenu}} @if( $page_for_submenu != strtolower(str_replace('/', '',str_replace('_', ' ', $item['slug']))) || sizeof($sub_available_slug) == 0 ) @if(!in_array($page_for_submenu, $sub_available_slug)) hided @endif @endif" style="padding: 20px 0;">
 						@foreach($submenu as $menu)
-							<li class="{{ $page_for_submenu == strtolower(str_replace('/', '',str_replace('_', ' ', $menu->slug))) ? 'active' : 'not-active' }}" ><a href="{{URL::to('/portfolio_categories'.$category['slug'])}}">{{$menu->name}}</a></li>					
+							<li class="{{ $page_for_submenu == strtolower(str_replace('/', '',str_replace('_', ' ', $menu->slug))) ? 'active' : 'not-active' }}" ><a href="@if(isset($category) && $category['slug'] != '') {{URL::to('/portfolio_categories'.$category['slug'])}} @endif">{{$menu->name}}</a></li>					
 						@endforeach
 					</ul>
 				@endif			
