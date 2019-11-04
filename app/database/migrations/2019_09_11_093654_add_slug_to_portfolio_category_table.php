@@ -14,7 +14,7 @@ class AddSlugToPortfolioCategoryTable extends Migration {
 	{
 		Schema::table('portfolio_category', function(Blueprint $table)
 		{
-			$table->string('slug');
+			$table->string('slug')->default('');
 		});
 	}
 
