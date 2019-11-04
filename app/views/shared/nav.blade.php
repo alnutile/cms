@@ -37,8 +37,7 @@
                 <li class=<?php if(Request::path() == 'menu') { echo 'active'; }?>><a href="/menus">Admin Menu</a></li>
                 @endif
 				@if($settings->multiple_portfolio == true && $settings->theme == true)
-					<li><a href="{{url('/portfolio')}}">Portfolio</a></li>
-                    <li class=<?php if(Request::path() == 'posts') { echo 'active'; }?>><a href="{{url('/admin/portfolio_categories/')}}">Portfolio Category</a></li>
+					<li class=<?php if(Request::path() == 'admin/portfolio_categories') { echo 'active'; }?>><a href="{{url('/admin/portfolio_categories/')}}">Portfolio Category</a></li>
 					
                 @endif
                 @if(Auth::check())
