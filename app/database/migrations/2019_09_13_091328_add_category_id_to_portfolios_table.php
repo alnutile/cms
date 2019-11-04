@@ -14,7 +14,7 @@ class AddCategoryIdToPortfoliosTable extends Migration {
 	{
 		Schema::table('portfolios', function(Blueprint $table)
 		{
-			$table->integer('category_id');
+			$table->integer('category_id')->default('');
 		});
 	}
 
