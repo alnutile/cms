@@ -159,7 +159,7 @@
 		}
 		// hides mobile menu on homepage for dark theme
 		if($('body.home').length) {
- 			$('ul.nav-list').css('display','block');
+ 			// $('ul.nav-list').css('display','block');
  			$('.mobile-menu').css('display','none');
  		}
 		

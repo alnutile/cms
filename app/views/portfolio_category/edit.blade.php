@@ -36,7 +36,8 @@
   <div class="form-group">
     <div class="controls">
       <div class="checkbox">
-        <label class="checkbox">{{ Form::checkbox('isactive', 1, ($categories->is_active == 1) ? "checked":"") ) }} Is Active</label>
+       <?php $checked = ($categories->is_active == 1) ? "checked" : ""; ?>	  
+        <label class="checkbox">{{ Form::checkbox('isactive', 1, $checked) }} Is Active</label>
       </div>
     </div>
   </div>
