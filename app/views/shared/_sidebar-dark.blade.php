@@ -51,7 +51,7 @@ $sub_available_slug = [];
 							$page = end($link_array);
 						?>
 						<li class="@if(strtolower($category['name']) ==  $page )active @else not-active @endif {{strtolower($item['title']).'=='.$page}} == {{ strtolower($category['name']) }}">
-						  <a href="{{URL::to('/portfolio_categories'.$category['slug'])}}">{{$category['name']}}</a>
+							<a href="{{URL::to('/portfolio_categories'.$category['slug'])}}?id={{$category['id']}}">{{$category['name']}}</a>
 						</li> 
 					  @endforeach
 					@endif

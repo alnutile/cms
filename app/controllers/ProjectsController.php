@@ -65,7 +65,8 @@ class ProjectsController extends \BaseController {
     {
         parent::show();
         $portfolios = Portfolio::allPortfoliosSelectOptions();
-        return View::make('projects.create', compact('portfolios'));
+		$category = Portfolio_Category::PortfolioCategoryName();
+        return View::make('projects.create', compact('portfolios', 'category'));
     }
 
     /**
@@ -82,8 +83,8 @@ class ProjectsController extends \BaseController {
 		if ($validator->fails())
         {
             return Redirect::back()->withErrors($validator)->withInput();
-        }
-		$project = Project::create($all);
+        }		
+		$project = Project::create($all);		
 		if(isset($all['tile_image'])) {
 			$this->imagesService->resizeAndSaveForProjects($all['tile_image'], $this->save_to, 'tile_image');
 			$data = $this->uploadFile($all, 'tile_image');
@@ -133,7 +134,8 @@ class ProjectsController extends \BaseController {
         $project = Project::find($id);
         $portfolios = Portfolio::allPortfoliosSelectOptions();
         $path = $this->project_uri;
-        return View::make('projects.edit', compact('project', 'portfolios', 'path'));
+		$category = Portfolio_Category::PortfolioCategoryName();
+        return View::make('projects.edit', compact('project', 'portfolios', 'path', 'category'));
     }
 
     /**
@@ -167,15 +169,13 @@ class ProjectsController extends \BaseController {
           $data['image'] = $project->image;
 
         }
+		$data['project_category'] = Input::get('project_category');		
         if(isset($data['tile_image'])) {
-			
 			$this->imagesService->resizeAndSaveForProjects($all['tile_image'], $this->save_to, 'tile_image');
 			$data = $this->uploadFile($data, 'tile_image');
-        } else {
+		} else {
             $data['tile_image'] = $project->tile_image;
         }
-
-
         if(isset($data['image_caption_update'])){
             $this->updateImagesCaption($data['image_caption_update']);
         }

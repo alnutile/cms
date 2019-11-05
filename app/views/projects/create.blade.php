@@ -192,6 +192,17 @@
                 @endif
             </div>
         @endif
+		@if($settings->theme == TRUE)
+            <div class="form-group">
+                <label for="email">Project Category</label>&nbsp;
+                {{ Form::select('project_category',$category, '', array('class' => 'form-control', 'tabindex' => 1)) }}
+                @if($errors->first('order'))
+                    <div class="alert alert-danger">
+                        {{  $errors->first('project_category'); }}
+                    </div>
+                @endif
+            </div>
+        @endif
                     <!--sort order-->
 
             <div class="form-group">

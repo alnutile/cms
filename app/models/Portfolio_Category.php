@@ -10,5 +10,13 @@ class Portfolio_Category extends \Eloquent {
 	];
 	
 	protected $fillable = ['name', 'slug'];
-		
+	
+	static public function PortfolioCategoryName() {
+		$ports = self::all();
+		$options = [];
+		foreach($ports as $port) {
+			$options[$port->id] = $port->name;
+		}
+		return $options;
+	}		
 }

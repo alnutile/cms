@@ -182,8 +182,19 @@
                     </div>
                 @endif
             </div>
-            @endif
-
+        @endif
+		
+		@if($settings->theme == TRUE)
+            <div class="form-group">
+                <label for="email">Project Category</label>&nbsp;
+                {{ Form::select('project_category',$category, $project->project_category, array('class' => 'form-control', 'tabindex' => 1)) }}
+                @if($errors->first('order'))
+                    <div class="alert alert-danger">
+                        {{  $errors->first('project_category'); }}
+                    </div>
+                @endif
+            </div>
+        @endif
                     <!--sort order-->
 
             <div class="form-group">
@@ -239,7 +250,7 @@
                         @endif
                         @if($project->tile_image)
                             <div class="row">
-                                <div>
+                                <div path="{{$path}}" project_tile_image="{{$project->tile_image}}">
 									@if(file_exists(public_path().'/img/projects/tile/'.$project->tile_image))
 										<img class="col-lg-4" src="/{{$path}}/tile/{{$project->tile_image}}" class="banner-show">
 									@else

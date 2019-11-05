@@ -25,6 +25,7 @@ class Project extends BaseModel implements StaplerableInterface {
         'order',
         'intro',
         'portfolio_id',
+		'project_category',
         'seo',
         'slug',
         'state_country',

@@ -229,3 +229,8 @@ ul.edit_images {
 		float: right;
 	}
 }
+
+/* 05-11-2019 add for home sidebar*/
+.home .sidebar-nav {
+    display: block !important;
+}
