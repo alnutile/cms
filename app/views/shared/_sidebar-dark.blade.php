@@ -39,7 +39,7 @@ $sub_available_slug = [];
 					@endforeach
 					<ul class="nav nav-list tags_nav collapse {{trim(preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']))}} {{sizeof($sub_available_slug).'=='.$page_for_submenu}} @if( $page_for_submenu != strtolower(str_replace('/', '',str_replace('_', ' ', $item['slug']))) || sizeof($sub_available_slug) == 0 ) @if(!in_array($page_for_submenu, $sub_available_slug)) hided @endif @endif" style="padding: 20px 0;margin-top: 20px; ">
 						@foreach($submenu as $menu)
-							<li class="{{ $page_for_submenu == strtolower(str_replace('/', '',str_replace('_', ' ', $menu->slug))) ? 'active' : 'not-active' }}" ><a href="@if(isset($category) && $category['slug'] != '') {{URL::to('/portfolio_categories'.$category['slug'])}} @endif" style="margin: 11px 0px 0px 20px;">{{$menu->name}}</a></li>					
+							<li class="{{ $page_for_submenu == strtolower(str_replace('/', '',str_replace('_', ' ', $menu->slug))) ? 'active' : 'not-active' }}" ><a href="{{URL::to('/portfolio_categories'.$category['slug'])}}?id={{$category['id']}}" style="margin: 11px 0px 0px 20px;">{{$menu->name}}</a></li>					
 						@endforeach
 					</ul>
 				@endif			
