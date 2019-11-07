@@ -244,16 +244,18 @@ ul.edit_images {
 	   min-width: -webkit-fill-available;
 	}
 	#dark .tags_nav li a{
-		 margin-bottom: 5px;
-			
+		 margin-bottom: 5px;			
 	}
 	#dark .nav-list li, #dark li{
 	   float: right;
 	}
 		
 	#dark li a, .second_tags_nav li a{
-	   padding: 5px !important;
-	   display: inline-block;
+	    padding: 6px !important;
+	   
+	}
+	#dark li a{
+		/*display: inline-block;*/
 	}
 	.sidebar-nav{
 		display: inline;
