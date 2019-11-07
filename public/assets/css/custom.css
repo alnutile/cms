@@ -235,9 +235,6 @@ ul.edit_images {
     display: block !important;
 }
 /**/
-.sidebar-nav .tags_nav li a{
-		display: display-inline;
-	}
 @media (min-width: 992px){
 	
 	#dark span{
