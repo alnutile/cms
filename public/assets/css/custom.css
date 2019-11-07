@@ -253,6 +253,7 @@ ul.edit_images {
 		
 	#dark li a, .second_tags_nav li a{
 	   padding: 5px !important;
+	   display: inline-block;
 	}
 	.sidebar-nav{
 		display: inline;
