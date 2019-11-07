@@ -248,21 +248,16 @@ ul.edit_images {
 	}
 	#dark .nav-list li, #dark li{
 	   float: right;
-	}
-		
+	}		
 	#dark li a, .second_tags_nav li a{
 	    padding: 6px !important;
 	   
-	}
-	#dark li a{
-		/*display: inline-block;*/
-	}
+	}	
 	.sidebar-nav{
 		display: inline;
 	}
 	.sidebar-nav .second_tags_nav li{
 			display: contents;
-	}
-	
+	}	
 }
 /**/
