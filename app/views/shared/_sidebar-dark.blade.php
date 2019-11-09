@@ -18,7 +18,7 @@ $sub_available_slug = [];
 				$submenu = DB::select('select * from portfolio_category where id = ?', array($item['portfolio_category_id']));			
 			?>
 		@endif
-		<a href="{{URL::to($item['slug'])}}" ><span>{{$item['title']}}</span></a>
+		<a href="{{URL::to($item['slug'])}}" class="pull-right"><span>{{$item['title']}}</span></a>
 		@if(isset($item['portfolio_category_id']) && $item['portfolio_category_id'] != 0) 
 			<span data-toggle="collapse" data-target=".{{trim(preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']))}}" class="@if(isset($item['portfolio_category_id']) && ($item['portfolio_category_id'] == 0 || $item['portfolio_category_id'] == '')) hide @endif submenu-cl" sizeof="{{sizeof($submenu)}}" > 
 				@if( $page_for_submenu != strtolower(str_replace('/', '',str_replace('_', ' ', $item['slug'])))) 
@@ -35,33 +35,15 @@ $sub_available_slug = [];
 					@foreach($submenu as $menu1)
 						<?php $sub_available_slug[] = strtolower(str_replace('/', '',str_replace('_', ' ',$menu1->slug))); ?>
 					@endforeach
-					<ul class="nav nav-list tags_nav collapse {{trim(preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']))}} {{sizeof($sub_available_slug).'=='.$page_for_submenu}} @if( $page_for_submenu != strtolower(str_replace('/', '',str_replace('_', ' ', $item['slug']))) || sizeof($sub_available_slug) == 0 ) @if(!in_array($page_for_submenu, $sub_available_slug)) hided @endif @endif" style="padding: 20px 0;margin-top: 20px; ">
+					<ul class="pull-right nav nav-list tags_nav collapse {{trim(preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']))}} {{sizeof($sub_available_slug).'=='.$page_for_submenu}} @if( $page_for_submenu != strtolower(str_replace('/', '',str_replace('_', ' ', $item['slug']))) || sizeof($sub_available_slug) == 0 ) @if(!in_array($page_for_submenu, $sub_available_slug)) hided @endif @endif" style="padding: 0;">
 						@foreach($submenu as $menu)
-							<li class="{{ $page_for_submenu == strtolower(str_replace('/', '',str_replace('_', ' ', $menu->slug))) ? 'active' : 'not-active' }}" ><a href="{{URL::to('/portfolio_categories'.$category['slug'])}}?id={{$category['id']}}" style="margin: 11px 0px 0px 20px;" class="pull-right">{{$menu->name}}</a></li>					
+							<li class="{{ $page_for_submenu == strtolower(str_replace('/', '',str_replace('_', ' ', $menu->slug))) ? 'active' : 'not-active' }}" ><a href="{{URL::to('/portfolio_categories'.$menu->slug)}}?id={{$menu->id}}" style="margin: 11px 0px 0px 20px;" class="pull-right">{{$menu->name}}</a></li>					
 						@endforeach
 					</ul>
 				@endif			
 			@endif
 		@endif
-		@if($settings->multiple_portfolio == true)
-			@if(isset($item['is_portfolio']) && $item['is_portfolio'])
-				<!--<ul class='nav nav-list tags_nav' role="menu{{$item['title']}}" style="padding: 20px 0;">
-					@if(isset($portfolio_category)) 
-					  @foreach($portfolio_category as $category)
-						<?php 
-							$link = Request::url();
-							$link_array = explode('/',$link);
-							$page = end($link_array);
-						?>
-						<li class="@if(strtolower($category['name']) ==  $page )active @else not-active @endif {{strtolower($item['title']).'=='.$page}} == {{ strtolower($category['name']) }}">
-							<a href="{{URL::to('/portfolio_categories'.$category['slug'])}}?id={{$category['id']}}">{{$category['name']}}</a>
-						</li> 
-					  @endforeach
-					@endif
-				</ul>-->
-			@endif	
-		@endif	
-    </li>      
+	</li>      
   @endforeach
 @endif
 </ul>

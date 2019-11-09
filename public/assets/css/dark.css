@@ -43,6 +43,7 @@ img.img-responsive:hover {
 .submenu-cl{
 	position: absolute;
     top: 8px;
+	right: -6px;
 }
 /* image css 12/10/2018 */
 .img_section {
