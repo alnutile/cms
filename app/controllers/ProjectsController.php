@@ -87,9 +87,12 @@ class ProjectsController extends \BaseController {
 		$project = Project::create($all);		
 		if(isset($all['tile_image'])) {
 			$this->imagesService->resizeAndSaveForProjects($all['tile_image'], $this->save_to, 'tile_image');
-			$data = $this->uploadFile($all, 'tile_image');
-			$all = $data;
-		}		
+			$img_obj = $all['tile_image'];
+			$filename    = $img_obj->getClientOriginalName();
+			$dest = public_path() .'\img\projects';
+			$img_obj->move($dest, $filename);
+            Project::where('slug',$all['slug']) ->update(['tile_image' => $filename]);
+		}
 		if(isset($all['images'])) {
             $this->projectsService->addImages($project->id, $all['images'], 'Project');
 //            $this->imagesService->cropAndSaveForPages($all['image'], $this->save_to);
@@ -97,9 +100,7 @@ class ProjectsController extends \BaseController {
 		if(isset($all['tags']) && !empty($all['tags'])) {
 			$tags = explode(',', $all['tags']);
             $this->tagsService->attachNewTags($project->id, $tags, 'Project');
-        }
-		
-		
+        }		
 		return Redirect::route('admin_projects')->withMessage("Created Project");
     }
 
@@ -145,10 +146,8 @@ class ProjectsController extends \BaseController {
      * @return Response
      */
     public function update($id)
-    {
-		
+    {		
         $project  = Project::findOrFail($id);
-
         //1. see if the slug is the same as the original
         //2. if it is then we will not validate against right
         $all = Input::all();
@@ -158,8 +157,7 @@ class ProjectsController extends \BaseController {
         $data = $this->checkPublished($all);
 		
         if ($validator->fails())
-        {
-			
+        {			
 			return Redirect::back()->withErrors($validator)->withInput();
         }
         if(isset($data['image'])) {
@@ -167,13 +165,12 @@ class ProjectsController extends \BaseController {
 			$data = $this->uploadFile($data, 'image');
         } else {
           $data['image'] = $project->image;
-
         }
 		$data['project_category'] = Input::get('project_category');		
-        if(isset($data['tile_image'])) {
+        if(isset($data['tile_image'])) {			
 			$this->imagesService->resizeAndSaveForProjects($all['tile_image'], $this->save_to, 'tile_image');
-			$data = $this->uploadFile($data, 'tile_image');
-		} else {
+			$data = $this->uploadFile($data, 'tile_image');			
+        } else {
             $data['tile_image'] = $project->tile_image;
         }
         if(isset($data['image_caption_update'])){
@@ -182,19 +179,14 @@ class ProjectsController extends \BaseController {
         if(isset($data['image_order_update'])){
             $this->updateImagesOrder($data['image_order_update']);
         }
-
         if(isset($data['images'])) {
 //            $this->imagesService->cropAndSaveForPages($all['images'], $this->save_to);
             $this->projectsService->addImages($project->id, $data['images'], 'Project');
         }
-
         if(isset($data['tags'])) {
             $this->tagsService->addtags($project->id, $data['tags'], 'Project');
         }
-
-
         $project->update($data);
-
         return Redirect::route('admin_projects')->withMessage("Updated Project!");
     }
 
