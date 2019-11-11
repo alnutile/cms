@@ -21,17 +21,14 @@ $sub_available_slug = [];
 			?>
 		@endif
 		<a 
-		{{(isset($item['menu_parent']) && $item['menu_parent'] == 0) ? '' : 'href="'.URL::to($item['slug']).'"'}} @if(!isset($item['is_portfolio'])) {{(isset($item['portfolio_category_id']) && $item['portfolio_category_id'] != 0) ? '' : 'data-toggle="collapse" data-target=".'.trim(preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug'])).'"'}} @endif
-		class="pull-right" sizeofsubmenu="{{sizeof($sub_menu)}}" ><span>{{$item['title']}}</span></a>
-		@if(isset($item['portfolio_category_id']) && $item['portfolio_category_id'] != 0) 
-			<span data-toggle="collapse" data-target=".{{trim(preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']))}}" class="@if(isset($item['portfolio_category_id']) && ($item['portfolio_category_id'] == 0 || $item['portfolio_category_id'] == '')) hide @endif submenu-cl"  > 
-				@if( $page_for_submenu != strtolower(str_replace('/', '',str_replace('_', ' ', $item['slug'])))) 
-					<i class="fa fa-caret-down"></i> 
-				@else<i class="fa fa-caret-down"></i> 
-				@endif
-			</span> 
-		@endif
+		{{ ( ( isset($item['menu_parent']) && $item['menu_parent'] != 0 ) || sizeof($submenu) != 0 ) ? '' : 'href="'.URL::to($item['slug']).'"'}} 
 		
+		@if( count($submenu) > 0 || count($submenu) > 0 )
+			data-toggle="collapse" data-target=".{{trim( preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']) )}}"
+		@endif
+		class="pull-right submenu-cl 
+		@if(isset($item['portfolio_category_id']) && count($submenu) == 0 ) hide @endif" 
+		size_submenu="{{count($sub_menu)}}" size_portfolio="{{sizeof($submenu)}}" ><span>{{$item['title']}}</span> </a>		
 		@if($settings->theme == true)
 			@if( isset($item['menu_parent']) && $item['menu_parent'] == 0 )
 				
@@ -41,9 +38,9 @@ $sub_available_slug = [];
 					@endforeach				
 					@if(sizeof($submenu) != 0)						
 						<ul class="pull-right nav nav-list tags_nav collapse {{trim(preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']))}} {{sizeof($sub_available_slug).'=='.$page_for_submenu}} @if( $page_for_submenu != strtolower(str_replace('/', '',str_replace('_', ' ', $item['slug']))) || sizeof($sub_available_slug) == 0 ) @if(!in_array($page_for_submenu, $sub_available_slug)) hided @endif @endif" style="padding: 0;">
-							<!--<li class="" ><a href="{{URL::to($item['slug'])}}" style="margin: 11px 0px 0px 20px;" class="pull-right">{{$item['title']}}</a></li>-->
+							<li class="" ><a href="{{URL::to($item['slug'])}}" style="margin: 11px 0px 0px 20px;" class="pull-right">{{$item['title']}}</a></li>
 							@foreach($submenu as $menu)
-								<li class="{{ $page_for_submenu == strtolower(str_replace('/', '',str_replace('_', ' ', $menu->slug))) ? 'active' : 'not-active' }}" ><a href="{{URL::to('/portfolio_categories'.$menu->slug)}}?id={{$menu->id}}" style="margin: 11px 0px 0px 20px;" class="pull-right">{{$menu->name}}</a></li>					
+								<li class="{{ $page_for_submenu == strtolower(str_replace('/', '',str_replace('_', ' ', $menu->slug))) ? 'active' : 'not-active' }} portfolio_category" ><a href="{{URL::to('/portfolio_categories'.$menu->slug)}}?id={{$menu->id}}"  class="pull-right">- {{$menu->name}}</a></li>					
 							@endforeach
 						</ul>
 					@endif

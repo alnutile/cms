@@ -258,6 +258,9 @@ ul.edit_images {
 	}
 	.sidebar-nav .second_tags_nav li{
 			display: contents;
-	}	
+	}
+	#dark .portfolio_category{
+		width: 50%;
+	}
 }
 /**/
