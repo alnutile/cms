@@ -17,14 +17,14 @@
     <div class="portfolio-wrap">
         @foreach($projects as $p)
         <div class="col-xs-3 col-md-4 project_block">
-            <a href="/projects/{{$p->id}}/edit">
+            <a href="{{$p->slug}}">
 
                 <div class="proj_img">
 				
 				@if($p->thumbs->url() && file_exists(public_path($p->thumbs->url())) )                    
-                    <img class="col-md-6 img-thumbnail" src="<?= $p->thumbs->url('project_top')?>" alt="{{$p->title}}" class="img-responsive">
+                    <img src="<?= $p->thumbs->url('project_top')?>" alt="{{$p->title}}" class="img-responsive">
 				@elseif ($p->image)
-					<img id="project-top-image" src="/img/projects/{{$p->image}}" alt="{{$p->title}}">                
+					<img id="project-top-image" src="/img/projects/{{$p->image}}" alt="{{$p->title}}" class="img-responsive" >                
                 @endif  
 					
                 </div>
