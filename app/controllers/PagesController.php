@@ -222,7 +222,7 @@ class PagesController extends \BaseController {
                 $page->title = $page_update['title'];
                 $page->body = $page_update['body'];
                 $page->slug = (isset($page_update['slug'])) ?  $page_update['slug'] : $page->slug;
-                $page->portfolio_category_id = $page_update['portfolio_category_id'];
+                $page->portfolio_category_id = $page_update['portfolio_category_id'] ? $page_update['portfolio_category_id'] : 0;
                 if(!Input::get('enable_menu'))
                 {
                   $page->menu_sort_order = 0;
