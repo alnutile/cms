@@ -23,12 +23,10 @@ $sub_available_slug = [];
 		<a 
 		{{ ( ( isset($item['menu_parent']) && $item['menu_parent'] != 0 ) || sizeof($submenu) != 0 ) ? '' : 'href="'.URL::to($item['slug']).'"'}} 
 		
-		@if( count($submenu) > 0 || count($submenu) > 0 )
+		@if( count($submenu) > 0 || count($sub_menu) > 0 )
 			data-toggle="collapse" data-target=".{{trim( preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']) )}}"
 		@endif
-		class="pull-right submenu-cl 
-		@if(isset($item['portfolio_category_id']) && count($submenu) == 0 ) hide @endif" 
-		size_submenu="{{count($sub_menu)}}" size_portfolio="{{sizeof($submenu)}}" >@if( count($submenu) > 0 || count($submenu) > 0 ) <span>  <i class="fa fa-angle-down"></i></span> @endif <span>{{$item['title']}}&nbsp;&nbsp;&nbsp;</span></a>		
+		class="pull-right submenu-cl" >@if( count($submenu) > 0 || count($sub_menu) > 0 ) <span>  <i class="fa fa-angle-down"></i></span> @endif <span>{{$item['title']}}&nbsp;&nbsp;&nbsp;</span></a>		
 		@if($settings->theme == true)
 			@if( isset($item['menu_parent']) && $item['menu_parent'] == 0 )
 				
@@ -53,7 +51,7 @@ $sub_available_slug = [];
 						<?php $sub_available_slug[] = strtolower(str_replace('/', '',str_replace('_', ' ',$menu1->slug))); ?>
 					@endforeach					
 					@if(sizeof($sub_menu) != 0)
-						<ul class="pull-right nav nav-list tags_nav collapse {{trim(preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']))}} {{sizeof($sub_available_slug).'=='.$page_for_submenu}} @if( $page_for_submenu != strtolower(str_replace('/', '',str_replace('_', ' ', $item['slug']))) || sizeof($sub_available_slug) == 0 ) @if(!in_array($page_for_submenu, $sub_available_slug)) hided @endif @endif" style="padding: 0;">
+						<ul class="pull-right nav nav-list tags_nav collapse {{trim(preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']))}}  @if( $page_for_submenu != strtolower(str_replace('/', '',str_replace('_', ' ', $item['slug']))) || sizeof($sub_available_slug) == 0 ) @if(!in_array($page_for_submenu, $sub_available_slug)) hided @endif @endif" style="padding: 0;">
 							<li class="" ><a href="{{URL::to($item['slug'])}}" style="margin: 11px 0px 0px 20px;" class="pull-right">{{$item['title']}}</a></li>
 							@foreach($sub_menu as $menu)
 								<li class="{{ $page_for_submenu == strtolower(str_replace('/', '',str_replace('_', ' ', $menu->slug))) ? 'active' : 'not-active' }}" ><a href="{{URL::to($menu->slug)}}" style="margin: 11px 0px 0px 20px;" class="pull-right">{{$menu->title}}</a></li>					
