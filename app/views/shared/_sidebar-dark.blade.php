@@ -26,24 +26,23 @@ $sub_available_slug = [];
 		@if( count($submenu) > 0 || count($sub_menu) > 0 )
 			data-toggle="collapse" data-target=".{{trim( preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']) )}}"
 		@endif
-		class="pull-right submenu-cl" >@if( count($submenu) > 0 || count($sub_menu) > 0 ) <span>  <i class="fa fa-angle-down"></i></span> @endif <span>{{$item['title']}}&nbsp;&nbsp;&nbsp;</span></a>		
-		@if($settings->theme == true)
-			@if( isset($item['menu_parent']) && $item['menu_parent'] == 0 )
-				
-				@if(isset($submenu))
-					@foreach($submenu as $menu1)
-						<?php $sub_available_slug[] = strtolower(str_replace('/', '',str_replace('_', ' ',$menu1->slug))); ?>
-					@endforeach				
-					@if(sizeof($submenu) != 0)						
-						<ul class="pull-right nav nav-list tags_nav collapse {{trim(preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']))}} {{sizeof($sub_available_slug).'=='.$page_for_submenu}} @if( $page_for_submenu != strtolower(str_replace('/', '',str_replace('_', ' ', $item['slug']))) || sizeof($sub_available_slug) == 0 ) @if(!in_array($page_for_submenu, $sub_available_slug)) hided @endif @endif" style="padding: 0;">
-							<li class="" ><a href="{{URL::to($item['slug'])}}" style="margin: 11px 0px 0px 20px;" class="pull-right">{{$item['title']}}</a></li>
-							@foreach($submenu as $menu)
-								<li class="{{ $page_for_submenu == strtolower(str_replace('/', '',str_replace('_', ' ', $menu->slug))) ? 'active' : 'not-active' }} portfolio_category1" ><a href="{{URL::to('/portfolio_categories'.$menu->slug)}}?id={{$menu->id}}"  class="pull-right">{{$menu->name}}</a></li>					
-							@endforeach
-						</ul>
-					@endif
-				@endif			
-			@endif
+		class="pull-right submenu-cl" 
+		size_submenu="{{count($sub_menu)}}" size_portfolio="{{sizeof($submenu)}}" >@if( count($submenu) > 0 || count($sub_menu) > 0 ) <span>  <i class="fa fa-angle-down"></i></span> @endif <span>{{$item['title']}}&nbsp;&nbsp;&nbsp;</span></a>		
+		@if($settings->theme == true)				
+			@if(isset($submenu))
+				@foreach($submenu as $menu1)
+					<?php $sub_available_slug[] = strtolower(str_replace('/', '',str_replace('_', ' ',$menu1->slug))); ?>
+				@endforeach				
+				@if(sizeof($submenu) != 0)						
+					<ul class="pull-right nav nav-list tags_nav collapse {{trim(preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']))}}" style="padding: 0;">
+						<li class="" ><a href="{{URL::to($item['slug'])}}" style="margin: 11px 0px 0px 20px;" class="pull-right">{{$item['title']}}</a></li>
+						@foreach($submenu as $menu)
+							<li class="{{ $page_for_submenu == strtolower(str_replace('/', '',str_replace('_', ' ', $menu->slug))) ? 'active' : 'not-active' }} portfolio_category1" ><a href="{{URL::to('/portfolio_categories'.$menu->slug)}}?id={{$menu->id}}"  class="pull-right">{{$menu->name}}</a></li>					
+						@endforeach
+					</ul>
+				@endif
+			@endif			
+			
 			@if(sizeof($sub_menu) != 0 )
 				
 				@if(isset($sub_menu))
@@ -51,7 +50,7 @@ $sub_available_slug = [];
 						<?php $sub_available_slug[] = strtolower(str_replace('/', '',str_replace('_', ' ',$menu1->slug))); ?>
 					@endforeach					
 					@if(sizeof($sub_menu) != 0)
-						<ul class="pull-right nav nav-list tags_nav collapse {{trim(preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']))}}  @if( $page_for_submenu != strtolower(str_replace('/', '',str_replace('_', ' ', $item['slug']))) || sizeof($sub_available_slug) == 0 ) @if(!in_array($page_for_submenu, $sub_available_slug)) hided @endif @endif" style="padding: 0;">
+						<ul class="pull-right nav nav-list tags_nav collapse {{trim(preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']))}}" style="padding: 0;">
 							<li class="" ><a href="{{URL::to($item['slug'])}}" style="margin: 11px 0px 0px 20px;" class="pull-right">{{$item['title']}}</a></li>
 							@foreach($sub_menu as $menu)
 								<li class="{{ $page_for_submenu == strtolower(str_replace('/', '',str_replace('_', ' ', $menu->slug))) ? 'active' : 'not-active' }}" ><a href="{{URL::to($menu->slug)}}" style="margin: 11px 0px 0px 20px;" class="pull-right">{{$menu->title}}</a></li>					
