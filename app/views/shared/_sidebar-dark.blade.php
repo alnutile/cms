@@ -21,13 +21,17 @@ $sub_available_slug = [];
 			?>
 		@endif
 		<a 
-		{{ ( ( isset($item['menu_parent']) && $item['menu_parent'] != 0 ) || sizeof($submenu) != 0 ) ? '' : 'href="'.URL::to($item['slug']).'"'}} 
-		
 		@if( count($submenu) > 0 || count($sub_menu) > 0 )
 			data-toggle="collapse" data-target=".{{trim( preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']) )}}"
+		@else
+			href="{{URL::to($item['slug'])}}"
 		@endif
-		class="pull-right submenu-cl" 
-		size_submenu="{{count($sub_menu)}}" size_portfolio="{{sizeof($submenu)}}" >@if( count($submenu) > 0 || count($sub_menu) > 0 ) <span>  <i class="fa fa-angle-down"></i></span> @endif <span>{{$item['title']}}&nbsp;&nbsp;&nbsp;</span></a>		
+		class="pull-right submenu-cl" >
+			@if( count($submenu) > 0 || count($sub_menu) > 0 ) 
+				<span>  <i class="fa fa-angle-down"></i></span> 
+			@endif 
+			<span>{{$item['title']}}&nbsp;&nbsp;&nbsp;</span>
+		</a>		
 		@if($settings->theme == true)				
 			@if(isset($submenu))
 				@foreach($submenu as $menu1)
