@@ -12,26 +12,25 @@ $sub_available_slug = [];
 @if(isset($top_left_nav))
   @foreach($top_left_nav as $item)
     <li class="{{Request::url() ==  URL::to($item['slug']) ? 'active':'not-active'}} dropdown movable" >
+		<?php $submenu = []; $sub_menu = [];?>
 		@if( isset($item['menu_parent']) && $item['menu_parent'] == 0 )
 			<?php
-				$submenu = [];
 				$submenu = DB::select('select * from portfolio_category where id = ?', array($item['portfolio_category_id']));
-				$sub_menu = [];
 				$sub_menu = DB::select('select * from pages where menu_parent = ?', array($item['id']));
 			?>
 		@endif
-		<a 
-		@if( count($submenu) > 0 || count($sub_menu) > 0 )
-			data-toggle="collapse" data-target=".{{trim( preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']) )}}"
-		@else
-			href="{{URL::to($item['slug'])}}"
-		@endif
-		class="pull-right submenu-cl" >
-			@if( count($submenu) > 0 || count($sub_menu) > 0 ) 
-				<span>  <i class="fa fa-angle-down"></i></span> 
-			@endif 
-			<span>{{$item['title']}}&nbsp;&nbsp;&nbsp;</span>
-		</a>		
+			<a 
+			@if( count($submenu) > 0 || count($sub_menu) > 0 )
+				data-toggle="collapse" data-target=".{{trim( preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']) )}}"
+			@else
+				href="{{URL::to($item['slug'])}}"
+			@endif
+			class="pull-right submenu-cl" >
+				@if( count($submenu) > 0 || count($sub_menu) > 0 ) 
+					<span>  <i class="fa fa-angle-down"></i></span>
+				@endif 
+				<span>{{$item['title']}}&nbsp;&nbsp;&nbsp;</span>
+			</a>		
 		@if($settings->theme == true)				
 			@if(isset($submenu))
 				@foreach($submenu as $menu1)
