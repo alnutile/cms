@@ -37,7 +37,7 @@ class PortfoliosController extends \BaseController {
     public function projectsIndex()
     {
         parent::show();
-        $projects = Project::where('published', '=', 1)->orderBy('order')->get();
+        $projects = Project::where('published', '=', 1)->where('project_category', 0)->orWhereNull('project_category')->orderBy('order')->get();
         $tags = $this->tags->get_tags_for_type('Project');
         if($this->settings->theme == true) {
 			return View::make('portfolios.projectsIndex_dark', compact('projects', 'tags'));
