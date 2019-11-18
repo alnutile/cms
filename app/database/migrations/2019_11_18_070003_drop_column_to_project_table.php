@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ChangeDatatypeProjectCategory extends Migration {
+class DropColumnToProjectTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -14,8 +14,8 @@ class ChangeDatatypeProjectCategory extends Migration {
 	{
 		Schema::table('projects', function(Blueprint $table)
 		{
-			$table->text('project_category')->change();
-		});	
+			$table->dropColumn('project_category');
+		});
 	}
 
 	/**

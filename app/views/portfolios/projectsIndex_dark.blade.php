@@ -19,7 +19,7 @@
         <div class="col-xs-3 col-md-4 project_block">
             <a href="{{$p->slug}}">
 
-               <div class="proj_img here">
+               <div class="proj_img">
 					@if($p->thumbs->url() && file_exists(public_path($p->thumbs->url())) )                    
 						<img src="<?= $p->thumbs->url('project_top')?>" alt="{{$p->title}}" class="img-responsive">
 					@elseif ($p->image)
