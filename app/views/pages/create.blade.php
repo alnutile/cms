@@ -164,7 +164,7 @@
 		<div class="row">
 			<div class="form-group col-md-12">				
 				  <label for="portfolio_category">Portfolio Category (Optional)</label>
-				  <select id="portfolio_category_id" name="portfolio_category_id" class="form-control" multiple>
+				  <select id="portfolio_category_id" name="portfolio_category_id[]" class="form-control portfolio_category_select" multiple="multiple">
 					<option value="">select</option>
 					@foreach($portfolio_category as $ps)
 					<option value="{{$ps->id}}">{{$ps->name}}</option>		
@@ -192,8 +192,7 @@
 
 @section('js')
 <script type="text/javascript">
-
-  $(document).on('change','#enable_menu',function(){
+$(document).on('change','#enable_menu',function(){
     if(this.checked) {
       $('#menu-section').show();
     } else {

@@ -46,7 +46,7 @@
     @if(file_exists(public_path().'/assets/css/customProject.css'))
     {{ HTML::style('assets/css/customProject.css') }}
 	@endif
-
+	{{ HTML::style('https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css') }}
 
 
 
@@ -166,6 +166,7 @@ window.theme = {{$settings->theme}};
 </script>
 {{ HTML::script('/assets/js/jquery-1.11.js') }}
 {{ HTML::script('/assets/js/jquery-3.4.1.min.js') }}
+{{ HTML::script('https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js') }}
 {{ HTML::script('/assets/js/noty-2.2.2/js/noty/packaged/jquery.noty.packaged.min.js') }}
 {{ HTML::script('/assets/js/jquery-sortable.js') }}
 {{ HTML::script('/assets/js/bootstrap/bootstrap.min.js') }}
@@ -198,6 +199,12 @@ window.theme = {{$settings->theme}};
 @if(file_exists(public_path().'/assets/js/custom.js'))
 {{ HTML::script('/assets/js/custom.js') }}
 @endif
+{{ HTML::script('https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js') }}
+<script type="text/javascript">
+$(document).ready(function() {
+		$('.portfolio_category_select').select2();
+});
+</script>
 <script type="text/javascript">
 	// Add padding to top of body tag if logged into admin on both themes
 	jQuery(function($) {
