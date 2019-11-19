@@ -166,7 +166,7 @@ class ProjectsController extends \BaseController {
         } else {
           $data['image'] = $project->image;
         }
-		$data['project_category'] = Input::get('project_category');		
+		$data['project_category'] = Input::has('project_category') ? Input::get('project_category') : 0;		
         if(isset($data['tile_image'])) {			
 			$this->imagesService->resizeAndSaveForProjects($all['tile_image'], $this->save_to, 'tile_image');
 			$data = $this->uploadFile($data, 'tile_image');			
@@ -186,7 +186,7 @@ class ProjectsController extends \BaseController {
         if(isset($data['tags'])) {
             $this->tagsService->addtags($project->id, $data['tags'], 'Project');
         }
-        $project->update($data);
+		$project->update($data);
         return Redirect::route('admin_projects')->withMessage("Updated Project!");
     }
 
