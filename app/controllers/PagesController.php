@@ -140,7 +140,12 @@ class PagesController extends \BaseController {
                 $input['menu_parent'] = 0;
               }
             }
-            $input['portfolio_category_id'] = Input::get('portfolio_category_id');
+            if(Input::get('portfolio_category_id') && Input::get('portfolio_category_id') != ''){
+				$portfolio_category_id = implode(',', $page_update['portfolio_category_id']);
+			}else{
+				$portfolio_category_id = '';
+			}
+			$input['portfolio_category_id'] = $portfolio_category_id;
 						$page = Page::create($input);
 						$banner = $this->bannerSet($page);
                      //  return Redirect::to('pages.admin_index'->withMessage("Created Page");
@@ -222,7 +227,12 @@ class PagesController extends \BaseController {
                 $page->title = $page_update['title'];
                 $page->body = $page_update['body'];
                 $page->slug = (isset($page_update['slug'])) ?  $page_update['slug'] : $page->slug;
-                $page->portfolio_category_id = $page_update['portfolio_category_id'] ? $page_update['portfolio_category_id'] : 0;
+				if(isset($page_update['portfolio_category_id']) && $page_update['portfolio_category_id'] != ''){
+					$portfolio_category_id = implode(',', $page_update['portfolio_category_id']);
+				}else{
+					$portfolio_category_id = '';
+				}
+                $page->portfolio_category_id = $portfolio_category_id; 
                 if(!Input::get('enable_menu'))
                 {
                   $page->menu_sort_order = 0;
