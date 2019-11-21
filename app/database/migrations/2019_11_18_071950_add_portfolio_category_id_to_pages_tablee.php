@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddColumnProjectCategoryInProject extends Migration {
+class AddPortfolioCategoryIdToPagesTablee extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,9 +12,9 @@ class AddColumnProjectCategoryInProject extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('projects', function(Blueprint $table)
+		Schema::table('pages', function(Blueprint $table)
 		{
-			$table->integer('project_category')->nullable();
+			$table->text('portfolio_category_id')->nullable();
 		});
 	}
 
@@ -25,7 +25,7 @@ class AddColumnProjectCategoryInProject extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('projects', function(Blueprint $table)
+		Schema::table('pages', function(Blueprint $table)
 		{
 			//
 		});
