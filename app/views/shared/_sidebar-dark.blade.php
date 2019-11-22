@@ -15,7 +15,8 @@ $sub_available_slug = [];
 		<?php $submenu = []; $sub_menu = [];?>
 		@if( isset($item['menu_parent']) && $item['menu_parent'] == 0 )
 			<?php
-				$submenu = DB::select('select * from portfolio_category where id = ?', array($item['portfolio_category_id']));
+				$portfolio_category_id_list = explode(",", $item['portfolio_category_id']);
+				$submenu = DB::table('portfolio_category') ->whereIn('id', $portfolio_category_id_list)->get();
 				$sub_menu = DB::select('select * from pages where menu_parent = ?', array($item['id']));
 			?>
 		@endif
@@ -54,7 +55,9 @@ $sub_available_slug = [];
 					@endforeach					
 					@if(sizeof($sub_menu) != 0)
 						<ul class="pull-right nav nav-list tags_nav collapse {{trim(preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']))}}" style="padding: 0;">
-							<li class="" ><a href="{{URL::to($item['slug'])}}" style="margin: 11px 0px 0px 20px;" class="pull-right">{{$item['title']}}</a></li>
+							@if(sizeof($submenu) == 0)
+								<li class="" ><a href="{{URL::to($item['slug'])}}" style="margin: 11px 0px 0px 20px;" class="pull-right">{{$item['title']}}</a></li>
+							@endif
 							@foreach($sub_menu as $menu)
 								<li class="{{ $page_for_submenu == strtolower(str_replace('/', '',str_replace('_', ' ', $menu->slug))) ? 'active' : 'not-active' }}" ><a href="{{URL::to($menu->slug)}}" style="margin: 11px 0px 0px 20px;" class="pull-right">{{$menu->title}}</a></li>					
 							@endforeach
