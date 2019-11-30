@@ -38,8 +38,6 @@ class PagesController extends \BaseController {
 	{
 		parent::show();
 		$pages = $this->pages->all();
-		// print_r($pages);
-		// dd($pages);
 		$banner = $this->banner;
 		return View::make('pages.admin_index', compact('pages', 'settings'));
     }
@@ -109,20 +107,21 @@ class PagesController extends \BaseController {
          *
          * @return Response
          */
-        public function store() {
-        
+        public function store() {        
     	// Added from Andy's code example
         $input = Input::all();
-      //  die($input);
         $rules = Page::$rules;
-        // print_r($rules);
-                   
+        
+		$validator = $this->validateSlugOnCreate($input, $rules);
+		if ($validator->fails())
+        {
+            return Redirect::back()->withErrors($validator)->withInput();
+        }
+		 
 		$validator = Validator::make($input, array('slug' => 'regex:/^\/[A-Za-z0-9_\-]+$/')); 
                                                  
 					if($validator->passes()) {
                      
-                     // print_r(array_values($input));
-                     // die("in validator test") ;
              if(!Input::get('published'))
             {
               $input['published'] = 0;
