@@ -7,7 +7,7 @@ class Page extends \Eloquent {
         'title' => 'required',
         'seo'   => 'required',
         //'image' => 'mimes:jpg,jpeg,bmp,png,gif',
-        'slug'  => 'required|unique:pages|unique:projects|regex:/^\/[A-Za-z0-9_]+$/'
+        'slug'  => 'required|unique:posts|unique:pages|unique:projects|regex:/^\/[A-Za-z0-9_]+$/'
     );
     // Moved this section down to match Posts model
      protected $fillable = [
