@@ -268,12 +268,11 @@
                 <div class="help-block">Use this to enable dark theme.</div>
             </div>
         </div>
-		@if($settings->theme == TRUE)
-		<div class="form-group">
+		<div class="form-group" id="read_more_ckeck" @if($settings->theme == false) style="display:none" @endif>
             <div class="controls">
                 <div class="checkbox">
                     <label class="checkbox">
-						{{ Form::checkbox('view_readmore_status', null) }} Check to disable 'read more' links on projects                            
+						{{ Form::checkbox('view_readmore_status', null, null, array()) }} Check to disable 'read more' links on projects                            
 						@if($settings->theme == TRUE)
 							(<a href="http://corbettresearchgroupinc.com/admin_projects_dark" target="_blank">Help</a>)
                         @endif
@@ -285,7 +284,6 @@
                 </div>
             </div>
         </div>
-		@endif
 		<div class="form-group">
             <div class="controls">
                 <div class="checkbox">
@@ -382,24 +380,15 @@
 	  var checkBox = document.getElementById("darktheme");
 	  var checkBox1 = document.getElementById("enable_port");
 	  var text = document.getElementById("multiple_portfolio_ckeck");
+	  var text1 = document.getElementById("read_more_ckeck");
 	  if (checkBox.checked == true && checkBox1.checked == true){
 		text.style.display = "block";
+		text1.style.display = "block";
 	  } else {
 		 text.style.display = "none";
+		 text1.style.display = "none";
 	  }
 	}
 	
-	$( document ).ready(function() {
-		
-		var checkBox = document.getElementById("darktheme");
-		var checkBox1 = document.getElementById("enable_port");
-		var text = document.getElementById("multiple_portfolio_ckeck");
-		if (checkBox.checked == true && checkBox1.checked == true){
-			text.style.display = "block";
-		} else {
-			text.style.display = "none";
-		}
-		
-	});
 </script>
 @stop
