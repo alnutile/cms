@@ -237,22 +237,6 @@
 		<div class="form-group">
             <div class="controls">
                 <div class="checkbox">
-                    <label class="checkbox">
-						{{ Form::checkbox('view_readmore_status', null) }} Check to disable 'read more' links on projects                            
-						@if($settings->theme == TRUE)
-							(<a href="http://corbettresearchgroupinc.com/admin_projects_dark" target="_blank">Help</a>)
-                        @endif
-
-                        @if($settings->theme == FALSE)
-							(<a href="http://corbettresearchgroupinc.com/admin_projects_light" target="_blank">Help</a>)
-                        @endif
-					</label>
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="controls">
-                <div class="checkbox">
                     <label class="checkbox">{{ Form::checkbox('maintenance_mode', null) }} Maintenance Mode
 						@if($settings->theme == true)
 							(<a href="http://corbettresearchgroupinc.com/admin_settings_dark" target="_blank">Help</a>)
@@ -266,7 +250,6 @@
                 <div class="help-block">If you want the website hidden from the Visitor AND the search engines, until you are ready to publish.</div>
             </div>
         </div>
-
         <div class="form-group">
             <div class="controls">
                 <div class="checkbox">
@@ -285,6 +268,24 @@
                 <div class="help-block">Use this to enable dark theme.</div>
             </div>
         </div>
+		@if($settings->theme == TRUE)
+		<div class="form-group">
+            <div class="controls">
+                <div class="checkbox">
+                    <label class="checkbox">
+						{{ Form::checkbox('view_readmore_status', null) }} Check to disable 'read more' links on projects                            
+						@if($settings->theme == TRUE)
+							(<a href="http://corbettresearchgroupinc.com/admin_projects_dark" target="_blank">Help</a>)
+                        @endif
+
+                        @if($settings->theme == FALSE)
+							(<a href="http://corbettresearchgroupinc.com/admin_projects_light" target="_blank">Help</a>)
+                        @endif
+					</label>
+                </div>
+            </div>
+        </div>
+		@endif
 		<div class="form-group">
             <div class="controls">
                 <div class="checkbox">
