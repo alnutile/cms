@@ -284,7 +284,7 @@
                     @endif
 
                 </div>
-                <!--end top image-->
+				<!--end top image-->
                 <br>
                 <br>
                 <!-- images upload -->
