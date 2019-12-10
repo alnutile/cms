@@ -223,7 +223,7 @@
             </div>
         @endif
 		<div class="form-group">
-            <label> 
+            <label for="tag-manager">Tag Manager</label>
             {{ Form::textarea('tag_manager_content', $setting->tag_manager_content, array('rows' => 10, 'with' => '100%', 'class' => 'form-control tag_manager_content')) }}
         </div>
 		<div class="form-group">
