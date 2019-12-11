@@ -69,7 +69,7 @@ class PortfolioCategoryController extends \BaseController {
 	{
 		$settings = Setting::select('theme','logo','multiple_portfolio')->first();
 		$project_category = Request::get('id');
-		$projects = Project::where('project_category',$project_category)->get();
+		$projects = Project::where('project_category',$project_category)->where('published', '=', 1)->get();
 		return View::make('portfolio_category.categoriesIndex_dark', compact('projects','settings'));
 	}
 
@@ -131,11 +131,7 @@ class PortfolioCategoryController extends \BaseController {
 	}
 	
 	private function validateSlugOnCreatePortfolioCategory($all, $rules) {
-		$rules = [
-			'name' => 'required',
-			'slug'  => 'required|unique:pages|unique:portfolios|unique:portfolio_category|unique:posts|unique:projects|regex:/^\/[A-Za-z0-9_]+$/'
-		];
-        $messages  = array(
+		$messages  = array(
             'slug.unique' => 'The url is not unique .',
             'slug.regex'  => 'The url must start with a slash and contain only letters and numbers, no spaces.'
         );
@@ -148,11 +144,7 @@ class PortfolioCategoryController extends \BaseController {
         $messages = [];
 		
 		if (isset($all['slug']) && $all['slug'] != $model->slug) {
-			$rules = [
-				'name' => 'required',
-				'slug'  => 'required|unique:pages|unique:portfolios|unique:portfolio_category|unique:posts|unique:projects|regex:/^\/[A-Za-z0-9_]+$/'
-			];
-            $messages = array(
+			$messages = array(
                 'slug.unique' => 'The url is not unique.',
                 'slug.regex'  => 'The url must start with a slash and contain only letters and numbers, no spaces.'
             );

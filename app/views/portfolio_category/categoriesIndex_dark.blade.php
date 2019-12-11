@@ -20,14 +20,16 @@
             <a href="{{$p->slug}}">
 
                 <div class="proj_img">
-				
-				@if($p->thumbs->url() && file_exists(public_path($p->thumbs->url())) )                    
-                    <img src="<?= $p->thumbs->url('project_top')?>" alt="{{$p->title}}" class="img-responsive">
-				@elseif ($p->image)
-					<img id="project-top-image" src="/img/projects/{{$p->image}}" alt="{{$p->title}}" class="img-responsive" >                
-                @endif  
-					
-                </div>
+				@if ($p->tile_image)
+					@if(file_exists(public_path().'/img/projects/tile/'.$p->tile_image))
+						<img src="/img/projects/tile/{{$p->tile_image}}" alt="{{$p->title}}" class="img-responsive">
+					@else
+						<img src="/img/projects/{{$p->tile_image}}" alt="{{$p->title}}" class="img-responsive">
+					@endif
+				@else
+				<img  src="/img/default/photo_default_0.png" alt="{{$p->title}}" class="img-responsive">
+				@endif
+				</div>
             <div class="project_grid_title">{{$p->title}}</div></a>
         </div>
         @endforeach		

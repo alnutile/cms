@@ -153,8 +153,9 @@ class ProjectsController extends \BaseController {
         $all = Input::all();
 
         $rules = Project::$rules;
+		
         $validator = $this->validateSlugEdit($all, $project, $rules);
-        $data = $this->checkPublished($all);
+		$data = $this->checkPublished($all);
 		
         if ($validator->fails())
         {			

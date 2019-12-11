@@ -6,7 +6,7 @@ class Portfolio extends BaseModel {
 	'category_id' => 'required',
     'title' => 'required',
     'body'  => 'required',
-    'slug'  => 'required|unique:portfolios|regex:/^\/[A-Za-z0-9_]+$/'
+    'slug'  => 'required|unique:portfolios|unique:posts|unique:pages|unique:projects|unique:portfolio_category|regex:/^\/[A-Za-z0-9_]+$/'
   ];
 
 
