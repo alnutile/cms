@@ -5,8 +5,9 @@
 $link_for_submenu = $_SERVER['PHP_SELF'];
 $link_array_for_submenu = explode('/',$link_for_submenu);
 $page_for_submenu = strtolower(str_replace('_', ' ',end($link_array_for_submenu)));
+$page_for_submenu1 = Request::segment(1);
+$page_for_submenu2 = Request::segment(2);
 ?>
-
 <ul class="nav nav-list dark" id="dark">
 @if(isset($top_left_nav))
   @foreach($top_left_nav as $item)
@@ -36,9 +37,9 @@ $page_for_submenu = strtolower(str_replace('_', ' ',end($link_array_for_submenu)
 						
 				@if(sizeof($submenu) != 0)						
 					<ul class="pull-right nav nav-list tags_nav collapse {{trim(preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']))}}" style="padding: 0;">
-						<li class="{{ $page_for_submenu == trim( preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']) ) ? 'active' : 'not-active' }}" ><a href="{{URL::to($item['slug'])}}" style="margin: 11px 0px 0px 20px;" class="pull-right">{{$item['title']}}</a></li>
+						<li class="{{ '/'.$page_for_submenu1 == $item['slug'] ? 'active' : 'not-active' }}" a1="{{$page_for_submenu1}}" a2="{{$page_for_submenu2}}==true" ifcond="{{ '/'.$page_for_submenu2.' == '.$item['slug']}}" ><a href="{{URL::to($item['slug'])}}" style="margin: 11px 0px 0px 20px;" class="pull-right">{{$item['title']}}</a></li>
 						@foreach($submenu as $menu)
-							<li class="{{ $page_for_submenu == strtolower(str_replace('/', '',str_replace('_', ' ', $menu->slug))) ? 'active' : 'not-active' }} portfolio_category1" ><a href="{{URL::to('/portfolio_categories'.$menu->slug)}}?id={{$menu->id}}"  class="pull-right">{{$menu->name}}</a></li>					
+							<li class="{{ '/'.$page_for_submenu2 == $menu->slug ? 'active' : 'not-active' }}" ><a href="{{URL::to('/portfolio_categories'.$menu->slug)}}?id={{$menu->id}}"  class="pull-right">{{$menu->name}}</a></li>					
 						@endforeach
 					</ul>
 				@endif
@@ -51,10 +52,10 @@ $page_for_submenu = strtolower(str_replace('_', ' ',end($link_array_for_submenu)
 					@if(sizeof($sub_menu) != 0)
 						<ul class="pull-right nav nav-list tags_nav collapse {{trim(preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']))}}" style="padding: 0;">
 							@if(sizeof($submenu) == 0)
-								<li class="{{ $page_for_submenu == trim( preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']) ) ? 'active' : 'not-active' }}" ><a href="{{URL::to($item['slug'])}}" style="margin: 11px 0px 0px 20px;" class="pull-right">{{$item['title']}}</a></li>
+								<li class="{{ '/'.$page_for_submenu1 == $item['slug'] ? 'active' : 'not-active' }}" a1="{{$page_for_submenu1}}==true" a2="{{$page_for_submenu2}}" ifcond="{{ '/'.$page_for_submenu1.' == '.$item['slug']}}" ><a href="{{URL::to($item['slug'])}}" style="margin: 11px 0px 0px 20px;" class="pull-right">{{$item['title']}}</a></li>
 							@endif
 							@foreach($sub_menu as $menu)
-								<li class="{{ $page_for_submenu == strtolower(str_replace('/', '',str_replace('_', ' ', $menu->slug))) ? 'active' : 'not-active' }}" ><a href="{{URL::to($menu->slug)}}" style="margin: 11px 0px 0px 20px;" class="pull-right">{{$menu->title}}</a></li>					
+								<li class="{{ '/'.$page_for_submenu1 == $menu->slug ? 'active' : 'not-active' }}" ><a href="{{URL::to($menu->slug)}}" style="margin: 11px 0px 0px 20px;" class="pull-right">{{$menu->title}}</a></li>					
 							@endforeach
 						</ul>
 					@endif
