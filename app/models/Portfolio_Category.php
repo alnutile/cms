@@ -12,7 +12,7 @@ class Portfolio_Category extends \Eloquent {
 	protected $fillable = ['name', 'slug'];
 	
 	static public function PortfolioCategoryName() {
-		$ports = self::all();
+		$ports = self::where('is_active', 1)->get();
 		$options = [];
 		foreach($ports as $port) {
 			$options[$port->id] = $port->name;

@@ -15,7 +15,7 @@ $page_for_submenu = strtolower(str_replace('_', ' ',end($link_array_for_submenu)
 		@if( isset($item['menu_parent']) && $item['menu_parent'] == 0 )
 			<?php
 				$portfolio_category_id_list = explode(",", $item['portfolio_category_id']);
-				$submenu = DB::table('portfolio_category') ->whereIn('id', $portfolio_category_id_list)->select('id','slug','name')->get();
+				$submenu = DB::table('portfolio_category') ->whereIn('id', $portfolio_category_id_list)->where('is_active', 1)->select('id','slug','name')->get();
 				$sub_menu = DB::select('select * from pages where menu_parent = ?', array($item['id']));
 			?>
 		@endif

@@ -19,7 +19,7 @@ class BaseController extends Controller {
         $this->settings   = ($settings == NULL) ? Setting::first() : $settings;
         $this->portfolio  = ($portfolio == NULL) ? Portfolio::all() : $portfolio;
         $this->filesystem = ($filesystem == NULL) ? new Filesystem : $filesystem;
-        $this->portfolio_category = ($portfolio_category == NULL) ? Portfolio_Category::all() : $portfolio_category;
+        $this->portfolio_category = ($portfolio_category == NULL) ? Portfolio_Category::where('is_active', 1)->get() : $portfolio_category;
 		/* Calculating nav*/
         if(Request::method('get'))
         {

@@ -195,8 +195,8 @@
 		@if($settings->theme == TRUE)
             <div class="form-group">
                 <label for="email">Project Category (Optional)</label>&nbsp;
-                {{ Form::select('project_category',array_merge(['Select'], $category), '', array('class' => 'form-control','name'=>'project_category')) }}
-                @if($errors->first('order'))
+				{{ Form::select('project_category',array( 0 =>'Select') + $category, $project->project_category, array('class' => 'form-control','name'=>'project_category')) }}
+				@if($errors->first('order'))
                     <div class="alert alert-danger">
                         {{  $errors->first('project_category'); }}
                     </div>
