@@ -125,6 +125,7 @@ class PortfolioCategoryController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
+		Project::where('project_category', $id)->update(['project_category' => 0]);
 		Page::where('portfolio_category_id', $id)->update(['portfolio_category_id' => 0]);
 		Portfolio_Category::destroy($id);		
         return Redirect::route('portfolio_categories');
