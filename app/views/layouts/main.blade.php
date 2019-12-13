@@ -265,8 +265,8 @@ $(document).ready(function() {
 	$(document).ready(function(){
 		$('.nav li').each(function(){
 			if($(this).find('li').hasClass('active')){
-				// $(this).addClass('active');
-				// $('.active').closest('ul').addClass('collepse in');
+				$(this).addClass('active');
+				$('.active').find('ul').addClass('collepse in');
 				$(this).removeClass('not-active');
 			}else if($(this).find('a').hasClass('active')){
 				// $(this).addClass('active');
