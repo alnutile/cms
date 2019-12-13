@@ -7,11 +7,15 @@ $link_array_for_submenu = explode('/',$link_for_submenu);
 $page_for_submenu = strtolower(str_replace('_', ' ',end($link_array_for_submenu)));
 $page_for_submenu1 = Request::segment(1);
 $page_for_submenu2 = Request::segment(2);
+if(!isset($page_slug))
+	$page_slug = $page_for_submenu1;	
+if(!isset($cat_slug))
+	$cat_slug = '';
 ?>
 <ul class="nav nav-list dark" id="dark">
 @if(isset($top_left_nav))
   @foreach($top_left_nav as $item)
-    <li class="{{Request::url() ==  URL::to($item['slug']) ? 'active':'not-active'}} dropdown movable" >
+    <li class="{{('/'.$page_slug ==  $item['slug']) ? 'active':'not-active'}} dropdown movable" >
 		<?php $submenu = []; $sub_menu = [];?>
 		@if( isset($item['menu_parent']) && $item['menu_parent'] == 0 )
 			<?php
@@ -36,10 +40,10 @@ $page_for_submenu2 = Request::segment(2);
 			@if(isset($submenu))
 						
 				@if(sizeof($submenu) != 0)						
-					<ul class="pull-right nav nav-list tags_nav collapse {{trim(preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']))}}" style="padding: 0;">
+					<ul class="pull-right nav nav-list tags_nav collapse {{('/'.$page_slug ==  $item['slug']) ? 'in' : ''}} {{trim(preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']))}}" style="padding: 0;">
 						<li class="{{ '/'.$page_for_submenu1 == $item['slug'] ? 'active' : 'not-active' }}" a1="{{$page_for_submenu1}}" a2="{{$page_for_submenu2}}==true" ifcond="{{ '/'.$page_for_submenu2.' == '.$item['slug']}}" ><a href="{{URL::to($item['slug'])}}" style="margin: 11px 0px 0px 20px;" class="pull-right">{{$item['title']}}</a></li>
 						@foreach($submenu as $menu)
-							<li class="{{ '/'.$page_for_submenu2 == $menu->slug ? 'active' : 'not-active' }}" ><a href="{{URL::to('/portfolio_categories'.$menu->slug)}}?id={{$menu->id}}"  class="pull-right">{{$menu->name}}</a></li>					
+							<li class="@if('/'.$page_slug ==  $item['slug']) {{ '/'.$cat_slug == $menu->slug ? 'active' : 'not-active' }} @else 'not-active' @endif" ><a href="{{URL::to('/portfolio_categories/'.trim( preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']) ).$menu->slug)}}?id={{$menu->id}}"  class="pull-right">{{$menu->name}}</a></li>					
 						@endforeach
 					</ul>
 				@endif
@@ -50,7 +54,7 @@ $page_for_submenu2 = Request::segment(2);
 				@if(isset($sub_menu))
 									
 					@if(sizeof($sub_menu) != 0)
-						<ul class="pull-right nav nav-list tags_nav collapse {{trim(preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']))}}" style="padding: 0;">
+						<ul class="pull-right nav nav-list tags_nav collapse {{('/'.$page_slug ==  $item['slug']) ? 'in' : ''}} {{trim(preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']))}}" style="padding: 0;">
 							@if(sizeof($submenu) == 0)
 								<li class="{{ '/'.$page_for_submenu1 == $item['slug'] ? 'active' : 'not-active' }}" a1="{{$page_for_submenu1}}==true" a2="{{$page_for_submenu2}}" ifcond="{{ '/'.$page_for_submenu1.' == '.$item['slug']}}" ><a href="{{URL::to($item['slug'])}}" style="margin: 11px 0px 0px 20px;" class="pull-right">{{$item['title']}}</a></li>
 							@endif

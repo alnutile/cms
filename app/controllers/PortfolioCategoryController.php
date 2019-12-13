@@ -65,12 +65,12 @@ class PortfolioCategoryController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($array = NULL)
+	public function show($page_slug = NULL, $cat_slug = NULL)
 	{
 		$settings = Setting::select('theme','logo','multiple_portfolio')->first();
 		$project_category = Request::get('id');
 		$projects = Project::where('project_category',$project_category)->where('published', '=', 1)->get();
-		return View::make('portfolio_category.categoriesIndex_dark', compact('projects','settings'));
+		return View::make('portfolio_category.categoriesIndex_dark', compact('projects','settings', 'page_slug', 'cat_slug'));
 	}
 
 

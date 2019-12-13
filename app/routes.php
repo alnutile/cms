@@ -18,6 +18,7 @@ Route::resource('banners', 'BannersController');
 Route::resource('settings', 'SettingsController');
 Route::resource('portfolios', 'PortfoliosController');
 Route::resource('portfolio_categories', 'PortfolioCategoryController');
+Route::get('/portfolio_categories/{page_slug}/{slug}', 'PortfolioCategoryController@show');
 Route::resource('projects', 'ProjectsController');
 Route::resource('posts', 'PostsController');
 
