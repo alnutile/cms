@@ -132,7 +132,7 @@ class PagesController extends \BaseController {
 							$already_assign_portfolio .= '<li>'.$data->name.'</li>';
 					}
 					$already_assign_portfolio .= '</ul>';
-					Session::put('message' , 'Selected category is already assigned to another page.<br>'.$already_assign_portfolio);
+					Session::put('message' , 'Below category is already assigned to another page.<br>'.$already_assign_portfolio);
 					Session::put('type' , 'danger');
 					return Redirect::back()->withInput();
 				}
@@ -249,7 +249,7 @@ class PagesController extends \BaseController {
 								$already_assign_portfolio .= '<li>'.$data->name.'</li>';
 						}
 						$already_assign_portfolio .= '</ul>';
-						Session::put('message' , 'Selected category is already assigned to another page.<br>'.$already_assign_portfolio);
+						Session::put('message' , 'Below category is already assigned to another page.<br>'.$already_assign_portfolio);
 						Session::put('type' , 'danger');
 						return Redirect::back()->withInput();
 					}
