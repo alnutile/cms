@@ -120,7 +120,23 @@ class PagesController extends \BaseController {
 		 
 		$validator = Validator::make($input, array('slug' => 'regex:/^\/[A-Za-z0-9_\-]+$/')); 
                                                  
-					if($validator->passes()) {
+			if($validator->passes()) {
+				if(Input::get('portfolio_category_id') && Input::get('portfolio_category_id') != ''){
+				$store_portfolio_category_id = Input::get('portfolio_category_id');
+				 $check = $this->checkPortfolioAssign($store_portfolio_category_id);
+				 if($check != false){
+					// dd($check);
+					$already_assign_portfolio = '<ul>';
+					foreach($this->portfolio_category as $data){
+						if(in_array($data->id,$check))
+							$already_assign_portfolio .= '<li>'.$data->name.'</li>';
+					}
+					$already_assign_portfolio .= '</ul>';
+					Session::put('message' , 'Selected category is already assigned to another page.<br>'.$already_assign_portfolio);
+					Session::put('type' , 'danger');
+					return Redirect::back()->withInput();
+				}
+			}
                      
              if(!Input::get('published'))
             {
@@ -222,6 +238,22 @@ class PagesController extends \BaseController {
             $validator = Validator::make($page_update, array('slug' => 'regex:/^\/[A-Za-z0-9_\-]+$/'));
             $page = Page::find($id);
             if($validator->passes()) {
+				if($page->portfolio_category_id != 0 && $page->portfolio_category_id != '' && Input::get('portfolio_category_id') && Input::get('portfolio_category_id') != ''){
+					$store_portfolio_category_id = Input::get('portfolio_category_id');
+					 $check = $this->checkPortfolioAssign($store_portfolio_category_id, $page->portfolio_category_id);
+					 if($check != false){
+						// dd($check);
+						$already_assign_portfolio = '<ul>';
+						foreach($this->portfolio_category as $data){
+							if(in_array($data->id,$check))
+								$already_assign_portfolio .= '<li>'.$data->name.'</li>';
+						}
+						$already_assign_portfolio .= '</ul>';
+						Session::put('message' , 'Selected category is already assigned to another page.<br>'.$already_assign_portfolio);
+						Session::put('type' , 'danger');
+						return Redirect::back()->withInput();
+					}
+				}
                 $page->seo = $page_update['seo'];
                 $page->title = $page_update['title'];
                 $page->body = $page_update['body'];
@@ -276,6 +308,31 @@ class PagesController extends \BaseController {
         return Redirect::route('pages.index');
     }
 
+	public function checkPortfolioAssign($store_portfolio_category_id, $db_portfolio_category_id = ''){
+		$b = [];
+		$already_assign_portfolio_id_detect = [];
+		if($db_portfolio_category_id != '')
+			$b = explode(',',$db_portfolio_category_id);		
+		$assign_sub_page = Page::where('portfolio_category_id', '!=', '')->select('portfolio_category_id')->get()->toArray();
+			$assign_cat_ids = [];
+			foreach($assign_sub_page as $cat_ids){
+				$a = explode(',',$cat_ids['portfolio_category_id']);
+				foreach($a as $cat_id){
+					$assign_cat_ids[] = $cat_id;
+				}
+			}
+			$assign_cat_ids = array_unique($assign_cat_ids);
+			foreach($store_portfolio_category_id as $id){
+				if(!in_array($id,$b)){
+					if(in_array($id,$assign_cat_ids))
+						$already_assign_portfolio_id_detect[] = $id;						
+				}
+				
+			}
+			if(sizeof($already_assign_portfolio_id_detect) > 0){
+				return $already_assign_portfolio_id_detect;
+			}
+			return false;			
+	}
 
-
-    }
+}
