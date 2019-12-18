@@ -17,17 +17,18 @@
     <div class="portfolio-wrap">
         @foreach($projects as $p)
         <div class="col-xs-3 col-md-4 project_block">
-            <a href="{{$p->slug}}">
-
-               @if ($p->tile_image)
-					@if(file_exists(public_path().'/img/projects/tile/'.$p->tile_image))
-						<img src="/img/projects/tile/{{$p->tile_image}}" alt="{{$p->title}}" class="img-responsive">
+            <a href="{{$p->slug}}" src1="/img/projects/tile/{{$p->tile_image}}" src2="/img/projects/{{$p->tile_image}}">
+				<div class="proj_img">
+				   @if ($p->tile_image)
+						@if(file_exists(public_path().'/img/projects/tile/'.$p->tile_image))
+							<img src="/img/projects/tile/{{$p->tile_image}}" alt="{{$p->title}}" class="img-responsive">
+						@else
+							<img src="/img/projects/{{$p->tile_image}}" alt="{{$p->title}}" class="img-responsive">
+						@endif
 					@else
-						<img src="/img/projects/{{$p->tile_image}}" alt="{{$p->title}}" class="img-responsive">
+					<img  src="/img/default/photo_default_0.png" alt="{{$p->title}}" class="img-responsive">
 					@endif
-				@else
-				<img  src="/img/default/photo_default_0.png" alt="{{$p->title}}" class="img-responsive">
-				@endif
+				</div>
             <div class="project_grid_title">{{$p->title}}</div></a>
         </div>
         @endforeach
