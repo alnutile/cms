@@ -17,7 +17,7 @@
     <div class="portfolio-wrap">
         @foreach($projects as $p)
         <div class="col-xs-3 col-md-4 project_block">
-            <a href="{{$p->slug}}" src1="/img/projects/tile/{{$p->tile_image}}" src2="/img/projects/{{$p->tile_image}}">
+            <a href="{{$p->slug}}">
 				<div class="proj_img">
 				   @if ($p->tile_image)
 						@if(file_exists(public_path().'/img/projects/tile/'.$p->tile_image))
