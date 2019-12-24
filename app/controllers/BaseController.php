@@ -9,16 +9,18 @@ class BaseController extends Controller {
     protected $filesystem;
     public $settings;
     public $portfolio;
+    public $portfolio_category;
     public $top_left_nav; 
     public $sub_nav;
     protected $banner = FALSE;
 
     public function __construct(Setting $settings = NULL, Portfolio $portfolio = NULL, Filesystem $filesystem = NULL ,
-                                Page $top_left_nav = NULL, Page $sub_nav = NULL) {
+                                Page $top_left_nav = NULL, Page $sub_nav = NULL, Portfolio_Category $portfolio_category = NULL) {
         $this->settings   = ($settings == NULL) ? Setting::first() : $settings;
         $this->portfolio  = ($portfolio == NULL) ? Portfolio::all() : $portfolio;
         $this->filesystem = ($filesystem == NULL) ? new Filesystem : $filesystem;
-        /* Calculating nav*/
+        $this->portfolio_category = ($portfolio_category == NULL) ? Portfolio_Category::where('is_active', 1)->get() : $portfolio_category;
+		/* Calculating nav*/
         if(Request::method('get'))
         {
           $this->top_left_nav = ($top_left_nav == NULL) ? Page::getAllSubNavParents() : $top_left_nav;
@@ -43,6 +45,7 @@ class BaseController extends Controller {
         \View::share('settings', $this->settings);
         \View::share('top_left_nav', $this->top_left_nav);
         \View::share('sub_nav', $this->sub_nav);
+		\View::share('portfolio_category', $this->portfolio_category);
 		
     }
 	public function show($array = NULL) {

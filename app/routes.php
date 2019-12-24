@@ -17,6 +17,8 @@ Route::resource('users', 'UsersController');
 Route::resource('banners', 'BannersController');
 Route::resource('settings', 'SettingsController');
 Route::resource('portfolios', 'PortfoliosController');
+Route::resource('portfolio_categories', 'PortfolioCategoryController');
+Route::get('/portfolio_categories/{page_slug}/{slug}', 'PortfolioCategoryController@show');
 Route::resource('projects', 'ProjectsController');
 Route::resource('posts', 'PostsController');
 
@@ -57,6 +59,13 @@ Route::get('/admin/posts', array(
   'before' => 'auth',
   'as'     => 'admin_posts',
   'uses'   => 'PostsController@adminIndex'
+));
+
+
+Route::get('/admin/portfolio_categories', array( 
+  'before' => 'auth',
+  'as'     => 'portfolio_categories',
+  'uses'   => 'PortfolioCategoryController@adminIndex'
 ));
 
 Route::get('/admin', array('before' => 'auth', 'uses' => 'AdminController@dash'));

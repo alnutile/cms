@@ -229,3 +229,38 @@ ul.edit_images {
 		float: right;
 	}
 }
+
+/* 05-11-2019 add for home sidebar*/
+.home .sidebar-nav {
+    display: block !important;
+}
+/**/
+@media (min-width: 992px){
+	
+	#dark span{
+		float: right;
+	}
+	#dark .nav-list a {
+	   min-width: -webkit-fill-available;
+	}
+	#dark .tags_nav li a{
+		 margin-bottom: 5px;			
+	}
+	#dark .nav-list li, #dark li{
+	   float: right;
+	}		
+	#dark li a, .second_tags_nav li a{
+	    padding: 6px !important;
+	   
+	}	
+	.sidebar-nav{
+		display: inline;
+	}
+	.sidebar-nav .second_tags_nav li{
+			display: contents;
+	}
+	#dark .portfolio_category{
+		width: 50%;
+	}
+}
+/**/

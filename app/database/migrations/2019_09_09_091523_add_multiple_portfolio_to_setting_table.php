@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddColumnTagManagerContentAndAddTagManagerInHeaderInSettingsLast extends Migration {
+class AddMultiplePortfolioToSettingTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -14,8 +14,7 @@ class AddColumnTagManagerContentAndAddTagManagerInHeaderInSettingsLast extends M
 	{
 		Schema::table('settings', function(Blueprint $table)
 		{
-			$table->boolean('add_tag_manager_in_header')->default(0);
-			$table->string('tag_manager_content',5000)->nullable();
+			$table->tinyInteger('multiple_portfolio')->default('0');
 		});
 	}
 
@@ -28,7 +27,7 @@ class AddColumnTagManagerContentAndAddTagManagerInHeaderInSettingsLast extends M
 	{
 		Schema::table('settings', function(Blueprint $table)
 		{
-			//
+			$table->dropColumn('multiple_portfolio');
 		});
 	}
 

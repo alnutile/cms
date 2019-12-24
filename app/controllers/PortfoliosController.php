@@ -37,7 +37,7 @@ class PortfoliosController extends \BaseController {
     public function projectsIndex()
     {
         parent::show();
-        $projects = Project::where('published', '=', 1)->orderBy('order')->get();
+        $projects = Project::where('published', '=', 1)->where('project_category', 0)->orWhereNull('project_category')->orderBy('order')->get();
         $tags = $this->tags->get_tags_for_type('Project');
         if($this->settings->theme == true) {
 			return View::make('portfolios.projectsIndex_dark', compact('projects', 'tags'));
@@ -54,8 +54,8 @@ class PortfoliosController extends \BaseController {
     public function adminIndex($portfolio = NULL)
     {
         parent::show();
-        $portfolios = Portfolio::OrderByOrder()->get();
-
+		$portfolios = Portfolio::OrderByOrder()->leftJoin('Portfolio_Category','Portfolio_Category.id','=','portfolios.category_id')->select('portfolios.id','title','order','published','name')->get();
+        
         return View::make('portfolios.admin_index', compact('portfolios'));
     }
 
@@ -67,7 +67,8 @@ class PortfoliosController extends \BaseController {
     public function create()
     {
         parent::show();
-        return View::make('portfolios.create');
+		$categories = Portfolio_Category::get();
+        return View::make('portfolios.create', compact('categories'));
     }
 
     /**
@@ -124,8 +125,8 @@ class PortfoliosController extends \BaseController {
     {
         parent::show();
         $portfolio = Portfolio::find($id);
-
-        return View::make('portfolios.edit', compact('portfolio'));
+		$categories = Portfolio_Category::get();
+		return View::make('portfolios.edit', compact('portfolio','categories'));
     }
 
     /**
@@ -166,5 +167,5 @@ class PortfoliosController extends \BaseController {
 
         return Redirect::route('portfolios.index');
     }
-
+	
 }

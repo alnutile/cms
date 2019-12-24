@@ -46,7 +46,7 @@
     @if(file_exists(public_path().'/assets/css/customProject.css'))
     {{ HTML::style('assets/css/customProject.css') }}
 	@endif
-
+	{{ HTML::style('https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css') }}
 
 
 
@@ -71,7 +71,7 @@
         })();
 
     </script>
-	
+
 	@if( $settings->add_tag_manager_in_header != 0 )
 		<?php echo $settings->tag_manager_content; ?>
 	@endif
@@ -197,6 +197,12 @@ window.theme = {{$settings->theme}};
 @if(file_exists(public_path().'/assets/js/custom.js'))
 {{ HTML::script('/assets/js/custom.js') }}
 @endif
+{{ HTML::script('https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js') }}
+<script type="text/javascript">
+$(document).ready(function() {
+		$('.portfolio_category_select').select2();
+});
+</script>
 <script type="text/javascript">
 	// Add padding to top of body tag if logged into admin on both themes
 	jQuery(function($) {
@@ -224,7 +230,7 @@ window.theme = {{$settings->theme}};
 		}
 		// hides mobile menu on homepage for dark theme
 		if($('body.home').length) {
- 			$('ul.nav-list').css('display','block');
+ 			// $('ul.nav-list').css('display','block');
  			$('.mobile-menu').css('display','none');
  		}
 	});
@@ -260,9 +266,10 @@ window.theme = {{$settings->theme}};
 		$('.nav li').each(function(){
 			if($(this).find('li').hasClass('active')){
 				$(this).addClass('active');
+				$('.active').find('ul').addClass('collepse in');
 				$(this).removeClass('not-active');
 			}else if($(this).find('a').hasClass('active')){
-				$(this).addClass('active');
+				// $(this).addClass('active');
 				$(this).removeClass('not-active');
 			}
 		});

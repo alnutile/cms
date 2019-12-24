@@ -36,8 +36,15 @@ img.img-responsive:hover {
     -ms-transform: scale(1.15);
     transform: scale(1.15);	
 }
-
-
+.nav-list.dark li{
+	float: right;
+    width: 100%;
+}
+.submenu-cl{
+	position: absolute;
+    top: 8px;
+	right: -6px;
+}
 /* image css 12/10/2018 */
 .img_section {
 	 position: relative;
@@ -374,7 +381,8 @@ select[name='order'] option {
     width: 218px; }
     /* line 334, stdin */
     .sidebar-nav .nav-list a {
-      text-align: right; } }
+      text-align: right;float: left;
+    width: 100%; } }
 
 @media (max-width: 991px) {
   /* line 341, stdin */

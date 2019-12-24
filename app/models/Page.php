@@ -7,7 +7,7 @@ class Page extends \Eloquent {
         'title' => 'required',
         'seo'   => 'required',
         //'image' => 'mimes:jpg,jpeg,bmp,png,gif',
-        'slug'  => 'required'
+        'slug'  => 'required|unique:posts|unique:pages|unique:projects|unique:portfolio_category|unique:portfolios|regex:/^\/[A-Za-z0-9_]+$/'
     );
     // Moved this section down to match Posts model
      protected $fillable = [
@@ -19,7 +19,8 @@ class Page extends \Eloquent {
         'menu_sort_order',
         'menu_parent',
         'menu_name',
-        'redirect_url'
+        'redirect_url',
+		'portfolio_category_id'
     ];
 	public function parent() 
 	{

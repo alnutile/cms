@@ -78,7 +78,7 @@ class PostsController extends \BaseController {
         }
         if(isset($all['image'])) {
             $this->imagesService->resizeAndSaveForPost($all['image'], $this->save_to);
-            $all = $this->uploadFile($all, 'image');;
+            $all = $this->uploadFile($all, 'image');
         }
         $post = Post::create($all);
 

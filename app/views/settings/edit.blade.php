@@ -222,35 +222,19 @@
                 {{  $errors->first('footer'); }}
             </div>
         @endif
-		<div class="from-group">
-			<label>Header/Footer Script Snippets</label>
-			{{ Form::textarea('tag_manager_content', $setting->tag_manager_content, array('rows' => 10, 'with' => '100%', 'class'=>'form-control tag_manager_content')) }}
-		</div>
 		<div class="form-group">
-            <div class="controls">
-                <div class="checkbox">
-                    <label class="checkbox">{{ Form::checkbox('add_tag_manager_in_header', null,null,array('class' => 'add_tag_manager_in_header','data' => $setting->add_tag_manager_in_header)) }} Check to add Header/Footer Script Snippets in header </label>
-                </div>
-                <!--<div class="help-block">Use this to enable or disable left navigation.</div>-->
-            </div>
+            <label for="tag-manager">Tag Manager</label>
+            {{ Form::textarea('tag_manager_content', $setting->tag_manager_content, array('rows' => 10, 'with' => '100%', 'class' => 'form-control tag_manager_content')) }}
         </div>
 		<div class="form-group">
             <div class="controls">
                 <div class="checkbox">
-                    <label class="checkbox">
-						{{ Form::checkbox('view_readmore_status', null) }} Check to disable read more links on projects under dark theme.
-						@if($settings->theme == TRUE)
-                            (<a href="https://www.corbettresearchgroupinc.com/admin_settings_dark" target="_blank">Help</a>)
-                        @endif
-
-                        @if($settings->theme == FALSE)
-                            (<a href="https://www.corbettresearchgroupinc.com/admin_settings_dark" target="_blank">Help</a>)
-                        @endif
-					</label>
+                    <label class="checkbox">{{ Form::checkbox('add_tag_manager_in_header', null,null,array('class' => 'add_tag_manager_in_header','data' => $setting->add_tag_manager_in_header)) }} Check to add tag manager in header </label>
                 </div>
+                <div class="help-block">Use this to enable or disable tag manager.</div>
             </div>
         </div>
-        <div class="form-group">
+		<div class="form-group">
             <div class="controls">
                 <div class="checkbox">
                     <label class="checkbox">{{ Form::checkbox('maintenance_mode', null) }} Maintenance Mode
@@ -266,7 +250,6 @@
                 <div class="help-block">If you want the website hidden from the Visitor AND the search engines, until you are ready to publish.</div>
             </div>
         </div>
-
         <div class="form-group">
             <div class="controls">
                 <div class="checkbox">
@@ -280,9 +263,25 @@
         <div class="form-group">
             <div class="controls">
                 <div class="checkbox">
-                    <label class="checkbox">{{ Form::checkbox('theme', null) }} Check to use the dark theme </label>
+                    <label class="checkbox">{{ Form::checkbox('theme', null, null, ['id' => 'darktheme','onClick' => 'myCheckbox()']) }} Check to use the dark theme </label>
                 </div>
-                <div class="help-block">Use this turn set your site to use an alternate theme.</div>
+                <div class="help-block">Use this to enable dark theme.</div>
+            </div>
+        </div>
+		<div class="form-group" id="read_more_ckeck" @if($settings->theme == false) style="display:none" @endif>
+            <div class="controls">
+                <div class="checkbox">
+                    <label class="checkbox">
+						{{ Form::checkbox('view_readmore_status', null, null, array()) }} Check to disable 'read more' links on projects                            
+						@if($settings->theme == TRUE)
+							(<a href="http://corbettresearchgroupinc.com/admin_projects_dark" target="_blank">Help</a>)
+                        @endif
+
+                        @if($settings->theme == FALSE)
+							(<a href="http://corbettresearchgroupinc.com/admin_projects_light" target="_blank">Help</a>)
+                        @endif
+					</label>
+                </div>
             </div>
         </div>
 		<div class="form-group">
@@ -290,23 +289,30 @@
                 <div class="checkbox">
                     <label class="checkbox">{{ Form::checkbox('enable_blog', null) }} Check to enable blog </label>
                 </div>
-                <div class="help-block">Use this turn set your site to blog.</div>
+                <div class="help-block">Use this to enable or disable your blog.</div>
             </div>
         </div>
 		<div class="form-group">
 			<div class="controls">
 				<div class="checkbox">
-					<label class="checkbox">{{ Form::checkbox('enable_portfolio', null) }} Check to enable portfolio </label>
+					<label class="checkbox">{{ Form::checkbox('enable_portfolio', null, null, ['id' => 'enable_port', 'onClick' => 'myCheckbox()']) }} Check to enable portfolio </label>
 				</div>
-				<div class="help-block">Use this turn set your site to portfolio.</div>
+				<div class="help-block">Use this to enable or disable your portfolio.</div>
+			</div>
+		</div>
+		<div class="form-group" id="multiple_portfolio_ckeck" @if($settings->theme == false) style="display:none" @endif>
+			<div class="controls">
+				<div class="checkbox">
+					<label class="checkbox">{{ Form::checkbox('multiple_portfolio', (int)$settings->multiple_portfolio) }} Check this to enable multiple portfolios. </label>
+				</div>
 			</div>
 		</div>
 		<div class="form-group">
 			<div class="controls">
 				<div class="checkbox">
-					<label class="checkbox">{{ Form::checkbox('enable_noindex', null) }} Check to make site not searchable(noindex) </label>
+					<label class="checkbox">{{ Form::checkbox('enable_noindex', null) }} Check to make site not searchable (noindex) </label>
 				</div>
-				<div class="help-block">Use this turn set your site to not searchable.</div>
+				<div class="help-block">Use this to hide your site from the search engines.</div>
 			</div>
 		</div>
 		<div class="form-group">
@@ -365,4 +371,24 @@
     </fieldset>
     {{ Form::close() }}
 </div>
+@stop
+
+@section('js')
+<script type="text/javascript">
+	
+	function myCheckbox() {
+	  var checkBox = document.getElementById("darktheme");
+	  var checkBox1 = document.getElementById("enable_port");
+	  var text = document.getElementById("multiple_portfolio_ckeck");
+	  var text1 = document.getElementById("read_more_ckeck");
+	  if (checkBox.checked == true && checkBox1.checked == true){
+		text.style.display = "block";
+		text1.style.display = "block";
+	  } else {
+		 text.style.display = "none";
+		 text1.style.display = "none";
+	  }
+	}
+	
+</script>
 @stop

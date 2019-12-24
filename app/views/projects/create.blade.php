@@ -192,6 +192,17 @@
                 @endif
             </div>
         @endif
+		@if($settings->theme == TRUE)
+            <div class="form-group">
+                <label for="email">Project Category (Optional)</label>&nbsp;
+                {{ Form::select('project_category',array( 0 =>'Select') + $category, '', array('class' => 'form-control','name'=>'project_category')) }}
+				@if($errors->first('order'))
+                    <div class="alert alert-danger">
+                        {{  $errors->first('project_category'); }}
+                    </div>
+                @endif
+            </div>
+        @endif
                     <!--sort order-->
 
             <div class="form-group">
@@ -273,7 +284,7 @@
                     @endif
 
                 </div>
-                <!--end top image-->
+				<!--end top image-->
                 <br>
                 <br>
                 <!-- images upload -->
