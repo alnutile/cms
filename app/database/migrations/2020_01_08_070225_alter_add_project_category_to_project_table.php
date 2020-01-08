@@ -12,10 +12,13 @@ class AlterAddProjectCategoryToProjectTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('projects', function(Blueprint $table)
+		if (!Schema::hasColumn('projects', 'project_category'))
 		{
-			$table->text('project_category')->nullable();
-		});
+			Schema::table('projects', function(Blueprint $table)
+			{
+				$table->text('project_category')->nullable();
+			});
+		}
 	}
 
 	/**
