@@ -30,7 +30,7 @@ if(!isset($cat_slug))
 			@else
 				href="{{URL::to($item['slug'])}}"
 			@endif
-			class="pull-right submenu-cl" >
+			class="pull-right" >
 				@if( count($submenu) > 0 || count($sub_menu) > 0 ) 
 					<span>  <i class="fa fa-angle-down"></i></span>
 				@endif 
