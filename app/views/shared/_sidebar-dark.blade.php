@@ -15,7 +15,7 @@ if(!isset($cat_slug))
 <ul class="nav nav-list dark" id="dark">
 @if(isset($top_left_nav))
   @foreach($top_left_nav as $item)
-    <li class="{{('/'.$page_slug ==  $item['slug']) ? 'active':'not-active'}} dropdown movable" >
+    <li class="{{('/'.$page_slug ==  $item['slug']) ? 'active':'not-active'}}" >
 		<?php $submenu = []; $sub_menu = [];?>
 		@if( isset($item['menu_parent']) && $item['menu_parent'] == 0 )
 			<?php
