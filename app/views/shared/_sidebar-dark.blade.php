@@ -15,16 +15,16 @@ if(!isset($cat_slug))
 <ul class="nav nav-list dark" id="dark">
 @if(isset($top_left_nav))
   @foreach($top_left_nav as $item)
-    <li class="{{('/'.$page_slug ==  $item['slug']) ? 'active':'not-active'}}" >
-		<?php $submenu = []; $sub_menu = [];?>
-		@if( isset($item['menu_parent']) && $item['menu_parent'] == 0 )
-			<?php
-				$portfolio_category_id_list = explode(",", $item['portfolio_category_id']);
-				$submenu = DB::table('portfolio_category') ->whereIn('id', $portfolio_category_id_list)->where('is_active', 1)->select('id','slug','name')->get();
-				$sub_menu = DB::select('select * from pages where menu_parent = ?', array($item['id']));
-			?>
-		@endif
-			<a 
+	<?php $submenu = []; $sub_menu = [];?>
+	@if( isset($item['menu_parent']) && $item['menu_parent'] == 0 )
+		<?php
+			$portfolio_category_id_list = explode(",", $item['portfolio_category_id']);
+			$submenu = DB::table('portfolio_category') ->whereIn('id', $portfolio_category_id_list)->where('is_active', 1)->select('id','slug','name')->get();
+			$sub_menu = DB::select('select * from pages where menu_parent = ?', array($item['id']));
+		?>
+	@endif
+    <li class="{{('/'.$page_slug ==  $item['slug']) ? 'active':'not-active'}} @if( count($submenu) > 0 || count($sub_menu) > 0 ) dropdown @endif" >
+		<a 
 			@if( count($submenu) > 0 || count($sub_menu) > 0 )
 				data-toggle="collapse" data-target=".{{trim( preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']) )}}"
 			@else
@@ -83,7 +83,7 @@ if(!isset($cat_slug))
 </ul>
 @endif
 <!-- Removed from end of parenthesis: || $settings->menu_name == 'sub_nav' -->
-
+<!-- 
 @if(isset($sub_nav))
 <div class="border"></div>
 <ul class="nav nav-list tags_nav">
@@ -94,7 +94,7 @@ if(!isset($cat_slug))
     @endforeach
 </ul>
 @endif
-
+-->
 
 
 @if($settings->theme == false)
