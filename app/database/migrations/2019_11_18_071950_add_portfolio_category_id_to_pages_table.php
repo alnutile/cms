@@ -12,10 +12,22 @@ class AddPortfolioCategoryIdToPagesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('pages', function(Blueprint $table)
+		if (Schema::hasColumn('pages', 'portfolio_category_id'))
 		{
-			$table->text('portfolio_category_id')->nullable();
-		});
+			Schema::table('pages', function(Blueprint $table)
+			{
+				$table->dropColumn('portfolio_category_id');
+			});
+		}
+		if (!Schema::hasColumn('pages', 'portfolio_category_id'))
+		{
+			Schema::table('pages', function(Blueprint $table)
+			{
+				$table->text('portfolio_category_id')->nullable();
+			});
+		}
+		
+		
 	}
 
 	/**
