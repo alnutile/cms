@@ -15,7 +15,8 @@ if(!isset($cat_slug))
 <ul class="nav nav-list dark" id="dark">
 @if(isset($top_left_nav))
   @foreach($top_left_nav as $item)
-	<?php $submenu = []; $sub_menu = [];?>
+	<?php $submenu = []; $sub_menu = [];
+	?>
 	@if( isset($item['menu_parent']) && $item['menu_parent'] == 0 )
 		<?php
 			$portfolio_category_id_list = explode(",", $item['portfolio_category_id']);
@@ -23,7 +24,7 @@ if(!isset($cat_slug))
 			$sub_menu = DB::select('select * from pages where menu_parent = ?', array($item['id']));
 		?>
 	@endif
-    <li class="{{('/'.$page_slug ==  $item['slug']) ? 'active':'not-active'}} @if( count($submenu) > 0 || count($sub_menu) > 0 ) dropdown @endif" >
+    <li class="{{('/'.$page_slug ==  $item['slug'] || $page_slug == trim( preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']) )) ? 'active':'not-active'}} @if( count($submenu) > 0 || count($sub_menu) > 0 ) dropdown @endif" >
 		<a 
 			@if( count($submenu) > 0 || count($sub_menu) > 0 )
 				data-toggle="collapse" data-target=".{{trim( preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']) )}}"
@@ -40,7 +41,7 @@ if(!isset($cat_slug))
 			@if(isset($submenu))
 						
 				@if(sizeof($submenu) != 0)						
-					<ul class="pull-right nav nav-list tags_nav collapse {{('/'.$page_slug ==  $item['slug']) ? 'in' : ''}} {{trim(preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']))}}" style="padding: 0;">
+					<ul class="pull-right nav nav-list tags_nav collapse {{('/'.$page_slug ==  $item['slug'] || $page_slug == trim( preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']) )) ? 'in' : ''}} {{trim(preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']))}}" style="padding: 0;">
 						<li class="{{ '/'.$page_for_submenu1 == $item['slug'] ? 'active' : 'not-active' }}" ><a href="{{URL::to($item['slug'])}}" style="margin: 11px 0px 0px 20px;" class="pull-right">{{$item['title']}}</a></li>
 						@foreach($submenu as $menu)
 							<li class="@if('/'.$page_slug ==  $item['slug']) {{ '/'.$cat_slug == $menu->slug ? 'active' : 'not-active' }} @else 'not-active' @endif" ><a href="{{URL::to('/portfolio_categories/'.trim( preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']) ).$menu->slug)}}?id={{$menu->id}}"  class="pull-right">{{$menu->name}}</a></li>					
