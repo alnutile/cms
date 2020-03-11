@@ -25,7 +25,7 @@
 
             @if ($project->thumbs->url('project_top') != '/thumbs/project_top/missing.png')
                 <div class="col-lg-12 thumb" id="main_image">
-                    <img id="project-top-image" src="<?= $project->thumbs->url('project_top') ?>">
+                    <img id="project-top-image" src="<?= $project->thumbs->url('original') ?>">
                 </div>
             @elseif ($project->image)
                 <div class="col-lg-12" id="main_image">
