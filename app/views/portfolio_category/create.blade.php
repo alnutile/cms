@@ -22,6 +22,40 @@
       {{  $errors->first('name'); }}
     </div>
   @endif
+  
+  <div class="form-group">
+    <label>Portfolio Category Browser Description (a.k.a Title Tag)
+		@if($settings->theme == true)
+            (<a href="http://corbettresearchgroupinc.com/admin_pages_dark" target="_blank">Help</a>)
+            @endif
+
+            @if($settings->theme == false)
+            (<a href="http://corbettresearchgroupinc.com/admin_pages_light" target="_blank">Help</a>)
+            @endif</label>
+	</label>
+    {{ Form::text('desc', null, array('class' => 'form-control')) }}
+  </div>
+  @if($errors->first('desc'))
+    <div class="alert alert-danger">
+      {{  $errors->first('desc'); }}
+    </div>
+  @endif
+  <div class="form-group">
+		<label>Portfolio category Main Body 
+		@if($settings->theme == true)
+		(<a href="http://corbettresearchgroupinc.com/admin_pages_dark" target="_blank">Help</a>)
+		@endif
+
+		@if($settings->theme == false)
+		(<a href="http://corbettresearchgroupinc.com/admin_pages_light" target="_blank">Help</a>)
+		@endif</label>
+		{{ Form::textarea('body', null, array('rows' => 30, 'class' => 'ckeditor form-control')) }}
+	</div>
+	@if($errors->first('body'))
+	<div class="alert alert-danger">
+		{{  $errors->first('body'); }}
+	</div>
+	@endif 
 
   <div class="form-group">
     <div class="controls">
