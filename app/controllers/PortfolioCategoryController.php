@@ -70,7 +70,8 @@ class PortfolioCategoryController extends \BaseController {
 		$settings = Setting::select('theme','logo','multiple_portfolio')->first();
 		$project_category = Request::get('id');
 		$projects = Project::where('project_category',$project_category)->where('published', '=', 1)->get();
-		return View::make('portfolio_category.categoriesIndex_dark', compact('projects','settings', 'page_slug', 'cat_slug'));
+		$portfolio_category = Portfolio_Category::find($project_category);
+		return View::make('portfolio_category.categoriesIndex_dark', compact('projects','settings', 'page_slug', 'cat_slug', 'portfolio_category'));
 	}
 
 

@@ -1,5 +1,5 @@
 @extends('layouts.main')
-
+<?php if($portfolio_category){ $seo = $portfolio_category->desc;}?>
 @section('content')
 <div class="col-xs-12 col-sm-5 col-md-4 col-lg-3">
     <div class = "sidebar-nav">
@@ -14,6 +14,10 @@
     </div>
 </div>
 <div class="col-xs-12 col-sm-7 col-md-8 col-lg-9 column content blog_index">
+	@if($portfolio_category) 
+		<h1>{{$portfolio_category->name}}</h1>
+		<p>{{$portfolio_category->body}}</p>
+	@endif
     <div class="portfolio-wrap">
         @foreach($projects as $p)
         <div class="col-xs-3 col-md-4 project_block">
