@@ -44,7 +44,7 @@ if(!isset($cat_slug))
 					<ul class="pull-right nav nav-list tags_nav collapse {{('/'.$page_slug ==  $item['slug'] || $page_slug == trim( preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']) )) ? 'in' : ''}} {{trim(preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']))}}" style="padding: 0;">
 						<li class="{{ '/'.$page_for_submenu1 == $item['slug'] ? 'active' : 'not-active' }}" ><a href="{{URL::to($item['slug'])}}" style="margin: 11px 0px 0px 20px;" class="pull-right">{{$item['title']}}</a></li>
 						@foreach($submenu as $menu)
-							<li class="@if('/'.$page_slug ==  $item['slug'] || $page_slug == trim( preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']) )) {{ '/'.$cat_slug == $menu->slug ? 'active' : 'not-active' }} @else not-active @endif" ><a href="{{URL::to('/portfolio_categories/'.trim( preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']) ).$menu->slug)}}?id={{$menu->id}}"  class="pull-right">{{$menu->name}}</a></li>					
+							<li class="@if('/'.$page_slug ==  $item['slug'] || $page_slug == trim( preg_replace('/[^A-Za-z0-9 ]/', '', $item['slug']) )) {{ '/'.$cat_slug == $menu->slug ? 'active' : 'not-active' }} @else not-active @endif" ><a href="{{URL::to($menu->slug)}}"  class="pull-right">{{$menu->name}}</a></li>					
 						@endforeach
 					</ul>
 				@endif
