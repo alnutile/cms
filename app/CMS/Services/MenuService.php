@@ -7,14 +7,16 @@ Class MenuService {
   public $project;
   public $portfolio;
   public $post;
+  public $portfolio_category;
 	private $navigations_menu = array();
-  public function __construct(Page $pageModel = null, Setting $settings = null, Portfolio $portfolio = null, Project $project = null, Post $post = null)
+  public function __construct(Page $pageModel = null, Setting $settings = null, Portfolio $portfolio = null, Project $project = null, Post $post = null,Portfolio_Category $portfolio_category = null)
   {
     $this->pageModel = ($pageModel == null) ? new \Page : $pageModel;
     $this->settings = ($settings == null) ? new \Setting : $settings;
     $this->project = ($project == null) ? new \Project : $project;
     $this->portfolio = ($portfolio == null) ? new \Portfolio : $portfolio;
     $this->post = ($post == null) ? new \Post : $post;
+	$this->portfolio_category = ($portfolio_category == null) ? new \Portfolio_Category : $portfolio_category;
       $this->tags = new \CMS\Services\TagsService;
       $this->images = new \CMS\Services\ImagesService(new \Image());
       $this->projects = new \CMS\Services\ProjectsService($this->images);
@@ -124,7 +126,15 @@ Class MenuService {
       $portfolioCtrl = new \PortfoliosController();
       return $portfolioCtrl->show($portfolio);
     }
-
+	
+	/*
+	* Try portfolio categroy
+	*/
+	$portfolio_category = $this->portfolio_category->where("slug", 'LIKE', '/' . $id)->first();
+	if(isset($portfolio_category) && $portfolio_category->is_active == 1){
+		$portfolioCategoryCtrl = new \PortfolioCategoryController();
+		return $portfolioCategoryCtrl->show($portfolio_category);
+	}
       //Try Post
       $post = $this->post->where("slug", 'LIKE', '/' . $id)->first();
       $postCtrl = new \PostsController($this->images, $this->tags);

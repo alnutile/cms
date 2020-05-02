@@ -65,12 +65,22 @@ class PortfolioCategoryController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($page_slug = NULL, $cat_slug = NULL)
+	public function show($portfolio_category = NULL)
 	{
+		$portfolio_category = Portfolio_Category::where("slug", 'LIKE', '/' . $portfolio_category)->first();
 		$settings = Setting::select('theme','logo','multiple_portfolio')->first();
-		$project_category = Request::get('id');
-		$projects = Project::where('project_category',$project_category)->where('published', '=', 1)->get();
-		$portfolio_category = Portfolio_Category::find($project_category);
+		$projects = Project::where('project_category',$portfolio_category->id)->where('published', '=', 1)->get();
+		$cat_slug = str_replace('/','',$portfolio_category->slug);
+		foreach($this->top_left_nav as $item){
+			if( isset($item['menu_parent']) && $item['menu_parent'] == 0 ){
+				$portfolio_category_id_list = explode(",", $item['portfolio_category_id']);
+				if(in_array($portfolio_category->id, $portfolio_category_id_list)){
+					$page_slug = str_replace('/','',$item['slug']);
+					break;
+				}
+			}			
+			
+		}
 		return View::make('portfolio_category.categoriesIndex_dark', compact('projects','settings', 'page_slug', 'cat_slug', 'portfolio_category'));
 	}
 
