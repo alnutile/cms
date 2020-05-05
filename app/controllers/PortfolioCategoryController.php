@@ -67,6 +67,12 @@ class PortfolioCategoryController extends \BaseController {
 	 */
 	public function show($portfolio_category = NULL)
 	{
+		if(is_numeric($portfolio_category)) {
+			$portfolio_category = Portfolio_Category::find($portfolio_category);
+        }
+        if($portfolio_category == NULL){
+            return View::make('404', compact('settings'));
+        }
 		$portfolio_category = Portfolio_Category::where("slug", 'LIKE', '/' . $portfolio_category)->first();
 		$settings = Setting::select('theme','logo','multiple_portfolio')->first();
 		$projects = Project::where('project_category',$portfolio_category->id)->where('published', '=', 1)->get();
