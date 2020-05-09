@@ -146,6 +146,7 @@ class SettingsController extends \BaseController {
 		$setting->enable_noindex = (isset($data['enable_noindex'])) ? true : false;
 		// echo '$data of view_readmore_status = '.$data['view_readmore_status'];die;
 		$setting->view_readmore_status = (isset($data['view_readmore_status'])) ? 1 : 0;
+		$setting->enable_top_nav_dark = (isset($data['enable_top_nav_dark'])) ? 1 : 0;
 		if(Auth::user() && Auth::user()->admin == 1){
 			$setting->blog_menu_position = $data['blog_menu_position'];
 		}

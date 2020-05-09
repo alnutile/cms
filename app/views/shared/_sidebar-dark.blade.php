@@ -1,4 +1,4 @@
-@if($settings->logo && $settings->theme == true)
+@if($settings->logo && $settings->theme == true && $settings->enable_top_nav_dark == 0)
 <a class = "side_logo" href="/">{{ HTML::image("/img/settings/{$settings->logo}", $settings->name)}}</a>
 @endif
 <?php
@@ -15,8 +15,7 @@ if(!isset($cat_slug))
 <ul class="nav nav-list dark" id="dark">
 @if(isset($top_left_nav))
   @foreach($top_left_nav as $item)
-	<?php $submenu = []; $sub_menu = [];
-	?>
+	<?php $submenu = []; $sub_menu = [];?>
 	@if( isset($item['menu_parent']) && $item['menu_parent'] == 0 )
 		<?php
 			$portfolio_category_id_list = explode(",", $item['portfolio_category_id']);

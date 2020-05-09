@@ -78,7 +78,7 @@
 
 </head>
 
-<body class="{{$settings->color}}">
+<body class="{{$settings->color}} @if($settings->theme == true && $settings->enable_top_nav_dark == 1) enabled_top_nav_dark @endif">
 <!--
 Use the corresponding body tag for your chosen theme
 <body class="blue">
@@ -94,11 +94,15 @@ Use the corresponding body tag for your chosen theme
 <div class="container">
     <header>
         @if($settings->logo && $settings->theme == false)
-        <a href="/" id="logo">{{ HTML::image("/img/settings/{$settings->logo}", $settings->name)}}</a>
-        @endif
+			<a href="/" id="logo">{{ HTML::image("/img/settings/{$settings->logo}", $settings->name)}}</a>
+		@elseif($settings->logo && $settings->theme == true && $settings->enable_top_nav_dark == 1)
+			<a href="/" id="logo">{{ HTML::image("/img/settings/{$settings->logo}", $settings->name)}}</a>
+		@endif
     
 		@if($settings->theme == false)
-		@include('shared.top-nav')
+			@include('shared.top-nav')
+		@elseif($settings->theme == true && $settings->enable_top_nav_dark == 1)
+			@include('shared.top-nav-dark')
 		@endif
 	</header>
 </div>
