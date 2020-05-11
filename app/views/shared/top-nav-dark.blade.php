@@ -61,21 +61,3 @@ if(!isset($cat_slug))
 	</ul>
 	
 </nav>
-
-<?php 
-function sub_nav_menus($sub_menu)
-{
-	 foreach($sub_menu as $child)
-	 { ?>
-		<li class="dropdown-submenu {{Request::url() ==  URL::to($child['slug']) ? 'active' : 'not-active' }}">
-		<a tabindex="-1" href="{{URL::to($child['slug'])}}"/><?php echo $child['title'];?></a><?php
-		if(count($child['children'])>0)
-		{
-			echo "<ul class='dropdown-menu'>";
-			sub_nav_menus($child['children']);
-			echo "</ul>";
-		}
-		echo '</li>';
-     }
-}
-?>

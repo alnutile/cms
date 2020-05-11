@@ -74,7 +74,6 @@ class PortfolioCategoryController extends \BaseController {
             return View::make('404', compact('settings'));
         }
 		$portfolio_category = Portfolio_Category::where("slug", 'LIKE', '/' . $portfolio_category)->first();
-		$settings = Setting::select('theme','logo','multiple_portfolio')->first();
 		$projects = Project::where('project_category',$portfolio_category->id)->where('published', '=', 1)->get();
 		$cat_slug = str_replace('/','',$portfolio_category->slug);
 		foreach($this->top_left_nav as $item){
@@ -87,7 +86,7 @@ class PortfolioCategoryController extends \BaseController {
 			}			
 			
 		}
-		return View::make('portfolio_category.categoriesIndex_dark', compact('projects','settings', 'page_slug', 'cat_slug', 'portfolio_category'));
+		return View::make('portfolio_category.categoriesIndex_dark', compact('projects','page_slug', 'cat_slug', 'portfolio_category'));
 	}
 
 
