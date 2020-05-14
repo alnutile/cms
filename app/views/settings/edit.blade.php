@@ -284,6 +284,17 @@
                 </div>
             </div>
         </div>
+		<div class="form-group" id="enable_top_nav_dark" @if($settings->theme == false) style="display:none" @endif>
+            <div class="controls">
+                <div class="checkbox">
+                    <label class="checkbox">
+						{{ Form::checkbox('enable_top_nav_dark', null, null, array()) }} Check to enable top navigation for dark theme                       
+						
+							(<a href="http://corbettresearchgroupinc.com/admin_projects_dark" target="_blank">Help</a>)
+                    </label>
+                </div>
+            </div>
+        </div>
 		<div class="form-group">
             <div class="controls">
                 <div class="checkbox">
@@ -377,17 +388,20 @@
 <script type="text/javascript">
 	
 	function myCheckbox() {
-	  var checkBox = document.getElementById("darktheme");
-	  var checkBox1 = document.getElementById("enable_port");
-	  var text = document.getElementById("multiple_portfolio_ckeck");
-	  var text1 = document.getElementById("read_more_ckeck");
-	  if (checkBox.checked == true && checkBox1.checked == true){
-		text.style.display = "block";
-		text1.style.display = "block";
-	  } else {
-		 text.style.display = "none";
-		 text1.style.display = "none";
-	  }
+		var checkBox = document.getElementById("darktheme");
+		var checkBox1 = document.getElementById("enable_port");
+		var text = document.getElementById("multiple_portfolio_ckeck");
+		var text1 = document.getElementById("read_more_ckeck");
+		var enable_top_nav_dark = document.getElementById("enable_top_nav_dark");
+		if (checkBox.checked == true && checkBox1.checked == true){
+			text.style.display = "block";
+			text1.style.display = "block";
+			enable_top_nav_dark.style.display = "block";
+		} else {
+			text.style.display = "none";
+			text1.style.display = "none";
+			enable_top_nav_dark.style.display = "none";
+		}
 	}
 	
 </script>

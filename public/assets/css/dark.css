@@ -315,7 +315,61 @@ select[name='order'] option {
   color: black;
   font-weight: 600;
 }
-
+/* Top Navigaition CSS */
+.open > .dropdown-menu li {
+	width: 100%;
+}
+.open > .dropdown-menu li.active a,
+.open > .dropdown-menu li.not-active a:hover {
+	color: #fff;
+	background-color: #11c2d9;
+}
+.open > .dropdown-menu li.not-active a {
+	color: #5ebfd6;
+	background-color: white;
+}
+/*-------------------------- Top Nav CSS */
+.btn.navbar-toggle {
+    background-color: #595959;
+    color: #fff;
+}
+.nav-pills  li a{
+	color: #000;
+}
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+    color:#000;
+	background-color: unset;
+}
+nav ul, nav .nav {
+	margin: 0;
+}
+nav .nav-pills li a{
+	padding: 6px 8px;
+    -webkit-transition: background-color 0.5s;
+    -moz-transition: background-color 0.5s;
+    transition: background-color 0.5s;
+}
+.navbar-toggle .icon-bar {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background-color: #f5f5f5;
+}
+.navbar-toggle {
+    float: right;
+    margin-top: 27px;
+    padding: 7px 8px;
+}
+@media (min-width: 768px){
+	nav{
+		float: right;
+		font-size: 14px;
+	}
+	.navbar-toggle {
+		display: none;
+	}
+}
+/*---------------------------------------*/
 /* Custom, iPhone Retina */
 @media only screen and (min-width: 320px) {
   /* line 268, stdin */
@@ -389,6 +443,18 @@ select[name='order'] option {
   .col-sm-5 {
     width: 41.166667%; } }
 
+@media (max-width:768px){
+	.enabled_top_nav_dark .sidebar-nav,
+	.enabled_top_nav_dark  nav .caret{
+		display: none !important;
+	}
+	.navbar-toggle {
+		display: block!important;
+	}
+	.enabled_top_nav_dark .col-sm-7{
+		width: 100% !important;
+	}
+}
 @media (max-width: 767px) {
   /* line 346, stdin */
   .col-sm-5 {

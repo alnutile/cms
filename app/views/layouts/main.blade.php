@@ -77,8 +77,7 @@
 	@endif
 
 </head>
-
-<body class="{{$settings->color}}">
+<body class="{{$settings->color}} @if($settings->theme == true && $settings->enable_top_nav_dark == 1) enabled_top_nav_dark @endif">
 <!--
 Use the corresponding body tag for your chosen theme
 <body class="blue">
@@ -90,15 +89,20 @@ Use the corresponding body tag for your chosen theme
 @if(Auth::user())
 @include('shared.nav')
 @endif
+
 <!-- //start container -->
 <div class="container">
     <header>
         @if($settings->logo && $settings->theme == false)
-        <a href="/" id="logo">{{ HTML::image("/img/settings/{$settings->logo}", $settings->name)}}</a>
-        @endif
+			<a href="/" id="logo">{{ HTML::image("/img/settings/{$settings->logo}", $settings->name)}}</a>
+		@elseif($settings->logo && $settings->theme == true && $settings->enable_top_nav_dark == 1)
+			<a href="/" id="logo">{{ HTML::image("/img/settings/{$settings->logo}", $settings->name)}}</a>
+		@endif
     
 		@if($settings->theme == false)
-		@include('shared.top-nav')
+			@include('shared.top-nav')
+		@elseif($settings->theme == true && $settings->enable_top_nav_dark == 1)
+			@include('shared.top-nav-dark')
 		@endif
 	</header>
 </div>
@@ -134,7 +138,7 @@ Use the corresponding body tag for your chosen theme
         @yield('content')
     </div>
 	<!-- Delete confirm modal starts here -->
-	<div id="delete_confirmation"  class="modal fade">
+	<div id="delete_confirmation"  class="modal" tabindex="-1" role="dialog">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
