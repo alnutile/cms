@@ -1,6 +1,7 @@
 @extends('layouts.main')
 <?php if($portfolio_category){ $seo = $portfolio_category->desc;}?>
 @section('content')
+@if($settings->enable_left_nav)
 <div class="col-xs-12 col-sm-5 col-md-4 col-lg-3">
     <div class = "sidebar-nav">
     	<div class="mobile-menu"><a href="#"><i class="fa fa-bars"></i></a></div>
@@ -13,7 +14,12 @@
         @endif
     </div>
 </div>
+@endif
+@if($settings->enable_left_nav)
 <div class="col-xs-12 col-sm-7 col-md-8 col-lg-9 column content blog_index">
+@else
+<div class="col-md-12 col-sm-7 col-md-8 col-lg-12 column content blog_index">
+@endif
 	@if($portfolio_category) 
 		<h1>{{$portfolio_category->name}}</h1>
 		<p>{{$portfolio_category->body}}</p>
