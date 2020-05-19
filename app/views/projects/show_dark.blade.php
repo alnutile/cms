@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-
+	@if($settings->enable_left_nav)
     <div class="col-xs-12 col-sm-5 col-md-4 col-lg-3">
         <div class="sidebar-nav">
         <div class="mobile-menu"><a href="#"><i class="fa fa-bars"></i></a></div>
@@ -16,8 +16,12 @@
         </div>
 
     </div>
-
-    <div class="col-xs-12 col-sm-7 col-md-8 col-lg-9 column">
+	@endif
+    @if($settings->enable_left_nav)
+	<div class="col-xs-12 col-sm-7 col-md-8 col-lg-9 column">
+	@else
+	<div class="col-md-12 col-sm-7 col-md-8 col-lg-12 column">
+	@endif
         @if
             ($settings->theme != TRUE)  <h1>{{{ $project->title }}}</h1>
         @endif
