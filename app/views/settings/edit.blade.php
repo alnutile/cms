@@ -371,6 +371,39 @@
             </div>
             @endif
         </div>
+		<div class="form-group">
+            <div class="controls">
+                <div class="checkbox">
+                    <label class="checkbox">{{ Form::checkbox('enable_secondary_blog', null, null ,['id' => 'enable_secondary_blog', 'onClick' => 'showSecondaryBlogOptions()']) }} Check to enable secondary blog </label>
+                </div>
+                <div class="help-block">Use this to enable or disable your secondary blog.</div>
+            </div>
+        </div>
+		<div class="form-group secondary_blog_options @if($setting->enable_secondary_blog) @else hidden @endif">
+            <label for="secondary_blog_title">Secondary Blog Name</label>
+                {{ Form::text('secondary_blog_title', null, array('class' => 'form-control', 'tabindex' => 1,'placeholder' => "Builder's Notebook")) }}
+                @if($errors->first('secondary_blog_title'))
+                <div class="alert alert-danger">
+                    {{  $errors->first('secondary_blog_title'); }}
+                </div>
+                @endif
+			<div class="help-block">Enter your blog name here e.g. Builder's Notebook</div>
+        </div>
+		<div class="form-group secondary_blog_options @if($setting->enable_secondary_blog) @else hidden @endif">
+			<label for="">{{$setting->secondary_blog_title}} Menu Position</label>
+			<select name="secondary_blog_menu_position" class="form-control">
+				<option value="1" @if ($setting->secondary_blog_menu_position == 1) selected @endif>1</option>
+				<option value="2" @if ($setting->secondary_blog_menu_position == 2) selected @endif>2</option>
+				<option value="3" @if ($setting->secondary_blog_menu_position == 3) selected @endif>3</option>
+				<option value="4" @if ($setting->secondary_blog_menu_position == 4) selected @endif>4</option>
+				<option value="5" @if ($setting->secondary_blog_menu_position == 5) selected @endif>5</option>
+				<option value="6" @if ($setting->secondary_blog_menu_position == 6) selected @endif>6</option>
+				<option value="7" @if ($setting->secondary_blog_menu_position == 7) selected @endif>7</option>
+				<option value="8" @if ($setting->secondary_blog_menu_position == 8) selected @endif>8</option>
+				<option value="9" @if ($setting->secondary_blog_menu_position == 9) selected @endif>9</option>
+				<option value="10" @if ($setting->secondary_blog_menu_position == 10) selected @endif>10</option>
+          </select>
+        </div>
 		@else
             {{ Form::hidden('theme', null) }}
 
@@ -386,7 +419,14 @@
 
 @section('js')
 <script type="text/javascript">
-	
+	function showSecondaryBlogOptions(){
+		var checkBox = document.getElementById("enable_secondary_blog");
+		if (checkBox.checked == true){
+			$('.secondary_blog_options').removeClass('hidden');
+		}else{
+			$('.secondary_blog_options').addClass('hidden');
+		}
+	}
 	function myCheckbox() {
 		var checkBox = document.getElementById("darktheme");
 		var checkBox1 = document.getElementById("enable_port");

@@ -1,4 +1,5 @@
-<?php namespace CMS\Services;
+<?php 
+namespace CMS\Services;
 use CMS\Services\TagsService as TagsService;
 Class MenuService {
 
@@ -7,15 +8,17 @@ Class MenuService {
   public $project;
   public $portfolio;
   public $post;
+  public $secondary_post;
   public $portfolio_category;
 	private $navigations_menu = array();
-  public function __construct(Page $pageModel = null, Setting $settings = null, Portfolio $portfolio = null, Project $project = null, Post $post = null,Portfolio_Category $portfolio_category = null)
+  public function __construct(Page $pageModel = null, Setting $settings = null, Portfolio $portfolio = null, Project $project = null, Post $post = null,Portfolio_Category $portfolio_category = null,SecondaryBlog $secondary_post = null)
   {
     $this->pageModel = ($pageModel == null) ? new \Page : $pageModel;
     $this->settings = ($settings == null) ? new \Setting : $settings;
     $this->project = ($project == null) ? new \Project : $project;
     $this->portfolio = ($portfolio == null) ? new \Portfolio : $portfolio;
     $this->post = ($post == null) ? new \Post : $post;
+	$this->secondary_post = ($secondary_post == null) ? new \SecondaryBlog : $secondary_post;
 	$this->portfolio_category = ($portfolio_category == null) ? new \Portfolio_Category : $portfolio_category;
       $this->tags = new \CMS\Services\TagsService;
       $this->images = new \CMS\Services\ImagesService(new \Image());
@@ -134,6 +137,14 @@ Class MenuService {
 	if(isset($portfolio_category) && $portfolio_category->is_active == 1){
 		$portfolioCategoryCtrl = new \PortfolioCategoryController();
 		return $portfolioCategoryCtrl->show($portfolio_category);
+	}
+	/*
+	* Try secondary POst
+	*/
+	$secondary_post = $this->secondary_post->where("slug", 'LIKE', '/' . $id)->first();
+	if($secondary_post){
+		$postCtrl = new \BlogController($this->images, $this->tags);
+		return $postCtrl->show($secondary_post->id);
 	}
       //Try Post
       $post = $this->post->where("slug", 'LIKE', '/' . $id)->first();

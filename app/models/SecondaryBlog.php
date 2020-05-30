@@ -1,7 +1,8 @@
 <?php
 
-class Post extends BaseModel {
+class SecondaryBlog extends BaseModel {
 
+	protected $table = 'secondary_posts';
     // Add your validation rules here
     public static $rules = [
         'title' => 'required',

@@ -20,6 +20,9 @@
                 @if($settings->enable_blog == true)
                     <li class=<?php if(Request::path() == 'posts') { echo 'active'; }?>><a href="/admin/posts">Admin Posts</a></li>
                 @endif
+				@if($settings->enable_secondary_blog == true)
+                    <li class=<?php if(Request::path() == 'blog') { echo 'active'; }?>><a href="{{url('/admin/blog')}}">Admin Secondary Blog Posts</a></li>
+                @endif
 
                 <li class=<?php if(Request::path() == 'portfolios') { echo 'active'; }?>><a href="/admin/projects">Admin Projects</a></li>
 
