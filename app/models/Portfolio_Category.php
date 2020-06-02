@@ -10,7 +10,7 @@ class Portfolio_Category extends \Eloquent {
 		'slug' => 'required|unique:posts|unique:pages|unique:projects|unique:portfolio_category|unique:portfolios|regex:/^\/[A-Za-z0-9_]+$/'
 	];
 	
-	protected $fillable = ['name','desc','body','slug'];
+	protected $fillable = ['name','desc','body','slug','sort_order'];
 	
 	static public function PortfolioCategoryName() {
 		$ports = self::where('is_active', 1)->get();

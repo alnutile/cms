@@ -21,7 +21,7 @@ class PortfolioCategoryController extends \BaseController {
 	public function adminIndex()
     {
 		
-		$categories = Portfolio_Category::get();
+		$categories = Portfolio_Category::orderBy('sort_order', 'asc')->get();
 		return View::make('portfolio_category.admin_index', compact('categories'));
     }
 
