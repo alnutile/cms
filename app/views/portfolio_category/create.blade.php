@@ -77,7 +77,15 @@
     @endif
   </div>
   @endif
-
+	<div class="form-group">
+		<label for="sort_order">Sort Order</label>&nbsp;
+		 {{ Form::selectRange('sort_order', 1, 50,'' ,array('class' => 'form-control', 'tabindex' => 1)) }}
+		@if($errors->first('sort_order'))
+		<div class="alert alert-danger">
+		  {{  $errors->first('sort_order'); }}
+		</div>
+		@endif
+	  </div>
   <div class="controls">
     {{ Form::submit('Create Portfolio category', array('id' => 'submit', 'class' => 'btn btn-success')) }}
     <br>

@@ -9,6 +9,7 @@
         <thead>
         <tr>
             <th>Name</th>
+			<th>Sort Order</th>
             <th>Is Active?</th>
             <th>Slug</th>
             <th>Edit</th>
@@ -18,6 +19,7 @@
             @foreach($categories as $category)
                 <tr>
                     <td>{{$category->name}}</td>
+					<td>{{$category->sort_order}}</td>
                     <td>{{$category->is_active}}</td>
                     <td>{{$category->slug}}</td>
                     <td>
