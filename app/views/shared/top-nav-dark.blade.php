@@ -59,5 +59,4 @@ if(!isset($cat_slug))
 		@endforeach
 	@endif
 	</ul>
-	
 </nav>
