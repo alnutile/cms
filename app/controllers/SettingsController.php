@@ -149,8 +149,11 @@ class SettingsController extends \BaseController {
 		$setting->enable_top_nav_dark = (isset($data['enable_top_nav_dark'])) ? 1 : 0;
 		if(Auth::user() && Auth::user()->admin == 1){
 			$setting->blog_menu_position = $data['blog_menu_position'];
+			$setting->secondary_blog_menu_position = $data['secondary_blog_menu_position'];
 		}
 		$setting->multiple_portfolio	= (isset($data['multiple_portfolio'])) ? 1 : 0;
+		$setting->secondary_blog_title = (isset($data['secondary_blog_title'])) ? $data['secondary_blog_title'] : '';
+		$setting->enable_secondary_blog = (isset($data['enable_secondary_blog'])) ? true : false;
 		$setting->save();
 
         return Redirect::to("/settings/" . $setting->id . "/edit")->withMessage("Settings Updated");

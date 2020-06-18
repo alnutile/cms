@@ -21,6 +21,7 @@ Route::resource('portfolios', 'PortfoliosController');
 Route::resource('projects', 'ProjectsController');
 Route::resource('posts', 'PostsController');
 Route::resource('portfolio_categories', 'PortfolioCategoryController');
+Route::resource('blog', 'BlogController');
 
 Route::get('menus', 'MenusController@index');
 Route::post('menus', 'MenusController@store');
@@ -66,7 +67,11 @@ Route::get('/admin/portfolio_categories', array(
   'as'     => 'portfolio_categories',
   'uses'   => 'PortfolioCategoryController@adminIndex'
 ));
-
+Route::get('/admin/blog', array(
+  'before' => 'auth',
+  'as'     => 'admin_secondary_blog',
+  'uses'   => 'BlogController@adminIndex'
+));
 Route::get('/admin', array('before' => 'auth', 'uses' => 'AdminController@dash'));
 
 

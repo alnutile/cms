@@ -7,7 +7,7 @@ class Portfolio_Category extends \Eloquent {
 	public static $rules = [
 		'name' => 'required',
 		'desc' => 'required',
-		'slug' => 'required|unique:posts|unique:pages|unique:projects|unique:portfolio_category|unique:portfolios|regex:/^\/[A-Za-z0-9_]+$/'
+		'slug' => 'required|unique:secondary_posts|unique:posts|unique:pages|unique:projects|unique:portfolio_category|unique:portfolios|regex:/^\/[A-Za-z0-9_]+$/'
 	];
 	
 	protected $fillable = ['name','desc','body','slug','sort_order'];

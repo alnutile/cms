@@ -7,7 +7,7 @@ class Page extends \Eloquent {
         'title' => 'required',
         'seo'   => 'required',
         //'image' => 'mimes:jpg,jpeg,bmp,png,gif',
-        'slug'  => 'required|unique:posts|unique:pages|unique:projects|unique:portfolio_category|unique:portfolios|regex:/^\/[A-Za-z0-9_]+$/'
+        'slug'  => 'required|unique:secondary_posts|unique:posts|unique:pages|unique:projects|unique:portfolio_category|unique:portfolios|regex:/^\/[A-Za-z0-9_]+$/'
     );
     // Moved this section down to match Posts model
      protected $fillable = [
@@ -78,7 +78,13 @@ class Page extends \Eloquent {
 			// Put blog after portfolio in the menu array.
 			// In case of invalid position , blog will be pushed at the end of the menu.
 			Helpers\ArrayHelper::insertAt($pages, $pos, $blog);    
-		} 
+		}
+		if($settings && $settings->enable_secondary_blog){
+			$pos = $settings->secondary_blog_menu_position - 1;
+			$blog = ['id'=> -1,'title' => $settings->secondary_blog_title, 'slug'=>'/blog', 'is_blog' =>1];
+
+			Helpers\ArrayHelper::insertAt($pages, $pos, $blog);    
+		}
 		return $pages;    
     }    
     

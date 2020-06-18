@@ -11,6 +11,7 @@ namespace CMS\Services;
 
 use Illuminate\Support\Facades\DB;
 use Post;
+use SecondaryBlog;
 use Project;
 use Request;
 use Tag;
@@ -104,6 +105,14 @@ class TagsService {
                 }
             }
         }
+		if ($tagable_type == 'SecondaryBlog') {
+            foreach ($data as $tag) {
+                $post = SecondaryBlog::find($tag->tagable_id);
+                if ($post && $post->published = 1 && !in_array($tag, $tags)) {
+                    array_push($tags, $tag);
+                }
+            }
+        }
         $tagsData = $this->transformTags($tags);
 
         return $tagsData;
@@ -153,6 +162,11 @@ class TagsService {
 
             return $tagable_type;
         }
+		elseif ($tagable_type == 'SecondaryBlog') {
+            $tagable_type = 'SecondaryBlog';
+
+            return $tagable_type;
+        }
         elseif ($tagable_type == 'projects') {
             $tagable_type = 'Project';
 
@@ -165,6 +179,11 @@ class TagsService {
     function getPathForType($tagable_type) {
         if ($tagable_type == 'Post') {
             $tagable_type = 'posts';
+
+            return $tagable_type;
+        }
+		elseif ($tagable_type == 'SecondaryBlog') {
+            $tagable_type = 'SecondaryBlog';
 
             return $tagable_type;
         }
