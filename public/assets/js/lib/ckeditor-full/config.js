@@ -42,8 +42,8 @@ CKEDITOR.editorConfig = function( config ) {
 		{ name: 'styles' },
 		{ name: 'colors' },
 		{ name: 'about' },
-		{ name: 'insert', groups: [ 'BootstrapGrid', 'BootstrapGridAdd', 'BootstrapGridDelete', 'BootstrapGridSettings', 'Source' ] }
-		//{ name: 'tables', groups: [ 'table','tablerow','tablecolumn', 'tablecell','tablecellmergesplit' ] }
+		{ name: 'insert', groups: [ 'BootstrapGrid', 'BootstrapGridAdd', 'BootstrapGridDelete', 'BootstrapGridSettings', 'Source' ] },
+		{ name: 'tables', groups: [ 'table','tablerow','tablecolumn', 'tablecell','tablecellmergesplit' ] }
 	];
 	/*config.toolbar = [
 		{ name: 'insert', items: [ 'BootstrapGrid', 'BootstrapGridAdd', 'BootstrapGridDelete', 'BootstrapGridSettings', 'Source' ] }
