@@ -49,7 +49,7 @@
 				<a class="dropdown-toggle" data-toggle="dropdown" href="#">{{$top['title']}}</a>
 				@if(isset($top['children']) && !empty($top['children']))
 					<ul class="dropdown-menu">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="{{URL::to($top['slug'])}}">{{$top['title']}}</a>
+						<a href="{{URL::to($top['slug'])}}">{{$top['title']}}</a>
 						 <?php 
 							usort($top['children'], function ($item1, $item2) {
 								return $item1['menu_sort_order'] >= $item2['menu_sort_order'];
