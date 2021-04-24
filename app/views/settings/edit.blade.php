@@ -274,11 +274,11 @@
                     <label class="checkbox">
 						{{ Form::checkbox('view_readmore_status', null, null, array()) }} Check to disable 'read more' links on projects                            
 						@if($settings->theme == TRUE)
-							(<a href="http://corbettresearchgroupinc.com/admin_projects_dark" target="_blank">Help</a>)
+							(<a href="http://corbettresearchgroupinc.com/admin_settings_dark" target="_blank">Help</a>)
                         @endif
 
                         @if($settings->theme == FALSE)
-							(<a href="http://corbettresearchgroupinc.com/admin_projects_light" target="_blank">Help</a>)
+							(<a href="http://corbettresearchgroupinc.com/admin_settings_light" target="_blank">Help</a>)
                         @endif
 					</label>
                 </div>
@@ -290,7 +290,7 @@
                     <label class="checkbox">
 						{{ Form::checkbox('enable_top_nav_dark', null, null, array()) }} Check to enable top navigation for dark theme                       
 						
-							(<a href="http://corbettresearchgroupinc.com/admin_projects_dark" target="_blank">Help</a>)
+							(<a href="http://corbettresearchgroupinc.com/admin_settings_dark" target="_blank">Help</a>)
                     </label>
                 </div>
             </div>

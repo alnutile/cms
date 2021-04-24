@@ -17,7 +17,7 @@
     <div class="form-group">
         <label>Page Heading
             @if($settings->theme == true)
-            (<a href="http://corbettresearchgroupinc.com/admin_projects_dark" target="_blank">Help</a>)
+            (<a href="http://corbettresearchgroupinc.com/admin_pages_dark" target="_blank">Help</a>)
             @endif
 
             @if($settings->theme == false)
@@ -52,7 +52,7 @@
         <div class="form-group">
             <label>Page Main Body 
             @if($settings->theme == true)
-            (<a href="http://corbettresearchgroupinc.com/admin_projects_dark" target="_blank">Help</a>)
+            (<a href="http://corbettresearchgroupinc.com/admin_pages_dark" target="_blank">Help</a>)
             @endif
 
             @if($settings->theme == false)
