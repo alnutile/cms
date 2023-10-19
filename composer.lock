@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "hash": "10e1b3a5b398adf8b4d7383d68fa52cb",
+    "content-hash": "8ac7316519650a9e307cdaa35e4337f1",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -51,7 +51,7 @@
                 "class",
                 "preload"
             ],
-            "time": "2014-03-12 00:05:31"
+            "time": "2014-03-12T00:05:31+00:00"
         },
         {
             "name": "d11wtq/boris",
@@ -85,7 +85,7 @@
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
-            "time": "2014-01-17 12:21:18"
+            "time": "2014-01-17T12:21:18+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -158,41 +158,46 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2014-07-06 15:52:21"
+            "time": "2014-07-06T15:52:21+00:00"
         },
         {
             "name": "doctrine/cache",
-            "version": "v1.3.0",
+            "version": "1.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "e16d7adf45664a50fa86f515b6d5e7f670130449"
+                "reference": "56cd022adb5514472cb144c087393c1821911d09"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/e16d7adf45664a50fa86f515b6d5e7f670130449",
-                "reference": "e16d7adf45664a50fa86f515b6d5e7f670130449",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/56cd022adb5514472cb144c087393c1821911d09",
+                "reference": "56cd022adb5514472cb144c087393c1821911d09",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2"
+                "php": "~7.1 || ^8.0"
             },
             "conflict": {
                 "doctrine/common": ">2.2,<2.4"
             },
             "require-dev": {
-                "phpunit/phpunit": ">=3.7",
-                "satooshi/php-coveralls": "~0.6"
+                "alcaeus/mongo-php-adapter": "^1.1",
+                "cache/integration-tests": "dev-master",
+                "doctrine/coding-standard": "^9",
+                "mongodb/mongodb": "^1.1",
+                "phpunit/phpunit": "^7.5 || ^8.5 || ^9.5",
+                "predis/predis": "~1.0",
+                "psr/cache": "^1.0 || ^2.0 || ^3.0",
+                "symfony/cache": "^4.4 || ^5.4 || ^6",
+                "symfony/var-exporter": "^4.4 || ^5.4 || ^6"
+            },
+            "suggest": {
+                "alcaeus/mongo-php-adapter": "Required to use legacy MongoDB driver"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
             "autoload": {
-                "psr-0": {
-                    "Doctrine\\Common\\Cache\\": "lib/"
+                "psr-4": {
+                    "Doctrine\\Common\\Cache\\": "lib/Doctrine/Common/Cache"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -201,15 +206,8 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com",
-                    "homepage": "http://www.jwage.com/",
-                    "role": "Creator"
-                },
-                {
                     "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com",
-                    "homepage": "http://www.instaclick.com"
+                    "email": "guilhermeblanco@gmail.com"
                 },
                 {
                     "name": "Roman Borschel",
@@ -220,19 +218,46 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Johannes M. Schmitt",
-                    "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
-                    "role": "Developer of wrapped JMSSerializerBundle"
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                },
+                {
+                    "name": "Johannes Schmitt",
+                    "email": "schmittjoh@gmail.com"
                 }
             ],
-            "description": "Caching library offering an object-oriented API for many cache backends",
-            "homepage": "http://www.doctrine-project.org",
+            "description": "PHP Doctrine Cache library is a popular cache implementation that supports many different drivers such as redis, memcache, apc, mongodb and others.",
+            "homepage": "https://www.doctrine-project.org/projects/cache.html",
             "keywords": [
+                "abstraction",
+                "apcu",
                 "cache",
-                "caching"
+                "caching",
+                "couchdb",
+                "memcached",
+                "php",
+                "redis",
+                "xcache"
             ],
-            "time": "2013-10-25 19:04:14"
+            "support": {
+                "issues": "https://github.com/doctrine/cache/issues",
+                "source": "https://github.com/doctrine/cache/tree/1.13.0"
+            },
+            "funding": [
+                {
+                    "url": "https://www.doctrine-project.org/sponsorship.html",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.patreon.com/phpdoctrine",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/doctrine%2Fcache",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-05-20T20:06:54+00:00"
         },
         {
             "name": "doctrine/collections",
@@ -300,7 +325,7 @@
                 "collections",
                 "iterator"
             ],
-            "time": "2014-02-03 23:07:43"
+            "time": "2014-02-03T23:07:43+00:00"
         },
         {
             "name": "doctrine/common",
@@ -378,7 +403,7 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2014-05-21 19:28:51"
+            "time": "2014-05-21T19:28:51+00:00"
         },
         {
             "name": "doctrine/dbal",
@@ -444,7 +469,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2014-01-01 16:43:57"
+            "time": "2014-01-01T16:43:57+00:00"
         },
         {
             "name": "doctrine/inflector",
@@ -508,7 +533,7 @@
                 "singuarlize",
                 "string"
             ],
-            "time": "2013-01-10 21:49:15"
+            "time": "2013-01-10T21:49:15+00:00"
         },
         {
             "name": "doctrine/lexer",
@@ -560,7 +585,7 @@
                 "lexer",
                 "parser"
             ],
-            "time": "2013-01-12 18:59:04"
+            "time": "2013-01-12T18:59:04+00:00"
         },
         {
             "name": "filp/whoops",
@@ -611,7 +636,7 @@
                 "whoops",
                 "zf2"
             ],
-            "time": "2013-12-04 14:19:30"
+            "time": "2013-12-04T14:19:30+00:00"
         },
         {
             "name": "flowjs/flow-php-server",
@@ -658,7 +683,7 @@
                 "resumable.js",
                 "upload"
             ],
-            "time": "2014-06-24 15:04:59"
+            "time": "2014-06-24T15:04:59+00:00"
         },
         {
             "name": "ircmaxell/password-compat",
@@ -697,7 +722,7 @@
                 "hashing",
                 "password"
             ],
-            "time": "2013-04-30 19:58:08"
+            "time": "2013-04-30T19:58:08+00:00"
         },
         {
             "name": "jeremeamia/SuperClosure",
@@ -745,7 +770,7 @@
                 "serialize",
                 "tokenizer"
             ],
-            "time": "2013-10-09 04:20:00"
+            "time": "2013-10-09T04:20:00+00:00"
         },
         {
             "name": "laravel/framework",
@@ -862,7 +887,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2014-06-01 18:30:26"
+            "time": "2014-06-01T18:30:26+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -930,7 +955,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2014-06-04 16:30:04"
+            "time": "2014-06-04T16:30:04+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -976,7 +1001,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2014-07-18 03:44:47"
+            "time": "2014-07-18T03:44:47+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -1021,7 +1046,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2014-07-23 18:24:17"
+            "time": "2014-07-23T18:24:17+00:00"
         },
         {
             "name": "patchwork/utf8",
@@ -1077,7 +1102,7 @@
                 "utf-8",
                 "utf8"
             ],
-            "time": "2014-08-05 08:00:32"
+            "time": "2014-08-05T08:00:32+00:00"
         },
         {
             "name": "phpseclib/phpseclib",
@@ -1174,7 +1199,7 @@
                 "x.509",
                 "x509"
             ],
-            "time": "2014-07-05 16:36:21"
+            "time": "2014-07-05T16:36:21+00:00"
         },
         {
             "name": "predis/predis",
@@ -1224,7 +1249,7 @@
                 "predis",
                 "redis"
             ],
-            "time": "2014-08-01 09:43:10"
+            "time": "2014-08-01T09:43:10+00:00"
         },
         {
             "name": "psr/log",
@@ -1262,7 +1287,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2012-12-21 11:40:51"
+            "time": "2012-12-21T11:40:51+00:00"
         },
         {
             "name": "stack/builder",
@@ -1312,7 +1337,7 @@
             "keywords": [
                 "stack"
             ],
-            "time": "2014-01-28 19:42:24"
+            "time": "2014-01-28T19:42:24+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -1366,7 +1391,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2014-06-13 11:44:54"
+            "time": "2014-06-13T11:44:54+00:00"
         },
         {
             "name": "symfony/browser-kit",
@@ -1423,7 +1448,7 @@
             ],
             "description": "Symfony BrowserKit Component",
             "homepage": "http://symfony.com",
-            "time": "2014-07-09 09:04:55"
+            "time": "2014-07-09T09:04:55+00:00"
         },
         {
             "name": "symfony/console",
@@ -1478,7 +1503,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2014-07-09 12:44:38"
+            "time": "2014-07-09T12:44:38+00:00"
         },
         {
             "name": "symfony/css-selector",
@@ -1531,7 +1556,7 @@
             ],
             "description": "Symfony CssSelector Component",
             "homepage": "http://symfony.com",
-            "time": "2014-07-09 09:04:55"
+            "time": "2014-07-09T09:04:55+00:00"
         },
         {
             "name": "symfony/debug",
@@ -1588,7 +1613,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "http://symfony.com",
-            "time": "2014-07-09 09:04:55"
+            "time": "2014-07-09T09:04:55+00:00"
         },
         {
             "name": "symfony/dom-crawler",
@@ -1643,7 +1668,7 @@
             ],
             "description": "Symfony DomCrawler Component",
             "homepage": "http://symfony.com",
-            "time": "2014-07-09 09:04:55"
+            "time": "2014-07-09T09:04:55+00:00"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -1700,7 +1725,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "http://symfony.com",
-            "time": "2014-07-28 13:20:46"
+            "time": "2014-07-28T13:20:46+00:00"
         },
         {
             "name": "symfony/filesystem",
@@ -1747,7 +1772,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "http://symfony.com",
-            "time": "2014-07-09 09:05:48"
+            "time": "2014-07-09T09:05:48+00:00"
         },
         {
             "name": "symfony/finder",
@@ -1796,7 +1821,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "http://symfony.com",
-            "time": "2014-07-15 14:07:10"
+            "time": "2014-07-15T14:07:10+00:00"
         },
         {
             "name": "symfony/http-foundation",
@@ -1851,7 +1876,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "http://symfony.com",
-            "time": "2014-07-15 14:07:10"
+            "time": "2014-07-15T14:07:10+00:00"
         },
         {
             "name": "symfony/http-kernel",
@@ -1924,7 +1949,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "http://symfony.com",
-            "time": "2014-07-15 14:52:02"
+            "time": "2014-07-15T14:52:02+00:00"
         },
         {
             "name": "symfony/process",
@@ -1973,7 +1998,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "http://symfony.com",
-            "time": "2014-07-09 09:04:55"
+            "time": "2014-07-09T09:04:55+00:00"
         },
         {
             "name": "symfony/routing",
@@ -2041,7 +2066,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2014-07-09 09:04:55"
+            "time": "2014-07-09T09:04:55+00:00"
         },
         {
             "name": "symfony/security-core",
@@ -2105,7 +2130,7 @@
             ],
             "description": "Symfony Security Component - Core Library",
             "homepage": "http://symfony.com",
-            "time": "2014-06-20 22:02:36"
+            "time": "2014-06-20T22:02:36+00:00"
         },
         {
             "name": "symfony/translation",
@@ -2162,7 +2187,7 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "http://symfony.com",
-            "time": "2014-07-15 14:22:28"
+            "time": "2014-07-15T14:22:28+00:00"
         },
         {
             "name": "way/generators",
@@ -2208,7 +2233,7 @@
                 }
             ],
             "description": "Rapidly generate resources, migrations, models, and much more.",
-            "time": "2014-08-04 20:58:13"
+            "time": "2014-08-04T20:58:13+00:00"
         }
     ],
     "packages-dev": [
@@ -2250,7 +2275,7 @@
             "keywords": [
                 "selenium"
             ],
-            "time": "2014-02-05 08:32:37"
+            "time": "2014-02-05T08:32:37+00:00"
         },
         {
             "name": "behat/behat",
@@ -2312,7 +2337,7 @@
                 "Behat",
                 "Symfony2"
             ],
-            "time": "2014-04-26 16:55:16"
+            "time": "2014-04-26T16:55:16+00:00"
         },
         {
             "name": "behat/gherkin",
@@ -2373,7 +2398,7 @@
                 "Symfony2",
                 "parser"
             ],
-            "time": "2013-10-15 11:22:17"
+            "time": "2013-10-15T11:22:17+00:00"
         },
         {
             "name": "behat/mink",
@@ -2428,7 +2453,7 @@
                 "testing",
                 "web"
             ],
-            "time": "2013-04-13 23:39:27"
+            "time": "2013-04-13T23:39:27+00:00"
         },
         {
             "name": "behat/mink-browserkit-driver",
@@ -2483,7 +2508,7 @@
                 "browser",
                 "testing"
             ],
-            "time": "2013-04-13 23:46:30"
+            "time": "2013-04-13T23:46:30+00:00"
         },
         {
             "name": "behat/mink-extension",
@@ -2529,7 +2554,7 @@
                 "test",
                 "web"
             ],
-            "time": "2013-12-23 13:54:47"
+            "time": "2013-12-23T13:54:47+00:00"
         },
         {
             "name": "behat/mink-goutte-driver",
@@ -2580,7 +2605,7 @@
                 "headless",
                 "testing"
             ],
-            "time": "2013-07-03 18:43:54"
+            "time": "2013-07-03T18:43:54+00:00"
         },
         {
             "name": "behat/mink-sahi-driver",
@@ -2632,7 +2657,7 @@
                 "sahi",
                 "testing"
             ],
-            "time": "2013-04-13 23:49:06"
+            "time": "2013-04-13T23:49:06+00:00"
         },
         {
             "name": "behat/mink-selenium-driver",
@@ -2685,7 +2710,7 @@
                 "selenium",
                 "testing"
             ],
-            "time": "2013-04-13 23:50:14"
+            "time": "2013-04-13T23:50:14+00:00"
         },
         {
             "name": "behat/mink-selenium2-driver",
@@ -2743,7 +2768,7 @@
                 "testing",
                 "webdriver"
             ],
-            "time": "2013-06-02 19:09:45"
+            "time": "2013-06-02T19:09:45+00:00"
         },
         {
             "name": "behat/mink-zombie-driver",
@@ -2801,7 +2826,7 @@
                 "testing",
                 "zombie"
             ],
-            "time": "2013-04-13 23:52:11"
+            "time": "2013-04-13T23:52:11+00:00"
         },
         {
             "name": "behat/sahi-client",
@@ -2850,7 +2875,7 @@
                 "browser",
                 "testing"
             ],
-            "time": "2013-02-17 12:17:51"
+            "time": "2013-02-17T12:17:51+00:00"
         },
         {
             "name": "fabpot/goutte",
@@ -2908,7 +2933,7 @@
             "keywords": [
                 "scraper"
             ],
-            "time": "2014-03-14 13:02:09"
+            "time": "2014-03-14T13:02:09+00:00"
         },
         {
             "name": "guzzle/common",
@@ -2952,7 +2977,7 @@
                 "event",
                 "exception"
             ],
-            "time": "2014-05-07 17:04:22"
+            "time": "2014-05-07T17:04:22+00:00"
         },
         {
             "name": "guzzle/http",
@@ -3009,7 +3034,7 @@
                 "http",
                 "http client"
             ],
-            "time": "2014-05-01 21:56:28"
+            "time": "2014-05-01T21:56:28+00:00"
         },
         {
             "name": "guzzle/parser",
@@ -3053,7 +3078,7 @@
                 "message",
                 "url"
             ],
-            "time": "2014-02-05 18:29:46"
+            "time": "2014-02-05T18:29:46+00:00"
         },
         {
             "name": "guzzle/stream",
@@ -3106,7 +3131,7 @@
                 "component",
                 "stream"
             ],
-            "time": "2014-05-01 21:36:02"
+            "time": "2014-05-01T21:36:02+00:00"
         },
         {
             "name": "instaclick/php-webdriver",
@@ -3164,7 +3189,7 @@
                 "webdriver",
                 "webtest"
             ],
-            "time": "2013-10-04 15:03:51"
+            "time": "2013-10-04T15:03:51+00:00"
         },
         {
             "name": "kriswallsmith/buzz",
@@ -3209,7 +3234,7 @@
                 "curl",
                 "http client"
             ],
-            "time": "2013-01-14 16:07:06"
+            "time": "2013-01-14T16:07:06+00:00"
         },
         {
             "name": "symfony/config",
@@ -3257,7 +3282,7 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "http://symfony.com",
-            "time": "2014-08-05 09:00:40"
+            "time": "2014-08-05T09:00:40+00:00"
         },
         {
             "name": "symfony/dependency-injection",
@@ -3314,7 +3339,7 @@
             ],
             "description": "Symfony DependencyInjection Component",
             "homepage": "http://symfony.com",
-            "time": "2014-08-06 06:44:37"
+            "time": "2014-08-06T06:44:37+00:00"
         },
         {
             "name": "symfony/yaml",
@@ -3361,12 +3386,10 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "http://symfony.com",
-            "time": "2014-08-05 09:00:40"
+            "time": "2014-08-05T09:00:40+00:00"
         }
     ],
-    "aliases": [
-
-    ],
+    "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
         "way/generators": 20,
@@ -3374,10 +3397,8 @@
         "behat/mink-extension": 20
     },
     "prefer-stable": false,
-    "platform": [
-
-    ],
-    "platform-dev": [
-
-    ]
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
 }
